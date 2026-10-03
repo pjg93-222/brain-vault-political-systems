@@ -14,12 +14,12 @@ known_issues:
   - "Naming trap: 'Brain' alone is ambiguous. The brainctl toolkit is the separate actor project-brain; this vault must not carry a bare 'Brain' alias"
   - "Obsidian creates new notes at the vault root by default; the graph includes them, and setting Obsidian's default new-note folder to fleeting/ is optional"
   - "/bedrock:teach runs graphify sub-agents that have Write and Bash over fetched content, so only teach from trusted sources"
-  - "No re-import script exists yet; re-imports must upsert by source path using .bedrock/import-manifest.json"
+  - "New and changed memory files are captured only into fleeting/ (by the sync hook); folding them into curated notes is still done by hand with /bedrock:preserve"
 sources: []
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-03
-updated_by: "preserve@agent"
+updated_by: "capture-recall@agent"
 tags: ["type/actor", "status/active", "domain/agent-ops", "domain/platform"]
 ---
 
@@ -81,6 +81,12 @@ tags: ["type/actor", "status/active", "domain/agent-ops", "domain/platform"]
 - Hygiene: `/bedrock:compress` deduplicates and fixes links; `/bedrock:sync` re-syncs entities with external sources.
 - Notes written by hand in Obsidian are allowed; the graph page includes them.
 
+## Capture and recall
+
+- Since 2026-10-03, four global Claude Code hooks run `.bedrock/recall/hook.ts`. SessionStart adds a short orientation. UserPromptSubmit adds a "Brain recall" block of up to 5 matching notes (BM25 over `.bedrock/recall-index.json`), and only when the prompt names something in the vault. Stop and SessionEnd sync memory files.
+- Sync copies new or changed memory files into `fleeting/` as raw notes. It dedupes on the frontmatter `sources` path and sha256, scans for secrets first and never writes curated notes. It also appends to `log.md` and refreshes `index.md` and the graph page.
+- `index.md` (generated catalog) and `log.md` (append-only event log) are system notes. Commands, rules and rollback are in the vault `CLAUDE.md`.
+
 ## Dev Commands
 
 ```bash
@@ -96,7 +102,7 @@ cd /c/Users/pgoff/Documents/brain/.bedrock/graph && bun extract.ts
 - **Naming trap.** "Brain" alone is ambiguous: [[project-brain]] is a separate brainctl-based memory toolkit with nested brain repos, not this vault. Keep the two "brain" systems distinct, and do not give this vault a bare "Brain" alias.
 - **Default new-note location.** Obsidian creates new notes at the vault root. The graph includes them (typed by their frontmatter, else shown as "other"), and setting Obsidian's default new-note folder to `fleeting/` is optional.
 - **Untrusted sources.** `/bedrock:teach` runs graphify sub-agents that have Write and Bash over the fetched content, so only teach from trusted sources. The review behind this caveat is in [[2026-10-feature-brain-vault-setup]].
-- **No re-import script yet.** New memory files can only be imported by hand until a script exists that uses the manifest upsert key.
+- **Capture stops at fleeting/.** The sync hook captures new and changed memory files into `fleeting/` automatically (see Capture and recall), but folding them into curated notes is still done by hand with `/bedrock:preserve`.
 
 ## Related Actors
 

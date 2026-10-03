@@ -11,3 +11,12 @@ Thumbs.db
 .bedrock/graph/watch.pid
 .bedrock/graph/node_modules/
 .bedrock/graph/*.tmp*
+
+# Capture and recall (.bedrock/recall): derived recall index, sync cache and lock, hook log, import provenance copies
+.bedrock/recall-index.json
+.bedrock/recall/hook.log*
+.bedrock/recall/index-slow.json
+.bedrock/sync/
+.bedrock/import/
+# hidden temporary files of atomic writes (".<name>.tmp-<pid>"), anywhere in the vault
+.*.tmp-*

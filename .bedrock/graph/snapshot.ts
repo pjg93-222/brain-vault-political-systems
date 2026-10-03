@@ -1,6 +1,8 @@
-// Snapshot check: the numbers this vault had when the graph tooling was installed (2026-10-03). It proves that a change to
-// the tooling did not change what the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking
-// a note makes it fail, which is the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below.
+// Snapshot check: the numbers the vault had at the last deliberate update of SNAPSHOT (history: 74 notes / 260 links /
+// 1468 mentions when the graph tooling was installed on 2026-10-03; updated for the capture and recall work, where the
+// system notes index.md and log.md are excluded from the graph). It proves that a change to the tooling did not change
+// what the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail,
+// which is the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below.
 // (verify.ts and the publish gate are the checks that stay valid for any vault.)
 //   bun snapshot.ts [--file <page>]      exit code 0 = every assertion holds
 import { readFileSync } from "node:fs";
@@ -8,10 +10,10 @@ import { DEFAULT_OUT, argValue } from "./common.ts";
 import { gate, extractData } from "./checks.ts";
 
 const SNAPSHOT = {
-  nodes: 74,
-  links: 260,
-  mentions: 1468,
-  types: { actor: 23, concept: 6, discussion: 6, person: 1, project: 4, topic: 34, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
+  nodes: 77,
+  links: 269,
+  mentions: 1501,
+  types: { actor: 25, concept: 6, discussion: 6, person: 1, project: 4, topic: 35, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
 };
 
 const FILE = argValue("--file") ?? DEFAULT_OUT;
