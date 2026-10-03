@@ -27,7 +27,7 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -175,6 +175,7 @@ In this environment, passing script text through the Bash tool corrupts it even 
 
 - [[codex-executor]] - Codex (ChatGPT/Astra) as Paul's executor: Claude reasons and reviews, Codex writes code; MCP lane dead since 2026-09-17
 - [[lg-gram-workstation]] - Paul's LG Gram 17Z90UB Windows 11 laptop: NPU BSODs, AppXSvc leak, Codex MSIX loop, C: disk exhaustion, OneDrive/Carbonite gaps
+- [[brain-vault-political-systems]] - Private Obsidian + Bedrock knowledge vault; this harness's per-project auto-memory files were imported into it on 2026-10-03
 
 ## Related Topics
 
@@ -182,3 +183,4 @@ In this environment, passing script text through the Bash tool corrupts it even 
 - [[2026-07-incident-workstation-stability]] - LG Gram stability incidents: NPU BSOD loop, ongoing Kernel-Power shutdowns, AppXSvc commit leak, ChatGPT/Codex MSIX wedge, poppler install
 - [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 - [[2026-07-working-agreement-verification-and-evidence-standards]] - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
+- [[2026-10-feature-brain-vault-setup]] - Brain vault setup and Claude memory import: this harness's memory files were consolidated into the private brain vault (2026-10-03)
