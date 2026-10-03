@@ -8,6 +8,8 @@ focal_points:
   - "[[draft-systems-r-pipeline]]"
   - "[[lg-gram-workstation]]"
   - "[[mentat-fec-pipeline]]"
+  - "[[brain-vault-political-systems]]"
+  - "[[brain-graph]]"
 email: "336621699+pjg93-222@users.noreply.github.com"
 github: ""
 slack: ""
@@ -17,7 +19,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/user-name-paul.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\user-name-paul.md", sha256: "31d96d7db8f1af09845e734883335e0ecba51caffbee6456832bb19d4d7e1bcf"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/user_r_environment.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\user_r_environment.md", sha256: "4b3db963331292e353d1e0be4ac6e238a7f81e451bc60a806719c97d3963316f"}
 updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_by: "preserve@agent"
 tags: ["type/person", "domain/data"]
 ---
 
@@ -88,6 +90,8 @@ Source note `api-key-repository-2026-08-28` (user memory, newest modification 20
 - [[draft-systems-r-pipeline]] - Draft Systems R code root: congress.gov, CU press, Census CD and Ballotpedia scrapers plus the DEBATE+LSD stance pipeline
 - [[lg-gram-workstation]] - Paul's LG Gram 17Z90UB Windows 11 laptop: NPU BSODs, AppXSvc leak, Codex MSIX loop, C: disk exhaustion, OneDrive/Carbonite gaps
 - [[mentat-fec-pipeline]] - Mentat's R + Python FEC collector and Excel workbook builder (API pool over a DPAPI key store); 7 industries; code at C:\Users\pgoff\Mentat
+- [[brain-vault-political-systems]] - Private Obsidian + Bedrock knowledge vault that consolidates Paul's Claude Code memories into linked entities, backed up to a private GitHub repo
+- [[brain-graph]] - Interactive D3 graph page of the brain vault, rebuilt by a background watcher that is started by hand and does not survive a reboot
 
 ## Projects
 
@@ -132,6 +136,7 @@ Source note `api-key-repository-2026-08-28` (user memory, newest modification 20
 - [[2026-09-feature-staffer-network-surfaces]] - Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane.
 - [[2026-09-feature-ui-redesign-boards]] - Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks.
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] - Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR unopened), tidy Data workbook, console hang fix.
+- [[2026-10-feature-brain-vault-setup]] - Consolidated Claude Code memories into the private brain vault (2026-10-03): import decisions, verification, dependencies, graphify review, open items
 
 ## Discussions
 

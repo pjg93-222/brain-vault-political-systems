@@ -22,7 +22,7 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -90,6 +90,10 @@ python brainctl.py off <folder>     # remove only the managed block
 | 2026-08-12 | Direct-commit override stands ("yes that override stands going forward"); melange-systems brain seed commit 12:09. |
 | 2026-09-19 | MIRRORED (Paul: "set up the brain mirror", brain D-058): the toolkit and all three brains (`melange-systems-brain`, `folder-brain`, `pilot-brain`) each have remote `mirror` -> `C:\Users\pgoff\GitMirrors\<name>.git` (toolkit = `project-brain.git`), bare, outside OneDrive. Verified: heads equal and fsck clean on all four, and a live brainctl commit moved the mirror's master by itself. |
 | 2026-09-30 / 2026-10-01 | QME lane appends brain entries: D-070 to D-074 / DE-051 to DE-053 (F6 recovery), D-075 to D-081 and DE-054/055 committed as 02de571 (outcomes PENDING). |
+
+## Related Actors
+
+- [[brain-vault-political-systems]] - Separate Obsidian + Bedrock knowledge vault (not the brainctl toolkit); the two "brain" systems are distinct
 
 ## Related Topics
 
