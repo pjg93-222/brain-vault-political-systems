@@ -5,3 +5,9 @@
 .trash/
 .DS_Store
 Thumbs.db
+
+# Graph page tooling (.bedrock/graph): watcher state and any temporary build output
+.bedrock/graph/watch.log*
+.bedrock/graph/watch.pid
+.bedrock/graph/node_modules/
+.bedrock/graph/*.tmp*

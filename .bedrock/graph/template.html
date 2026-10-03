@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src __SCRIPT_HASHES__ https://cdnjs.cloudflare.com; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; font-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Brain Graph</title>
+<script>
+(function () {
+  /* Theme bootstrap. Runs before first paint, so there is no flash. Dark is the default whatever the OS prefers;
+     only an explicit stored choice overrides it. Every storage access is guarded. */
+  var t = 'dark';
+  try {
+    var s = localStorage.getItem('brain-graph-theme');
+    if (s === 'light' || s === 'dark') t = s;
+  } catch (e) { /* storage blocked, cleared or unavailable: keep the dark default */ }
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<link rel="icon" href="data:,">
+<style>
+/*__STYLE__*/
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <h1>Brain Graph</h1>
+    <p class="summary"><span id="sum-main"></span> <span id="sum-filter" class="sum-filter" aria-live="polite"></span></p>
+  </header>
+
+  <section class="controls" aria-label="Filters and view controls">
+    <div id="chips" class="chips" role="group" aria-label="Note types: legend and filter"></div>
+    <div class="field"><label class="sr" for="domain">Domain</label><select id="domain"></select></div>
+    <div class="field search"><label class="sr" for="q">Search notes by title or slug</label><input id="q" type="search" placeholder="Search title or slug" autocomplete="off" spellcheck="false"><span id="qinfo" class="qinfo" role="status"></span></div>
+    <div class="btns">
+      <button id="fit" class="btn" type="button">Fit</button>
+      <button id="reset" class="btn" type="button">Reset</button>
+      <button id="shapes" class="btn" type="button" aria-pressed="false" title="Add a shape per note type, as a second cue besides colour">Shapes</button>
+      <button id="tbl" class="btn" type="button" aria-pressed="false">Table view</button>
+      <button id="theme" class="btn" type="button" aria-label="Switch to light theme" title="Switch to light theme"><span>Light</span></button>
+    </div>
+  </section>
+
+  <main class="stage">
+    <figure class="card" id="card" data-view="graph">
+      <div class="view">
+        <div id="graph" class="graph" role="group" tabindex="0" aria-label="Link graph" aria-describedby="graph-help">
+          <svg id="svg" class="svg" aria-hidden="true" focusable="false">
+            <g id="viewport"><g id="edges"></g><g id="nodes"></g></g>
+            <g id="labels"></g>
+          </svg>
+          <div class="zoom">
+            <button id="zin" type="button" aria-label="Zoom in">+</button>
+            <button id="zout" type="button" aria-label="Zoom out">&minus;</button>
+          </div>
+          <div id="tip" class="tip" role="tooltip" hidden></div>
+        </div>
+        <div id="tablewrap" class="tablewrap" hidden>
+          <table id="tbl-el">
+            <caption class="sr">Notes currently shown in the graph</caption>
+            <thead>
+              <tr>
+                <th scope="col" class="c-note" data-key="title" aria-sort="none"><button type="button">Note</button></th>
+                <th scope="col" class="c-type" data-key="type" aria-sort="none"><button type="button">Type</button></th>
+                <th scope="col" class="c-dom" data-key="domain" aria-sort="none"><button type="button">Domain</button></th>
+                <th scope="col" class="c-stat" data-key="status" aria-sort="none"><button type="button">Status</button></th>
+                <th scope="col" class="num c-deg" data-key="degree" aria-sort="none"><button type="button">Links</button></th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <figcaption class="cap">Colour is the note type. Node size grows with the number of linked notes; line width grows with how often two notes mention each other. Scroll or pinch to zoom, drag to pan, click a node for details.</figcaption>
+    </figure>
+    <aside id="panel" class="panel" aria-label="Note details"></aside>
+  </main>
+
+  <p id="graph-help" class="sr">Arrow keys move between notes, Enter selects the highlighted note, Escape clears the selection, plus and minus zoom, zero fits the view. The table view lists the same notes.</p>
+  <div id="live" class="sr" role="status" aria-live="polite"></div>
+  <noscript><p class="notice">This page needs JavaScript to draw the graph and list the notes.</p></noscript>
+</div>
+<script type="application/json" id="graph-data">
+/*__DATA__*/
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+/*__SCRIPT__*/
+</script>
+</body>
+</html>
