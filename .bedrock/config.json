@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "language": "en-US",
+  "preset": "engineering",
+  "domains": [
+    "backend",
+    "frontend",
+    "infra",
+    "data",
+    "platform",
+    "security",
+    "research",
+    "agent-ops"
+  ],
+  "git": {
+    "strategy": "commit-push-pr"
+  },
+  "initialized_at": "2026-10-03",
+  "initialized_by": "init@agent"
+}
