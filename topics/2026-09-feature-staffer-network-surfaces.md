@@ -1,0 +1,163 @@
+---
+type: topic
+title: "Staffer network surfaces"
+aliases: ["Staffer network surfaces"]
+category: "feature"
+status: "in-progress"
+people:
+  - "[[paul-goff]]"
+actors:
+  - "[[melange-dashboard]]"
+  - "[[staffer-live-sidecar]]"
+objective: "Ship and keep usable the staffer-network surfaces of the Melange dashboard: the live people-only sidecar on 127.0.0.1:8841, the staffer network as the fourth surface of Moneyball.html (#app-staffer) built through make_combined.py, the 2026-09-05 page redesign (variants A/B/C, producer top_shared_pairs), and the 2026-10-02/03 people-network route-latency lane (one-directional work_time Dijkstra; full-scope fix ruled)."
+created_at: 2026-09-04
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "6cb20aaf4eebf4790245bcff1d50eee4f926ee00fd5c47f0a0ed75981baa366a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-live-sidecar-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-live-sidecar-2026-09-04.md", sha256: "9ebbe9baa896071b4b81a5d1fb0bbf36a3aadc3caeb4df9de7097d1e8128a0bb"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-dashboard-section-lane-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-dashboard-section-lane-2026-09-04.md", sha256: "3c79e032d7d0a1c1a893ac4ef6b3d25e2220aebe4ad69f537d4eb07160fe1c4c"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-network-redesign-2026-09-05.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-network-redesign-2026-09-05.md", sha256: "7761fc40db8d6180eb138a80e1ffad67c27227a93aefab397b5fe4893cd6aa44"}
+updated_at: 2026-10-03
+updated_by: "import@agent"
+tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
+---
+
+# Staffer network surfaces
+
+> Rolling record (2026-09-04 to 2026-10-03) of how the staffer network reached Paul's screen: the live sidecar ([[staffer-live-sidecar]], 127.0.0.1:8841), the fourth surface of the [[melange-dashboard]] (`#app-staffer` in `Moneyball.html`), the redesign built and pin-tested on 2026-09-05 but not yet applied live, and the 2026-10-02/03 latency lane for the people-network routes. Part of [[melange-systems]].
+
+## Context
+
+- The staffer graph is its OWN layer below members; anything relating two members is "shared staff" (people attached to both offices), never a member tie or weight. Data and math live in the staffer-network lane (sealed receipts v4/v5/v6 generations); this topic is about the SURFACES: the sidecar page at 8841, the standalone `staffer-network.html`, the combined `Moneyball.html?v=staffer`, and the email package.
+- Paul's directives for the dashboard lane (2026-09-04, verbatim intent): "Find the two active Moneyball.html copies ... merge into one canonical dashboard in this project"; "Finish this up, and regenerate the dashboard with all the self-healing features and the new network integrated into the moneyball dashboard as its own section"; "resume the crawler and keep going. FINISH IT UP"; "run the finishing chain yourself, I approve the review layers"; "finish it up and send me the dashboard". Also ruled mid-lane: long-form profile regeneration WAITS for the full 533 long-form pass and then runs through the HOLISTIC evidence merge (long-form = supplemental signal, never a replacement); nothing in that lane regenerates profiles.
+- Paul's directive for the redesign (2026-09-05): "Run it and redesign the staff network for usability and simplification", then "Keep going till completion". Record: `audits/DASHBOARD_FIXES_VERIFICATION_2026-09-05.md` sections 6-7 (worktree `melange-dashboard-fixes-83c994`). Change log with every string: scratchpad `preview\CHANGES.md` (four passes).
+- Paul's opening of the latency lane (2026-10-02): the people network was "almost not useable".
+- Related memories (not vault entities): `staffer-live-sidecar-2026-09-04`, `staffer-dashboard-section-lane-2026-09-04`, `staffer-network-redesign-2026-09-05`, `people-network-route-latency-lane-2026-10-02`, `staffer-social-network-architecture-2026-09-03`, `staffer-social-network-overlap-rule-2026-09-03`, `staffer-network-employment-tenure-adjudication-2026-09-01`, `staffer-sorting-lane-2026-09-06`, `dashboard-preview-workflow`, `ui-simplification-2026-08-11`, `desk-plain-language-2026-08-31`, `dashboard-fixes-verification-lane-2026-09-05`, `no-git-plain-review-2026-09-01`, `ask-before-substantive-changes`, `glassbox-everything-rule-2026-07-27`, `reasoning-in-fable-code-in-opus-2026-09-16`, `go-faster-directive-2026-09-16`.
+
+## People Involved
+
+| Person | Role |
+|---|---|
+| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+
+## Actors Involved
+
+| Actor | Relation |
+|---|---|
+| [[melange-dashboard]] | Moneyball.html: the single Melange dashboard deliverable (network, member desk, industry boards, staffer network). |
+| [[staffer-live-sidecar]] | Local sidecar on 127.0.0.1:8841: people-only staffer graph, Dijkstra office routes, self-healing identity loop; Codex-built. |
+
+## Related Projects
+
+- [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+
+## History
+
+| Date | Event |
+|---|---|
+| 2026-09-04 | Graph consolidation / identity feature (people-only nodes, duplicate-person consolidation, A* routes with current-coworker cost 1, self-healing identity pass) described by Paul; lives in the LIVE tree under `fec/surfaces/staffer_live/` + sidecar modules, built by Codex/remote; sidecar on 127.0.0.1:8841. |
+| 2026-09-04 | Moneyball.html canonicalized (Desktop copy becomes a redirect stub); staffer network shipped as the FOURTH surface (`#app-staffer`) via `make_combined.py`; Politico crawl watchdog + rename-retry patch; finishing-chain runner launched detached after Paul approved the five review layers. 19:16 crawl died on WinError 5; 19:57 unclean reboot (Kernel-Power 41) killed the sidecar and the crawl; sidecar restarted 21:17. |
+| 2026-09-05 | Email-package ruling (~03:10 ET): keep the three-surface email package. Autostart LIVE (watchdog task `MelangeStafferLiveSidecar`). User-statement durability fix landed (uncommitted). Page redesign: variants A and B, then C (deploy candidate) built and pin-tested; apply script refused by the auto-mode classifier, so the live apply is Paul's. Crawl 06:14Z: 17,683/18,618 (Politico crawl 95% done). |
+| 2026-09-06 | Payroll-identity pin self-applied on a sidecar relaunch (185,893 -> 179,999 people); Paul ratified the new bundle and threshold (`>= 6` -> `>= 8`); Paul-ordered restart 20:21 (PID 38444 -> 74496) went live with 180,022 searchable people. Stale imports fixed (42 across 15 files). Git ban lifted for the staffer sorting lane only. |
+| 2026-09-26 | Paul-ordered restart 00:40 (PID 23992 at 7-8 GB -> PID 15996, Ready 00:46). |
+| 2026-10-02 | Route-latency lane opened: diagnosis (default office route = one-directional Dijkstra, memory blow-up 7.0 -> 17.5 GB), Paul's scope rulings, WP-A/WP-B worktrees. |
+| 2026-10-03 | Paul's rulings "b on ties, fix the uuid match, keep identity loop"; builder branches `claude/staffer-route-ties-20261003` and `claude/staffer-search-uuid-20261003`. |
+
+## Decisions
+
+- **Canonical dashboard (2026-09-04):** the project build at MB_ROOT written by `make_combined.py:386` is the one canonical `Moneyball.html`; the Desktop copy is a redirect stub (Paul ordered the merge).
+- **Staffer network = fourth surface (2026-09-04):** `#app-staffer`, added through the real top-level section boundary `make_combined.py`; desk template untouched.
+- **Email package (Paul, 2026-09-05 ~03:10 ET): "keep the three-surface email package, notify me when v5 lands."** Do not re-propose raising the 14 MiB budget.
+- **Review layers (2026-09-04):** Paul approved the five Politico review layers; education weight has no dial and stays out per his 2026-09-03 ruling.
+- **Redesign (2026-09-05):** variant C is the deploy candidate after Paul's "good start, the folded seems nice, but it needs to be simplified a lot more."
+- **Never drop a member's own-office rows or merge duplicate containers in the moves tables** (data-fidelity ruling; two critique cuts refused on it).
+- **Latency lane scope (2026-10-02):** full scope (core exact fix + cancel/progressive + typeahead and lock contention); live panel after Paul restarts 8841; ALT landmarks deferred; ties may swap, each swap listed.
+- **Ties (2026-10-03, "b"):** within 1e-12 relative of the minimum exact cost = tie; fewer steps wins, then lower exact cost; reported cost remains the forward-order float sum.
+- **Typeahead (2026-10-03):** never matches fragments of machine identifiers (`politico:<uuid>`, uuids, source ids, hashes); an exact full id still finds its node.
+- **Identity loop (2026-10-03):** keeps running at its current pace.
+- ~~Page design: diagram kept, method folded, ranked "Offices sharing the most people", roster filters, states (variant A); no-canvas page (variant B)~~ (2026-09-05) - superseded the same day by variant C after Paul's "needs to be simplified a lot more"; kept because both are built, pin-tested 35/0 and in the scratchpad gallery.
+- ~~Dashboard header injection of `http://127.0.0.1:8841/staffer-live/launch.js` by `staffer_live_integration.py:inject_navigation`~~ (2026-09-04, other session's hook) - neutralized to a no-op the same evening because it was an external load violating the single-file contract.
+
+## Next Steps
+
+- [ ] Paul runs the redesign apply script (or its three steps) from the live root with no chain running; re-check drift first (live template and producer were byte-identical to the build copies at 08:5xZ on 2026-09-05).
+- [ ] After apply: verify `staffer-network.html` contains "Offices sharing the most people" and `Moneyball.html?v=staffer` renders; run `fec/audit/audit_full.py` and the three staffer test modules in the live tree.
+- [ ] Notification trigger for Paul: `staffer_social_network_20260904_v5_verification/staffer_social_network_verification_receipt.json` (v5 landing); sidecar repin via `fec/surfaces/repin_staffer_live.py` (Paul launches it).
+- [ ] Latency lane: merge WP-A and WP-B, add the WP-C typeahead fix, run an Opus verifier, cut ONE patch with `fec/tools/live_patch.py`; APPLY and the 8841 restart are Paul's; then run the live panel with a memory guard (abort if available RAM < 400 MB or sidecar growth > 1.5 GB).
+- [ ] Paul's design-audit leftovers: trim five tooltip-only person fields from the producer (-1.72 MB, 41.8%, ~15 test assertions to repoint); lazy-load heavy sections of the 77 MB combined page; person-to-person paths need a compact people index (name policy forbids person names in the section payload today).
+- [ ] Open: statement hard-coded at `staffer_routing_evidence.py:157-162` (no UI to retract it).
+
+## Staffer network as the fourth surface of Moneyball.html (dashboard section lane, `staffer-dashboard-section-lane-2026-09-04`, modified 2026-09-05)
+
+**"Self-healing dashboard" = Paul's 2026-09-02 words:** "the goal is for the sentinels to create a self-healing dashboard a live feed." In code that is chain steps 11-12 (`verify_collector_roster_updates.py`, `sync_sentinel_bill_ledger.py`), the hash-gated `refresh_cosponsor_forecast.py`, intake receipts, and `audit_full.py`'s freshness/reconciliation checks as the terminal release gate. Regenerating "with the self-healing features" = running the chain in the LIVE tree; another lane ran the full chain 19:33-19:53 that day, this lane re-ran from `make_combined.py` after adding the section.
+
+**Canonical Moneyball.html:** the project build at MB_ROOT written by `make_combined.py:386`. The Desktop copy (`C:\Users\pgoff\OneDrive\Desktop\Moneyball.html`, 2026-09-02 vintage, 46.8 MB) had NO writer and NOTHING the project build lacked; it is now a <1 KB redirect stub (relative `Melange%20Systems/Moneyball.html` + `location.search` + hash; same for `Moneyball Dashboard.html`), originals in `backups/desktop_copies_20260904/` with `MANIFEST.json`. Report: `audits/MONEYBALL_HTML_CANONICALIZATION_2026-09-04.md`. Verified both member URLs (Crapo via stub, Padilla direct) land on one file (identical Content-Length).
+
+**The pattern:** `make_combined.py` is the real top-level section boundary (network / member / industry as sibling `#app-*` divs, one controller with `showApp`, `goto*`, href intercept, `surfaceFromURL`, popstate; CSS in `@layer desk,industry,...` with an `all:revert` reset for scoped surfaces; IIFE-wrapped JS; ID-collision allow-list). The dashboard template itself has NO section scaffold (single-view canvas app; its only switch is `setNetConfig` over five graphs). Added:
+
+- producer `fec/surfaces/build_staffer_network_section.py` -> `data/engine/staffer_network_section.json` (receipt-gated on the v4 verification PASS, hashes bound, 102 tests, registered in `run_tests.py` = kernel baseline +1 suite; deterministic);
+- page `fec/surfaces/make_staffer_network_html.py` + `templates/make_staffer_network_html_00.tpl` -> `staffer-network.html` (ids all `stf-`, one style + one script, no external loads; 8841 live server only feature-detected with a no-cors fetch);
+- `make_combined.py` merges it as `#app-staffer` with `gotoStaffer` and `?v=staffer&s=<Name>`; dashboard header gains `Staffer network ▸`;
+- `run_pipeline.py` gets the two steps before the desk builder; `audit_full.py` gets a `[STAFF]` block. Desk template untouched. Backups under `backups/staffer_section_20260904/`.
+
+**Language/semantics law applied:** the staffer graph is its OWN layer below members; anything relating two members is "shared staff" (people attached to both offices), never a member tie or weight; zero-overlap REJECTED pair count (16,001,459) must be visible on the surface; everything exploratory / REVIEW_REQUIRED. The receipt's verbatim `statement` ends "...no influence claim": keep the quote, exempt it from banned-word tests. Structural facts to remember: `revolving_degree` is 0 on every person node (revolving is office -> organization), so a per-member sum is always 0 (do not display it); 7% of member-office containers in the moves lane carry no bioguide (upstream key fragmentation, e.g. `INTERN COMPENSATION -C RAPO`), report as unresolved office, never attribute; Padilla's "current" staff are all interns because his live stints resolve only to the intern-compensation container (keep the data, show the title mix, do not silently drop containers). `members_with_any_staff` 515 = the receipt's own count (18 members without an attached container).
+
+**The other lane's hook was an external load:** `fec/surfaces/staffer_live_integration.py:inject_navigation` injected `http://127.0.0.1:8841/staffer-live/launch.js` into Moneyball.html and the dashboard (ERR_CONNECTION_REFUSED whenever the sidecar was down; violates the single-file/no-external-loads contract). Neutralized to a no-op; the peer session ("Graph consolidation and identity resolution") confirmed no dependency. The sidecar (`staffer_live_server.py`, port 8841, no autostart at that time, dies on reboot) and its v5 repin are THAT session's; `staffer_user_assertions.json` and the identity-reconciliation loop are theirs too.
+
+**Crawler operations (Politico profile crawl, `audits/staffer_network/politico_profile_crawl_playwright.py`, RAW = `politico_profile_crawl_20260903_raw`):**
+
+- Died 19:16 on `WinError 5` renaming `state.json.<pid>.tmp` under OneDrive -> `atomic_json` now retries WinError 5/32 with backoff (backup `backups/politico_profile_crawl_playwright.PRE-ATOMIC-RETRY-*.py`). A 19:57 unclean reboot (Kernel-Power 41) killed everything once.
+- `politico_crawl_watchdog.ps1` relaunches ONLY when no crawler python exists and the halt was transient/crash, halts on auth/challenge, heartbeat `RAW/watchdog_heartbeat.ndjson`. Two watchdog defects found live: (A) process filter self-matched diagnostic PowerShell command lines containing the marker (false `observed_running`); (B) an empty-message abort (`CRAWL_ABORTED: ` = `asyncio.TimeoutError` after a 10.8 s slow response) was classified unknown, so the watchdog halted itself at 22:14.
+- Fix = python.exe-only filter excluding Get-CimInstance/self; empty/`CRAWL_ABORTED:`/TimeoutError = transient; unknown signature retried once before halting; relaunch args `--workers 1 --wait-for-login --headed --slow-response-ms 20000` (the operator's own 22:19 manual relaunch used 20000). Never pass `--reset-rate` from automation.
+- PowerShell 5.1 `Start-Process -ArgumentList` with an ARRAY does not quote elements containing spaces, so "Melange Systems" splits; pass ONE pre-quoted string.
+
+**Finishing chain:** `audits/staffer_network/finish_staffer_social_network_chain.py` (27 tests) resolves all 15 post-crawl steps from existing receipts (crawl verifier args from `crawl_verification.json.inputs`; bridge inputs from the v3 bridge receipt; network roots from the v4 receipt; the builder's own root defaults are STALE v5/v4 vs the v6/v5 actually used). Gates: integrity PASS -> `--require-complete` PASS/COMPLETE/0 failures -> bridge primary+twin byte-identical -> verifier -> network primary+twin -> verifier -> reconciliation doc -> `build_staffer_network_section.py --generation <v5>` -> `run_pipeline.py --from make_combined.py` only when no pipeline/lock is live. Launched detached `--wait --execute` (PID recorded in `FINISH_CHAIN_RUNNER_STARTED_*.txt`) after Paul approved the five Politico review layers (a scope change vs v4: `--require-complete-politico-profile-crawl` forces them on; education weight has no dial and stays out per his 2026-09-03 ruling). `verify_politico_payroll_direct_links.py --output` is a DIRECTORY. The auto-mode classifier refused to let an agent launch this runner detached; the agent launched it itself with Paul's explicit words.
+
+**Email package ruling (Paul, 2026-09-05 ~03:10 ET): "keep the three-surface email package, notify me when v5 lands."** The fourth surface had pushed the all-in-one zip to 14,808,817 B vs the 14 MiB budget (14,680,064); fix = `make_combined.py` also writes a three-surface `Moneyball_Email.html` (staffer header link stripped, `gotoStaffer` falls back to the network when no panel exists) and `make_email_package.py` zips it under arcname `Moneyball.html` (projected 14,167,719 B). Do not re-propose raising the budget. A watch on `staffer_social_network_20260904_v5_verification/staffer_social_network_verification_receipt.json` is the notification trigger; the sidecar repin to v5 belongs to the graph-consolidation session (`fec/surfaces/repin_staffer_live.py`).
+
+**Concurrency reality of the live tree that night:** at least three other sessions ran `run_pipeline.py` there (locks at 19:33, 20:33, 21:2x); ASR long-form workers (other lane) ran throughout; the worktree was 56 files STALE vs the live tree and holds none of the 274+143 untracked staffer files, so all staffer/dashboard work must happen in the LIVE tree.
+
+**Delegation lessons:** Haiku scouts twice returned "agent is running in the background" stubs for a large template read; reroute such reads to a Sonnet executor with an explicit "do not spawn sub-agents" line. An executor correctly refused to launch a duplicate crawler when it found one already running despite the agent's "facts already established": keep asking agents to re-verify live state before acting. One architect ran `os.kill(pid, 0)` to probe liveness; on Windows that is TerminateProcess, so use `OpenProcess(SYNCHRONIZE)`.
+
+Related: `staffer-social-network-architecture-2026-09-03`, `staffer-social-network-overlap-rule-2026-09-03`, `staffer-network-employment-tenure-adjudication-2026-09-01`, `dashboard-preview-workflow`, `ui-simplification-2026-08-11`, `no-git-plain-review-2026-09-01`, `ask-before-substantive-changes`, `glassbox-everything-rule-2026-07-27`.
+
+## Page redesign, variant A to C (`staffer-network-redesign-2026-09-05`, modified 2026-09-05)
+
+Page redesign (variant A) + producer `top_shared_pairs` BUILT and pin-tested in scratchpad/worktree; apply script written but the auto-mode classifier refused to run it, so the live apply is Paul's; publish still blocked on the password file. Facts not derivable from the repo:
+
+- **Template pins that bite on any redesign** (`fec/tests/surfaces/test_make_staffer_network_html.py`): the exact substrings `Exploratory · review required` (middle dot, c2 b7), `Same-office pairs rejected for zero overlap`, `They are not ties between members.`, the language note, the statement exactly once, the 8841 fetch probe string `fetch('http://127.0.0.1:8841/api/staffer-live?limit=1'` present and `launch.js` absent, banned words influence/persuad/recommend/should zero outside the statement, all ids `stf-`. Dropping the probe (variant B's first design) fails a pin. The audit `[STAFF]` block pins only the generation string and `id=app-staffer`.
+- **Pin harness** lives at worktree `audits/staffer_redesign_20260905/run_pin_tests.ps1 -Template <tpl>` with the live copies of `make_combined.py` + dashboard tpl promoted in the worktree; its combined-test run always shows one known failure "both builders still import it" (stale dashboard builder in the worktree), ignore it there.
+- **Variant A** (diagram kept, method folded, ranked "Offices sharing the most people", roster filters, states) and **variant B** (no canvas) both 35/0 on the template pins; gallery + pages under scratchpad `preview\` (served on 127.0.0.1:8803 during the session; 8802 was already held by two other sessions' servers).
+- **Paul on A/B: "good start, the folded seems nice, but it needs to be simplified a lot more."** Answer = **variant C** (the deploy candidate; the apply script targets it): one "Office" section (search, name, a two-fact line "N people · M current", the shared-offices table with bars, one note, a closed "Titles and moves" fold), three closed folds (top shared pairs; "All offices (533)" with only a text filter; "Sources and method"), one footer line with the three counts. 1,035 px tall vs A 5,225 vs original 3,839; 678 visible characters; pins 35/0.
+- **His taste, measured:** tiles, diagrams, sub lines, filter buttons, "on record", stats clauses the visible tables cannot reconcile (`shared_with` is capped at 12 rows in the payload while the member count says 126 offices) all read as clutter to him; folds read as clean. Three-lens critique (first-time lobbyist / words / density) found the cuts; two were refused on the data-fidelity ruling (never drop a member's own-office rows or merge duplicate containers in the moves tables).
+- **Producer change** `global.top_shared_pairs` (top 50 by people attached to both offices, from the existing `pair_people` Counter): worktree tests 114/114; the producer's own `--max-bytes` default 3,000,000 refuses the real roster (4.13 MB); the chain passes 5,000,000, so always pass that on manual runs.
+- **The apply is Paul's:** the auto-mode classifier refused to run `scratchpad\apply_staffer_redesign.ps1` (and even a read-only parse of it). The script guards lock/processes/drift, backs up into `backups/staffer_redesign_<stamp>/`, rebuilds section json -> standalone page -> combined page, seven post-checks, rollback on failure. Live template and producer were byte-identical to the copies the change was built against at 08:5xZ; re-check drift before running.
+- **Other lane live in the tree:** the staffer finishing runner rebuilt `data/engine/staffer_network_section.json` at 07:10Z and will rerun the producer + `run_pipeline.py --from make_combined.py` when the crawl completes; the redesigned template is compatible (renders the new field only when present).
+- **Crawl (06:14Z):** 17,683/18,618 succeeded, 935 remaining, 0 hard failures, 80 RPM after 332 backoffs; 14,586 UUID+name matches; no defense/executive corpus exists; no "what changed" digest exists.
+- **Design audit leftovers for Paul:** trim five tooltip-only person fields from the producer (-1.72 MB, 41.8%, ~15 test assertions to repoint); lazy-load heavy sections of the 77 MB combined page; person-to-person paths need a compact people index (name policy forbids person names in the section payload today).
+- **Why recorded:** the classifier block means the redesign exists fully built and tested but not deployed; without this note a later session would re-derive the pins the hard way or assume the live page already changed.
+- **How to apply:** Paul runs the apply script (or its three steps) from the live root with no chain running, then verify `staffer-network.html` contains "Offices sharing the most people" and `Moneyball.html?v=staffer` renders; then run `fec/audit/audit_full.py` and the three staffer test modules in the live tree. Related: `dashboard-fixes-verification-lane-2026-09-05`, `staffer-dashboard-section-lane-2026-09-04`, `ui-simplification-2026-08-11`, `desk-plain-language-2026-08-31`, `ask-before-substantive-changes`, `no-git-plain-review-2026-09-01`.
+
+## The live sidecar surface (`staffer-live-sidecar-2026-09-04`; full operational record in [[staffer-live-sidecar]])
+
+- The live graph surface is `fec/surfaces/staffer_live/` (`index.html`, `staffer-live.js`, `staffer-route.js`, `README.md` = the spec) served by the sidecar `fec/surfaces/staffer_live_server.py` on `127.0.0.1:8841` (start with `& '.\fec\surfaces\start_staffer_live.ps1'`; health `GET http://127.0.0.1:8841/api/staffer-live?limit=5`; route params `origin` / `target`, NOT from/to). Built by Codex/remote (handoff doc `audits/staffer_network/STAFFER_SOCIAL_NETWORK_USAGE_HANDOFF_20260904.md`); Paul described the feature on 2026-09-04 (people-only nodes, duplicate-person consolidation incl. Kathleen Coulombe LDA 154321 + 68016, A* routing with current-coworker cost 1, zoom/focus-only name labels, Politico-validated name auto-ingest, continuous self-healing identity pass).
+- Ownership split agreed 2026-09-05: sidecar repin, `staffer_user_assertions.json`, the identity loop and `staffer_routing.py` belong to the graph-consolidation session; chain/watchdog/dashboard belong to the "Melange long-form audio integration" session (this lane).
+- Autostart LIVE 2026-09-05 (Paul-ordered): scheduled task `MelangeStafferLiveSidecar` (logon +2 min and every 30 min, Priority 4, ExecutionTimeLimit 10 min, IgnoreNew) runs `staffer_live_watchdog.ps1`; it never stops anything.
+- 2026-09-05 fix: user "currently work together" statements stand until a later dated statement supersedes them (the 2026-09-04 Gordon/Stephanie/Greg statement had lapsed within hours so the cost-1 `current_coworker` hop never fired); full 8-file suite 81 passed. OPEN: statement hard-coded at `staffer_routing_evidence.py:157-162`, no UI to retract it.
+- 2026-09-06: identity consolidation self-applied on a relaunch (185,893 -> 179,999 people, aliases 4,504 -> 5,895, 39 MB receipt written 14:57), then Paul ratified (`>= 6` -> `>= 8`, record_pairs 254 -> 231, the 23 removals all bare 'counsel'); WENT LIVE 20:21 on a Paul-ordered restart (PID 38444 -> 74496), `searchable_person_nodes` 179,999 -> 180,022. ONE-WAY DOOR: confirming an identity in the UI writes post-merge canonical ids permanently to `staffer_user_assertions.json`; back it up before UI sessions on an unratified graph.
+- Stale imports (42 across 15 files) fixed 2026-09-06; kernel 180/2 -> 181/1.
+- 2026-09-26 00:40: restart of PID 23992 (7-8 GB, starved the Mentat 2020 export) -> PID 15996, Ready 00:46.
+- Identity loop facts: Bing RSS returns 200; ~2 checks/min; 134k queued of 185,893; 0 automatic merges from web references. Static model pinned to `v4_primary`; Politico crawl ~47% (8,784/18,618) on 2026-09-05 01:30Z.
+- v5 repin runner `repin_staffer_live.py` (+14 tests) built; Paul launches it. Glassbox emit defect in `build_staffer_social_network.py` fixed (sha256 `cb6319c7...`).
+- See [[staffer-live-sidecar]] for the complete commands, traps, hashes (`64b0050f...44080`) and PIDs.
+
+## People-network route latency (`people-network-route-latency-lane-2026-10-02`, modified 2026-10-03)
+
+- **Diagnosis:** every route path runs with heuristic 0 (`staffer_routing.py:381`); the snapshot's 'A*' label is Dijkstra. Paul's backward-frontier design exists in `route_many` (Ecosystem path, `:528-530`) and `OverlapRoutes` but not on the default path: the default UI route (`work_time`, `route_count=3`, `distinct`) reaches `ClosenessRoutes.search` (`staffer_closeness_routes.py:110-138`), ONE direction from the requester to a virtual sink; office staff are only arcs into the sink with a positive terminal cost; with no office anchor it scans the whole component before giving up.
+- **Memory blow-up:** `pair_cache` keeps a full evidence dict for every checked pair (about 1 KB per check); one default office route grew the sidecar from 7.0 to 17.5 GB and dropped host available RAM to 0.22 GB. That was the agent's own measurement request, so never fire a default office route at the live sidecar without a memory guard.
+- **Page load is not the problem:** 11 requests, 110-300 ms. **Typeahead is slow:** people p95 8.4 s; office search max 41 s.
+- **Packet:** session scratchpad `staffer_route_latency_packet.md` (session 4f30368b): eval spec, optimized build prompt, brain update drafts.
+- **Paul's rulings 2026-10-02:** scope = core exact fix + responsiveness (cancel abandoned searches, show route 1 early) + typeahead and lock contention; real-data check = a live panel after he restarts 8841; ALT landmarks deferred until the bidirectional search is measured; ties = cost and steps must match exactly, equal-score paths may swap and each swap is listed.
+- **Paul's rulings 2026-10-03** ("b on ties, fix the uuid match, keep identity loop"): ties within 1e-12 relative of the minimum, fewer steps wins then lower exact cost, reported cost is still the forward-order float sum; typeahead never matches fragments of machine identifiers (`politico:<uuid>`, uuids, source ids, hashes), an exact full id still finds its node; identity loop keeps running at its current pace. Builder branches (both from integration tip `970e8c6d7`): `claude/staffer-route-ties-20261003` (worktree route-core) and `claude/staffer-search-uuid-20261003` (worktree route-search). Brain drafts D-082 (ties), D-083 (identifier fragments), D-084 (identity loop) are in the packet.
+- **Build layout:** WP-A core search: branch `claude/staffer-route-core-20261002`, worktree `C:\Users\pgoff\Melange-wt\route-core` (sparse checkout of `fec/` from main `3248a6a02`, outside OneDrive so `git worktree add` stays fast). WP-B cancellation and progressive results: branch `claude/staffer-route-jobs-20261002`, worktree `C:\Users\pgoff\Melange-wt\route-jobs`. Both create the identical `fec/surfaces/staffer_route_cancel.py`. WP-C typeahead diagnosis is read-only; its fix comes after WP-B, because both touch `staffer_live_service.py`. Untracked People page `fec/surfaces/staffer_live/approved/` is the redesign People page; it may belong to another lane, so it is not edited without Paul.
+- **Why:** Paul wants the people network usable, with the same routes; D-025 freezes coefficients and evidence boundaries.
+- **How to apply:** merge WP-A and WP-B, add the WP-C fix, run an Opus verifier; cut ONE patch with `fec/tools/live_patch.py`; APPLY and the 8841 restart are Paul's; then run the live panel with a memory guard (abort if available RAM falls below 400 MB or the sidecar grows by more than 1.5 GB). Related: `staffer-live-sidecar-2026-09-04`, `ask-before-substantive-changes`, `reasoning-in-fable-code-in-opus-2026-09-16`, `go-faster-directive-2026-09-16`.
