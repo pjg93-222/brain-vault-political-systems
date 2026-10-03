@@ -4,9 +4,11 @@
 // Privacy: the `sources` frontmatter block (paths + sha256) is dropped before anything else touches the text, and every
 // free-text value that reaches the output (title, tagline, status, category, domains, updated) goes through toPlain().
 //
-// Hand-written notes: nothing inside a note may break the build. Missing or malformed frontmatter, a missing or unknown
-// `type`, a missing name, odd value types, duplicate file names and new top-level folders all degrade to a sensible
-// default plus a warning (see buildGraph). The only thing that stops a publish is the privacy gate in checks.ts.
+// Hand-written notes: nothing inside a note may break the build, and every .md note appears in the graph. Missing or
+// malformed frontmatter, a missing or unknown `type`, a missing name, odd value types, duplicate file names, notes in the
+// vault root and new top-level folders all degrade to a sensible default (see buildGraph). A note with no usable `type`
+// takes the type of its top-level folder (actors -> actor, ...); outside those folders it is "other". The only thing that
+// stops a publish is the privacy gate in checks.ts.
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { VAULT, oneLine } from "./common.ts";
@@ -24,17 +26,17 @@ export const DIR_TYPE: Record<string, string> = {
   teams: "team",
   fleeting: "fleeting",
 };
-/** Notes with no `type`, an unknown `type`, or unreadable frontmatter. */
+/** A note with an explicit but unrecognised `type`, or with no type that sits outside the entity folders (vault root, new folders). */
 export const OTHER = "other";
 export const KNOWN_TYPES: string[] = Object.values(DIR_TYPE);
 export const ALL_TYPES: string[] = [...KNOWN_TYPES, OTHER];
 
 /**
- * Notes sitting directly in the vault root (not in any folder) are NOT graph nodes: that is where CLAUDE.md lives and the
- * brief was "every .md file in a top-level folder". Obsidian creates new notes in the vault root by default, so flip this
- * to true to include them (they will show as "other" unless their frontmatter has a type). CLAUDE.md stays excluded.
+ * Notes sitting directly in the vault root are graph nodes too: Obsidian creates new notes there by default, and a note
+ * written by hand must always appear. They show as "other" unless their frontmatter has a type. Only the root CLAUDE.md
+ * (the vault's instructions for Claude Code) is not a note; add other tool files to ROOT_NON_NOTES if they ever appear.
  */
-export const INCLUDE_ROOT_NOTES = false;
+export const INCLUDE_ROOT_NOTES = true;
 const ROOT_NON_NOTES = new Set(["claude.md"]);
 
 export type GNode = {
@@ -155,8 +157,9 @@ function collect(abs: string, rel: string, out: string[]) {
 
 /**
  * Every note, in a stable order: the eight entity folders in DIR_TYPE order, then any other top-level folder
- * alphabetically; inside a folder by relative path (identical to the old flat `readdir().sort()` order).
- * _template.md is skipped everywhere; hidden folders are never entered.
+ * alphabetically; inside a folder by relative path (identical to the old flat `readdir().sort()` order); notes in the
+ * vault root last (unless `rootNotes` is false), by name.
+ * _template.md is skipped everywhere; hidden folders and hidden files are never entered.
  */
 export function listNotes(vault: string = VAULT, rootNotes: boolean = INCLUDE_ROOT_NOTES): NoteFile[] {
   const entries = readdirSync(vault, { withFileTypes: true });
@@ -282,11 +285,16 @@ export function buildGraph(vault: string = VAULT, opts: { rootNotes?: boolean } 
     const { fm, body, state } = splitFrontmatter(readFileSync(f.abs, "utf8"));
     const fmClean = dropSources(fm);
 
-    // frontmatter -> y ({} whenever it is missing or unusable)
+    // what a note is when it does not state a usable type: its top-level folder's type, "other" outside those folders
+    const folderType = Object.hasOwn(DIR_TYPE, f.top) ? DIR_TYPE[f.top] : OTHER;
+    const fallback = folderType === OTHER ? `shown as "${OTHER}"` : `typed "${folderType}" from its folder`;
+
+    // frontmatter -> y ({} whenever it is missing or unusable). Broken frontmatter is worth a warning; a note that simply
+    // has none is normal for hand-written notes and only counts as a notice.
     let y: Record<string, unknown> = {};
     let fmOk = false;
-    if (state === "none") warnings.push(`no frontmatter: ${where} (shown as "${OTHER}", titled by its file name)`);
-    else if (state === "unterminated") warnings.push(`frontmatter is never closed with --- : ${where} (shown as "${OTHER}", titled by its file name)`);
+    if (state === "none") notices.push(`no frontmatter: ${where} (${fallback}, titled by its file name)`);
+    else if (state === "unterminated") warnings.push(`frontmatter is never closed with --- : ${where} (${fallback}, titled by its file name)`);
     else {
       try {
         const parsed: unknown = Bun.YAML.parse(fmClean);
@@ -294,20 +302,26 @@ export function buildGraph(vault: string = VAULT, opts: { rootNotes?: boolean } 
         else if (typeof parsed === "object" && !Array.isArray(parsed)) {
           y = parsed as Record<string, unknown>;
           fmOk = true;
-        } else warnings.push(`frontmatter is not a key/value block: ${where} (shown as "${OTHER}", titled by its file name)`);
+        } else warnings.push(`frontmatter is not a key/value block: ${where} (${fallback}, titled by its file name)`);
       } catch (e) {
-        warnings.push(`malformed YAML frontmatter: ${where}: ${oneLine((e as Error)?.message ?? e, 100)} (shown as "${OTHER}", titled by its file name)`);
+        warnings.push(`malformed YAML frontmatter: ${where}: ${oneLine((e as Error)?.message ?? e, 100)} (${fallback}, titled by its file name)`);
       }
     }
 
-    // type: only a recognised frontmatter `type` counts; anything else is "other"
-    let type = OTHER;
-    const typeRaw = scalar(y.type);
-    if (typeRaw !== null) {
-      const t = typeRaw.trim().toLowerCase();
+    // type: a recognised frontmatter `type` wins; an explicit but unrecognised one is "other"; a missing one (no key, empty
+    // value, no frontmatter, or frontmatter that cannot be read) falls back to the folder's type
+    let type = folderType;
+    const typeVal = fmOk ? y.type : undefined;
+    const stated = typeVal !== undefined && typeVal !== null && !(typeof typeVal === "string" && typeVal.trim() === "");
+    if (stated) {
+      const t = typeof typeVal === "string" ? typeVal.trim().toLowerCase() : "";
       if (KNOWN_TYPES.includes(t)) type = t;
-      else warnings.push(`unknown type ${JSON.stringify(oneLine(t, 40))}: ${where} (shown as "${OTHER}")`);
-    } else if (fmOk) warnings.push(`no type in frontmatter: ${where} (shown as "${OTHER}")`);
+      else {
+        type = OTHER;
+        const shown = typeof typeVal === "string" ? typeVal : JSON.stringify(typeVal);
+        warnings.push(`unknown type ${JSON.stringify(oneLine(shown, 40))}: ${where} (shown as "${OTHER}")`);
+      }
+    } else if (fmOk) notices.push(`no type in frontmatter: ${where} (${fallback})`);
     if (type !== OTHER && Object.hasOwn(DIR_TYPE, f.top) && type !== DIR_TYPE[f.top]) {
       notices.push(`type mismatch ${where}: frontmatter "${type}" vs folder "${DIR_TYPE[f.top]}"`);
     }
