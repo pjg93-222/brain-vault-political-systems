@@ -12,8 +12,7 @@ criticality: "low"
 pci: false
 known_issues:
   - "The watcher does NOT persist across reboots: no autostart is installed, so start it by hand from the vault root with `bun .bedrock/graph/watch.ts`; until then brain-graph.html goes stale"
-  - "The header comment in watch.ts still says a Startup-folder shortcut ('Brain Graph Watcher.lnk') starts the watcher at logon; no such shortcut exists (checked 2026-10-03)"
-  - "snapshot.ts pins the 2026-10-03 counts (74 notes, 260 links, 1468 mentions) and fails once notes are added; update SNAPSHOT when the vault has legitimately grown"
+  - "snapshot.ts pins the counts of its last deliberate update and fails once notes are added or relinked; update SNAPSHOT when the vault has legitimately grown"
   - "Light-mode contrast is low for some type colours (discussion yellow is about 1.6:1 on the light surface); the dark default mitigates this"
   - "The D3 script tag has no integrity (SRI) hash"
   - "Not tested in Firefox or Safari"
@@ -21,7 +20,7 @@ sources: []
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-03
-updated_by: "preserve@agent"
+updated_by: "capture-recall@agent"
 tags: ["type/actor", "status/active", "domain/frontend", "domain/agent-ops"]
 ---
 
@@ -59,7 +58,7 @@ Run these in `.bedrock/graph`:
 ```bash
 bun build.ts       # rebuild the page now (exactly what the watcher runs); the last output line is BUILD_RESULT {json}
 bun verify.ts      # full report on the built page, ending with the publish gate (exit 1 if the gate fails)
-bun snapshot.ts    # asserts the 2026-10-03 counts (74 notes, 260 links, 1468 mentions); EXPECTED TO FAIL once notes are added
+bun snapshot.ts    # asserts the pinned counts (notes, links, mentions, per type); EXPECTED TO FAIL once notes are added
 bun extract.ts     # read-only audit of the vault graph: counts, warnings, notices, top notes by degree
 ```
 
@@ -78,7 +77,8 @@ The scripts resolve their paths from their own location, so the working director
 - **Polling:** every 15 s it walks the vault (hidden folders such as `.git`, `.obsidian`, `.bedrock` and `.trash` are skipped) and builds a signature from the sorted path, size and mtime of every `.md` file.
 - **Settling:** when the signature differs from the one the page was last built from, it waits until the vault has been unchanged for 3 s (an editor autosaving, a git pull or a sync still writing), then runs `bun build.ts` as a hidden child process with a 120 s timeout.
 - **Startup and retry:** it also builds once when it starts, so the page is current after a start even if notes changed while it was not running. After a failed build it retries once, 60 s later, then waits for the next change.
-- **Read-only on the vault:** it only lists and stats `.md` files. It writes `watch.pid` and `watch.log` in `.bedrock/graph/` and, through `build.ts`, the page (atomically).
+- **Never edits notes:** it only lists and stats `.md` files (root `CLAUDE.md`, `index.md` and `log.md` are not part of its signature). It writes `watch.pid` and `watch.log` in `.bedrock/graph/` and, through `build.ts`, the page (atomically).
+- **Recall index:** since 2026-10-03, after every rebuild it also runs `bun ../recall/hook.ts index`. That refreshes the recall index and the generated `index.md`, rewritten only when its content changes, and logs one `recall-index` line.
 - **Single instance:** `watch.pid` holds the running watcher's id. A second start exits quietly and logs "start ignored" when the first is alive. A stale pid file (for example after a reboot, when the number may belong to any process) is only trusted if that process's command line names `watch.ts`.
 - **Log:** `watch.log` gets one line per event (timestamp, trigger, what changed, result, duration, note and link counts), rotated at 1 MB with one `.old` kept. The last recorded rebuild on 2026-10-03 (16:58) reported 74 notes, 260 links, 0 warnings.
 - **State on 2026-10-03:** no watcher process was running and no autostart shortcut is installed, so the page on disk reflects the vault as of that last rebuild until the watcher is started or `bun build.ts` is run.
@@ -92,11 +92,11 @@ $p = Get-Content 'C:\Users\pgoff\Documents\brain\.bedrock\graph\watch.pid'
 Stop-Process -Id $p
 ```
 
-Autostart: none is installed. If it is wanted, a Startup-folder shortcut that launches `bun .bedrock/graph/watch.ts` hidden would give the behavior that the header comment in `watch.ts` describes.
+Autostart: none is installed. If it is wanted, a Startup-folder shortcut that launches `bun .bedrock/graph/watch.ts` hidden would start it at every logon. Without the watcher, the capture hook's sync still rebuilds the page whenever it changes the vault.
 
 ## Build rules
 
-- The extractor includes notes from all eight entity folders, any other top-level folder, and notes in the vault root, except the root `CLAUDE.md` (the `ROOT_NON_NOTES` list in `extract.ts`). It skips `_template.md` everywhere and every hidden folder.
+- The extractor includes notes from all eight entity folders, any other top-level folder, and notes in the vault root, except the root `CLAUDE.md` and the system notes `index.md` and `log.md` (the `ROOT_NON_NOTES` list in `common.ts`). It skips `_template.md` everywhere and every hidden folder.
 - Type: a recognised frontmatter `type` wins; a missing type falls back to the folder's type; an unknown explicit type, or an untyped note outside the entity folders, becomes "other" (grey `#757575`). Malformed YAML or an unclosed frontmatter block is logged as a warning, and the note still appears.
 - Only these fields reach the page for each note: id, folder, type, title, status, domains, category, updated date, tagline and degree. The `sources` block is dropped before anything else reads the note.
 - A link is an undirected pair of notes joined by at least one resolved wikilink (frontmatter and body); its weight is the number of mentions. Unresolved wikilinks are counted but drawn nowhere.
@@ -118,8 +118,7 @@ Autostart: none is installed. If it is wanted, a Startup-folder shortcut that la
 ## Known Issues
 
 - **Watcher does not persist across reboots.** Start it by hand (command above). Until then the page goes stale.
-- **Stale comment in `watch.ts`.** Its header says the watcher is started at logon by the shortcut "Brain Graph Watcher.lnk" in the Startup folder. That shortcut does not exist (checked 2026-10-03), so the comment is wrong.
-- **`snapshot.ts` fails after any vault growth.** It pins the 2026-10-03 install counts on purpose and is deliberately not run by the watcher. `verify.ts` and the publish gate are the checks that stay valid for any vault.
+- **`snapshot.ts` fails after any vault growth.** It pins the counts of its last deliberate update on purpose and is deliberately not run by the watcher. `verify.ts` and the publish gate are the checks that stay valid for any vault.
 - **Light-mode contrast.** Some type colours are weak on the light surface (discussion yellow `#F1C40F` is about 1.6:1); the dark default mitigates this.
 - **No SRI on D3.** The script tag for D3 has no `integrity` attribute.
 - **Browsers.** Not tested in Firefox or Safari.

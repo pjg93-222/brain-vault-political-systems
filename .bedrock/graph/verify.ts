@@ -1,5 +1,5 @@
 // Independent verification of the BUILT page (it does not import the extractor): prints a full report and ends with the
-// publish gate from checks.ts, exiting 1 if the gate fails. No fixed counts live here; the 74-node / 260-link snapshot is
+// publish gate from checks.ts, exiting 1 if the gate fails. No fixed counts live here; the pinned note / link counts are
 // a separate check in snapshot.ts, so this one stays valid as the vault grows.
 //   bun verify.ts [--file <page>]      (default: brain-graph.html beside the vault)
 import { readFileSync, statSync } from "node:fs";

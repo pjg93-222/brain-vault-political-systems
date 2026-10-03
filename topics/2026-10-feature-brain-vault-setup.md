@@ -14,7 +14,7 @@ objective: "Consolidate all Claude Code memory files into a private, linked Obsi
 created_at: 2026-10-03
 sources: []
 updated_at: 2026-10-03
-updated_by: "preserve@agent"
+updated_by: "capture-recall@agent"
 tags: ["type/topic", "status/completed", "domain/agent-ops", "category/feature"]
 ---
 
@@ -114,9 +114,9 @@ Verdict: SAFE WITH CAVEATS.
 
 - [x] PATH: the Python user Scripts directory is on the user PATH (confirmed 2026-10-03).
 - [ ] Optional: set Obsidian's default new-note folder to `fleeting/`.
-- [ ] Update the pinned counts in `snapshot.ts`; it fails now that these setup notes have grown the vault past 74 notes.
+- [x] Update the pinned counts in `snapshot.ts`; it fails now that these setup notes have grown the vault past 74 notes. (Done 2026-10-03 with the capture and recall work.)
 - [ ] Re-check the importer-inference sections: the setup session counted 24 notes with such sections, but a 2026-10-03 re-scan for explicit labels such as "inference by the importer" found only one (in the PAC accuracy attempt 2 rulings discussion), so the count or the label wording needs settling.
 - [ ] Consider an integrity (SRI) hash on the D3 script tag of the graph page.
-- [ ] Build a re-import script for new memory files using the manifest upsert key (none exists yet).
+- [x] Build a re-import script for new memory files using the manifest upsert key (none exists yet). (Done 2026-10-03: the capture hook's sync copies new and changed memory files into `fleeting/`, deduping on the `sources` path and sha256; see [[brain-vault-political-systems]].)
 - [ ] Decide whether the graph watcher should autostart: no Startup shortcut is installed, so it must be started by hand after every reboot.
-- [ ] Correct the stale header comment in `watch.ts`, which describes a Startup shortcut that does not exist.
+- [x] Correct the stale header comment in `watch.ts`, which describes a Startup shortcut that does not exist. (Done 2026-10-03.)

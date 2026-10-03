@@ -11,7 +11,7 @@
 // stops a publish is the privacy gate in checks.ts.
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { VAULT, oneLine } from "./common.ts";
+import { VAULT, ROOT_NON_NOTES, oneLine } from "./common.ts";
 
 export { VAULT };
 
@@ -33,11 +33,11 @@ export const ALL_TYPES: string[] = [...KNOWN_TYPES, OTHER];
 
 /**
  * Notes sitting directly in the vault root are graph nodes too: Obsidian creates new notes there by default, and a note
- * written by hand must always appear. They show as "other" unless their frontmatter has a type. Only the root CLAUDE.md
- * (the vault's instructions for Claude Code) is not a note; add other tool files to ROOT_NON_NOTES if they ever appear.
+ * written by hand must always appear. They show as "other" unless their frontmatter has a type. The exceptions are the
+ * root files in ROOT_NON_NOTES (common.ts): CLAUDE.md (the vault's instructions for Claude Code) and the system notes
+ * index.md (generated catalog) and log.md (append-only event log). Add other tool files there if they ever appear.
  */
 export const INCLUDE_ROOT_NOTES = true;
-const ROOT_NON_NOTES = new Set(["claude.md"]);
 
 export type GNode = {
   id: string; // file name without .md; the vault-relative path (no .md) when several notes share a file name
@@ -200,7 +200,8 @@ export function listNotes(vault: string = VAULT, rootNotes: boolean = INCLUDE_RO
 // reading one note
 
 type FmState = "ok" | "none" | "unterminated";
-function splitFrontmatter(raw: string): { fm: string; body: string; state: FmState } {
+/** Split a note into its raw frontmatter text and body (BOM and CRLF normalised). Also used by the recall hook. */
+export function splitFrontmatter(raw: string): { fm: string; body: string; state: FmState } {
   const text = raw.replace(/^\uFEFF/, "").replace(/\r\n/g, "\n");
   const empty = text.match(/^---[ \t]*\n---[ \t]*(?:\n|$)/); // "---" immediately followed by "---"
   if (empty) return { fm: "", body: text.slice(empty[0].length), state: "ok" };
@@ -210,7 +211,7 @@ function splitFrontmatter(raw: string): { fm: string; body: string; state: FmSta
 }
 
 /** drop the top-level `sources:` block (paths + hashes) from raw frontmatter text */
-function dropSources(fm: string): string {
+export function dropSources(fm: string): string {
   const out: string[] = [];
   let skipping = false;
   for (const line of fm.split("\n")) {

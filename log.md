@@ -1,0 +1,9 @@
+# Log
+
+> Append-only event log of this vault, **oldest first**: new events go at the bottom, one line each, and existing lines are never edited or reordered. Format: `- YYYY-MM-DD HH:MM ±HH:MM | action | what happened | notes touched`. The capture hook appends a line for every sync that writes notes; agents and people append one whenever they create, update, promote or delete notes. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
+
+- 2026-10-03 13:09 -04:00 | import | 210 Claude Code memory files (Melange Systems 183, Draft Systems 27) imported as 74 notes; `.bedrock/import-manifest.json` is the upsert key (commit 5510dd8) | [[paul-goff]], [[melange-systems]], [[mentat]], [[forecast-redesign]], [[cu-geography]] and 69 more (every note added by commit 5510dd8)
+- 2026-10-03 16:48 -04:00 | graph-tooling | graph page build tooling and live watcher added under `.bedrock/graph` (commit 5da6a8d) | none (tooling only)
+- 2026-10-03 17:00 -04:00 | graph-tooling | graph build includes notes in the vault root and falls back to the folder type (commit 44caa3d) | none (tooling only)
+- 2026-10-03 18:11 -04:00 | preserve | vault setup recorded: 3 new notes and backlinks in 3 existing ones (commit 32281a8) | [[brain-vault-political-systems]], [[brain-graph]], [[2026-10-feature-brain-vault-setup]], [[paul-goff]], [[claude-code-harness]], [[project-brain]]
+- 2026-10-03 18:55 -04:00 | capture-recall | Phase 1 capture and recall: hooks run `.bedrock/recall/hook.ts` (SessionStart context, per-prompt recall, memory sync into fleeting/ on Stop and SessionEnd); recall index; generated index.md; this log; note rules in CLAUDE.md; stale watcher and re-import notes corrected | [[brain-vault-political-systems]], [[brain-graph]], [[2026-10-feature-brain-vault-setup]], [[index]]
