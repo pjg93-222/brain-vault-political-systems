@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-07-01
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-legislative-pillar-acu-review]]"
 ---
@@ -56,3 +56,5 @@ Lane: branch `claude/bill-lobbying-regression-d38c1e` (zero commits vs main 8953
 - Open for Paul (at build time): apply now?; audit FAIL-on-absent vs skip; 8 sequential replaces vs dir swap; when to flip the dials (flip BOTH together; A without B turns the audit red by design). Apply and dial flip were subsequently done (above); FAIL-on-absent vs skip remains the audit as built.
 
 **Why / how to apply (the memory's own note):** five scouts were needed to establish that the "linear regression" premise is wrong and that the model is frozen, so the next session should not redo that discovery. Answer "logistic vs linear" with "already logistic"; never describe lobbying as a predictor in this model; before any refresh work check whether the 08-01 zips have been re-pulled and whether MoneyballWeeklyRefresh is still Disabled. Related: `lobbying-member-link-is-circular-2026-08-19`, `ask-before-substantive-changes`, `no-git-plain-review-2026-09-01`, `lobbyview-integration-2026-07-31`.
+
+Follow-on research of 2026-09-05 on first cosponsorships among 377 continuing members: [[2026-09-feature-cosponsor-first-signature-forecast-experiments]].

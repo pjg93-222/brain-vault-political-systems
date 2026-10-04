@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-07-16
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-primacy-and-industry-tier-boards]]"
 ---
@@ -201,3 +201,7 @@ Lane opened 2026-09-19 in worktree `ecc-benchmark-methodology-c4f259` (the `/ecc
 - Pull / handicap: draft-1 handicap k (pull toward zero) WITHDRAWN as size-biased; draft-2 symmetric pull -> dry run showed k_hat = 13.0 pull makes big records dominate; V1/V1.1 use NO pull; then Paul rejected V1.1 and the old rule's pull (+6.9 of 13 on average toward the old Tier 1) is what the grid shows to be doing real work.
 - Media: "R6, Yes" (separate factor) vs the pasted block (act kind inside the purity factor) -> resolved to one ledger; later press inside the factor at statement weight 0.10 x intensity gave the best result.
 - Classifier: Sonnet 4.5 (Paul-edited from Haiku 4.5; overrides the cost rule for this step) -> all 3 Anthropic API keys returned 'credit balance too low' -> Paul: "Use Codex Sol" (`gpt-5.6-sol`).
+
+### Outcome (2026-09-20)
+
+- Paul ratified the diagnostic arm CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating on 2026-09-20; it is the live default (`PRIMACY_METHOD=diagnostic_v1`, rollback `legacy`). Decision record: [[2026-09-20-primacy-diagnostic-adoption]].

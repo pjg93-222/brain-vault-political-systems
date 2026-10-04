@@ -56,7 +56,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "teach@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -220,12 +220,16 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[mentat-fec-pipeline-history-hardening]] | part: History of the Mentat FEC pipeline hardening on… |
 | [[mentat-fec-pipeline-history-audit-r12]] | part: History of the six-agent audit of 2026-07-27, the… |
 | [[mentat-fec-pipeline-history-september-lanes]] | part: History of the Mentat FEC pipeline lanes of September… |
+| [[mentat-fec-pipeline-runbook]] | part: How the Mentat R pipeline is run and kept correct (README… |
 | [[runpod-pod]] | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
 
 ### Related Concepts
 
 - [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
 - [[exclude-on-contradiction-not-ambiguity]] - Brain D-040: exclude a row only when its own evidence contradicts the attribution; missing or ambiguous info is flagged, not excluded.
+- [[mentat-fec-accounting-methodology]] - Mentat's accounting standard (version 5, 2026-09-12): six steps from Define to Verify and report; original employee and corporate giving counted once, PAC outgoing separate; four accuracy measures, never one percentage.
+- [[pac-cash-proportional-attribution]] - Mentat's rule for modeling company-funded PAC spending (2026-09-08): each payment takes the company's share of labeled cash just before it, transfers move balances instead of creating gifts, unverifiable inputs withhold it.
+- [[contract-fixture-discipline]] - A shape crossing a lane or process boundary is fixed by one JSON example file every suite imports, asserted against every producer, with a negative control that must fail; prose is never a contract (brain DE-021).
 
 ### Discussions
 

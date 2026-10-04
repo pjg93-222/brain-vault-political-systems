@@ -15,7 +15,7 @@ sources: []
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/frontend"]
 part_of: "[[mentat-console]]"
 ---
@@ -105,7 +105,7 @@ Paul (2026-09-13): "Go over the Mentat system ... debugging ... not the data its
 - curl from the sandbox gets "Connection was reset" on the Higgsfield CDN while PowerShell `System.Net.WebClient.DownloadFile` works (later lanes found the reverse; see traps in the PAC-map lane in [[mentat-console-pac-map-viz-lane]]).
 - Browser pane hidden => screenshots and sometimes `find`/JS time out for the first ~30 s after a load: wait and re-probe before declaring a wedge (the architect was nearly sent after a non-existent query storm).
 - A Claude Code process restart kills background agents - resume them by message, they keep their transcript. The harness refuses agent Edit/Write outside the session worktree, so cross-tree builds need a scripted patch engine or Paul's own session.
-- PARALLEL-LANE CONTRACT TRAP (2026-09-14): two architects built the client and server halves of one feature from one written API contract, each side's tests passed against its own reading (string vs dict for `source`/`provenance`), and only a live run of the real page against a writable console exposed the mismatch. Rule: when a feature is split across lanes, the contract must carry example payloads (not prose), one lane owns the shared fixture both suites import, and the lane is not "done" until a real-client integration pass on a writable instance has run every write path (save, export, publish), not just reads. See `verify-dont-infer-completion-2026-08-04`.
+- PARALLEL-LANE CONTRACT TRAP (2026-09-14): two architects built the client and server halves of one feature from one written API contract, each side's tests passed against its own reading (string vs dict for `source`/`provenance`), and only a live run of the real page against a writable console exposed the mismatch. Rule: when a feature is split across lanes, the contract must carry example payloads (not prose), one lane owns the shared fixture both suites import, and the lane is not "done" until a real-client integration pass on a writable instance has run every write path (save, export, publish), not just reads. See `verify-dont-infer-completion-2026-08-04`. The convention that followed: [[contract-fixture-discipline]].
 - Related notes: `ask-before-substantive-changes`, `mentat-chart-studio-lane-2026-09-11`, `mentat-full-audit-2026-07-27`, `mentat-r12-reconciliation-2026-07-27`.
 
 ## Related Topics

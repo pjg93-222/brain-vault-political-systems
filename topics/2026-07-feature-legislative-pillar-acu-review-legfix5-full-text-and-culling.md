@@ -9,8 +9,12 @@ actors: []
 objective: ""
 created_at: 2026-07-01
 sources: []
+doc_sources:
+  - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\OFFICIAL_ROLLCALL_SOURCE_CONTRACT.md"
+    sha256: "07c9b02902933a780f334db17411f75189bfd4466191464ff61776b4bd1d1b8d"
+    as_of: "2026-07-27"
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-legislative-pillar-acu-review]]"
 ---
@@ -110,6 +114,16 @@ legfix5 six-year legislation - GovInfo official-text lane COMPLETE (18,406/18,44
 - Production baseline: **33/33 frozen copies intact, 0 drift**; **10 of 33 live sources drifted** since the 07-26 freeze (the known integration blocker - not data loss).
 - Zero tracked files modified; all legfix5 work is untracked.
 - 2 resolved exclusions (`117:hr:3664`, `118:hr:1707`, both `examination_supervision`) reference edges **outside** the 64,004 discovery universe - dropped and logged, part of the known 748-edge gap.
+
+## Official roll-call action-source contract (2026-07-26/27; `fec/OFFICIAL_ROLLCALL_SOURCE_CONTRACT.md`)
+
+The staged roll-call collector's contract, committed with the legfix5 lane:
+- `CONGRESS_API_KEY` is not structurally required for accepted bills and resolutions: the default `auto` policy uses the official GovInfo/Congress.gov BILLSTATUS bulk record for eight type-aware measure classes (`hr`, `s`, `hres`, `sres`, `hjres`, `sjres`, `hconres`, `sconres`).
+- For every accepted measure the collector builds the canonical GovInfo BILLSTATUS URL from Congress, type and number; requires the XML to carry exactly the same typed identity; keeps the complete actions collection and every recorded-vote candidate; derives the House Clerk or Senate vote XML URL only from the immutable Congress/chamber/session/roll event key; re-verifies that key and the typed measure inside the chamber XML; and fails closed on unresolved member identity, direction, action, event or measure evidence.
+- `latest_action` and `latest_action_date` are not an exhaustive action history and are never used as negative evidence that a measure had no final-passage roll call.
+- BILLSTATUS has no top-level `hamdt` or `samdt` records, so an accepted amendment needs a populated `CONGRESS_API_KEY` or an exhaustive, hash-bound fixture of the official amendment actions; an amendment vote is never inferred from its parent bill.
+- Official XML Bioguide IDs are used directly; an optional supplemental map may add exact official-ID-to-Bioguide links, but missing or ambiguous identities still block acceptance.
+- All outputs are staging-only: Quorum and third-party vote data are prohibited, and the collector never writes the production `vote_category_lean.json`.
 
 ## Acu-outline rulings carried into this lane (2026-07-27 evening)
 

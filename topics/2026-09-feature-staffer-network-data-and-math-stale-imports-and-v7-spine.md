@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-09-01
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-09-feature-staffer-network-data-and-math]]"
 ---
@@ -58,3 +58,5 @@ Also: `cp -p` preserves the source mtime, so a `.pre` backup made minutes ago ca
 Still open after this commit: `audits/staffer_network/test_finish_staffer_social_network_chain.py:82-83` pins the v6 spine under a foreign `C:\melange\` root; `generation_registry_20260906.{json,md}` still names v6 ACTIVE / newest_of_family and predates v7.
 
 Related memories: `staffer-sorting-lane-2026-09-06`, `staffer-stale-imports-lane-2026-09-06`, `staffer-live-sidecar-2026-09-04`, `verify-dont-infer-completion-2026-08-04`, `live-tree-branch-state-2026-07-14`.
+
+Superseded 2026-09-08 (dated, 2026-10-04 document import): the v7 spine was replaced by the verified v8 spine; see [[2026-09-08-staffer-spine-identity-adjudication]].
