@@ -44,3 +44,7 @@ Other notes that use the rule, by title (plain text, so their link budgets are u
 - UI redesign boards (Melange and Mentat) and Mentat console: the graph-quirks lane reached LIVE sources and served copies through `live_patch.py`.
 - Mentat failings lanes and PAC evidence: cut patches as bytes (a cp1252 console mangled every non-ASCII byte).
 - Mentat console UI, Mentat repo state and workbooks, Mentat FEC pipeline: Mentat's tree uses the same line-ending-safe `git -c core.autocrlf=false` handling when proving HEAD.
+
+## Pending newer capture
+
+Newer capture pending organization (fleeting/melange-systems--people-network-route-latency-lane-2026-10-02.md, 2026-10-03): "**Never** merge or check out a branch into LIVE, because a checkout rewrites EOLs (D-060)". Treat it as the current rule until the fleeting pass reconciles it.

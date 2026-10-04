@@ -1,0 +1,14 @@
+.bedrock/reorg/ledger/batch-6-allow.txt
+.bedrock/reorg/ledger/batch-7b-allow.txt
+.bedrock/reorg/ledger/batch-7b-paths.txt
+.bedrock/reorg/ledger/batch-7b-positional.md
+.bedrock/reorg/plan.md
+.bedrock/reorg/spec/splits/2026-06-feature-melange-dashboard-ui-evolution.json
+.bedrock/reorg/spec/splits/2026-07-feature-audio-and-speech-lane.json
+.bedrock/reorg/spec/splits/2026-07-feature-data-collection-lanes.json
+.bedrock/reorg/spec/splits/2026-07-rfc-melange-architecture-system-of-record.json
+concepts/live-tree-patch-discipline.md
+topics/2026-06-feature-melange-dashboard-ui-evolution.md
+topics/2026-07-feature-audio-and-speech-lane.md
+topics/2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade.md
+topics/2026-07-rfc-melange-architecture-system-of-record-refactor-and-inversion.md

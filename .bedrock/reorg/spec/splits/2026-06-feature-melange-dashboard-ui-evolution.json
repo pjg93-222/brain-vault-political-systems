@@ -139,7 +139,7 @@
       "old": "- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see below), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).",
       "mark": "rewrite",
       "why": "\"Q6 committee tiers resolved 09-18 (see below)\" is ### Committee tiers ruled and shipped 2026-09-18 in ## Members Section consistency lane, which moves to -members-section-lane",
-      "new": "- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see in [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]]), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).",
+      "new": "- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]]), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).",
       "referent": "2026-06-feature-melange-dashboard-ui-evolution-members-section-lane"
     },
     {
