@@ -1,13 +1,3 @@
-topics/2026-06-feature-congress-r-scrapers
-topics/2026-07-feature-personality-psychometrics
-topics/2026-06-feature-cu-stance-and-sentiment
-topics/2026-07-feature-legislative-pillar-acu-review
-topics/2026-06-feature-moneyball-excel-model-build
-actors/moneyball-workbook
-actors/draft-systems-r-pipeline
-topics/2026-07-feature-influence-engine-internals
-topics/2026-07-feature-primacy-and-industry-tier-boards
-topics/2026-07-troubleshooting-melange-audits-and-reviews
 topics/2026-07-feature-data-collection-lanes
 topics/2026-09-feature-staffer-network-data-and-math
 topics/2026-06-feature-cosponsor-and-sector-networks

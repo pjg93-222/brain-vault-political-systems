@@ -378,10 +378,26 @@ Every note of this project by type, one line each; parts follow their parent.
 | Topic | Relation |
 |---|---|
 | [[2026-06-feature-congress-r-scrapers]] | June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance |
+| [[2026-06-feature-congress-r-scrapers-member-scraper]] | part: The congress.gov member scraper of 2026-06-02 to 06-10… |
+| [[2026-06-feature-congress-r-scrapers-legislative-score-17x3]] | part: The integrated 17-topic by 3-role scraper behind the… |
+| [[2026-06-feature-congress-r-scrapers-cu-press-scraper]] | part: The CU press-release scraper from its 2026-06-10 start… |
+| [[2026-06-feature-congress-r-scrapers-press-collector-pipeline]] | part: The press text collector and one-command pipeline of… |
+| [[2026-06-feature-congress-r-scrapers-press-discovery-and-attribution-fixes]] | part: Press scraper fixes of 2026-06-20/21: discovery truncation… |
+| [[2026-06-feature-congress-r-scrapers-graded-scoring-and-audits]] | part: Graded press scoring of 2026-06-14 to 06-21: the graded… |
+| [[2026-06-feature-congress-r-scrapers-stage5-debate-lsd]] | part: The Stage 5 overhaul of 2026-06-21 to 06-24 that replaced… |
+| [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] | part: The Census congressional-district scraper of 2026-06-16… |
 | [[2026-06-feature-cosponsor-and-sector-networks]] | Moneyball network layer: co-sponsor plan (Jun), toggles + signed layers (Jul), five NET_CONFIG networks (Aug), relationships model (Sep). |
 | [[2026-06-feature-cu-stance-and-sentiment]] | Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels |
+| [[2026-06-feature-cu-stance-and-sentiment-stance-stack-design-and-accuracy]] | part: How the CU stance stack was designed and made accurate… |
+| [[2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split]] | part: June 2026 stance work: the labeling template and re-run… |
+| [[2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents]] | part: CU sentiment work of 2026-07-15/16: the CFPB sentiment… |
+| [[2026-06-feature-cu-stance-and-sentiment-press-and-social-display]] | part: Press and social display of 2026-07-19: graded press and… |
 | [[2026-06-feature-melange-dashboard-ui-evolution]] | Melange dashboard UI history: capstone, member desk, retheme, simplification, plain-language pass, Members Section lane. |
 | [[2026-06-feature-moneyball-excel-model-build]] | June 2026 build of the 533-member Moneyball workbook: four buckets, percentile-rank blend, calibration, scenario tooling |
+| [[2026-06-feature-moneyball-excel-model-build-lineage-and-phases]] | part: Workbook lineage and file inventory and the June 2026… |
+| [[2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits]] | part: Scoring refinements of 2026-06-24/25: press raw alignment… |
+| [[2026-06-feature-moneyball-excel-model-build-category-stance-3d]] | part: The Category Stance 3D sheet of the Moneyball workbook… |
+| [[2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration]] | part: The scenario tools of 2026-06-26/27: the pre-flight audit… |
 | [[2026-06-working-agreement-change-control-and-decision-authority]] | Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code. |
 | [[2026-07-feature-agent-tooling-stack]] | Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap. |
 | [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] | part: The Codex executor lane record: how Claude and Codex were… |
@@ -394,12 +410,35 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-feature-audio-and-speech-lane]] | Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims. |
 | [[2026-07-feature-data-collection-lanes]] | Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills |
 | [[2026-07-feature-influence-engine-internals]] | July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder |
+| [[2026-07-feature-influence-engine-internals-salience-sna-wave]] | part: The six-paper salience and press-SNA wave of 2026-07-01 in… |
+| [[2026-07-feature-influence-engine-internals-receptivity-layer]] | part: The receptivity layer of the influence engine (2026-07-02… |
+| [[2026-07-feature-influence-engine-internals-gate2-and-say-do]] | part: GATE-2 of 2026-07-07/08 in the influence engine, the C… |
+| [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] | part: The ChatGPT laundry-list lane landing of 2026-07-16 and… |
+| [[2026-07-feature-influence-engine-internals-coalition-builder]] | part: The coalition-builder redesign and implementation of… |
 | [[2026-07-feature-legislative-pillar-acu-review]] | Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast |
+| [[2026-07-feature-legislative-pillar-acu-review-letters-and-legfix-1-4]] | part: The legislative pillar from 2026-07-17 to 07-25… |
+| [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] | part: legfix5 of 2026-07-27: the six-year full-text collection… |
+| [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] | part: The legislative-effectiveness shadow lane of 2026-09-10 to… |
+| [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] | part: The bill-lobbying regression lane of 2026-09-04: making… |
+| [[2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance]] | part: The 2026-07-10 corpus census and the bill-plane audit and… |
 | [[2026-07-feature-member-approach-briefs]] | Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps. |
 | [[2026-07-feature-personality-psychometrics]] | Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade. |
+| [[2026-07-feature-personality-psychometrics-record-1-big5-campaign]] | part: Record 1 of the Big Five program: the accuracy campaign of… |
+| [[2026-07-feature-personality-psychometrics-audit-dependability-and-n-reanchor]] | part: Records 2, 3 and 5 of the Big Five program: the psych… |
+| [[2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search]] | part: Record 6 of the Big Five program (2026-07-12): the RKH… |
+| [[2026-07-feature-personality-psychometrics-senate-gold-desert-fill-and-a-anchoring]] | part: Records 7 to 10 of the Big Five program (2026-07-16 to… |
 | [[2026-07-feature-primacy-and-industry-tier-boards]] | Primacy tier board (factor-only purity, drift, 09-19 methodology lane) plus per-industry tier boards, valence/tensor, champion crown law |
+| [[2026-07-feature-primacy-and-industry-tier-boards-primacy-factor-drift-crown]] | part: The factor-only primacy board ruled on 2026-07-29 with its… |
+| [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build]] | part: Industry-tab interactions of 2026-08-03 and the… |
+| [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor]] | part: The per-industry boards tensor work of 2026-08-10/11: the… |
+| [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] | part: The primacy-board methodology lane of 2026-09-19/20: the… |
 | [[2026-07-rfc-melange-architecture-system-of-record]] | Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics |
 | [[2026-07-troubleshooting-melange-audits-and-reviews]] | Melange audit runs, guardrails, 09-13 five-lane code review, hallucination framework (D-007), provenance census, laundry-list close-out |
+| [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]] | part: Guardrails for any autonomous Melange audit or review run… |
+| [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3]] | part: The Melange audit runs of 2026-07-01 to 07-03: run 1, run… |
+| [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity]] | part: The Melange audit runs of 2026-07-04 to 07-10: run 4, runs… |
+| [[2026-07-troubleshooting-melange-audits-and-reviews-data-integrity-and-provenance]] | part: The data-integrity audit of 2026-07-01 on the bills… |
+| [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] | part: Melange reviews of August and September 2026: the… |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift]] | Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror |
 | [[2026-08-incident-refresh-automation-reliability]] | Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn |
 | [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]] | part: The weekly Melange refresh as of 2026-09-19: measured… |
@@ -422,6 +461,9 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[codex-executor-incidents]] | part: Two Codex incidents: the overnight poll-loop burn of… |
 | [[debate-stance-model]] | Fine-tuned Political DEBATE NLI stance model (CPU) plus Lexicoder LSD tone; replaced the regex scorer in Stage 5 of the CU press pipeline |
 | [[draft-systems-r-pipeline]] | Draft Systems R code root: congress.gov, CU press, Census CD and Ballotpedia scrapers plus the DEBATE+LSD stance pipeline |
+| [[draft-systems-r-pipeline-layout-and-knobs]] | part: Where the Draft Systems R pipeline lives on disk, its… |
+| [[draft-systems-r-pipeline-architecture]] | part: Architecture of the six Draft Systems R scrapers and… |
+| [[draft-systems-r-pipeline-code-catalogue]] | part: Code-level catalogue of the Draft Systems R pipeline… |
 | [[higgsfield-connector]] | Higgsfield MCP connector (89 tools) used to render UI boards; bound to whichever account authorized it; Paul must re-authorize to switch. |
 | [[lobbyview-collector]] | LobbyView LDA bulk-export collector (fec/collect_lobbyview.py @a126952, unmerged); NAICS unreliable, names decisive; 100 req/day API |
 | [[melange-audio-pipeline]] | Audio speaker verification + speech layers: faster-whisper pinned, unused; off-chain fail-closed; layers complementary; feeds narratives. |
@@ -431,6 +473,8 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[melange-repo-mirror]] | Off-box bare git mirror (remote mirror, Carbonite-covered) of Melange Systems; all branches+tags, hook auto-push since 2026-09-19 |
 | [[moneyball-skill-library]] | Melange project skill library (16 built 2026-07, 20 by 2026-09-30); change-control = constitution; refreshed on main b7faf6344. |
 | [[moneyball-workbook]] | Excel CU-influence model: 4-pillar percentile-rank blend over 533 members; now a VIEW of ranks_python.json (the rank authority). |
+| [[moneyball-workbook-rules-scoring-and-sublayer-surgery]] | part: Standing rules of the Moneyball Blended workbook, the… |
+| [[moneyball-workbook-lineage-and-june-audit]] | part: The Moneyball model lineage and files from 2026-06-18 to… |
 | [[project-brain]] | Hardened brainctl external-brain kit (Desktop, own repo); melange brain boots via CLAUDE.md; nested brain repos with mirrors. |
 | [[quant-model-evaluation-skill]] | General read-only skill for evaluating models, numbers and claims; merged to main c13f3a5d4 (2026-09-30); Melange gates in a binding. |
 | [[sentinel-collectors]] | Sentinel press/hearing collectors and bill ingestion feeding the Melange workbook; promotion and scheduler re-enable are Paul-gated |

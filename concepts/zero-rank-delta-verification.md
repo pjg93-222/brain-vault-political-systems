@@ -4,7 +4,7 @@ name: "Zero-rank-delta verification"
 aliases: ["byte-identical ranks protocol"]
 description: "Verification protocol for Melange refactors and reorgs: kernel tests -> full pipeline -> rank delta vs the last ranks file must be ZERO (unless the change is meant to move ranks) -> audit clean; proven by ranks staying byte-identical (736A9564...) through the 2026-07-02 refactor and the 2026-08-04/05 REORG."
 related_to:
-  - "[[2026-07-feature-influence-engine-internals]]"
+  - "2026-07-feature-influence-engine-internals"
   - "[[2026-07-rfc-melange-architecture-system-of-record]]"
   - "[[melange-fec-pipeline]]"
   - "[[moneyball-workbook]]"
@@ -113,12 +113,13 @@ Kernel-runner facts: `run_tests.py` was pointed at 14 of 118 suites; its registr
 
 - [[melange-fec-pipeline]] - Melange Systems fec/ Python pipeline: paths.py, moneyball_core, run_pipeline chain, compute_pillars rank authority, kernel tests, live_patch
 - [[moneyball-workbook]] - Excel CU-influence model: 4-pillar percentile-rank blend over 533 members; now a VIEW of ranks_python.json (the rank authority).
-- [[2026-07-feature-influence-engine-internals]] - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
+- Influence engine internals - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
 - [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
 - [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] — The ChatGPT laundry-list lane landing of 2026-07-16 and the Sub Layer off-by-one surgery of 2026-07-16/17, as recorded for the influence engine.
 
 ## Applied in
 
 - The refactor and Phase 2 inversion: [[2026-07-rfc-melange-architecture-system-of-record]] (also holds the full REORG history).
-- Engine internals topic where the Sub Layer repair lives: [[2026-07-feature-influence-engine-internals]].
+- Engine internals topic where the Sub Layer repair lives: Influence engine internals.
 - Workbook the ranks used to be computed from: [[moneyball-workbook]]; pipeline entrypoints: [[melange-fec-pipeline]] (`run_pipeline.py`, `weekly_refresh.py`).

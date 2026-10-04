@@ -457,6 +457,73 @@ section("K candidates (4.7 K12-K25)");
   t("K candidate: a counterpart of a later batch is deferred, with the slot it keeps free", /K97 t-big-lane-a-one <-> later-batch-part: deferred .* so a slot stays free/.test(r3.out), r3.out.match(/K97[^\n]*/)?.[0] ?? "");
 }
 
+// ---- a counterpart an earlier batch created (4.7 "4 -> 5", K16 in batch 5): evaluated, never "deferred"
+{
+  /** an earlier batch split a1: a1-earlier is its part (part_of, the hub's Parts line, a Map row) */
+  const withEarlierPart = (dir: string, opts: { sharedMemory: boolean; earlierOthers?: string }) => {
+    buildFixture(dir);
+    w(dir, "actors/a1.md", read(dir, "actors/a1.md").replace("> Actor one.\n", "> Actor one.\n\n## Parts\n\n- [[a1-earlier]] — The lane record of actor one.\n"));
+    w(
+      dir,
+      "actors/a1-earlier.md",
+      `---\ntype: actor\nname: "Lane record (Actor one)"\naliases: ["Actor one: Lane record"]\ndescription: "The lane record of actor one."\nstatus: "active"\nteam: ""\nsources: []\nupdated_at: 2026-10-01\nupdated_by: "reorg@agent"\ntags: ["type/actor", "status/active", "domain/a"]\npart_of: "[[a1]]"\n---\n\n# Lane record (Actor one)\n\n> The lane record of actor one. Part of [[a1]] (project [[p1]]).\n\n## Lane record\n\nThe record of the shared lane${opts.earlierOthers ?? ""} (memory \`shared-lane-2026-09-24\`).\n`,
+    );
+    w(dir, "projects/p1.md", read(dir, "projects/p1.md").replace("| [[a1]] | Actor one. |\n", "| [[a1]] | Actor one. |\n| [[a1-earlier]] | part: The lane record of actor one. |\n"));
+    if (opts.sharedMemory) w(dir, "topics/t-big.md", read(dir, "topics/t-big.md").replace("A two text only.", "A two text only (memory `shared-lane-2026-09-24`)."));
+  };
+  const D = join(ROOT, "fx-k-earlier");
+  withEarlierPart(D, { sharedMemory: true });
+  git(D, "init", "-q", "-b", "brain-reorg-2026-10-03");
+  git(D, "config", "user.name", "Fixture");
+  git(D, "config", "user.email", "fixture@example.invalid");
+  git(D, "config", "core.autocrlf", "false");
+  git(D, "add", "-A");
+  git(D, "commit", "-q", "-m", "base");
+  const base = git(D, "rev-parse", "HEAD").trim();
+  const pre0 = run([CHECK, "--vault", D, "--strict", "--require", "b,c,d,g,j,k"]);
+  t("earlier-batch K candidate: the fixture with an existing part passes check.ts before the split", pre0.code === 0, pre0.out.slice(-1200));
+  const fillD = (rel: string, list: any[]) => {
+    const lines = read(D, rel + ".md").split("\n");
+    return list.map((e) => ({ ...e, line: lines.indexOf(e.old) + 1 }));
+  };
+  const sT = tSpec(fillD("topics/t-big", S10_T)) as any;
+  sT.candidates = [{ id: "K96", a: "topics/t-big-lane-a-two", b: "actors/a1-earlier", event: "earlier batch" }];
+  const fT = join(ROOT, "ke-t.json");
+  const fA = join(ROOT, "ke-a.json");
+  writeFileSync(fT, json(sT));
+  writeFileSync(fA, json(aSpec(fillD("actors/a-big", S10_A))));
+  const r = run([SPLIT, "--vault", D, "--spec", fT, "--spec", fA, "--plan"]);
+  t("earlier-batch K candidate: created when both texts name the same memory file and both have a free slot", /K96 t-big-lane-a-two <-> a1-earlier: CREATED \(evidence: memory shared-lane-2026-09-24; free slots 3 and 3; a1-earlier was created by an earlier batch\)/.test(r.out) && r.code === 0, (r.out.match(/K96[^\n]*/)?.[0] ?? "") + r.out.slice(-800));
+  const before = snapshot(D);
+  const man = join(D, ".bedrock/reorg/ledger/batch-9-paths.txt");
+  const ap = run([SPLIT, "--vault", D, "--spec", fT, "--spec", fA, "--apply", "--date", "2026-10-04", "--manifest", man, "--allow", join(D, ".bedrock/reorg/ledger/batch-9-allow.txt")]);
+  t("earlier-batch K candidate: apply succeeds", ap.code === 0, ap.out.slice(-1200) + ap.err);
+  const earlierText = read(D, "actors/a1-earlier.md");
+  const partText = read(D, "topics/t-big-lane-a-two.md");
+  t("earlier-batch K candidate: the existing part gets a C5 line for the new part in ## Related Topics, and a stamp", /## Related Topics\n\n- \[\[t-big-lane-a-two\]\] — The second sub-lane of lane A of the big topic\.\n/.test(earlierText) && earlierText.includes("updated_at: 2026-10-04"), earlierText);
+  t("earlier-batch K candidate: the new part gets a C5 line for the existing part", partText.includes("- [[a1-earlier]] — The lane record of actor one."), partText);
+  t("earlier-batch K candidate: the existing part is in the manifest", readFileSync(man, "utf8").includes("actors/a1-earlier.md"), readFileSync(man, "utf8"));
+  t("earlier-batch K candidate: nothing else of the existing part changed", diffSnap(before, snapshot(D)).includes("actors/a1-earlier.md") && earlierText.includes("The record of the shared lane (memory `shared-lane-2026-09-24`)."));
+  const ck2 = run([CHECK, "--vault", D, "--strict", "--require", "b,c,d,g,i,j,k"]);
+  t("earlier-batch K candidate: check.ts b c d g i j k pass after the apply (0 one-way)", ck2.code === 0, ck2.out.slice(-1500));
+  const cs2 = run([CONSERVE, "--vault", D, "--base", base, "--allow", join(D, ".bedrock/reorg/ledger/batch-9-allow.txt")]);
+  t("earlier-batch K candidate: conserve.ts finds no base text lost", cs2.code === 0 && /missing body lines: 0/.test(cs2.out), cs2.out.slice(-800));
+  // no shared evidence: skipped, named as an earlier-batch counterpart, never deferred
+  const s2 = tSpec([]) as any;
+  s2.candidates = [{ id: "K95", a: "topics/t-big-lane-a-two", b: "actors/a1-earlier", event: "no evidence" }];
+  const f2 = join(ROOT, "ke2-t.json");
+  writeFileSync(f2, json(s2));
+  const D2 = join(ROOT, "fx-k-earlier-2");
+  withEarlierPart(D2, { sharedMemory: false });
+  const r2 = run([SPLIT, "--vault", D2, "--spec", f2, "--spec", fA, "--plan"]);
+  t("earlier-batch K candidate: skipped without shared evidence (reported, not deferred)", /K95 t-big-lane-a-two <-> a1-earlier: skipped \(no shared memory file or session id in the moved texts; a1-earlier was created by an earlier batch\)/.test(r2.out) && !/K95[^\n]*deferred/.test(r2.out), r2.out.match(/K95[^\n]*/)?.[0] ?? r2.out.slice(-600));
+  // shared evidence, but the existing part already spends its 3 other slots: skipped for want of a slot
+  const D3 = join(ROOT, "fx-k-earlier-3");
+  withEarlierPart(D3, { sharedMemory: true, earlierOthers: " with [[a2]], [[c1]] and [[t-other]]" });
+  const r3 = run([SPLIT, "--vault", D3, "--spec", f2, "--spec", fA, "--plan"]);
+  t("earlier-batch K candidate: skipped when the existing part has no free other slot", /K95 t-big-lane-a-two <-> a1-earlier: skipped \(no free other slot \(t-big-lane-a-two 3, a1-earlier 0\); a1-earlier was created by an earlier batch\)/.test(r3.out), r3.out.match(/K95[^\n]*/)?.[0] ?? r3.out.slice(-600));
+}
+
 // =====================================================================================================================
 section("static guards (A.0)");
 {

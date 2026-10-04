@@ -1,0 +1,282 @@
+{
+  "id": "B2",
+  "what": "Batch 5 split of topics/2026-07-feature-personality-psychometrics (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B2); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-personality-psychometrics",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Reading guide to the records below",
+      "## Record 4: Hearing antagonism / defiance criterion, 2026-07-10 (`hearing-antagonism-2026-07-10`; last modified 2026-07-11; session 2599f411; also sessions clever-elbakyan, local_bdf50296)"
+    ],
+    "links": [
+      "actors/melange-audio-pipeline",
+      "concepts/single-look-holdout-discipline",
+      "concepts/gold-set-validation"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-personality-psychometrics-record-1-big5-campaign",
+      "title": "Record 1: Big 5 accuracy campaign (07-04 to 07-08)",
+      "summary": "Record 1 of the Big Five program: the accuracy campaign of 2026-07-04 to 07-08, from the validation harness and nickname fix to the conversational-dynamics channel, the halo finding and the external grade",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Record 1: Big 5 accuracy campaign, 2026-07-04 to 2026-07-08 (`moneyball-big5-campaign`, last modified 2026-07-10; session 1b194f81-91fc-4e4c-a071-65a2ad26f89a)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Newest wins: the program's current state is kept in [[2026-07-feature-personality-psychometrics]] (Context, \"Where the program stands\"); where a record differs, that summary governs.",
+        "> Correction kept in [[2026-07-feature-personality-psychometrics]] (Record 4, \"Hearing antagonism / defiance criterion\", and Decisions): the Miller & Sutherland exclusion of hearing cutoffs received, applied here as doctrine on 2026-07-04, was withdrawn as doctrine on 2026-07-10; it survives only on the narrow ground that receiving a cutoff is the interrupter's act."
+      ]
+    },
+    {
+      "slug": "2026-07-feature-personality-psychometrics-audit-dependability-and-n-reanchor",
+      "title": "Records 2, 3 and 5: psych framework audit, disposition dependability and the N-slot re-anchor (07-09 to 08-14)",
+      "summary": "Records 2, 3 and 5 of the Big Five program: the psych framework audit with augment rounds 1-6 and sweeps (2026-07-09 to 08-14), the disposition dependability audit and canceled expert panel, and the N-slot re-anchor to affective-N",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Record 2: Psych framework audit, augment rounds 1-6 and sweeps, 2026-07-09 to 2026-08-14 (`psych-audit-2026-07-09`, last modified 2026-08-14; session 323e66b6-980b-4e63-951b-e0208ebe42c1)",
+        "## Record 3: Disposition dependability and the (canceled) expert panel, 2026-07-09",
+        "## Record 5: N-slot re-anchor to affective-N, 2026-07-11 (`n-slot-reanchor-2026-07-11`; session 4551680e-cf3a-40bd-ba1a-4c2b67b144b0)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Newest wins: the program's current state is kept in [[2026-07-feature-personality-psychometrics]] (Context, \"Where the program stands\"); where a record differs, that summary governs."
+      ]
+    },
+    {
+      "slug": "2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search",
+      "title": "Record 6: external criteria for N (RKH, the Danish correction) and the open A search (07-12)",
+      "summary": "Record 6 of the Big Five program (2026-07-12): the RKH external validation of N, the Danish and European criterion correction, and Paul's standing open-ended A validation search",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Record 6: External criteria for N and the open A search, 2026-07-12"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Newest wins: the program's current state is kept in [[2026-07-feature-personality-psychometrics]] (Context, \"Where the program stands\"); where a record differs, that summary governs."
+      ]
+    },
+    {
+      "slug": "2026-07-feature-personality-psychometrics-senate-gold-desert-fill-and-a-anchoring",
+      "title": "Records 7-10: Senate gold template, desert fill, gold-anchored A and E, cooperation probe (07-16 to 07-18)",
+      "summary": "Records 7 to 10 of the Big Five program (2026-07-16 to 07-18): the two-panel Senate gold template and audio identity design, the desert-fill campaign, gold-anchored A and E with the stance curve, and the cooperation-vs-A sector probe",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Record 7: Two-panel Senate gold (\"golden template\") and audio identity design, 2026-07-16 (`gold-template-audio-2026-07-16`; session 9c0ceea0-eef3-4eca-926f-d6168049b4d4)",
+        "## Record 8: Desert-fill campaign, 2026-07-17 (`desert-fill-2026-07-17`; session e9080d7f-2079-4d8b-89b5-eced95034ddb)",
+        "## Record 9: A and E are the two Senate-gold-anchored top-tier traits; stance curve awaiting gate, 2026-07-18 (`gold-anchored-a-and-stance-curve-2026-07-18`; session b43517bc-e66d-4d1f-bd1b-74f40f639a4d)",
+        "## Record 10: Cooperation-vs-A sector probe (Codex lane), 2026-07-18 (`coop-sector-probe-2026-07-18`; last modified 2026-07-19; session b43517bc-e66d-4d1f-bd1b-74f40f639a4d)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Newest wins: the program's current state is kept in [[2026-07-feature-personality-psychometrics]] (Context, \"Where the program stands\"); where a record differs, that summary governs."
+      ]
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 54,
+      "old": "- Dated record sources: 13 memory files, 2026-07-04 to 2026-08-14 (details in the Records below).",
+      "mark": "rewrite",
+      "why": "\"details in the Records below\": Record 4 stays in the hub below Context, Records 1-3 and 5-10 move to the four record parts; below stays and the parts are added (S10 \"below and in [[a]], [[b]] ...\")",
+      "new": "- Dated record sources: 13 memory files, 2026-07-04 to 2026-08-14 (details in the Records below and in [[2026-07-feature-personality-psychometrics-record-1-big5-campaign]], [[2026-07-feature-personality-psychometrics-audit-dependability-and-n-reanchor]], [[2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search]] and [[2026-07-feature-personality-psychometrics-senate-gold-desert-fill-and-a-anchoring]]).",
+      "referent": "2026-07-feature-personality-psychometrics-record-1-big5-campaign, 2026-07-feature-personality-psychometrics-audit-dependability-and-n-reanchor, 2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search, 2026-07-feature-personality-psychometrics-senate-gold-desert-fill-and-a-anchoring"
+    },
+    {
+      "line": 116,
+      "old": "- ~~Earlier external grade \"B\"~~ was wrong (imported self-report alpha>.80 yardstick); A-/high-A on 2026-07-08.",
+      "mark": "not positional",
+      "why": "\"Earlier external grade 'B'\" is time"
+    },
+    {
+      "line": 119,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 133,
+      "old": "## Reading guide to the records below",
+      "mark": "rewrite",
+      "why": "the kept heading \"Reading guide to the records below\": Record 4 stays in the hub below it, Records 1-3 and 5-10 move to the four record parts; below stays and the parts are added (S10 \"below and in [[a]] ...\"; heading level unchanged)",
+      "new": "## Reading guide to the records below and in [[2026-07-feature-personality-psychometrics-record-1-big5-campaign]], [[2026-07-feature-personality-psychometrics-audit-dependability-and-n-reanchor]], [[2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search]] and [[2026-07-feature-personality-psychometrics-senate-gold-desert-fill-and-a-anchoring]]",
+      "referent": "2026-07-feature-personality-psychometrics-record-1-big5-campaign, 2026-07-feature-personality-psychometrics-audit-dependability-and-n-reanchor, 2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search, 2026-07-feature-personality-psychometrics-senate-gold-desert-fill-and-a-anchoring"
+    },
+    {
+      "line": 181,
+      "old": "**POST-REINGEST SEQUENCE (USER-APPROVED 2026-07-05 evening, incl. the SPEND):** when `fetch_interviews` exits: (1) `weekly_refresh` (single rebuild: full corpus + 3-component diligence -> chain -> audit); (2) `python fec/big5_llm.py --all --opus --go` (full-roster LLM scoring, 1,868 new chunks, est ceiling ~$140 / realistic $45-80, APPROVED via AskUserQuestion 'After re-ingest (Recommended)'; 67/533 members have no corpus and stay uncovered); (3) `validate_big5` on the full artifact; (4) `make_member_desk` + `make_combined` (pink overlay + green overlap region for all covered members); (5) before/after report: diligence retest (`lep_criterion` [A] vs re-trued diligence; old +0.084) + rank delta (expect 0); (6) (Paul 2026-07-05 night: 'What about NPR, CBS?') launch the two never-run expansion legs IN PARALLEL post-sequence: `python fec/fetch_interviews.py cbs` + `python fec/fetch_interviews.py npr --since 2025-01-01` (disjoint hosts/keys, WAL-safe; CBS ~1k FTN episodes 2019+, senator-heavy = thins the interview-C coverage gap; feeds next Sunday's refresh; optional targeted top-up scoring after). **FOX:** the 07-03 'no public archive' finding was WRONG (JS-rendered category page); `run_fox` leg SHIPPED run-4z @c6c1d8a: sitemap-enumerated historical archive ~2018->2024-10 (Fox stopped posting transcripts then; article-search API offset dead), parse_turns-compatible (5-9 member turns/ep verified); post-2024-10 Fox needs caption diarization (no labels), out. C-SPAN (restricted) structurally unavailable. A completion monitor watches the collector; re-arm it after any session restart (it does NOT survive restarts).",
+      "mark": "not positional",
+      "why": "\"feeds next Sunday's refresh\" is time"
+    },
+    {
+      "line": 185,
+      "old": "**C-from-API reopened with a PRE-REGISTERED test (2026-07-05 late; Paul: 'is there really no way for the API to read C?'):** pilot LLM-C is weak-but-RIGHT-SIGNED on all three external C-criteria (follow-through +0.100 n=171, votes_cast +0.106, LES +0.067), unlike every lexical method (wrong-signed). Genre split: C-from-INTERVIEW (n=55 only) hits +0.184 vs votes_cast vs CREC's +0.057, supporting the genre-saturation mechanism (drafted floor text ceilings C; unscripted interviews carry variance). **PRE-REGISTERED (locked before the full-roster data exists):** on the post-reingest full run, if INTERVIEW-genre C clears rho>=+0.15 vs votes_cast AND >=+0.10 vs follow-through (n~440), C gets a real API read -> propose genre-weighting C toward interviews. Below bars -> null stands, fallback = pairwise-tournament C design (~$15-30, Bradley-Terry ranking, unexhausted). **DISPLAY SIDE SETTLED SEPARATELY (Paul 2026-07-06, run-4z3 @ the C-saga FINAL state; do NOT resurrect the carve-out):** the desk green overlap region spans ALL FIVE axes including Consc (skipGreen retired, agree label incl. C, legend notes Diligence stays the strongest C measure). Only the MEASUREMENT incorporation remains retest-gated.",
+      "mark": "not positional",
+      "why": "\"Below bars -> null stands\" is a threshold comparison"
+    },
+    {
+      "line": 201,
+      "old": "**C IS NOW MEASURED BEHAVIORALLY: 3-component diligence (run-4w @2d32ca9, Paul-ratified \"A, B and C\"):** roll-call participation + LEP follow-through (stage events/bill, `lep_criterion.json` per_member.followthrough, 447 members) + CHRG hearing participation (panel chrg_hearings, participants-only z). External validation: follow-through x v2-C = +0.191 out-of-sample (n=446, above the lexical ceiling); v1-C wrong-signed on it (6th consecutive criterion). Artifacts deliberately NOT rebuilt at commit time (D1 window): the post-reingest `weekly_refresh` performs the single rebuild absorbing full corpus + both new inputs; retest = `lep_criterion`'s standing [A] correlations vs re-trued diligence.",
+      "mark": "not positional",
+      "why": "\"above the lexical ceiling\" is a magnitude comparison"
+    },
+    {
+      "line": 203,
+      "old": "**EXTERNAL BENCHMARK GRADE = A- / high-A (2026-07-08; deep-research lit review, `big5_methods` section 12):** Paul pushed for an A; independent review (104 agents, 22 primary peer-reviewed sources, 25 claims adversarially verified 22/3) landed A-/high-A WITHIN the elite-speech text-personality class ON THE EVIDENCE, not by fiat. The earlier \"B\" was WRONG (imported self-report-questionnaire alpha>.80 yardstick; nothing off public speech clears it). Defensible numbers: Pink convergent .42-.52 EXCEEDS the open-vocab ceiling (Park/Schwartz JPSP'15 avg .38, best .43) and dwarfs LLM zero-shot ~.29 (Peters&Matz PNAS Nexus'24); the niche standard-bearers (RKH PSRM'19, Birkenmaier-Lechner Political Analysis'25) report NO convergent-r/split-half/MTMM at all, so Pink reporting+passing MTMM (.41>.28) is above-norm. 3 claims REFUTED and excluded (Park MTMM pass; text test-retest .70; Park=canonical benchmark). **A- ceiling reason: convergence is SHARED-METHOD (RKH is text-derived too).** CMC dead-end (prereg @c305aba, `big5_methods` section 13): tested Pink raw_z vs behavioral dispositions (roll-call/cosponsorship = independent non-text method): MISS, mean same-trait diag +0.075 < +0.12; only A x cooperation +0.173 is a real cross-method signal, C x diligence +0.079, E +0.054, O null; discriminant inverted. Behavior is a CRITERION not a TRAIT comparator so it can't resolve the shared-method objection either way: caveat STANDS, grade holds A-. **DO NOT re-run Pink x behavioral cross-method.** The ONLY path A- -> A = an independent TRAIT anchor (multi-rater expert gold panel or self-report) = DATA COLLECTION, not code. Psychology is DISPLAY-ONLY (no rank/engine feed), so this is confidence-labeling, not a targeting fix.",
+      "mark": "not positional",
+      "why": "\"The earlier 'B'\" is time and \"is above-norm\" a comparison"
+    },
+    {
+      "line": 207,
+      "old": "- **POWER FINDING (MATERIAL):** fair perm-null 95% = +0.267 at N=40/88-feat, ABOVE the locked +0.15 bar; expected real effect .25-.33 sits AT the floor, so the PILOT WAS UNDERPOWERED AS PRE-REGISTERED. DO NOT run the fetch at N=40/88-feat and treat +0.15 as meaningful. FIX (Paul 'pursue most optimal', @6be24d6): **PCA TESTED + REFUTED** (N=40 floor +0.267 no-PCA vs +0.34-0.36 PCA k=5/8/10/15; +0.267 = 1.645/sqrt(40) = correlation sampling limit = an N problem, NOT dimensionality). RATIFIED (stricter, pre-look, prereg Addendum 3): (1) audio-E pass now REQUIRES +0.15 AND > permutation-null 95th (one-sided p<.05, wired into b1a, N-aware gate); (2) **target N>=80** (fetch `--eligible` default now 80; r_crit~.18 so expected .25-.33 effect detectable). VALIDATED: N=80 floor drops to +0.173; random audio -> pass=False (3-condition conjunction + P6 re-derivation backstop the 5% type-I). Three numeric bars (+0.15/+0.03/<=0.45) UNCHANGED. **DO NOT re-propose PCA (empirically refuted); the lever is N.**",
+      "mark": "not positional",
+      "why": "\"ABOVE the locked +0.15 bar\" is a magnitude comparison"
+    },
+    {
+      "line": 213,
+      "old": "**Receptivity / \"make psych more load-bearing\" exploration (2026-07-08; ultracode workflow, all findings independently re-derived & held; full record in `moneyball-receptivity-layer`):** headline: N-swap AFFIRMATIVELY UNSUPPORTED, nothing shipped. Engine susc-N = shrunk LEXICAL `big5_traits.json`; lexical-N vs Pink-N (big5_llm_opus -ES) **r=+0.125 near-orthogonal**, so lexical->Pink is a substitution not a refinement (reshuffles susc: 139/533 susc_read changes, top-10 pressure overlap 5/10) yet rank-neutral 0/533 (susc->engines only). Pre-registered incremental-validity gate on press-stance movement (`big5_receptivity_incremental_prereg.md` @6fd522f/@6fff85b, ONE look): **MISS all four candidates** (max = persona +0.076 << 0.151 perm floor); null validated real (breadth_z +0.217, itself a coverage confound). **CMC section 13 REPRODUCED and is the decisive frame:** Pink has no independent-criterion signal (diag mean{A,E,O}=+0.064); recommend EXTENDING the section 13 ruling to bar N-swap/edge_mult/seed_prob (Paul's call). Press-movement criterion binding-constraint = noise-dominated (reliability-filtered n=1) + text/attention-confounded. Successor designed: **Nokken-Poole per-congress ideal-point DRIFT** (in `votes/HS11[789]_members.csv`; DW-NOMINATE dim1 frozen, Nokken re-estimated & moves), n=418, MDE 0.121, text-clean: ready to pre-register PENDING Paul's ratification of the general-drift proxy; CU-specific Tier-2 (vote-switch on 63 cu_bill_directions bills) needs roll-call matrix acquisition. Avenue 3 (Simchon 2024/Matz 2017 approach-match conversion mult) = **design-only NO-BUILD** (optimize.py dollars-only, no approach var; no legislator matched/unmatched criterion). Blue `big5_v2` disqualified (no calibrated N; circular w/ controls). Honest ceiling: only an EXTERNAL susceptibility criterion (expert panel/vignette) justifies weighting text psych (data collection).",
+      "mark": "external",
+      "why": "\"the section 13 ruling\" is section 13 of the CMC methods document, not a section of this note"
+    },
+    {
+      "line": 219,
+      "old": "**Audit + augment round, 2026-07-09 (Paul approved all 4 augments + \"simulate, see what that does, then if it checks out run\").** Audit phase verified: math line-by-line vs ratified spec (susc/seed/incent/pt/pflip/delivery/build_P/xf), artifact census consistent (533 recept/BD/narratives, Pink 509 c_basis 294/215, v2 532, voiceprints 395), kernel 37/37 + audit 64/64. **Grades: Integrity A, Logic A-, Utility B+ (-> A- after the JS fix).** Narratives fact: 391/533 Opus-fallback.",
+      "mark": "not positional",
+      "why": "\"simulate, see what that does\" is a quoted verb"
+    },
+    {
+      "line": 231,
+      "old": "**ROUND 3 SHIPPED (Paul: \"can you safely create it? proceed, then stress test\"): `reactivity_z` = the behavioral N-slot.** `behavioral_dispositions.py` now emits `reactivity_z` (live-interview cutoff proneness, per-program z, sqrt(turns/REACT_TURNS=150) shrinkage, <30 turns -> None; coverage 207/533); `receptivity_layer.py` N-slot dial **`RECEPT_N=behavioral` (default) | `text` (legacy revert)**: the engine's LAST text leg retired, behavioral basis complete. **Stress battery ALL GREEN:** determinism ok; text-mode reproduces legacy (438/533 identical, <=.006 input-freshness residual); bounds ok; rho .9805 / top-20 14/20 vs text; 6 dial variants rho >=.9988; **FAIRNESS IMPROVED:** susc gender loading +.327->+.198, pressure_mult +.137->+.090 (lexical N carried the same gender-language artifact the ES look exposed: women read more susceptible by word style); party -.381->-.361. Face-valid movers: Joe Wilson N+3.17->react+0.01, Mike Rogers -1.76->+1.91. `member_receptivity.json` + dispositions + bundle/dashboards regenerated; downstream chain artifacts (lt_priming/frontier) refresh at next chain run. Methods section 19. Display Big-5 untouched. (**SUPERSEDED 2026-07-11** by the round-7 re-anchor to affective-N; see Record 5.)",
+      "mark": "same note",
+      "why": "\"see Record 5\" names ## Record 5, which moves with this Record 2 line to -audit-dependability-and-n-reanchor (S1 rule 1 grouping); \"at next chain run\" is time"
+    },
+    {
+      "line": 235,
+      "old": "**ROUND 5 + VOTE SMART (Paul opened BOTH gates via AskUserQuestion): A-criterion de-entangled; round 5 RETIRED WITHOUT A LOOK (diagnostic-gated); ES Vote Smart look TAKEN, TIER 5 UNCORROBORATED (see below).** `coop_v2` criterion BUILT (`fec/coop_v2_candidate.py` -> `coop_v2_candidate.json` @03418fd1): mean_z(bipartisan share, directional cross-party cosponsor share), both required, c3 reciprocity = distinct ANTIcorrelated facet (bonding != bridging) reported-never-composited; SB .873/.821, breadth entanglement +.708->-.140, volume +.739->-.159, gender -.021, coverage 315/533, MEM_A=290. Prereg @28914b3 (adversarially reviewed; A_v1 as bar-4 rival, volume in gating partial + sims). **Battery refused the look (planted-A +0.105); 5-seed stratum diagnostic = the refusal is REAL, not draw luck:** median recovery of true r=.40 on the MEM_A stratum +0.132 < .15 bar (2/5) vs ~.195 on random rosters; finance-active members have homogeneous Empath profiles. **Successor gate = the pinned 5-seed diagnostic passing >=3/5 bars 1-4 (synthetic-only, safe to check any time).** Twice-replicated program lesson (rounds 4+5): masked-stratum looks at n~200-300 can't see sub-E-class signals under the Sec-17 bar; the battery discipline is what prevents false-MISS burns. **OPEN user decisions at that time: (a) ENGINE promotion of coop_v2 (coverage trade-off 315 vs old 513; sandboxed stability report on request); (b) Vote Smart API key -> `fec/votesmart_api_key.txt` (gitignored) -> `votesmart_npat_fetch.py` -> COLLECTION RECORD addendum -> `b5_es_votesmart_look.py` one look (prereg = 5 nested outcome tiers w/ FIXED wordings, E2 adverse prior -.042 wrong-signed DISCLOSED, honest prior LOW/VERY-LOW; section 22 reserved).** Methods section 21 @d223188.",
+      "mark": "same note",
+      "why": "\"(see below)\" is the VOTE SMART ES LOOK EXECUTED entry later in Record 2, in the same part; the other \"see\" is a verb (\"can't see\")"
+    },
+    {
+      "line": 237,
+      "old": "**ROUND 5.5 (Paul: \"Improve A\"; session beautiful-hermann, 2026-07-09/10): SUCCESSOR GATE MET, synthetic-only, NO look, NO status change.** `fec/b5_a_stratum_diag.py` (@4d11a5b) ran the Addendum-1 stratum-power diagnostic (same constructor/5 pinned seeds/bars 1-4, actual MEM_A=290, roster exact-matched lock) over 7 bases, w/ a pre-pinned fresh-seed confirmation guard (5 seeds never used for selection). **The round-5 refusal was EMPATH-SPECIFIC, not stratum-intrinsic:** `st_mean` (MiniLM, rebuilt on the 3.8x'd corpus -> `b5_emb_cache_r6_st.npz`) selection 4/5 median +.236 + fresh CONFIRMED 3/5 +.192 (~2x Empath's +.132, which reproduced Addendum-1 EXACTLY); `st_volctrl` CONFIRMED +.194 (recovery NOT volume-carried); empath+lsa256 CONFIRMED weaker +.178; `lsa256` cleared selection then REFUTED on fresh seeds 1/5 +.071 (LSA draw-fragile at n=290: the guard bound). Durable per-seed record: `b5_a_stratum_diag_record.md` (session branch `claude/beautiful-hermann-20a94c`). Honest caveat: Addendum-1's successor clause contemplated the SAME Empath instrument passing via data growth; a NEW instrument needs its own prereg + adversarial review (round-5 instrument-of-record language); the 07-07 BEMB closure was display-Blue-promotion only, distinct. AWAITING PAUL: authorize round-6 lock; GRANTED same session (\"Lock it in\"), see Round 6.",
+      "mark": "same note",
+      "why": "\"see Round 6\" is the ROUND 6 entry right after this one in Record 2, in the same part"
+    },
+    {
+      "line": 239,
+      "old": "**ROUND 6 (Paul: \"Lock it in\"; session beautiful-hermann, 2026-07-10): LOOK TAKEN, MISS on all 5 bars; st-family route CLOSED; A stays criterion-valid / not-discriminant.** FRESH lock @25c0a19 (`big5_a_matrix2_prereg.md` + same-commit `fec/b5_a_matrix2.py`; explicitly NOT a derivation of round-5's successor gate: that \"SAME diagnostic\" clause belongs to the Empath data-growth path, which STAYS OPEN); two-lens adversarial review pre-lock (stats 0-CRIT/0-MAJOR/1-MINOR; discipline 1-CRIT+4-MAJOR ALL incorporated: fresh-lock reframing, anti-basis-shopping clause w/ mandatory screening ledger, grounds-no-claim context-matrix ban, pinned desk wording, restored isolated A_v1 repro secondary). Addendum 1 @9a55ca8 pre-look: collector drift (speeches 234856->234878) -> counts demoted to reported, REPLACED by strictly-stronger roster content-hash gates (MEM md5 374fa4a4, MEM_A md5 3346d05a). **Battery ALL GREEN on st_mean** (first A-look ever licensed: planted core 5/5, A plant +0.312; confound refused -0.072; true+confound admitted +0.514) -> **THE LOOK: own r +0.033 perm-p .296, row-dom False, col False (max rival .120), partial +0.036 p .269: MISS everywhere, not close.** Repro secondary: Empath A_v1 x coop_v1 on MEM = +0.183 = Sec-17 recorded value EXACTLY (criterion re-spec broke nothing; MEM_A +0.227). Consequences applied @b7573c9: RESULT-A2 verbatim in prereg, methods **section 23** (section 22 = Vote Smart on main; branch jumps 21->23 by design), NO desk change, NO engine change, Sec-17/Sec-21 unchanged. **Honest reading: the battery proved the instrument CAN see true r=.40 on this exact stratum; the MISS is about the WORLD: supervised open-vocab semantic text carries no distinct cooperation-v2 signal on the finance-active stratum. Discriminant-A is now EVIDENCE-BOUND on the text side; remaining paths = MEM_A coverage growth (bills archive) or the open Empath data-growth gate. ANTI-BASIS-SHOPPING CLAUSE binds any future basis: own diagnostic + fresh-seed confirmation + FULL screening ledger + adversarial prereg before any pairing; do NOT screen-and-pair casually.** Still open + user-gated at that point: coop_v2 engine promotion; **GRANTED same session (\"Fine promote it\"), see below.**",
+      "mark": "same note",
+      "why": "\"see below\" is the COOP_V2 ENGINE PROMOTION SHIPPED entry right after this one in Record 2, in the same part; \"CAN see true r=.40\" is a verb"
+    },
+    {
+      "line": 241,
+      "old": "**COOP_V2 ENGINE PROMOTION SHIPPED (2026-07-10; Paul: \"Fine promote it\"; round-3 shipping pattern).** `receptivity_layer.py` A-slot dial **`RECEPT_COOP=v2` (default) | `v1` (wholesale legacy revert)**: BOTH cooperation slots (susc .40 + seed_prob .10) + desk radar Cooperation axis now source share-based `cooperation_v2_z` (`coop_v2_candidate.json`, composition frozen @28914b3); **missing coverage (218/533 below c2's >=10-cosponsorship floor) -> NEUTRAL 0, NEVER a silent v1 fallback** (radar renders neutral-with-note like reactivity); artifact gains `coop_slot` + per-member `coop_source`/`cooperation_v2_z`. **Stress battery ALL GREEN:** v1-revert reproduces the pre-promotion live artifact EXACTLY (533/533 identical, all 4 outputs, zero residual); v2 shift = pressure rho .985 top-20 14/20, susc/seed rho ~.77; bounds 0; deterministic; `ranks_python.json` UNCHANGED md5 cce0c5a6; fairness gender +.195->+.191, party -.362->-.350; face-valid movers = Ossoff/Slotkin/Sorensen UP (real bipartisan share), Hill/Emmer/Williams DOWN (volume-inflated raw counts; Emmer-as-whip is the archetype the share basis fixes). Regenerated: `member_receptivity.json`, `dashboard_data.json`, `Moneyball Dashboard.html` (356 KB, UI features intact), `Moneyball.html`, `member_desk_bundle.json`, `cu-member-desk.html`. Audit 69/69 ALL CLEAN post-regen. lt_priming/frontier refresh at next chain run (standard). Pre-promotion artifact backed up in session scratchpad (session-mortal; the v1 dial is the durable revert).",
+      "mark": "not positional",
+      "why": "\"below c2's >=10-cosponsorship floor\" is a threshold and \"at next chain run\" is time"
+    },
+    {
+      "line": 243,
+      "old": "**VOTE SMART ES LOOK EXECUTED (2026-07-09 late evening, same session): TIER 5, \"ES text read externally UNCORROBORATED, the Sec-18 limbo closes with evidence.\"** Collection = browser-session route (Amendment 1; API key demo-gated; server-side fetch 403s): 517/518 joinable classified (Gooden = 1 fetch_failed excluded), base rate .3133, guards PASS; COLLECTION RECORD frozen @ae458cd BEFORE the look; artifact `votesmart_npat.json` sha 8b16c681... git-mv'd to REPO ROOT (= pinned NPATF live-root path; `*.json` is gitignored so it was force-added: external unrestorable data, cu_rollcall lesson). LOOK (verify-pass agreed exactly): v2-ES vs pct_respond n=517 r=+0.0550 perm-p .1080 (S FAILS), FW partial(gender/party/chamber/log-tenure) -0.0075 p .575; **ES = WEAKEST of the 5 axes on this criterion** (O +.0857 C +.0692 E +.0633 A +.0572) so SPEC would have failed too; Pink-ES secondary raw +.0886 p .0242 but partial +.0464 p .155 = confound-attributable, firewalled. Consequences applied: desk ES caveat += \"externally uncorroborated (PCT-respond null, 2026-07-09, n=517)\" (tpl:623), methods section 22, respond-criterion route CLOSED (one look; richer PCT content = new construct + new prereg). **ES end-state at that time: text halo + voice closed + NPAT adverse + full-power external null = every route exhausted WITH EVIDENCE; display axis stays measured-with-caveats; engine never depended on it (N-slot = behavioral reactivity section 19). Do NOT propose new ES validation routes** (NOTE: later re-opened for N by Paul's directive; see Records 5 and 6). Desk+combined regenerated, ranks md5 UNCHANGED cce0c5a6, audit 69/69. Collection craft lessons: concurrent fetch pools -> server load-shed SPA shells (serial 0.45-1.2s no-store = clean); sparse-but-real pages (75-112k HTML, <5k visible text) != shells: classify by PROOF-OF-RENDER (heading+Office in stripped DOM), never char thresholds; NEVER navigate the collection tab (navigation wiped 492 in-memory results once; rebuilt); background-tab timer throttling stretches setTimeout -> CDP 45s timeouts (keep injected calls synchronous when possible).",
+      "mark": "rewrite",
+      "why": "\"see Records 5 and 6\": Record 5 is in this part (-audit-dependability-and-n-reanchor), Record 6 moves to -external-criteria-and-open-a-search, so only Record 6 gets \"in [[part]]\"; \"later re-opened\" is time",
+      "new": "**VOTE SMART ES LOOK EXECUTED (2026-07-09 late evening, same session): TIER 5, \"ES text read externally UNCORROBORATED, the Sec-18 limbo closes with evidence.\"** Collection = browser-session route (Amendment 1; API key demo-gated; server-side fetch 403s): 517/518 joinable classified (Gooden = 1 fetch_failed excluded), base rate .3133, guards PASS; COLLECTION RECORD frozen @ae458cd BEFORE the look; artifact `votesmart_npat.json` sha 8b16c681... git-mv'd to REPO ROOT (= pinned NPATF live-root path; `*.json` is gitignored so it was force-added: external unrestorable data, cu_rollcall lesson). LOOK (verify-pass agreed exactly): v2-ES vs pct_respond n=517 r=+0.0550 perm-p .1080 (S FAILS), FW partial(gender/party/chamber/log-tenure) -0.0075 p .575; **ES = WEAKEST of the 5 axes on this criterion** (O +.0857 C +.0692 E +.0633 A +.0572) so SPEC would have failed too; Pink-ES secondary raw +.0886 p .0242 but partial +.0464 p .155 = confound-attributable, firewalled. Consequences applied: desk ES caveat += \"externally uncorroborated (PCT-respond null, 2026-07-09, n=517)\" (tpl:623), methods section 22, respond-criterion route CLOSED (one look; richer PCT content = new construct + new prereg). **ES end-state at that time: text halo + voice closed + NPAT adverse + full-power external null = every route exhausted WITH EVIDENCE; display axis stays measured-with-caveats; engine never depended on it (N-slot = behavioral reactivity section 19). Do NOT propose new ES validation routes** (NOTE: later re-opened for N by Paul's directive; see Records 5, and 6 in [[2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search]]). Desk+combined regenerated, ranks md5 UNCHANGED cce0c5a6, audit 69/69. Collection craft lessons: concurrent fetch pools -> server load-shed SPA shells (serial 0.45-1.2s no-store = clean); sparse-but-real pages (75-112k HTML, <5k visible text) != shells: classify by PROOF-OF-RENDER (heading+Office in stripped DOM), never char thresholds; NEVER navigate the collection tab (navigation wiped 492 in-memory results once; rebuilt); background-tab timer throttling stretches setTimeout -> CDP 45s timeouts (keep injected calls synchronous when possible).",
+      "referent": "2026-07-feature-personality-psychometrics-external-criteria-and-open-a-search"
+    },
+    {
+      "line": 251,
+      "old": "**SWEEP COMPLETED (Paul authorized \"Merge the branches, 29 sweep two-liner\"):** both branches MERGED to main @aae62c9 (methods conflict resolved = section 22 Vote Smart + section 23 A-st_mean, both kept; RECEPT_COOP + collector fix + refresh steps verified live on main; the coop_v2 revert hazard is CLOSED). **Cache-poisoning anatomy:** the broken run also marked 226 SEGMENT keys ('pbsseg:', no date in key) ok-with-nothing, so the first re-sweep returned 0 because of them; deleted by ts-window (2026-07-09T23:55->00:05:20.847, verified-preview-then-delete) + day keys re-cleared -> re-sweep landed +158 shutdown-week turns (9-14/day at peak). Deep walks launched: PBS 2015->2019 + NPR 2019->2023 (running overnight; recount+regen+audit after they land). **C-SPAN Washington Journal leg: RECONNAISSANCE DONE, BUILD REFUSED ON ROBOTS:** c-span.org robots.txt gives AI-agent UAs (anthropic-ai/ClaudeBot/...) `Disallow: /` AND gives `User-agent: *` `Disallow: /transcript`: the operator explicitly excludes transcript paths from ALL automated collection (unlike pbs/npr/cnn whose robots permit our legs). DO NOT build a scripted/browser WJ collector. The recon (browser, ~6 page views) confirmed the format is otherwise PERFECT for the N gate: single-guest member segments (guest name in slug = prefilterable), punctuated ALL-CAPS captions with real '--' cutoff markers (11/74 blocks), people metadata with person-ids, working in-session `/api/programs/<id>/` JSON. Legitimate path = C-SPAN Archives (Purdue) research/licensing access; Paul is UMN-affiliated; if he obtains licensed transcript access the leg design above is ready and WJ books EXACTLY the rank-and-file members every broadcast leg misses.",
+      "mark": "same note",
+      "why": "\"the leg design above\" is the C-SPAN Washington Journal recon earlier in the same paragraph (single-guest segments, caption cutoff markers, the in-session JSON)"
+    },
+    {
+      "line": 253,
+      "old": "**Durable gotchas:** `DATA`/`EG` in the dashboard are top-level `const` (NOT window properties; probe with bare identifiers); the 8802 http.server dies between sessions (restart before browser checks); gate files must heading-match; `b5_behavioral_instrument.py` has an older duplicate @158d311 (magical-booth) so a merge conflict is expected, THIS version wins. **Branch topology 2026-07-09 EVENING:** LIVE TREE NOW CHECKED OUT ON MAIN @88a7048 (someone merged the dashboard-UI branch dc60cc4 into main mid-session and switched the live checkout; my earlier desk/dashboard regen at 48fd00d-era code briefly dropped those UI features from the live HTML; RESTORED by the 88a7048 regen, dashboard 328->356 KB, ranks md5-identical, audit 69/69). One line of history; magical-booth@158d311 remains the only unmerged relic. Related memory names: `moneyball-audio-narratives-2026-07-09`, `audit-network-vote-cycle-2026-07-08`, `moneyball-receptivity-layer`, `dont-drop-context-anchor-memory`.",
+      "mark": "not positional",
+      "why": "\"my earlier desk/dashboard regen\" is time"
+    },
+    {
+      "line": 283,
+      "old": "- **Prereg** `big5_expert_panel_prereg.md`: STATUS: DRAFT (locks when Paul replaces the line with 'STATUS: LOCKED'). Bars pre-set: panel ICC(2,k) floor .60 / target .72 per trait (below-floor traits DROP from the A-case); THE LOOK = 5x5 Campbell-Fiske, diag r>=+.30 one-sided p<.05 + full row+column dominance; **A-case = >=4/5 traits on PINK (pre-declared primary; big5_v2 secondary non-gating)**; <=2/5 = grade re-opens DOWNWARD (accepted risk, stated pre-data). Reported non-gating: panel A-ES halo adjudication + human cross-genre consistency (CREC subsample).",
+      "mark": "not positional",
+      "why": "\"below-floor traits\" is a threshold"
+    },
+    {
+      "line": 285,
+      "old": "- **Materials** `fec/b5_panel_build.py` -> 98 de-identified packets / 77 members (12 strata party x chamber x visibility, seed 20260709; interview primary ~840w 2-program excerpts + 25-member CREC cross-genre). De-id = big5_llm scrubber + demonyms + district ordinals; **full leak scan = 0 hits**. Outputs (all gitignored): `expert_panel_rater.html` (single self-contained file: blind, per-rater randomized order, localStorage autosave, JSON export) + **SEALED `panel_key.json`** (pid->member; raters must NEVER see it).",
+      "mark": "not positional",
+      "why": "\"raters must NEVER see it\" is a verb"
+    },
+    {
+      "line": 300,
+      "old": "**STATUS then: 2019-2024 all-committee collection RUNNING** (thousands of hearings, ~1s each, several hours). Genial hearings (Senate/noms/approps) legitimately yield 0 events; signal concentrates in contentious House oversight/judiciary and accumulates across the span. NEXT (pending enough data): the BUILDER `antagonism_z` with confound controls. **THE KEY RISK (pre-stated): interruptions are heavily majority/minority + chair-role driven; if the measure just recovers who-was-in-the-minority or who-holds-the-gavel it's CONFOUNDED not dispositional.** Test = within-party + role-adjusted + hearing-contentiousness-residualized split-half reliability + orthogonality to party-control. If it survives -> behavioral A-facet (ratify like `reactivity_z` section 19) or a text-A validation criterion. If party-confounded -> say so, don't force it (anti-basis-shopping discipline stands). See `psych-audit-2026-07-09` (A round-6 MISS, ES tier-5, reactivity = N-slot) and `dispositions-dependability-2026-07-09`.",
+      "mark": "external",
+      "why": "\"See `psych-audit-2026-07-09` ... and `dispositions-dependability-2026-07-09`\" names memory files; \"NEXT (pending enough data)\" is time"
+    },
+    {
+      "line": 307,
+      "old": "5. SUBSTANCE-SHAPED curve (Paul x2: \"substance shapes partisan interpretation + antagonism curve\"): `frame_of()` personal (dispositional, full weight) / substantive (accountability, grounded) / partisan (ideological) / procedural (bare interrogation); antag = mm-interrupt + PERSONAL only. KEY INSIGHT @47hrs: 95% of lexicon-'hostile' = PROCEDURAL neutral 'yes or no' questioning, NOT antagonism, so substance is load-bearing; personal-hostility RARE (needs full contentious corpus). `is_hostile` + `frame_of` lexicons INTERIM; FAITHFUL = Haiku pass over cached exchanges (NEXT: `hearing_substance_llm.py`, Haiku per `fable-paragraphs-only`).",
+      "mark": "not positional",
+      "why": "\"(NEXT: hearing_substance_llm.py ...)\" is time"
+    },
+    {
+      "line": 310,
+      "old": "**PROVENANCE DISPUTE RESOLVED (2026-07-10 audit session):** Paul later flagged \"a rule regarding committee hearings and interruptions was improperly added, something I did not ask for.\" Transcript of session local_bdf50296 VERIFIES the collector WAS his directive, verbatim: \"When did I tell you that partisan interruptions can't be counted, that going against the chair or the chair enforcing can't be counted? Those totally can be counted toward agreeableness and emotional stability. * Go over hearings again, and even hearings out of our domain if they contain the members\" — and the DW-NOMINATE control (a7ab015) too: \"Use the DW-nominate score as a control variable for members on their antagonism, stability, and agreeableness.\" The rule he did NOT ask for = the ORIGINAL Miller & Sutherland cutoff-RECEIVED exclusion in `interaction_features.py`, added 2026-07-04 inside the wizardly-jemison behavioral-basis campaign (merged under umbrella commit 57e4cf9 whose user quote covered only \"Start the merges\"): a session's methodological choice citing a paper, never a user request. Also: 063a47a + a7ab015 are STRANDED on clever-elbakyan (NOT in main) with 3 recon-GO institutional legs (Axe Files 0f7bb4a, CSIS/CFR 8a56aca, AEI/Aspen d476255); the collected data (`hearing_antag` 2,834 rows / `hearing_meta` 353, 2019-01 -> 2024-04, intr=358 defiance=183 yieldback=1,485) lives in the SHARED `social_media.db` regardless; ZERO consumers, no chain wiring, no audit checks, no prereg. See `data-rules-provenance-2026-07-10`.",
+      "mark": "external",
+      "why": "\"See `data-rules-provenance-2026-07-10`\" names a memory file; \"Paul later flagged\" is time"
+    },
+    {
+      "line": 312,
+      "old": "**V2 ROLE-SCOPE SEMANTICS SHIPPED (same day, @d0bd199 on `claude/data-collection-rules-audit-e240c0`). Paul's rule, verbatim:** \"If it is the chair enforcing order, then that does not count, if the chair relents that is a sign of agreeableness, if the chair blows up at someone that counts. It only really doesn't count if it is within the normal scope of their duties as chair/ranking member, however if their tone elevates or they act in what could be considered a temperamental manner that counts. Rule of thumb: is this beyond what is required of them\". Implementation: chair turns -> routine GAVEL = `chair_enforce` CONTEXT only (chair intr/friction suppressed while routine); `chair_blowup` = antagonism (BLOWUP phrases / '!' on enforcement / >=3 gavel cmds one turn); `chair_relent` = +A (RELENT grant <=6 turns after conflict or same-breath w/ own gavel); non-chair v1 semantics unchanged; RANKING-member role-scoping = BUILDER contract (committee-leadership roster join). Also chamber-scoped surname resolution from hhrg/shrg pkg id ('Senator' prefix overrides): killed House-'Mr. LEE' -> Sen. Mike Lee + 22-turn witness-'Armstrong' misattributions. Writes `hearing_antag2`/`hearing_meta2` (+chair_turns, chair_enforce, chair_relent, chair_blowup cols), resume 'antag2:'. Smoke re-validated on CHRG-118hhrg50897 (Luna intr=2 xparty=2 preserved; Comer 72 chair-turns -> enforce=5, 0 antagonism). M&S doctrine text WITHDRAWN in `interaction_features.py` + `big5_methods.md` section 1.3 (cutoff-received stays context on the narrow ground: receiving a cutoff = interrupter's act). Kernel 37/37; chain not run (zero consumers). **PENDING PAUL:** kill old v1 process PID 24392 (auto-classifier blocked the agent from killing it) then DROP `hearing_antag`/`hearing_meta` + DELETE `antag:%` keys (commands in the collector docstring); decide the `big5_llm` GENRES CHRG exclusion (untouched; validated-instrument change + re-score cost); a7ab015 DW-NOMINATE + 3 recon think-tank legs still stranded on clever-elbakyan. Superseded older rule: ~~the Miller & Sutherland hearing cutoff-RECEIVED exclusion as a stated doctrine (2026-07-04)~~, doctrine text withdrawn 2026-07-10; the exclusion survives only on the narrow ground above.",
+      "mark": "same note",
+      "why": "\"the narrow ground above\" is the cutoff-received ground stated earlier in Record 4 (cutoff = the interrupter's act), which the hub keeps"
+    },
+    {
+      "line": 326,
+      "old": "**PROMOTION (mirrors the `RECEPT_COOP=v2` contract exactly): `RECEPT_N='affective'` is now the DEFAULT in `receptivity_layer.py`** (susc_z = .40*A + .30*N - .20*C - .10*E, N-slot = z(affective_n); missing artifact -> behavioral revert, NEVER silent, never text fallback). `audit_full.py` N-slot guard rewritten round-3 -> round-7 (asserts n_slot='affective', >=150 affective members). `RECEPT_N=behavioral` reverts to `reactivity_z`. **VERIFIED: base ranks BYTE-IDENTICAL (RANK md5 c99e8cf7fd04e499 unchanged; receptivity is DOWNSTREAM of the rank authority, feeds susceptibility/cascade/persuasion + colorBy=recept display, NOT the influence rank); audit 71/71; tests 37/37.** Face validity is MUTED (top N: Bergman/Crane/Meng/Higgins/Kelly), but N is non-performative (unlike antagonism), so recognizable names aren't expected; that's the trait, not a flaw. Caveat: LIWC<->LLM convergence only +.24 (moderate); doesn't converge w/ comfort-curve (different N-facet: affective-content vs reactivity-under-pressure). See `psych-audit-2026-07-09`, `hearing-antagonism-2026-07-10` (the A facet, same session).",
+      "mark": "external",
+      "why": "\"See `psych-audit-2026-07-09`, `hearing-antagonism-2026-07-10`\" names memory files"
+    },
+    {
+      "line": 373,
+      "old": "**PROGRESS (2026-07-12, round 1 of the open search):** Built a purpose-designed genuine-warmth LLM instrument (5 facets: consideration/graciousness/warmth-to-nonallies/empathy/non-contempt; openness & extraversion rated separately to partial out), scored 2 independent ways on 177 RKH/NPAT-overlap members. RESULT: inter-method reliability r=**.936** (construct IS reliably recoverable, unlike big5-A which is incoherent with communion/antag), face-valid (Al Green 74, Andy Harris 34, Barr 37, Schiff 40-contempt-to-opponents), and distinct from big5-A (r=.13). BUT external convergence still weak: vs RKH-A +.087 (holistic +.12), vs NPAT-A +.11; resid-on-O vs RKH-A = **+.061** (big5-A resid-O was +.029: marginally better, still null at n=146). Diagnosis: the instrument works; the CRITERION is the problem: RKH-A & NPAT-A are themselves O-halo'd (NPAT-A x NPAT-O=+.35; big5-O predicts RKH-A +.138 >= big5-A's +.135). Parallel to affective-N: a clean measure need not converge with a contaminated benchmark. NEXT: find a non-O-halo'd A criterion (behavioral: reporter-cordiality, credit-to-opponents, casework-empathy counts from corpus; NOT cosponsorship). Also: PINK (`big5_llm_opus`) is uncorrelated with Blue (v2) at member level on EVERY trait (O r=-.044, A +.23, C +.16, E +.03, N +.06), 53% opposite-sign on O; the dashboard \"overlap=✓agreement\" framing is FALSE.",
+      "mark": "not positional",
+      "why": "\"NEXT: find a non-O-halo'd A criterion\" is time"
+    },
+    {
+      "line": 375,
+      "old": "**MAJOR REVERSAL (2026-07-12, verified 3 ways): \"Pink is noise / keep Blue drop Pink\" was WRONG; validity is TRAIT-DEPENDENT.** External RKH convergence (human-anchored, n~147): O Pink +.111 / Blue -.03; C Pink +.174 / Blue +.046; E Pink +.044 / Blue +.123; A +.121 / +.128 tie; ES Pink +.041 / Blue +.233. **Pink wins O & C; Blue wins E & ES; A tie.** On OPENNESS specifically, THREE independent signals agree Pink>Blue: (1) blind text O-adjudication of 100 serious disagreements sided Pink 42 vs Blue 14, HIGH-conf 12-0 Pink; (2) Pink-O converges external RKH-O +.111 vs Blue-O -.03; (3) blind reader also converges RKH-O +.088. Face-valid: McClintock/Cotton/Crenshaw/Todd Young read high-O in text, Pink says high, Blue says LOW; Blue is wrong. MECHANISM: Blue's behavior-calibration DEGRADES O & C (no good behavioral proxy) vs raw Pink LLM item-read. So do NOT globally drop either; the earlier \"drop Pink keep Blue\" recommendation is RETRACTED. (Sig caveat: only Pink-C +.174 & Blue-ES +.233 individually sig at n~147; Pink-O +.111 ns alone but corroborated by blind adjudication.)",
+      "mark": "not positional",
+      "why": "\"the earlier 'drop Pink keep Blue' recommendation\" is time"
+    },
+    {
+      "line": 383,
+      "old": "Verdicts and design were PRESENTED to Paul 2026-07-16, awaiting his decisions; then EXECUTED the same day (see below). Worktree loving-payne, branch `claude/gallant-gates-982203`; the live tree was on `claude/cfpb-sentiment-recorrection` @35b8a09; the analysis read the live tree read-only, NOTHING applied.",
+      "mark": "same note",
+      "why": "\"(see below)\" is the EXECUTED 2026-07-16 entry later in Record 7, which moves with it to -senate-gold-desert-fill-and-a-anchoring"
+    },
+    {
+      "line": 434,
+      "old": "4. `make_member_desk_00.tpl`: renders gold validation TIER (diamond-filled two-panel vs diamond-outline association) from the already-shipped `gold_trait_status`, which the tpl previously ignored; that display gap is why \"extremely high A\" looked unvalidated.",
+      "mark": "not positional",
+      "why": "\"which the tpl previously ignored\" is time"
+    }
+  ]
+}

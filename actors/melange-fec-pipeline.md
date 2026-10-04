@@ -65,7 +65,7 @@ tags: ["type/actor", "status/active", "domain/backend"]
 - **Collectors:** [[sentinel-collectors]] and the `fec/collect/` legs (17 leaf collectors moved there in Phase 3 pilot) feed the data plane the chain consumes.
 - **Draft Systems:** [[draft-systems-r-pipeline]] (R pipeline, `MONEYBALL_DRAFT` root; `cu_press_release_scraper.R` etc.).
 - **External:** Excel/OneDrive (workbook view), GovInfo (membership refresh fetch), Anthropic API (paid steps, spend-gated), Vote Smart, MEDSL, Voteview, R 4.6.0 at `C:\Program Files\R\R-4.6.0` (not on PATH).
-- **Architecture/process context:** [[2026-07-rfc-melange-architecture-system-of-record]] (system-of-record inversion), [[2026-07-feature-influence-engine-internals]] (engines), [[2026-07-troubleshooting-melange-audits-and-reviews]] (audit history, guardrails), [[2026-07-troubleshooting-melange-live-tree-git-drift]] (drift, line endings), [[zero-rank-delta-verification]] (the verification gate).
+- **Architecture/process context:** [[2026-07-rfc-melange-architecture-system-of-record]] (system-of-record inversion), Influence engine internals (engines), [[2026-07-troubleshooting-melange-audits-and-reviews]] (audit history, guardrails), [[2026-07-troubleshooting-melange-live-tree-git-drift]] (drift, line endings), [[zero-rank-delta-verification]] (the verification gate).
 
 ## Flows
 
@@ -408,10 +408,12 @@ Related: `melange-live-tree-reconcile-2026-09-19`, `laundry-list-closeout-2026-0
 
 ## Related Topics
 
-- [[2026-07-feature-influence-engine-internals]] - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
+- Influence engine internals - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
 - [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
 - [[2026-07-troubleshooting-melange-audits-and-reviews]] - Melange audit runs, guardrails, 09-13 five-lane code review, hallucination framework (D-007), provenance census, laundry-list close-out
 - [[2026-07-troubleshooting-melange-live-tree-git-drift]] - Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror
+- [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]] — Guardrails for any autonomous Melange audit or review run, from the run-guardrails memory of 2026-07-02 as updated through 07-10.
+- [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] — Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19.
 
 ## Related Projects
 

@@ -1,5 +1,5 @@
 {
-  "what": "Batch 3 link model (plan .bedrock/reorg/plan.md Revision 4: 4.6 people/paul-goff 50 -> 14, 4.7 the 19 non-split leaves with D1-D6, section 6 concept links, section 5 C6 back-links). Batch 4: D5 retargeted from the mentat-collection hub to its -cross-verification part (4.4 C4, 4.7). Read by .bedrock/reorg/relink.ts (A.5).",
+  "what": "Batch 3 link model (plan .bedrock/reorg/plan.md Revision 4: 4.6 people/paul-goff 50 -> 14, 4.7 the 19 non-split leaves with D1-D6, section 6 concept links, section 5 C6 back-links). Batch 4: D5 retargeted from the mentat-collection hub to its -cross-verification part (4.4 C4, 4.7). Batch 5: D1 and D2 keep their hubs and add the parts that carry their sessions (4.7: the acu-outline discussion + -legfix5-full-text-and-culling, the coalition-builder discussion + -coalition-builder). Read by .bedrock/reorg/relink.ts (A.5).",
   "leaves": {
     "topics/2026-06-working-agreement-change-control-and-decision-authority": { "home": "projects/melange-systems", "keep": ["people/paul-goff", "projects/mentat", "actors/moneyball-workbook"] },
     "topics/2026-06-working-agreement-communication-and-presentation-style": { "home": null, "keep": ["people/paul-goff", "concepts/trend-over-significance"] },
@@ -14,8 +14,8 @@
     "topics/2026-09-feature-staffer-network-surfaces": { "home": "projects/melange-systems", "keep": ["actors/staffer-live-sidecar", "actors/melange-dashboard", "concepts/live-tree-patch-discipline"] },
     "topics/2026-09-troubleshooting-mentat-repo-state-and-workbooks": { "home": "projects/mentat", "keep": ["actors/mentat-console", "actors/mentat-fec-pipeline"] },
     "topics/2026-10-feature-brain-vault-setup": { "home": null, "keep": ["actors/brain-vault-political-systems", "actors/brain-graph", "actors/claude-code-harness"] },
-    "discussions/2026-07-27-acu-outline-north-star-rulings": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-legislative-pillar-acu-review"] },
-    "discussions/2026-07-30-coalition-builder-redesign-session": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-influence-engine-internals", "actors/melange-dashboard"] },
+    "discussions/2026-07-27-acu-outline-north-star-rulings": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-legislative-pillar-acu-review", "topics/2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling"] },
+    "discussions/2026-07-30-coalition-builder-redesign-session": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-influence-engine-internals", "actors/melange-dashboard", "topics/2026-07-feature-influence-engine-internals-coalition-builder"] },
     "discussions/2026-09-03-staffer-network-architecture": { "home": "projects/melange-systems", "keep": ["topics/2026-09-feature-staffer-network-data-and-math", "actors/staffer-live-sidecar", "concepts/concurrent-service-overlap-edge-rule"] },
     "discussions/2026-09-06-staffer-sorting-rulings": { "home": "projects/melange-systems", "keep": ["topics/2026-09-feature-staffer-network-data-and-math"] },
     "discussions/2026-09-17-mentat-xref-council-review": { "home": "projects/mentat", "keep": ["topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification", "actors/mentat-console", "concepts/exclude-on-contradiction-not-ambiguity"] },
@@ -40,6 +40,8 @@
   "named": [
     ["discussions/2026-07-27-acu-outline-north-star-rulings", "topics/2026-07-feature-legislative-pillar-acu-review"],
     ["discussions/2026-07-30-coalition-builder-redesign-session", "topics/2026-07-feature-influence-engine-internals"],
+    ["discussions/2026-07-27-acu-outline-north-star-rulings", "topics/2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling"],
+    ["discussions/2026-07-30-coalition-builder-redesign-session", "topics/2026-07-feature-influence-engine-internals-coalition-builder"],
     ["discussions/2026-09-03-staffer-network-architecture", "topics/2026-09-feature-staffer-network-data-and-math"],
     ["discussions/2026-09-06-staffer-sorting-rulings", "topics/2026-09-feature-staffer-network-data-and-math"],
     ["discussions/2026-09-17-mentat-xref-council-review", "topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification"],

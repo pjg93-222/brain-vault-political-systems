@@ -34,7 +34,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 - The deliverable is `Melange Systems/Moneyball.html` of [[melange-systems]]: SNA cosponsorship network + per-member member desk (+ industry boards and, from 2026-09-04, the staffer network surface), generated from the Blended workbook via `build_dashboard_bundle.py` -> `make_dashboard_html.py` + `make_member_desk.py` -> `make_combined.py`.
 - The two-axis principle that shapes every board is in [[influence-vs-alignment-axes]]: rank = INFLUENCE, per-category stance = ALIGNMENT.
-- Tier boards that the desk and industry pages render: [[2026-07-feature-primacy-and-industry-tier-boards]] (the industry-tab round of 2026-08-03 feeds that topic too).
+- Tier boards that the desk and industry pages render: Primacy and industry tier boards (the industry-tab round of 2026-08-03 feeds that topic too).
 - Later redesign (09-22 onward, overlay-first v2 on 8841) is covered in the actor [[melange-dashboard]].
 - Pillar weights (resolution 3) as they appear in this history: `.40/.30/.20/.10` (2026-06-29, HISTORICAL; Committee/Influence .40, Legislative .30, Press .20, Demo .10); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED; the Members Section source calls it "a stale doc/comment", the brain record and constitution text still say it); `45/10/40/5` (live in `ranks_python.json` `ab_weights`, `pillar_policy.py:11-16`, since 2026-09-03: LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). The 45/10/40/5 set moved 520/533 ranks vs the 08-26 baseline (max 192, mean 15.75).
 
@@ -61,7 +61,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 ## Related Topics
 
-- [[2026-07-feature-primacy-and-industry-tier-boards]] - Primacy tier board (factor-only purity, drift, 09-19 methodology lane) plus per-industry tier boards, valence/tensor, champion crown law
+- Primacy and industry tier boards - Primacy tier board (factor-only purity, drift, 09-19 methodology lane) plus per-industry tier boards, valence/tensor, champion crown law
 
 
 ## History
@@ -148,7 +148,7 @@ Preview verified 2026-07-16 (zero console errors, filters + cards + links correc
 
 ## Industry-tab UI round 2 (2026-08-03)
 
-Paul's 2026-08-03 request on the industry page: a tab back to the main dashboard; a cultivate/maintain/disengage indicator per (industry, member) and (org, member); and a click-through from a member to every interaction sorted by year with date, filing lobbyist, bill, position, and notes. Built UNCOMMITTED on `claude/industry-network-ui-23cabd`. Also feeds [[2026-07-feature-primacy-and-industry-tier-boards]].
+Paul's 2026-08-03 request on the industry page: a tab back to the main dashboard; a cultivate/maintain/disengage indicator per (industry, member) and (org, member); and a click-through from a member to every interaction sorted by year with date, filing lobbyist, bill, position, and notes. Built UNCOMMITTED on `claude/industry-network-ui-23cabd`. Also feeds Primacy and industry tier boards.
 
 **Two decisions Paul made at the gate (AskUserQuestion, 2026-08-03):**
 - POSITION -> "Both — ship column now, classify later." The column ships wired and empty; running `classify_bill_positions.py` is a SEPARATE gated step he had not authorized then.

@@ -1,0 +1,470 @@
+{
+  "id": "B4",
+  "what": "Batch 5 split of topics/2026-07-feature-legislative-pillar-acu-review (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B4); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-legislative-pillar-acu-review",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Topics",
+      "## Related Discussions",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Open questions"
+    ],
+    "links": [
+      "discussions/2026-07-27-acu-outline-north-star-rulings",
+      "actors/codex-executor",
+      "actors/sentinel-collectors"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-legislative-pillar-acu-review-letters-and-legfix-1-4",
+      "title": "Letters integration and legfix 1-4 (07-17 to 07-25)",
+      "summary": "The legislative pillar from 2026-07-17 to 07-25: integration of the 7 letters, the read-only data-plane audit, the legfix and LEGFIX2 bundles, the Tier-1 wiring deploy and the legfix4 residue close-out",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Pillar integration of the 7 letters (2026-07-17)",
+        "## Legislative data-plane audit 2026-07-24 (read-only)",
+        "## Fix bundle SHIPPED @9c2bf41 (branch `codex/legfix-20260724`, worktree `cxwt-legfix`) - NOT merged to main",
+        "## LEGFIX2 expansion @5619691 (branch `codex/legfix2-20260725`, stacked on 9c2bf41) - NOT merged; 2026-07-25 Meta LOOP",
+        "## Tier-1 wiring DEPLOYED LIVE @71a5fdb, merged @dd60333 (Paul \"Run 1-5\" + \"Approve, execute 2, 3, and 4\", 2026-07-25)",
+        "## legfix4 residue close-out (2026-07-25)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling",
+      "title": "legfix5: six-year full text, GovInfo lane and culling engine (07-27)",
+      "summary": "legfix5 of 2026-07-27: the six-year full-text collection, the GovInfo official-text lane and culling engine, and the acu-outline rulings carried into it",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## legfix5 full-text collection (2026-07-27)",
+        "## legfix5 GovInfo official-text lane and culling engine (2026-07-27 early AM)",
+        "## Acu-outline rulings carried into this lane (2026-07-27 evening)"
+      ],
+      "keep": [
+        "actors/codex-executor"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane",
+      "title": "Legislative-effectiveness (Volden-Wiseman) shadow lane (09-10 to 09-12)",
+      "summary": "The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built, Claude verified read-only and Paul applied",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Legislative-effectiveness (Volden-Wiseman five-stage) shadow lane (2026-09-10 to 2026-09-12)"
+      ],
+      "keep": [
+        "actors/codex-executor"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster",
+      "title": "Bill-lobbying regression lane: the cosponsor forecaster (09-04)",
+      "summary": "The bill-lobbying regression lane of 2026-09-04: making the cosponsor forecaster self-updating from the workbook and the sentinel collectors, and whether a logistic model fits better",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Bill-lobbying regression lane (2026-09-04): the cosponsor forecaster"
+      ],
+      "keep": [
+        "actors/sentinel-collectors"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance",
+      "title": "Corpus census, bill-plane audit and press media-stance display",
+      "summary": "The 2026-07-10 corpus census and the bill-plane audit and press media-stance display from 2026-07-19 on, through the crown and money rulings, tier weights and Codex-lane hardening",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Corpus coverage census (2026-07-10)",
+        "## Bill-plane audit and press media-stance display (2026-07-19 onward)"
+      ],
+      "keep": [
+        "actors/codex-executor"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K16",
+      "a": "topics/2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane",
+      "b": "actors/codex-executor-incidents",
+      "event": "effectiveness shadow lane (counterpart created in batch 4)"
+    },
+    {
+      "id": "K17",
+      "a": "topics/2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance",
+      "b": "topics/2026-07-feature-data-collection-lanes-collection-scope",
+      "event": "2026-07-10 corpus census (counterpart created in batch 6)"
+    }
+  ],
+  "relations": [
+    {
+      "id": "D1",
+      "part": "topics/2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling",
+      "with": "discussions/2026-07-27-acu-outline-north-star-rulings"
+    }
+  ],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 35,
+      "old": "- Data-plane siblings: the collection lanes are in [[2026-07-feature-data-collection-lanes]]; the interview/hearing stance and press layer is in [[2026-06-feature-cu-stance-and-sentiment]]; the bill-side \"sentinel\" is [[sentinel-collectors]] (Codex's Sentinel Bill Ledger.xlsx, see below).",
+      "mark": "rewrite",
+      "why": "\"(Codex's Sentinel Bill Ledger.xlsx, see below)\": the ledger is quoted in the hub's Decisions (still below) and described in the bill-lobbying lane (\"the only bill-side sentinel is Codex's uncommitted live-tree Sentinel Bill Ledger.xlsx\"), which moves to -cosponsor-forecaster; below stays and the part is added",
+      "new": "- Data-plane siblings: the collection lanes are in [[2026-07-feature-data-collection-lanes]]; the interview/hearing stance and press layer is in [[2026-06-feature-cu-stance-and-sentiment]]; the bill-side \"sentinel\" is [[sentinel-collectors]] (Codex's Sentinel Bill Ledger.xlsx, see below and in [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]]).",
+      "referent": "2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster"
+    },
+    {
+      "line": 71,
+      "old": "| 2026-07-19 | Bill plane audited structurally CLEAN (7 pass / 0 FAIL / 5 WARN); interview + hearing stance display built (`DESK_MEDIA_STANCE`); 3 commits merged to main @ca1585a. Later the same lane: money-defection fixes @1856feb and @46df1de, tier weights 80/20 -> 84/16 @0efaa06, merge debt cleared + TODO.md @4d87fee, doc-rot sweep @b706ec7, Codex hardening batch @565136c. |",
+      "mark": "not positional",
+      "why": "\"Later the same lane\" is time"
+    },
+    {
+      "line": 86,
+      "old": "- **Tier directive 2026-07-17 (\"adjust to the true tier 1s\"):** T1 pins removed; Tier 1 == pure 80/20 top-12. Superseded by the 84/16 change below.",
+      "mark": "same note",
+      "why": "\"Superseded by the 84/16 change below\" is the next Decisions bullet (Tier weights 80/20 -> 84/16), kept by the hub"
+    },
+    {
+      "line": 87,
+      "old": "- **Tier weights 80/20 -> 84/16 (@0efaa06, Paul 2026-07-19: \"0.84/0.16 works, do it\").** All pins retired (see detail).",
+      "mark": "rewrite",
+      "why": "\"(see detail)\" is ### Tier weights 80/20 -> 84/16, all pins retired (@0efaa06), which moves to -bill-plane-and-media-stance",
+      "new": "- **Tier weights 80/20 -> 84/16 (@0efaa06, Paul 2026-07-19: \"0.84/0.16 works, do it\").** All pins retired (see detail in [[2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance]]).",
+      "referent": "2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance"
+    },
+    {
+      "line": 93,
+      "old": "- **GovInfo summaries = evidence of record, letters mandatory, amendments half, keep all ledgers / edges, collect 15 historical probes (Paul 2026-07-27):** see [[2026-07-27-acu-outline-north-star-rulings]].",
+      "mark": "external",
+      "why": "\"see [[2026-07-27-acu-outline-north-star-rulings]]\" names the discussion note"
+    },
+    {
+      "line": 96,
+      "old": "- **Apply of the shadow lane (Paul 2026-09-12):** \"apply the brain update draft. Fully implement the new parameters, lets see the overall changes and the new tier 1's\" then \"Do it for me\" (applied ~23:16 ET 2026-09-11 per the memory's own timestamps).",
+      "mark": "not positional",
+      "why": "\"lets see the overall changes\" is a quoted verb"
+    },
+    {
+      "line": 101,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 103,
+      "old": "- [ ] Perform the 19-category review (title -> summary -> bill text) against the ACU Search Outline docx; Quorum 44/44 floor (see [[2026-07-27-acu-outline-north-star-rulings]]).",
+      "mark": "external",
+      "why": "\"see [[2026-07-27-acu-outline-north-star-rulings]]\" names the discussion note"
+    },
+    {
+      "line": 111,
+      "old": "- [ ] Adjudicate HR8398 and HR8413 blank positions only at the next archive refresh (scoring-inert).",
+      "mark": "not positional",
+      "why": "\"at the next archive refresh\" is time"
+    },
+    {
+      "line": 116,
+      "old": "- [ ] Reconcile config.toml model dials with Paul before any Codex dispatch for this lane (see [[codex-executor]]).",
+      "mark": "external",
+      "why": "\"see [[codex-executor]]\" names the actor note"
+    },
+    {
+      "line": 120,
+      "old": "Paul's directive 2026-07-17: add the RE_ E-Meet zips' 7 letters (all POSITIVE pro-CU/CDFI) to the legislative column. Creators = **sponsor**, other signers = **original-cosponsor** (weight 2.0, satisfies say-do Champion A-path). L1 (Warner/Crapo): BOTH sponsors. L4: Blunt Rochester sole sponsor. Departed/no-row signers filtered silently. (See `legislative-letters-2026-07-17`; the memory header line: 7 congressional sign-on letters (2 zips) ingested as LTR- rows in `manual_bill_evidence.csv`; sponsors/original-cosponsors per Paul; stance layer regenerated + proven; workbook pillar counts staged for Paul's Excel step.)",
+      "mark": "external",
+      "why": "\"See `legislative-letters-2026-07-17`\" names a memory file"
+    },
+    {
+      "line": 122,
+      "old": "**Mechanism:** letters = `LTR-<congress>-<cat>-<LEAD>` rows in `manual_bill_evidence.csv` (the Direction cell is authoritative since `bill_key` returns None for LTR ids). L1-L4 were already ingested by an earlier lane the same day but with Role=co-sponsor (1.0); Paul ordered the retrofit to original-cosponsor + L1 Crapo -> sponsor (32 role changes). Claude added L5 (Kim+Crapo CDFI support, 104 rows), L6 (Ciscomani+Magaziner CU Tax Status, 34), L7 (Waters+Foster CDFI-RIFs, 121); the CSV is now 297 rows. Dropped (not in the 533 roster despite sitting): **LaMalfa, Swalwell, David Scott**, plus delegate Pablo Hernandez - possible roster gaps worth flagging if it recurs.",
+      "mark": "not positional",
+      "why": "\"by an earlier lane the same day\" is time"
+    },
+    {
+      "line": 137,
+      "old": "**KEY WIRING FACTS:** score path = col4 agenda (0.7) + AG:AW efficiency (0.3) via Primary-E only; Sub Layer C:U per-category SUMPRODUCTs feed ONLY Primary c7-c13 display - and C:U was STILL one-row-shifted post-07-15 (Bean reads Hamadeh + Bean's-own-row-as-weights; Lofgren reads empty 536) - rank-safe, REPORTED to Paul, surgery-pattern fix available (then done, see below). Crapo CDFI leg_raw 6.0 / CCM 2.0 - `cfpb-recorrection-band-shift-2026-07-15` Crapo-CCM watch.",
+      "mark": "same note",
+      "why": "\"(then done, see below)\" is the \"(a) SubLayer C:U REPAIRED - 9,594 cells\" bullet later in the same letters section, which moves whole to -letters-and-legfix-1-4"
+    },
+    {
+      "line": 162,
+      "old": "- **ACU letter corpus starts 2024-01-07** but the bill corpus spans 2021-2026. Absence of an ACU letter proves nothing for 117th/118th bills - this killed a Fable finding. See `dont-drop-context-anchor-memory`.",
+      "mark": "external",
+      "why": "\"See `dont-drop-context-anchor-memory`\" names a memory file"
+    },
+    {
+      "line": 182,
+      "old": "STILL USER-GATED at that point (later cleared by the 2026-07-25 gates below): wiring `cu_bill_directions.json`, re-routing S.J.Res.18/H.J.Res.59/H.R.6955, and everything in Tier 3/4 of the report.",
+      "mark": "same note",
+      "why": "\"the 2026-07-25 gates below\" are the LEGFIX2 expansion, the Tier-1 wiring deploy (Paul \"Run 1-5\") and the legfix4 residue gates of 2026-07-25, all in -letters-and-legfix-1-4 after this section; \"later cleared\" is time"
+    },
+    {
+      "line": 199,
+      "old": "**Workbook conventions learned (E19, 138/142 identified):** per-role success rates = count-based pct ROUNDED 1DP; generic Success Rate = mean of the sheet's OWN rounded sibling columns; averages rounded 2dp; Blended O/E/F caches DEAD -> `pillar_inputs_snapshot.json` is authority; \"Bill Model\" in audit = 'Blended Model' col O(15)/E(5)/F(6). NEW inert findings: DP2/EF2 raw-0-vs-normalized-null weights; EK1/EL1/EM1 header drift. OPENS at the time: CU/CW unidentified at one-bill-unit (suspect: hand-tagged CFPB block membership), AV/DX 0.05pp near-miss, E16 1416 unreproduced (CU/CW and AV/DX were then closed 2026-07-25 by dissolution, below).",
+      "mark": "same note",
+      "why": "\"(CU/CW and AV/DX were then closed 2026-07-25 by dissolution, below)\" is ## legfix4 residue close-out (\"CLOSED by dissolution\"), which moves to the same part -letters-and-legfix-1-4 and stays below"
+    },
+    {
+      "line": 201,
+      "old": "Ops: Codex MCP threads DIE on glassbox window reopen (Session not found) - a fresh thread + self-contained contract works; evidence packs go STALE when later dispatches touch the generator or add readers of scanned files (E17 scans worktree code - the one non-manifest input, now fingerprinted); scratch-root audits need code-from-`__file__` not `MONEYBALL_ROOT\\fec` (fixed in `bill_coverage_audit`).",
+      "mark": "not positional",
+      "why": "\"when later dispatches touch the generator\" is time"
+    },
+    {
+      "line": 208,
+      "old": "- 7 S.919-class quarantines wired NOTHING (S.919 only as the 119th GENIUS instance; S.2704/117, HR2392/119, queue HR4479/HR4763/HR6955/S394 quarantined by the fail-closed title matcher). 47 conflicts resolved keep-earlier. MONITOR + BLANK (HR8398, HR8413) remain UNWIRED - no letter/tracker evidence.",
+      "mark": "not positional",
+      "why": "\"47 conflicts resolved keep-earlier\" is a merge policy (keep the earlier record), not a place in the note"
+    },
+    {
+      "line": 212,
+      "old": "- **HR8398/HR8413 closure refinement (2026-07-25):** both are ABSENT from the bills archive entirely - scoring-INERT even if positioned; ACU site search cannot resolve them (quoted queries ignored); closed UNRESOLVABLE-PUBLICLY, revisit only at the next archive refresh.",
+      "mark": "not positional",
+      "why": "\"at the next archive refresh\" is time"
+    },
+    {
+      "line": 216,
+      "old": "Workbook residues CU/CW + AV/DX CLOSED by dissolution (Legislative Score sheets contain ZERO formulas); CU Tax Status is an honest zero; the congress.gov API has no keyword search. 2026-07-25: Paul gated open the three items the prior session had deliberately left untouched (see `legislative-audit-2026-07-24`).",
+      "mark": "external",
+      "why": "\"see `legislative-audit-2026-07-24`\" names a memory file"
+    },
+    {
+      "line": 229,
+      "old": "- Result over 55,040 titles (117/118/119): 6 on-topic Interchange (Credit Card Competition Act, 3 vintages x 2 chambers), 11 on-topic CDFI Fund (previously ZERO rows, never configured), 6 off-topic flagged REVIEW-REQUIRED by policyArea and deliberately NOT dropped.",
+      "mark": "not positional",
+      "why": "\"previously ZERO rows\" is time"
+    },
+    {
+      "line": 236,
+      "old": "**OPS HAZARD OBSERVED:** another session ran `run_pipeline.py --from make_member_desk` against the SAME live tree while the audit was reading it (law 5, live). Ranks were safe only because their resume point is after `compute_pillars`. Always re-check `Get-CimInstance Win32_Process -Filter \"Name='python.exe'\"` for the COMMAND LINE, not just process presence - mtimes newer than your own run are the tell. See `live-tree-branch-state-2026-07-14`.",
+      "mark": "external",
+      "why": "\"See `live-tree-branch-state-2026-07-14`\" names a memory file"
+    },
+    {
+      "line": 240,
+      "old": "Full-text collection reported COMPLETE 2026-07-27, generation `audits/legfix5/congress_advanced_pages_20260725/text_relevance_httr_full_20260727z`. 18,555 pages collected + 2 bills with no published text = 18,557/18,557 accounted. The 2 (`119:hr:9821`, `119:hr:9900`) have `text_versions=[]` in BillStatus (authoritative absence, never fetchable) - recorded in `<gen>/accounted_no_text.json`; `overall_progress.json` is set `completed` and no watcher loops remain running. Cloudflare blocks all day were time-windowed and cleared on idleness; do NOT evade - wait. Collector at 6 workers ~85-140/min; blocks after ~9h of load. (Corrected below: \"COMPLETE\" was overstated.)",
+      "mark": "same note",
+      "why": "\"(Corrected below: 'COMPLETE' was overstated.)\" is the \"COMPLETE 18,557/18,557 is OVERSTATED\" bullet of ### 8-agent pre-culling audit in the same legfix5 section, which moves to -legfix5-full-text-and-culling"
+    },
+    {
+      "line": 242,
+      "old": "**Summaries:** everything was collected EXCEPT summaries as their own fetch - but summary prose is already HELD: 58.5% of BillStatus records carry `/summaries` text (maps to the 10,732 `available_pending_congress_gov_fetch`). Congress.gov `/bill/.../summaries` is a 404 - no page to scrape. So the summary \"gap\" is a PROVENANCE rule, not a collection job: the contract stamps GovInfo-BillStatus summaries `available_pending_congress_gov_fetch` (not `available`) because it demands congress.gov provenance - the same rule that bars GovInfo XML from the full-text gate. Evidence has title 100%, sponsor/cosponsor/stage/actions 80% (the other 20% = 3,703 amendments, `not_required` by design). (Resolved by Paul's evening ruling: GovInfo counts as summary evidence of record - see [[2026-07-27-acu-outline-north-star-rulings]].)",
+      "mark": "external",
+      "why": "\"see [[2026-07-27-acu-outline-north-star-rulings]]\" names the discussion note"
+    },
+    {
+      "line": 244,
+      "old": "**Culling is NOT blocked by text.** Readiness assessment (verified by running the contract's own predicates): `category_evidence` is EMPTY on all 18,557 -> `category_audit_ready=0` -> `semantic_review_ready=0` -> `membership_is_finalizable` False corpus-wide. And only 57 of 64,004 memberships have any decision (62,628 unresolved). Culling today reproduces the existing all-flagged partition (`241cbbb1…` already had membership_partition==flagged_memberships byte-identical). Real blockers ranked: (1) adjudicate 63,947 memberships, (2) the 19-category review, (3) summary provenance decision. None sufficient alone. Correct evidence input is `evidence-20260727a` NEVER `-r` (built from OneDrive conflict copies; declares hashes not on disk) - superseded by the evening finding below (evidence of record = `evidence-20260727T202317`). ~13,700 collected pages are STRANDED because evidence still points at the old 2,886-receipt `_stage_20260726` - rebuild evidence against the live gen first (cheap, additive, new generation).",
+      "mark": "same note",
+      "why": "\"superseded by the evening finding below\" is ### 8-agent pre-culling audit (evening 2026-07-27) in the same legfix5 section and part"
+    },
+    {
+      "line": 246,
+      "old": "**Committed that day** @e09db5e (59 files) + @852eb62 + @a719807: a five-agent audit found the safety gates ASSERTED rather than DERIVED. Fixed + tested (reported 126/126, see correction): culling `--legacy-edges` no-op veto, two PROVEN ledger paradoxes (candidate_partition_sha256 pre/post-append, junk-survives-flagged), 8 hardcoded gate literals; the integration terminal gate was satisfiable by hand-authored JSON (now derives 21 assertions), rank drift NEVER measured (now measured, threshold 0 = user's call), scoring_eligible 4-term-vs-3 fail-open; gap auditor mis-rooting (12 phantom -> 0, hid 24 real losses); coverage recon counted receipts without opening archives; control-plane couldn't tell 2 review ledgers apart. Shared `legislation_measure_key.py` (LAST_SUPPORTED_CONGRESS=119, defuses the 120th-rollover bomb across 12 defs), `lane_file_io.py` (atomic write + BOM-tolerant NDJSON). 18 `-PaulComputer` conflict copies quarantined to `fec/_quarantine_paulcomputer_20260727/`.",
+      "mark": "same note",
+      "why": "\"(reported 126/126, see correction)\" is the correction of ### 8-agent pre-culling audit (corrections, all verified first-hand) in the same legfix5 section and part"
+    },
+    {
+      "line": 264,
+      "old": "1. **Historical-probe gate - REAL and OPEN.** `historical_probe_gate_complete=False` (live in `legislation_culling_20260726/progress.json`). 15 probes / 598 identifiers, genuinely uncollected (dir exists, 0 files). See `audits/legfix5/HISTORICAL_PROBE_READINESS_2026-07-27.md`. CHEAP: 15 document requests, 2-5 min. 503/598 already covered -> only **95 new candidates** (+0.51%). **DANGER: `merge_congress_advanced_coverage_runs.py` is fail-closed with ZERO tolerance - one phantom citation -> `RuntimeError`, no override flag.** 73 of the 95 are press-article-sourced = the risk cohort (Congress derived from article DATE, so a \"last Congress\" back-reference yields a wrong key). **Requires Paul's phantom-citation policy decision BEFORE dispatch** (quarantine+rebuild vs amend merge to flag = a contract change). URL length ~3.9 KB vs 2,738-char proven max - smoke-test ONE probe first. **SEQUENCING: close this BEFORE the 19-category review or you adjudicate 95 candidates twice.** NEW BUG (missed by e09db5e AND by the 8 agents): `import_verified_membership_exclusions_to_junk_pile.py:220-221` HARDCODES `historical_probe_gate_complete: False` / `historical_probes_remaining: 15` as literals - nothing derives them; the same assert-not-derive class the audit pass existed to kill. (Paul's later ruling: collect the 15 probes after offline pre-clear of the 95.)",
+      "mark": "external",
+      "why": "\"See `audits/legfix5/HISTORICAL_PROBE_READINESS_2026-07-27.md`\" names a file; \"Paul's later ruling\" is time"
+    },
+    {
+      "line": 265,
+      "old": "2. **The 1,771 / 454 membership-edge decision** - ranked No. 1 in the morning handoff, absent from the evening one, unowned. 1,771 discovery edges missing from the review ledger (748 `credit_union_headline_recall_net` + 1,023 `title_alias_probe_*`), 454 ledger edges missing from discovery across 5 REAL scoring categories (cdfi_fund 175, mortgage_lending_housing 138, examination_supervision 67, technology_emerging_issues 62, fraud_prevention 12). Culling reads discovery directly so nothing is lost - **but a review driven off the ledger would never see the 1,771.** (Paul later ruled: keep the 1,771/454 edges, keep all ledgers.)",
+      "mark": "not positional",
+      "why": "\"would never see the 1,771\" is a verb and \"Paul later ruled\" is time"
+    },
+    {
+      "line": 267,
+      "old": "**OneDrive cloud-only state (availability, NOT loss - do not misread as corruption):** `govinfo_bill_xml_versions/objects` = **18,406/18,406 (100%) cloud-only placeholders**; `billstatus_bulk_enrichment/fetch_runs` 14,887/44,628 (33.4%). Opening throws `OSError: [Errno 22]` / \"The cloud operation is invalid\". Any stage reading the GovInfo object store fails TODAY with a MISLEADING I/O error. Check `(Get-Item $p).Attributes -band 0x400000` before concluding data loss. Also blocks the cheap offline sitemap pre-clear of the 95 (the GovInfo BILLSTATUS sitemaps were later REHYDRATED: 32 files, `cloudOnly=False` as of the evening).",
+      "mark": "not positional",
+      "why": "\"were later REHYDRATED\" is time"
+    },
+    {
+      "line": 269,
+      "old": "Ops surface still up next session: GLASS BOX codex window (`fec/open_glassbox_codex.ps1`, desktop \"GLASS BOX (codex)\" shortcut, bind `overall_progress.json` FIRST, use -Command never -File). Chrome harvest profile `C:\\Users\\pgoff\\.melange\\chrome-harvest` port 9222. See `glassbox-everything-rule-2026-07-27`, `legfix5-govinfo-culling-2026-07-27`, `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"See `glassbox-everything-rule-2026-07-27`, ...\" names memory files; \"still up next session\" is time"
+    },
+    {
+      "line": 304,
+      "old": "**Corrections to earlier records:**",
+      "mark": "not positional",
+      "why": "\"Corrections to earlier records\" are corrections of records written earlier (the progress.json and handoff claims they quote), not a place in the note"
+    },
+    {
+      "line": 305,
+      "old": "- **The membership edge gap was undercounted 3x.** `progress.json` said `raw_coverage_edges_not_in_effective_review_ledger: 748`; that counted only the `credit_union_headline_recall_net` query. True disagreement is **2,225 edges**: 1,771 discovery edges absent from the review ledger (748 recall-net + 1,023 `title_alias_probe_*`, affecting 1,620 candidates) and **454 ledger edges absent from discovery** in five real scoring categories (cdfi_fund 175, mortgage_lending_housing 138, examination_supervision 67, technology_emerging_issues 62, fraud_prevention 12). Arithmetic reconciles exactly: 64,004 - 1,771 + 454 = 62,687. Culling reads discovery directly so nothing is lost, but a ledger-driven review would never see the 1,771. The 454 may be discovery under-coverage - open question for Paul.",
+      "mark": "not positional",
+      "why": "\"would never see the 1,771\" is a verb"
+    },
+    {
+      "line": 316,
+      "old": "- **The technique that worked: manifest field-set fingerprinting.** `manifest <- list(...)` (~line 930) is an UNCONDITIONAL flat list, so its field set is a version signature. `canary_postfix2` (07:13) and `orchestrator_smoke_20260727T123018` (07:38) match the quarantined R copy's 33-field writer **exactly, both directions** - so the pre-fix *content* sat at the canonical path then (the OneDrive restore was mid-flight; see `ARTIFACT_GAP_REPORT_during_restore.txt` 06:38).",
+      "mark": "external",
+      "why": "\"see `ARTIFACT_GAP_REPORT_during_restore.txt`\" names a file"
+    },
+    {
+      "line": 322,
+      "old": "**Glassbox gotcha that cost real visibility:** Paul's open matrix window was launched with `-EventsDirectory` pointed at the **stopped R/httr lane's** event dir, so everything emitted to the default `~\\.claude\\glassbox\\events` was invisible to him for hours. **Always check what a viewer instance is actually reading** (`Get-CimInstance Win32_Process | ? CommandLine -match open_glassbox_process_matrix`), never assume emitting to the default stream means he can see it. Also: the viewer's array params (`-ProgressJson`, `-ArtifactPath`) will NOT bind through `powershell -File`; use `-Command` or the window exits instantly. Glassbox is a **read-only viewer** (`open_glassbox_process_matrix.ps1`), not a runner; lane consoles read `~\\.claude\\glassbox\\events`. A dead lane leaves a stale `running` row forever - on 07-27 it still showed the codex/metaloop R-httr `N4H-full-18557` harvest as live hours after the process was gone. Always verify with `Get-CimInstance Win32_Process`, never trust the matrix or an old PID. See also the GLASS BOX event stream (context in [[codex-executor]]).",
+      "mark": "external",
+      "why": "\"See also the GLASS BOX event stream (context in [[codex-executor]])\" names another note; \"he can see it\" is a verb"
+    },
+    {
+      "line": 336,
+      "old": "Codex built it in worktree f149 on 2026-09-10/11, died on a ChatGPT usage limit before the validation report/diff; Claude finished verification 2026-09-11; code APPLIED to live ~23:16 ET 2026-09-11; Codex quota locked until 2026-09-17 (see [[codex-executor]]).",
+      "mark": "external",
+      "why": "\"(see [[codex-executor]])\" names the actor note"
+    },
+    {
+      "line": 338,
+      "old": "**What the lane is.** Paul commissioned (Codex Desktop, 2026-09-10 23:03 ET) a plan and then an implementation of a Bucchianeri/Volden/Wiseman-style five-stage legislative effectiveness score (BILL/AIC/ABC/PASS/LAW, weights C=1/S=5/SS=10, letters = substantive 5, later cosponsors discounted by a 2^(-d/H) half-life, CU/trade-association MENTION FREQUENCY without sentiment as the sector-significance signal). Plan of record: `research/LEGISLATIVE_IMPACT_EFFECTIVENESS_IMPLEMENTATION_PLAN_2026-09-10.md` (also in the live tree, normalized-identical). Paul's verbatim delegation: \"Execute the legislative impact and progressive-effectiveness implementation plan, then show me the diff... Preserve the old policy/mode for comparison and rollback; do not silently replace production rankings.\"",
+      "mark": "not positional",
+      "why": "\"later cosponsors\" are later-joining cosponsors (time)"
+    },
+    {
+      "line": 346,
+      "old": "**2026-09-12 apply attempt (Paul: \"apply the brain update draft. Fully implement the new parameters, lets see the overall changes and the new tier 1's\").** Brain applied + committed `2a5a10b` (STATE bullet, Next action, DE-018). Live-tree copy of the 26 files was REFUSED by the auto-mode classifier three ways (architect dispatch, SendMessage relay, direct PowerShell); backups of the 11 originals sit at live `backups\\legislative_effectiveness_20260912\\` + MANIFEST, and the ready copy script is scratchpad `apply\\apply_legeff_to_live.ps1` - Paul runs it himself, then Claude runs the six suites + live kernel. Sub-agents also refused relayed authorization twice (\"asserted, not observed\"); expect that on live-tree writes.",
+      "mark": "not positional",
+      "why": "\"lets see the overall changes\" is a quoted verb and \"Next action\" is a field name of the brain"
+    },
+    {
+      "line": 367,
+      "old": "- Lesson: out-of-sample \"activity\" correlations are the WRONG yardstick for the champions board; never recommend a board on Spearman with next-term volume.",
+      "mark": "not positional",
+      "why": "\"next-term volume\" is time"
+    },
+    {
+      "line": 376,
+      "old": "**Codex routes tried 2026-09-11, both failed:** the MCP server is refused by the session health-check hook (\"stdin is not a terminal\"); headless `codex exec` (v0.154.0-alpha.6.2, exe under `%LOCALAPPDATA%\\OpenAI\\Codex\\bin\\<hash>\\`; the newest-mtime dir can be an exe-less mid-install stub) reached the API and returned the usage-limit error. `config.toml` then pinned `gpt-6-astra` / `ultra`, not the skill's documented gpt-5.6-sol / xhigh - Paul's dials, reconcile with him before dispatching (the 2026-09-19 state pinned `gpt-6-astra` / `high`; see [[codex-executor]]). The validated contract + ledger dispatch (run-id `legeff-runtests-20260911`, trigger `legeff-register-suites-dispatch`) and the exact edit live in f149 `audits/legislative_effectiveness_shadow_20260911/evidence/{contract.json,prompt.txt}`.",
+      "mark": "external",
+      "why": "\"see [[codex-executor]]\" names the actor note"
+    },
+    {
+      "line": 388,
+      "old": "- weekly_refresh step 3 `update_bill_repository.py` refreshes `bill_repository_live.json` (464 bills, per-bill XML via headless Chrome, includes cosponsors) - NOT the bulk zips, and a different universe. Press/hearing/interview sentinels never touch bills. The only bill-side \"sentinel\" is Codex's uncommitted live-tree Sentinel Bill Ledger.xlsx (464 repository bills, 196 verified joins, 14,009 pending, no full rosters) - see `sentinel-workbook-ingestion-lane-2026-09-04` and [[sentinel-collectors]].",
+      "mark": "external",
+      "why": "\"see `sentinel-workbook-ingestion-lane-2026-09-04` and [[sentinel-collectors]]\" names a memory file and another note"
+    },
+    {
+      "line": 394,
+      "old": "**Paul 2026-09-04 (later): \"Sentinel Bill Ledger, do the timed dry run / AND Blended Workbook / C\".** DONE, scratch only, record at live-tree `audits/COSPONSOR_FORECAST_SELF_UPDATE_2026-09-04.md`:",
+      "mark": "not positional",
+      "why": "\"Paul 2026-09-04 (later)\" is time"
+    },
+    {
+      "line": 397,
+      "old": "- Coupling numbers: repository 119th bills 142, overlap with the 790 modeled = 57 (118: 59/169); 74 of the 85 non-overlap bills sit under the 5-cosponsor floor. Verified 119th joins 188: 178 in the candidate pool, 166 actual=1, 12 actual=0 (all joined after 08-01); joiner rank median 122/436, only 5/188 in the sidecar's top-8. Repository rosters (original_cosponsors UNION cosponsors) are COMPLETE vs BILLSTATUS-08-01 and exceed it by 19 post-pull joins; the first \"806 missing\" figure was the brief's artifact (compared only the later-joiner list) plus an `.//cosponsors` XPath that swept amendment-level blocks (H.R.1 has 99 amendments, 0 bill-level cosponsors). 20 pre-08-01 label gaps = departed members excluded from the 119 candidate universe via `fec/legislators.csv` (`cosponsor_forecast.py:1138-1144`), policy not defect. The repository has NO committee/referral data; `areas` is the CU taxonomy.",
+      "mark": "not positional",
+      "why": "\"the later-joiner list\" is time"
+    },
+    {
+      "line": 402,
+      "old": "- Dials `BILLSTATUS_BULK_REFRESH=1` and `COSPONSOR_FORECAST_REFRESH=1` persisted with `setx` at user scope; the weekly task bakes no env, so it inherits them. `MoneyballWeeklyRefresh` is ENABLED again (the sentinel-finish lane re-enabled it today), next run Sat 2026-09-06 06:00.",
+      "mark": "not positional",
+      "why": "\"next run Sat 2026-09-06 06:00\" is time"
+    },
+    {
+      "line": 409,
+      "old": "**Build record (earlier the same evening; built + verified in the worktree, UNAPPLIED at that time)**, live-tree `audits/COSPONSOR_FORECAST_REFRESH_BUILD_2026-09-04.md`:",
+      "mark": "not positional",
+      "why": "\"earlier the same evening\" is time"
+    },
+    {
+      "line": 414,
+      "old": "- Open for Paul (at build time): apply now?; audit FAIL-on-absent vs skip; 8 sequential replaces vs dir swap; when to flip the dials (flip BOTH together; A without B turns the audit red by design). Apply and dial flip were subsequently done (above); FAIL-on-absent vs skip remains the audit as built.",
+      "mark": "same note",
+      "why": "\"Apply and dial flip were subsequently done (above)\" is the DONE record and the persisted dials higher in the same bill-lobbying section, which moves whole to -cosponsor-forecaster"
+    },
+    {
+      "line": 416,
+      "old": "**Why / how to apply (the memory's own note):** five scouts were needed to establish that the \"linear regression\" premise is wrong and that the model is frozen, so the next session should not redo that discovery. Answer \"logistic vs linear\" with \"already logistic\"; never describe lobbying as a predictor in this model; before any refresh work check whether the 08-01 zips have been re-pulled and whether MoneyballWeeklyRefresh is still Disabled. Related: `lobbying-member-link-is-circular-2026-08-19`, `ask-before-substantive-changes`, `no-git-plain-review-2026-09-01`, `lobbyview-integration-2026-07-31`.",
+      "mark": "not positional",
+      "why": "\"the next session\" is time"
+    },
+    {
+      "line": 423,
+      "old": "- **Broadcast family is ~10 legs (under-listed before), all in `fetch_interviews.py` under `collector_supervisor.py` (relaunches every 10 min):** CNN, MTP, CBS (Face the Nation), ABC (This Week), PBS, NPR (4 programs), NPR podcast (1A/H&N - DEAD, see `psych-audit-2026-07-09`), Fox, Hugh Hewitt (~2005 -> present radio), MS NOW. All resumable via `iv_fetch_log`. **Fox ceiling sharpened: code says posting STOPPED ~2024-10** (archive back ~2018; volume already collapsed by 2023); post-2024-10 needs YouTube-caption diarization (doesn't exist). CNN fully walked + `cnn-deep` backfills below 2024-06 to CNN's own ~2023-05 publishing floor.",
+      "mark": "external",
+      "why": "\"see `psych-audit-2026-07-09`\" names a memory file; \"backfills below 2024-06\" is a date bound"
+    },
+    {
+      "line": 425,
+      "old": "- **Actionable misses ranked:** (1) C-SPAN Washington Journal - robots-blocked, needs UMN licensing, highest value (rank-and-file for the n>=250 gate); (2) CSIS + AEI - GO but unbuilt; (3) bills-archive auto-refresh; (4) Fox post-2024-10 diarization; (5) Congress 120. **Governing literature point: all of these buy member COVERAGE, not trait ACCURACY - none lifts the ~.42-.52 shared-method text-personality ceiling; the only outcome-changing target is pushing reactivity coverage past the 250 power gate (216 today).** See `psych-audit-2026-07-09`, `dispositions-dependability-2026-07-09`.",
+      "mark": "external",
+      "why": "\"See `psych-audit-2026-07-09`, `dispositions-dependability-2026-07-09`\" names memory files"
+    },
+    {
+      "line": 437,
+      "old": "- **The \"data and privacy\" answer**: the over-exclusion hypothesis was WRONG - all 580 exclusion rows (19 distinct bills) matched on TITLE, zero summary-only. The real finding is concentration: **14 of 19 excluded bills would have been Data Privacy & Cyber**. Upstream Quorum uses that section as a catch-all for consumer-privacy bills.",
+      "mark": "not positional",
+      "why": "\"Upstream Quorum uses that section as a catch-all\" is Quorum's Data Privacy section, not a section of the note"
+    },
+    {
+      "line": 449,
+      "old": "- **The CU CSVs are row-aligned 1:1** with their stance CSVs (bioguide+member+date+categories agree on every row). So each passage pairs with ITS OWN grade. An earlier date-aggregating version synthesized `mixed`/`multi` labels that **do not exist in Paul's vocabulary** - caught in adversarial review, removed. Never aggregate stance across a date.",
+      "mark": "not positional",
+      "why": "\"An earlier date-aggregating version\" is time"
+    },
+    {
+      "line": 454,
+      "old": "1. **`make_member_desk.py` can FAIL and still leave outputs behind.** It wrote `dashboard_exclusion_reconciliation.json` then raised, so the bundle/HTML stayed STALE from an earlier run. A stale artifact was read and numbers three builds old were \"verified\". **Always check the exit code; never trust an output file's contents without checking its mtime.**",
+      "mark": "not positional",
+      "why": "\"STALE from an earlier run\" is time"
+    },
+    {
+      "line": 463,
+      "old": "4. **Regenerating live from WORKTREE code trips `dashboard_integrity` - correctly.** The fingerprint hashes `fec/make_member_desk.py` **as it exists in the live tree**, so running worktree code against live data means \"declared inputs unchanged, output changed\" -> `IntegrityError: same dashboard inputs produced a different semantic bundle`. It also leaves a landmine: the state file then maps live's OLD code to the new bundle, so the next chain run from live's own code fails too. **The code must be IN the live tree before regenerating it.** Merge first, then regenerate - the fingerprint changes honestly and the guard self-heals.",
+      "mark": "not positional",
+      "why": "\"the next chain run\" is time"
+    },
+    {
+      "line": 468,
+      "old": "**That appendix finding is now CLOSED - measured, immaterial** (@33b07a9). It had been flagged as \"worth a look\"; measuring says otherwise, and it was over-escalated. 27 of 775 graded hearing passages (3.5%) are appendix/QFR rather than speech, but only **5 of the 263 GOLD rows** - and gold is the only tier `build_media_blend.py` feeds into the pillar (`CU_HEARING_CHANNEL` is gold-only). 4 of the 5 change no outcome (the member's clean gold rows already agree); the 5th (Houchin) is a tie-break on a 1/1/1 split. The gold labels are Paul's own adjudications - law 1, not relabelled. Root cause (`cu_passages` merging overlapping windows so a chair's last turn absorbs the appendix) is NOT fixed: that would change extraction -> grading -> pillar -> ranks, i.e. a user-gated scoring change. Instead bounded with an audit_full tripwire (fails above 10 contaminated gold rows) so it cannot grow silently. Audit -> **134**.",
+      "mark": "not positional",
+      "why": "\"fails above 10 contaminated gold rows\" is a threshold"
+    },
+    {
+      "line": 480,
+      "old": "### Champion money-immunity restored (@1856feb) - superseded by the crown = Ally floor above",
+      "mark": "same note",
+      "why": "the ### heading's \"superseded by the crown = Ally floor above\" names ### Crown = Ally floor in the money math, earlier in the same section and part (the resolver's mark, signed off)"
+    },
+    {
+      "line": 482,
+      "old": "Paul: \"Yeah fix it\" after \"go to an area you haven't given attention to\". A logic check of the money/scenario engines found a REAL defect merged that same day. The gallant-gates merge swapped `money_response.OV` from col G to `MC.overall_tier(...)`, whose own docstring says **\"Champion is deliberately absent; see overall_display_tier\"**. Col G is written by `sync_stance_g.py:20-21` WITH the Tier-1 crown, so the replacement was not equivalent: all 12 Champions read as Ally/Highly Persuadable, and since `COMMITTED={'Champion','Opponent'}` exists so terminal rungs cannot be bought away, **all 12 silently lost money-defection immunity** ($500k competitor shock defected Fitzpatrick).",
+      "mark": "external",
+      "why": "\"see overall_display_tier\" is quoted from a code docstring and names a function"
+    },
+    {
+      "line": 492,
+      "old": "Paul: \"0.84/0.16 works, do it\". He asked what 95/5 would do, CONDITIONAL on Fitzpatrick reaching Tier 1 AND Tim Scott staying. **The condition FAILED** - at 95/5 Fitzpatrick reaches T1 (slot 5, pure math) but **Scott falls to slot 26**, so nothing was changed on that. 95/5 nearly annihilates the press pillar and turns the tier into a cosponsorship count: it ejects every press-strong member (French Hill .862, Britt .653, Daines .474, Scott .429) and admits near-zero-press ones - including **Eleanor Norton (press .000), the DC delegate who cannot vote on the floor**, into the Champion ranks. A sweep of 0.50-0.99 found **only 0.83/0.84/0.85 satisfy both**; Paul chose 0.84. (These are the Tier-1 Leg/Press blend weights, not the pillar weights; for the three pillar-weight sets see Context.)",
+      "mark": "rewrite",
+      "why": "\"for the three pillar-weight sets see Context\" names ## Context, which the hub keeps while this line moves to -bill-plane-and-media-stance (the resolver's proposal, signed off)",
+      "new": "Paul: \"0.84/0.16 works, do it\". He asked what 95/5 would do, CONDITIONAL on Fitzpatrick reaching Tier 1 AND Tim Scott staying. **The condition FAILED** - at 95/5 Fitzpatrick reaches T1 (slot 5, pure math) but **Scott falls to slot 26**, so nothing was changed on that. 95/5 nearly annihilates the press pillar and turns the tier into a cosponsorship count: it ejects every press-strong member (French Hill .862, Britt .653, Daines .474, Scott .429) and admits near-zero-press ones - including **Eleanor Norton (press .000), the DC delegate who cannot vote on the floor**, into the Champion ranks. A sweep of 0.50-0.99 found **only 0.83/0.84/0.85 satisfy both**; Paul chose 0.84. (These are the Tier-1 Leg/Press blend weights, not the pillar weights; for the three pillar-weight sets see Context. in [[2026-07-feature-legislative-pillar-acu-review]])",
+      "referent": "2026-07-feature-legislative-pillar-acu-review"
+    }
+  ]
+}

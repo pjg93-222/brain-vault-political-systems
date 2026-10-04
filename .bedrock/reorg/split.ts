@@ -25,7 +25,9 @@
 //
 // Spec (plan A.7): { id, parent, home, hub: { keep: [heading lines], links: [rels] | null }, parts: [{ slug, title,
 //   summary, domain, home, sections: [heading lines in order], keep: [rels], s11?, pointers?: ["> ..."] }],
-//   named: [{ id, a, b }] (K pairs; a is this family's part), candidates: [{ id, a, b, event }] (K12-K25),
+//   named: [{ id, a, b }] (K pairs; a is this family's part), candidates: [{ id, a, b, event }] (K12-K25; b is a part of
+//   this run, a part an earlier batch created (evaluated on its current text and links, e.g. K16 in batch 5), or a part
+//   of a later batch (deferred, with the slot a keeps free)),
 //   relations: [{ id, part, with }] (D relations of a part), retarget: [{ note, from, to, why }] (C4 outside the family),
 //   s10: [{ line, old, mark: "rewrite" | "same note" | "external" | "not positional", new?, referent?, why }] }
 // hub.links null = an actor hub (no link cap: it keeps every link the R-rules allow); a list = a topic hub, which keeps its
@@ -939,10 +941,60 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
   const seenCand = new Set<string>();
   // candidates in id order (K12, K13, ...), so the free-slot test does not depend on the order of the --spec files
   const allCands = families.flatMap((f) => f.b.spec.candidates).sort((x, y) => Number(x.id.replace(/\D/g, "")) - Number(y.id.replace(/\D/g, "")) || cmp(x.id, y.id));
+  // a counterpart an earlier batch created (4.7 "4 -> 5", e.g. K16): an existing curated part outside this run. Its
+  // evidence is its body below the part header; its free slots are counted from its current links the way check i
+  // counts them (targets minus family links minus one home project), against the 3-other budget. (An earlier part whose
+  // third slot S11 reserves for a planned K pair of a later batch must not be named as a candidate's counterpart.)
+  const partOfTarget = (n: R.Note): string | null => {
+    const m = (fmRawValue(n, "part_of") ?? "").match(/\[\[([^\[\]\n]+?)\]\]/);
+    return m ? R.resolveInner(v, m[1]) : null;
+  };
+  const earlierPart = (rel: string): R.Note | null => {
+    const n = v.byRel.get(rel);
+    return n && !n.fleeting && n.origText !== "\u0000new" && !partSpecOf.has(rel) && R.hasPartOf(n) ? n : null;
+  };
+  const othersOfExisting = (n: R.Note): Set<string> => {
+    const out = R.outTargets(v, n);
+    const parent = partOfTarget(n);
+    const family = new Set<string>();
+    if (parent) family.add(parent);
+    for (const x of v.notes) {
+      if (x.fleeting || x.rel === n.rel || !R.hasPartOf(x)) continue;
+      const p = partOfTarget(x);
+      if (p === n.rel || (parent && p === parent)) family.add(x.rel);
+    }
+    const projects = [...out.keys()].filter((t) => !family.has(t) && v.byRel.get(t)?.top === "projects");
+    const home = projects.sort((x, y) => (out.get(y) ?? 0) - (out.get(x) ?? 0) || cmp(x, y))[0] ?? null;
+    return new Set([...out.keys()].filter((t) => !family.has(t) && t !== home));
+  };
+  const bodyBelowHeader = (n: R.Note): string[] => {
+    const ls = n.lines.slice(R.fmEnd(n.lines) + 1);
+    let k = 0;
+    while (k < ls.length && (/^#\s/.test(ls[k]) || /^>\s?/.test(ls[k]) || ls[k].trim() === "")) k++;
+    return ls.slice(k);
+  };
   {
     for (const c of allCands) {
       if (seenCand.has(c.id)) continue;
       seenCand.add(c.id);
+      const earlier = !partSpecOf.has(c.b) ? earlierPart(c.b) : null;
+      if (earlier) {
+        const ea = evidenceOf(partSpecOf.get(c.a)!.f.b.partLines.get(c.a)!.lines);
+        const eb = evidenceOf(bodyBelowHeader(earlier));
+        const mem = [...ea.mem].filter((x) => eb.mem.has(x));
+        const sess = [...ea.sess].filter((x) => eb.sess.has(x));
+        const capA = partSpecOf.get(c.a)!.p.s11 ? 2 : 3;
+        const freeA = capA - othersOf(c.a).size;
+        const freeB = 3 - othersOfExisting(earlier).size;
+        const ev = mem.length || sess.length;
+        if (ev && freeA > 0 && freeB > 0) {
+          addCp(c.a, c.b);
+          keepOf.get(c.a)!.add(c.b);
+          kPairs.set(c.id, { ...c });
+          candReport.push(`${c.id} ${slugOfRel(c.a)} <-> ${slugOfRel(c.b)}: CREATED (evidence: ${[...mem.map((x) => "memory " + x), ...sess.map((x) => "session " + x)].join(", ")}; free slots ${freeA} and ${freeB}; ${slugOfRel(c.b)} was created by an earlier batch)`);
+        } else candReport.push(`${c.id} ${slugOfRel(c.a)} <-> ${slugOfRel(c.b)}: skipped (${!ev ? "no shared memory file or session id in the moved texts" : `no free other slot (${slugOfRel(c.a)} ${freeA}, ${slugOfRel(c.b)} ${freeB})`}; ${slugOfRel(c.b)} was created by an earlier batch)`);
+        continue;
+      }
       if (!partSpecOf.has(c.b)) {
         const o2 = othersOf(c.a);
         candReport.push(`${c.id} ${slugOfRel(c.a)} <-> ${slugOfRel(c.b)}: deferred (the counterpart is created in a later batch); ${slugOfRel(c.a)} has ${o2.size} planned other(s)${o2.size <= 2 ? ", so a slot stays free for it" : ": no free slot, the candidate cannot be created later"}`);
@@ -1087,7 +1139,7 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
     for (const t of R.outTargets(v, v.byRel.get(rel)!).keys()) {
       const { f } = partSpecOf.get(rel)!;
       if (t === f.hub.rel || v.byRel.get(t)!.top === "projects") continue; // Parts list and Map rows answer these
-      answer(rel, t, partSpecOf.has(t) ? (f.parts.some((x) => x.rel === t) ? "R3 sibling (S10)" : "R3 K pair") : R.isLeafNote(v.byRel.get(t)!) ? "R3 D relation" : "R1");
+      answer(rel, t, partSpecOf.has(t) ? (f.parts.some((x) => x.rel === t) ? "R3 sibling (S10)" : "R3 K pair") : counterparts.get(rel)?.has(t) ? "R3 K pair (earlier batch)" : R.isLeafNote(v.byRel.get(t)!) ? "R3 D relation" : "R1");
     }
   }
   for (const f of families) {

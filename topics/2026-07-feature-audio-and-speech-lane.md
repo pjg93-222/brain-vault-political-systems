@@ -27,7 +27,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 ## Context
 
-- Actor: [[melange-audio-pipeline]] (the code and artifacts). Feeds the Fable narratives in Member approach briefs and narratives. Psychometric context: [[2026-07-feature-personality-psychometrics]] (Big Five instrument, the 2026-07-16 gold/audio session). Verification rules: Verification and evidence standards. Look discipline: [[single-look-holdout-discipline]]. Owner: Paul Goff.
+- Actor: [[melange-audio-pipeline]] (the code and artifacts). Feeds the Fable narratives in Member approach briefs and narratives. Psychometric context: Personality psychometrics (Big Five) (Big Five instrument, the 2026-07-16 gold/audio session). Verification rules: Verification and evidence standards. Look discipline: [[single-look-holdout-discipline]]. Owner: Paul Goff.
 - Source memories: `speech-recognition-lane-state-2026-08-19` (39.8 KB; last modified 2026-08-25), `audio-complementary-layers-lane-2026-09-07`, `audio-lane-verification-lessons-2026-09-07`, `gold-template-audio-2026-07-16`, `moneyball-audio-narratives-2026-07-09`.
 - Corpus facts: every word the shipped system analyzes is third-party text (C-SPAN closed captions, GovInfo CHRG, Congressional Record, publisher transcripts CNN/MSNOW/PBS/Meet-the-Press/Face-the-Nation): 268,327 speech rows / 532 of 533 members / 57.6M words in `social_media.db:speeches`.
 - `C:\melange-data` EXISTS (167.3 GB, 69,373 files): audio is 533/533 (`member_longform_audio_v1` = 655 WAVs / 38.26 GB / 285.03 hours, ledgered in `data/speech/member_longform_acquisition_v1.jsonl`, every wav path verified present). The "~48 GB audio unrecoverable" note in `backup-coverage-gap-2026-09-07` is WRONG.
@@ -56,7 +56,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Related Topics
 
 - Member approach briefs and narratives - Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps.
-- [[2026-07-feature-personality-psychometrics]] - Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade.
+- Personality psychometrics (Big Five) - Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade.
 - Verification and evidence standards - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
 
 ## History
@@ -319,7 +319,7 @@ Demand a census before repeating a mechanism claim to Paul. Three of the four we
 
 ## Senate gold and the audio identity design (session 2026-07-16; source: gold-template-audio-2026-07-16)
 
-Session 2026-07-16 (worktree loving-payne, branch claude/gallant-gates-982203; the live tree was on claude/cfpb-sentiment-recorrection @35b8a09 - analysis read the live tree read-only, NOTHING applied). Everything below was PRESENTED to Paul and awaited his decisions, except the executed items marked EXECUTED. Psychometric framing also appears in [[2026-07-feature-personality-psychometrics]]; look discipline in [[single-look-holdout-discipline]].
+Session 2026-07-16 (worktree loving-payne, branch claude/gallant-gates-982203; the live tree was on claude/cfpb-sentiment-recorrection @35b8a09 - analysis read the live tree read-only, NOTHING applied). Everything below was PRESENTED to Paul and awaited his decisions, except the executed items marked EXECUTED. Psychometric framing also appears in Personality psychometrics (Big Five); look discipline in [[single-look-holdout-discipline]].
 
 - **The "golden template"** = the frozen *Personality on the Hill* appendix gold (`big5_senate_expert_gold.json`, 129 Senate-insider + 125 academic-expert senator rows, 1-7 O/C/E/A/ES; methods section 40 2026-07-15). Two validators: `b5_external_gold_validate.py` (fixed no-gold-fitted E control axis) + `b5_gold_multitrait_validate.py` (LOO-OOF v2). E and A pass BOTH panels; O academics-only (.492/.192), N insiders-only (.374/.123, N = -ES), C insider-association-only (.262 p=.040, NO diagonal dominance, academics -.039). Statuses ACTIVE_ONE_PANEL_ASSOCIATION_SUPPORTED per Paul's 07-15 activation rule.
 - **Provenance:** `Downloads/Eran.pdf` = Amsalem et al. 2018 media-visibility paper (Belgian/Canadian/Israeli MPs) - NOT the gold source, hash-mismatches the repo pin. The TRUE pinned gold PDF is `Downloads/online_appendix.pdf` (SHA-256 verified = 43c98926...).

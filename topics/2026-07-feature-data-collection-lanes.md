@@ -46,7 +46,7 @@ Lanes covered (each has its own section below; dates are the source memory dates
 | Sentinel workbook bill ingestion | 2026-09-04 / 2026-09-05 | Committed and merged to main `313eaaad1` and pushed to mirror; legislative pillar stays contract-gated |
 | System manifest sentinel lane | 2026-09-06 | `:966` dedup defect fixed (uncommitted); D-015 cost baseline measured; self-falsifying audit sentinels |
 
-Entities: the collectors themselves are the actors [[lobbyview-collector]] and [[sentinel-collectors]]; the owning project is [[melange-systems]]; the ratifying and gating authority is Paul Goff. System-of-record context lives in [[2026-07-rfc-melange-architecture-system-of-record]] and the legislative pillar in [[2026-07-feature-legislative-pillar-acu-review]].
+Entities: the collectors themselves are the actors [[lobbyview-collector]] and [[sentinel-collectors]]; the owning project is [[melange-systems]]; the ratifying and gating authority is Paul Goff. System-of-record context lives in [[2026-07-rfc-melange-architecture-system-of-record]] and the legislative pillar in Legislative pillar and ACU review.
 
 Standing law across lanes (recorded in the source memories): Paul's ask-first directive gates every production mutation; merges, ratifications, scheduler re-enables and promotions are Paul's; Codex-built work is always re-verified after any MCP timeout (see each lane's Codex notes).
 
@@ -71,7 +71,7 @@ Pillar weights, recorded wherever they appear (all three sets, never let the new
 
 ## Related Topics
 
-- [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
+- Legislative pillar and ACU review - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
 - [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
 
 ## History

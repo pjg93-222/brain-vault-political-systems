@@ -1,0 +1,370 @@
+{
+  "id": "B5",
+  "what": "Batch 5 split of topics/2026-06-feature-moneyball-excel-model-build (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B5); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-06-feature-moneyball-excel-model-build",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Consult rule: multipliers, weights and thresholds are Paul's decision",
+      "## Weights ledger (pillar weights, all sets with status)",
+      "## Superseded guidance: Excel COM as the write path",
+      "## Source sessions",
+      "## Verbatim formula spellings and source descriptions"
+    ],
+    "links": [
+      "actors/moneyball-workbook",
+      "concepts/four-pillar-percentile-blend",
+      "actors/draft-systems-r-pipeline"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-06-feature-moneyball-excel-model-build-lineage-and-phases",
+      "title": "Workbook lineage and phases A-C (06-18 to 06-22)",
+      "summary": "Workbook lineage and file inventory and the June 2026 build phases A to C (2026-06-18 to 06-22): the original bugs and repairs, the committee and caucus rebuild, the main version with coalition profiles and the four-bucket redesign, and the agenda re-weighting",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Workbook lineage and file inventory",
+        "## Phase A: original bugs and repairs (version 2 / 2026-06-18)",
+        "## Phase B: Main Version, Coalition Profiles and the four-bucket redesign (2026-06-21)",
+        "## Phase C: agenda re-weighting (2026-06-22)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Correction kept in [[2026-06-feature-moneyball-excel-model-build]] (Superseded guidance, \"Excel COM as the write path\"): the June Excel COM write path recorded here, including the COM recalc after openpyxl edits and the COM-era recalc tips, is superseded by Phase 2: ranks_python.json is the authority, the workbook is a view, and no COM is used anywhere."
+      ]
+    },
+    {
+      "slug": "2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits",
+      "title": "Press alignment, CFPB split, committee scoring and the June 25 audits",
+      "summary": "Scoring refinements of 2026-06-24/25: press raw alignment, the CFPB directional split, relevance-tiered committee influence scoring, the presentation audit with the percentile-rank 4-pillar blend, and the Blended workbook audit",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Press raw alignment (2026-06-24)",
+        "## CFPB directional split (2026-06-25)",
+        "## Relevance-tiered committee influence scoring (2026-06-25)",
+        "## Presentation audit and the percentile-rank 4-pillar blend (2026-06-25)",
+        "## Blended workbook audit (2026-06-25)"
+      ],
+      "keep": [
+        "actors/moneyball-workbook"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-moneyball-excel-model-build-category-stance-3d",
+      "title": "Category Stance 3D sheet (06-26)",
+      "summary": "The Category Stance 3D sheet of the Moneyball workbook, built on 2026-06-26",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Category Stance 3D sheet (2026-06-26)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration",
+      "title": "Scenario-tool pre-flight, engine build and empirical calibration (06-26/27)",
+      "summary": "The scenario tools of 2026-06-26/27: the pre-flight audit and engine build (coalition determinism, what-if and electoral models, money response, pathfinding, scenario runner, optimizer, independent audits, FEC data quality) and the empirical calibration",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Scenario-tool pre-flight and engine build (2026-06-26)",
+        "## Empirical calibration (2026-06-27)"
+      ],
+      "keep": [
+        "actors/draft-systems-r-pipeline"
+      ],
+      "pointers": [
+        "> Correction kept in [[2026-06-feature-moneyball-excel-model-build]] (Superseded guidance, \"Excel COM as the write path\"): the June Excel COM write path recorded here, including the write_im_sheet.py IM-sheet pushes and the sheet_sync.py writes via COM, is superseded by Phase 2: ranks_python.json is the authority, the workbook is a view, and no COM is used anywhere."
+      ]
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K19",
+      "a": "topics/2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits",
+      "b": "actors/moneyball-workbook-lineage-and-june-audit",
+      "event": "June 25 Blended audit"
+    },
+    {
+      "id": "K21",
+      "a": "topics/2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits",
+      "b": "topics/2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split",
+      "event": "CFPB directional split"
+    },
+    {
+      "id": "K25",
+      "a": "topics/2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration",
+      "b": "topics/2026-06-troubleshooting-melange-model-audits",
+      "event": "June 26 audits (counterpart created in batch 6)"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 38,
+      "old": "- Scope of this topic: every June 2026 build step of the workbook and of the engines that read it (flip, coalition, electoral, route, priming, money-response, scenario runner, optimizer). It was an Excel-workbook-centred build: the June guidance wrote through Excel COM and openpyxl. **That system of record was later inverted**: Phase 2 made `ranks_python.json` the authority and the workbook a view, with NO COM anywhere (see Superseded guidance below and [[melange-systems]]).",
+      "mark": "same note",
+      "why": "\"see Superseded guidance below\" names ## Superseded guidance: Excel COM as the write path, which the hub keeps below Context; \"was later inverted\" is time"
+    },
+    {
+      "line": 40,
+      "old": "- The R-side data pipeline that regenerated base data is [[draft-systems-r-pipeline]]; the stance layer that the per-category work feeds is [[2026-06-feature-cu-stance-and-sentiment]]. Decision authority over every numeric multiplier/weight/threshold is Paul's (Paul Goff; see Change control and Paul's decision authority).",
+      "mark": "external",
+      "why": "\"see Change control and Paul's decision authority\" names the working-agreement topic, another note"
+    },
+    {
+      "line": 85,
+      "old": "- **Every numeric multiplier, weight and threshold is Paul's decision** (feedback `feedback_consult_multipliers_thresholds`): present structure, options, ranges and trade-offs, give a recommendation marked \"(Recommended)\", let him set values (details in the Consult rule section below). The calibration on 2026-06-27 followed this (\"tastefully calibrate... consult on changes\", each fork approved through AskUserQuestion).",
+      "mark": "same note",
+      "why": "\"the Consult rule section below\" names ## Consult rule, which the hub keeps below Decisions (the resolver's mark, signed off)"
+    },
+    {
+      "line": 88,
+      "old": "- **Final pillar weights of the percentile-rank Blended Model (2026-06-25, user: \"really accurate\")**: Legislative 0.20 / Press 0.40 / Influence 0.35 / Demographic 0.05 at `Blended!AB2:AB5`. ~~Legislative 0.40 / Influence 0.30 / Press 0.20 / Demographic 0.10~~ (first delivery, 2026-06-25) - superseded the same day. (The three later ratification-status weight sets are in the Weights ledger below.)",
+      "mark": "same note",
+      "why": "\"in the Weights ledger below\" names ## Weights ledger, which the hub keeps below Decisions; \"the three later ratification-status weight sets\" is time"
+    },
+    {
+      "line": 101,
+      "old": "- ~~Excel COM / openpyxl as the write path for model edits~~ (June 2026) - superseded by Phase 2: `ranks_python.json` is the system of record, the workbook is a view, NO COM anywhere (resolution 5). The COM-era recipes below are kept as history only.",
+      "mark": "rewrite",
+      "why": "\"The COM-era recipes below\": the COM-era recipes are the hub's Next Steps item and Superseded guidance (still below in the hub) and the June COM steps of -lineage-and-phases, -scoring-refinements-and-audits and -scenario-tools-and-calibration; below stays and the three parts are added (S10 \"below and in [[a]] ...\")",
+      "new": "- ~~Excel COM / openpyxl as the write path for model edits~~ (June 2026) - superseded by Phase 2: `ranks_python.json` is the system of record, the workbook is a view, NO COM anywhere (resolution 5). The COM-era recipes below and in [[2026-06-feature-moneyball-excel-model-build-lineage-and-phases]], [[2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits]] and [[2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration]] are kept as history only.",
+      "referent": "2026-06-feature-moneyball-excel-model-build-lineage-and-phases, 2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits, 2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration"
+    },
+    {
+      "line": 103,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 105,
+      "old": "The June build is complete; items below were still open when it ended (as recorded in the sources).",
+      "mark": "same note",
+      "why": "\"items below\" are the checklist items of ## Next Steps itself, kept by the hub"
+    },
+    {
+      "line": 107,
+      "old": "- [ ] Source-data gaps: Marshall's credit-card press mis-scored +0.9 (co-author read pro-CU; scraper stance error; his articles absent from the 192-member Articles sheet); credit-card and TCPA co-sponsor legislative columns are dead `[1]!` external links (data lost); David Scott (D-GA) and the N. Mariana delegate not in the 533 list (David Scott committee credit lost); tax committees (Ways&Means/Finance) not yet added at that time (later added via relevance scoring).",
+      "mark": "not positional",
+      "why": "\"(later added via relevance scoring)\" is time"
+    },
+    {
+      "line": 114,
+      "old": "- [ ] Possible: MC upgrade of the tree-reach route spread, adding `_sm` to `budget_frontier.py` per-topic deltas, optimizer min-chunk/capacity concentration constraints (INC/PMAX were added later the same day), seed-ensemble for baseline credibility, current-lean asymmetry/incumbency/seniority/chamber variables for money response.",
+      "mark": "not positional",
+      "why": "\"(INC/PMAX were added later the same day)\" is time"
+    },
+    {
+      "line": 129,
+      "old": "| `Moneyball Main Version - Blended.xlsx` (Desktop) | Presentation + new `Centrality` and `Blended Model` sheets; 25 sheets; canonical output; later also carries `Category Stance` sheet (after `Signed Coalitions`), `Melange - Live` tab, IM sheet |",
+      "mark": "not positional",
+      "why": "\"later also carries `Category Stance` sheet\" is time"
+    },
+    {
+      "line": 142,
+      "old": "3. **Demographic Factors off-by-one**: Primary Layer col D referenced Sub Layer row r instead of r+1, so every member got the PREVIOUS member's demographics (the first member got weights x weights = constant 0.095). Formula fixed.",
+      "mark": "not positional",
+      "why": "\"the PREVIOUS member's demographics\" is the previous sheet row, not a place in the note"
+    },
+    {
+      "line": 147,
+      "old": "User ruling: allocation is INTENTIONAL (see Decisions). Bugs found and fixed:",
+      "mark": "rewrite",
+      "why": "\"(see Decisions)\" names ## Decisions, which the hub keeps while this line moves to -lineage-and-phases (the resolver's proposal, signed off)",
+      "new": "User ruling: allocation is INTENTIONAL (see Decisions in [[2026-06-feature-moneyball-excel-model-build]]). Bugs found and fixed:",
+      "referent": "2026-06-feature-moneyball-excel-model-build"
+    },
+    {
+      "line": 168,
+      "old": "- Active file `C:\\Users\\pgoff\\OneDrive\\Desktop\\Moneyball Main Version.xlsx` (see inventory). **Enriched `Coalition Profiles`** per user request: the blocs are press-clustering output (detect_coalitions/Ward), 9 blocs (Bloc 1-8 + Unaligned), ALL press-labeled \"pro-credit-union\", which mislabels e.g. Durbin's Bloc 1.",
+      "mark": "same note",
+      "why": "\"(see inventory)\" names ## Workbook lineage and file inventory, which moves to -lineage-and-phases with this Phase B line"
+    },
+    {
+      "line": 177,
+      "old": "- Discoveries: (a) the Sub Layer to Legislative reference is **off-by-one for all 533** (Sub has 3 header rows, Legislative has 2, so same row number = next member; Byron read Carlos Gimenez), BUT \"fixing\" it alone made the board WRONG because (b) **legislative co-sponsorship is directionless VOLUME** (rewards prolific members like Durbin regardless of stance) and (c) **press is the only directional signal** (signed -1..+1, enemies negative) yet was wired at about 0.05 vs legislative about 1.0; (d) **committee data was incomplete** (Tim Scott = Banking CHAIR read 0); (e) **1,066 `#REF!`** in Legislative-Raw cols DG/DO = dead **external-workbook links `[1]!Table1`** (data lost, zeroed); (f) **Aaron Bean #1 phantom** = 5 entirely-empty Legislative cols (CDFI x3, Payments-CoSpon, FoM-CoSpon) produced a spurious 1.0 for the first data row via empty-column min-max.",
+      "mark": "not positional",
+      "why": "\"same row number = next member\" is the next sheet row, not a place in the note"
+    },
+    {
+      "line": 180,
+      "old": "- **REFINED (same session, later): press-gating removed.** Legislative col D had been `leg_volume x sign(press_lean)` (anti-CU activity counts negative). User flagged it as imposed bias; a bias audit confirmed it: 457/533 members have near-zero press, so gating their legislative by press-sign was noise; it was overfit to push Durbin down. Replaced by **intrinsic topic-direction**: interchange and credit-card-mandate activity is anti-CU by nature (disrupts the CU-favorable status quo), so those LEGISLATIVE topic weights are strongly negative (interchange -2.0, credit-card -3.0 in the leg composite) AND those PRESS topics up-weighted to 0.30 each (vs about 0.05 flat) as CU's existential priority issues.",
+      "mark": "not positional",
+      "why": "\"(same session, later)\" is time"
+    },
+    {
+      "line": 190,
+      "old": "- Added a **`Topic Weights` control sheet** (editable press+leg weight + tier per topic), but composites were still computed VALUES so editing needed a Python re-run; user may want them wired fully live next. (Later audit: this sheet became stale/decorative, see Blended audit.)",
+      "mark": "rewrite",
+      "why": "\"see Blended audit\" names ## Blended workbook audit (2026-06-25), which moves to -scoring-refinements-and-audits; \"wired fully live next\" and \"Later audit\" are time",
+      "new": "- Added a **`Topic Weights` control sheet** (editable press+leg weight + tier per topic), but composites were still computed VALUES so editing needed a Python re-run; user may want them wired fully live next. (Later audit: this sheet became stale/decorative, see Blended audit in [[2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits]].)",
+      "referent": "2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits"
+    },
+    {
+      "line": 214,
+      "old": "  - Neutral excluded. Avg + Success-Rate columns deliberately 0 (weight-0 by design, see `feedback_spreadsheet_consult_on_errors`). Only Sponsor (0.286) / OrigCosp (0.143) / Cosp (0.0714) weighted.",
+      "mark": "external",
+      "why": "\"see `feedback_spreadsheet_consult_on_errors`\" names a memory file"
+    },
+    {
+      "line": 227,
+      "old": "- Base points (x relevance): full-committee membership 3; leadership Chair +6 / Ranking +4 / Vice +3; **subcommittee** membership +1 (later set to +0.5, see below), Chair +2.5 / Ranking +1.5 / Vice +1.0. Summed across every seat.",
+      "mark": "same note",
+      "why": "\"(later set to +0.5, see below)\" is the \"Open lever (then resolved)\" bullet right after it in the same committee-scoring section (user picked +0.5)"
+    },
+    {
+      "line": 240,
+      "old": "Still open then: SB Contracting & SB Innovation subs (deprioritized); the CFPB directional split (separate `CFPB Bills` tab tagged +1/0/-1 in the Presentation file, awaiting user review before computing; computed later the same day, see above). Relates to `project_moneyball_model`.",
+      "mark": "same note",
+      "why": "\"computed later the same day, see above\" is ## CFPB directional split (2026-06-25), which moves to -scoring-refinements-and-audits with this section and stays above it"
+    },
+    {
+      "line": 258,
+      "old": "Audit of `Moneyball Main Version - Blended.xlsx` (25 sheets, 533 members). The percentile-rank/4-pillar plan is now realized in the **Blended Model** sheet, the canonical output (see also [[moneyball-workbook]]).",
+      "mark": "external",
+      "why": "\"see also [[moneyball-workbook]]\" names the workbook actor note"
+    },
+    {
+      "line": 274,
+      "old": "**Method (user chose \"confirmatory overlay\"):** combined = `0.55 x legislative + 0.35 x press + 0.10 x votes (if n>=5)`, renormalized to leg+press where votes absent. Per-category legislative = signed engagement (topic-direction sign); press = the signed per-category Press Release - Normalized value; votes = per-category CU-aligned passage-vote lean. Robust 80th-percentile normalization per category; tier cutoffs +/-0.40 (Champion/Opponent) / +/-0.12 (Ally/Skeptic), tunable dials (initial; superseded by the self-calibrating thresholds below). Scripts: `fec/per_category_stance.py`, `fec/vote_by_category.py`, `fec/write_category_stance.py`. Outputs `category_stance.json`, `vote_category_lean.json`.",
+      "mark": "same note",
+      "why": "\"superseded by the self-calibrating thresholds below\" names the bold label SELF-CALIBRATING THRESHOLDS later in the same Category Stance section (the resolver's mark, signed off)"
+    },
+    {
+      "line": 278,
+      "old": "**HONEST finding (told to the user):** votes do NOT decompose cleanly by CU category. 8 of 17 categories have ZERO floor votes (Interchange, Field of Membership, CU Capital, Credit Card, NCUA, Payments, CDFI, TCPA; they die in committee); where present, n = 1-3 per member. So votes are only a light confirmatory overlay, not a co-equal pillar. Cosponsorship works per-category because it was deliberately curated; floor votes are whatever reached the floor. See `feedback_consult_multipliers_thresholds`.",
+      "mark": "external",
+      "why": "\"See `feedback_consult_multipliers_thresholds`\" names a memory file"
+    },
+    {
+      "line": 295,
+      "old": "**TIGHTER + NEUTRAL SPLIT + BIPARTISANSHIP (2026-06-26):** champions tightened again (K = 1.25, champ band [0.03, 0.12]), rates 3-10%, 331 champions. Neutral band split per-category into **Highly Persuadable / True Neutral / Lean Skeptic** by its OWN tertiles of lean (post-pass on Neutral cells; about 808/791/720). PERS updated at the time: Highly Persuadable 1.0, True Neutral 0.95, Lean Skeptic 0.85, Skeptic 0.70 (compressed on 2026-06-27, see calibration). New tiers propagated to sheet colors (blue/gray/peach), dashboard codes H/T/L.",
+      "mark": "rewrite",
+      "why": "\"(compressed on 2026-06-27, see calibration)\" names ## Empirical calibration (2026-06-27), which moves to -scenario-tools-and-calibration",
+      "new": "**TIGHTER + NEUTRAL SPLIT + BIPARTISANSHIP (2026-06-26):** champions tightened again (K = 1.25, champ band [0.03, 0.12]), rates 3-10%, 331 champions. Neutral band split per-category into **Highly Persuadable / True Neutral / Lean Skeptic** by its OWN tertiles of lean (post-pass on Neutral cells; about 808/791/720). PERS updated at the time: Highly Persuadable 1.0, True Neutral 0.95, Lean Skeptic 0.85, Skeptic 0.70 (compressed on 2026-06-27, see calibration in [[2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration]]). New tiers propagated to sheet colors (blue/gray/peach), dashboard codes H/T/L.",
+      "referent": "2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration"
+    },
+    {
+      "line": 297,
+      "old": "- Fed into BOTH IM engines as the user's described mechanic: flip nbrA/nbrB cross-party ties amplified by `1+1.5 x sqrt(bp[n] x bp[u])` (per_topic_flip cpf); coalition cascade cross-party edge-probs amplified the same way + seed-$ boost (per_topic_coalition). (Amplifier later flipped to damping, see calibration.)",
+      "mark": "rewrite",
+      "why": "\"see calibration\" names ## Empirical calibration (2026-06-27), which moves to -scenario-tools-and-calibration; \"later flipped\" is time",
+      "new": "- Fed into BOTH IM engines as the user's described mechanic: flip nbrA/nbrB cross-party ties amplified by `1+1.5 x sqrt(bp[n] x bp[u])` (per_topic_flip cpf); coalition cascade cross-party edge-probs amplified the same way + seed-$ boost (per_topic_coalition). (Amplifier later flipped to damping, see calibration in [[2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration]].)",
+      "referent": "2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration"
+    },
+    {
+      "line": 298,
+      "old": "- **HONEST FINDING (measured): the tilt is negligible**: flip-$ and coalition seeds both land at about 24% bipartisan = chamber median. Why: cross-party cosponsorship ties are a MINORITY of the network (members mostly cosponsor within party), so amplifying them barely moves the proximity sums, and allocation is dominated by topic-engagement + money/marginal-spread + the $50k cap. Bipartisanship's real value is as a **decision aid (dashboard hover) + tie-breaker**, not an allocation driver. To genuinely steer money would require a DIRECT target-value factor (prioritize bridges outright, tunable weight), offered to the user; built as the bridge toggle (see scenario section).",
+      "mark": "rewrite",
+      "why": "\"(see scenario section)\" names ## Scenario-tool pre-flight and engine build (its ### Bridge toggle), which moves to -scenario-tools-and-calibration",
+      "new": "- **HONEST FINDING (measured): the tilt is negligible**: flip-$ and coalition seeds both land at about 24% bipartisan = chamber median. Why: cross-party cosponsorship ties are a MINORITY of the network (members mostly cosponsor within party), so amplifying them barely moves the proximity sums, and allocation is dominated by topic-engagement + money/marginal-spread + the $50k cap. Bipartisanship's real value is as a **decision aid (dashboard hover) + tie-breaker**, not an allocation driver. To genuinely steer money would require a DIRECT target-value factor (prioritize bridges outright, tunable weight), offered to the user; built as the bridge toggle (see scenario section in [[2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration]]).",
+      "referent": "2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration"
+    },
+    {
+      "line": 306,
+      "old": "**Interactive dashboard** (`fec/build_dashboard_bundle.py` to `dashboard_data.json` columnar 71KB; `fec/make_dashboard_html.py` to standalone `C:\\Users\\pgoff\\OneDrive\\Desktop\\Moneyball Dashboard.html`, 81KB): canvas network (533 nodes, spring_layout, 420 top edges), issue dropdown (18), mode toggle (coalition/flip), color-by (issue stance / party / overall), hover tooltip, top-targets panel, search-to-zoom. Party from voteview HSxxx_members.csv (party_code). NOT YET wired per-topic coalition into the IM sheet (sheet still shows per-topic flip only; mode-aware topic columns optional next). Relates to `project_moneyball_network_enhancement` and `project_stance_sentiment_overhaul`.",
+      "mark": "not positional",
+      "why": "\"optional next\" is time"
+    },
+    {
+      "line": 320,
+      "old": "Pre-flight pass before implementing scenario tools (budget/dial what-ifs + defection/money shocks). All in `fec/`. 22/22 integrity throughout (counts below move to 31/31 by the end).",
+      "mark": "same note",
+      "why": "\"counts below\" are the integrity counts of the following subsections of the same scenario section, which moves whole to -scenario-tools-and-calibration"
+    },
+    {
+      "line": 330,
+      "old": "- **Scenario protocol: always run baseline + perturbed at the SAME seed, so deltas are exact with zero MC noise.** Residual cross-seed variance (about $13M between seed99/199 at MC = 20) is baseline-credibility only (which seed picked), irrelevant to same-seed deltas; bump MC or seed-ensemble later if the baseline itself needs to be less arbitrary. `per_topic_flip` is already deterministic (greedy LT, no MC).",
+      "mark": "not positional",
+      "why": "\"seed-ensemble later\" is time"
+    },
+    {
+      "line": 356,
+      "old": "- `defection(m,dlean)`: if |dlean| >= DTHRESH = 15 and the member is persuadable (NOT Champion/Defender/Opponent), drag stance toward the money by int(|dlean|/DTHRESH) tiers along ORDER. comp + $250k defects Ally to Neutral etc. Dials MAXSHIFT = 40, HALF = 0.10, DTHRESH = 15 (as of this step; MAXSHIFT later 18 per calibration; the calibration note records DTHRESH 25 to 15, a discrepancy with this step's DTHRESH = 15 that the sources do not reconcile).",
+      "mark": "not positional",
+      "why": "\"MAXSHIFT later 18 per calibration\" is time"
+    },
+    {
+      "line": 357,
+      "old": "- Watch: low/under-reported-receipt members hit the $200k floor, so they are maximally movable (data artifact; fixed later by HIGH-2). Other variables to maybe add: current-lean asymmetry (pulling back a captured member costs more), incumbency/seniority, chamber. NOT yet wired into net_lean recompute, flip/coalition re-run (that is step 3 scenario running).",
+      "mark": "not positional",
+      "why": "\"fixed later by HIGH-2\" is time"
+    },
+    {
+      "line": 387,
+      "old": "- **HONEST LIMITATIONS**: (1) CU spends only act via conversion/defection, no gradual winnability in the coalition cascade (that is the FLIP model); a non-converting CU spend shows about 0 effect. (2) 18 low-receipt floor members (incl Grijalva) defect too easily (the receipts-floor artifact). (3) The runner is ONE-SHOT (apply then observe); the ADAPTIVE optimizer (Golovin-Krause: greedily CHOOSE the moves to max influence under budget, observing realized defections) is the natural next layer, NOT built at that point.",
+      "mark": "not positional",
+      "why": "\"the natural next layer\" is the next development step, not a place in the note"
+    },
+    {
+      "line": 407,
+      "old": "- **H2 (FIXED)**: scenario per-topic rows were below the MC noise floor (std about 0.75-1.05 vs 0.3 threshold), giving impossible \"competitor money helped CU\" signs. Root cause: the cascade drew `random.random()` in activation order, so changing one member desynced the whole stream (CRN failure). Fix: splitmix64 `_sm(it,u,v)` edge-keyed draws = true CRN, so baseline vs scenario differ ONLY by the real perturbation. Comp shock now clean: coalition -3.2, only same-sign rows. (`budget_frontier.py` had the same latent order-dependence, patched there only by non-monotone clamping; apply `_sm` there too if its per-topic deltas ever matter; done later in HIGH-1.)",
+      "mark": "not positional",
+      "why": "\"below the MC noise floor\" is a magnitude and \"done later in HIGH-1\" is time"
+    },
+    {
+      "line": 408,
+      "old": "- **H3 (FIXED, later REVERSED)**: members with NO FEC data had ind = 0, b about 0, pflip about 1 (\"missing\" misread as \"no industry opposition\"); 11 of 63 ranked top-50 winnability, inflating the base (215.92). Fix: impute industry baseline (median of members WITH data) for zero-`total` members in `flip_model.py` + `per_topic_flip.py`; `fm.nodata` flags them. Base now realistic 186.50; 0 data-less in top-20. CAUGHT a follow-on: the scenario flip channel mixed imputed `fm.ind0` (baseline) with raw local `ind` (scenario), so the comp shock showed +28 winnability; fixed via `ind_flip = fm.ind0 + (ind-ind0_raw)` (one footing).",
+      "mark": "not positional",
+      "why": "\"(FIXED, later REVERSED)\" is time"
+    },
+    {
+      "line": 418,
+      "old": "- **HIGH-3 (FIXED then reversed below)**: the H3 imputation only fired for total = 0; 43 members had a FEC record but ind = 0 (zero captured bank/finserv), 6 ranked top-20 winnability. Extended imputation to EVERY ind = 0 member (median industry money), `ind_imputed` set, env-tunable IMPUTE_IND0=0 to trust raw zeros. Conservative (only lowers inflated winnability). Base winnability 171.76 to 154.57.",
+      "mark": "same note",
+      "why": "\"(FIXED then reversed below)\" is ### FEC data-quality assessment + HIGH-3 reversal, later in the same scenario section and part"
+    },
+    {
+      "line": 434,
+      "old": "`per_topic_flip.py --bridge` (or env BRIDGE=1) applies a direct bridge target-value boost `tgt*(1+GAMMA*bp)`, GAMMA = 1.2, writes a separate `per_topic_alloc_bridge.json`. OFF by default. Gentle tilt (Mortgage $-weight bipartisan 23.9% to 24.3%, gainers Cassidy/Kustoff/Cramer). See the bipartisanship metric and cross-party cascade amplifier (negligible effect, kept as decision aid) in the Category Stance section.",
+      "mark": "rewrite",
+      "why": "\"in the Category Stance section\" names ## Category Stance 3D sheet, which moves to -category-stance-3d while this ### Bridge toggle moves to -scenario-tools-and-calibration",
+      "new": "`per_topic_flip.py --bridge` (or env BRIDGE=1) applies a direct bridge target-value boost `tgt*(1+GAMMA*bp)`, GAMMA = 1.2, writes a separate `per_topic_alloc_bridge.json`. OFF by default. Gentle tilt (Mortgage $-weight bipartisan 23.9% to 24.3%, gainers Cassidy/Kustoff/Cramer). See the bipartisanship metric and cross-party cascade amplifier (negligible effect, kept as decision aid) in the Category Stance section in [[2026-06-feature-moneyball-excel-model-build-category-stance-3d]].",
+      "referent": "2026-06-feature-moneyball-excel-model-build-category-stance-3d"
+    },
+    {
+      "line": 470,
+      "old": "| `30/25/40/5` (leg .30 / press .25 / inf .40 / demo .05, user-changed 2026-07-07, backup PRE-WEIGHTS-20260707) | **LAST RATIFIED** (ratified 2026-07-07) | see the influence engine internals topic (`2026-07-feature-influence-engine-internals`) |",
+      "mark": "external",
+      "why": "\"see the influence engine internals topic (`2026-07-feature-influence-engine-internals`)\" names another note"
+    },
+    {
+      "line": 471,
+      "old": "| `45/10/40/5` (live in `ranks_python.json` since 2026-09-03) | **LIVE BUT UNRATIFIED**; code-review S-5 awaits Paul's ruling | later phases |",
+      "mark": "not positional",
+      "why": "\"later phases\" is time"
+    },
+    {
+      "line": 477,
+      "old": "- ~~\"Writes go through Excel COM\"; recalc via `New-Object -ComObject Excel.Application; $xl.CalculateFull()`; `write_im_sheet.py` and `sheet_sync.py` push to the workbook via COM/win32com; recalc on a LOCAL copy outside OneDrive~~ (June 2026, all sections above) - superseded by Phase 2 (system-of-record inversion): `ranks_python.json` is the authority, the workbook is a view, **NO COM anywhere** (approved resolution 5). Kept because it explains older commits/artifacts (backups, `Melange - Live` tab, PRE-IM-20260626.xlsx) and the COM gotchas (numeric `.Value2` InvalidCastException, OneDrive race, autorecover rollback).",
+      "mark": "rewrite",
+      "why": "\"(June 2026, all sections above)\": the sections above this hub section are the hub's kept sections and all four parts, so above stays and the parts are added (plan 3.2 B5: \"all sections above\" is an S10 rewrite)",
+      "new": "- ~~\"Writes go through Excel COM\"; recalc via `New-Object -ComObject Excel.Application; $xl.CalculateFull()`; `write_im_sheet.py` and `sheet_sync.py` push to the workbook via COM/win32com; recalc on a LOCAL copy outside OneDrive~~ (June 2026, all sections above and in [[2026-06-feature-moneyball-excel-model-build-lineage-and-phases]], [[2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits]], [[2026-06-feature-moneyball-excel-model-build-category-stance-3d]] and [[2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration]]) - superseded by Phase 2 (system-of-record inversion): `ranks_python.json` is the authority, the workbook is a view, **NO COM anywhere** (approved resolution 5). Kept because it explains older commits/artifacts (backups, `Melange - Live` tab, PRE-IM-20260626.xlsx) and the COM gotchas (numeric `.Value2` InvalidCastException, OneDrive race, autorecover rollback).",
+      "referent": "2026-06-feature-moneyball-excel-model-build-lineage-and-phases, 2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits, 2026-06-feature-moneyball-excel-model-build-category-stance-3d, 2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration"
+    },
+    {
+      "line": 498,
+      "old": "- `project_moneyball_presentation_audit`: \"Audit of \"Moneyball Main Version - Presentation.xlsx\" + decision to move final score to percentile-rank, committee 0.20, hierarchical 4-pillar/Primary-Layer blend.\" (Note: the \"committee 0.20\" in this description reflects the first-stage decision; the final delivered Influence weight was 0.35, see Weights ledger.)",
+      "mark": "same note",
+      "why": "\"see Weights ledger\" names ## Weights ledger, which the hub keeps (the resolver's mark, signed off)"
+    }
+  ]
+}

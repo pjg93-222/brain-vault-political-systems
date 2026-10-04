@@ -152,6 +152,9 @@ python -c "import py_compile; py_compile.compile(src, cfile=<scratchpad>)"
 - [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 - Refresh automation reliability - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
 - [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] — The Codex executor lane record: how Claude and Codex were wired, the injected-preamble finding, the Gemini and Grok lanes, Paul's amended rules and the integration history.
+- [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] — legfix5 of 2026-07-27: the six-year full-text collection, the GovInfo official-text lane and culling engine, and the acu-outline rulings carried into it.
+- [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] — The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built, Claude verified read-only and Paul applied.
+- [[2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance]] — The 2026-07-10 corpus census and the bill-plane audit and press media-stance display from 2026-07-19 on, through the crown and money rulings, tier weights and Codex-lane hardening.
 
 ## Related Projects
 

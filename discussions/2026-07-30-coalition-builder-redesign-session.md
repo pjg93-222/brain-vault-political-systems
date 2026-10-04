@@ -63,6 +63,7 @@ tags: ["type/discussion", "domain/data"]
 ## Related Topics
 
 - [[2026-07-feature-influence-engine-internals]] - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
+- [[2026-07-feature-influence-engine-internals-coalition-builder]] — The coalition-builder redesign and implementation of 2026-07-30 to 08-01, as recorded for the influence engine.
 
 ## Conclusions
 
