@@ -127,7 +127,7 @@ Any process (collector, restore, audit, pipeline stage, background watcher) must
 | 2026-07-24 | Desktop rig built, lane-aware four windows; mirror layer; hooks hand-installed and proven (23:42) |
 | 2026-07-27 | Paul's standing everything-through-Glass-Box rule after two invisible-work failures |
 | 2026-08-06 | Hung lane console blocks metaloop start; Grok balance exhausted (HTTP 402); Codex MCP idle timeout |
-| 2026-08-06 | Hook mirror stops being invoked in app sessions (found 2026-08-09, GLASSEYE); corrected 2026-10-03: dead from about 2026-08-02, a Git Bash path failure, not a harness change |
+| 2026-08-06 | Hook mirror stops being invoked in app sessions (found 2026-08-09, GLASSEYE); corrected 2026-10-03: the hooks were called but their commands failed, dead from about 2026-08-02, because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths |
 | 2026-08-09 | GLASSEYE: coordinator-side emission adopted (metaloop.md section @18dab6b) |
 | 2026-10-03 | Hook mirror revived: the 16 `mirror.ps1` hooks rewritten with forward-slash paths; events flowed again within about 46 seconds; retention restarted |
 

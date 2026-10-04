@@ -128,7 +128,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - [ ] Paul cleanup list: C: ~5 GB free, Paul offered a cleanup list (review copies); deletion is his
 - [x] PAC accuracy attempt 2: finish S2C narrow repair -> v3 freeze -> ONE Opus verifier gate; never launch S3 without Paul's OK and a fresh gate on the v2 freeze; Glass Box watcher alongside every stage. Done 2026-10-03: the S2C gate PASSED, S3 ran dev-only (one pass) on Paul's "finish", and the attempt finished ~08:45 UTC (see PAC accuracy attempt 2).
 - [ ] Paul to rule on S6 MAJOR-2 (FILED UNAVAILABLE cells still publish per-target predictions: a breach of the withheld pin?), open since 2026-10-03.
-- [ ] 2027-03-08 09:00 ET: the one-time scheduled task `score-pac-live-freeze-2026` (Paul OK'd 2026-10-03; it stops if there is no local pas226 edition dated >= 2027-03-01) scores v3 (the record) and LIVE_FREEZE_V4_1 side by side, plus the v5 2026 line Paul added on 2026-10-04.
+- [ ] 2027-03-08 09:00 ET: the one-time scheduled task `score-pac-live-freeze-2026` (Paul OK'd 2026-10-03; it stops if there is no local pas226 edition dated >= 2027-03-01) scores v3 (the record) and LIVE_FREEZE_V4_1 side by side, plus a v5 2026 line, which Paul ruled (D6, 2026-10-04) should be added.
 - [ ] v5: freeze the method and plan before 2027-01-31 for 2028, the first clean test, and freeze each forecast within 14 days of its issue date (Paul's D8, 2026-10-04).
 - [ ] Phase 1-6 remainder: Phase 3 deliverables rollback-on-partial-write fix, Phase 4 D1 copy_back rollback REQUIRED + D2-D4 wording/README, Phase 2 anchor addendum + feeds spec (state at the 09-30 pause; later phases applied, see History)
 

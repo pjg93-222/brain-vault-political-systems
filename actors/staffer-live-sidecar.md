@@ -47,7 +47,7 @@ tags: ["type/actor", "status/active", "domain/backend"]
 | Criticality | medium |
 | PCI | no |
 | Team | none |
-| Listener | `127.0.0.1:8841`, no autostart except the watchdog task, which stays disabled (brain D-080, as of 2026-10-03); server PID recorded in `audits/staffer_live_runtime/server.json` (PID 66688 after the 2026-10-04 14:33 restart) |
+| Listener | `127.0.0.1:8841`, no autostart except the watchdog task, which stays disabled (brain D-080, as of 2026-10-03); server PID recorded in `audits/staffer_live_runtime/server.json` (PID 66688 after the 2026-10-04 14:33 landing) |
 
 ## Dependencies
 
@@ -188,7 +188,7 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
   - DE-056: replacing `+=` with `sum()` in a bit-identical float copy fails: on Python 3.12 `sum()` is compensated and differs in the last bit (36 pairs). Evidence: `test_control_the_comparison_is_sensitive_to_float_operation_order` on `claude/staffer-coldpath-20261003`.
   - DE-057: asserting an async search's immediate status in a test is a race, because the worker can finish first (0.4% unloaded, 0.9% loaded). Fix: poll to a terminal state.
 - **`landing_v4` (Paul, 2026-10-03: "land v4 once the check passes"):** after a PASS (or PASS-WITH-FIXES with doc fixes only): stop 8841, run `apply_landing.py --apply` for `landing_v4`, start; wait for Ready, run a short panel that checks the unreachable reasons on real data, commit this lane's files on LIVE main, run the post-landing brain update.
-  - Done 2026-10-04: applied 03:17:32; 8841 is PID 36412, Ready 03:22:06. Panel passed: cold searches about 3x faster, the first route after a restart 2.8 s (was 40 s), 22 of 22 reasons correct, browser check OK. LIVE main commit `3366a7840` (45 lane files plus a 128-file audit packet in `audits/staffer_route_latency_20261004`; mirror current). An agent applied the post-landing brain update. Idle CPU was 18% shortly after the restart, cause unknown.
+  - Done 2026-10-04: applied 03:17:32; 8841 is PID 36412, Ready 03:22:06. Panel passed: cold searches about 3x faster, the first route after a restart 2.8 s (was 40 s), 22 of 22 reasons correct, browser check OK. LIVE main commit `3366a7840` (45 lane files plus a 128-file audit packet in `audits/staffer_route_latency_20261004`; mirror current). An agent was applying the post-landing brain update (completion not recorded). Idle CPU was 18% shortly after the restart, cause unknown.
 - **`landing_v4_1` (branch `claude/staffer-route-v4-1-20261004`):** gc only after a router is replaced (the startup gc had stalled requests 10.1 s live), no index rebuild during a swap, directory-mode left-out wording, `explanation` = message; it needed an Opus check, Paul's OK for a restart and its own commit.
   - Done 2026-10-04: landed 14:33 (8841 PID 66688) and committed: LIVE main `4a81d5022` (80 files: 11 lane files, the `landing_v4_1` audit and `PANELS.md`), brain `81f6c997d`; mirrors current. Panel: no startup gc (`gc_ms` absent); JUDICIARY route 1 in 5.2 s, all 3 routes in 11.6 s, paths and costs bit-identical to v4; `explanation` = message 4/4; `uncovered_basis` correct.
 - **Lane closed 2026-10-04 except open items:** idle CPU about 19% (one thread, kernel > user; suspected identity loop, D-084); v4.1 LOW-1 (a publish can skip the post-swap gc in a narrow window; needs a restart) and LOW-2 (a doc overstatement), deferred to the next restart; directory-mode searches are not prewarmed (the first one takes 8.4 s); ALT/A* landmarks deferred, not needed now.

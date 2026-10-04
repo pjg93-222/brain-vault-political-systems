@@ -48,7 +48,7 @@ is the line in the tree this pass commits.
 | F3 | `pac-accuracy-attempt2-lane-2026-10-03.md` `10cf0f21` | `topics/2026-09-feature-forecast-giving-redesign.md`, `discussions/2026-10-03-pac-accuracy-attempt2-rulings.md`, `concepts/single-look-holdout-discipline.md` (upserted from `e86a3ffa`); `projects/forecast-redesign.md` (added) |
 | F4 | `pac-accuracy-six-year-lookback-directive-2026-10-03.md` `048c6464` | `topics/2026-09-feature-forecast-giving-redesign.md`, `projects/forecast-redesign.md`, `concepts/single-look-holdout-discipline.md` (added) |
 | F5 | `repo-mirror-2026-08-11.md` `7cfbd6eb` | `actors/melange-repo-mirror.md`, `topics/2026-08-incident-workstation-disk-and-backup.md` (upserted from `d344e91e`). `topics/2026-07-troubleshooting-melange-live-tree-git-drift.md` keeps `d344e91e`: it received nothing (see "Considered, unchanged") |
-| F6 | `windows-hook-shell-git-bash.md` `a239f750` (project `scratch-2026-10-03-35774e`) | `topics/2026-06-working-agreement-tooling-and-environment-traps.md`, `actors/glass-box.md`, `actors/claude-code-harness.md` (added) |
+| F6 | `windows-hook-shell-git-bash.md` `a239f750` (project `scratch-2026-10-03-35774e`) | `topics/2026-06-working-agreement-tooling-and-environment-traps.md`, `actors/glass-box.md`, `actors/claude-code-harness.md` (added); `actors/metaloop.md`, `topics/2026-07-working-agreement-agent-orchestration-rules.md` (added after the review of `fec3771`, R73) |
 
 ## Per-note placement
 
@@ -161,9 +161,9 @@ Box hook installation record), as Rule 6 plus an extension of Rule 1; the Glass 
 |---|---|---|
 | F6:1-17, 19, 23 | frontmatter, title, `## Content` heading | dropped: hook boilerplate |
 | F6:21 | tagline | TR:122 (Rule 6 heading) |
-| F6:25 | hooks run through Git Bash; forward slashes; the 16 glassbox hooks dead ~2026-08-02 to 2026-10-03; backup file; hot reload ~46 s | TR:123, TR:124; TR:65 (History), TR:144 (rig correction); GB:16, GB:92, GB:121, GB:130, GB:132; CH:20, CH:94, CH:178 |
+| F6:25 | hooks run through Git Bash; forward slashes; the 16 glassbox hooks dead ~2026-08-02 to 2026-10-03; backup file; hot reload ~46 s | TR:123, TR:124; TR:65 (History), TR:144 (rig correction); GB:16, GB:92, GB:121, GB:130, GB:132; CH:20, CH:94, CH:178; metaloop:15, :79, :94 and orchestration-rules:170 (dated corrections after the review, R70-R72) |
 | F6:27 | reviving the hooks restarts glassbox retention (5000 newest, ~5 min) | GB:93 |
-| F6:29 | the Bash tool collapses `\\` to `\` in command text, even in single quotes; `printf '\134'`, `\` | TR:78 (Rule 1 extension); CH:21, CH:95 |
+| F6:29 | the Bash tool collapses `\\` to `\` in command text, even in single quotes; `printf '\134'`, `\u005c` | TR:78 (Rule 1 extension); CH:21, CH:95 |
 | F6:31 | Why (silent async failures; two agents' false zero counts) | TR:125; the false zero counts at TR:78 |
 | F6:32 | How to apply (forward slashes; `jq -j ... \| tr -d '\r'`, then `bash -c "$cmd"`) | TR:126 |
 | F6:34-38, 40-42 | Possible Connections (keyword matches), Capture Context | dropped: hook boilerplate |
@@ -239,6 +239,21 @@ Quotes are shortened with "…". Evidence is the frozen capture line.
 | R63 | PM:5 `description` (follow-up) | "…Pushed to GitHub branch claude/mentat-migration-onto-main (PR unopened). Money/receipt-counting code…" | "…Pushed to GitHub branch claude/mentat-migration-onto-main (PR opened and merged 2026-10-03). Money/receipt-counting code…" | F1:30 (PR #2 opened and merged 2026-10-03, merge commit `54433266`); owner ruling below |
 | R64 | T:26 tagline (follow-up) | "…the GitHub migration branch pushed 2026-10-02/03 with the PR still unopened, the Tableau-shaped…" | "…the GitHub migration branch pushed 2026-10-02/03 with the PR opened and merged 2026-10-03, the Tableau-shaped…" | F1:30; owner ruling below |
 | R65 | PF:43 `action_items` owner and PF:107 Action Items table (follow-up): the new v5 item "freeze the method and plan for 2028, the first clean test" (PF:40-43, PF:107) | owner "coordinator agent" | owner "unassigned (capture names none)", in both copies | F4:35 records Paul's D8 ruling (prepare 2028 as the first clean test; "method+plan frozen before 2027-01-31; each forecast frozen within 14 days of its issue date") and names no owner for the freeze; its "Coordinator defaults" are D2, D5, D7 and D9, not this item. The owner was this pass's inference |
+| R66 | TR:78 (Rule 1 extension) | "…, or use `\` inside jq strings." (the capture's `\u005c` had decayed to one backslash, which inside a jq string is itself an escape character: the very trap F6:29 warns about) | "…, or use `\u005c` inside jq strings." | F6:29 ("or use `\u005c` inside jq strings"). Found by the review of `fec3771`: `od -c` showed backtick, backslash, backtick, and `rg -c u005c` returned 0. Cause: the Edit and Write tool parameters decode the six characters to one backslash, so R66-R68 were written by a byte-level script that builds them from `String.fromCharCode(92) + "u005c"` |
+| R67 | CH:95 | "…build a backslash with `bs=$(printf '\134')` or use `\` in jq (Rule 1 extension in Tooling and environment traps)." | "…or use `\u005c` inside jq strings (Rule 1 extension in Tooling and environment traps)." | F6:29; as R66 |
+| R68 | this ledger, F6 table row F6:29 (line 166) | "`printf '\134'`, `\`" | "`printf '\134'`, `\u005c`" | F6:29; as R66 |
+| R69 | GB:130 Timeline 2026-08-06 (R61) | "; corrected 2026-10-03: dead from about 2026-08-02, a Git Bash path failure, not a harness change" | "; corrected 2026-10-03: the hooks were called but their commands failed, dead from about 2026-08-02, because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths" | F6:25 says only that hook commands run through Git Bash, which strips the backslashes of unquoted Windows paths, and that the hooks were dead from about 2026-08-02 for this reason; it never says whether the harness changed. The hooks worked from 2026-07-24 (TR:143) and GLASSEYE then recorded no hook-sourced events, so something changed around 08-02, possibly the harness's hook shell: "not a harness change" was this pass's own inference |
+| R70 | metaloop:15 `known_issues` | "Hooks are dead in app sessions (~2026-08-06): coordinator must emit agent.*/task.* pairs itself" | kept + ". Correction 2026-10-03 (source windows-hook-shell-git-bash): the 16 mirror.ps1 hooks were dead from about 2026-08-02 because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths; fixed 2026-10-03 with forward slashes (see GLASS BOX)" | F6:25. The pass corrected glass-box, tooling-traps and the harness note but left these present-tense lines, which are not in "Considered, unchanged" |
+| R71 | metaloop:79 Known Issues (fee9461: :78) | "- Hooks dead in app sessions since about 2026-08-06; coordinator emission is the workaround." | kept + " Correction 2026-10-03 (source `windows-hook-shell-git-bash`): the hooks were dead from about 2026-08-02 to 2026-10-03, because Git Bash stripped the backslashes of their unquoted Windows paths, and were fixed with forward slashes; see GLASS BOX." | F6:25 |
+| R72 | metaloop:94 (fee9461: :93) and orchestration-rules:170 (fee9461: :169), law 4 Glasseye | "…hooks are dead in app sessions (about 2026-08-06 / ~2026-08-06), so the coordinator emits agent.*/task.* pairs via `emit.ps1` around every fan-out and background task." | kept + "(Dated note 2026-10-03, source `windows-hook-shell-git-bash`: the hooks were dead from about 2026-08-02 because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths, and were revived on 2026-10-03; see GLASS BOX.)" | F6:25. The coordinator-emission rule itself is unchanged: the hooks never emitted agent.*/task.* events |
+| R73 | `sources:` of actors/metaloop.md and topics/2026-07-working-agreement-agent-orchestration-rules.md | no F6 pair | the F6 pair (`windows-hook-shell-git-bash.md`, `a239f750`; the entry as written in actors/glass-box.md, `synced_at: "2026-10-04"`); `updated_by` "reorg@agent" -> "preserve@agent" (`updated_at` was already 2026-10-04) | F6 memory file sha256 `a239f750` (freeze manifest); neither note belongs to a split family (no `part_of`, no `## Parts`), so no hub needs the pair (check j) |
+| R74 | LT:22 (R23) and SN:79 | LT:22 "Paul gave that go in advance for each landing, conditional on an independent Opus check (…)"; SN:79 "each landing on Paul's go once an independent Opus check passes (…)" | LT:22 "Paul gave that go in advance for `landing_v2`, `landing_v3_ids` and `landing_v4`, conditional on an independent Opus check (…) …; `landing_v4_1` was recorded as needing an Opus check and Paul's OK for its restart, and landed on 2026-10-04."; SN:79 "`landing_v2`, `landing_v3_ids` and `landing_v4` each on Paul's go once an independent Opus check passes (…); `landing_v4_1` was recorded as needing an Opus check and Paul's OK for its restart; …" | F2:61, F2:73, F2:146 (the three quoted rulings, for v2, v3 and v4); for v4.1 F2:143 ("It needs an Opus check, Paul's OK for a restart, and its own commit") and F2:123 (landed 14:33): the capture records the prerequisites, not an advance go |
+| R75 | SC:191 | "An agent applied the post-landing brain update." | "An agent was applying the post-landing brain update (completion not recorded)." | F2:141 ("an agent is applying it"); no later line records that it finished |
+| R76 | LT:26, LT:27 (R24) and later-reviews:91 (R30) | LT:26 "Exception (…): when Paul rules each landing, a lane may land several patches in turn, each applied only after an independent Opus check passes; the route-latency lane landed four (…)"; LT:27 "A lane commits its own files on LIVE main with `git add` on their exact paths and leaves other lanes' uncommitted LIVE changes alone."; later-reviews:91 "…and the lane commits its own files on LIVE main with `git add` on their exact paths." | LT:26 "Precedent (…): in the route-latency lane, on Paul's rulings for each landing, several patches were landed in turn, each applied only after an independent Opus check passed; the lane landed four (…)"; LT:27 "In the route-latency lane, on Paul's commit ruling of 2026-10-03, the lane committed its own files on LIVE main with `git add` on their exact paths and left other lanes' uncommitted LIVE changes alone."; later-reviews:91 "…LIVE bytes; in the route-latency lane, on Paul's commit ruling of 2026-10-03, the lane committed its own files on LIVE main with `git add` on their exact paths." | F2:61-149 and F2:100-105: Paul ruled each landing, and the commit scope ("commit everything on main after the panel passes": this lane's files, exact paths, other lanes' changes left alone), for this lane; the capture states no general rule. The never-merge rule (D-060) stays general (F2:104) |
+| R77 | FR:131 Next Steps | "…and LIVE_FREEZE_V4_1 side by side, plus the v5 2026 line Paul added on 2026-10-04." | "…side by side, plus a v5 2026 line, which Paul ruled (D6, 2026-10-04) should be added." | F4:35 ("D6 YES add v5 2026 line to the March 2027 job"): a ruling that the line be added; the capture does not say it was |
+| R78 | T:74 Decisions, GitHub migration (R15) | "2026-10-03: at Paul's request the PR was opened and merged (…)" | "2026-10-03: the PR was opened after Paul signed in to GitHub himself, and merged at his request (…)" | F1:30 ("opened from the built-in browser after Paul signed in to GitHub there himself; MERGED 2026-10-03 at Paul's request"); as R2 |
+| R79 | SC:50 Listener (R34) | "(PID 66688 after the 2026-10-04 14:33 restart)" | "(PID 66688 after the 2026-10-04 14:33 landing)" | F2:123 ("landed 14:33 (8841 PID 66688)"): the capture says landed, not restarted |
+| R80 | `.bedrock/reorg/stale-statements.md` rows 7 and 8 (Status) | row 7 "The `description` is the note's summary, which the vault never edits, so a dated correction paragraph follows the tagline instead"; row 8 "the tagline is the summary (never edited), so a dated correction paragraph follows it" | row 7 "The `description` is the note's summary: a dated correction paragraph first followed the tagline, and the `description` itself was then corrected in place in `fee9461` (ledger R63; the paragraph stays as history)"; row 8 "the tagline is the summary: a dated correction paragraph first followed it, and the tagline itself was then corrected in place in `fee9461` (ledger R64; the paragraph stays as history)" | R63 and R64 (the owner's ruling that a summary surfaced by recall and `index.md` must be true) |
 
 R63-R65 are a follow-up to the pass commit `fec3771`, made the same day on the same branch. R63 and R64: the owner ruled that
 recall and `index.md` surface these summary lines, so a false summary must be corrected. That is an exception to the vault rule
@@ -246,6 +261,16 @@ that the summaries of existing notes are never edited (vault CLAUDE.md), and it 
 of R5 and R13; the dated correction paragraphs PM:67 and T:28 are kept unchanged as history. R65 corrects an inference of this
 pass: the capture gives the item no owner. R63-R65 change words inside existing lines, so no note line number cited in this
 ledger moved.
+
+R66-R80 are a second follow-up to `fec3771`, made the same day on the same branch after an independent review of that commit (three blocking
+findings and a set of wording findings; the findings that came with exact replacement text were applied, the others stay open for
+the owner). R66-R68 restore the capture's `\u005c`, which the tool that wrote the sentences had decoded to one backslash; R69 removes a
+cause the capture does not give; R70-R73 bring the hook correction to the two other notes that still said the hooks were dead;
+R74-R79 narrow wording to what the captures record; R80 corrects stale-statements rows 7 and 8. They change words inside existing
+lines and add one `sources:` line to each of `actors/metaloop.md` and
+`topics/2026-07-working-agreement-agent-orchestration-rules.md`, so the lines of those two notes below their frontmatter move down by one
+(the rows above give the line in this tree and, in brackets, the line at `fee9461`). No other line number cited in this ledger moved.
+R15, R23, R24, R30, R34 and R61 above record what `fec3771` wrote and are not rewritten; R66-R79 supersede the parts they quote.
 
 Inference flagged: R23 says "the stop, apply and restart then followed once the check had passed" without naming who ran them; the
 capture records Paul's instruction ("stop, apply, start once the check passes") and the exact stop and start times, which reads as
@@ -310,3 +335,30 @@ new S6 MAJOR-2 action item in the frontmatter and the table). Net -19 mentions; 
 
 Later arrivals: none. The freeze was rechecked before the deletions (six notes and their memory files unchanged, nothing new in
 `fleeting/`) and the memory files again before the commit.
+
+## Review fixes (R66-R80): gates and later arrivals
+
+Would-be-committed tree (`git write-tree` of exactly the 14 staged paths, `git archive` into a `mktemp -d` path of 48 characters; the
+hook's `index.md` and `log.md` edits, `.obsidian/*` and the untracked fleeting note are not in it):
+
+- `bun .bedrock/reorg/check.ts --strict`: a b c d f g h i j k all ok. 204 notes (204 curated, 0 fleeting), 567 links, 2064 mentions,
+  0 unresolved, 0 one-way, 0 without a curated incoming link; f: 0 enforced baseline pairs missing; h: `index.md` is byte-identical to
+  the generated catalog, so `index.md` is not part of this commit (no description or title changed); i: 0 leaves over budget; j: 119
+  parts in 30 families, 0 problems.
+- `bun .bedrock/reorg/healthcheck.ts --strict --vault <export>`: CLEAN (setup OK; 0 orphans and 0 dangling; 0 fleeting notes).
+- `build.ts --vault <export> --out <page>`, `verify.ts --file <page>`, `snapshot.ts --file <page>`: 204 notes, 567 links, 2064 mentions;
+  publish gate PASS; SNAPSHOT OK (20 of 20 assertions). The edits are plain text, so no link, tagline or weight changed and the pins in
+  `.bedrock/graph/snapshot.ts` stay as they are.
+- `BRAIN_VAULT=<export> hook.ts index`, then `selftest.ts --verbose`: SELFTEST OK; on-topic 22/22, off-topic 22/22, end to end 12/12;
+  pins 4, 9, 10, 13 and 16 rank 1. Run from the short export path: the selftest's length checks fail at export paths of about 230
+  characters or more (environmental, as at `20710e2`).
+- B1 bytes: `rg -c u005c` prints 1 for TR and CH; the six characters are the bytes 5c 75 30 30 35 63 (backslash, u, 0, 0, 5, c), inside
+  backticks, at TR:78, CH:95 and this ledger's F6:29 row (line 166).
+
+Later arrivals (after the freeze; not in this commit): the memory file `pac-accuracy-six-year-lookback-directive-2026-10-03.md`
+changed again at 2026-10-04T21:36:37Z (sha256 now `e2be05ae`; it adds a "v5 run (2026-10-04)" section), and the hook captured it as the
+untracked `fleeting/melange-systems--pac-accuracy-six-year-lookback-directive-2026-10-03.md`, with edits to `log.md` and `index.md` in
+the working tree. All three stay out of this commit and belong to the next pass. The selftest's dry run of `hook.ts sync` on the export
+reports it: 212 memory files, 211 already in the vault, 0 new, 1 changed. The v5 statements in
+`topics/2026-09-feature-forecast-giving-redesign.md`, `projects/forecast-redesign.md` and `concepts/single-look-holdout-discipline.md`
+are therefore one version behind that file.
