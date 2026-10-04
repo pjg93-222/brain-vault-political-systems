@@ -1,0 +1,273 @@
+{
+  "id": "C10",
+  "what": "Batch 6 split of projects/melange-systems (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C10); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "projects/melange-systems",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Overview",
+      "### User working style (critical)",
+      "## Status",
+      "## Action Items",
+      "## Blockers",
+      "## Where knowledge lives (index)",
+      "## Open items from audits (consolidated)",
+      "## Focal Points",
+      "## Map"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "2026-06-feature-melange-model-facts",
+      "title": "Melange model facts: pipeline, Blended Model, pillar weights, member desk",
+      "summary": "Melange model facts recorded in June 2026: the regeneration pipeline, the Blended Model with its three pillar-weight sets and pillar decisions, and the member desk and SNA features",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### Pipeline (all in `Melange Systems/fec/`)",
+        "### The model (Blended Model sheet)",
+        "### Member desk + SNA features"
+      ],
+      "keep": [
+        "concepts/influence-vs-alignment-axes",
+        "actors/melange-dashboard",
+        "actors/melange-fec-pipeline"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-melange-scenario-model-build",
+      "title": "Melange scenario model build (2026-06-26)",
+      "summary": "The Melange scenario model build of 2026-06-26: the source timeline, the pre-flight pass, the budget what-if tool, the electoral model, money response and pathfinding, the step-3 finish with the reorg, the scenario runner, flip channels and the diminishing-returns reconciliation",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Timeline of the source facts",
+        "## Pre-flight pass before scenario tools (2026-06-26)",
+        "## Budget/dial what-if tool",
+        "## Electoral model (user decisions)",
+        "## Step 2: money-response + defection mechanic (DONE)",
+        "## Step 3: pathfinding from 2 papers (user attached, in Downloads)",
+        "## Step-3 finish + REORG (2026-06-26; order: LT-priming, sheet, MC, audit, reorg)",
+        "## Scenario runner built + 2nd reorg bug found (2026-06-26)",
+        "## Flip-channel wiring + adaptive optimizer (2026-06-26)",
+        "## Diminishing-returns reconciliation + concentration (2026-06-26)"
+      ],
+      "keep": [
+        "actors/melange-dashboard"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-troubleshooting-melange-model-audits",
+      "title": "Melange model audits of 2026-06-26",
+      "summary": "The Melange model audits of 2026-06-26: the brutal internal audit, two independent adversarial audits with their fixes, and the FEC data-quality assessment with the HIGH-3 reversal",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Brutal internal audit (2026-06-26, from canonical Melange Systems)",
+        "## Independent adversarial audit + fixes (2026-06-26, separate cold agent)",
+        "## Second independent audit (math + formula article + data integrity) + fixes (2026-06-26)",
+        "## FEC data-quality assessment + HIGH-3 reversal (2026-06-26)"
+      ],
+      "keep": [
+        "actors/melange-fec-pipeline"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K25",
+      "a": "topics/2026-06-troubleshooting-melange-model-audits",
+      "b": "topics/2026-06-feature-moneyball-excel-model-build-scenario-tools-and-calibration",
+      "event": "June 26 audits (counterpart created in batch 5)"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 100,
+      "old": "- **Source of truth:** `Moneyball Main Version - Blended.xlsx` (see [[moneyball-workbook]]). Everything is regenerated from it after any workbook change.",
+      "mark": "external",
+      "why": "\"(see [[moneyball-workbook]])\" names another note"
+    },
+    {
+      "line": 102,
+      "old": "- **Naming:** visible text is \"Melange\"; the `Moneyball.html` / `Moneyball Dashboard.html` file names stayed Moneyball (later ruling recorded in [[2026-06-feature-melange-dashboard-ui-evolution]]).",
+      "mark": "not positional",
+      "why": "\"later ruling recorded in [[2026-06-feature-melange-dashboard-ui-evolution]]\" is time, naming another note"
+    },
+    {
+      "line": 103,
+      "old": "- **Provenance of the home:** June 2026 work ran in `Draft Systems` (R scrapers plus the Excel model). On 2026-06-26 the canonical home was reorganized to `C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\` (see Reorg below); `Draft Systems` was left intact because it holds irreplaceable raw data and models.",
+      "mark": "rewrite",
+      "why": "\"(see Reorg below)\" is ## Step-3 finish + REORG (2026-06-26; ...), which moves to 2026-06-feature-melange-scenario-model-build",
+      "new": "- **Provenance of the home:** June 2026 work ran in `Draft Systems` (R scrapers plus the Excel model). On 2026-06-26 the canonical home was reorganized to `C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\` (see Reorg in [[2026-06-feature-melange-scenario-model-build]]); `Draft Systems` was left intact because it holds irreplaceable raw data and models.",
+      "referent": "2026-06-feature-melange-scenario-model-build"
+    },
+    {
+      "line": 109,
+      "old": "- **Workbook writes go through Excel COM (win32com)** so formulas/tables recalc (openpyxl drops cached values). Excel must be CLOSED. Every model edit backs up to `backups/*.PRE-*.xlsx` first; restore + regenerate to revert. (Later superseded: the newest standing rule is \"NO COM anywhere\"; this COM-write rule is the older version, kept because it explains the 2026-06 backups and scripts. See [[2026-06-working-agreement-change-control-and-decision-authority]] for the working agreements.)",
+      "mark": "external",
+      "why": "\"See [[2026-06-working-agreement-change-control-and-decision-authority]] for the working agreements\" names another note; \"Later superseded\" is time (the line is listed in stale-statements.md, decision 12)"
+    },
+    {
+      "line": 127,
+      "old": "Order of the 4 numbers in the two newer sets follows `AB2:AB5` (Legislative, Press, Committee/Influence, Demo): 45/10/40/5 = Leg 45, Press 10, Committee 40, Demo 5 (45/10 is about 81.8/18.2 of the leg+press share). Details of the later weight history are in [[2026-07-feature-influence-engine-internals]] and [[2026-07-troubleshooting-melange-audits-and-reviews]].",
+      "mark": "not positional",
+      "why": "\"the later weight history\" is time; it names other notes"
+    },
+    {
+      "line": 130,
+      "old": "- **KEY PRINCIPLE (cost many rounds): rank = INFLUENCE; per-category stance = ALIGNMENT. Two separate axes** (see [[influence-vs-alignment-axes]]). A high-activity OPPONENT (e.g. AOC, Welch: prolific consumer-finance cosponsors, anti-CU) will rank decently on influence; that is fine: the stance layer is the friend/foe filter, and the optimizer won't fund opponents. Do NOT make the rank pure-influence-led as the ONLY view (user: \"that does not reveal underdogs\"): the **Moneyball point is undervaluation**. Underdogs surface in the SEPARATE undervaluation/efficiency view (Intrinsic/Visibility/Undervaluation/Underdog-rank columns + the optimizer), which the influence-weighted rank does not erase.",
+      "mark": "external",
+      "why": "\"(see [[influence-vs-alignment-axes]])\" names another note"
+    },
+    {
+      "line": 135,
+      "old": "- **Legislative:** STANCE-GATED / directional (`apply_leg_stance.py` -> Blended col4 = per-topic Sponsor+Co-Sponsorship activity x per-category stance sign [SM: Champion/Defender +1 ... Opponent -1] x importance). Active opponents go negative (AOC/Welch/Marshall sink); active allies stay positive. Earlier this churned when leg was a big driver, but committee 0.40 now anchors the board so it is well-behaved. (`apply_legstance_undo.py` reverts col4 to the un-gated `='Rank & Allocation'!D{r}` formula.)",
+      "mark": "not positional",
+      "why": "\"Earlier this churned\" is time"
+    },
+    {
+      "line": 136,
+      "old": "- **Committee/Influence pillar:** `Blended Model!R` (col18, Influence%) = **committee_raw / MAX(committee_raw)** (`apply_committee_fix.py`), NOT the old double-percentile: percentile flattened a backbencher (score 2.5) to the 90th %ile next to chairs, so prolific juniors (Byron Donalds) ranked top-10. The normalized raw score distinguishes leadership: Crapo No. 1 (Banking+Finance+JCT), Tim Scott No. 2; Donalds No. 8 -> No. 14. Source = `Committee Data` relevance-tiered seats (Highly/Moderately/Slightly -> score; Small Business unified to Moderately).",
+      "mark": "not positional",
+      "why": "\"the 90th %ile next to chairs\" is ranking adjacency"
+    },
+    {
+      "line": 137,
+      "old": "- **Press DISPLAY corrections:** the DEBATE sentiment model (see [[debate-stance-model]]) mislabels articles (reads \"prohibit\"/\"disapproval\" as anti-CU). `press_stance_overrides.json` (match by url/title_contains, stance=support|oppose|neutral) -> `make_member_desk` applies it to the DISPLAY (`_press_corr`). Pillar/rank correction needs the upstream press_value re-flowed.",
+      "mark": "external",
+      "why": "\"(see [[debate-stance-model]])\" names another note"
+    },
+    {
+      "line": 143,
+      "old": "- **Member desk:** General page (overall rank/stance/legislative radar/pillar bars/invested=FEC/electoral-vuln $), plus sections Staff, Bio, Relational, **Committee positions** (full seats with relevance badges), Demographics (PERCENTILE-normalized radar; min-max crushed it), Psychometrics (see [[2026-07-feature-personality-psychometrics]]), Legislative actions (DEDUPED: one row per (bill,congress), most-specific role, area tags), Press & social media (graded-sentiment filter, billstatus hidden).",
+      "mark": "external",
+      "why": "\"(see [[2026-07-feature-personality-psychometrics]])\" names another note"
+    },
+    {
+      "line": 144,
+      "old": "- **Efficiency view** = Golovin-Krause optimizer (`optimize.py`, $500 increments, $10k FEC per-member cap). Coalition builder (see [[2026-07-30-coalition-builder-redesign-session]]).",
+      "mark": "external",
+      "why": "\"(see [[2026-07-30-coalition-builder-redesign-session]])\" names another note"
+    },
+    {
+      "line": 157,
+      "old": "| Progress | Pre-flight (2026-06-26), reorg to Melange Systems, 31/31 audits, model + desk + dashboard pipeline (2026-06-29); later lanes in linked topics |",
+      "mark": "not positional",
+      "why": "\"later lanes in linked topics\" is time"
+    },
+    {
+      "line": 159,
+      "old": "> **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.",
+      "mark": "same note",
+      "why": "automatic mark signed off: \"The action items below\" is ## Action Items, which the hub keeps after ## Status"
+    },
+    {
+      "line": 173,
+      "old": "> Action items are defined in the frontmatter (`action_items` field) to enable Dataview queries. The table above is a visualization for readability.",
+      "mark": "same note",
+      "why": "automatic mark signed off: \"The table above\" is the Action Items table in the same section, which the hub keeps"
+    },
+    {
+      "line": 227,
+      "old": "| 2026-06-26 | Pre-flight fixes, scenario tooling, two independent adversarial audits, FEC data-quality assessment and HIGH-3 reversal; reorg to `Melange Systems` (details below) |",
+      "mark": "rewrite",
+      "why": "\"(details below)\" in the 2026-06-26 timeline row: the pre-flight, scenario tooling and reorg sections stay below in 2026-06-feature-melange-scenario-model-build with the timeline, while the two adversarial audits and the FEC data-quality assessment with the HIGH-3 reversal move to 2026-06-troubleshooting-melange-model-audits",
+      "new": "| 2026-06-26 | Pre-flight fixes, scenario tooling, two independent adversarial audits, FEC data-quality assessment and HIGH-3 reversal; reorg to `Melange Systems` (details below and in [[2026-06-troubleshooting-melange-model-audits]]) |",
+      "referent": "2026-06-troubleshooting-melange-model-audits"
+    },
+    {
+      "line": 239,
+      "old": "**COALITION DETERMINISM BUG (big one):** `per_topic_coalition.py` was non-deterministic even at fixed `random.seed`: two same-seed runs differed $12.6M. Cause: cascade frontier built from **sets** (`dict.fromkeys(Aseeds,...)`), and Python per-process **hash randomization** varies set iteration order, so random draws were consumed in different order. Fix: `sorted(Aseeds)/sorted(Bseeds)` in cascade (line ~35) + **Common Random Numbers** (`random.seed(1000003*SEED+it)` per MC iteration in `spread()`, so base and every `spread({n})` share draws, so marginal isolates the true effect) + `SEED`/`MC` now env-configurable. Now same-seed = byte-identical ($0). **Scenario protocol: always run baseline + perturbed at the SAME seed, so deltas are exact with zero MC noise.** Residual cross-seed variance (about $13M between seed99/199 at MC=20) is baseline-credibility only (which seed picked), irrelevant to same-seed deltas; bump MC or seed-ensemble later if the baseline itself needs to be less arbitrary. `per_topic_flip` is already deterministic (greedy LT, no MC).",
+      "mark": "not positional",
+      "why": "\"seed-ensemble later\" is time"
+    },
+    {
+      "line": 279,
+      "old": "**Co-sponsor route finder BUILT + validated** (`cosponsor_route.py`): seeds = champions, edge-activation greedy (tree-reach spread, edge cost = CEDGE/p so weak ties cost more), out-degree K=5, Pareto front via risk-aversion lambda sweep. Fixed a value-inversion bug (added positive-value guard `if -nval<=0: break`). Validated: Mortgage max-spread $419k / +5.6 / risk 0.59 vs low-risk $33k / +1.2 / risk 0.39 (distinct Pareto points); **Interchange has NO reliable routes** (champions weakly tied, all p about 0.10, so don't run a co-sponsor campaign there). LT-priming + sheet-sync + MC-upgrade + full audit + reorg were then DONE (next section). Caveat: tree-reach spread is first-order/conservative (ignores cascade reinforcement); it could be upgraded to MC cascade. Remaining step 3 at that time: LT-priming calc; incremental D* Lite replanning; live Moneyball-sheet tab (COM write-back + cell-change replan). Audits still clean (22/22 + 11/11).",
+      "mark": "same note",
+      "why": "\"(next section)\" is ## Step-3 finish + REORG, which follows ## Step 3 in 2026-06-feature-melange-scenario-model-build as in the note"
+    },
+    {
+      "line": 298,
+      "old": "- **DOES IT RUN SCENARIOS? NO end-to-end runner.** Pieces existed (money_response computes shift + defection; scenario_diff compares; make_baseline freezes; sheet_sync detects changed topics) but NOTHING applied a shock, propagated net_lean, regenerated data, re-ran flip/coalition and diffed in one command. The missing piece = a scenario runner (OFFERED to build; built next).",
+      "mark": "not positional",
+      "why": "\"built next\" is time"
+    },
+    {
+      "line": 305,
+      "old": "- **HONEST LIMITATIONS:** (1) CU spends only act via conversion/defection: no gradual winnability in the coalition cascade (that is the FLIP model); a non-converting CU spend shows about 0 effect. (2) The 18 low-receipt floor members (incl. Grijalva) defect too easily (the receipts-floor artifact). (3) The runner is ONE-SHOT (apply, observe); the ADAPTIVE optimizer (Golovin-Krause: greedily CHOOSE the moves to maximize influence under budget, observing realized defections) is the natural next layer, NOT built at that point.",
+      "mark": "not positional",
+      "why": "\"the natural next layer\" is a sequence in time"
+    },
+    {
+      "line": 320,
+      "old": "- **SYSTEM STATE at that point:** stance (3D) -> flip (LT, capacity-aware) + coalition (competitive IC) + electoral (contest/defend) + routes (RELINK Pareto) + priming (LT) + money-response (defections) + scenario runner (both models) + adaptive optimizer (Golovin-Krause), all in Melange Systems, 26/26. Only the DASHBOARD UI remained (the roadmap's last item; see [[2026-06-feature-melange-dashboard-ui-evolution]] and [[melange-dashboard]]).",
+      "mark": "external",
+      "why": "\"see [[2026-06-feature-melange-dashboard-ui-evolution]] and [[melange-dashboard]]\" names other notes"
+    },
+    {
+      "line": 327,
+      "old": "- **H2 (FIXED):** scenario per-topic rows were below the MC noise floor (std about 0.75-1.05 vs 0.3 threshold), giving impossible \"competitor money helped CU\" signs. Root cause: the cascade drew `random.random()` in activation order, so changing one member desynced the whole stream (CRN failure). Fix: splitmix64 `_sm(it,u,v)` edge-keyed draws, i.e. true CRN, so baseline vs scenario differ ONLY by the real perturbation. The comp shock is now clean: coalition -3.2, only same-sign rows. (budget_frontier.py had the same latent order-dependence, patched there only by non-monotone clamping; fixed later by HIGH-1.)",
+      "mark": "not positional",
+      "why": "\"below the MC noise floor\" is a threshold; \"fixed later by HIGH-1\" is time"
+    },
+    {
+      "line": 328,
+      "old": "- **H3 (FIXED, later REVERSED, see below):** members with NO FEC data had ind=0, so b about 0 and pflip about 1 (\"missing\" misread as \"no industry opposition\"); 11 of 63 ranked top-50 winnability, inflating the base (215.92). Fix: impute the industry baseline (median of members WITH data) for zero-`total` members in flip_model.py + per_topic_flip.py; `fm.nodata` flags them. Base now realistic 186.50; 0 data-less in top-20. CAUGHT a follow-on: the scenario flip channel mixed imputed `fm.ind0` (baseline) with raw local `ind` (scenario), so the comp shock showed +28 winnability; fixed via `ind_flip = fm.ind0 + (ind-ind0_raw)` (one footing).",
+      "mark": "same note",
+      "why": "\"(FIXED, later REVERSED, see below)\" is ## FEC data-quality assessment + HIGH-3 reversal, which follows the audit sections in 2026-06-troubleshooting-melange-model-audits as in the note"
+    },
+    {
+      "line": 335,
+      "old": "  - M4: stale `im_allocation.json` (old im_allocate.py, no Defender) still in the workbook IM sheet: regenerate or remove (later pushed, see FEC section).",
+      "mark": "same note",
+      "why": "\"(later pushed, see FEC section)\" is ## FEC data-quality assessment + HIGH-3 reversal (its IM-sheet push), in the same part 2026-06-troubleshooting-melange-model-audits"
+    },
+    {
+      "line": 345,
+      "old": "- **HIGH-3 (FIXED at that point, then REVERSED, see next section):** the H3 imputation only fired for total=0; 43 members had a FEC record but ind=0 (zero captured bank/finserv), 6 ranked top-20 winnability. Extended imputation to EVERY ind=0 member (median industry money), `ind_imputed` set, env-tunable IMPUTE_IND0=0 to trust raw zeros. Conservative (only lowers inflated winnability). Base winnability 171.76 -> 154.57.",
+      "mark": "same note",
+      "why": "\"(then REVERSED, see next section)\" is ## FEC data-quality assessment + HIGH-3 reversal, which follows ## Second independent audit in 2026-06-troubleshooting-melange-model-audits as in the note"
+    },
+    {
+      "line": 350,
+      "old": "- NOTE: the workbook IM sheet should be refreshed via `write_im_sheet.py` (COM, needs Excel closed) to push the regenerated `im_allocation.json`; the JSON is consistent (G2 passes) but the on-sheet cells lag until pushed (pushed next).",
+      "mark": "not positional",
+      "why": "\"(pushed next)\" is time"
+    },
+    {
+      "line": 356,
+      "old": "- **FEC method** (`full_congestion.py`): industry money = FEC bulk `itpas2.txt` (PAC -> candidate, types 24K/24Z) aggregated from a HARDCODED set of 33 major industry PAC committee IDs (BANKS=23: ABA/Citi/Wells/JPM/BofA/PNC/USBancorp/ICBA/TD/Regions/Truist; FINSERV=10: AFSA/Amex/CapOne/Visa/MC/Discover/Ally/Synchrony), joined name -> bioguide -> FEC-candidate via `legislators.csv`; receipts from `weball24.txt`. Source files (122MB itpas2.txt, cm.txt, weball24, legislators.csv) are present in fec/. (Later FEC pipeline: [[melange-fec-pipeline]].)",
+      "mark": "not positional",
+      "why": "\"(Later FEC pipeline: [[melange-fec-pipeline]].)\" is time, naming another note"
+    },
+    {
+      "line": 357,
+      "old": "- **GAP TEST** (scratch `fec_verify.py`): for the 43 total>0 / ind=0 suspects, scanned ALL their 24K/24Z PAC money named via cm.txt. RESULT: ind=0 is **VERIFIED REAL**, not a tracking gap. 80% of all 533 have tracked industry money (the list works broadly). The 43 are 39D/4R, many no-corporate-PAC (Tlaib $86k total PAC). Their \"untracked industry\" money is almost entirely INSURANCE PACs (life/health/crop/P&C: a different industry) + false positives (END CITIZENS UNITED matched \"citi\"); genuine untracked bank/finserv is negligible (Bread Financial $5k, FSI $5k).",
+      "mark": "not positional",
+      "why": "\"the list works broadly\" is the hardcoded list of 33 industry PAC IDs, not a list in the note"
+    },
+    {
+      "line": 363,
+      "old": "M1, M2, M3, M4 (pushed), M5, L4 (see the list above); MEDIUM-1, LOW-1, LOW-3, LOW-4 (documented, low); the replace/contest plays' aggregate D lean (about 30D/14R) optics question; step 3 items \"incremental D* Lite replanning\" and \"live Moneyball-sheet tab\" beyond the sheet_sync fingerprint diff; the scenario runner is one-shot.",
+      "mark": "rewrite",
+      "why": "\"(see the list above)\" is the M1-M5 and L4 list in ## Independent adversarial audit + fixes, which moves to 2026-06-troubleshooting-melange-model-audits",
+      "new": "M1, M2, M3, M4 (pushed), M5, L4 (see the list in [[2026-06-troubleshooting-melange-model-audits]]); MEDIUM-1, LOW-1, LOW-3, LOW-4 (documented, low); the replace/contest plays' aggregate D lean (about 30D/14R) optics question; step 3 items \"incremental D* Lite replanning\" and \"live Moneyball-sheet tab\" beyond the sheet_sync fingerprint diff; the scenario runner is one-shot.",
+      "referent": "2026-06-troubleshooting-melange-model-audits"
+    },
+    {
+      "line": 441,
+      "old": "| [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] | part: Melange reviews of August and September 2026: the… |",
+      "mark": "not positional",
+      "why": "\"later\" is part of the linked slug `...-later-reviews` in a Map row"
+    }
+  ]
+}

@@ -49,7 +49,7 @@ tags: ["type/actor", "status/active", "domain/backend"]
 
 ## Dependencies
 
-- **Consumes:** the sealed staffer data of the staffer-network lane (v4_primary static model pinned; payroll-identity evidence bundle; LDA activity index `lda_activity_v1.sqlite`, 654 MB sealed; Politico crawl outputs); modeled in [[2026-09-feature-staffer-network-data-and-math]] and the overlap edge semantics in [[concurrent-service-overlap-edge-rule]] (architecture record: [[2026-09-03-staffer-network-architecture]]).
+- **Consumes:** the sealed staffer data of the staffer-network lane (v4_primary static model pinned; payroll-identity evidence bundle; LDA activity index `lda_activity_v1.sqlite`, 654 MB sealed; Politico crawl outputs); modeled in Staffer network data and math and the overlap edge semantics in [[concurrent-service-overlap-edge-rule]] (architecture record: [[2026-09-03-staffer-network-architecture]]).
 - **Consumed by:** the dashboard as a feature-detected 8841 probe only: the staffer network page inside [[melange-dashboard]] (`#app-staffer`) fetches `http://127.0.0.1:8841/api/staffer-live?limit=1` with a no-cors fetch and works without it (single-file / no-external-loads contract). Part of the [[melange-systems]] project; surface history in [[2026-09-feature-staffer-network-surfaces]].
 - **External:** Bing RSS (identity web-reference discovery returns 200 with the bot UA; downstream hosts such as imdb return 403 and are tolerated), Politico profile crawl, Windows Task Scheduler (`MelangeStafferLiveSidecar`), OneDrive-backed live tree.
 - **Builders:** Codex/remote built it (handoff doc `audits/staffer_network/STAFFER_SOCIAL_NETWORK_USAGE_HANDOFF_20260904.md`). Ownership split agreed 2026-09-05: the sidecar repin, `staffer_user_assertions.json`, the identity loop and `staffer_routing.py` belong to the Claude session "Graph consolidation and identity resolution"; the finishing chain, crawl watchdog and dashboard `#app-staffer` section belong to the session "Melange long-form audio integration".
@@ -170,7 +170,7 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
 
 ## Related Topics
 
-- [[2026-09-feature-staffer-network-data-and-math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
+- Staffer network data and math - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
 - [[2026-09-feature-staffer-network-surfaces]] - Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane.
 
 ## Related Projects

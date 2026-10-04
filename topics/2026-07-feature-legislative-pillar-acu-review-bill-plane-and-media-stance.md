@@ -119,3 +119,7 @@ Paul: "Merge, and do create todo list document". All three stranded lanes merged
 ### Codex-lane hardening batch @565136c (Paul: "keep going, work through codex, optimize")
 
 **First fully-clean Codex round trip** after the morning's Connection-closed failures (thread 019f7cbd, one revision round). Ships the ops lessons as mechanisms: (A) `make_combined.py` now REFUSES a stale desk HTML (reconciliation mtime > HTML mtime+5s = the failed-postflight signature; bypass `COMBINED_STALE_OK=1`; success path proven byte-identical on live); (B) `interview_stance_stack.py` docstring corrected (the channel is default-ON, not "gated OFF, default 0"); (C) audit check 135: `archive_leg.json >= 516` members floor; (D) dial catalog gained section 1.8 (desk dials were entirely undocumented) and change-control's `--from` trap note corrected - **that trap is FIXED in code** (`start_index`, `run_pipeline.py:145-154`, rejects unknown/ambiguous prefixes loudly), the skill was stale. main == live @565136c, ranks unchanged all session.
+
+## Related Topics
+
+- [[2026-07-feature-data-collection-lanes-collection-scope]] — Melange data-collection scope: the corpus coverage census of 2026-07-10, the demographic expansion A to H of 2026-07-24/25 and the five-paper research-integration lane of 2026-08-14.

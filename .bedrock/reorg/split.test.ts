@@ -525,6 +525,178 @@ section("K candidates (4.7 K12-K25)");
 }
 
 // =====================================================================================================================
+section("planned K pair whose counterpart an earlier batch created (4.7 K9, K10: the S11 slot kept free)");
+{
+  const initRepo = (dir: string) => {
+    git(dir, "init", "-q", "-b", "brain-reorg-2026-10-03");
+    git(dir, "config", "user.name", "Fixture");
+    git(dir, "config", "user.email", "fixture@example.invalid");
+    git(dir, "config", "core.autocrlf", "false");
+    git(dir, "add", "-A");
+    git(dir, "commit", "-q", "-m", "base");
+    return git(dir, "rev-parse", "HEAD").trim();
+  };
+  /** an earlier batch split a1: a1-earlier is its part (part_of, the hub's Parts line, a Map row) */
+  const withEarlier = (dir: string, opts: { earlierOthers?: string; aTwoText?: string }) => {
+    buildFixture(dir);
+    w(dir, "actors/a1.md", read(dir, "actors/a1.md").replace("> Actor one.\n", "> Actor one.\n\n## Parts\n\n- [[a1-earlier]] — The lane record of actor one.\n"));
+    w(
+      dir,
+      "actors/a1-earlier.md",
+      `---\ntype: actor\nname: "Lane record (Actor one)"\naliases: ["Actor one: Lane record"]\ndescription: "The lane record of actor one."\nstatus: "active"\nteam: ""\nsources: []\nupdated_at: 2026-10-01\nupdated_by: "reorg@agent"\ntags: ["type/actor", "status/active", "domain/a"]\npart_of: "[[a1]]"\n---\n\n# Lane record (Actor one)\n\n> The lane record of actor one. Part of [[a1]] (project [[p1]]).\n\n## Lane record\n\nThe record of the lane${opts.earlierOthers ?? ""}.\n`,
+    );
+    w(dir, "projects/p1.md", read(dir, "projects/p1.md").replace("| [[a1]] | Actor one. |\n", "| [[a1]] | Actor one. |\n| [[a1-earlier]] | part: The lane record of actor one. |\n"));
+    if (opts.aTwoText) w(dir, "topics/t-big.md", read(dir, "topics/t-big.md").replace("A two text only.", opts.aTwoText));
+  };
+  const D = join(ROOT, "fx-k-planned-earlier");
+  withEarlier(D, { aTwoText: "A two text only, recorded on [[a1]]." });
+  const base = initRepo(D);
+  const fillD = (rel: string, list: any[]) => {
+    const lines = read(D, rel + ".md").split("\n");
+    return list.map((e) => ({ ...e, line: lines.indexOf(e.old) + 1 }));
+  };
+  const sT = tSpec(fillD("topics/t-big", S10_T)) as any;
+  sT.named = [...sT.named, { id: "K93", a: "topics/t-big-lane-a-two", b: "actors/a1-earlier" }];
+  const fT = join(ROOT, "kp-t.json");
+  const fA = join(ROOT, "kp-a.json");
+  writeFileSync(fT, json(sT));
+  writeFileSync(fA, json(aSpec(fillD("actors/a-big", S10_A))));
+  const r = run([SPLIT, "--vault", D, "--spec", fT, "--spec", fA, "--plan"]);
+  t("planned K pair with an earlier part: accepted and reported with the earlier part's slots", r.code === 0 && /K93 t-big-lane-a-two <-> a1-earlier: planned \(a1-earlier was created by an earlier batch: 0 other\(s\) now, 1 with the pair\)/.test(r.out), (r.out.match(/K93[^\n]*/)?.[0] ?? "") + r.out.slice(-900));
+  const man = join(D, ".bedrock/reorg/ledger/batch-9-paths.txt");
+  const ap = run([SPLIT, "--vault", D, "--spec", fT, "--spec", fA, "--apply", "--date", "2026-10-04", "--manifest", man, "--allow", join(D, ".bedrock/reorg/ledger/batch-9-allow.txt")]);
+  t("planned K pair with an earlier part: apply succeeds", ap.code === 0, ap.out.slice(-1200) + ap.err);
+  const part = read(D, "topics/t-big-lane-a-two.md");
+  const earlier = read(D, "actors/a1-earlier.md");
+  t("planned K pair with an earlier part: the new part's link to the earlier part's parent is retargeted (C4), display text kept", part.includes("A two text only, recorded on [[a1-earlier|Actor one]].") && !part.includes("[[a1]]"), part);
+  t("planned K pair with an earlier part: the earlier part gets the C5 line in ## Related Topics and a stamp", /## Related Topics\n\n- \[\[t-big-lane-a-two\]\] — The second sub-lane of lane A of the big topic\.\n/.test(earlier) && earlier.includes("updated_at: 2026-10-04"), earlier);
+  t("planned K pair with an earlier part: the earlier part is in the manifest", readFileSync(man, "utf8").includes("actors/a1-earlier.md"), readFileSync(man, "utf8"));
+  const ck = run([CHECK, "--vault", D, "--strict", "--require", "b,c,d,g,i,j,k"]);
+  t("planned K pair with an earlier part: check.ts b c d g i j k pass after the apply (0 one-way, budgets kept)", ck.code === 0, ck.out.slice(-1500));
+  const cs = run([CONSERVE, "--vault", D, "--base", base, "--allow", join(D, ".bedrock/reorg/ledger/batch-9-allow.txt")]);
+  t("planned K pair with an earlier part: conserve.ts finds no base text lost", cs.code === 0 && /missing body lines: 0/.test(cs.out), cs.out.slice(-800));
+  // the earlier part's three other slots are spent: the pair is refused, nothing written
+  const D2 = join(ROOT, "fx-k-planned-earlier-full");
+  withEarlier(D2, { earlierOthers: " with [[a2]], [[c1]] and [[t-other]]" });
+  const sT2 = tSpec([]) as any;
+  sT2.named = [...sT2.named, { id: "K92", a: "topics/t-big-lane-a-two", b: "actors/a1-earlier" }];
+  const f2 = join(ROOT, "kp2-t.json");
+  writeFileSync(f2, json(sT2));
+  const r2 = run([SPLIT, "--vault", D2, "--spec", f2, "--spec", fA, "--plan"]);
+  t("planned K pair with an earlier part: a problem when the earlier part has no free other slot", r2.code === 1 && /K92: the earlier part actors\/a1-earlier has no free other slot/.test(r2.out), r2.out.match(/K92[^\n]*/g)?.join(" | ") ?? r2.out.slice(-600));
+  // the new part's C5 line describes the earlier part by its own header summary (S5), not by a clipped Map-row echo
+  const D4 = join(ROOT, "fx-k-planned-earlier-echo");
+  withEarlier(D4, {});
+  w(D4, "actors/a1.md", read(D4, "actors/a1.md").replace("- [[a1-earlier]] — The lane record of actor one.\n", "- [[a1-earlier]]\n"));
+  w(D4, "projects/p1.md", read(D4, "projects/p1.md").replace("| [[a1-earlier]] | part: The lane record of actor one. |", "| [[a1-earlier]] | part: The lane… |"));
+  const sT4 = tSpec([]) as any;
+  sT4.named = [...sT4.named, { id: "K90", a: "topics/t-big-lane-a-two", b: "actors/a1-earlier" }];
+  const f4 = join(ROOT, "kp4-t.json");
+  writeFileSync(f4, json(sT4));
+  const r4 = run([SPLIT, "--vault", D4, "--spec", f4, "--spec", fA, "--plan"]);
+  t("planned K pair with an earlier part: the new part's C5 line uses the earlier part's header summary, not its clipped Map row", /- \[\[a1-earlier\]\] — The lane record of actor one\. \[R3 K pair \(C5\)\]/.test(r4.out) && !/a1-earlier\]\] — part: The lane/.test(r4.out), r4.out.match(/[^\n]*\[\[a1-earlier\]\] —[^\n]*/g)?.join(" | ") ?? r4.out.slice(-900));
+  // a planned pair whose b is neither in the run nor an existing part is still refused
+  const sT3 = tSpec([]) as any;
+  sT3.named = [...sT3.named, { id: "K91", a: "topics/t-big-lane-a-two", b: "topics/no-such-part" }];
+  writeFileSync(f2, json(sT3));
+  const r3 = run([SPLIT, "--vault", D2, "--spec", f2, "--spec", fA, "--plan"]);
+  t("planned K pair: b neither in the run nor an existing part is a problem", r3.code === 1 && /K91: both topics\/t-big-lane-a-two and topics\/no-such-part must be parts created in this run/.test(r3.out), r3.out.match(/K91[^\n]*/)?.[0] ?? r3.out.slice(-600));
+}
+
+// =====================================================================================================================
+section("a project's parts (C10: S3 topics/ notes, S4 topic naming, title and tags, S5 header, S6 home)");
+{
+  const D = join(ROOT, "fx-project");
+  buildFixture(D);
+  const proj = read(D, "projects/p1.md").replace(
+    "## Overview\n\nIndex note.\n",
+    "## Overview\n\nIndex note.\n\n### Pipeline\n\nThe pipeline runs [[a1]] in order.\n\n### The model\n\nThe model blends four pillars.\n\n#### Pillar weights\n\n| Set | Status |\n|---|---|\n| 40/30/20/10 | historical |\n\n### User working style\n\nRun everything yourself.\n\n## Status\n\nActive.\n\n## Audits (2026-06-26)\n\nTwo audits found three bugs in [[a2]].\n",
+  );
+  w(D, "projects/p1.md", proj);
+  w(D, "projects/p2.md", PROJ("| [[t-other]] | Another topic. |").replace('name: "Project One"', 'name: "Project Two"').replace('aliases: ["P one"]', 'aliases: ["P two"]').replace("# Project One", "# Project Two"));
+  w(D, "topics/t-other.md", read(D, "topics/t-other.md").replace("Mentions [[t-big]].", "Mentions [[t-big]] and [[p2]]."));
+  // the fixture's big topic waits for a later split (as the real vault's pending notes do): budget reported, not failed
+  w(D, ".bedrock/reorg/spec/pending-splits.txt", "topics/t-big\n");
+  const base = (() => {
+    git(D, "init", "-q", "-b", "brain-reorg-2026-10-03");
+    git(D, "config", "user.name", "Fixture");
+    git(D, "config", "user.email", "fixture@example.invalid");
+    git(D, "config", "core.autocrlf", "false");
+    git(D, "add", "-A");
+    git(D, "commit", "-q", "-m", "base");
+    return git(D, "rev-parse", "HEAD").trim();
+  })();
+  const pSpec = (over: (s: any) => void = () => {}) => {
+    const s: any = {
+      id: "P1fx",
+      parent: "projects/p1",
+      home: "projects/p1",
+      hub: { keep: ["## Overview", "### User working style", "## Status", "## Map"], links: null },
+      parts: [
+        { slug: "2026-06-feature-p1-model-facts", title: "P1 model facts: pipeline and model", summary: "Model facts of the fixture project: its pipeline and its model with the pillar weights", domain: "domain/a", home: "projects/p1", sections: ["### Pipeline", "### The model"], keep: [] },
+        { slug: "2026-06-troubleshooting-p1-audits", title: "P1 audits of 2026-06-26", summary: "The two audits of the fixture project on 2026-06-26 and the bugs they found", domain: "domain/b", home: "projects/p1", sections: ["## Audits (2026-06-26)"], keep: [] },
+      ],
+      named: [],
+      candidates: [],
+      relations: [],
+      retarget: [],
+      s10: [],
+    };
+    over(s);
+    return s;
+  };
+  const f = join(ROOT, "p1.json");
+  writeFileSync(f, json(pSpec()));
+  const pl = run([SPLIT, "--vault", D, "--spec", f, "--plan"]);
+  t("project parent: the plan has no problems", pl.code === 0 && /no problems/.test(pl.out), pl.out.slice(-1500));
+  const man = join(D, ".bedrock/reorg/ledger/batch-9-paths.txt");
+  const allow = join(D, ".bedrock/reorg/ledger/batch-9-allow.txt");
+  const ap = run([SPLIT, "--vault", D, "--spec", f, "--apply", "--date", "2026-10-04", "--manifest", man, "--allow", allow]);
+  t("project parent: apply succeeds", ap.code === 0, ap.out.slice(-1500) + ap.err);
+  const facts = existsSync(join(D, "topics/2026-06-feature-p1-model-facts.md")) ? read(D, "topics/2026-06-feature-p1-model-facts.md") : "";
+  const audits = existsSync(join(D, "topics/2026-06-troubleshooting-p1-audits.md")) ? read(D, "topics/2026-06-troubleshooting-p1-audits.md") : "";
+  t("S3: a project's parts are topics/ notes of type topic", facts.startsWith("---\ntype: topic\n") && audits.startsWith("---\ntype: topic\n"), facts.slice(0, 300));
+  t("S4: a project part's title is the table title alone; its alias is <project title>: <table title>", facts.includes('\ntitle: "P1 model facts: pipeline and model"\n') && facts.includes('\naliases: ["Project One: P1 model facts: pipeline and model"]\n') && facts.includes("\n# P1 model facts: pipeline and model\n"), facts.slice(0, 700));
+  t("S4: project parts take topic tags: type/topic, status/completed, category per slug, one domain", facts.includes('\ncategory: "feature"\nstatus: "completed"\n') && facts.includes('\ntags: ["type/topic", "status/completed", "category/feature", "domain/a"]\n') && audits.includes('\ncategory: "troubleshooting"\nstatus: "completed"\n') && audits.includes('\ntags: ["type/topic", "status/completed", "category/troubleshooting", "domain/b"]\n'), facts.slice(0, 700) + "\n----\n" + audits.slice(0, 700));
+  t("S4: part_of the project, sources: [], people: [], actors: []", facts.includes('\npart_of: "[[p1]]"\n') && facts.includes("\nsources: []\n") && facts.includes("\npeople: []\nactors: []\n"), facts.slice(0, 700));
+  t("S5: a project part's header reads \"Part of [[project]].\"", facts.includes("\n> Model facts of the fixture project: its pipeline and its model with the pillar weights. Part of [[p1]].\n") && !facts.includes("(project [[p1]])"), facts.slice(0, 900));
+  t("S1: the ### children move verbatim, level-4 subsections with their ###", /### Pipeline\n\nThe pipeline runs \[\[a1\]\] in order\.\n\n### The model\n\nThe model blends four pillars\.\n\n#### Pillar weights\n/.test(facts) || /### Pipeline\n\nThe pipeline runs Actor one in order\.\n\n### The model\n\nThe model blends four pillars\.\n\n#### Pillar weights\n/.test(facts), facts);
+  const hub = read(D, "projects/p1.md");
+  t("S2: the project hub gains ## Parts before ## Overview and keeps the Overview own text and its kept ### child", /> The fixture project\.\n\n## Parts\n\n- \[\[2026-06-feature-p1-model-facts\]\] — Model facts .*\n- \[\[2026-06-troubleshooting-p1-audits\]\] — The two audits .*\n\n## Overview\n\nIndex note\.\n\n### User working style\n\nRun everything yourself\.\n\n## Status\n/.test(hub) && !hub.includes("### Pipeline") && !hub.includes("## Audits"), hub);
+  t("Map: the project's own parts get rows in its ### Related Topics (no parent row: appended)", /\| \[\[2026-06-feature-p1-model-facts\]\] \| part: Model facts of the fixture project: its pipeline and its… \|\n\| \[\[2026-06-troubleshooting-p1-audits\]\] \| part: The two audits of the fixture project on 2026-06-26 and… \|\n\n### Related Actors/.test(hub), hub.slice(hub.indexOf("## Map")));
+  const ck = run([CHECK, "--vault", D, "--strict", "--require", "b,c,d,g,i,j,k", "--pending-splits", join(D, ".bedrock/reorg/spec/pending-splits.txt")]);
+  t("project parent: check.ts b c d g i j k pass after the apply (families, budgets, tags)", ck.code === 0, ck.out.slice(-1500));
+  const cs = run([CONSERVE, "--vault", D, "--base", base, "--allow", allow]);
+  t("project parent: conserve.ts finds no base text lost", cs.code === 0 && /missing body lines: 0/.test(cs.out), cs.out.slice(-800));
+  const vf = run([SPLIT, "--vault", D, "--spec", f, "--verify"]);
+  t("project parent: --verify re-detects nothing unresolved on the written family", vf.code === 0, vf.out.slice(-600));
+  // refusals: a project part without topic naming, a project part homed elsewhere
+  const D2 = join(ROOT, "fx-project-2");
+  buildFixture(D2);
+  w(D2, "projects/p1.md", proj);
+  w(D2, "projects/p2.md", read(D, "projects/p2.md"));
+  w(D2, "topics/t-other.md", read(D, "topics/t-other.md"));
+  const v2 = loadVault(D2);
+  const bad = join(ROOT, "p1-bad.json");
+  writeFileSync(bad, json(pSpec((s) => (s.parts[0].slug = "p1-model-facts"))));
+  let msg = "";
+  try {
+    loadSplitSpec(bad, v2);
+  } catch (e) {
+    msg = (e as Error).message;
+  }
+  t("refusal: a project part slug without topic naming (<yyyy-mm>-<category>-<name>)", /a project part takes topic naming/.test(msg), msg);
+  writeFileSync(bad, json(pSpec((s) => (s.parts[1].home = "projects/p2"))));
+  msg = "";
+  try {
+    loadSplitSpec(bad, v2);
+  } catch (e) {
+    msg = (e as Error).message;
+  }
+  t("refusal: a project part homed in another project (S6)", /the home of a project part is the project itself/.test(msg), msg);
+}
+
+// =====================================================================================================================
 section("static guards (A.0)");
 {
   const src = readFileSync(SPLIT, "utf8");

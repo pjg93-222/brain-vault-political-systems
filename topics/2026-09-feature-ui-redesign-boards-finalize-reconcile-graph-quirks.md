@@ -81,3 +81,4 @@ Brain drafts for Paul: scratchpad `BRAIN_DRAFTS.md` (D-064 framing, D-065 pie/pa
 
 - [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] — The Mentat console load-time and FEC-link lane and the Graph UI quirks and colouring lane, both of 2026-09-24.
 - [[mentat-console-startup-and-polish-lanes]] — The Mentat console startup hang fix of 2026-09-18 and reference summaries of the polish, load-time and graph-quirks lanes of 09-19 to 09-25.
+- [[melange-dashboard-v2-redesign-overlay]] — The v2 redesign overlay of the Melange dashboard and its finalize, 2026-09-22 to 09-25.

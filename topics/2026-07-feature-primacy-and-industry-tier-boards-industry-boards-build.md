@@ -109,3 +109,7 @@ Per-industry desk-method tier boards shipped @6779716 / @d07eaea; Warren-champio
 - ALL FOUR boards now use identical machinery - adjudicated credits EXCLUDED from every board (desk-only refinement), `acu_position` axis kept for CU (its declared-position layer), 0.75 floor + tier-1 floor uniform; bundle-parity mirror / selftest / parity-refusal REMOVED; `validation.method="uniform-clean-v1"` (MLN gate + source-contract test repinned in lockstep).
 - CU board clean tier-1 = Padilla No. 1 ... Hagerty No. 13 in, Huizenga t2 (his seat was the adjudicated credit - the desk still shows it); CU MEMBER DESK method untouched. Pre-measured clean-vs-desk: 12/13 identical, adjudication layer worth 2-19 ranks for the five.
 - **The CU-method-validation TEST also PASSED first: ACU declared agenda (Board Modernization / Veterans MBL / FOM / CLF / CUGMA / CDFI / tax-letters) = 100% recall in-universe** - validates the association-sweep recipe against gold ground truth.
+
+## Related Topics
+
+- [[2026-06-feature-melange-dashboard-ui-evolution-august-redesigns]] — Dashboard UI in August 2026: the industry-tab round 2, the black and gold retheme, the rankings-and-data-only simplification and the preview workflow.

@@ -64,3 +64,7 @@ Findings Paul had to rule on before trusting the new Tier 1s:
 **Codex routes tried 2026-09-11, both failed:** the MCP server is refused by the session health-check hook ("stdin is not a terminal"); headless `codex exec` (v0.154.0-alpha.6.2, exe under `%LOCALAPPDATA%\OpenAI\Codex\bin\<hash>\`; the newest-mtime dir can be an exe-less mid-install stub) reached the API and returned the usage-limit error. `config.toml` then pinned `gpt-6-astra` / `ultra`, not the skill's documented gpt-5.6-sol / xhigh - Paul's dials, reconcile with him before dispatching (the 2026-09-19 state pinned `gpt-6-astra` / `high`; see [[codex-executor]]). The validated contract + ledger dispatch (run-id `legeff-runtests-20260911`, trigger `legeff-register-suites-dispatch`) and the exact edit live in f149 `audits/legislative_effectiveness_shadow_20260911/evidence/{contract.json,prompt.txt}`.
 
 Related memories: `codex-executor-lane-2026-07-18`, `no-git-plain-review-2026-09-01`, `ask-before-substantive-changes`, `primacy-board-factor-only-2026-07-29`, `legislative-audit-2026-07-24`.
+
+## Related Topics
+
+- [[codex-executor-incidents]] — Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane Codex built and then lost on 2026-09-10/11.

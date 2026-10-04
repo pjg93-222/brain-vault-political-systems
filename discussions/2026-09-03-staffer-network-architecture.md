@@ -17,7 +17,7 @@ action_items:
   - "Compute eigenvector centrality per connected component and report component sizes."
   - "Keep w_edu in code at alpha=0 rather than deleting."
 related_topics:
-  - "[[2026-09-feature-staffer-network-data-and-math]]"
+  - "[[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture]]"
 related_actors:
   - "[[staffer-live-sidecar]]"
 related_people:
@@ -40,7 +40,7 @@ tags: ["type/discussion", "domain/data"]
 
 ## Context
 
-Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `staffer-social-network-architecture-2026-09-03`, type project, session `42c66666-074f-4037-b357-bdaedfd31eb1`, and `staffer-social-network-overlap-rule-2026-09-03`, type feedback, same session). Guiding docs: `STAFFER_NETWORK_EXPANSION_DESIGN_20260829.md` and `STAFFER_NETWORK_METRICS_20260829.md` (both in Downloads; dated 2026-08-31 revisions of 2026-08-29 drafts). The lane these rulings feed is [[2026-09-feature-staffer-network-data-and-math]] in the project [[melange-systems]]; the live service that later serves the network is [[staffer-live-sidecar]].
+Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `staffer-social-network-architecture-2026-09-03`, type project, session `42c66666-074f-4037-b357-bdaedfd31eb1`, and `staffer-social-network-overlap-rule-2026-09-03`, type feedback, same session). Guiding docs: `STAFFER_NETWORK_EXPANSION_DESIGN_20260829.md` and `STAFFER_NETWORK_METRICS_20260829.md` (both in Downloads; dated 2026-08-31 revisions of 2026-08-29 drafts). The lane these rulings feed is [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture|Staffer network data and math]] in the project [[melange-systems]]; the live service that later serves the network is [[staffer-live-sidecar]].
 
 **The metaphor, his words:** one giant ant colony. Each member is its own station. Staffers are nested in and between the stations. Lobbyists are outsiders entering the colony, navigating by who they know best.
 
@@ -64,7 +64,7 @@ Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `st
 
 ## Related Topics
 
-- [[2026-09-feature-staffer-network-data-and-math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
+- [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture|Staffer network data and math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
 
 ## Related Concepts
 

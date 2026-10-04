@@ -1,0 +1,237 @@
+{
+  "id": "C3",
+  "what": "Batch 6 split of topics/2026-06-feature-cosponsor-and-sector-networks (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C3); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-06-feature-cosponsor-and-sector-networks",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Pillar weights as they appear in these sources"
+    ],
+    "links": [
+      "actors/melange-dashboard",
+      "actors/lobbyview-collector"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-06-feature-cosponsor-and-sector-networks-june-network-plan",
+      "title": "June co-sponsor network plan: phases 1-3, vote edges, committee-only vector (06-25/26)",
+      "summary": "The June 2026 co-sponsor network plan of 06-25/26: legislative-success edge weights, signed-network coalitions, roll-call vote edges, the reversed legislative refresh, the committee-only influence vector, the congestion layer and the phase-3 adaptive allocation",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Phase 1 - legislative-success edge weights (2026-06-25)",
+        "## Phase 2 - signed-network coalitions to persuadables (DONE 2026-06-25, deep-audited, 0 errors)",
+        "## Phase 2.5a - roll-call votes and bill-set precision (2026-06-25)",
+        "## Vote edges (DONE 2026-06-25; user chose method, delegated weighting)",
+        "## Legislative refresh TRIED and REVERSED (2026-06-25) - key lesson",
+        "## Influence vector made COMMITTEE-ONLY (2026-06-25, user decision, applied and verified)",
+        "## Congestion layer (DONE 2026-06-26) and Phase 2.5b",
+        "## Phase 3 - influence maximization / adaptive allocation (BUILT 2026-06-26, `fec/im_allocate2.py`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-cosponsor-and-sector-networks-layer-toggles-and-configs",
+      "title": "Layer toggles and the three network configurations (07-04 to 08-18)",
+      "summary": "Network layer toggles with the signed reference and co-appearance layers of 2026-07-04 to 07-06, and the three network configurations behind one dial of 2026-08-18",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Layer toggles, signed reference layer, co-appearance layer (2026-07-04 to 2026-07-06; `moneyball-network-viz-requests`)",
+        "## Three network configurations, one dial (2026-08-18; `holistic-network-configs`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-cosponsor-and-sector-networks-sector-networks",
+      "title": "Sector networks bank_reg and crypto, and the circular lobbied-member link (08-18/19)",
+      "summary": "The bank_reg and crypto sector networks of 2026-08-18/19, promoted to full networks the same day, and the finding that the lobbied-member link is circular",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Sector networks: bank_reg and crypto (2026-08-18 to 2026-08-19; `sector-networks`)",
+        "## \"Lobbied member\" link is circular (2026-08-19; `lobbying-member-link-is-circular`)"
+      ],
+      "keep": [
+        "actors/lobbyview-collector"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-cosponsor-and-sector-networks-member-relationships",
+      "title": "Member personal relationships model (09-10 to 09-12)",
+      "summary": "The member personal relationships model lane of 2026-09-10 to 09-12 and its review",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Member personal relationships model (2026-09-10 to 2026-09-12; `member-relationships-lane-review-2026-09-10`)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 36,
+      "old": "- **Later layers:** on 2026-07-04 (about 01:20, during the overnight Fable campaign) Paul requested (1) edge-layer toggles on the social-network viz and (2) a signed cross-media reference layer (\"who references whom, positively or negatively\"). Both shipped 2026-07-04; a co-appearance layer followed 2026-07-05.",
+      "mark": "not positional",
+      "why": "\"Later layers\" is time (the layers added on 2026-07-04/05)"
+    },
+    {
+      "line": 38,
+      "old": "- **Circularity finding (2026-08-19):** Paul asked on 2026-08-19, believing a significant lobbying-cosponsorship relationship had been found; the lobbied-member variable is manufactured from the cosponsor roster, so the number cannot carry that meaning (see the dedicated section).",
+      "mark": "rewrite",
+      "why": "\"(see the dedicated section)\" is ## \"Lobbied member\" link is circular, which moves to -sector-networks",
+      "new": "- **Circularity finding (2026-08-19):** Paul asked on 2026-08-19, believing a significant lobbying-cosponsorship relationship had been found; the lobbied-member variable is manufactured from the cosponsor roster, so the number cannot carry that meaning (see the dedicated section in [[2026-06-feature-cosponsor-and-sector-networks-sector-networks]]).",
+      "referent": "2026-06-feature-cosponsor-and-sector-networks-sector-networks"
+    },
+    {
+      "line": 40,
+      "old": "- Related to the pillar weights recorded in this topic: three weight sets exist across the model's history; see \"Pillar weights as they appear in these sources\" below for the dated, status-labelled list (`.40/.30/.20/.10` 2026-06-29 historical; `30/25/40/5` ratified 2026-07-07, LAST RATIFIED; `45/10/40/5` live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED, code-review S-5 awaits Paul's ruling).",
+      "mark": "same note",
+      "why": "\"see \"Pillar weights as they appear in these sources\" below\" names the ## section the hub keeps, below Context"
+    },
+    {
+      "line": 81,
+      "old": "| 2026-09-13 | Member-relationships memory last modified (2026-09-13T00:51Z); lane state as recorded in its section below. |",
+      "mark": "rewrite",
+      "why": "\"its section below\" is ## Member personal relationships model, which moves to -member-relationships",
+      "new": "| 2026-09-13 | Member-relationships memory last modified (2026-09-13T00:51Z); lane state as recorded in its section in [[2026-06-feature-cosponsor-and-sector-networks-member-relationships]]. |",
+      "referent": "2026-06-feature-cosponsor-and-sector-networks-member-relationships"
+    },
+    {
+      "line": 97,
+      "old": "- **Per-config layouts (Paul: \"Option 1, with the animated transition\")**, reversing the earlier fixed-position choice.",
+      "mark": "not positional",
+      "why": "\"reversing the earlier fixed-position choice\" is time"
+    },
+    {
+      "line": 104,
+      "old": "- ~~Fixed per-config node positions~~ (2026-08-18 earlier choice) - superseded 2026-08-18 by Paul's \"Option 1, with the animated transition\" (per-config layouts @b9ff46982); the rationale was asserted in five places and had to be rewritten everywhere.",
+      "mark": "not positional",
+      "why": "\"(2026-08-18 earlier choice)\" is time"
+    },
+    {
+      "line": 111,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 131,
+      "old": "Weight sets quoted in this topic's source (June 2026, earlier than all three above and all superseded):",
+      "mark": "same note",
+      "why": "\"all three above\" is the dated three-set table just before this line in ## Pillar weights as they appear in these sources, which the hub keeps; \"earlier than\" is time"
+    },
+    {
+      "line": 143,
+      "old": "- Multipliers and thresholds are the user's to set; see `feedback_consult_multipliers_thresholds`.",
+      "mark": "external",
+      "why": "\"see `feedback_consult_multipliers_thresholds`\" names a memory file"
+    },
+    {
+      "line": 144,
+      "old": "- Deployed (x3, full network): enhanced Stage 3 (`role × success(x3 if passed-own-chamber) × DecayWeight ÷ √C`) gives `congress_cosponsor_network_20260625_184604.xlsx` (2390 edges), centrality, wired into the Blended Model `Centrality` sheet via Excel COM (0 errors, $2M, 494/533 coverage). Ranking effect: Hagerty #7 to #3, Tim Scott into the top 10 (Senate Banking bill-passers rewarded), HFSC core held. Scraper backed up to `congress_member_scraper.BACKUP-20260625.R`; model to `...PRE-CENTRALITY-20260625.xlsx`. NEXT then: stress-test this base, then Phase 2.",
+      "mark": "not positional",
+      "why": "\"NEXT then\" is the next step in time"
+    },
+    {
+      "line": 156,
+      "old": "- **Refinement (user feedback):** the user noted \"Neutral\" was mislabeling members who HAVE worked with CUs (Fitzpatrick etc.); it only meant *light positive lean* (D below the Ally cutoff). Fix: (1) lowered **Ally cutoff 0.0575 to 0.034** (`RA!L8` dial; 77 members Neutral to Ally; Fitzpatrick/Young Kim/Crapo/De La Cruz now Ally; allocation unchanged, stance is allocation-independent). (2) Split persuadables into **Flip-Neutral** (connected-but-uncommitted: Ritchie Torres, Cortez Masto, Beatty, Brad Sherman, Susan Collins), **Flip-Skeptic** (truly persuadable skeptics: Warnock, Aaron Bean, **John Boozman**, who heavily co-sponsors with pro-CU) and **Solidify** (newly-recognized soft allies to lock in: Fitzpatrick, De La Cruz, Young Kim), each ranked by within-group z(pro_pull)+z(centrality)+z(frustration). (3) **Bug fixed:** `pro_pull` must use UNSIGNED collaboration magnitude to pro-camp (skeptic-to-pro edges are signed negative, so the old `sw>0` filter zeroed every skeptic's reachability). The threshold and split are tunable dials = user's call.",
+      "mark": "not positional",
+      "why": "\"D below the Ally cutoff\" is a threshold comparison"
+    },
+    {
+      "line": 164,
+      "old": "- **ROOT CAUSE = congress.gov `containsAll` matched every WORD of a multi-word value across full `metadata`**, so omnibus bills (NDAA/George Floyd) have the words scattered. **FIX APPLIED 2026-06-25:** surgical token swap in `congress_search_urls.R`: all **145 `containsAll` bundle clauses changed `field:metadata` to `field:title`** (a short title can only contain all the stems if the bill is genuinely about it). The 101 `phrase` clauses (operator token is `\"phrase\"`, NOT \"containsPhrase\") left on metadata. A literal find-replace, NOT a JSON rebuild, so it respects `feedback_congress_url_no_json`; file parses clean; takes effect on the next live scrape. STILL TODO then: apply `bill_drop_final.csv` exclude in the scraper + re-run to clean the **legislative pillar** for the CURRENT cached data (George Floyd alone = 256 archive rows still polluting Data Privacy topic scores).",
+      "mark": "not positional",
+      "why": "\"the next live scrape\" is time"
+    },
+    {
+      "line": 170,
+      "old": "- **Option C (party-controlled null, `_vote_backbone_C.py`):** expected agreement from each pair's PARTIES' per-vote propensities, sign by deviation, BH, **>=20 shared-votes floor** (kills House-to-Senate switcher artifact: Gallego 72 to 11). Sparser (33%) but **negatives still conflate maverickness** (Massie/Gosar/Roy right-flank defectors sit next to moderates; same members top BOTH +cross-party and -same-party). So **dropped the negative side**; kept **cross-party POSITIVE only** = clean bipartisan-CU-affinity signal (Fitzpatrick, Golden, Cuellar, Gluesenkamp Perez, Mace).",
+      "mark": "not positional",
+      "why": "\"sit next to moderates\" describes ranking adjacency"
+    },
+    {
+      "line": 175,
+      "old": "**DO NOT refresh the `Legislative Score - Normalized` sheet.** I rebuilt its 45 score-bearing count columns from current cosponsorship activity (min-max, minus 36 FP bills); the R&A!D **formula was NOT changed**, only its INPUT data. Result was WRONG: it scrambled ranks (Tim Scott 10 to 63 and mislabeled Opponent; Maxine Waters 52 to 11; Ted Cruz 66 to 12) because the topic-signed score rewards **activity in CU topics, not CU SUPPORT**: Tim Scott took -0.476 from the Credit Card topic (weight -3 × his activity) just for *engaging* on it though he's pro-CU; Maxine Waters rose purely on prolific sponsorship across pro-weighted topics. The \"frozen\"/\"stale\" Normalized is actually CURATED (encodes real CU positions: Scott/Barr high, Durbin/Welch/Lofgren ~280-475); the Barry-Moore-norm=1.0-with-zero-raw \"staleness\" was a curation artifact, NOT a bug to fix. **REVERSED by restoring `...PRE-LEG-CLEAN-20260625.xlsx`** (verified: 0 errors, $2M/133, Tim Scott back to rank 10/Champion, opponents back low). Failed attempt saved `...POST-LEG-REFRESH-FAILED-20260625.xlsx`. The 36 FP bills remained in the legislative pillar then (cannot be surgically removed from curated frozen data; user accepted), later cleaned surgically 2026-06-26. If legislative calibration is ever revisited it must preserve curation / encode CU direction, not naive activity min-max.",
+      "mark": "not positional",
+      "why": "\"later cleaned surgically 2026-06-26\" is time"
+    },
+    {
+      "line": 202,
+      "old": "  - **Adaptive backbone = Golovin & Krause \"Adaptive Submodularity\" (JAIR 2011, in Downloads).** Fund a member, observe persuaded/who-they-bring, adaptively pick next. Adaptive-greedy = (1-1/e) of optimal policy when the objective is adaptive-monotone + adaptive-submodular; alpha-approx greedy gives (1-1/e^{1/α}); the cost-sensitive version maps the $ budget to per-member costs c(e). Adaptive IM (coalition/ICM mode) IS adaptive submodular, so a clean guarantee; competitive-LT flip mode is generally NOT, so OR-model/heuristic path.",
+      "mark": "not positional",
+      "why": "\"adaptively pick next\" is the algorithm's sequence"
+    },
+    {
+      "line": 210,
+      "old": "2. **Signed cross-media REFERENCE layer (\"who references whom, positively or negatively\").** New analyzer (`member_reference_layer.py`): scan the speeches table (CREC + CHRG + INTERVIEW, 20M+ words, full text) + press titles + tweet RT/mentions for roster-member references in another member's OWN speech; extract context windows; valence each via the Fable API (cost-gated: probe mention volume first, cap contexts per dyad ~5); output signed directed edges `{a,b,source,n,valence}` to a new toggleable layer + desk relationship panel. This supersedes/absorbs the earlier dyadic-warmth probe (which found the signal real but starved at 434 tweet mentions and fooled lexically; the full speech corpus + Fable valence fixes both). Attribution discipline: QA2-hardened name resolution (first-name compatibility, accent transliteration, no unique-surname guessing).",
+      "mark": "not positional",
+      "why": "\"the earlier dyadic-warmth probe\" is time"
+    },
+    {
+      "line": 214,
+      "old": "- **BOTH SHIPPED 2026-07-04 (verified in browser, no console errors):** `build_dashboard_bundle.py` now emits `elay` (420-char per-drawn-edge provenance code from the AUG Provenance sheet: c/s/h/e/m; top-420 mix was c=337 s=1 e=17 m=65) + `refs` (1,437 signed dyads from `member_references.json`, n_scored>=2, `[ia,ib,net,n]`); the dashboard tpl has a LAYERS checkbox bar (cosponsor/social/committee/engagement/references+-, refs default OFF); refs draw green (net>+0.15) / red (net<-0.15) / grey, alpha by evidence count, under the node dots, in both layouts. Bundle 218KB. NOTE: the pipeline reruns bundle+html on the next run; changes are in the live-tree scripts so they persist.",
+      "mark": "not positional",
+      "why": "\"on the next run\" is time"
+    },
+    {
+      "line": 231,
+      "old": "- **PER-CONFIG NODE LAYOUTS @b9ff46982** (Paul: \"Option 1, with the animated transition\", reversing the earlier fixed-position choice). Each config now carries its own force layout and the field animates 600 ms between them. **THE HARD PART WAS THE COORDINATE FRAME, NOT THE ANIMATION** (generalizes to any visual comparison of two computed embeddings). A force layout is rotation/reflection invariant and `spring_layout` ends with `rescale_layout()` (normalizes every layout to max|coord|=1 about its OWN centroid), so orientation and absolute size are pure gauge. Rendering three independently computed, independently min/max-scaled layouts would animate that gauge as if it were structure: measured, naive = median shift **224** canvas units with corr(CU) 0.45/0.39, vs shipped = **75** with 0.58/0.69. **Two thirds of the naive movement was frame artifact.** Fix = (1) warm-start each layout from the published CU canvas so the solver lands in the NEAREST minimum, (2) Procrustes-align back onto CU (rotation + reflection + uniform scale + translation; reflection ALLOWED, no handedness to protect), (3) NO per-layout rescaler. Plus `k_cfg = 0.45*(mean_w_cfg/mean_w_CU)^(1/3)`, from the FR energy's invariance under (A,k) to (cA, c^(1/3) k), so unrelated weight units cannot masquerade as layout change. Committee layout is EXEMPT (its coords come from workbook membership; anchor labels are drawn at fixed points). Side effect: **repaired a latent bug**: area layout rebuilt PE on config change but never respaced, so lines were weighted by the new kernel over the old embedding while the caption claimed otherwise; median move 0 to 374. Party structure is STRONGER in the new layouts (1-NN same-party .936 holistic / .908 norm vs .783 CU), so the movement is signal.",
+      "mark": "not positional",
+      "why": "\"reversing the earlier fixed-position choice\" is time"
+    },
+    {
+      "line": 233,
+      "old": "- NOT verified: the rendered appearance (see `dashboard-preview-workflow`; the pane does not composite). Paul's eyeball is the open item; the layouts occupy the central ~45% of canvas.",
+      "mark": "external",
+      "why": "\"see `dashboard-preview-workflow`\" names a memory file"
+    },
+    {
+      "line": 251,
+      "old": "- **THE ARGUMENT FOR AUDIT-ONLY, kept because it is still the reason the banners read as they do.** Sector graphs sit below the engine operating floor (crypto p_max 0.23 / 23 dyads at p>=0.10 vs CU 0.52 / 252). The network toggle's own tooltip says it \"reconfigures every engine on this page\", so putting a sector there asserts cascade/pathfinder/influence-max output is meaningful on it. Paul accepted that cost knowingly; the banners are the mitigation. `assert_output_name` still enforces family separation mechanically: refuses `congress_cosponsor_network_*` (18 call sites, 3 max-by-mtime with no AUG filter) and `holistic_network_*`, and requires one of the two legal shapes (`sector_diagnostic_` under `audits/`, `sector_network_` at the live root). Seven negative controls.",
+      "mark": "not positional",
+      "why": "\"below the engine operating floor\" is a threshold"
+    },
+    {
+      "line": 259,
+      "old": "  - **THIRD UNINTENDED PRODUCTION WRITE OF THE SESSION, same root cause: `import == execution`.** Importing the augmenter merely to TEST its config guard wrote `holistic_network_AUG_20260819.xlsx`. Content-identical to the reviewed artifact (63,707 rows, canonical sha a437dd6d) but newest-by-mtime had already made it the graph the engine would load. Moved to `backups/accidental_20260819/`, NOT deleted; selection verified back on 20260818. **Three occurrences means resolutions do not work; the fix is STRUCTURAL: `NET_VALIDATE_ONLY=1` exits after the config verdict and writes nothing (42 xlsx before and after).** A guard you cannot exercise without side effects is a guard nobody will exercise. Its own negative control then caught that I had put the early exit ABOVE the sector refusal, so sectors reported ACCEPTED: **order your early exits after your refusals, and always negative-control a guard.**",
+      "mark": "not positional",
+      "why": "\"the early exit ABOVE the sector refusal\" is code order"
+    },
+    {
+      "line": 270,
+      "old": "  - **THE DIAL CATALOG'S OWN REFRESH PROCEDURE WAS THE BUG.** `Get-ChildItem fec\\*.py, fec\\tests\\*.py` (in the source memory the `\\t` was rendered as a tab character, garbling `fec\\tests\\*.py`) matched most of the tree in 2026-07 and **14 of 638 files after the 2026-08 reorg**; its rationale \"non-recursive, so attic is excluded\" was right when written. Anyone following it re-confirmed a 13-dial world. Repaired command finds **467 read sites where the old found 16**. **LAW: when a catalog has drifted, fix the tool that was supposed to catch the drift FIRST; otherwise the fix rots immediately.** Census: **239 distinct dials / 443 sites / 169 files; catalog documents 96**, so ~140 remain undocumented, now stated IN the catalog so absence is not read as non-existence. Two stale entries fixed against source (`B5_SCRATCH` to `B5_COMPOSITE`; `NARR_MAX` retired, zero readers).",
+      "mark": "not positional",
+      "why": "\"Anyone following it\" is a verb"
+    },
+    {
+      "line": 292,
+      "old": "- **TRAP:** the frozen `cosponsor_join` forecast (265,396 predictions, unscored, resolvable NOW, hash changed) resolves its outcome against `interaction_bill_members.csv`. Scoring it and writing it up as \"predicted who joins lobbied bills\" would be circular framing, though the predictions themselves use no lobbying features. See `moneyball-architecture`.",
+      "mark": "external",
+      "why": "\"See `moneyball-architecture`\" names a memory file"
+    },
+    {
+      "line": 314,
+      "old": "- **How to apply:** quote every AUC with denominator and row spec; unmeasurable dyads = evidence availability, never imputed; the expression contrast is \"excess ritual warmth\" until the cue classifier is replaced; evidence records must store verbatim passages plus locators (DE-020 candidate). Next: Paul adjudicates 31 + 38 items, rules on raw-vs-residual work channel, the 10 PDF-only links, the canonical universe (115-119?), the 13 pair-scoring design choices; then test registration and the `blind_grading` QWK guard fix; more labels needed before any presence-vs-ordinary AUC. See `ask-before-substantive-changes`, `no-git-plain-review-2026-09-01`, `disk-census-2026-09-11`.",
+      "mark": "external",
+      "why": "\"See `ask-before-substantive-changes`, ...\" names memory files; \"Next:\" is time"
+    }
+  ]
+}

@@ -57,6 +57,7 @@ Memory `staffer-sorting-lane-2026-09-06` (type project, session `25322ef7-844b-4
 ## Related Topics
 
 - [[2026-09-feature-staffer-network-data-and-math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
+- [[2026-09-feature-staffer-network-data-and-math-sorting-lane]] — The staffer sorting lane of 2026-09-06 to 09-08: its rulings, the facts established, the stage plan and the dated state log through the shipped and committed lane.
 
 ## Rulings (Paul, 2026-09-06, answering Q1-Q9 after the compartmentalisation review)
 

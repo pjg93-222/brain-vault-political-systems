@@ -1,0 +1,211 @@
+{
+  "id": "C4",
+  "what": "Batch 6 split of topics/2026-07-feature-audio-and-speech-lane (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C4); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-audio-and-speech-lane",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## State at a glance (audit 2026-08-19/20, extended 2026-08-20, landed 2026-08-21)",
+      "## PAUL'S RULINGS 2026-08-21 (session a279d144) - these change the lane's posture; the findings are the SPEC, not dead ends"
+    ],
+    "links": [
+      "actors/melange-audio-pipeline",
+      "concepts/single-look-holdout-discipline",
+      "concepts/fail-closed-gates"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-audio-and-speech-lane-july-foundations",
+      "title": "Speaker verification, ES cross-modal validation, narratives and the Senate gold design (07-09 to 07-16)",
+      "summary": "The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09, the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Audio speaker verification and ES cross-modal validation (2026-07-09; source: moneyball-audio-narratives-2026-07-09)",
+        "## 3-paragraph \"Suggested approach\" narratives - audio-side facts (2026-07-09)",
+        "## Senate gold and the audio identity design (session 2026-07-16; source: gold-template-audio-2026-07-16)"
+      ],
+      "keep": [
+        "concepts/single-look-holdout-discipline"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements",
+      "title": "The N audio route (G1, G2, the look), its venue, reliability and identity measurements, and the Whisper, C-SPAN and Gemini facts (08-20 to 08-25)",
+      "summary": "The N audio route of 2026-08-21 to 08-25 from the ES prereg lock to the spent and missed look, with its ledger and venue corrections, the venue, reliability and identity measurements, and the Whisper, C-SPAN and Gemini facts",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## The N audio route: G1, G2, the look (2026-08-21 to 2026-08-25)",
+        "## Venue, reliability and identity measurements",
+        "## Whisper, C-SPAN and Gemini facts"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-audio-and-speech-lane-complementary-layers-and-lessons",
+      "title": "Complementary layers lane and verification lessons (09-07)",
+      "summary": "The complementary layers lane of 2026-09-07 and its verification lessons on four confident wrong agent claims",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Complementary layers lane (2026-09-07)",
+        "## Verification lessons (feedback rule, 2026-09-07): four confident wrong agent claims in one lane"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 81,
+      "old": "- **Audio layers are COMPLEMENTARY, never either/or** (Paul 2026-09-07: \"this data is not meant to override each other but be complementary.\"). Every member shows every layer they have, each labeled with its own scale and caveat. This overrides the earlier `if descriptive / else cache` design.",
+      "mark": "not positional",
+      "why": "\"the earlier `if descriptive / else cache` design\" is time"
+    },
+    {
+      "line": 88,
+      "old": "- ~~Original ES/N prereg venue reading~~ and ~~\"A is weakly validated\"~~ - corrected (see Ledger corrections).",
+      "mark": "rewrite",
+      "why": "plan S10 fixture, automatic mark signed off: \"(see Ledger corrections)\" names ### LEDGER CORRECTIONS (2026-08-24 ...), which moves to -n-audio-route-and-measurements",
+      "new": "- ~~Original ES/N prereg venue reading~~ and ~~\"A is weakly validated\"~~ - corrected (see Ledger corrections in [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]]).",
+      "referent": "2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements"
+    },
+    {
+      "line": 89,
+      "old": "- **Model tiering for audio verification:** Haiku 4.5 for mechanical audio-clip verification; escalate to Sonnet, never Fable, if Haiku regresses (see Member approach briefs and narratives).",
+      "mark": "external",
+      "why": "\"(see Member approach briefs and narratives)\" is the title of another note, topics/2026-07-feature-member-approach-briefs"
+    },
+    {
+      "line": 92,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 108,
+      "old": "- **One ASR engine is coded into the repo; its runtime is now installed but wired to nothing.** `asr_words_from_whisper()` at `fec/members/b5_audio_align_turns.py:249` (faster-whisper, greedy pinned, `local_files_only=True`); it hard-refuses rather than downloading weights. As of 2026-08-19 nothing was installed; SUPERSEDED 2026-08-20 (install block below). Still absent: `speechbrain`, `torchaudio`, `aeneas`. Already present: torch, transformers, opensmile, librosa, soundfile, yt_dlp. `big5_methods.md:1227` recorded the no-download state as a deliberate choice; Paul's 2026-08-20 grant lifted it for whisper only. In the design Whisper was only ever an independent word-recovery cross-check against Aeneas boundaries, never the transcript source.",
+      "mark": "rewrite",
+      "why": "\"(install block below)\" is ### faster-whisper INSTALLED AND PINNED 2026-08-20 in ## Whisper, C-SPAN and Gemini facts, which moves to -n-audio-route-and-measurements",
+      "new": "- **One ASR engine is coded into the repo; its runtime is now installed but wired to nothing.** `asr_words_from_whisper()` at `fec/members/b5_audio_align_turns.py:249` (faster-whisper, greedy pinned, `local_files_only=True`); it hard-refuses rather than downloading weights. As of 2026-08-19 nothing was installed; SUPERSEDED 2026-08-20 (install block in [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]]). Still absent: `speechbrain`, `torchaudio`, `aeneas`. Already present: torch, transformers, opensmile, librosa, soundfile, yt_dlp. `big5_methods.md:1227` recorded the no-download state as a deliberate choice; Paul's 2026-08-20 grant lifted it for whisper only. In the design Whisper was only ever an independent word-recovery cross-check against Aeneas boundaries, never the transcript source.",
+      "referent": "2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements"
+    },
+    {
+      "line": 111,
+      "old": "- **Never measured against human gold:** WER/CER, alignment quality on real audio (the 0.80/0.70 `word_match` bars in `fec/audio_rules.py:38-39` are asserted, never calibrated), diarization accuracy on real audio. Recognizer-vs-recognizer AGREEMENT was measured (0.945 / 0.745 / 0.695, see below) but no human-transcribed reference exists anywhere. The 150-clip human-annotation packet that would create one was fully built 2026-07-26 and never coded: it is the gate both Fable audits demand.",
+      "mark": "rewrite",
+      "why": "\"(0.945 / 0.745 / 0.695, see below)\" is the transcription-agreement measurement in ### Gemini audio and agreement of ## Whisper, C-SPAN and Gemini facts, which moves to -n-audio-route-and-measurements",
+      "new": "- **Never measured against human gold:** WER/CER, alignment quality on real audio (the 0.80/0.70 `word_match` bars in `fec/audio_rules.py:38-39` are asserted, never calibrated), diarization accuracy on real audio. Recognizer-vs-recognizer AGREEMENT was measured (0.945 / 0.745 / 0.695, see in [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]]) but no human-transcribed reference exists anywhere. The 150-clip human-annotation packet that would create one was fully built 2026-07-26 and never coded: it is the gate both Fable audits demand.",
+      "referent": "2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements"
+    },
+    {
+      "line": 130,
+      "old": "4. **ASR gets integrated, or worked toward** - first shipped step: `fec/members/b5_speech_quirks.py` (pinned-whisper hesitation/discourse/stutter producer, dual plain+prompted decode, 0.85 coverage anomaly guard, `.candidate` output, `test_speech_quirks` registered in the kernel gate). Paul flagged PESSIMISM in the session framing - the corrective: findings are engineering items with fixes, and two were FIXED THE SAME DAY (above).",
+      "mark": "same note",
+      "why": "\"two were FIXED THE SAME DAY (above)\" is ### FIXED in commit 4193f0140 in ## State at a glance, which the hub keeps before this section"
+    },
+    {
+      "line": 137,
+      "old": "- **Population: 332 both / 95 descriptive-only / 74 voiceprint-only / 32 neither.** (Earlier 334/93 was wrong - Lindsey Graham is not `verified_audio_profile`; Maggie Goodlander is in neither source.)",
+      "mark": "not positional",
+      "why": "\"(Earlier 334/93 was wrong ...)\" is time"
+    },
+    {
+      "line": 157,
+      "old": "- **How to apply:** before repeating an agent's mechanism claim to Paul, demand the census or the counterfactual - how many rows actually satisfy the predicate, and does flipping the constant change the output? \"This code path causes X\" is not evidence until someone counts the rows that take it. Same family as `examination-lane-lessons-2026-08-14` (existence claims need repo-wide grep) and `verify-dont-infer-completion-2026-08-04`. Corollary that DID work: negative control + planted defects (above).",
+      "mark": "same note",
+      "why": "\"negative control + planted defects (above)\" is the audit-gate validation bullet in ## Complementary layers lane, which precedes ## Verification lessons in -complementary-layers-and-lessons as in the note"
+    },
+    {
+      "line": 173,
+      "old": "- A successor prereg on those materially-different certified channels is permitted by the retire clause and its G1 evidence pre-exists - LOCKING IT IS PAUL'S GATE. Corpus for a successor look: 82 multi-episode members vs the 140 G2 floor (NPR has about 570 more unfetched packages to close the gap - see the ledger correction below: that figure was wrong).",
+      "mark": "same note",
+      "why": "\"see the ledger correction below\" is item 3 of ### LEDGER CORRECTIONS (2026-08-24 ...), which follows in ## The N audio route and moves with it to -n-audio-route-and-measurements"
+    },
+    {
+      "line": 184,
+      "old": "3. ~~\"About 570 remaining NPR packages\"~~ was WRONG: the ranked fetch (>=120 member-words) is EXHAUSTED at 439 packages -> G2 = 80/140 from NPR alone; closing the gap needs a relaxed word bar and/or new outlets (PBS = video pages, unprobed). (Superseded again 2026-08-24 by the NPR-exhausted state below: 677 episodes, G2 = 99/140.)",
+      "mark": "same note",
+      "why": "\"the NPR-exhausted state below\" is ### G2 STATE + THE SUNDAY DATE-JOIN (677 episodes, G2 = 99/140), which follows in the same ## section and moves with it to -n-audio-route-and-measurements"
+    },
+    {
+      "line": 191,
+      "old": "- Sequence is CERTIFY -> AMEND -> LOOK: build the pipeline, run G1-style S1/S2 reliability inside Sunday audio, and only then bring Paul the venue amendment (prereg venue clause currently reads \"NPR journalist interviews; live WJ when available\"). Amending is procedurally clean only while gates are unsatisfied and the look unspent. See `verify-dont-infer-completion-2026-08-04`.",
+      "mark": "external",
+      "why": "\"See `verify-dont-infer-completion-2026-08-04`\" names a memory file"
+    },
+    {
+      "line": 213,
+      "old": "- Consequences applied per lock: no artifact, no desk change, no engine change, **instrument stays 3/5 (O/C/E)**, route CLOSED, no refits, any successor needs materially different measures. **N now has NO open behavioral route** (text-N closed 07-12 on the no-interview ship gate; ES exhausted with evidence; external criteria blocked) - see `psych-audit-2026-07-09`, `n-slot-reanchor-2026-07-11`.",
+      "mark": "external",
+      "why": "\"see `psych-audit-2026-07-09`, `n-slot-reanchor-2026-07-11`\" names memory files"
+    },
+    {
+      "line": 278,
+      "old": "- Adversarial pass (audio_pilot floor-speech clipcache, 169 members with >=5 clips, better powered): pitch_variability ICC .245, volume_dynamics **.178** - well below the n=25 figure; prefer theirs on power. Both sit under the 0.70 floor at k=5. 97 members already have >=17 qualifying turns, so k=17 (SB about .85) is reachable. **UNCONTROLLED: recording channel (studio/remote/telephone) - could inflate every one of these ICCs.**",
+      "mark": "not positional",
+      "why": "\"well below the n=25 figure\" is a numeric comparison"
+    },
+    {
+      "line": 294,
+      "old": "- Verdict recorded: the published method does not transfer to this source-disjoint contract - not an optimizer slip. See `psych-audit-2026-07-09` and `moneyball-audio-narratives-2026-07-09` for the voice-ES +0.208 gender-confound closure.",
+      "mark": "external",
+      "why": "\"See `psych-audit-2026-07-09` and `moneyball-audio-narratives-2026-07-09`\" names memory files"
+    },
+    {
+      "line": 301,
+      "old": "- **WHISPER DELETES DISFLUENCIES BY DEFAULT - the filler-prompt trick makes it usable (measured 2026-08-20, n=10 attributed C-SPAN turns).** Default whisper-small: **0.0 uh+um per 1k on EVERY clip**. With `initial_prompt='Um, uh, so, you know, I mean, like...'` + `condition_on_previous_text=True`: **37.1 per 1k mean** and a **26x per-member spread** (Takano 121.4, Chu 73.9, Rose 60.5, Schneider 42.4, Green 23.8, Pocan 21.3, Fulcher 10.6, Curtis 7.7, LaHood 5.0, Norton 4.7). Content cost is small: mean coverage vs the C-SPAN reference 0.729 -> 0.699, **delta -0.030**. Corroboration: Gemini independently measured 36.14/1k on an overlapping subset; C-SPAN captions read 0.00. (The `condition_on_previous_text=True` recipe was later found defective over long files - see the 2026-08-24 defect above.)",
+      "mark": "same note",
+      "why": "\"see the 2026-08-24 defect above\" is ### WHISPER DECODE DEFECT + CORRECTED VENUE NUMBERS (2026-08-24) in ## The N audio route, which precedes ## Whisper, C-SPAN and Gemini facts in -n-audio-route-and-measurements; \"later found\" is time"
+    },
+    {
+      "line": 307,
+      "old": "- **FETCH RECIPE (re-derived 2026-08-23 - the July recipe is DEAD):** the `tsc.m3u8` hosts 403 even with UA+Referer now; the `iphone.c-spanvideo.org` master+media playlists are OPEN (force-gzipped - gunzip before parsing; ffmpeg chokes on them) but the `/ts8/` SEGMENTS are 403-gated against urllib regardless of UA/Referer/Origin/cookies. **The working path: yt-dlp's native C-SPAN extractor on the PROGRAM PAGE URL** (it clears the segment gate via the player config), format `466` = lowest 416x234, and `--download-sections` works - fetch ONLY the caption-offset member-turn windows, `-x --audio-format wav` + `-ac 1 -ar 16000`, one invocation per program with all its sections. Traffic about 3-6 GB for 218 programs vs about 22 GB whole-program. (Later: C-SPAN is a TollBit licensing gate; program pages redirect agent traffic to tollbit.c-span.org.)",
+      "mark": "not positional",
+      "why": "\"(Later: C-SPAN is a TollBit licensing gate ...)\" is time"
+    },
+    {
+      "line": 322,
+      "old": "Session 2026-07-16 (worktree loving-payne, branch claude/gallant-gates-982203; the live tree was on claude/cfpb-sentiment-recorrection @35b8a09 - analysis read the live tree read-only, NOTHING applied). Everything below was PRESENTED to Paul and awaited his decisions, except the executed items marked EXECUTED. Psychometric framing also appears in Personality psychometrics (Big Five); look discipline in [[single-look-holdout-discipline]].",
+      "mark": "same note",
+      "why": "\"Everything below was PRESENTED to Paul\" is the rest of ## Senate gold and the audio identity design, which moves whole to -july-foundations"
+    },
+    {
+      "line": 343,
+      "old": "  - Head-to-head validated Haiku >= Fable on this task (Fable over-rejected clean solo speeches); **escalate to Sonnet, never Fable, if Haiku ever regresses** (see `fable-paragraphs-only`).",
+      "mark": "external",
+      "why": "\"(see `fable-paragraphs-only`)\" names a memory file"
+    },
+    {
+      "line": 349,
+      "old": "  - **SUPERSEDING UPDATE (psych-audit session, same day, LOCKED robustness look @34bf7e4): the +.208 is GENDER-CONFOUNDED** - partial r(|gender,party) = -0.029 perm-p .715; within-gender null BOTH sexes (M -.016 n=282 / F -.036 n=113); the voice model was mostly reading speaker sex (F0). The recorded pass STANDS as history (its locked bars were met), but the VALIDATION CLAIM carries the caveat everywhere (methods section 16 annotated + section 17; desk voice-ES lines caveated; crossmodal prereg dated addendum). **Current per-trait state:** O/C/E criterion-valid AND diagonal-dominant (behavior-anchored instrument LOOK 3/5, O +.198 / C +.277 / E +.552 exact perm-p .0002), A valid-not-distinct (+.183; dialogic-assent fix attempt MISSED and is CLOSED), ES measured with NO validation and ALL in-repo routes EXHAUSTED (text +.149 near-miss; voice raw confounded -> sex-relative retrain NULL -.024 -> voice CLOSED PERMANENTLY; NPAT current-roster NULL; only remaining path = fresh Vote Smart pull, user-gated). Grade A- unchanged. Anchor to THIS state, not the older \"all five validated\" line. (Further updated by the 2026-08-24 ledger corrections above: E and A are ACTIVE_EXTERNAL_GOLD_ANCHORED; N one-panel association-supported.)",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"the 2026-08-24 ledger corrections above\" names ### LEDGER CORRECTIONS (2026-08-24 ...), which moves to -n-audio-route-and-measurements while this line moves to -july-foundations",
+      "new": "  - **SUPERSEDING UPDATE (psych-audit session, same day, LOCKED robustness look @34bf7e4): the +.208 is GENDER-CONFOUNDED** - partial r(|gender,party) = -0.029 perm-p .715; within-gender null BOTH sexes (M -.016 n=282 / F -.036 n=113); the voice model was mostly reading speaker sex (F0). The recorded pass STANDS as history (its locked bars were met), but the VALIDATION CLAIM carries the caveat everywhere (methods section 16 annotated + section 17; desk voice-ES lines caveated; crossmodal prereg dated addendum). **Current per-trait state:** O/C/E criterion-valid AND diagonal-dominant (behavior-anchored instrument LOOK 3/5, O +.198 / C +.277 / E +.552 exact perm-p .0002), A valid-not-distinct (+.183; dialogic-assent fix attempt MISSED and is CLOSED), ES measured with NO validation and ALL in-repo routes EXHAUSTED (text +.149 near-miss; voice raw confounded -> sex-relative retrain NULL -.024 -> voice CLOSED PERMANENTLY; NPAT current-roster NULL; only remaining path = fresh Vote Smart pull, user-gated). Grade A- unchanged. Anchor to THIS state, not the older \"all five validated\" line. (Further updated by the 2026-08-24 ledger corrections in [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]]: E and A are ACTIVE_EXTERNAL_GOLD_ANCHORED; N one-panel association-supported.)",
+      "referent": "2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements"
+    },
+    {
+      "line": 350,
+      "old": "- **FORMAL RE-GRADE = A- RATIFIED (2026-07-09, 32-agent judge-panel workflow, now that ES was validated).** Panel: psychometrician B+, ML-eval/field-norms/fit-for-purpose A-; skeptics floored B- (C+ floor) but NON-FATAL. **Final: A-, held and ratified (not raised).** Held below A by three real ceilings: (1) convergence with RKH is METHOD-SHARED (text-vs-text, sits AT the about .40-.43 elite ceiling); (2) pooled lexical FAILS cross-genre MTMM + 11 pre-registered design families all missed the discriminant bar (data-collection ceiling, not tuning); (3) ES cross-modal is voice<->text-MODEL, modest about 4% var. NOT lower than A- because the lexical/discriminant weakness is FIREWALLED - production targeting runs on behavioral dispositions (validated by construction); the lexical Big-5 is a display layer no engine reads - plus rare process discipline (pre-reg / one-look / de-id / self-correction of the mis-signed composite). ES converted a fragile/stale A- into a firmly-defensible one (retired the unanchored-ES gap) but did NOT lift to A. **Path A- -> A = an independent-TRAIT anchor (multi-rater expert panel / self-report) = DATA COLLECTION, not code.**",
+      "mark": "not positional",
+      "why": "\"Held below A\" is a grade threshold"
+    }
+  ]
+}

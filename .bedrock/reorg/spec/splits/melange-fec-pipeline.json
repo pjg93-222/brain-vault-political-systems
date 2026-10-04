@@ -1,0 +1,272 @@
+{
+  "id": "C7",
+  "what": "Batch 6 split of actors/melange-fec-pipeline (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C7); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/melange-fec-pipeline",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Related Actors",
+      "## Related Topics",
+      "## Related Projects",
+      "## Related Concepts"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "melange-fec-pipeline-architecture",
+      "title": "Architecture",
+      "summary": "Architecture of the Melange fec/ pipeline: paths and the shared kernel after the 2026-07-02 refactor, the audit guardrails, the inverted system of record, the staff directory and desk CRM, and the audit runbook with weekly automation",
+      "domain": "domain/backend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Architecture"
+      ],
+      "keep": [
+        "concepts/zero-rank-delta-verification",
+        "actors/moneyball-workbook"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "melange-fec-pipeline-reorganization",
+      "title": "Reorganization: REORG COMPLETE @a05a8e4 (2026-08-05)",
+      "summary": "The REORG of the Melange fec/ pipeline, completed at a05a8e4 on 2026-08-05: the phase-0 tripwires, the culling lane, the 20 resolved items, the execution and phase-3 states and the post-completion fixes",
+      "domain": "domain/backend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Reorganization (REORG COMPLETE @a05a8e4, 2026-08-05): 9 code domains / 9 data domains / 8 test domains"
+      ],
+      "keep": [
+        "concepts/zero-rank-delta-verification"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "melange-fec-pipeline-live-tree-drift-and-eol",
+      "title": "Live tree vs committed drift and the line-ending census (09-13 to 09-19)",
+      "summary": "Live tree versus committed tree drift of the fec/ pipeline: the 2026-09-13 census, the 09-19 reconcile, and the line-ending census with the shared line-wise patch cutter and its kernel results",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Live tree vs committed tree: drift (2026-09-13 census, reconciled 2026-09-19)",
+        "## Line-ending census and the shared line-wise patch cutter (2026-09-19, `live-tree-eol-census-2026-09-19`)"
+      ],
+      "keep": [
+        "actors/melange-repo-mirror"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K11",
+      "a": "actors/melange-fec-pipeline-live-tree-drift-and-eol",
+      "b": "topics/2026-07-troubleshooting-melange-live-tree-git-drift-drift-reconcile-eol"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "K23",
+      "a": "actors/melange-fec-pipeline-reorganization",
+      "b": "topics/2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest",
+      "event": "REORG"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 42,
+      "old": "> The live tree (`C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems`, a worktree on main) is what runs; main is a partial record of it (2026-09-19). The committed tree can drift from live; see \"Live tree vs committed tree\" below.",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: the tagline's second sentence \"see \"Live tree vs committed tree\" below\" names ## Live tree vs committed tree: drift, which moves to -live-tree-drift-and-eol (the first sentence, which index.md and recall read, is unchanged; the batch-4 A10 precedent and the owner's ruling on tagline later sentences)",
+      "new": "> The live tree (`C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems`, a worktree on main) is what runs; main is a partial record of it (2026-09-19). The committed tree can drift from live; see \"Live tree vs committed tree\" in [[melange-fec-pipeline-live-tree-drift-and-eol]].",
+      "referent": "melange-fec-pipeline-live-tree-drift-and-eol"
+    },
+    {
+      "line": 137,
+      "old": "- **Committed-vs-live drift** (2026-09-13 to 2026-09-19): main was NOT runnable alone (4 chain producers untracked; `run_pipeline.py:452-453` validates producers at import so a clean checkout died before step 1; 248 unresolvable references). Reconciled 2026-09-19 (35 whole-file commits `109249aaa`..`a19c796d2`); status 498 to 279, 28 unresolved references remain (all name the generated `cu-member-desk-profiles.js`). Detail below.",
+      "mark": "rewrite",
+      "why": "\"Detail below.\" for the committed-vs-live drift is ## Live tree vs committed tree: drift, which moves to -live-tree-drift-and-eol",
+      "new": "- **Committed-vs-live drift** (2026-09-13 to 2026-09-19): main was NOT runnable alone (4 chain producers untracked; `run_pipeline.py:452-453` validates producers at import so a clean checkout died before step 1; 248 unresolvable references). Reconciled 2026-09-19 (35 whole-file commits `109249aaa`..`a19c796d2`); status 498 to 279, 28 unresolved references remain (all name the generated `cu-member-desk-profiles.js`). Detail in [[melange-fec-pipeline-live-tree-drift-and-eol]].",
+      "referent": "melange-fec-pipeline-live-tree-drift-and-eol"
+    },
+    {
+      "line": 138,
+      "old": "- **Mixed line endings:** 312 of 2,892 tracked text files MIXED (working-tree-only). Detail below.",
+      "mark": "rewrite",
+      "why": "\"Detail below.\" for the mixed line endings is ## Line-ending census and the shared line-wise patch cutter, which moves to -live-tree-drift-and-eol",
+      "new": "- **Mixed line endings:** 312 of 2,892 tracked text files MIXED (working-tree-only). Detail in [[melange-fec-pipeline-live-tree-drift-and-eol]].",
+      "referent": "melange-fec-pipeline-live-tree-drift-and-eol"
+    },
+    {
+      "line": 140,
+      "old": "- **scipy-import freeze** on Windows (see hang diagnosis): `member_context.py` imports scipy at module scope; proposed (not applied): lazy import and `OPENBLAS_NUM_THREADS=1`.",
+      "mark": "rewrite",
+      "why": "\"(see hang diagnosis)\" is the bold-labelled **WHY THE PRODUCER HUNG** diagnosis (the scipy-import freeze) in ## Line-ending census and the shared line-wise patch cutter, which moves to -live-tree-drift-and-eol",
+      "new": "- **scipy-import freeze** on Windows (see hang diagnosis in [[melange-fec-pipeline-live-tree-drift-and-eol]]): `member_context.py` imports scipy at module scope; proposed (not applied): lazy import and `OPENBLAS_NUM_THREADS=1`.",
+      "referent": "melange-fec-pipeline-live-tree-drift-and-eol"
+    },
+    {
+      "line": 141,
+      "old": "- **`fec/weekly_refresh.py`** own launcher NOT bounded: `:279 communicate(timeout=)`, `:312` unbounded `proc.wait()` after kill; whole-chain bound 7200 s at `:464` is below the 261.6 min the chain once took; per-producer atomicity under a kill unaudited.",
+      "mark": "not positional",
+      "why": "\"7200 s ... is below the 261.6 min\" is a numeric comparison"
+    },
+    {
+      "line": 144,
+      "old": "- **Audit state:** `audit_full` standing reds: 199/1 (crown-law, 2026-08), later 559/9 (laundry-list 2026-09-19, step table + FAILURES list vs previous run); with standing reds exit 0 is unattainable and PIPELINE COMPLETE never prints (DE-044).",
+      "mark": "not positional",
+      "why": "\"later 559/9\" and \"vs previous run\" are time"
+    },
+    {
+      "line": 146,
+      "old": "- **WEEKLY REFRESH:** 2026-08-05 note: next run ends Last Result 1 while the pre-existing crown-law audit failure stands (the refresh treats any `audit_full` failure as HARD FAILURE at its last step; everything real completes, only the final gate reports red; fix = resolve the crown-law workbook stance column mismatch, Paul's domain).",
+      "mark": "not positional",
+      "why": "\"next run\" is time"
+    },
+    {
+      "line": 157,
+      "old": "- **Layout (2026-07-02):** `fec/attic/` = 36 dead one-shots (git mv, history preserved). `audit.py` is LIVE (an `audit_full` subprocess dependency - restored after mis-attic; later renamed `fec/audit/legacy_workbook_audit.py`). `sync_stance_clean.py` + `apply_stance_guard.py` hard-guarded (sys.exit at top). Workbook backups go to `backups/` (blend + future writers point there). `fec/tests/run_tests.py` = 28 kernel checks (then 30), zero deps, run before any pipeline after code changes.",
+      "mark": "not positional",
+      "why": "\"later renamed\" is time"
+    },
+    {
+      "line": 159,
+      "old": "- **Verification protocol (canonical):** code change, then `python fec/tests/run_tests.py`, then `python fec/run_pipeline.py`, then rank delta vs the last `ranks_*.json` = ZERO (unless the change is SUPPOSED to move ranks), then audit clean (50/50 at that date). See [[zero-rank-delta-verification]].",
+      "mark": "external",
+      "why": "\"See [[zero-rank-delta-verification]]\" names another note"
+    },
+    {
+      "line": 177,
+      "old": "- **`ranks_python.json` = THE rank authority** (`compute_pillars --write`; engines read `MC.scores()` / `ranks()`); the workbook = self-refreshing VIEW (all writers set `fullCalcOnLoad`); **NO COM anywhere** (`sync_stance_g` rewritten with openpyxl; RECALC step deleted; `--recalc` = retired no-op). See [[2026-07-rfc-melange-architecture-system-of-record]] and [[moneyball-workbook]].",
+      "mark": "external",
+      "why": "\"See [[2026-07-rfc-melange-architecture-system-of-record]] and [[moneyball-workbook]]\" names other notes"
+    },
+    {
+      "line": 182,
+      "old": "- **ROADMAP No. 9 PHASE 1 DONE (commit 279f5e5):** `fec/compute_pillars.py` reproduces the ENTIRE workbook rank chain (raw, pos/neg-max normalization, SUMPRODUCT pillar, Press% / Leg% / Infl% / Demo%, score, rank) in Python - **parity EXACT 533/533 ranks, scores <1e-7**, wired into `audit_full` as a formula-drift tripwire (**audit = 52 checks**, kernel tests = 30). KEY EMPIRICAL PIN: Excel `PERCENTRANK(...,5)` truncates to 5 **DECIMAL** digits, NOT significant digits (94 sub-0.1 members exposed this). The write path (Python computes, workbook becomes rendered view; retires the COM-recalc/OneDrive failure class) needed Paul's sign-off since it inverts the system of record (granted: see Phase 2 above). Also this pass: README rewritten to post-refactor reality (S3-07), gold queue party from roster not stale bundle (S3-04), bare except narrowed (S3-02 - bf4a703's message had over-claimed this), receptivity docstring now matches the graded-shrinkage code, spec dials +`SOC_VOLFLOOR` / `SOC_MEN_W` / `BP_SRC`.",
+      "mark": "same note",
+      "why": "\"(granted: see Phase 2 above)\" is the opening of ### Phase 2 complete: system of record inverted, the ### this bullet belongs to, which moves whole to -architecture"
+    },
+    {
+      "line": 183,
+      "old": "- **Pillar weights (resolution 3):** the pillar-weight configuration `compute_pillars.py` / `ranks_python.json` uses has three recorded sets: `.40/.30/.20/.10` (2026-06-29, historical), `30/25/40/5` (ratified 2026-07-07: LAST RATIFIED), `45/10/40/5` (live in `ranks_python.json` since 2026-09-03: LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling; live-only `fec/engine/pillar_policy.py` is a fail-closed desk gate encoding it). See [[2026-07-troubleshooting-melange-audits-and-reviews]].",
+      "mark": "external",
+      "why": "\"See [[2026-07-troubleshooting-melange-audits-and-reviews]]\" names another note"
+    },
+    {
+      "line": 194,
+      "old": "- Last run 08-02: all collectors + layers OK (tweets collected, `social_media.db` updated), ABORTED at the final FULL PIPELINE step on the culling-surface audit check - since resolved by the promotion-era regens. The NEXT run (08-09) was expected to still end Last Result 1 while the crown-law audit failure stands. Tweet collection healthy: `social_media.db` 08-02 06:17 (refresh-driven), `x_catalog.jsonl` 08-02 12:49 (Grok lane).",
+      "mark": "not positional",
+      "why": "\"The NEXT run (08-09)\" is time"
+    },
+    {
+      "line": 224,
+      "old": "39 of 59 registered. **CORRECTION to an earlier claim:** the orphans are NOT uniformly non-pytest - that was generalised from a 4-file sample. Of 118 suites: 75 unittest, 25 self-running, **11 pytest**, 5 bare-tests-no-runner. Key facts for the remaining ~63 orphans:",
+      "mark": "not positional",
+      "why": "\"CORRECTION to an earlier claim\" is time"
+    },
+    {
+      "line": 229,
+      "old": "- **Snapshot method that worked** (reuse it): a git tag is NOT sufficient - `*.json` / `*.csv` are gitignored, so code-only. Add a manifest (sha256 <8 MB, size+mtime above) over repo root + fec + tests + BOTH `%LOCALAPPDATA%\\Melange\\*\\derived` roots, plus a physical copy of repo-root files <2 MB (~48 MB). All 59 ran with **0 mutations**, re-verified byte-identical twice.",
+      "mark": "not positional",
+      "why": "\"sha256 <8 MB, size+mtime above\" is a size threshold"
+    },
+    {
+      "line": 246,
+      "old": "See `lobbyview-integration-2026-07-31` for the lane this sits in, and `verify-dont-infer-completion-2026-08-04` for the verification lessons that came out of it.",
+      "mark": "external",
+      "why": "\"See `lobbyview-integration-2026-07-31` ... and `verify-dont-infer-completion-2026-08-04`\" names memory files"
+    },
+    {
+      "line": 258,
+      "old": "- Batch E @40cb28c (misc, per-file routing; `.mcp.json` REVERSED to root - Claude Code config is root-discovered). Phase 2 close-out @021bb9f (full chain green: `audit_full` 199/1 after regenerating `behavioral_dispositions.json`, whose `inputs_sha256` KEYS are layout-bound). Phase 3 pilot @0e19f1e: 17 leaf collectors to `fec/collect/`; 8 excluded (7 static imports + `collect_govinfo_bill_xml_versions` via DYNAMIC `__import__` that static grep cannot see - the kernel gate caught it).",
+      "mark": "not positional",
+      "why": "\"static grep cannot see\" is a verb"
+    },
+    {
+      "line": 259,
+      "old": "- Phase 3 next sittings (as planned then), in order: audit, district, stance, members, legislation, lobbying (late - most active), surfaces, core (last). Pilot recipe: exclude anything imported by outsiders, bump bootstrap `__file__` depth by one, update invocation sites (ps1 launchers, `weekly_refresh`, acceptance service), gate with kernel + the UNREGISTERED suites of that domain run directly.",
+      "mark": "not positional",
+      "why": "\"Phase 3 next sittings (as planned then)\" is time"
+    },
+    {
+      "line": 269,
+      "old": "- **Codex escalation protocol (Paul, permanent, in the metaloop skill):** flaws / errors / obvious improvements go into an ESCALATIONS section to Fable; POTENTIAL improvements: Fable consults Paul FIRST. Two pending Paul decisions then: (1) a static gate rejecting stale moved-basename imports repo-wide; (2) a `main()` guard on `legacy_workbook_audit` so import cannot execute its 22 checks (both subsequently done: see below).",
+      "mark": "same note",
+      "why": "\"(both subsequently done: see below)\" is ### PHASE 3 COMPLETE (`audit_stale_imports.py` kernel check No. 150; `legacy_workbook_audit` import-inert with a `main()` guard), which follows in ## Reorganization and moves with it to -reorganization"
+    },
+    {
+      "line": 285,
+      "old": "- WEEKLY REFRESH facts: see the Architecture section (task is Sat 6:00 AM; last run 08-02; crown-law failure keeps Last Result 1).",
+      "mark": "rewrite",
+      "why": "\"see the Architecture section\" names ## Architecture, which moves to -architecture while this line moves to -reorganization",
+      "new": "- WEEKLY REFRESH facts: see the Architecture section in [[melange-fec-pipeline-architecture]] (task is Sat 6:00 AM; last run 08-02; crown-law failure keeps Last Result 1).",
+      "referent": "melange-fec-pipeline-architecture"
+    },
+    {
+      "line": 298,
+      "old": "- **Why:** the repo's operating convention is \"work in the live tree, commit later\"; the commit gap grew until main was not a working system and worktree reviews saw stale code.",
+      "mark": "not positional",
+      "why": "\"commit later\" is time"
+    },
+    {
+      "line": 299,
+      "old": "- **How to apply:** (1) A HEAD-only finding is provisional until the live file is read; run the batched drift census first (three git calls: `ls-tree -r HEAD`, `ls-files`, `hash-object --stdin-paths`; never per-file git on the OneDrive tree). (2) HEAD-based patches must be `git apply --check`ed against a scratch copy of the live file; expect failures in `run_tests.py`, `verify_collector_roster_updates.py`, the staffer surfaces. (3) The highest-value action Paul can take is a reviewed commit pass of the live tree (weights ruling first, see S-5 on [[2026-07-troubleshooting-melange-audits-and-reviews]]). Related: `live-tree-branch-state-2026-07-14`, `scout-census-traps-2026-09-13`.",
+      "mark": "external",
+      "why": "\"see S-5 on [[2026-07-troubleshooting-melange-audits-and-reviews]]\" names another note"
+    },
+    {
+      "line": 306,
+      "old": "- **STILL PAUL'S:** R1 class-B/E code-review content, R2 the 2026-09-08 engine imputation rule, R3 the 644-acts re-pin - each commit message says \"records the live state, does not ratify\"; R6 untracking the runtime/generated tracked files; R7 the regenerated manifest JSON (not committed: generated); R10 the 10 MB congress-legislators YAML (data-plane input, not committed); R11 ignore rules for outputs/ tmp/ evidence stores (not done); R12 `api_stance_layer.py`. Mirror PUSHED 2026-09-19 on Paul's \"push the mirror\": main `a19c796d2` plus all 292 branches and 3 tags, 0 rejected (see `repo-mirror-2026-08-11`, [[melange-repo-mirror]]).",
+      "mark": "external",
+      "why": "\"(see `repo-mirror-2026-08-11`, [[melange-repo-mirror]])\" names a memory file and another note"
+    },
+    {
+      "line": 322,
+      "old": "  - Opus architect agents with a full up-front brief, explicit forbidden-verb lists and mandatory positive/negative controls returned censuses that survived spot checks; the one weak signal (mtime vs commit date on `audit_full.py`) was caught by the next agent's content test.",
+      "mark": "not positional",
+      "why": "\"the next agent's content test\" is time"
+    },
+    {
+      "line": 358,
+      "old": "**KERNEL in LIVE at `423820d76`: 243 passed / 4 FAILED, 31.9 min; `test_live_patch` green in the runner.** Reds: the two baseline reds the laundry-list landing already carried (`test_bill_collision_guards` - missing `backups\\bill_directions.PRE-LEGFIX3.csv`; `test_make_staffer_network_html` - unrecognised verdict); `test_staffer_network_section`, red ONLY because its producer child (`build_staffer_network_section.py --root %TEMP%\\...\\v6-groups-real-role`) sat 14 min with no CPU and no I/O - the test's `subprocess.run` has NO timeout, so one hung child stalls the whole kernel silently (its log is block-buffered and shows nothing) - that one child was killed; and `test_press_baseline_fold` (errors=1 in-kernel, 21/21 OK alone minutes later = flake under load). Lesson: when the kernel log stops growing, list the python process tree with CPU + Win32_Process I/O counters; a leaf with frozen counters is hung, not slow. A token-free local watchdog (kill idle LEAF descendants of the kernel pid after 240 s, log every kill) kept the run bounded; it made 0 kills.",
+      "mark": "not positional",
+      "why": "\"minutes later\" is time"
+    },
+    {
+      "line": 364,
+      "old": "**LAUNCHERS FIXED** on Paul's \"add the timeouts to run_pipeline and run_tests too\" + \"land it when the architect is done\": `624e593eb` LANDED in LIVE main (mirror current) - `fec/bounded_subprocess.py` = THE shared bounded launcher (`run_bounded(argv, timeout, env, cwd)`: Popen + real temp files + `wait(timeout)` + process-TREE kill via bounded `taskkill /F /T`; any other exception during the wait also kills the tree before propagating, because unwinding releases `.pipeline_run.lock`); constants, NO env dial: chain step 10800 s (2.6x the slowest step on record, 4,148.7 s over 677 step-runs), kernel suite 1800 s; a timeout returns 124 + a note (pid, args) in stderr / step line / Glass Box summary; 124 != tolerated 2, so a timed-out step HALTS the chain even in `TOLERANT_STEPS`. `test_bounded_subprocess` 19/19. KERNEL in LIVE through it: 246 passed / 2 FAILED in 7.6 min = exactly the two baseline reds. NOT run: the real chain. NOT changed (flagged to Paul): `fec/weekly_refresh.py` own launcher (`:279 communicate(timeout=)`, `:312` unbounded `proc.wait()` after kill; whole-chain bound 7200 s at `:464` is below the 261.6 min the chain once took); per-producer atomicity under a kill unaudited. Review lesson: when replacing `subprocess.run`, keep its `except: kill(); raise` - an architect dropped it and only the inline read caught it. Size a timeout from the Glass Box `pipeline.step` history (`staffer_hang\\chain_step_durations.py`), not taste. `Popen.wait(timeout)` on Win 8+ does not count sleep time.",
+      "mark": "not positional",
+      "why": "\"is below the 261.6 min\" is a numeric comparison"
+    },
+    {
+      "line": 375,
+      "old": "| 2026-07-03 | Architecture note written; `fec/` hardening via audit runs (see audit topic). |",
+      "mark": "external",
+      "why": "\"(see audit topic)\" names another note (the audits topic)"
+    },
+    {
+      "line": 392,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 416,
+      "old": "- [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] — Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19.",
+      "mark": "not positional",
+      "why": "\"later\" is part of the linked slug `...-later-reviews` in a Related Topics line"
+    }
+  ]
+}

@@ -159,6 +159,9 @@ The sector-growth study links LobbyView as lobbying data (see the sector growth 
 
 - [[2026-06-feature-cosponsor-and-sector-networks]] - Moneyball network layer: co-sponsor plan (Jun), toggles + signed layers (Jul), five NET_CONFIG networks (Aug), relationships model (Sep).
 - [[2026-07-feature-data-collection-lanes]] - Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills
+- [[2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge]] — The LobbyView lane of 2026-07-31 to 08-01: the positions dataset and network table acquired, the LDA rebuild, the FEC-bridge design, and the three FEC by LDA bridge rounds with their consumed looks.
+- [[2026-07-feature-data-collection-lanes-contact-inference]] — The contact-inference extraction lane of 2026-08-28/29: the bullseye ruling and gold-set examination, blind dev-gold rounds, the look ledger, the constituency campaign, the G3 adjudication with the committee-proxy clarification, and the overnight autonomy run.
+- [[2026-06-feature-cosponsor-and-sector-networks-sector-networks]] — The bank_reg and crypto sector networks of 2026-08-18/19, promoted to full networks the same day, and the finding that the lobbied-member link is circular.
 
 ## Related Projects
 
