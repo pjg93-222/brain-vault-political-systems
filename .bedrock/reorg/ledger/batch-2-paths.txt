@@ -1,0 +1,7 @@
+projects/mentat.md
+actors/brain-graph.md
+actors/brain-vault-political-systems.md
+topics/2026-10-feature-brain-vault-setup.md
+people/paul-goff.md
+.bedrock/reorg/ledger/batch-2-paths.txt
+.bedrock/reorg/ledger/batch-2-allow.txt

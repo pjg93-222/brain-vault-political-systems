@@ -1,7 +1,7 @@
 ---
 type: project
 name: "Mentat (FEC contributions intelligence)"
-aliases: ["Mentat FEC pipeline", "Mentat console"]
+aliases: ["Mentat project", "FEC contributions intelligence"]
 description: "Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks, plus a local Python console (Chart Studio, Graph, Insights, PAC evidence panes and district map). Pushed to GitHub branch claude/mentat-migration-onto-main (PR unopened). Money/receipt-counting code is frozen by Paul's ruling."
 status: "active"
 deadline: ""
@@ -55,8 +55,8 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "6f79da7a4bd449fca5c98a6db61acb2bf2750b62c21c903f17cd8ae2d2d12774"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 

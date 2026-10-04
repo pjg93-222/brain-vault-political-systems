@@ -18,9 +18,9 @@ known_issues:
 sources: []
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "capture-recall@agent"
-tags: ["type/actor", "status/active", "domain/agent-ops", "domain/platform"]
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
 # brain-vault-political-systems

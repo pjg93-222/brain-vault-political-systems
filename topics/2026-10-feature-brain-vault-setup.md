@@ -13,9 +13,9 @@ actors:
 objective: "Consolidate all Claude Code memory files into a private, linked Obsidian brain vault with Bedrock conventions, a GitHub backup and a watcher-driven graph page"
 created_at: 2026-10-03
 sources: []
-updated_at: 2026-10-03
-updated_by: "capture-recall@agent"
-tags: ["type/topic", "status/completed", "domain/agent-ops", "category/feature"]
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/topic", "status/completed", "domain/platform", "category/feature"]
 ---
 
 # Brain vault setup and Claude memory import
