@@ -131,6 +131,7 @@ Decision rule: 40 KB unless more than 24 notes exceed 40 KB. 33 exceed it, so **
      - B6 (owner ruling): History's `### Decisions and superseded rules` governs lines 209, 222, 224 and 232 of
        `-lineage-and-june-audit` (four-bucket min-max weights, the 1/rank weighting with its $10k cap, the June COM recalc,
        the 0.35/0.65 influence blend, Electoral Integrity 0.05).
+       Authority (batch 7b): the pointer line committed in `-lineage-and-june-audit`, widened in batch 7 to the pillar weight sets before 2026-07-07 (S2-13; see `.bedrock/reorg/ledger/batch-7-fixes.md`), is authoritative over this narrower list.
      - B10 (owner ruling): the newest-wins note in the hub's own text of `## July 2026 audit-run history` governs both run
        parts.
      A4's and C2's hub correction lists are self-contained and their claims are corrected where they stand (rule 1 holds,
@@ -372,6 +373,8 @@ Hub keeps the summary layer. Hub links: `exclude-on-contradiction-not-ambiguity`
 | `-scenario-tools-and-calibration` | Scenario-tool pre-flight, engine build and empirical calibration (06-26/27) | `## Scenario-tool pre-flight and engine build`, `## Empirical calibration` | 33.5 |
 
 **B6 `actors/moneyball-workbook`** (56.7 KB -> hub ~26 KB + 2). Home `melange-systems`. Hub keeps the summary layer plus `## Pillar weights and score formula` (pin 12 answer stays in the hub), `## History` and `## Source memory descriptions` (as B5 and B8 keep their source sections). Owner ruling (decision 11): History, with its `### Decisions and superseded rules`, stays in the hub. It governs the hub's pillar table and Dev Commands (same note) and the lineage part's four-bucket min-max weights, "1/rank inverse weighting, $10k cap", June COM recalc, 0.35/0.65 influence blend and Electoral Integrity 0.05 (file lines 209, 222, 224, 232), so `-lineage-and-june-audit` carries the S1 rule-2 pointer line (S5); the "(table above)" line no longer crosses notes, and History's "(below)" pointer to the Sub Layer surgery becomes an S10 rewrite.
+
+Authority (batch 7b): the pointer line committed in `-lineage-and-june-audit`, widened in batch 7 to the pillar weight sets before 2026-07-07 (S2-13; see `.bedrock/reorg/ledger/batch-7-fixes.md`), is authoritative over the narrower item list above.
 
 | Suffix | Title | Headings moved | KB |
 |---|---|---|---|
@@ -735,6 +738,8 @@ agreement, workstation-disk hub, actors), `paul-goff` (all projects). No new pro
 ---------------------------------------------------------------------------------------------------------------------
 
 ## 6. Concept promotions (8)
+
+Authority (batch 7b): the committed concept notes, corrected in batch 7 (see `.bedrock/reorg/ledger/batch-7-fixes.md`), are authoritative over the definitions planned in this section.
 
 Criteria: durable method, principle or pattern; genuine use in at least 3 notes across at least 2 folders (matches on
 link-description echo lines such as `- [[x]] - summary` and in Related sections were excluded); not an existing concept;

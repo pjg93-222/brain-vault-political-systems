@@ -109,7 +109,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 - [ ] Paul's decision on S-5 (live weights 45/10/40/5 vs last ratified 30/25/40/5).
 - [ ] Provide the dashboard password-file path so `publish_dashboard.py` can run (back up `deploy/index.html` first; no chain running); set `DASHBOARD_PASSWORD_FILE` before the Sunday 06:00 `MoneyballWeeklyRefresh`.
-- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see in [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]]), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).
+- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]]), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).
 - [ ] Adjudicate kernel `test_primacy_tier` 2 failures (Cortez Masto, Huizenga, Young Kim tier pins) - tier membership is Paul's domain.
 - [ ] Merge the plain-language branch `claude/moneyball-dashboard-simplify-2efa95` (4 commits, UNMERGED) and track the four untracked chain-critical modules into git.
 - [ ] Fix `audit_collection.py:868` so 61,772 stranded fulltext receipts become usable.
