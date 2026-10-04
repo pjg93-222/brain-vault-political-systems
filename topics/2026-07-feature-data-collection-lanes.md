@@ -22,7 +22,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-demographic-expansion-2026-07-24.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-demographic-expansion-2026-07-24.md", sha256: "177cf10bd81067cdd5824ed52fd390ac361ce636aabaaa424b00c3834c0b15d1"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/corpus-coverage-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\corpus-coverage-2026-07-10.md", sha256: "3e7274e4a21a03ce436192bb23f99426b96abbec928d9f44b4a4ccf12e753c60"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -38,6 +38,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - [[2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade]] — The LobbyView lane of 2026-08-05/06: the five-lane pass, the Wintermute convergence and repository fixes, the contest by shared-bills and territorial looks, and the shipped C4+A1+B1+C1 scale upgrade.
 - [[2026-07-feature-data-collection-lanes-contact-inference]] — The contact-inference extraction lane of 2026-08-28/29: the bullseye ruling and gold-set examination, blind dev-gold rounds, the look ledger, the constituency campaign, the G3 adjudication with the committee-proxy clarification, and the overnight autonomy run.
 - [[2026-07-feature-data-collection-lanes-sentinel-lanes]] — The September 2026 sentinel lanes: the press and hearing collector repair of 09-01/02, the workbook bill ingestion of 09-04/05 and the system manifest sentinel of 09-06.
+- [[2026-07-feature-data-collection-lanes-contact-inference-design-and-evaluation]] — The design and the evaluation plan for a contact-plausibility layer that annotates, without replacing, the structural lobbying-organization-to-member join: six evidence channels, a hard budget of ten fused features, abstention as a first-class output, and one pre-registered look against disclosed lobbying targets.
 
 ## Context
 

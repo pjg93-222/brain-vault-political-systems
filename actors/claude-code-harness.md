@@ -27,10 +27,14 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/poppler-pdf-rendering-2026-08-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\poppler-pdf-rendering-2026-08-14.md", sha256: "923256f4944de593fb9cddb76f585f1194e0d4bbcd2ba561d09c14bf461cf3b4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/memory-index-restore-incident-2026-07-26.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\memory-index-restore-incident-2026-07-26.md", sha256: "b5dec0466c8f3694a00d8775d611e6278aada3d5d7d0ac88fa2a005717ad1c18"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e/memory/windows-hook-shell-git-bash.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e\\memory\\windows-hook-shell-git-bash.md", sha256: "a239f75054598a3e26fa33f532b3a325b6501c3277add53d25908a2055522138"}
+doc_sources:
+  - path: "C:\\Users\\pgoff\\.claude\\CLAUDE.md"
+    sha256: "42ec50d0c27c3bba57add1e282a044a708469cff681581e20660c47abf6ff594"
+    as_of: "2026-10-03"
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -82,6 +86,17 @@ $_ -like '- [Codex executor lane 2026-07-18]*'     # use -match (escape \[) or .
 
 # byte-level verification of escape-sensitive edits (Python): build backslash as chr(92); assert chr(8) is absent
 ```
+
+## Global CLAUDE.md: tool preferences (user level, file of 2026-10-03)
+
+The user-level instruction file for all projects, `C:\Users\pgoff\.claude\CLAUDE.md`, sets these standing preferences (it is ignored by the `~/.claude` git repository, so it has no history):
+- **bun** is installed: prefer it over `node`/`npm` for running scripts, installing packages and executing JS/TS.
+- **ripgrep** (`rg`) over `grep` for shell searches.
+- **fd** over `find` for finding files by name or pattern.
+- **sd** over `sed` for find-and-replace in files.
+- **jq** for JSON processing in shell pipelines.
+- **GNU parallel** for concurrent shell tasks when beneficial.
+- **graphify:** the installed skill `~/.claude/skills/graphify/SKILL.md` turns any input into a knowledge graph; when the user types `/graphify`, use that skill or its instructions before doing anything else.
 
 ## Known Issues
 

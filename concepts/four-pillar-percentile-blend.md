@@ -6,7 +6,7 @@ description: "The Moneyball rank is a weighted blend of four pillar scores (comm
 related_to: []
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/concept", "domain/data"]
 ---
 
@@ -40,6 +40,7 @@ This is a pointer concept: it states the method and the rules, not the weights. 
 ## Related Concepts
 
 - [[influence-vs-alignment-axes]] — the blend is the influence axis; per-category stance is the separate alignment axis
+- [[demographic-potential-method]] — the member desk's Demographic Potential market score; the `DEMO_POTENTIAL` dial alone does not move this blend's hand-edited `Demo%` input (brain D-035)
 
 ## Evidence
 

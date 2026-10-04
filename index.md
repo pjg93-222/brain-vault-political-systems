@@ -2,9 +2,9 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-204 notes.
+221 notes.
 
-## Actors (47)
+## Actors (49)
 
 - [[brain-graph]] — Interactive D3 graph page of the brain vault, rebuilt by a background watcher whenever notes change (the watcher is started by hand and does not survive a reboot)
 - [[brain-vault-political-systems]] — Private Obsidian + Bedrock knowledge vault that consolidates Paul's Claude Code memories into linked entities, backed up to a private GitHub repo
@@ -16,6 +16,7 @@
 - [[draft-systems-r-pipeline-code-catalogue]] — Code-level catalogue of the Draft Systems R pipeline: congress.gov markup and parser facts, press-scraper regex and scoring traps, the collector and coverage incident catalogue, and Ballotpedia and Census code facts.
 - [[draft-systems-r-pipeline-layout-and-knobs]] — Where the Draft Systems R pipeline lives on disk, its script inventory, and its environment variables and knobs.
 - [[draft-systems-r-pipeline]] — Local R (and Python sidecar) code and data root at C:\Users\pgoff\OneDrive\Desktop\Draft Systems that produces the Moneyball CU-influence model's legislative, press-sentiment, Census and Ballotpedia inputs for the 119th Congress.
+- [[giving-forecast-pipeline]] — The Giving Forecast's R refit pipeline and its two JSON contracts (model bundle v2, anchor snapshot v1): rebuilds models from 121 pinned inputs, gates G0-G9, publishes immutable versions behind a pointer.
 - [[glass-box]] — GLASS BOX: the shared observability event stream (C:\Users\pgoff\.claude\glassbox\events) and lane-aware viewer/console rig for the claude/codex/grok/gemini lanes; Paul's standing rule (2026-07-27) is that every process emits to it.
 - [[higgsfield-connector]] — Higgsfield MCP connector (connector name 'Higgsfield', 89 tools) used to generate Melange and Mentat redesign boards (gpt_image_2_5, nano_banana_pro); it is bound to whichever account authorized it in the desktop app (Settings >...
 - [[lg-gram-workstation]] — Paul's single Windows 11 workstation (LG Gram 17Z90UB, C: only, no external drive) that hosts the Melange live tree, worktrees, Codex and Claude Code; records its stability incidents, disk census and backup coverage.
@@ -42,6 +43,7 @@
 - [[mentat-fec-pipeline-history-hardening]] — History of the Mentat FEC pipeline hardening on 2026-07-22/23: corruption defects re-tested, acronym-variant collisions, the override matcher fix, version control and lineages, the Fintech ordeal and perf round 2.
 - [[mentat-fec-pipeline-history-september-lanes]] — History of the Mentat FEC pipeline lanes of September 2026, from worker scaling and the tidy workbook to the collector slowdown, the truncated-key outage and the uncommitted reconcile.
 - [[mentat-fec-pipeline-key-stores]] — Where the Mentat FEC API keys are stored (the encrypted DPAPI store Mentat collects from and the shared key repository), recorded as locations, counts and fingerprints only, never key material.
+- [[mentat-fec-pipeline-runbook]] — How the Mentat R pipeline is run and kept correct (README of 2026-09-26): resilient industry runner, mentat.R flags, adding an industry, API collection rules, cross-reference before export, source and dollar reconciliation.
 - [[mentat-fec-pipeline]] — Mentat's R+API pipeline for FEC individual contributions by employer: shared API-request pool over an encrypted DPAPI key store (22 keys), per-(company,cycle) fanout lanes, workbook builder; roster = only companies Paul lists, raw...
 - [[metaloop]] — Meta LOOP orchestration command: one agent, four lanes (Fable, Codex, Gemini, Grok) with role monopolies, escalate-don't-reason, receipts and a ledger; canonical text in commands/metaloop.md.
 - [[moneyball-skill-library]] — The Moneyball/Melange project skill library: 16 skills built 2026-07-09/10 for cheaper sessions to maintain the project, grown to 20 by 2026-09-30; locations, build provenance, gitignore/merge-debt history and the 2026-09-30 stale-fact...
@@ -54,30 +56,40 @@
 - [[sentinel-collectors]] — Melange press/hearing collection and sentinel-to-workbook bill ingestion layer (Codex-built, Claude-finished) with system-manifest regeneration and self-falsifying audit sentinels; merged to main 313eaaad1 for the ingestion part, press...
 - [[staffer-live-sidecar]] — The live staffer-network graph surface: fec/surfaces/staffer_live (UI) plus staffer_live_server.py and sibling modules, a people-only staffer graph with automatic duplicate-person consolidation, current-coworker cost-1 routing and a...
 
-## Concepts (14)
+## Concepts (21)
 
+- [[behavior-qualified-recognition]] — Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
+- [[boot-protocol-evaluation-framework]] — The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
 - [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
 - [[concurrent-service-overlap-edge-rule]] — OVERLAP is the only person-to-person edge rule of the staffer social network: no edge without actual temporal overlap in the same container; career sequence is trajectory; payroll-container co-tenure is a clique degree, not co-work.
+- [[contract-fixture-discipline]] — A shape crossing a lane or process boundary is fixed by one JSON example file every suite imports, asserted against every producer, with a negative control that must fail; prose is never a contract (brain DE-021).
+- [[demographic-potential-method]] — The district and state market score behind the desk's Demographic Potential label: v2.1 growth room (2026-07-25 doc, eight judgmental weights), replaced as default on 2026-09-16 by v3.0 credit-union footprint.
 - [[exclude-on-contradiction-not-ambiguity]] — Paul's rule for Mentat cross-verification: a row is excluded or zeroed only on CONTRADICTION (its own text names another organisation); missing or ambiguous information keeps the row counted with an unverified flag.
 - [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
 - [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press...
 - [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
 - [[influence-vs-alignment-axes]] — Moneyball modeling principle (2026-06-29, cost many rounds): rank measures INFLUENCE while per-category stance measures ALIGNMENT; keep them as separate axes so active opponents can rank on influence while the stance layer and optimizer...
 - [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
-- [[say-do-gate]] — A member is shown as Champion or Defender in a category only if the stated stance is backed by a costly signal there: an authored or original-cosponsored bill (Path A, the 2026-07-07 Rule A) or, since 2026-07-08, a recorded CU-aligned...
+- [[mentat-fec-accounting-methodology]] — Mentat's accounting standard (version 5, 2026-09-12): six steps from Define to Verify and report; original employee and corporate giving counted once, PAC outgoing separate; four accuracy measures, never one percentage.
+- [[pac-cash-proportional-attribution]] — Mentat's rule for modeling company-funded PAC spending (2026-09-08): each payment takes the company's share of labeled cash just before it, transfers move balances instead of creating gifts, unverifiable inputs withhold it.
+- [[say-do-gate]] — A Champion or Defender cell in the category-stance matrix stands only if the stated stance is backed by a recorded action there: an authored or original-cosponsored bill (Path A) or a CU-aligned final-passage vote (Path V); otherwise Ally.
 - [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with...
 - [[single-look-holdout-discipline]] — Working discipline across the Moneyball/Melange lanes: every confirmatory look (holdout score, pre-registered test, one-shot validator) is spent exactly once against criteria locked before the run, a consumed look is never re-run, and a...
+- [[stance-pipeline-integrity-contract]] — The 2026-07-15 production contract for Melange stance labels: one fixed ten-band scale for every domain, bounded exceptional rounding, General CU allocation, the A/V say-do rule, fail-closed identity joins and regeneration checks.
 - [[trend-over-significance]] — Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar.
 - [[two-hop-stance-decomposition]] — Decomposition of CU-alignment scoring into a stance hop (member toward a target) and a valence hop (target good/bad for credit unions); the valence hop (0.689 vs stance 0.915) is the accuracy bottleneck and is fixed with a curated...
 - [[zero-rank-delta-verification]] — Verification protocol for Melange refactors and reorgs: kernel tests -> full pipeline -> rank delta vs the last ranks file must be ZERO (unless the change is meant to move ranks) -> audit clean; proven by ranks staying byte-identical...
 
-## Discussions (6)
+## Discussions (9)
 
 - [[2026-07-27-acu-outline-north-star-rulings]] — On 2026-07-27 (evening) Paul ruled that the Moneyball ACU Search Outline docx is the north star and adjudication contract for the legfix5 19-category review (TITLE, then SUMMARY, then BILL TEXT precedence), that the Quorum 44-row xlsx...
 - [[2026-07-30-coalition-builder-redesign-session]] — Design session (worktree melange-coalition-builder-design-7babbe, 9-agent ultracode research + 2 critics) on the dashboard coalition builder: static weekly-baked substrate plus client-side set-aware evaluation, eight positions P1-P8...
+- [[2026-08-29-politico-pro-access-and-permission-rulings]] — Two 2026-08-29 records on the Politico Pro staff directory: a terms-based ruling prohibited automated extraction; a supplement on Paul's attested permission letter authorized a rate-limited, contact-free crawl, kept off for canonical use.
 - [[2026-09-03-staffer-network-architecture]] — Paul's ant-colony architecture: the staffer network is its own social network a layer beneath members (the cosponsorship/media member graph stays independent and is KEPT), no member-member edges here, no cosponsorship Â imported into...
 - [[2026-09-06-staffer-sorting-rulings]] — Paul's rulings Q1-Q9 after the compartmentalisation review: keep only ACTIVE generations, one name standard with normal nicknames, spine RE-KEYED as a new generation with an id map, organisations moved to a simplified Groups tab, LDA...
+- [[2026-09-08-staffer-spine-identity-adjudication]] — The 2026-09-08 adjudication, on Paul's instruction, of the staffer spine identity audit: bounded name repairs plus a fail-closed merge guard instead of automatic merging; title matches are review candidates only; v8 spine verified 50/50.
 - [[2026-09-17-mentat-xref-council-review]] — Council review of Mentat cross-reference and workbook generation (4/4 finding): the cross-reference does NOT minimise versus the workbook (Banking $72.1M vs $54.8M). Paul ruled the cross-reference redundant, kept as a dwarfed tab for...
+- [[2026-09-20-primacy-diagnostic-adoption]] — Paul ratified the primacy diagnostic CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating on 2026-09-20: a beneficiary-weighted legislative grade and CU-weighted press from a fixed 7,413-item ledger; PRIMACY_METHOD=legacy rolls it back.
 - [[2026-10-03-pac-accuracy-attempt2-rulings]] — Two ruling rounds on 2026-10-03 governing the PAC-to-candidate giving accuracy attempt 2 (HOLD, scratch only): B1 the 1% rule applies to cycles the cell reads, B2 strict own-PAC P&C identity, B3 FILED = as-of-issue vintage rebuild...
 
 ## People (1)
@@ -91,7 +103,7 @@
 - [[melange-systems]] — Moneyball / Melange: a credit-union legislative-influence model (Blended workbook -> Python engines -> single Moneyball.html deliverable). Began June 2026 in Draft Systems (alias 'Draft Systems'); canonical home moved 2026-06-26 to...
 - [[mentat]] — Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks...
 
-## Topics (132)
+## Topics (137)
 
 - [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] — The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18.
 - [[2026-06-feature-congress-r-scrapers-cu-press-scraper]] — The CU press-release scraper from its 2026-06-10 start through the June 12 audits, plus the five-step fallback chain, archive and third-party sources, bill-sponsorship coverage, the ACU harvest and the per-member web grind of 2026-06-18.
@@ -145,10 +157,12 @@
 - [[2026-07-feature-agent-tooling-stack-skill-library-lane]] — The Moneyball skill library: how the repo skills were built, merged into git and audited for stale facts.
 - [[2026-07-feature-agent-tooling-stack]] — The tooling around Claude Code for the Melange work: the Codex-as-MCP executor lane (Claude = mind, Codex = body), the Gemini and Grok lanes, /metaloop, the Moneyball skill library, the quant-model-evaluation skill, the Project Brain...
 - [[2026-07-feature-audio-and-speech-lane-complementary-layers-and-lessons]] — The complementary layers lane of 2026-09-07 and its verification lessons on four confident wrong agent claims.
+- [[2026-07-feature-audio-and-speech-lane-corpus-data-guide]] — How to read the Congress speech and audio corpus as of 2026-08-31: three separate products (coverage census, identity and provenance, descriptive measurement), what "verified" means, the one reportable accuracy number and its limits...
 - [[2026-07-feature-audio-and-speech-lane-july-foundations]] — The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09 (superseded the same day as gender-confounded), the audio-side facts of the suggested-approach narratives, and the Senate gold and audio...
 - [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]] — The N audio route of 2026-08-21 to 08-25 from the ES prereg lock to the spent and missed look, with its ledger and venue corrections, the venue, reliability and identity measurements, and the Whisper, C-SPAN and Gemini facts.
 - [[2026-07-feature-audio-and-speech-lane]] — The audio/speech work for melange-systems: no SHIPPED ASR (faster-whisper installed and pinned 2026-08-20 but consumed by nothing), audio lane off-chain and fail-closed at 0 accepted clips, chyron OCR leak, sex-confounded pitch...
 - [[2026-07-feature-data-collection-lanes-collection-scope]] — Melange data-collection scope: the corpus coverage census of 2026-07-10, the demographic expansion A to H of 2026-07-24/25 and the five-paper research-integration lane of 2026-08-14.
+- [[2026-07-feature-data-collection-lanes-contact-inference-design-and-evaluation]] — The design and the evaluation plan for a contact-plausibility layer that annotates, without replacing, the structural lobbying-organization-to-member join: six evidence channels, a hard budget of ten fused features, abstention as a...
 - [[2026-07-feature-data-collection-lanes-contact-inference]] — The contact-inference extraction lane of 2026-08-28/29: the bullseye ruling and gold-set examination, blind dev-gold rounds, the look ledger, the constituency campaign, the G3 adjudication with the committee-proxy clarification, and the...
 - [[2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge]] — The LobbyView lane of 2026-07-31 to 08-01: the positions dataset and network table acquired, the LDA rebuild, the FEC-bridge design, and the three FEC by LDA bridge rounds (round 1 void for coverage with its look not consumed, rounds 2...
 - [[2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade]] — The LobbyView lane of 2026-08-05/06: the five-lane pass, the Wintermute convergence and repository fixes, the contest by shared-bills and territorial looks, and the shipped C4+A1+B1+C1 scale upgrade.
@@ -201,6 +215,7 @@
 - [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] — The workstation backup coverage gap measured on 2026-09-07 and the point-in-time disk census of 2026-09-11.
 - [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]] — The disk clearances and worktree retirements of 2026-09-11 to 09-18, with the brain updates of the disk lane.
 - [[2026-08-incident-workstation-disk-and-backup]] — The LG Gram's one C: drive keeps hitting 0 GB free because every checkout of Melange Systems materialises 17.46 GB of tracked audits/legfix5; four clearances (2026-09-11, 09-13/15, 09-16, 09-18) freed hundreds of GB, and the backup...
+- [[2026-09-feature-cosponsor-first-signature-forecast-experiments]] — The 2026-09-05 research series that forecast which of 377 continuing members would make a first cosponsorship of a financial bill within 30 days: a tree model using all evidence won selection on 2023 and added 47 correct recommendations...
 - [[2026-09-feature-cu-geography-luna-and-row-framework]] — Two linked lanes in the Codex-run credit-union geography project: the Luna stratified RF/KNN data-completion model review (CLOSED 2026-09-30, current export = section 30 GPU model) and the CU row framework that assesses and ranks all...
 - [[2026-09-feature-forecast-giving-redesign]] — Three connected workstreams on the Mentat forecasting stack, 2026-09-27 to 2026-10-03: the 09-29 forecasting-model audit, the 09-30 overhaul of the giving view (board F2 'Giving by cycle') with an integrity reconciliation, and...
 - [[2026-09-feature-mentat-console-ui-chart-studio]] — Chart Studio v1 on the Mentat console (2026-09-11), its review and P1 fixes, and the Chart Studio fields lane of 2026-09-12.
@@ -213,9 +228,11 @@
 - [[2026-09-feature-mentat-failings-pac-evidence-street-columns-addressing-navigation]] — Mentat failings lanes S2, S4 and S5 of 2026-09-16/17: contributor street columns, cross-industry addressing, and console navigation and linking.
 - [[2026-09-feature-mentat-failings-pac-evidence]] — One topic for the whole Mentat failings lane S2-S8 (2026-09-16 to 2026-09-18) and its sequel, the PAC map downstream-viz audit (2026-09-25 to 2026-09-27).
 - [[2026-09-feature-sector-growth-study]] — Exploratory regression lane (worktree sector-growth-political-spending-9cc0c8) that upgrades the Mentat Insights forecast; Paul has final say and wants to be consulted at each step.
+- [[2026-09-feature-staffer-network-data-and-math-duration-ranking-and-v8-cutover]] — The staffer co-tenure ranking contract implemented and released on 2026-09-08: each overlap day counted once, edge mass split across workplaces by days supplied, shared-role cells damped rather than dropped, intern pools excluded, and...
 - [[2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane]] — The SNA math audit of 2026-09-05 and the co-tenure clique lane of 2026-09-07 with its shipping state, the groups-role defect, the open producer findings and the move tables.
 - [[2026-09-feature-staffer-network-data-and-math-sorting-lane]] — The staffer sorting lane of 2026-09-06 to 09-08: its rulings, the facts established, the stage plan and the dated state log through the shipped and committed lane.
 - [[2026-09-feature-staffer-network-data-and-math-stale-imports-and-v7-spine]] — The stale-imports lane of 2026-09-06 and the closeout of the v6-to-v7 spine repoint on 2026-09-07.
+- [[2026-09-feature-staffer-network-data-and-math-successor-design-and-release-gates]] — The 2026-09-08 successor design for the staffer network: Politico Pro and Quorum define the staffer population, LDA the lobbyist ecosystem, payroll is consulted only for a specific question, and release waits on frozen-holdout gates...
 - [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture]] — The employment-tenure data adjudication of 2026-09-01 to 09-03, from the verdict and Paul's rulings to the play queue and the authoritative coverage metric, with the architecture and overlap rulings carried into the lane.
 - [[2026-09-feature-staffer-network-data-and-math]] — Rolling record of the staffer-network lane of melange-systems from the 2026-09-01 employment-tenure adjudication to the 2026-09-08 ship of the v6 social network on the v7 re-keyed spine.
 - [[2026-09-feature-staffer-network-surfaces]] — Rolling record (2026-09-04 to 2026-10-03) of how the staffer network reached Paul's screen: the live sidecar (staffer-live-sidecar, 127.0.0.1:8841), the fourth surface of the melange-dashboard (#app-staffer in Moneyball.html), the...

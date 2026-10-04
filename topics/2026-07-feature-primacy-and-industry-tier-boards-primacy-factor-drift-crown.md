@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-07-16
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-primacy-and-industry-tier-boards]]"
 ---
@@ -121,7 +121,7 @@ Related memory notes: `ui-simplification-2026-08-11`, `industry-tier-recreation-
 
 ## Champion crown law (2026-08-09, `champion-crown-law-2026-08-09`)
 
-- **CHAMPION CROWN LAW (Paul, 2026-08-09): "a champion cannot be a threat."** Implemented as crown supremacy in `fec/lobbying/champions_v2.py`: a Tier-1 crown (overall display Champion, desk-bundle tier==1) never reaches any sector's THREATS board, uniformly across credit_union/bank/crypto/fintech. Crowned rows hit by veto/opposition-leadership routing demote to MIXED at `opposition_att >= 3`, else receipted omission (`crown_threat_exclusions` per sector). Enforced by an `_assert_boards` invariant + 2 `audit_full.py` checks (fail-clean on missing boards.json).
+- **CHAMPION CROWN LAW (Paul, 2026-08-09): "a champion cannot be a threat."** Implemented as crown supremacy in `fec/lobbying/champions_v2.py`: a Tier-1 crown (overall display Champion, desk-bundle tier==1) never reaches any sector's THREATS board, uniformly across credit_union/bank/crypto/fintech. Crowned rows hit by veto/opposition-leadership routing demote to MIXED at `opposition_att >= 3`, else receipted omission (`crown_threat_exclusions` per sector). Enforced by an `_assert_boards` invariant + 2 `audit_full.py` checks (fail-clean on missing boards.json). Later (dated, 2026-10-04 document import): since 2026-09-16 the crown is the active primacy board's top 13 with a qualifying action ([[behavior-qualified-recognition]]).
 - **Jurisprudence - the complete two-prong law:** (1) Crown supremacy: a Tier-1 crown never appears on any threat board (threat seat yields -> mixed at opp >= 3, else receipted omission). (2) CROSS-SECTOR EXCLUSIVITY (Paul ruled 2026-08-09: "champion seat yields"): a non-crowned member on any RETAINED threat board holds no champions seat in any sector - the threat seat stands (Durbin's ratified forced-threat routing), the champions seat yields, receipted per sector under `cross_sector_exclusions`. Result: nobody is champion-anywhere AND threat-anywhere.
 - **Prong 2 DEPLOYED** @6911b10 -> main 38b9769 -> live chain 2026-08-10: Barr + Sessions left CU champions (Finstad + Lucas backfill), Blumenthal + Durbin + Sanders + Warren left bank (Bennet + Ernst + Murray + Wyden), Booker left crypto (no pool, 26 -> 25); Scott crown-protected keeps CU + crypto seats; threats/mixed byte-identical; 16 below-cap class strips receipt-only; audit now 202 checks / culling-red-only, third check enforces prong 2. Two-pass `build_payload` (stage sectors -> global retained-threat set -> class strip before cap).
 - **Why Waters was listed:** opposition-leadership routing (opp_sponsored >= 1) fired on her 118:hr:9303 sponsorship (Payment Scams Act, 2 CU orgs oppose-signed, kim) and overrode her 20-vs-3 supportive CU profile while she wears the crown (rank 3/13). Post-law: Waters -> CU mixed, Tim Scott -> bank mixed, Boebert backfills the CU threat cap.

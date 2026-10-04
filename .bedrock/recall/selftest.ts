@@ -39,7 +39,7 @@ export const ON_TOPIC: [string, string][] = [
   ["What does the metaloop command do with its four lanes?", "actors/metaloop.md"],
   ["How does the LobbyView collector ingest the bulk exports?", "actors/lobbyview-collector.md"],
   ["What were the rulings in the staffer sorting discussion?", "discussions/2026-09-06-staffer-sorting-rulings.md"],
-  ["How did we build the cosponsor network and the sector network?", "topics/2026-06-feature-cosponsor-and-sector-networks.md"],
+  ["How did we build the cosponsor network and the sector network?", "topics/2026-06-feature-cosponsor-and-sector-networks-sector-networks.md"],
   ["What's the trap with which account the Higgsfield connector is bound to?", "actors/higgsfield-connector.md"],
   ["Explain the two-hop stance decomposition again", "concepts/two-hop-stance-decomposition.md"],
   ["How is the Luna row framework for CU geography structured?", "topics/2026-09-feature-cu-geography-luna-and-row-framework.md"],

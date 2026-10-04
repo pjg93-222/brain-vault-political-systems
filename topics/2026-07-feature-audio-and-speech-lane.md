@@ -17,7 +17,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audio-narratives-2026-07-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audio-narratives-2026-07-09.md", sha256: "79e8d71ad2a5aeba6c35fd4d8359c40c9ecede3fbe35ed027ed87f862aa16958"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -30,6 +30,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - [[2026-07-feature-audio-and-speech-lane-july-foundations]] — The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09 (superseded the same day as gender-confounded), the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16.
 - [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]] — The N audio route of 2026-08-21 to 08-25 from the ES prereg lock to the spent and missed look, with its ledger and venue corrections, the venue, reliability and identity measurements, and the Whisper, C-SPAN and Gemini facts.
 - [[2026-07-feature-audio-and-speech-lane-complementary-layers-and-lessons]] — The complementary layers lane of 2026-09-07 and its verification lessons on four confident wrong agent claims.
+- [[2026-07-feature-audio-and-speech-lane-corpus-data-guide]] — How to read the Congress speech and audio corpus as of 2026-08-31: three separate products (coverage census, identity and provenance, descriptive measurement), what "verified" means, the one reportable accuracy number and its limits, and the rules that keep audio out of every engine.
 
 ## Context
 

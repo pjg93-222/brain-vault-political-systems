@@ -19,7 +19,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-salience-sna-2026-07-01.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-salience-sna-2026-07-01.md", sha256: "760abadd0aed0a857fa458c3acba8c0b5a36735658edf5756a69180dca3ef555"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -101,7 +101,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - **Pillar weights**: see the Weights ledger below (three sets, last ratified = 30/25/40/5 on 2026-07-07; the live set 45/10/40/5 since 2026-09-03 is UNRATIFIED pending code-review S-5).
 - **Interview-C one look is TAKEN** (2026-07-07): never re-run `c_prereg_test` as a "look"; re-testing after data changes is a NEW test needing a NEW prereg. C aggregates INTERVIEW chunks at 2x (`C_INT_W=2.0`).
 - **Improvement round 1 and round 2 (blue) ALL MISS, one look each TAKEN**: the shipped config (pink equal weights + blue v2) survives; do not attempt round 3 without a fundamentally different feature basis.
-- **Say-do gate landed @18ce3b3** (user + boss ratified) and generalized 2026-07-08 to 3 costly-signal paths (A/V/J); `MC.GATEKEEP_JURIS` user-ratified.
+- **Say-do gate landed @18ce3b3** (user + boss ratified) and generalized 2026-07-08 to 3 costly-signal paths (A/V/J); `MC.GATEKEEP_JURIS` user-ratified. Correction (2026-10-04, document import): Path J left the code with the 2026-07-15 snapshot `e3d2923d0`; the gate has had paths A and V only since then (dated history in Say-do gate).
 - **CFPB axis isolation landed (user: "run the CFPB split... get creative... NO SHORTCUTS")**; the CFPB axis is user-DIRECTED, not validated-more-accurate.
 - **Crapo = Ally, not Champion**; user: HOLD. **Velazquez label review CLOSED** (do not re-flag).
 - **N-genre transfer CLOSED WITH RECEIPTS** (2026-07-17): never reopen without a new genre/data.
