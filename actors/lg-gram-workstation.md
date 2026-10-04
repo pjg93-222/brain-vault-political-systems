@@ -26,8 +26,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/chatgpt-msix-repair-2026-07-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\chatgpt-msix-repair-2026-07-25.md", sha256: "3d31cc7adeb6be1cf8c6944c478219a33329e000a379fdd5b8154233f044ca1d"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
 
@@ -166,6 +166,10 @@ Measured 2026-09-07 from the services' own databases, not their UIs.
 
 - [[claude-code-harness]] - Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH.
 - [[melange-repo-mirror]] - Off-box bare git mirror (remote mirror, Carbonite-covered) of Melange Systems; all branches+tags, hook auto-push since 2026-09-19
+
+## Related Concepts
+
+- [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
 
 ## Related Topics
 

@@ -5,7 +5,7 @@ aliases: ["Staffer network surfaces"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-dashboard]]"
   - "[[staffer-live-sidecar]]"
@@ -16,8 +16,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-live-sidecar-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-live-sidecar-2026-09-04.md", sha256: "9ebbe9baa896071b4b81a5d1fb0bbf36a3aadc3caeb4df9de7097d1e8128a0bb"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-dashboard-section-lane-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-dashboard-section-lane-2026-09-04.md", sha256: "3c79e032d7d0a1c1a893ac4ef6b3d25e2220aebe4ad69f537d4eb07160fe1c4c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-network-redesign-2026-09-05.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-network-redesign-2026-09-05.md", sha256: "7761fc40db8d6180eb138a80e1ffad67c27227a93aefab397b5fe4893cd6aa44"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 ---
 
@@ -37,7 +37,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -161,3 +161,7 @@ Page redesign (variant A) + producer `top_shared_pairs` BUILT and pin-tested in 
 - **Build layout:** WP-A core search: branch `claude/staffer-route-core-20261002`, worktree `C:\Users\pgoff\Melange-wt\route-core` (sparse checkout of `fec/` from main `3248a6a02`, outside OneDrive so `git worktree add` stays fast). WP-B cancellation and progressive results: branch `claude/staffer-route-jobs-20261002`, worktree `C:\Users\pgoff\Melange-wt\route-jobs`. Both create the identical `fec/surfaces/staffer_route_cancel.py`. WP-C typeahead diagnosis is read-only; its fix comes after WP-B, because both touch `staffer_live_service.py`. Untracked People page `fec/surfaces/staffer_live/approved/` is the redesign People page; it may belong to another lane, so it is not edited without Paul.
 - **Why:** Paul wants the people network usable, with the same routes; D-025 freezes coefficients and evidence boundaries.
 - **How to apply:** merge WP-A and WP-B, add the WP-C fix, run an Opus verifier; cut ONE patch with `fec/tools/live_patch.py`; APPLY and the 8841 restart are Paul's; then run the live panel with a memory guard (abort if available RAM falls below 400 MB or the sidecar grows by more than 1.5 GB). Related: `staffer-live-sidecar-2026-09-04`, `ask-before-substantive-changes`, `reasoning-in-fable-code-in-opus-2026-09-16`, `go-faster-directive-2026-09-16`.
+
+## Related Concepts
+
+- [[live-tree-patch-discipline]] — the latency lane lands as ONE patch cut with fec/tools/live_patch.py; APPLY and the 8841 restart are Paul's

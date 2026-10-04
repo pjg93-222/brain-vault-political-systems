@@ -5,7 +5,7 @@ aliases: ["Brain vault setup", "Claude memory import", "2026-10-03 Setup History
 category: "feature"
 status: "completed"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[brain-vault-political-systems]]"
   - "[[brain-graph]]"
@@ -33,7 +33,7 @@ tags: ["type/topic", "status/completed", "domain/platform", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner and sole decision-maker; confirmed the change proposals in chat and installed the graphify skill himself after the permission system blocked an agent-run install |
+| Paul Goff | Vault owner and sole decision-maker; confirmed the change proposals in chat and installed the graphify skill himself after the permission system blocked an agent-run install |
 
 ## Actors Involved
 

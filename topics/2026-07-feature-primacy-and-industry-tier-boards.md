@@ -5,7 +5,7 @@ aliases: ["Primacy and industry tier boards"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-dashboard]]"
 objective: "Keep the Moneyball primacy tier board (Tier 1/2/3 = 13/24/48) and the per-industry (bank/crypto/fintech/CU) desk-method tier boards correct, ratified and explainable: factor-only purity scoring, drift diagnosis, the 2026-09-19 methodology diagnosis (diagnosis only, nothing applied), valence and tensor machinery, industry-tab interactions and the champion crown supremacy law."
@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/industry-tab-interactions-2026-08-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\industry-tab-interactions-2026-08-03.md", sha256: "99b865588083f581d96e89108922f08d1c55ea939c790aa8e288c0f4794a8c62"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/primacy-board-factor-only-2026-07-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\primacy-board-factor-only-2026-07-29.md", sha256: "376b4f95d32a311d495d82c654dee25562da85a42614e936cdafa26d8d2be1fb"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/chatgpt-lane-landed-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\chatgpt-lane-landed-2026-07-16.md", sha256: "a2f66fb2d176812011d8d527d20ea640bceae00eb80a8447a8c21a23f7b82a65"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -30,7 +30,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Context
 
 - Scope of this topic: the **primacy tier board** (Tier 1/2/3 = 13/24/48, `fec/tier_util.py` `primacy_scores()`), its scoring history (factor-only 2026-07-29, evidence floor, uncertainty penalty, amendment weight), the 2026-08-11 tier-drift trace, the **per-industry desk-method tier boards** (credit union, bank, crypto, fintech; `fec/lobbying/industry_tiers.py`), valence ledger and phase-4 tensor, champion crown law, the industry-tab interaction UI of 2026-08-03, and the 2026-09-19 primacy-methodology lane (Paul disputing six members' ranks and rejecting three redesigns).
-- Surfaces: the overall primacy board lives in `dashboard_data.json` (`overall_honors[].rank` == `tierrank`; source `data/stance/rank_honors/<active>/rank_honors.json` `overall_board.order`) and is rendered by [[melange-dashboard]]; the per-industry boards ship in `data/lobbying/industry_tiers.json` and render on the lobby pages (`lobby-champions.html`, `lobby-network.html`, `lobby-interactions.html`). The engine behind the factor/shrinkage is described in [[2026-07-feature-influence-engine-internals]]; the page-level UI history is in [[2026-06-feature-melange-dashboard-ui-evolution]]; the model as a whole is [[melange-systems]]. The owner and ruling authority is [[paul-goff]].
+- Surfaces: the overall primacy board lives in `dashboard_data.json` (`overall_honors[].rank` == `tierrank`; source `data/stance/rank_honors/<active>/rank_honors.json` `overall_board.order`) and is rendered by [[melange-dashboard]]; the per-industry boards ship in `data/lobbying/industry_tiers.json` and render on the lobby pages (`lobby-champions.html`, `lobby-network.html`, `lobby-interactions.html`). The engine behind the factor/shrinkage is described in [[2026-07-feature-influence-engine-internals]]; the page-level UI history is in [[2026-06-feature-melange-dashboard-ui-evolution]]; the model as a whole is [[melange-systems]]. The owner and ruling authority is Paul Goff.
 - **Which surface Paul reads matters**: Paul reads the OVERALL PRIMACY BOARD, NOT `ranks_python.json` (the four-pillar rank). Ask which surface before decomposing a rank; a round was lost on 2026-09-19 answering with the wrong ranking.
 - Standing intent (never re-flag as a defect): **purity over volume** - Paul, verbatim (2026-07-29): "we want people who are PURE in credit unions not spread thin."
 - Governing tests Paul has set: "Is the bill centered around an industry, where we have provisions, or vice versa" (centering, 2026-08-12); "a champion cannot be a threat" (crown law, 2026-08-09); "if it checks out it checks out - don't hold the other industries to the CU gold standard; they are independent of each other" (2026-08-10).
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -50,6 +50,10 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Related Projects
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+
+## Related Concepts
+
+- [[four-pillar-percentile-blend]] — Paul reads the overall primacy board, not ranks_python.json (the four-pillar rank): ask which surface before decomposing a rank
 
 ## Related Topics
 

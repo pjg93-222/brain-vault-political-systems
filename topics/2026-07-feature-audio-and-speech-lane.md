@@ -5,7 +5,7 @@ aliases: ["Audio and speech lane"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-audio-pipeline]]"
 objective: "Record the state, measurements, rulings and traps of the Melange speech/audio lane (speaker verification, ASR, prosody, quirk rates, the N-signature look, complementary audio layers in member profiles) so that no later session re-litigates settled results or repeats confident-but-false mechanism claims."
@@ -16,8 +16,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/speech-recognition-lane-state-2026-08-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\speech-recognition-lane-state-2026-08-19.md", sha256: "fdc20a6db2da838a6d06174e931a2e82e9908ef12ff4f4b97032dbf42887a755"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audio-narratives-2026-07-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audio-narratives-2026-07-09.md", sha256: "79e8d71ad2a5aeba6c35fd4d8359c40c9ecede3fbe35ed027ed87f862aa16958"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -27,7 +27,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 ## Context
 
-- Actor: [[melange-audio-pipeline]] (the code and artifacts). Feeds the Fable narratives in [[2026-07-feature-member-approach-briefs]]. Psychometric context: [[2026-07-feature-personality-psychometrics]] (Big Five instrument, the 2026-07-16 gold/audio session). Verification rules: [[2026-07-working-agreement-verification-and-evidence-standards]]. Look discipline: [[single-look-holdout-discipline]]. Owner: [[paul-goff]].
+- Actor: [[melange-audio-pipeline]] (the code and artifacts). Feeds the Fable narratives in Member approach briefs and narratives. Psychometric context: [[2026-07-feature-personality-psychometrics]] (Big Five instrument, the 2026-07-16 gold/audio session). Verification rules: Verification and evidence standards. Look discipline: [[single-look-holdout-discipline]]. Owner: Paul Goff.
 - Source memories: `speech-recognition-lane-state-2026-08-19` (39.8 KB; last modified 2026-08-25), `audio-complementary-layers-lane-2026-09-07`, `audio-lane-verification-lessons-2026-09-07`, `gold-template-audio-2026-07-16`, `moneyball-audio-narratives-2026-07-09`.
 - Corpus facts: every word the shipped system analyzes is third-party text (C-SPAN closed captions, GovInfo CHRG, Congressional Record, publisher transcripts CNN/MSNOW/PBS/Meet-the-Press/Face-the-Nation): 268,327 speech rows / 532 of 533 members / 57.6M words in `social_media.db:speeches`.
 - `C:\melange-data` EXISTS (167.3 GB, 69,373 files): audio is 533/533 (`member_longform_audio_v1` = 655 WAVs / 38.26 GB / 285.03 hours, ledgered in `data/speech/member_longform_acquisition_v1.jsonl`, every wav path verified present). The "~48 GB audio unrecoverable" note in `backup-coverage-gap-2026-09-07` is WRONG.
@@ -36,7 +36,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -51,12 +51,13 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
+- [[fail-closed-gates]] — the audio lane is off-chain and fail-closed: b5_audio_descriptors_v2.json is ACTIVE_FAIL_CLOSED at 0 accepted clips
 
 ## Related Topics
 
-- [[2026-07-feature-member-approach-briefs]] - Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps.
+- Member approach briefs and narratives - Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps.
 - [[2026-07-feature-personality-psychometrics]] - Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade.
-- [[2026-07-working-agreement-verification-and-evidence-standards]] - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
+- Verification and evidence standards - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
 
 ## History
 
@@ -85,7 +86,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - **Target orientation amended to N (2026-08-24):** the prereg validates N, not ES (zero bar/channel/gate changes).
 - **Hold the look statements:** the N-signature look was spent 2026-08-25 and missed; route closed; instrument stays 3/5 (O/C/E).
 - ~~Original ES/N prereg venue reading~~ and ~~"A is weakly validated"~~ - corrected (see Ledger corrections).
-- **Model tiering for audio verification:** Haiku 4.5 for mechanical audio-clip verification; escalate to Sonnet, never Fable, if Haiku regresses (see [[2026-07-feature-member-approach-briefs]]).
+- **Model tiering for audio verification:** Haiku 4.5 for mechanical audio-clip verification; escalate to Sonnet, never Fable, if Haiku regresses (see Member approach briefs and narratives).
 - Commit authorized for the 2026-09-07 lane (lifts `no-git-plain-review-2026-09-01` in this lane only).
 
 ## Next Steps
@@ -335,7 +336,7 @@ Session 2026-07-16 (worktree loving-payne, branch claude/gallant-gates-982203; t
 
 ## Audio speaker verification and ES cross-modal validation (2026-07-09; source: moneyball-audio-narratives-2026-07-09)
 
-Two features shipped 2026-07-09 (branch claude/epic-aryabhata-7aa1e1, display-only, engine/ranks untouched - verified kernel 37/37, audit 63/64 with only the pre-existing electoral_plays staleness). The narrative feature is recorded in [[2026-07-feature-member-approach-briefs]].
+Two features shipped 2026-07-09 (branch claude/epic-aryabhata-7aa1e1, display-only, engine/ranks untouched - verified kernel 37/37, audit 63/64 with only the pre-existing electoral_plays staleness). The narrative feature is recorded in Member approach briefs and narratives.
 
 - **Audio speaker-verification (fixed the search-fetched contamination Paul flagged).** Search-fetched floor-speech audio was about 38% contaminated (multi-speaker panels, wrong-speaker, name collisions e.g. "Adam Smith" -> Adam Schiff). Fix per Paul's instruction "get transcripts from the audio to ID who is speaking":
   - `fec/b5_audio_verify.py` - per clip: yt-dlp auto-captions (cached in `b5_caption_cache.json`) + **Haiku 4.5** two-field classify: (1) speaker structure SOLO / MULTI / NOT_SPEAKING, (2) identity vs a per-member **identity card** (title/state/district/party/committees from `member_desk_bundle.json`). Identity judged from a **HARD signal only** (self-naming, "the gentlewoman from X", chair recognition, "my bill the __ Act") - **topic is nuance, NEVER a MATCH/MISMATCH** (Paul's key correction; a border-topic speech doesn't prove a border-state member). NONE signal -> NEUTRAL. keep = SOLO & identity != MISMATCH. Stores the evidence phrase per clip. Writes `b5_audio_verify.json` {clip:{speaker,identity,evidence,keep}}.
@@ -352,7 +353,7 @@ Two features shipped 2026-07-09 (branch claude/epic-aryabhata-7aa1e1, display-on
 
 ## 3-paragraph "Suggested approach" narratives - audio-side facts (2026-07-09)
 
-Full narrative record is in [[2026-07-feature-member-approach-briefs]]. Source description: "Audio speaker-verification pipeline + 3-paragraph Fable "Suggested approach" narratives (built 2026-07-09)".
+Full narrative record is in Member approach briefs and narratives. Source description: "Audio speaker-verification pipeline + 3-paragraph Fable "Suggested approach" narratives (built 2026-07-09)".
 
 - `fec/b5_narratives.py` -> `member_narratives.json`, 533/533. Per member, a DE-IDENTIFIED measured profile (validated big5_v2 + behavioral dispositions + persona + `interaction_features` conversational dynamics + clean-audio eGeMAPS vocal descriptors) -> **Fable** writes P1 overall personality / P2 quirks-speech-landmines / P3 persuasive approach.
 - **Fable REFUSES the influence-brief framing on about 74% of members** (safety classifier) -> automatic **Opus 4.8 fallback** (client-side, on `stop_reason=='refusal'`); Opus is cheaper so the bill came in under the all-Fable estimate.

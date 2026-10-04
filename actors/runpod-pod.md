@@ -23,8 +23,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/runpod-claude-sessions-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\runpod-claude-sessions-2026-09-30.md", sha256: "6a09c28c943b3f3c6207c49a2e825ec5adf4d752204a958334f2aeaac16b9260"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
 
@@ -45,7 +45,7 @@ tags: ["type/actor", "status/active", "domain/infra"]
 
 ## Dependencies
 
-- Used by (vault): [[2026-09-feature-cu-geography-luna-and-row-framework]] / [[cu-geography]] (Luna round 3 ran here with a de-identified upload), [[2026-09-feature-forecast-giving-redesign]] / [[forecast-redesign]] (forecasting model audit lane at `/workspace/forecast`), [[mentat]] (do not restart Mentat 8806), [[2026-07-working-agreement-agent-orchestration-rules]] (the pod rules), [[2026-07-feature-agent-tooling-stack]] (the runpod plugin and pod sessions).
+- Used by (vault): [[2026-09-feature-cu-geography-luna-and-row-framework]] / [[cu-geography]] (Luna round 3 ran here with a de-identified upload), Forecast audit, giving-view redesign and PAC accuracy / [[forecast-redesign]] (forecasting model audit lane at `/workspace/forecast`), [[mentat]] (do not restart Mentat 8806), Agent orchestration and model tiering rules (the pod rules), [[2026-07-feature-agent-tooling-stack]] (the runpod plugin and pod sessions).
 - Depends on: RunPod platform (billing hourly), SSH key `C:\Users\pgoff\.ssh\id_ed25519` (path only), the RunPod MCP plugin (`plugin:runpod`, needs Paul's OAuth sign-in), Claude Code credentials persisted in `/workspace/claude-home`.
 - Other lanes sharing the pod: "LUNA geography project review" and "Forecasting model audit and integration" (`/workspace/forecast`). Paul confirmed on 2026-09-30 "Those sessions are good": their outputs are not this lane's concern, so do not pull or clean them.
 - Related memory notes: `pod-for-memory-heavy-tasks-2026-09-30`, `runpod-claude-sessions-2026-09-30`, `luna-stratified-scaling-review-2026-09-29`, `codex-overnight-poll-loop-burn-2026-09-13`, `quant-model-evaluation-skill-lane-2026-09-30`, `ask-before-substantive-changes`, `live-tree-branch-state-2026-07-14`.
@@ -156,9 +156,9 @@ git ... --separate-git-dir=/root/melange.git
 ## Related Topics
 
 - [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
-- [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
+- Agent orchestration and model tiering rules - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 - [[2026-09-feature-cu-geography-luna-and-row-framework]] - CU-geography: Luna RF/KNN review closed 09-30 (section 30 GPU model current) plus the 491,308-row framework in Paul's four groups (P0/P1).
-- [[2026-09-feature-forecast-giving-redesign]] - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
+- Forecast audit, giving-view redesign and PAC accuracy - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
 
 ## Related Projects
 

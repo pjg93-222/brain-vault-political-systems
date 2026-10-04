@@ -23,8 +23,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/lobbyview-integration-2026-07-31.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\lobbyview-integration-2026-07-31.md", sha256: "8db2654b3fc68f058893ecc2d793e462b00f9470fe85c29134fc6c7eefc50283"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -149,6 +149,11 @@ LD-2 filings **never name a member.** `interaction_ledger.csv` (44,496 rows) has
 ## Use in the sector growth study (2026-09-25/26)
 
 The sector-growth study links LobbyView as lobbying data (see the sector growth x political spending study (`2026-09-feature-sector-growth-study`)): full export (2024-10-25) with `reports.csv` 383 MB, `clients.csv` (NAICS), `issues.csv`, `network.csv`; derived files in `..\lobbyview\derived` (`reports_finance`, `clients_classified`); LobbyView has one `amount` column. Paul's ruling: LobbyView runs its full span for every sector (the 2013-2022 banks/CUs-only limit was reversed).
+
+## Related Concepts
+
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
+- [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
 
 ## Related Topics
 

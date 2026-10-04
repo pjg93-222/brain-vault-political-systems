@@ -5,7 +5,7 @@ aliases: ["Melange audits and code reviews"]
 category: "troubleshooting"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-fec-pipeline]]"
 objective: "Keep one record of every Melange/Moneyball audit and code-review run (2026-07-01 to 2026-09-19): findings, fixes, binding refuted lists, guardrails, methods, and what still awaits Paul's rulings."
@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/data-rules-provenance-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\data-rules-provenance-2026-07-10.md", sha256: "811bc4727b6ac03068bdd3b260c6e840b19bd3bf18046674b23ca3f131fe21c6"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audit-run-guardrails.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audit-run-guardrails.md", sha256: "fc314b1421f29d9b94eda9773284183ca5cefb0951cb6703f08410d424b9e0c0"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-data-audit-2026-07-01.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-data-audit-2026-07-01.md", sha256: "8ab886856dfc515964eb3a3e83ca2a67f3b2673dcd45d46ab061aaaed02e770b"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 ---
 
@@ -29,7 +29,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 ## Context
 
-- The audited system is the Python pipeline under `Melange Systems\fec` ([[melange-fec-pipeline]]) feeding the Moneyball CU-influence model ([[melange-systems]]). Audits are run autonomously by Claude sessions (mission variant: the `/fable-audit` project slash command, `.claude/commands/fable-audit.md`, commit 9adc4c1), and every audit's gates are the verification protocol of [[2026-07-working-agreement-verification-and-evidence-standards]]: kernel tests, `py_compile` sweep, `audit_full.py`, a true pipeline run-through, ranks zero-delta (`ranks_python.json` byte-identical), determinism spot checks, UI smoke.
+- The audited system is the Python pipeline under `Melange Systems\fec` ([[melange-fec-pipeline]]) feeding the Moneyball CU-influence model ([[melange-systems]]). Audits are run autonomously by Claude sessions (mission variant: the `/fable-audit` project slash command, `.claude/commands/fable-audit.md`, commit 9adc4c1), and every audit's gates are the verification protocol of Verification and evidence standards: kernel tests, `py_compile` sweep, `audit_full.py`, a true pipeline run-through, ranks zero-delta (`ranks_python.json` byte-identical), determinism spot checks, UI smoke.
 - Audit report file names follow `AUDIT_FINDINGS_<date>.md` in the repo root (and `DEEP_AUDIT_REPORT_2026-07-02.md`, `DEEP_AUDIT_MATH_LOGIC_2026-07-02.md`).
 - Standing "binding refuted lists" exist for the 2026-07-08 network/vote/cycle audit (do not re-flag) and for the code-review packet (17 refuted or partly refuted findings in `FINDINGS_INDEX.md`).
 - Three core operating rules emerged and are binding on any audit run: (1) NEVER hand-extend a generated JSON - extend the producer (the `category_stance.json` 18-category trap, 2026-07-02); (2) use port 8802 (launch config `moneyball-ui-audit`), never 8801 (Paul's long-running live-tree static server); (3) prove output deltas benign by the byte-match input-purity method (engine to `FRONTIER_OUT` temp must byte-match the chain's artifact).
@@ -40,7 +40,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -52,10 +52,15 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
 
+## Related Concepts
+
+- [[four-pillar-percentile-blend]] — pillar weights recur in the audit findings and exist in three sets; never let the newest read as ratified
+- [[settled-findings-stay-settled]] — binding refuted lists (do not re-flag) for the 2026-07-08 network/vote/cycle audit and the code-review packet's refuted findings
+
 ## Related Topics
 
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
-- [[2026-07-working-agreement-verification-and-evidence-standards]] - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
+- Verification and evidence standards - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
 
 ## History
 
@@ -91,7 +96,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 - **House rule from the 2026-07-10 provenance census:** quote the user verbatim in the commit message for any user-directed rule; anything unquoted is treated as a session choice until transcript-verified (transcript search is the arbitration tool).
 - **Findings-examination framework ADOPTED, brain D-007** (Paul ruled ADOPT 2026-08-13): six-pass examination; reversal condition = a defect reaches Paul in a doc that RECORDS a completed six-pass exam. Causal-claims lint deliberately NARROW (causal verbs only), Paul's explicit narrow-scope selection.
 - **Code review: do not re-review the five lanes; start from the packet** (`audits/code_review_20260913`, read from commit `77959ae74`). Adversarial verifier pass is mandatory (17 findings were refuted or partly refuted).
-- **Laundry-list close-out:** apply gate (Paul's `ask-before-substantive-changes`, [[paul-goff]]) still binds, so each step ran on an explicit GO and everything else is a one-line-answerable ruling sheet (`DECISIONS_FOR_PAUL.md`).
+- **Laundry-list close-out:** apply gate (Paul's `ask-before-substantive-changes`, Paul Goff) still binds, so each step ran on an explicit GO and everything else is a one-line-answerable ruling sheet (`DECISIONS_FOR_PAUL.md`).
 - ~~"Item 1 (bands/crown) of the 2026-07-16 laundry-list handoff"~~ (2026-07-16) - superseded by brain D-031; the handoff's statement "NOTHING has been applied" is false at HEAD (lane landed the same night as `391a4a8b5`, merged `e58a807da`).
 - ~~Five-lane review "NOTHING APPLIED (ask-first)" / "All patches UNAPPLIED; worktree clean throughout"~~ (2026-09-13) - STALE, superseded 2026-09-19 (verified by hunk match): 90/90 patches were applied to LIVE on 2026-09-14T05:58Z; kept because it explains the original packet wording.
 - ~~DE-040 "in-repo stopped matching LF-only hunks, outside-repo clean"~~ - not reproduced (see the laundry-list section, lessons on `git apply`).
@@ -438,7 +443,7 @@ Findings-examination framework ADOPTED (D-007) + causal-claims lint + BARR corre
 - `fec/engine/responsiveness_layers.py` `compute_take_up`: unscored status OR any committee scope key means excluded from the denominator; eligibility = Voteview congress-time service + chamber match + party match; blank chamber = bicameral; **in-group-normal vehicles stay in the denominator BY DESIGN** (peer-comparison normalization) - E2's prose exclusions were a single-member absolute reading; do not "fix".
 - The registry's frozen spec vintage in `audits/responsiveness_build_2026-08-11/` is never edited.
 
-Links: `universal-lane-laws-2026-08-09`, `examination-lane-lessons-2026-08-14`, `verify-dont-infer-completion-2026-08-04` (also see [[2026-07-working-agreement-verification-and-evidence-standards]], which carries the framework as a working-agreement rule).
+Links: `universal-lane-laws-2026-08-09`, `examination-lane-lessons-2026-08-14`, `verify-dont-infer-completion-2026-08-04` (also see Verification and evidence standards, which carries the framework as a working-agreement rule).
 
 ## Five-lane code review 2026-09-13 (`code-review-five-lanes-2026-09-13`)
 

@@ -25,8 +25,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/codex-web-research-for-company-ambiguity.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\codex-web-research-for-company-ambiguity.md", sha256: "ab3b471b15379353c6b6c8d004188016132018717f196f4a91b196091e559739"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -136,6 +136,10 @@ python -c "import py_compile; py_compile.compile(src, cfile=<scratchpad>)"
 - [[claude-code-harness]] - Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH.
 - [[glass-box]] - Shared GLASS BOX event stream/viewer for all lanes; every process must emit; a hung lane console blocks metaloop starts.
 - [[metaloop]] - /metaloop (shipped @46b17b9): Fable decomposes/reviews, Codex executes, Gemini perceives, Grok critiques; UNIVERSAL LANE LAWS @86ba6ef.
+
+## Related Concepts
+
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
 
 ## Related Topics
 

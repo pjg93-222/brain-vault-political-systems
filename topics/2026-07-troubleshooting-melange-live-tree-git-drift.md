@@ -5,7 +5,7 @@ aliases: ["Live tree, git drift and line endings"]
 category: "troubleshooting"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-fec-pipeline]]"
   - "[[melange-repo-mirror]]"
@@ -17,8 +17,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "d344e91e5b143e36a8846cbd15ea7bc1b0d65cd3f448a0b623bbeddf921803d1"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/committed-vs-live-drift-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\committed-vs-live-drift-2026-09-13.md", sha256: "656f0a2e07d94186aa64d8bdf71bf498d76cd84759b30d6f5caae27543483dff"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/live-tree-branch-state-2026-07-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\live-tree-branch-state-2026-07-14.md", sha256: "0e48531d5dfbc92496fa4ea2e3cd48c25b2e2536236a96c6d0db35a557fa4d66"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubleshooting"]
 ---
 
@@ -28,7 +28,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 ## Context
 
-- Project: [[melange-systems]]; code: [[melange-fec-pipeline]] (the `fec/` tree and its chain `run_pipeline.py`); off-box copy: [[melange-repo-mirror]]; disk/backup context: [[2026-08-incident-workstation-disk-and-backup]]; owner: [[paul-goff]].
+- Project: [[melange-systems]]; code: [[melange-fec-pipeline]] (the `fec/` tree and its chain `run_pipeline.py`); off-box copy: [[melange-repo-mirror]]; disk/backup context: [[2026-08-incident-workstation-disk-and-backup]]; owner: Paul Goff.
 - Operating convention that created the gap: "work in the live tree, commit later"; the commit gap grew until main was not a working system and worktree reviews saw stale code. The live tree is what runs; main is a partial record of it.
 - Git is Paul's under `no-git-plain-review-2026-09-01` (as cited by the disk-census note); commits and merges in these lanes happened only on Paul's explicit words (the 2026-09-06 per-lane lifting of the git ban is recorded in the working-agreement topics).
 - Memory notes referenced (not vault entities): `ask-before-substantive-changes`, `laundry-list-closeout-2026-09-18`, `code-review-five-lanes-2026-09-13`, `mentat-uncommitted-reconcile-2026-09-18`, `verify-dont-infer-completion-2026-08-04`, `go-faster-directive-2026-09-16`, `scout-census-traps-2026-09-13`, `receipt-line-pins-vs-live-tree-2026-09-18`, `spawned-task-premise-may-be-stale-2026-09-14`, `universal-lane-laws-2026-08-09`, `project-brain-toolkit-2026-08-11`, `moneyball-architecture`, `moneyball-network-viz-requests`, `psych-audit-2026-07-09`, `staffer-stale-imports-lane-2026-09-06`, `backup-coverage-gap-2026-09-07`, `glassbox-everything-rule-2026-07-27`.
@@ -37,7 +37,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -49,6 +49,10 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 ## Related Projects
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+
+## Related Concepts
+
+- [[live-tree-patch-discipline]] — the 2026-09-19 reconcile landed fec/tools/live_patch.py; LIVE changes only by a patch applied with core.autocrlf=false, never by a checkout that normalises its line endings
 
 ## Related Topics
 

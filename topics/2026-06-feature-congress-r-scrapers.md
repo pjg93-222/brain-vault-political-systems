@@ -5,7 +5,7 @@ aliases: ["Congress R scrapers"]
 category: "feature"
 status: "completed"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[debate-stance-model]]"
   - "[[draft-systems-r-pipeline]]"
@@ -22,8 +22,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_census_cd_scraper.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_census_cd_scraper.md", sha256: "b208715d9746b5d2afba36b8b43722d042fd65338c139e1ef51362840bb35855"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_congress_scraper.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_congress_scraper.md", sha256: "cee61c688ca2e469d0d63a8331f106f4c24f41f05d2ca11236bdf8619b5289ae"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/feedback_congress_url_no_json.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\feedback_congress_url_no_json.md", sha256: "f748020965e473c03ac4133372c594ffbf3ba95b47d04a9c01f7f1d1d5f3a379"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 ---
 
@@ -33,7 +33,7 @@ tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 
 ## Context
 
-Paul Goff ([[paul-goff]]) builds the Moneyball credit-union influence model; its legislative, press, institutional and demographic layers need per-member data for the 119th Congress (about 537 members). This topic holds the full June 2026 history of the R scrapers that produce that data. It was assembled from ten memory files: `project_congress_scraper`, `feedback_congress_url_no_json`, `project_congress_graded_scoring`, `project_congress_press_fallbacks`, `project_census_cd_scraper`, `project_ballotpedia_cu_influence`, `project_moneyball_integrated_scraper`, `project_stance_sentiment_overhaul`, `project_moneyball_deploy`, `user_r_environment`.
+Paul Goff (Paul Goff) builds the Moneyball credit-union influence model; its legislative, press, institutional and demographic layers need per-member data for the 119th Congress (about 537 members). This topic holds the full June 2026 history of the R scrapers that produce that data. It was assembled from ten memory files: `project_congress_scraper`, `feedback_congress_url_no_json`, `project_congress_graded_scoring`, `project_congress_press_fallbacks`, `project_census_cd_scraper`, `project_ballotpedia_cu_influence`, `project_moneyball_integrated_scraper`, `project_stance_sentiment_overhaul`, `project_moneyball_deploy`, `user_r_environment`.
 
 Components (all in Draft Systems, `C:\Users\pgoff\OneDrive\Desktop\Draft Systems\`):
 
@@ -47,13 +47,13 @@ Components (all in Draft Systems, `C:\Users\pgoff\OneDrive\Desktop\Draft Systems
 | Census CD scraper | `census_cd_scraper.R` | ACS + CBP metrics for 437 districts plus states |
 | Ballotpedia CU-influence scraper | `ballotpedia_119th_cu_scraper.R` | Years served, electoral average, committee/caucus/party scores |
 
-Related traps: the shell, console and environment gotchas collected in [[2026-06-working-agreement-tooling-and-environment-traps]] (PowerShell env-var syntax, RStudio 4096-char line truncation, Rscript not on PATH).
+Related traps: the shell, console and environment gotchas collected in Tooling and environment traps (PowerShell env-var syntax, RStudio 4096-char line truncation, Rscript not on PATH).
 
 ## People Involved
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -69,7 +69,7 @@ Related traps: the shell, console and environment gotchas collected in [[2026-06
 ## Related Topics
 
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
-- [[2026-06-working-agreement-tooling-and-environment-traps]] - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
+- Tooling and environment traps - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
 
 ## History
 

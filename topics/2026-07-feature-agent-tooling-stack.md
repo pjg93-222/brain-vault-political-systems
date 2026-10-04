@@ -5,7 +5,7 @@ aliases: ["Agent tooling stack"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[codex-executor]]"
   - "[[glass-box]]"
@@ -26,8 +26,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/glassbox-lane-lock-hang-2026-08-06.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\glassbox-lane-lock-hang-2026-08-06.md", sha256: "931cdc0deb8e18dce2c3b3f12415d5baca4fcfb57bf79d0e98089dd5fee3092b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/skills-library-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\skills-library-2026-07-10.md", sha256: "c0b2ca636cff6d9f41c8574737ca7e3c699a94ccba1742e0eedc57b231eb8b2d"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"]
 ---
 
@@ -38,7 +38,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"
 ## Context
 
 - Eight source memories feed this topic: `codex-executor-lane-2026-07-18` (35 KB, the largest, last modified 2026-09-19), `skills-library-2026-07-10`, `skill-library-stale-facts-lane-2026-09-30`, `quant-model-evaluation-skill-lane-2026-09-30` (last modified 2026-10-01), `runpod-claude-sessions-2026-09-30`, `project-brain-toolkit-2026-08-11` (last modified 2026-09-19), `glassbox-lane-lock-hang-2026-08-06` (last modified 2026-08-10) and `higgsfield-connector-account-trap-2026-09-17` (last modified 2026-10-01).
-- Actors: [[codex-executor]] (the executor lane itself), [[metaloop]] (orchestration command), [[glass-box]] (event stream and lane consoles), [[moneyball-skill-library]], [[quant-model-evaluation-skill]], [[project-brain]], [[runpod-pod]] and [[higgsfield-connector]]. The project they serve is [[melange-systems]]; owner/decider is [[paul-goff]].
+- Actors: [[codex-executor]] (the executor lane itself), [[metaloop]] (orchestration command), [[glass-box]] (event stream and lane consoles), [[moneyball-skill-library]], [[quant-model-evaluation-skill]], [[project-brain]], [[runpod-pod]] and [[higgsfield-connector]]. The project they serve is [[melange-systems]]; owner/decider is Paul Goff.
 - Role split (Paul, 2026-07-18): Claude (Fable) = reasoning, diagramming, architecture and security review; ChatGPT ("Sol 5.6 extra high fast", model `gpt-5.6-sol`) = executor. Paul's mind/body directive (2026-07-23): "Claude should be the mind which decides and guides, while ChatGPT is the body who executes".
 - The canonical orchestration rules (UNIVERSAL LANE LAWS) live in `.claude/commands/metaloop.md`; see [[metaloop]].
 
@@ -46,7 +46,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

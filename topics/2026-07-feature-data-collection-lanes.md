@@ -5,7 +5,7 @@ aliases: ["Melange data-collection lanes"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[lobbyview-collector]]"
   - "[[sentinel-collectors]]"
@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fec-precognition-lane-2026-07-31.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fec-precognition-lane-2026-07-31.md", sha256: "af80cd783d85cbb0a43e16fe1de75d86808030ad64ad577d30c961cdf4f014e7"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-demographic-expansion-2026-07-24.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-demographic-expansion-2026-07-24.md", sha256: "177cf10bd81067cdd5824ed52fd390ac361ce636aabaaa424b00c3834c0b15d1"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/corpus-coverage-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\corpus-coverage-2026-07-10.md", sha256: "3e7274e4a21a03ce436192bb23f99426b96abbec928d9f44b4a4ccf12e753c60"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -46,7 +46,7 @@ Lanes covered (each has its own section below; dates are the source memory dates
 | Sentinel workbook bill ingestion | 2026-09-04 / 2026-09-05 | Committed and merged to main `313eaaad1` and pushed to mirror; legislative pillar stays contract-gated |
 | System manifest sentinel lane | 2026-09-06 | `:966` dedup defect fixed (uncommitted); D-015 cost baseline measured; self-falsifying audit sentinels |
 
-Entities: the collectors themselves are the actors [[lobbyview-collector]] and [[sentinel-collectors]]; the owning project is [[melange-systems]]; the ratifying and gating authority is [[paul-goff]]. System-of-record context lives in [[2026-07-rfc-melange-architecture-system-of-record]] and the legislative pillar in [[2026-07-feature-legislative-pillar-acu-review]].
+Entities: the collectors themselves are the actors [[lobbyview-collector]] and [[sentinel-collectors]]; the owning project is [[melange-systems]]; the ratifying and gating authority is Paul Goff. System-of-record context lives in [[2026-07-rfc-melange-architecture-system-of-record]] and the legislative pillar in [[2026-07-feature-legislative-pillar-acu-review]].
 
 Standing law across lanes (recorded in the source memories): Paul's ask-first directive gates every production mutation; merges, ratifications, scheduler re-enables and promotions are Paul's; Codex-built work is always re-verified after any MCP timeout (see each lane's Codex notes).
 
@@ -56,7 +56,7 @@ Pillar weights, recorded wherever they appear (all three sets, never let the new
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

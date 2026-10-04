@@ -5,7 +5,7 @@ aliases: ["Workstation disk and backup"]
 category: "incident"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[lg-gram-workstation]]"
   - "[[melange-repo-mirror]]"
@@ -16,8 +16,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-cleanup-lane-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-cleanup-lane-2026-09-16.md", sha256: "8a4846eaf6cbb47d9096e3340c8987a7d3b07d75edd9c6bc5f8b8c919d54b1cc"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-census-2026-09-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-census-2026-09-11.md", sha256: "a60c04e092cb6a9de1332fc0c52b98fac2d1c0b481506063cdccd3dd5ef4687f"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/backup-coverage-gap-2026-09-07.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\backup-coverage-gap-2026-09-07.md", sha256: "7338b06f727216529838a57ea43fa60ca3e94f42420f8346d5014aad1a5db1d0"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 ---
 
@@ -30,7 +30,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 
 ## Context
 
-- Host: [[lg-gram-workstation]] (only C: and WinRE exist; no external drive is attached). Code tree: Melange Systems under OneDrive (`C:\Users\pgoff\OneDrive\Desktop\Melange Systems`), see [[melange-systems]]; the off-box git mirror is [[melange-repo-mirror]]; live-tree/git-drift context in [[2026-07-troubleshooting-melange-live-tree-git-drift]]. Owner: [[paul-goff]].
+- Host: [[lg-gram-workstation]] (only C: and WinRE exist; no external drive is attached). Code tree: Melange Systems under OneDrive (`C:\Users\pgoff\OneDrive\Desktop\Melange Systems`), see [[melange-systems]]; the off-box git mirror is [[melange-repo-mirror]]; live-tree/git-drift context in [[2026-07-troubleshooting-melange-live-tree-git-drift]]. Owner: Paul Goff.
 - **Structural cause (not derivable from code):** one checkout of Melange Systems is ~18 GB because `audits\legfix5` is tracked. Every checkout materialises 17.46 GB / 38,905 files of it (one 2.57 GB `packets.ndjson`, two 0.6 GB queue snapshots). `.ndjson` alone = 305 GB on disk (2026-09-11). Each new session worktree costs ~18 GB until `audits/legfix5` is untracked or a post-checkout hook applies the sparse pattern to new session worktrees (both Paul's; a hook is persistent configuration, so never install it unasked).
 - **Backup structure:** OneDrive (consumer account, active to 2027-05-25, 144.61 GB already stored) silently stopped ingesting new files in the code tree on ~2026-08-11; Carbonite (`Personal Plus`) covers ~420-440 GB of the profile but not `C:\melange-data`; the git mirror is Carbonite-covered. See "Backup coverage gap" below.
 - Paul's prompts for the four clearances: 2026-09-11 "clear 100 GB without destroying essential systems" (census; "Apply the disk cleanup"); 2026-09-13 "Free 100 GB", "You don't need to ask, just remove", "just get rid of 50 gigabytes of finished trees right now", "We are not compressing we are removing"; 2026-09-15 "we need to clear 100 GB of space, nothing less" then "Show me the list and just remove the finished worktrees"; 2026-09-16 evening "Clear 100+ GB's of Space without destroying systems", "Show me the list and just remove the finished worktrees", "Don't remove the lane coordination worktree", "Keep the scratchpads"; 2026-09-18 "Go clear 100 GB's and then finish"; 2026-09-18 evening "You need to clear 200 gigabytes on this computer. There are certain branches that have been tabled, such as the friendship network, audio, lobbying inference, among other things that should be saved ... Do whatever is necessary to clear the space, and regenerate the scratchpads that were deleted".
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -51,6 +51,10 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 ## Related Projects
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+
+## Related Concepts
+
+- [[census-before-claims]] — the census figures of 2026-09-11 are point-in-time: re-run the census before quoting any number
 
 ## Related Topics
 

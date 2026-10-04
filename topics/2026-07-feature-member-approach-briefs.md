@@ -5,7 +5,7 @@ aliases: ["Member approach briefs and narratives"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-audio-pipeline]]"
 objective: "Record how the three-paragraph per-member approach briefs/narratives are generated, ruled and validated (Fable paragraphs 2026-07-09, Sonnet-API brief lane 2026-08-31), including Paul's style rulings, the handoff-doc corrections, the open cross-party field conflict and the validator false-failure bug class."
@@ -15,8 +15,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/approach-brief-authoring-rules-2026-08-31.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\approach-brief-authoring-rules-2026-08-31.md", sha256: "f60c1fdcc86b96247875e1b7aa0ca479cf30b2195727c7284a0639852bc08979"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fable-paragraphs-only.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fable-paragraphs-only.md", sha256: "608516924b815a01ab65ca51db3c117932f1ba61d1873c84b605fd038aa58ff4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audio-narratives-2026-07-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audio-narratives-2026-07-09.md", sha256: "79e8d71ad2a5aeba6c35fd4d8359c40c9ecede3fbe35ed027ed87f862aa16958"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -26,8 +26,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 ## Context
 
-- Display slot: the desk's narrative slot in the member desk (`make_member_desk.py`, psych-view "Suggested approach" block). Project: [[melange-systems]]. Decider: [[paul-goff]].
-- Acoustic inputs come from [[melange-audio-pipeline]] and the lane record [[2026-07-feature-audio-and-speech-lane]]. Model-tiering rules: [[2026-07-working-agreement-agent-orchestration-rules]] (and the cost rule recorded below).
+- Display slot: the desk's narrative slot in the member desk (`make_member_desk.py`, psych-view "Suggested approach" block). Project: [[melange-systems]]. Decider: Paul Goff.
+- Acoustic inputs come from [[melange-audio-pipeline]] and the lane record Audio and speech lane. Model-tiering rules: Agent orchestration and model tiering rules (and the cost rule recorded below).
 - Source description of the rulings memory: "Paul's rulings for the 533 member approach briefs - Tier 2 style, corroborated acoustics IN, no percentiles in prose".
 - Source memories: `profile-briefs-lane-2026-08-31` (last modified 2026-09-01), `approach-brief-authoring-rules-2026-08-31`, `fable-paragraphs-only` (2026-07-09, feedback), `moneyball-audio-narratives-2026-07-09`.
 - Pipeline of the 2026-08-31 lane (built in a session scratchpad; **nothing written to the repo**): `profile_basis_v2.json` + `speech_descriptive_v1.json` + `member_desk_bundle.psy` + `hearing_antagonism.json` -> deterministic evidence ledger with precomputed plain-language bands -> Sonnet -> hard validator -> candidate artifact.
@@ -36,7 +36,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -50,8 +50,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 ## Related Topics
 
-- [[2026-07-feature-audio-and-speech-lane]] - Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims.
-- [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
+- Audio and speech lane - Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims.
+- Agent orchestration and model tiering rules - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 
 
 ## History
@@ -128,9 +128,9 @@ Every validator that COUNTS pattern matches and compares to a threshold will dou
 
 ## 2026-07-09 Fable narratives (source: moneyball-audio-narratives-2026-07-09)
 
-- Two features shipped 2026-07-09 (branch claude/epic-aryabhata-7aa1e1, display-only, engine/ranks untouched - verified kernel 37/37, audit 63/64 with only the pre-existing electoral_plays staleness): the audio speaker-verification pipeline (recorded in [[2026-07-feature-audio-and-speech-lane]] / [[melange-audio-pipeline]]) and the narratives.
+- Two features shipped 2026-07-09 (branch claude/epic-aryabhata-7aa1e1, display-only, engine/ranks untouched - verified kernel 37/37, audit 63/64 with only the pre-existing electoral_plays staleness): the audio speaker-verification pipeline (recorded in Audio and speech lane / [[melange-audio-pipeline]]) and the narratives.
 - **3-paragraph "Suggested approach" narratives** (`fec/b5_narratives.py` -> `member_narratives.json`, 533/533). Per member, a DE-IDENTIFIED measured profile (validated big5_v2 + behavioral dispositions + persona + `interaction_features` conversational dynamics + clean-audio eGeMAPS vocal descriptors) -> **Fable** writes P1 overall personality / P2 quirks-speech-landmines / P3 persuasive approach (matching-effect per personality-persuasion lit).
 - **Fable REFUSES the influence-brief framing on about 74% of members** (safety classifier) -> automatic **Opus 4.8 fallback** (client-side, on `stop_reason=='refusal'`); Opus is cheaper so the bill came in under the all-Fable estimate.
 - Wired into `make_member_desk.py` `psy_for()` -> `out['narrative']`, rendered in the tpl psych-view as the "Suggested approach" block (the old IIT-C octant note kept as "Quick read"). Verified rendering in-browser, 0 console errors. NOTE: the narrative renders inside the comp `if` block (all 533 have behavioral data so it fires for everyone). Related: `dashboard-preview-workflow`, `moneyball-receptivity-layer`.
 - Audio inputs feeding the narratives: the verified clips (Haiku 4.5 verification, 395/445 members with >=180 s verified-clean audio, 142 wrong-member clips caught, 88 eGeMAPS v02 features, `b5_audio_cache.json`; audio feeds ONLY validation scripts, never the engine). Haiku >= Fable on that task (Fable over-rejected clean solo speeches): escalate to Sonnet, never Fable (see rule above).
-- The ES cross-modal validation (+0.208 held-out, later caveated as gender-confounded) and the A- re-grade (2026-07-09) are recorded in [[2026-07-feature-audio-and-speech-lane]] because they describe the voice features, not the narratives.
+- The ES cross-modal validation (+0.208 held-out, later caveated as gender-confounded) and the A- re-grade (2026-07-09) are recorded in Audio and speech lane because they describe the voice features, not the narratives.

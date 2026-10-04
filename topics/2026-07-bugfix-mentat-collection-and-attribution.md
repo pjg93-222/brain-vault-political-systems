@@ -5,7 +5,7 @@ aliases: ["Mentat collection and attribution"]
 category: "bugfix"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[mentat-console]]"
   - "[[mentat-fec-pipeline]]"
@@ -25,8 +25,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-roster-and-culling-rules-2026-07-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-roster-and-culling-rules-2026-07-19.md", sha256: "26e9198ad85bf3f0bdc3cee58384433741f76db1e100807667bf24919c6e1f87"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-zero-row-scalar-assign-bug.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-zero-row-scalar-assign-bug.md", sha256: "6232c91f4ebe37d472bdef37d62ed7caa7c25d65bf8b5567bf7cc8a85b74a1c9"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/bugfix"]
 ---
 
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/bugfix"]
 [[mentat]] is Paul's FEC contributions-intelligence project (R+API collection pipeline, workbooks, local console). This topic holds the collection and attribution side of its history: the 2026-07-18 pipeline build, the 2026-07-27 full audit and R12 reconciliation, the 2026-09 worker-scaling and collector-outage lanes, the cross-verification rework, and the standing rules Paul set about what Mentat may count and what code may change.
 
 - The pipeline and its tooling are [[mentat-fec-pipeline]]; the console that exposes the results is [[mentat-console]] (the 2026-09-13 system-debug lane and the xref tab live there).
-- The decision-maker for every ruling here is [[paul-goff]]. Change-control rules (ask before substantive changes, explicit per-change approval) are in [[2026-06-working-agreement-change-control-and-decision-authority]].
+- The decision-maker for every ruling here is Paul Goff. Change-control rules (ask before substantive changes, explicit per-change approval) are in Change control and Paul's decision authority.
 - The cross-reference rule is its own concept: [[exclude-on-contradiction-not-ambiguity]]; the council review that produced the dwarfed cross-reference tab: [[2026-09-17-mentat-xref-council-review]].
 - Status is `in-progress` because the collection/attribution layer is live and several items are still open with Paul (see Next Steps).
 - Where the sources use a memory-name cross-reference, it is written here as a code name, for example `ask-before-substantive-changes`; those are memory notes, not vault entities.
@@ -49,7 +49,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/bugfix"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -68,7 +68,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/bugfix"]
 
 ## Related Topics
 
-- [[2026-06-working-agreement-change-control-and-decision-authority]] - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
+- Change control and Paul's decision authority - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
 
 ## Related Discussions
 
@@ -585,7 +585,7 @@ The shared-checkout law and "authorization does not relay" notes from this lane 
 
 ## Two API-key stores (source: `api-key-repository-2026-08-28`, user memory, newest modification 2026-09-18)
 
-**There are two stores, and the standing note that the Desktop file is "the" key store is wrong; it misled two sessions on 2026-09-18.** (Same facts are recorded on [[paul-goff]].)
+**There are two stores, and the standing note that the Desktop file is "the" key store is wrong; it misled two sessions on 2026-09-18.** (Same facts are recorded on Paul Goff.)
 
 **1. The general repository.** Paul ordered (2026-08-28) a permanent API key repository at **`C:\Users\pgoff\OneDrive\Desktop\API Keys\keys.json`**: JSON keyed by service, each entry `{service, auth_header, keys: [...], added, notes}`. Blocks: `lda` (7 Senate LDA keys, Token auth, ~120 req/min each), `data_gov`, `anthropic`. TRAP, verified 2026-09-18: nothing in it is named `fec`. The FEC credential lives in the **`data_gov`** block, because openFEC (`api.open.fec.gov`) is served through the api.data.gov family; the block's `service` field records it as verified working on FEC and rejected by lda.gov. A lane grepping for "fec" concludes there is no key and is wrong. Its 7 data_gov keys were all 40 characters, alphanumeric and distinct on that date. Use this file for one-off jobs outside Mentat.
 

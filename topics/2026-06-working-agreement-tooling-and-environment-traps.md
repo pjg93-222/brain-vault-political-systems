@@ -8,7 +8,7 @@ people:
   - "[[paul-goff]]"
 actors:
   - "[[claude-code-harness]]"
-  - "[[draft-systems-r-pipeline]]"
+  - "draft-systems-r-pipeline"
 objective: "Keep the standing rules that prevent silent damage from tooling and environment traps: write scripts to files (heredocs mangle), never split or relocate MEMORY.md lines, avoid PowerShell -like with [, do file writes through visible PowerShell (with honest exceptions), and keep the congress.gov advanced-search URL verbatim."
 created_at: 2026-06-03
 sources:
@@ -17,8 +17,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/memory-index-restore-incident-2026-07-26.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\memory-index-restore-incident-2026-07-26.md", sha256: "b5dec0466c8f3694a00d8775d611e6278aada3d5d7d0ac88fa2a005717ad1c18"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/powershell-visible-work.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\powershell-visible-work.md", sha256: "b58c86a319024dea28f54e3d5471d13cdbfe62c770215dcd33bcc1a83077c171"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/feedback_congress_url_no_json.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\feedback_congress_url_no_json.md", sha256: "f748020965e473c03ac4133372c594ffbf3ba95b47d04a9c01f7f1d1d5f3a379"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreement"]
 ---
 
@@ -28,7 +28,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 
 ## Context
 
-- Owner of the rules: [[paul-goff]]. The harness behaviors behind them are recorded in [[claude-code-harness]]; the presentation/communication side of the PowerShell rule is in [[2026-06-working-agreement-communication-and-presentation-style]]. The congress.gov URL rule serves [[2026-06-feature-congress-r-scrapers]] (code in the R pipeline [[draft-systems-r-pipeline]]).
+- Owner of the rules: [[paul-goff]]. The harness behaviors behind them are recorded in [[claude-code-harness]]; the presentation/communication side of the PowerShell rule is in Communication and presentation style. The congress.gov URL rule serves Congress R scrapers (code in the R pipeline Draft Systems R pipeline).
 - Each rule below is a bullet block: the rule, its **Why**, and **How to apply**. Memory-note sources (not vault entities): `shell-heredoc-mangling-2026-08-19`, `memory-index-restore-incident-2026-07-26`, `memory-index-is-the-loading-contract-2026-09-18`, `powershell-visible-work`, `feedback-congress-url-no-json`.
 - The two MEMORY.md notes are COMPLEMENTARY: the 2026-07-26 incident (a mangling: loud, recoverable) and the 2026-09-18 rule (an invisible deletion by splitting/relocating lines). The newer rule adds: never split or relocate MEMORY.md lines.
 
@@ -43,12 +43,12 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 | Actor | Relation |
 |---|---|
 | [[claude-code-harness]] | Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH. |
-| [[draft-systems-r-pipeline]] | Draft Systems R code root: congress.gov, CU press, Census CD and Ballotpedia scrapers plus the DEBATE+LSD stance pipeline |
+| Draft Systems R pipeline | Draft Systems R code root: congress.gov, CU press, Census CD and Ballotpedia scrapers plus the DEBATE+LSD stance pipeline |
 
 ## Related Topics
 
-- [[2026-06-feature-congress-r-scrapers]] - June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance
-- [[2026-06-working-agreement-communication-and-presentation-style]] - Rules for reporting to Paul: never appease, real R summary(lm()), trend over significance, visible PowerShell, close supplied items.
+- Congress R scrapers - June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance
+- Communication and presentation style - Rules for reporting to Paul: never appease, real R summary(lm()), trend over significance, visible PowerShell, close supplied items.
 
 ## History
 
@@ -97,7 +97,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 - Contrast: Rule 2's incident was a **mangling** (loud, obvious, recoverable from the session-start reminder); Rule 3's split would have been an **invisible deletion**. A mangling announces itself; this does not. Related: `dont-drop-context-anchor-memory`, `ask-before-substantive-changes`.
 
 ### Rule 4: Work through visible PowerShell (Paul, 2026-07-24; the glass-box rig details are below)
-- Paul (2026-07-24): "whenever I give you a prompt you give me a powershell(s) that show the code being written and data being extracted." Clarified via explicit choice: **work through visible PowerShell**: perform writes and extractions as PowerShell commands he can watch live, instead of the built-in Write/Edit/Read tools. (The communication-side statement is in [[2026-06-working-agreement-communication-and-presentation-style]].)
+- Paul (2026-07-24): "whenever I give you a prompt you give me a powershell(s) that show the code being written and data being extracted." Clarified via explicit choice: **work through visible PowerShell**: perform writes and extractions as PowerShell commands he can watch live, instead of the built-in Write/Edit/Read tools. (The communication-side statement is in Communication and presentation style.)
 - **Why:** live visibility into exactly what touches his machine: every code write and data read appears as a shell command in the transcript that he can see and re-run. He explicitly accepted "slower and noisier" over a passive recap block.
 - **How to apply:**
   - Writing code/files: PowerShell tool with single-quoted here-strings (`@'...'@`, closing `'@` at column 0) piped to `Set-Content -Encoding utf8` / `Out-File`. Full file content appears inside the command, never hidden.

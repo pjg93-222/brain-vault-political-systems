@@ -5,7 +5,7 @@ aliases: ["Personality psychometrics (Big Five)"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-audio-pipeline]]"
 objective: "Measure the Big Five (O/C/E/A/N-ES) for the roster of ~533 legislators from interviews, floor/hearing text and behavior, validate each trait against independent criteria under pre-registered one-look discipline, and feed a defensible N/A slot into the receptivity (susceptibility) layer of the Melange/Moneyball model."
@@ -24,8 +24,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-big5-campaign.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-big5-campaign.md", sha256: "af1a10d3d4ceb4601a79d4876c1c856a5dedb9d94cdfc7bc422fafac3633044d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/dispositions-dependability-2026-07-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\dispositions-dependability-2026-07-09.md", sha256: "b0fba6dff02b9bd0135e27c8c422dd072486561934b42475efd2e0e245226636"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-expert-panel.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-expert-panel.md", sha256: "b64033ef5e095f22157032ae283f2faa4082e29c2aad5999cf988df86cd47a9c"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -35,7 +35,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 ## Context
 
-**What this is.** A research-grade program (documented in `big5_methods.md`, main tree) that scores each member of the ~533-member roster on O, C, E, A and ES (emotional stability; N = -ES) and asks, per trait, whether the measure is valid (convergent, discriminant, known-groups, reliability) against criteria independent of the text. It is part of [[melange-systems]] (Moneyball CU-influence model); its engine touch-point is the receptivity layer (`receptivity_layer.py`: susc_z = .40*A + .30*N - .20*C - .10*E, feeding susceptibility/cascade/persuasion, NOT the influence rank; ranks md5 `cce0c5a6` / `c99e8cf7fd04e499` stayed identical through every N/A-slot change). Rulings and gates are Paul's ([[paul-goff]]); the audio branches of the program connect to [[2026-07-feature-audio-and-speech-lane]] and [[melange-audio-pipeline]]; the look/holdout rules to [[single-look-holdout-discipline]]; evidence and "never say 5/5" discipline to [[2026-07-working-agreement-verification-and-evidence-standards]].
+**What this is.** A research-grade program (documented in `big5_methods.md`, main tree) that scores each member of the ~533-member roster on O, C, E, A and ES (emotional stability; N = -ES) and asks, per trait, whether the measure is valid (convergent, discriminant, known-groups, reliability) against criteria independent of the text. It is part of [[melange-systems]] (Moneyball CU-influence model); its engine touch-point is the receptivity layer (`receptivity_layer.py`: susc_z = .40*A + .30*N - .20*C - .10*E, feeding susceptibility/cascade/persuasion, NOT the influence rank; ranks md5 `cce0c5a6` / `c99e8cf7fd04e499` stayed identical through every N/A-slot change). Rulings and gates are Paul's (Paul Goff); the audio branches of the program connect to [[2026-07-feature-audio-and-speech-lane]] and [[melange-audio-pipeline]]; the look/holdout rules to [[single-look-holdout-discipline]]; evidence and "never say 5/5" discipline to Verification and evidence standards.
 
 **Instrument glossary (from the sources).**
 - **Lexical** = `big5_traits.json` (Ramey-synth + Empath + fitted SMOreg); v1 text; stays only as N-source/weights candidate at times.
@@ -57,7 +57,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -72,11 +72,12 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 ## Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
+- [[gold-set-validation]] — the instrument counts as valid only where it scores against the Personality on the Hill Senate gold panels (the gold-anchored axes)
 
 ## Related Topics
 
 - [[2026-07-feature-audio-and-speech-lane]] - Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims.
-- [[2026-07-working-agreement-verification-and-evidence-standards]] - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
+- Verification and evidence standards - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
 
 ## History
 

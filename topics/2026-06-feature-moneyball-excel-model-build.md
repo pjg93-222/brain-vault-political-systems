@@ -5,7 +5,7 @@ aliases: ["Moneyball Excel model build (June 2026)"]
 category: "feature"
 status: "completed"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[draft-systems-r-pipeline]]"
   - "[[moneyball-workbook]]"
@@ -22,8 +22,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_presentation_audit.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_presentation_audit.md", sha256: "22c59f496f4c19149f5a99f72aac1ae93c8245dd7332f31976e39698414ae68e"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_press_raw_alignment.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_press_raw_alignment.md", sha256: "824813de9d6536f92753ee1d4070932f406f08e703e8014a7891b97af06683e4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_model.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_model.md", sha256: "65b55eb6397fb71ac07d19b63535dcc7c974494aaaa39aae953b1412a07da3de"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 ---
 
@@ -37,13 +37,13 @@ tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 - Starting point: `Moneyball (version 1).xlsb.xlsx` (in Downloads), built as an .xlsb converted to .xlsx. The live file had **11 sheets with a combined `Rank & Allocation` sheet** (pandas once mis-reported a 12-sheet split because the file was being edited in Excel during analysis; always work on a copy).
 - Scope of this topic: every June 2026 build step of the workbook and of the engines that read it (flip, coalition, electoral, route, priming, money-response, scenario runner, optimizer). It was an Excel-workbook-centred build: the June guidance wrote through Excel COM and openpyxl. **That system of record was later inverted**: Phase 2 made `ranks_python.json` the authority and the workbook a view, with NO COM anywhere (see Superseded guidance below and [[melange-systems]]).
 - Cascade architecture (formula-driven, recalcs in Excel): Legislative Score Raw to Normalized, Press Release Raw to Normalized and Demographic Raw to Normalized feed the **Sub Layer**, which feeds the **Primary Layer** (11 weighted dimensions), which feeds **Rank & Allocation** Score (`SUMPRODUCT(Table6 dims x Primary weights)`) and Rank (`RANK.EQ`). Each Sub Layer policy dimension = `legislative_part + press_part`; legislative sub-weights (Legislative Normalized row 2) summed about 0.7, press weight (Press Normalized row 535) was a flat 0.3. Sub Layer demographic cols V:AF are **hardcoded** (not formulas), so demographic fixes must be written there too.
-- The R-side data pipeline that regenerated base data is [[draft-systems-r-pipeline]]; the stance layer that the per-category work feeds is [[2026-06-feature-cu-stance-and-sentiment]]. Decision authority over every numeric multiplier/weight/threshold is Paul's ([[paul-goff]]; see [[2026-06-working-agreement-change-control-and-decision-authority]]).
+- The R-side data pipeline that regenerated base data is [[draft-systems-r-pipeline]]; the stance layer that the per-category work feeds is [[2026-06-feature-cu-stance-and-sentiment]]. Decision authority over every numeric multiplier/weight/threshold is Paul's (Paul Goff; see Change control and Paul's decision authority).
 
 ## People Involved
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -56,10 +56,14 @@ tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
 
+## Related Concepts
+
+- [[four-pillar-percentile-blend]] — the June build delivered the Blended workbook with the percentile-rank 4-pillar blend after the 2026-06-25 Presentation audit
+
 ## Related Topics
 
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
-- [[2026-06-working-agreement-change-control-and-decision-authority]] - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
+- Change control and Paul's decision authority - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
 
 ## History
 
@@ -309,7 +313,7 @@ Source feedback `feedback_consult_multipliers_thresholds` (2026-06-25):
 - For the Moneyball / congress model, any numeric **multiplier, weight, or threshold** is the USER's call: success-stage multipliers, edge-weight knobs (size-normalization, role weights), stance thresholds, decay factors, allocation cutoffs, topic/legislative weights, etc. Present the structure, options, ranges and trade-offs, then let the user set the actual values.
 - **Why:** these parameters encode strategy and value judgments (what "influence" or "success" means, who counts as an opponent, how hard to penalize popular bills, which legislative goals to optimize), not technical defaults, and the model allocates real money. The user has corrected parameters before (Opponent press cutoff -0.60 to -0.40 via a named-opponents list).
 - **How to apply:** when a build needs a number, surface it as an explicit decision and wait for the user's value, but DO give options AND a recommendation with reasoning (the user wants the expert recommendation; they make the final call). Mark the recommended pick "(Recommended)". Default to the *current/existing* value when told to keep it. Related: `feedback_spreadsheet_consult_on_errors`, `project_moneyball_network_enhancement`.
-- Governing page: [[2026-06-working-agreement-change-control-and-decision-authority]].
+- Governing page: Change control and Paul's decision authority.
 
 ## Scenario-tool pre-flight and engine build (2026-06-26)
 

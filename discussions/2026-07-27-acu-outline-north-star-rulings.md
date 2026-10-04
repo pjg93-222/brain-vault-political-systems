@@ -24,15 +24,15 @@ related_topics:
   - "[[2026-07-feature-legislative-pillar-acu-review]]"
 related_actors: []
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[melange-systems]]"
 related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/acu-outline-northstar-2026-07-27.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\acu-outline-northstar-2026-07-27.md", sha256: "57e514181f5b7a31dd47613f27469d213e4736e9e7d2e18b7ef3fe708ad596d5"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -42,13 +42,13 @@ tags: ["type/discussion", "domain/data"]
 
 ## Context
 
-Rulings given by Paul on 2026-07-27 (evening; source memory last modified 2026-07-28) while the legfix5 six-year legislation lane was blocked on the never-performed 19-category review (see [[2026-07-feature-legislative-pillar-acu-review]] for the legfix5 collection and culling state). They form the adjudication contract for that review in [[melange-systems]]. Paul is [[paul-goff]]. Related memories: `legfix5-collection-complete-2026-07-27`, `ask-before-substantive-changes`, `codex-executor-lane-2026-07-18`, `legfix4-residue-closeout-2026-07-25`, `legislative-letters-2026-07-17`.
+Rulings given by Paul on 2026-07-27 (evening; source memory last modified 2026-07-28) while the legfix5 six-year legislation lane was blocked on the never-performed 19-category review (see [[2026-07-feature-legislative-pillar-acu-review]] for the legfix5 collection and culling state). They form the adjudication contract for that review in [[melange-systems]]. Paul is Paul Goff. Related memories: `legfix5-collection-complete-2026-07-27`, `ask-before-substantive-changes`, `codex-executor-lane-2026-07-18`, `legfix4-residue-closeout-2026-07-25`, `legislative-letters-2026-07-17`.
 
 ## Participants
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Related Projects
 
