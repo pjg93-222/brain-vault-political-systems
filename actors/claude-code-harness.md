@@ -92,7 +92,7 @@ $_ -like '- [Codex executor lane 2026-07-18]*'     # use -match (escape \[) or .
 5. **Read renders PDF pages only in sessions started after the poppler install (2026-08-14).**
 6. **PowerShell `-like` with a literal `[` truncated MEMORY.md to a BOM (2026-07-26).**
 7. **Hook commands run through Git Bash (2026-10-03; source `windows-hook-shell-git-bash`).** Bash strips the backslashes from an unquoted Windows path in a hook command, so the command fails silently; the 16 glassbox `mirror.ps1` hooks were dead from about 2026-08-02 until 2026-10-03. Use forward slashes; the rule and the hook test recipe are Rule 6 of Tooling and environment traps.
-8. **The Bash tool collapses `\\` to `\` in ordinary command text (2026-10-03).** Not only in heredocs, and even inside single quotes, so a grep for a JSON-escaped path silently returns 0; build a backslash with `bs=$(printf '\134')` or use `\` in jq (Rule 1 extension in Tooling and environment traps).
+8. **The Bash tool collapses `\\` to `\` in ordinary command text (2026-10-03).** Not only in heredocs, and even inside single quotes, so a grep for a JSON-escaped path silently returns 0; build a backslash with `bs=$(printf '\134')` or use `\u005c` inside jq strings (Rule 1 extension in Tooling and environment traps).
 
 ## MEMORY.md: the loading contract
 
