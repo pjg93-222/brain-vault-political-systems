@@ -11,23 +11,25 @@ team: ""
 criticality: "medium"
 pci: false
 known_issues:
-  - "Dies on reboot / hard reboot; autostart is only the watchdog scheduled task MelangeStafferLiveSidecar (logon +2 min and every 30 min)"
-  - "Default office route is memory-unsafe: pair_cache grew the sidecar from 7.0 to 17.5 GB and host available RAM fell to 0.22 GB (2026-10-02 measurement); latency fix lane in progress"
+  - "Dies on reboot / hard reboot; its only autostart, the watchdog scheduled task MelangeStafferLiveSidecar (logon +2 min and every 30 min), stays disabled (brain D-080, as of 2026-10-03), so a restart is the server.json PID stop plus start_staffer_live.ps1"
+  - "Default office route is memory-unsafe: pair_cache grew the sidecar from 7.0 to 17.5 GB and host available RAM fell to 0.22 GB (2026-10-02 measurement); the latency lane landed four patches on 2026-10-03/04 and closed on 2026-10-04 with open items, and no post-landing memory figure is recorded"
   - "Route snapshots labelled A* are Dijkstra: every route path runs with heuristic 0 (staffer_routing.py:381)"
-  - "Typeahead slow: people p95 8.4 s, office search max 41 s"
+  - "Typeahead slow: people p95 8.4 s, office search max 41 s (2026-10-02, before the landings); directory-mode searches are still not prewarmed (the first one took 8.4 s on 2026-10-04)"
+  - "Idle CPU about 19% at the 2026-10-04 lane close (one thread, kernel > user; suspected identity loop, D-084); open"
+  - "v4.1 LOW-1 (a publish can skip the post-swap gc in a narrow window; needs a restart) and LOW-2 (a doc overstatement) deferred to the next restart"
   - "Sidecar grows to 7-8 GB within hours of start (2026-09-25/26 restart) and starved a Mentat export"
   - "Identity consolidation self-applies on restart when the payroll-identity pin changed (2026-09-06 trap)"
   - "Gordon/Stephanie/Greg user statement hard-coded at staffer_routing_evidence.py:157-162, not in staffer_user_assertions.json, no UI to retract it"
   - "start_staffer_live.ps1 uses unbounded Get-NetTCPConnection/Invoke-RestMethod (latent hang)"
   - "Identity loop throughput about 2 checks/min, 134k queued of 185,893 people (weeks to cover); 0 automatic merges from web references so far"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "6cb20aaf4eebf4790245bcff1d50eee4f926ee00fd5c47f0a0ed75981baa366a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-live-sidecar-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-live-sidecar-2026-09-04.md", sha256: "9ebbe9baa896071b4b81a5d1fb0bbf36a3aadc3caeb4df9de7097d1e8128a0bb"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-network-redesign-2026-09-05.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-network-redesign-2026-09-05.md", sha256: "7761fc40db8d6180eb138a80e1ffad67c27227a93aefab397b5fe4893cd6aa44"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/backend"]
 ---
 
@@ -45,7 +47,7 @@ tags: ["type/actor", "status/active", "domain/backend"]
 | Criticality | medium |
 | PCI | no |
 | Team | none |
-| Listener | `127.0.0.1:8841`, no autostart except the watchdog task; server PID recorded in `audits/staffer_live_runtime/server.json` |
+| Listener | `127.0.0.1:8841`, no autostart except the watchdog task, which stays disabled (brain D-080, as of 2026-10-03); server PID recorded in `audits/staffer_live_runtime/server.json` (PID 66688 after the 2026-10-04 14:33 landing) |
 
 ## Dependencies
 
@@ -85,18 +87,23 @@ python fec/surfaces/repin_staffer_live.py --wait --execute
 
 # Autostart watchdog (scheduled task MelangeStafferLiveSidecar runs this)
 fec/surfaces/staffer_live_watchdog.ps1
+# 2026-10-03: the task stays disabled (brain D-080); a restart stops the server.json PID and runs start_staffer_live.ps1
 
 # Live-route memory guard for the latency panel (rule from the 2026-10-02 lane)
 # abort if available RAM falls below 400 MB or the sidecar grows by more than 1.5 GB
 python fec/tools/live_patch.py    # cuts ONE patch; APPLY and the 8841 restart are Paul's
+# 2026-10-03/04: the lane landed one patch per landing (landing_v2, v3_ids, v4, v4_1), each after an independent
+# Opus check passed, on Paul's per-landing go; landing_v2 and landing_v4 via <landing>/scripts/apply_landing.py --apply
 ```
 
 ## Known Issues
 
-- Dies on reboot / hard reboot (2026-09-04 19:57 hard reboot, Kernel-Power 41, killed the sidecar silently; restarted 21:17). Autostart exists only via the watchdog task (below).
+- Dies on reboot / hard reboot (2026-09-04 19:57 hard reboot, Kernel-Power 41, killed the sidecar silently; restarted 21:17). Autostart exists only via the watchdog task (below). As of 2026-10-03 that task stays disabled (brain D-080; source `people-network-route-latency-lane-2026-10-02`), so nothing restarts the sidecar after a reboot.
 - Default office route memory blow-up: `pair_cache` keeps a full evidence dict for every checked pair (about 1 KB per check); one default office route grew the sidecar from 7.0 to 17.5 GB and dropped host available RAM to 0.22 GB. Never fire a default office route at the live sidecar without a memory guard (that was the agent's own measurement request on 2026-10-02).
 - If no staffer has an office anchor, the search scans the whole component before giving up.
-- Typeahead slow: people p95 8.4 s; office search max 41 s. Page load is not the problem (11 requests, 110-300 ms).
+- Typeahead slow: people p95 8.4 s; office search max 41 s. Page load is not the problem (11 requests, 110-300 ms). These are the 2026-10-02 figures, before the landings; after them, directory-mode searches are still not prewarmed (the first one took 8.4 s on 2026-10-04).
+- Idle CPU about 19% at the 2026-10-04 lane close (one thread, kernel > user; suspected identity loop, D-084); 18% was already seen shortly after the 03:22 restart; cause unconfirmed (OPEN).
+- v4.1 LOW-1 (a publish can skip the post-swap gc in a narrow window; needs a restart) and LOW-2 (a doc overstatement) are deferred to the next restart (OPEN).
 - Sidecar PID 23992 grew to 7-8 GB within ~5 h of its 2026-09-25 19:25 watchdog start and starved the Mentat 2020 export (restarted 2026-09-26 00:40).
 - Statement hard-coded at `staffer_routing_evidence.py:157-162` (Gordon/Stephanie/Greg "currently work together", 2026-09-04), not in `staffer_user_assertions.json`, and there is no UI to retract it (OPEN).
 - `start_staffer_live.ps1`: `Get-NetTCPConnection` / `Invoke-RestMethod` are unbounded (latent); on 2026-09-26 the launcher's shell hung for more than 3 min after the start (harmless).
@@ -126,6 +133,7 @@ The "graph consolidation / identity" feature Paul described on 2026-09-04: peopl
 - **Restart 2026-09-26 00:40, Paul-ordered ("restart the sidecar"), done by the agent:** Stop-Process on the server.json PID 23992 (grown to 7-8 GB within ~5 h of its 19:25 watchdog start; starved the Mentat 2020 export), then `& '.\fec\surfaces\start_staffer_live.ps1'` from the live-tree root. New PID 15996, Ready at 00:46 (6 min). The payroll pin was unchanged since 2026-09-08, so there was no self-apply. Stop-Process was NOT blocked in bypass mode. The launcher's shell hung for more than 3 min after the start (the latent unbounded Get-NetTCPConnection/Invoke-RestMethod), harmless.
 - **External-load hook neutralized (2026-09-04):** `fec/surfaces/staffer_live_integration.py:inject_navigation` injected `http://127.0.0.1:8841/staffer-live/launch.js` into `Moneyball.html` and the dashboard (ERR_CONNECTION_REFUSED whenever the sidecar was down; violates the single-file / no-external-loads contract). It is now a no-op; the peer session confirmed no dependency. Hence the dashboard staffer page only probes 8841 (pin: the string `fetch('http://127.0.0.1:8841/api/staffer-live?limit=1'` must be present and `launch.js` absent).
 - Dashboard-facing notes: the page `staffer-network.html` (variant C redesign, built and pin-tested 2026-09-05, apply is Paul's) and `#app-staffer` in `Moneyball.html` are documented in [[2026-09-feature-staffer-network-surfaces]]; person-to-person paths need a compact people index in the section payload because the name policy forbids person names there (a design-audit leftover).
+- **Restarts in the route-latency landings (2026-10-03/04; source `people-network-route-latency-lane-2026-10-02`):** the order ruled for `landing_v2` was: stop the `server.json` PID, apply, then run `start_staffer_live.ps1` with the scheduled task left disabled (brain D-080); `landing_v4` followed the same stop, apply, start order. `landing_v2`: PID 10876 stopped 2026-10-03 14:58:58, PID 35320 started, Ready/PASS 15:02:36 (the payroll pin was unchanged since 2026-09-08, so no identity self-apply). `landing_v4`: PID 36412, Ready 2026-10-04 03:22:06. `landing_v4_1`: PID 66688 (landed 2026-10-04 14:33). Details in the route latency lane section.
 
 ## Route latency lane (2026-10-02/03; source `people-network-route-latency-lane-2026-10-02`, last modified 2026-10-03)
 
@@ -162,7 +170,28 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
 - Shared file: both create the identical `fec/surfaces/staffer_route_cancel.py`.
 - WP-C, typeahead diagnosis: read-only; its fix comes after WP-B, because both touch `staffer_live_service.py`.
 - Next: merge WP-A and WP-B, add the WP-C fix, run an Opus verifier; cut ONE patch with `fec/tools/live_patch.py`; APPLY and the 8841 restart are Paul's; then run the live panel with a memory guard (abort if available RAM falls below 400 MB or the sidecar grows by more than 1.5 GB).
+  - Done and superseded 2026-10-03/04 (newer version of the same memory file): the lane landed four patches instead of one, each after an independent Opus check, on Paul's per-landing go ("stop, apply, start once the check passes"); see the landing record below.
 - Why: Paul wants the people network usable, with the same routes. Related rules: ask-before-substantive-changes, the model tiering rules (Opus reasons; code in Sonnet 5.5 from 2026-10-01), go-faster directive.
+
+**Landings, rulings and close-out, 2026-10-03/04** (newer version of the same memory file, captured 2026-10-04)
+
+- **Landing (Paul, 2026-10-03: "stop, apply, start once the check passes"):** tip `claude/staffer-route-latency-20261002` at `86631c454`; patch `scratchpad/landing_v2` (`route_latency.patch`, sha256 `0b5db04b…3076`, 28 files). Order once the independent Opus check passed: stop the 8841 PID from `server.json`; run `landing_v2/scripts/apply_landing.py --apply`; run `fec/surfaces/start_staffer_live.ps1` (the scheduled task stays disabled, D-080); wait about 5 min for Ready; run the live panel with the memory guard.
+  - `landing_v2` applied 2026-10-03 14:59:02 local: sidecar stopped 14:58:58 (old PID 10876), started as PID 35320, Ready/PASS 15:02:36; the payroll pin was unchanged since 2026-09-08, so there was no identity self-apply.
+- **`landing_v3_ids` (Paul: "apply v3 once the check passes too"):** the D-083 JS gaps, static files only, no restart, cut against the `landing_v2` post-images; it also carries the LOW-1 ranked-alternatives doc clause (README plus docstring). To be applied after the live panel finished; applied 2026-10-03 16:24:41 (patch sha `1d408991…`).
+- **Unreachable message (Paul, 2026-10-03: "show the unreachable message, suggest Ecosystem"):** branch `claude/staffer-unreachable-hint-20261003` (worktree route-core, from `f23a40aee`). The server adds `unreachable_reason`, `message` and `suggested_objective` to Staffer-model unreachable results (status values unchanged); the UI shows the message and a "Search Ecosystem" button that re-submits the search. Needs a restart; Paul sees the message strings before landing.
+- **Next round, ruled by Paul via questions (2026-10-03):** speed options 1, 2 and 3 (cache `payroll_people` and index `contact_group`; prewarm the work index and the network index after each router publish; skip zero-overlap pairs with a row-only `pair()`, which gives bit-identical rows), NOT the full pre-score of every co-worker list (options 4+5); office search routes to the covered staff and reports how many were left out (until then one uncovered staffer failed the whole office); everything lands on ONE restart after the Opus check (stop, apply, start), then a short panel.
+  - Committee names are searchable again: the agent's D-083 follow-up had over-reached by treating committee ids, which embed the committee name, as opaque (commit `6a198d600` on `claude/staffer-search-committee-names-20261003`).
+  - Branches: `claude/staffer-unreachable-hint-20261003` (route-core; the office-coverage rule goes there next), `claude/staffer-coldpath-20261003` (route-jobs), `claude/staffer-search-committee-names-20261003` (route-search).
+- **Record browser stays first-committee-only (Paul, 2026-10-03: "leave it first-committee only"):** the record browser searches only each person's first member, committee and policy id; the map filter searches all of them (documented in the README). Do not re-propose a change to the row contract.
+- **Commit (Paul, 2026-10-03: "commit everything on main after the panel passes"):** this lane's files only (the `landing_v2`, v3 and v4 manifests), with `git add` on those exact paths, then commit; leave other lanes' uncommitted LIVE changes and the untracked `staffer_live/approved/` alone. **Never merge or check out a branch into LIVE, because a checkout rewrites EOLs (D-060).** The post-commit hook pushes to the mirror.
+- **Brain drafts applied (Paul: "apply the brain drafts too"):** brain commit `686044f`, pushed to the mirror: D-082 to D-087 added, the D-080 Outcome executed line, a STATE top bullet, Last verified 2026-10-03. The post-landing brain update was to set the D-083, D-085, D-086 and D-087 Outcomes to LANDED, switch the six new headings from " - " to the em dash used by D-064 to D-081 (Paul: "fix the heading dashes in the same update"), fix the STATE 10-01 QME bullet (it still listed the 8841 start as pending), refresh the STATE bullet, and add two dead ends (Paul: "add both dead ends in the same update"; the next free DE numbers if 056/057 are taken):
+  - DE-056: replacing `+=` with `sum()` in a bit-identical float copy fails: on Python 3.12 `sum()` is compensated and differs in the last bit (36 pairs). Evidence: `test_control_the_comparison_is_sensitive_to_float_operation_order` on `claude/staffer-coldpath-20261003`.
+  - DE-057: asserting an async search's immediate status in a test is a race, because the worker can finish first (0.4% unloaded, 0.9% loaded). Fix: poll to a terminal state.
+- **`landing_v4` (Paul, 2026-10-03: "land v4 once the check passes"):** after a PASS (or PASS-WITH-FIXES with doc fixes only): stop 8841, run `apply_landing.py --apply` for `landing_v4`, start; wait for Ready, run a short panel that checks the unreachable reasons on real data, commit this lane's files on LIVE main, run the post-landing brain update.
+  - Done 2026-10-04: applied 03:17:32; 8841 is PID 36412, Ready 03:22:06. Panel passed: cold searches about 3x faster, the first route after a restart 2.8 s (was 40 s), 22 of 22 reasons correct, browser check OK. LIVE main commit `3366a7840` (45 lane files plus a 128-file audit packet in `audits/staffer_route_latency_20261004`; mirror current). An agent was applying the post-landing brain update (completion not recorded). Idle CPU was 18% shortly after the restart, cause unknown.
+- **`landing_v4_1` (branch `claude/staffer-route-v4-1-20261004`):** gc only after a router is replaced (the startup gc had stalled requests 10.1 s live), no index rebuild during a swap, directory-mode left-out wording, `explanation` = message; it needed an Opus check, Paul's OK for a restart and its own commit.
+  - Done 2026-10-04: landed 14:33 (8841 PID 66688) and committed: LIVE main `4a81d5022` (80 files: 11 lane files, the `landing_v4_1` audit and `PANELS.md`), brain `81f6c997d`; mirrors current. Panel: no startup gc (`gc_ms` absent); JUDICIARY route 1 in 5.2 s, all 3 routes in 11.6 s, paths and costs bit-identical to v4; `explanation` = message 4/4; `uncovered_basis` correct.
+- **Lane closed 2026-10-04 except open items:** idle CPU about 19% (one thread, kernel > user; suspected identity loop, D-084); v4.1 LOW-1 (a publish can skip the post-swap gc in a narrow window; needs a restart) and LOW-2 (a doc overstatement), deferred to the next restart; directory-mode searches are not prewarmed (the first one takes 8.4 s); ALT/A* landmarks deferred, not needed now.
 
 ## Related Actors
 
@@ -180,7 +209,7 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
 ## Related Concepts
 
 - [[concurrent-service-overlap-edge-rule]] - Staffer social-network edge rule: a person-person edge needs real concurrent service in one container; sequence is trajectory, not an edge.
-- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py and applied with core.autocrlf=false, never normalising LIVE; applying needs Paul's go.
+- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
 
 ## Discussions
 

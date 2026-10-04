@@ -31,10 +31,11 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-network-viz-requests.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-network-viz-requests.md", sha256: "b914b3def327c411bfb7106b668249169524d904a021f40306f9b0d8392bd5f6"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_member_desk_integration.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_member_desk_integration.md", sha256: "77b0312aa6bcd56f96361ddcdb9e881aafc90eae83297e75efeadeccfda060e2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_dashboard.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_dashboard.md", sha256: "c5bfe804deeca4cdc533f5ddf9110993136d733cc784f081a1266e9c3d99e00f"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/frontend"]
 ---
 
@@ -116,7 +117,7 @@ Restart-Service AppXSvc -Force
 # Force an animation end state (older hack): routeAnim.t0=performance.now()-2000; draw()
 ```
 
-Also recorded: the finalize workflow was launched as `Workflow({scriptPath: "SP\\lane\\finalize_workflow.js", args: {slots: 8}})`; the 8841 restart chain is scheduled task `MelangeStafferLiveSidecar` -> watchdog -> `start_staffer_live.ps1`; deploy wrapper `fec/deploy_lobby_pages.ps1`; pin-scan script `<session scratchpad>/pinscan3.py`.
+Also recorded: the finalize workflow was launched as `Workflow({scriptPath: "SP\\lane\\finalize_workflow.js", args: {slots: 8}})`; the 8841 restart chain is scheduled task `MelangeStafferLiveSidecar` -> watchdog -> `start_staffer_live.ps1` (correction 2026-10-03, source `people-network-route-latency-lane-2026-10-02`: the task stays disabled per brain D-080, and the route-latency landings restarted 8841 by stopping the `server.json` PID and running `start_staffer_live.ps1` directly); deploy wrapper `fec/deploy_lobby_pages.ps1`; pin-scan script `<session scratchpad>/pinscan3.py`.
 
 ## Known Issues
 

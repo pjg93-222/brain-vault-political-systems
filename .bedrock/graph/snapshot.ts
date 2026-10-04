@@ -6,7 +6,11 @@
 // after the 30 splits (119 parts) and the 8 new concepts, plus the 3 fleeting notes tracked in HEAD, which Phase 2 never
 // stages; hook captures in the working tree are not counted; now 207 / 574 / 2083, re-pinned by fix round batch 7 from
 // its own export: one more mention of moneyball-workbook in its lineage part, the logged decision 4(b) rewrite "(see
-// superseded in [[moneyball-workbook]])", so that pair's weight went from 6 to 7). It proves that a change to the tooling did not change what
+// superseded in [[moneyball-workbook]])", so that pair's weight went from 6 to 7; now 204 / 567 / 2064, re-pinned by the
+// fleeting pass of 2026-10-04 from its own export: the three fleeting notes tracked in HEAD were organized and deleted, so -3
+// nodes, -7 links (their pairs with the notes they updated) and -21 mentions (each target named three times: updates:,
+// Possible Connections, Capture Context), and the forecast-redesign / paul-goff pair went from 12 to 14 mentions (the owner of
+// a new action item, in the frontmatter and the table); ledger .bedrock/reorg/ledger/fleeting-pass.md). It proves that a change to the tooling did not change what
 // the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail, which is
 // the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below (a Phase 2 fix round re-pins it
 // from its own export).
@@ -17,10 +21,10 @@ import { DEFAULT_OUT, argValue } from "./common.ts";
 import { gate, extractData } from "./checks.ts";
 
 const SNAPSHOT = {
-  nodes: 207,
-  links: 574,
-  mentions: 2083,
-  types: { actor: 47, concept: 14, discussion: 6, person: 1, project: 4, topic: 132, team: 0, fleeting: 3, other: 0 } as Record<string, number>,
+  nodes: 204,
+  links: 567,
+  mentions: 2064,
+  types: { actor: 47, concept: 14, discussion: 6, person: 1, project: 4, topic: 132, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
 };
 
 const FILE = argValue("--file") ?? DEFAULT_OUT;
