@@ -16,7 +16,7 @@ conclusions:
   - "Q9 'You can ship once prepared': names may ship in the section payload; rebuild + deploy the page once verified."
   - "Closing law: simple to use, concise with minimal duplication while being relevant to the current day."
 action_items:
-  - "Paul to restart task MelangeStafferLiveSidecar when the sidecar code changes (Python is not hot-reloaded)."
+  - "Paul to restart task MelangeStafferLiveSidecar when the sidecar code changes (Python is not hot-reloaded). Progress 2026-10-03: the task stays disabled (brain D-080); a code change goes live by stopping the server.json PID and running start_staffer_live.ps1."
   - "Open for Paul: LDA lobbyist names on the static page (public filings vs corpus receipt privacy_class restricted-machine-local)."
   - "Open for Paul: decay and container_size_normalisation remain pending_rulings, applied nowhere."
   - "Open for Paul: the Recycle Bin holding LIVE backups (44.6 GB) is still charged to the disk; restore is free, emptying is permanent."
@@ -31,8 +31,9 @@ related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-sorting-lane-2026-09-06.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-sorting-lane-2026-09-06.md", sha256: "59d8e0e9c17be38d759d7b3adac2f37fc990e0f2ab771975a7d5972360ad61c1"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -110,7 +111,7 @@ Memory `staffer-sorting-lane-2026-09-06` (type project, session `25322ef7-844b-4
 
 ## Action Items
 
-- [ ] Restart task MelangeStafferLiveSidecar after sidecar code changes; Python is not hot-reloaded (owner: Paul)
+- [ ] Restart task MelangeStafferLiveSidecar after sidecar code changes; Python is not hot-reloaded (owner: Paul). Progress 2026-10-03 (source `people-network-route-latency-lane-2026-10-02`): the task stays disabled (brain D-080); a code change goes live by stopping the `server.json` PID and running `start_staffer_live.ps1`, as the route-latency landings did.
 - [ ] Decide LDA lobbyist names on the static page (owner: Paul)
 - [ ] Decide `decay` and `container_size_normalisation` (owner: Paul)
 - [ ] Decide the Recycle Bin / `LIVE\backups\` question (owner: Paul)

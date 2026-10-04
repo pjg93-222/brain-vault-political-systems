@@ -8,9 +8,10 @@ people: []
 actors: []
 objective: ""
 created_at: 2026-07-01
-sources: []
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 part_of: "[[2026-07-troubleshooting-melange-audits-and-reviews]]"
 ---
@@ -87,6 +88,7 @@ Close-out of `HANDOFF_LAUNDRY_LIST_2026-07-16.md`: six fixes landed, interview t
 - An Opus architect's census claim needs the same adversarial re-check as a scout's (the Vargas "same title/date" pair was two releases). A URL slug only NOMINATES a duplicate; require date and title too.
 - Drifted LIVE target: put the logic in a NEW pure helper on the branch and deliver the producer hook as a patch cut against LIVE bytes (`live-tree-eol-census-2026-09-19` has the cutter, `fec/tools/live_patch.py`, see [[melange-fec-pipeline]]). Before promising a merge run `git -C <LIVE> status --porcelain -- <paths the branch touches>`: one dirty path blocks it (save, restore, merge, 3-way `git merge-file` back, `cmp`). UNTRACKED files at a path the merge creates block a fast-forward too - an architect told to save receipts "in the packet" wrote them into LIVE, not the worktree; move them.
 - main moves under a long lane: merge main INTO the branch in the worktree (no rebase), test, then `merge --ff-only` in LIVE. Git Bash mangles `branch/with/slash:path`: use the SHA + `MSYS_NO_PATHCONV=1` on that command only.
+- Correction 2026-10-03 (D-060 as restated in the route-latency lane's commit ruling; source `people-network-route-latency-lane-2026-10-02`; rule in Live-tree patch discipline): never merge or check out a branch into LIVE, because a checkout rewrites line endings. The merge into LIVE in the two preceding lessons (the dirty-path precondition before promising a merge, and the final `merge --ff-only` in LIVE) no longer applies: the change reaches LIVE as a patch cut against LIVE bytes, and the lane commits its own files on LIVE main with `git add` on their exact paths.
 - Receipts that record sha256 of sibling files must be stored `-text` (packet `.gitattributes`), or autocrlf breaks the hashes on a fresh checkout. Adding `-text` makes CRLF working copies read as modified: rewrite them from their index blobs (tree oid unchanged), never `checkout --` (GateGuard blocks it).
 - PowerShell 5.1 splits `git commit -m` here-strings at double quotes, so use `git commit -F <file>` written without a BOM. The repo ignores `*.txt/*.json/*.csv`, so use `git add -f`. Per-file adds over OneDrive exceed 120 s.
 - GateGuard denies the FIRST Write of every new file (scratch files too) until importers/API/schema + Paul's verbatim instruction are stated - batch content into few files.

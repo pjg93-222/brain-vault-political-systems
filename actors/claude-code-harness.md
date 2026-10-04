@@ -17,6 +17,8 @@ known_issues:
   - "ECC GateGuard pre:bash:gateguard-fact-force refuses git commit --amend; delegated executor subagents rewrite the Co-Authored-By trailer"
   - "Read renders PDFs only in sessions started after the poppler install (PATH captured at session launch)"
   - "PowerShell -like with a literal [ throws on every line; a filter that fails open to empty plus Set-Content truncates a file"
+  - "Hook commands run through Git Bash on this machine: an unquoted Windows backslash path in a hook command fails silently (the glassbox hooks were dead about 2026-08-02 to 2026-10-03); use forward slashes"
+  - "The Bash tool collapses doubled backslashes in ordinary command text too, even inside single quotes, so greps for JSON-escaped paths silently return 0"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sendmessage-workflow-agent-duplicates-2026-09-24.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sendmessage-workflow-agent-duplicates-2026-09-24.md", sha256: "19c341994124a526ee1d0facc683ce13bea8a2144ec1bebfc21fb2ab7b82ae79"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/memory-index-is-the-loading-contract-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\memory-index-is-the-loading-contract-2026-09-18.md", sha256: "5b4425e1fb079ec4863441d812eff877c3b5bd902dacd03330f59ee6c93797eb"}
@@ -24,10 +26,11 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/shell-heredoc-mangling-2026-08-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\shell-heredoc-mangling-2026-08-19.md", sha256: "945c64c11c006486b39fd74d3324d7ac7dc2d2290a6ea813fd0d3f8f20a83c0b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/poppler-pdf-rendering-2026-08-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\poppler-pdf-rendering-2026-08-14.md", sha256: "923256f4944de593fb9cddb76f585f1194e0d4bbcd2ba561d09c14bf461cf3b4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/memory-index-restore-incident-2026-07-26.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\memory-index-restore-incident-2026-07-26.md", sha256: "b5dec0466c8f3694a00d8775d611e6278aada3d5d7d0ac88fa2a005717ad1c18"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e/memory/windows-hook-shell-git-bash.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e\\memory\\windows-hook-shell-git-bash.md", sha256: "a239f75054598a3e26fa33f532b3a325b6501c3277add53d25908a2055522138"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -88,6 +91,8 @@ $_ -like '- [Codex executor lane 2026-07-18]*'     # use -match (escape \[) or .
 4. **GateGuard blocks `git commit --amend`; executor subagents rewrite the co-author trailer (2026-09-18).**
 5. **Read renders PDF pages only in sessions started after the poppler install (2026-08-14).**
 6. **PowerShell `-like` with a literal `[` truncated MEMORY.md to a BOM (2026-07-26).**
+7. **Hook commands run through Git Bash (2026-10-03; source `windows-hook-shell-git-bash`).** Bash strips the backslashes from an unquoted Windows path in a hook command, so the command fails silently; the 16 glassbox `mirror.ps1` hooks were dead from about 2026-08-02 until 2026-10-03. Use forward slashes; the rule and the hook test recipe are Rule 6 of Tooling and environment traps.
+8. **The Bash tool collapses `\\` to `\` in ordinary command text (2026-10-03).** Not only in heredocs, and even inside single quotes, so a grep for a JSON-escaped path silently returns 0; build a backslash with `bs=$(printf '\134')` or use `\` in jq (Rule 1 extension in Tooling and environment traps).
 
 ## MEMORY.md: the loading contract
 
@@ -170,6 +175,7 @@ In this environment, passing script text through the Bash tool corrupts it even 
 | 2026-09-18 | Paul rejects MEMORY.md split (loading contract); receipt line-pin ruling; GateGuard/trailer traps |
 | 2026-09-19 | MEMORY.md re-measured and trimmed 19.89 to 18.59 KB (152 entries) |
 | 2026-09-24 | SendMessage to Workflow agents fix2-men / fix2-mel spawned duplicates |
+| 2026-10-03 | Hook commands found to run through Git Bash: the 16 glassbox `mirror.ps1` hooks, dead since about 2026-08-02 on backslash paths, fixed with forward slashes |
 
 ## Related Actors
 

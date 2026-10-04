@@ -5,19 +5,19 @@ aliases: ["Mentat project", "FEC contributions intelligence"]
 description: "Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks, plus a local Python console (Chart Studio, Graph, Insights, PAC evidence panes and district map). Pushed to GitHub branch claude/mentat-migration-onto-main (PR unopened). Money/receipt-counting code is frozen by Paul's ruling."
 status: "active"
 deadline: ""
-progress: "Pipeline shipped (7 industries ready; workbooks built and rebuilt); console, Chart Studio and PAC-evidence lanes ongoing; live tree pushed to GitHub branch claude/mentat-migration-onto-main (tip 28c27a47) on 2026-10-02/03, PR to main still unopened (Paul deferred); v5 corrected Fintech workbook awaits Paul's deploy call."
+progress: "Pipeline shipped (7 industries ready; workbooks built and rebuilt); console, Chart Studio and PAC-evidence lanes ongoing; live tree pushed to GitHub branch claude/mentat-migration-onto-main (tip 28c27a47) on 2026-10-02/03, then opened as Melange PR #2 and merged 2026-10-03 at Paul's request (merge commit 54433266); v5 corrected Fintech workbook awaits Paul's deploy call."
 blockers:
-  - "PR to main unopened: gh is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome (Paul deferred: 'we can do it later')."
+  - "Resolved 2026-10-03 (was: PR to main unopened; gh is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome; Paul deferred: 'we can do it later'): Paul signed in to GitHub in the built-in browser, the PR was opened there as Melange PR #2 and merged at his request."
   - "Full local history is unpublishable as-is: origin main shares NO history with the local repo and the local history has 28 blobs over 100 MB under audits/legfix5; publishing needs filter-repo or LFS, and a history rewrite is Paul's decision."
   - "Telecom workbook blocked by a V8 string cap (payload 591,338,574 bytes vs max string 536,870,888) until the export is made cycle-aware (as of 2026-07-27)."
   - "Roster-identity and alias calls (acronym-variant collisions, FCU-variant expansion, 63 proposed aliases) need Paul's yes under his strict-names rule."
 action_items:
-  - description: "Offer to open the PR (base claude/melange-math-eval-skill-18e907) for branch claude/mentat-migration-onto-main; regenerate the body from the commit messages if pr-body.md is gone"
-    status: "todo"
+  - description: "Offer to open the PR (base claude/melange-math-eval-skill-18e907) for branch claude/mentat-migration-onto-main; regenerate the body from the commit messages if pr-body.md is gone. Done 2026-10-03: opened as Melange PR #2 and merged at Paul's request (merge commit 54433266)."
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
-  - description: "Decide whether to delete or keep the partial ref claude/mentat-github-migration-b06195 on origin (6f76c3415, 548 commits)"
-    status: "todo"
+  - description: "Decide whether to delete or keep the partial ref claude/mentat-github-migration-b06195 on origin (6f76c3415, 548 commits). Done 2026-10-03: deleted on origin at Paul's request; still kept as a local branch and on remote mirror."
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
   - description: "Decide whether to publish the full local history (needs filter-repo or LFS for 28 blobs over 100 MB under audits/legfix5; history rewrite is Paul's call)"
@@ -53,16 +53,18 @@ related_actors:
   - "[[runpod-pod]]"
 related_teams: []
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "6f79da7a4bd449fca5c98a6db61acb2bf2750b62c21c903f17cd8ae2d2d12774"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
 # Mentat (FEC contributions intelligence)
 
 > Paul's FEC contributions-intelligence project: an R+API collection pipeline for a Paul-defined company roster, workbook generation, and a local Python console (Chart Studio, Graph, Insights, PAC evidence panes, district map). Distinct from Moneyball/Melange. Money and receipt-counting code is frozen by Paul's ruling.
+
+Dated correction (2026-10-04, fleeting pass; source `mentat-github-migration-2026-10-02`): the "(PR unopened)" in this note's description predates 2026-10-03, when the PR was opened (Melange PR #2) and merged at Paul's request; see GitHub migration.
 
 ## Overview
 
@@ -78,7 +80,7 @@ tags: ["type/project", "status/active", "domain/data"]
 |---|---|
 | Status | active |
 | Deadline | none recorded |
-| Progress | Pipeline shipped and repeatedly rebuilt; console and PAC-evidence lanes ongoing; GitHub push of the live tree done 2026-10-02/03, PR to main unopened. |
+| Progress | Pipeline shipped and repeatedly rebuilt; console and PAC-evidence lanes ongoing; GitHub push of the live tree done 2026-10-02/03; PR to main opened and merged 2026-10-03 (Melange PR #2). |
 
 > **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.
 
@@ -86,8 +88,8 @@ tags: ["type/project", "status/active", "domain/data"]
 
 | Item | Status | Deadline | Owner |
 |---|---|---|---|
-| Offer to open the PR (base claude/melange-math-eval-skill-18e907) for claude/mentat-migration-onto-main | todo | | [[paul-goff]] |
-| Delete or keep partial ref claude/mentat-github-migration-b06195 on origin | todo | | [[paul-goff]] |
+| Offer to open the PR (base claude/melange-math-eval-skill-18e907) for claude/mentat-migration-onto-main (done 2026-10-03: PR #2 opened and merged) | done | | [[paul-goff]] |
+| Delete or keep partial ref claude/mentat-github-migration-b06195 on origin (done 2026-10-03: deleted on origin; kept locally and on mirror) | done | | [[paul-goff]] |
 | Decide on publishing full local history (filter-repo or LFS) | todo | | [[paul-goff]] |
 | Deploy call on v5 corrected Fintech workbook (.cache/bench-20260723-output) | todo | | [[paul-goff]] |
 | Yes/no on FCU-variant expansion and 63 proposed aliases | todo | | [[paul-goff]] |
@@ -112,7 +114,7 @@ SORT item.deadline ASC
 
 ## Blockers
 
-- PR to main unopened (Paul deferred); `gh` is NOT installed and Claude in Chrome was not connected (2026-10-02/03).
+- ~~PR to main unopened (Paul deferred); `gh` is NOT installed and Claude in Chrome was not connected (2026-10-02/03).~~ Resolved 2026-10-03: Paul signed in to GitHub in the built-in browser, the PR was opened there (Melange PR #2) and merged at his request (merge commit `54433266`); `gh` is still not installed.
 - Full local history unpublishable as-is (28 blobs over 100 MB under `audits/legfix5`; origin main shares no history with local); a history rewrite is Paul's decision.
 - Telecom workbook: V8 512 MB string cap (as of 2026-07-27; no later source assigned here records it as resolved).
 - Roster-identity calls awaiting Paul (alias collisions, FCU variants).
@@ -121,11 +123,12 @@ SORT item.deadline ASC
 
 - On 2026-10-02/03 the live Mentat tree (`C:\Users\pgoff\Mentat\mentat`, plus `.claude/launch.mentat.json` and a vendored snapshot of `~/.claude/plugins` at `.claude/vendored-plugins`) was pushed to `github.com/pjg93-222/Melange` (private) on branch **`claude/mentat-migration-onto-main`**, tip `28c27a47`. It is 19 plumbing-built commits on origin's main `ce213058`. `mentat/state` is included. Files over 50 MB and `.cache` stay local, listed in `mentat/EXCLUDED_FROM_GIT.md`. Verification passed (file lists identical, blob spot-checks match, remote equals tip).
 - **PENDING, Paul said "we can do it later":**
-  - Open the PR (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. The body was drafted in the session scratchpad as `pr-body.md`, which may be gone; regenerate it from the commit messages if needed.
-  - Delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits).
+  - Open the PR (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. The body was drafted in the session scratchpad as `pr-body.md`, which may be gone; regenerate it from the commit messages if needed. Done 2026-10-03 (next bullet).
+  - Delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits). Done 2026-10-03: deleted on origin.
   - Publishing full local history: origin main shares NO history with the local repo, and the local history has 28 blobs over 100 MB under `audits/legfix5`. Publishing would need filter-repo or LFS, and a history rewrite is Paul's decision.
+- **Update 2026-10-03** (newer version of the source memory): the PR was opened from the built-in browser after Paul signed in to GitHub there (Melange PR #2) and merged at his request (merge commit `54433266`, the 19 commits kept). The head branch was then deleted on origin; at Paul's request so were `claude/melange-math-eval-skill-18e907-4d54uu` (backed up first to remote `mirror` as `backup/melange-math-eval-skill-18e907-4d54uu`, now its only copy) and the partial ref `claude/mentat-github-migration-b06195`. Still pending: publishing the full local history (Paul's decision). Details in the repo-state topic.
 - **Why:** pushes of the full history 500'd (3 GB single merge `af1160dd8`). The Mentat-only branch on `ce213058` avoided both the size and the unrelated-history problems.
-- **How to apply:** next session, offer to open the PR first. Never push from the worktree's own branch (it carries the oversized history). Pack files are read-only on Windows, so `Remove-Item` needs `-Force`. Related memory notes: `repo-mirror-2026-08-11`, `live-tree-eol-census-2026-09-19`.
+- **How to apply:** next session, offer to open the PR first. Never push from the worktree's own branch (it carries the oversized history). Pack files are read-only on Windows, so `Remove-Item` needs `-Force`. Related memory notes: `repo-mirror-2026-08-11`, `live-tree-eol-census-2026-09-19`. (The "offer to open the PR first" step is superseded: the PR was opened and merged on 2026-10-03.)
 - Repo-state topic: [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]].
 
 ## Founding decisions (Paul, 2026-07-18)
@@ -155,6 +158,7 @@ SORT item.deadline ASC
 | 2026-09-17/18 | Cross-reference council review; contradictions-not-ambiguity rework (`627300bc9`); collector slowdown root cause (truncated key `13ffe51ce05b`). |
 | 2026-09-26/27 | Money-rule changes (`0ce240d9e`, `504d2cfd1`) reverted in `7a31f8ae2` after Paul's objection; money collection frozen. |
 | 2026-10-02/03 | GitHub push of the live tree (branch claude/mentat-migration-onto-main, tip 28c27a47). |
+| 2026-10-03 | Melange PR #2 opened and merged into claude/melange-math-eval-skill-18e907 (merge commit 54433266); the migration branch, claude/melange-math-eval-skill-18e907-4d54uu and the partial ref deleted on origin. |
 
 Detailed per-lane history, numbers and traps: [[2026-07-bugfix-mentat-collection-and-attribution]].
 
@@ -199,7 +203,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
 | UI redesign boards (Melange and Mentat) | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
 | [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] | part: The Mentat console redesign boards of 2026-09-21/22: two… |
-| [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] | Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR unopened), tidy Data workbook, console hang fix. |
+| [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] | Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR merged 2026-10-03), tidy Data workbook, console hang fix. |
 
 ### Related Actors
 

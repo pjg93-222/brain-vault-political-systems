@@ -13,13 +13,14 @@ related_to:
   - "[[cu-geography]]"
   - "[[quant-model-evaluation-skill]]"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "e86a3ffa346737c317992a3510f25a8d3430b833077ad8b3eb615faa53be2bb8"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/luna-stratified-scaling-review-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\luna-stratified-scaling-review-2026-09-29.md", sha256: "fa047e83455b71681045d3bcee783f50bb00e230f3fc0b1e0ebc5d5b44dc0d7d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/n-slot-reanchor-2026-07-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\n-slot-reanchor-2026-07-11.md", sha256: "e45c60d71c2689672cec1494ff32a691eac421ffc384113239cd1dc6a2b6b0e4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "048c64646a7b93e51387a406ab238c2cb85a30f8679607b83424e06616fc5c1c"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -63,7 +64,10 @@ tags: ["type/concept", "domain/research"]
 | 2026-07-16 | Same session | subagent fresh pairing pre-lock | VOID look-fragment, never cite |
 | 2026-09-30 | Luna household model | holdout (split-2 labelled rows outside the 20k test sample) scored ONCE | +1.009 pp, deploy |
 | 2026-09-30 | Luna round 3 (GPU) | same holdout, SECOND use, disclosed | +0.087 pp, deploy; no untouched labelled data remains |
-| 2026-10-03 | PAC accuracy attempt 2 | UT-X single-shot holdout | sealed for the attempt (ruling C1); S3 dev-only |
+| 2026-10-03 | PAC accuracy attempt 2 | UT-X single-shot holdout | sealed for the attempt (ruling C1); S3 dev-only; after the S2C gate PASS, S3 ran one dev-only pass and the attempt ended ~08:45 UTC with UT-X SEALED_NOT_SCORED (unspent) |
+| 2026-10-03 | PAC attempt 2, v4 branch | V3 RESCORE on the superseding freeze V4_1, one pass | v4 WORSE for banks nowcasts (m15 92.33 -> 86.38); v3 stays the record |
+| 2027-03-08 (scheduled) | PAC live freezes | one-time task `score-pac-live-freeze-2026` (Paul OK'd 2026-10-03; stops without a local pas226 edition dated >= 2027-03-01) | scores v3 and LIVE_FREEZE_V4_1 side by side, plus a v5 2026 line (Paul, 2026-10-04) |
+| 2028 (planned) | PAC v5 | first clean test (Paul, 2026-10-04) | method and plan frozen before 2027-01-31; each forecast frozen within 14 days of its issue date |
 
 ## Case 1: Moneyball 2026-07-07 (GATE-2 complete, interview-C retest, improvement rounds; `moneyball-2026-07-07-gate2-round1`)
 
@@ -227,6 +231,7 @@ PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's
 - S2C narrow repair -> v3 freeze -> ONE Opus verifier gate (not 3). S2C launched about 06:2x UTC (exact minute not given).
 - **Why:** UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it.
 - **How to apply:** never launch S3 without Paul's OK and a fresh gate on the v2 freeze. The Glass Box watcher must run alongside every stage (S2's first 49 min were unwatched). Related: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
+- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later look was spent once (the v4 branch's V3 RESCORE) or pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger. Details in Forecast audit, giving-view redesign and PAC accuracy.
 
 ## Related Concepts
 

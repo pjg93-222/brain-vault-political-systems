@@ -5,12 +5,12 @@ aliases: ["Forecast redesign", "PAC giving accuracy"]
 description: "Mentat forecasting program: the 2026-09-29 audit of three console forecasts (regressions re-run in R), the 2026-09-30 'Giving by cycle' (board F2) forecast-view redesign with projections checked for logical validity against backtests, and the PAC-to-candidate giving accuracy refinement (attempt 2, HOLD, UT-X holdout sealed) rooted at C:/melange-data/forecast-redesign-20261001-review."
 status: "active"
 deadline: ""
-progress: "As of 2026-10-03: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards in GPT Image 2.5 pending; PAC accuracy attempt 2 on HOLD at S2C narrow repair -> v3 freeze -> one Opus verifier gate, UT-X sealed."
+progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards in GPT Image 2.5 pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04) shape the next attempt."
 blockers:
-  - "PAC accuracy attempt 2: S3 needs Paul's explicit OK plus a fresh gate on the v2 freeze; UT-X is single-shot and stays SEALED (C1, 2026-10-03)."
+  - "PAC accuracy attempt 2: UT-X is single-shot and stays SEALED (C1, 2026-10-03); opening it needs a new owner ruling. Resolved part (was: S3 needs Paul's explicit OK plus a fresh gate on the v2 freeze): on 2026-10-03, after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's 'finish'."
   - "Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4); FEC bulk files keep only the latest report version, so FILED is only a disclosed amendment-loss lower bound (C2)."
   - "Decisions D1-D9 from the 2026-10-01 reconciliation await Paul; methodology list A-L from the 2026-09-29 audit awaited Paul."
-  - "Pace backtest waits on Paul's OK to download FEC pas212/214/216 (no-downloads stands)."
+  - "Pace backtest waits on Paul's OK to download FEC pas212/214/216 (no-downloads stands). 2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test."
   - "Windows scheduled tasks, landing kit into the dirty live tree and console restart are Paul-gated; C: has only ~5 GB free (deletion is Paul's)."
 action_items:
   - description: "Decide reconciliation decisions D1-D9 (brain drafts in BRAIN_DRAFTS_2026-10-01.md)"
@@ -25,14 +25,22 @@ action_items:
     status: "todo"
     deadline: ""
     owner: "[[paul-goff]]"
-  - description: "Finish S2C narrow repair, v3 freeze, then ONE Opus verifier gate (not 3)"
-    status: "in_progress"
+  - description: "Finish S2C narrow repair, v3 freeze, then ONE Opus verifier gate (not 3). Done 2026-10-03: S2C gate PASS."
+    status: "done"
     deadline: ""
     owner: "coordinator agent"
-  - description: "Never launch S3 without Paul's OK and a fresh gate on the v2 freeze; any opening of UT-X needs a new owner ruling"
-    status: "blocked"
+  - description: "Never launch S3 without Paul's OK and a fresh gate on the v2 freeze; any opening of UT-X needs a new owner ruling. Done 2026-10-03: S3 ran dev-only, one pass, after the S2C gate PASS on Paul's 'finish'; the attempt ended with UT-X SEALED_NOT_SCORED, and opening it still needs a new owner ruling."
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
+  - description: "Rule on S6 MAJOR-2 of attempt 2 (FILED UNAVAILABLE cells still publish per-target predictions: a breach of the withheld pin?)"
+    status: "todo"
+    deadline: ""
+    owner: "[[paul-goff]]"
+  - description: "v5: freeze the method and plan for 2028, the first clean test (each forecast frozen within 14 days of its issue date)"
+    status: "todo"
+    deadline: "2027-01-31"
+    owner: "coordinator agent"
   - description: "Run the Glass Box watcher stage_watch.ps1 alongside every stage"
     status: "todo"
     deadline: ""
@@ -58,8 +66,10 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "89d010b300fa8907c87ea70a53067bc75410687e7e5c6cbed1c0e493912232b3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "320afff4a5fabfd67d9f4db59835885458211ec89b63ac75655e91a19b3a0da3"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "048c64646a7b93e51387a406ab238c2cb85a30f8679607b83424e06616fc5c1c"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -80,7 +90,7 @@ tags: ["type/project", "status/active", "domain/data"]
 |---|---|
 | Status | active |
 | Deadline | none recorded |
-| Progress | Model audited and reconciled INTACT (2026-10-01); fixes landed (not committed); F2 UI live 2026-10-01 10:58:25Z; v3 UI boards pending; PAC accuracy attempt 2 HOLD at S2C -> v3 freeze -> one Opus verifier gate; UT-X sealed |
+| Progress | Model audited and reconciled INTACT (2026-10-01); fixes landed (not committed); F2 UI live 2026-10-01 10:58:25Z; v3 UI boards pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 the record, v4 a regression); six-year rolling lookback directive and v5 rulings (2026-10-03/04) |
 
 > **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.
 
@@ -91,8 +101,10 @@ tags: ["type/project", "status/active", "domain/data"]
 | Decide reconciliation decisions D1-D9 | todo | none | [[paul-goff]] |
 | OK or decline FEC pas212/214/216 download (pace backtest) | todo | none | [[paul-goff]] |
 | Restart the console after the 2026-10-01 landing | todo | none | [[paul-goff]] |
-| Finish S2C narrow repair, v3 freeze, ONE Opus verifier gate | in_progress | none | coordinator agent |
-| Launch S3 only with Paul's OK and a fresh gate on the v2 freeze; opening UT-X needs a new owner ruling | blocked | none | [[paul-goff]] |
+| Finish S2C narrow repair, v3 freeze, ONE Opus verifier gate (done 2026-10-03: S2C gate PASS) | done | none | coordinator agent |
+| Launch S3 only with Paul's OK and a fresh gate on the v2 freeze; opening UT-X needs a new owner ruling (done 2026-10-03: S3 dev-only one pass on Paul's "finish"; UT-X sealed, not scored) | done | none | [[paul-goff]] |
+| Rule on S6 MAJOR-2 of attempt 2 (FILED UNAVAILABLE cells still publish per-target predictions) | todo | none | [[paul-goff]] |
+| v5: freeze the method and plan for 2028, the first clean test | todo | 2027-01-31 | coordinator agent |
 | Glass Box watcher alongside every stage | todo | none | coordinator agent |
 | Forecast UI v3 from the new boards | todo | none | coordinator agent |
 | Windows scheduled tasks after landing; commit sector_growth_study; clean IP/cookie evidence | todo | none | coordinator agent |
@@ -116,10 +128,10 @@ SORT item.deadline ASC
 
 ## Blockers
 
-- PAC accuracy attempt 2: S3 needs Paul's explicit OK and a fresh gate on the v2 freeze; UT-X is single-shot and SEALED (C1).
+- ~~PAC accuracy attempt 2: S3 needs Paul's explicit OK and a fresh gate on the v2 freeze; UT-X is single-shot and SEALED (C1).~~ Resolved 2026-10-03 (source `pac-accuracy-attempt2-lane-2026-10-03`, newer version): after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's "finish"; the attempt finished ~08:45 UTC with UT-X still single-shot, SEALED and not scored.
 - Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4; P&C cohort = Travelers + legacy Chubb Corp only); FEC bulk files keep only the latest report version so FILED = disclosed amendment-loss lower bound (C2); no-downloads stands.
 - Decisions D1-D9 (2026-10-01) and methodology list A-L (2026-09-29) await Paul.
-- Pace backtest waits on Paul's OK to download FEC pas212/214/216.
+- Pace backtest waits on Paul's OK to download FEC pas212/214/216. (2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test; source `pac-accuracy-six-year-lookback-directive-2026-10-03`.)
 - C: ~5 GB free; Paul offered a cleanup list (review copies); deletion is his.
 - LDA `sector_spend` has only crypto/credit_union/bank/fintech (no auto, no P&C) and two never-combined series (income_total vs expenses_total): open questions for Paul.
 - Classifier blocks agent writes into untracked Mentat files ("Irreversible Local Destruction") and commits ("Modify Shared Resources"); everything routes through scratch + kits Paul runs.
@@ -176,6 +188,9 @@ Every note of this project by type, one line each; parts follow their parent.
 | 2026-10-01 10:58:25Z | F2 UI live (`apply_f2.py` 829cd9da; 3 review rounds) |
 | 2026-10-01 | Forecast UI v3 direction (GPT Image 2.5 boards) |
 | 2026-10-03 | PAC accuracy attempt 2: S2 gate BLOCKED (~04:20 UTC), S2B done ~05:46 UTC gate HELD, B1-B3 then C1-C2 rulings, S2C launched ~06:2x UTC |
+| 2026-10-03 ~08:45 UTC | Attempt 2 finished (Paul: "finish"): S2C gate PASS through S7 delivery; goal not met, HOLD unchanged, UT-X SEALED_NOT_SCORED; one-time scoring task set for 2027-03-08 |
+| 2026-10-03 | v4 branch (pas208/pas210 as history): one V3 RESCORE, v4 worse for banks nowcasts, v3 stays the record; Paul's six-year rolling lookback directive |
+| 2026-10-04 | Paul's v5 rulings on `strategy/V5_AMENDMENT.md` (strict 3-cycle cap, fixed-rule primary, v5 2026 line in the March 2027 job, 2028 first clean test with the needed FEC downloads authorised) |
 
 ## Rulings and decisions (newest wins; superseded kept struck through)
 
@@ -189,6 +204,7 @@ Every note of this project by type, one line each; parts follow their parent.
 - Display: F2 build is one-to-one to the picked board; saved 2026 outlook stays pre-filled but labelled + clearable (coordinator ruling); legacy response fields keep negative/budget_inconsistent values and the UI reads `remaining_allocation` + `*_given_observed_*`; "No fucking headline" (never add a narrative headline/summary sentence); v3 boards in GPT Image 2.5, time-series stacked D/R bars by cycle (PAC, General, Lobbying; House/Senate splits; adjustable expected takeover defaulting to market), projections from the corrected model (phase-aware + 2028 chained from 2026).
 - ~~Pod-only rule: "Why hasn't all of these processes been moved over to the Pod?" -> ALL heavy compute to the pod~~ (2026-09-30) - superseded by "Don't need that right now" (run locally), a new pod `ssh root@<math-pod-host> -p <port>` (256 cores, 2.2 TB RAM, 2x RTX PRO 6000, no /workspace volume, no R; old pod `<first-pod-host>:<port>` gone), and finally "Go onto the pod to work" / "Move out of the pod" / "Bring everything out with it" (2026-09-30 late): lane is LOCAL now; the pod and its console are left running.
 - PAC accuracy attempt 2 (2026-10-03): B1 the 1% rule applies to "cycles the cell reads"; B2 strict own-PAC P&C identity; B3 FILED = as-of-issue vintage rebuild; C1 UT-X stays SEALED, S3 dev-only (banks, SchoolsFirst), METHOD_SPEC frozen; C2 FILED = disclosed amendment-loss lower bound, no-downloads stands; S2C -> v3 freeze -> ONE Opus verifier gate (not 3).
+- PAC accuracy after attempt 2 (2026-10-03/04; sources `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`): v4 branch rulings D1 inputs only, D2 v4 live freeze, D3 lean run, and its result (v4 a regression, v3 the record); Paul's six-year ROLLING lookback (each forecast uses only the 3 cycles before its issue date; gains must come from methodology, never from more history); v5 rulings D1 strict cap, D3/D4 fixed-rule primary, D6 a v5 2026 line in the March 2027 job, D8 2028 as the first clean test with the needed FEC downloads authorised. Full text in Forecast audit, giving-view redesign and PAC accuracy.
 
 ## Audit findings (2026-09-29 and 2026-10-01)
 
