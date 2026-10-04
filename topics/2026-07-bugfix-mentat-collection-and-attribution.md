@@ -36,13 +36,13 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/bugfix"]
 
 ## Parts
 
-- [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]] — Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code on inference, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class.
+- [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]] — Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code without his explicit approval of that specific change, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class.
 - [[2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship]] — How the Mentat FEC pipeline was defined, built, reviewed and shipped from 2026-07-18 to 2026-07-24, from Paul's founding decisions to the 07-21 fleet halt and the pagination-shortfall policy call.
 - [[2026-07-bugfix-mentat-collection-and-attribution-july-hardening]] — The July 2026 hardening of the Mentat pipeline (07-22/23): corruption defects re-tested, acronym-variant collisions, the override matcher fix, lineages and the CRLF trap, the Fintech ordeal and perf round 2, plus the load-bearing review findings.
 - [[2026-07-bugfix-mentat-collection-and-attribution-audit-r12-trade-association]] — The six-agent Mentat audit of 2026-07-27, the R12 reconciliation and the trade-association $0 gap, which turned out to be the same defect as the ~$163k Candidate swap and was fixed at read time in report.R.
 - [[2026-07-bugfix-mentat-collection-and-attribution-september-collector-lanes]] — The September 2026 Mentat collector lanes: worker scaling (09-09), the every-lane-failing collector outage of 09-17/18, and the two API-key stores.
 - [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]] — The contradictions-not-ambiguity rule for Mentat cross-verification (D-040, 2026-09-17) and the cross-reference versus workbook council review that left the cross-reference tab dwarfed.
-- [[2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane]] — The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a review bucket, Chart Studio patches and redesign, and the usability lanes with their commits.
+- [[2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane]] — The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a zeroed review bucket (a design superseded on 2026-09-17/18 by the contradiction rule), Chart Studio patches and redesign, and the usability lanes with their commits.
 
 ## Context
 

@@ -165,7 +165,7 @@ In the five surface producers a hex is chrome or data by its *occurrence*, not i
 - [[2026-06-feature-melange-dashboard-ui-evolution-capstone-to-desk-media]] — Dashboard UI from the June 2026 capstone and member desk through the network features of 07-04/05, the Frank Lucas defend resolution and the desk media footprint of 07-16.
 - [[2026-06-feature-melange-dashboard-ui-evolution-august-redesigns]] — Dashboard UI in August 2026: the industry-tab round 2, the black and gold retheme, the rankings-and-data-only simplification and the preview workflow.
 - [[2026-06-feature-melange-dashboard-ui-evolution-plain-language-and-fixes]] — The plain-language pass of 2026-08-31 to 09-01 with Paul's taste correction, the staffer surface pointer and the dashboard-fixes verification lane of 09-05.
-- [[2026-06-feature-melange-model-facts]] — Melange model facts recorded in June 2026: the regeneration pipeline, the Blended Model with its three pillar-weight sets and pillar decisions, and the member desk and SNA features.
+- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified).
 - [[2026-06-feature-melange-scenario-model-build]] — The Melange scenario model build of 2026-06-26: the source timeline, the pre-flight pass, the budget what-if tool, the electoral model, money response and pathfinding, the step-3 finish with the reorg, the scenario runner, flip channels and the diminishing-returns reconciliation.
 
 ## Related Projects

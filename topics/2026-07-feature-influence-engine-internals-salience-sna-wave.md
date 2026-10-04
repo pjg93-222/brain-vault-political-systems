@@ -1,7 +1,7 @@
 ---
 type: topic
-title: "Six-paper salience and press-SNA wave (07-01) (Influence engine internals)"
-aliases: ["Influence engine internals: Six-paper salience and press-SNA wave (07-01)"]
+title: "Six-paper salience and press-SNA wave (07-01/02) (Influence engine internals)"
+aliases: ["Influence engine internals: Six-paper salience and press-SNA wave (07-01/02)"]
 category: "feature"
 status: "in-progress"
 people: []
@@ -15,7 +15,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-influence-engine-internals]]"
 ---
 
-# Six-paper salience and press-SNA wave (07-01) (Influence engine internals)
+# Six-paper salience and press-SNA wave (07-01/02) (Influence engine internals)
 
 > The six-paper salience and press-SNA wave of 2026-07-01 in the influence engine, including the media blend that went live on 2026-07-02. Part of [[2026-07-feature-influence-engine-internals]] (project [[melange-systems]]).
 

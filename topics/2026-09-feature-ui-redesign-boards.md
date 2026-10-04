@@ -30,7 +30,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 ## Parts
 
-- [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] — The Mentat console redesign boards of 2026-09-21/22: fourteen Higgsfield boards, the board-wins ruling and the build-01 shell.
+- [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] — The Mentat console redesign boards of 2026-09-21/22: two rounds of Higgsfield boards (14 on 09-21, 17 on 09-22), the decision that boards win over prompt numbers, and the build-01 shell.
 - [[2026-09-feature-ui-redesign-boards-melange-boards-and-build]] — The Melange dashboard redesign boards of 2026-09-22 and the Melange build lane of 09-22/23, with its method, traps and overlay-first architecture.
 - [[2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks]] — The UI finalize after the reboot (2026-09-23 to 09-25), the UI review reconcile of 09-25 and the Graph UI quirks and colouring lane.
 

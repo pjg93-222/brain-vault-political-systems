@@ -17,7 +17,7 @@ part_of: "[[melange-systems]]"
 
 # Melange model facts: pipeline, Blended Model, pillar weights, member desk
 
-> Melange model facts recorded in June 2026: the regeneration pipeline, the Blended Model with its three pillar-weight sets and pillar decisions, and the member desk and SNA features. Part of [[melange-systems]].
+> Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified). Part of [[melange-systems]].
 
 ## Overview
 

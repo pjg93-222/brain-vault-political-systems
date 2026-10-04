@@ -59,7 +59,7 @@
     {
       "slug": "2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane",
       "title": "Legislative-effectiveness (Volden-Wiseman) shadow lane (09-10 to 09-12)",
-      "summary": "The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built, Claude verified read-only and Paul applied",
+      "summary": "The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built and Claude verified read-only, applied to the live tree at Paul's request",
       "domain": "domain/data",
       "home": "projects/melange-systems",
       "sections": [
@@ -73,7 +73,7 @@
     {
       "slug": "2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster",
       "title": "Bill-lobbying regression lane: the cosponsor forecaster (09-04)",
-      "summary": "The bill-lobbying regression lane of 2026-09-04: making the cosponsor forecaster self-updating from the workbook and the sentinel collectors, and whether a logistic model fits better",
+      "summary": "The bill-lobbying regression lane of 2026-09-04: Paul's ask to make the cosponsor forecaster self-updating, the finding that it is already a ridge logistic model, and the BILLSTATUS bulk refresh and hash-gated forecaster step applied to the live tree",
       "domain": "domain/data",
       "home": "projects/melange-systems",
       "sections": [
@@ -463,7 +463,7 @@
       "old": "Paul: \"0.84/0.16 works, do it\". He asked what 95/5 would do, CONDITIONAL on Fitzpatrick reaching Tier 1 AND Tim Scott staying. **The condition FAILED** - at 95/5 Fitzpatrick reaches T1 (slot 5, pure math) but **Scott falls to slot 26**, so nothing was changed on that. 95/5 nearly annihilates the press pillar and turns the tier into a cosponsorship count: it ejects every press-strong member (French Hill .862, Britt .653, Daines .474, Scott .429) and admits near-zero-press ones - including **Eleanor Norton (press .000), the DC delegate who cannot vote on the floor**, into the Champion ranks. A sweep of 0.50-0.99 found **only 0.83/0.84/0.85 satisfy both**; Paul chose 0.84. (These are the Tier-1 Leg/Press blend weights, not the pillar weights; for the three pillar-weight sets see Context.)",
       "mark": "rewrite",
       "why": "\"for the three pillar-weight sets see Context\" names ## Context, which the hub keeps while this line moves to -bill-plane-and-media-stance (the resolver's proposal, signed off)",
-      "new": "Paul: \"0.84/0.16 works, do it\". He asked what 95/5 would do, CONDITIONAL on Fitzpatrick reaching Tier 1 AND Tim Scott staying. **The condition FAILED** - at 95/5 Fitzpatrick reaches T1 (slot 5, pure math) but **Scott falls to slot 26**, so nothing was changed on that. 95/5 nearly annihilates the press pillar and turns the tier into a cosponsorship count: it ejects every press-strong member (French Hill .862, Britt .653, Daines .474, Scott .429) and admits near-zero-press ones - including **Eleanor Norton (press .000), the DC delegate who cannot vote on the floor**, into the Champion ranks. A sweep of 0.50-0.99 found **only 0.83/0.84/0.85 satisfy both**; Paul chose 0.84. (These are the Tier-1 Leg/Press blend weights, not the pillar weights; for the three pillar-weight sets see Context. in [[2026-07-feature-legislative-pillar-acu-review]])",
+      "new": "Paul: \"0.84/0.16 works, do it\". He asked what 95/5 would do, CONDITIONAL on Fitzpatrick reaching Tier 1 AND Tim Scott staying. **The condition FAILED** - at 95/5 Fitzpatrick reaches T1 (slot 5, pure math) but **Scott falls to slot 26**, so nothing was changed on that. 95/5 nearly annihilates the press pillar and turns the tier into a cosponsorship count: it ejects every press-strong member (French Hill .862, Britt .653, Daines .474, Scott .429) and admits near-zero-press ones - including **Eleanor Norton (press .000), the DC delegate who cannot vote on the floor**, into the Champion ranks. A sweep of 0.50-0.99 found **only 0.83/0.84/0.85 satisfy both**; Paul chose 0.84. (These are the Tier-1 Leg/Press blend weights, not the pillar weights; for the three pillar-weight sets see Context in [[2026-07-feature-legislative-pillar-acu-review]].)",
       "referent": "2026-07-feature-legislative-pillar-acu-review"
     }
   ]

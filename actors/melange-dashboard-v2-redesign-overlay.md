@@ -26,7 +26,7 @@ part_of: "[[melange-dashboard]]"
 
 ## v2 redesign overlay and finalize (2026-09-22 to 2026-09-25)
 
-Session 5ab381bb, worktree `melange-ui-redesign-372c43`. Topic: [[2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks|UI redesign boards (Melange and Mentat)]].
+Session 5ab381bb, worktree `melange-ui-redesign-372c43`. Topic: [[2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks|UI redesign boards (Melange and Mentat), finalize part]].
 
 - **Build lane (2026-09-22; #24-#43, prompts 01-16):** Paul: "Finish the interface according to the instructions, familiarize yourself, then finish", attaching busy-kapitsa-3272db. That worktree is the MENTAT console redesign lane (its session 8a67e999 scratchpad holds Mentat build01/01b/04/05); the Melange packet lives in the nervous-hamilton-7e2d50 session 77716a2f scratchpad (`melange_ui_review\packet`). Asked; Paul picked "Melange 09-22 boards" (not Mentat, not the 09-21 workspace). Then "Switch to Ultracode".
 - **Architecture decision (lead's; record as a brain decision draft): OVERLAY-FIRST.** All 16 builds land in the v2 presentation layer only (`fec/surfaces/approved/clean/*` + injection lines in `build_clean_workspace.py`, both untracked in LIVE); legacy generators/templates (`make_*.py`, `templates/*.tpl`, `staffer_live/*`) are never edited. Why: 00_README rule 2 (UI only, no producer changes); legacy Moneyball.html, the email package, legacy display-pin tests and the data plane stay untouched; matches the 09-21 v2 pattern (keep original engines in iframes, bridge via overlays). The packet codemap's "owning file" column names legacy generators: that is where today's UI comes from, not where the new UI must go.

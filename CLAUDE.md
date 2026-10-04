@@ -92,6 +92,8 @@ Phase 2 ("organize the brain") runs in batches on the local branch `brain-reorg-
 | `bun .bedrock/reorg/conserve.ts --base <commit> [--allow <file>]...` | Proves no note text was lost since `<commit>` (body line multiset, frontmatter keys, `sources` pairs). |
 | `bun .bedrock/reorg/healthcheck.ts --strict` | Read-only port of `/bedrock:healthcheck`. |
 | `bun .bedrock/reorg/verify-plan.ts` | Checks the plan's split tables against the current notes (the G-split gate). |
+| `bun .bedrock/reorg/relink.ts --spec .bedrock/reorg/spec/keep.json (--pending <file> \| --no-pending) (--dry-run \| --apply \| --maps \| --reconcile)` | The link-model tool: trims notes to the keep spec (plain-text conversions, concept lines), writes each project's `## Map` and its back-links, and reconciles one-way links. Fixture tests: `bun .bedrock/reorg/relink.test.ts`. |
+| `bun .bedrock/reorg/split.ts --spec <splits/x.json>... (--plan \| --apply \| --verify)` | The split tool: turns an over-limit note into a hub plus parts from its spec, moving text verbatim (`--plan` read-only, `--apply` writes parts, `## Parts`, Map rows and the logged positional rewrites, `--verify` re-runs the positional-reference detection and the 50 KB check on the written families). Fixture tests: `bun .bedrock/reorg/split.test.ts`. |
 | `bun .bedrock/reorg/commit.ts` | The only way a batch commits. |
 | `bun .bedrock/reorg/check.test.ts` | Fixture tests of the tools above. |
 
@@ -151,7 +153,7 @@ bun .bedrock/graph/build.ts && bun .bedrock/graph/verify.ts
 git cat-file -e HEAD:.bedrock/reorg/stale-statements.md      # the list of stale statements is committed
 X=$(cygpath -m "$(mktemp -d)"); git archive HEAD | tar -x -C "$X"
 bun .bedrock/reorg/check.ts --vault "$X" --strict            # before the selftest, which rewrites "$X/index.md"
-bun .bedrock/graph/build.ts --vault "$X" --out "$X/page.html" && bun .bedrock/graph/snapshot.ts --file "$X/page.html"
+bun .bedrock/graph/build.ts --vault "$X" --out "$X-page.html" && bun .bedrock/graph/snapshot.ts --file "$X-page.html"
 BRAIN_VAULT="$X" bun .bedrock/recall/selftest.ts
 ```
 

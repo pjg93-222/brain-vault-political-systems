@@ -63,7 +63,7 @@
       "hubs": ["actors/melange-fec-pipeline", "actors/staffer-live-sidecar"],
       "projects": ["projects/melange-systems"],
       "why": {
-        "topics/2026-07-troubleshooting-melange-live-tree-git-drift": "the 2026-09-19 reconcile landed fec/tools/live_patch.py; LIVE changes only by a patch applied with core.autocrlf=false, never by a checkout that normalises its line endings",
+        "topics/2026-07-troubleshooting-melange-live-tree-git-drift": "the 2026-09-19 EOL census lane landed fec/tools/live_patch.py; changes to a drifted LIVE go in as a patch applied with core.autocrlf=false, never through a checkout that normalises its line endings",
         "topics/2026-09-feature-staffer-network-surfaces": "the latency lane lands as ONE patch cut with fec/tools/live_patch.py; APPLY and the 8841 restart are Paul's"
       }
     },
@@ -72,8 +72,8 @@
       "hubs": ["actors/debate-stance-model", "concepts/two-hop-stance-decomposition", "concepts/single-look-holdout-discipline"],
       "projects": ["projects/melange-systems"],
       "why": {
-        "topics/2026-07-feature-personality-psychometrics": "the instrument counts as valid only where it scores against the Personality on the Hill Senate gold panels (the gold-anchored axes)",
-        "topics/2026-06-feature-cu-stance-and-sentiment": "the stance readers are scored on a human gold queue (312 items, 171 members); more gold labels on bill-naming releases is the open fix"
+        "topics/2026-07-feature-personality-psychometrics": "E and A are gold-anchored on both Personality on the Hill Senate panels (association and strict-discriminant gates); O, C and N are one-panel association supported",
+        "topics/2026-06-feature-cu-stance-and-sentiment": "the stance readers are scored on Paul's gold labels (the 400 tweet golds and the 760-row press gold frame); re-enabling the bill-sign override needs an aboutness guard and more gold labels on bill-naming releases"
       }
     },
     "census-before-claims": {
@@ -100,7 +100,7 @@
       "hubs": ["actors/mentat-fec-pipeline", "actors/lobbyview-collector"],
       "projects": ["projects/melange-systems", "projects/mentat"],
       "why": {
-        "topics/2026-07-working-agreement-verification-and-evidence-standards": "R7 anchors every claim to the recorded state instead of contradicting it; R9 is the counterpart: only Paul reopens a closed question",
+        "topics/2026-07-working-agreement-verification-and-evidence-standards": "R7 anchors every claim to the recorded state instead of contradicting it; R9 is the counterpart: the Agreeableness validation search that Paul reopened is not bound by the old closures",
         "topics/2026-07-troubleshooting-melange-audits-and-reviews": "binding refuted lists (do not re-flag) for the 2026-07-08 network/vote/cycle audit and the code-review packet's refuted findings"
       }
     },

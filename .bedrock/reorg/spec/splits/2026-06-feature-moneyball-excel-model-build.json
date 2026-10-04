@@ -29,7 +29,7 @@
   "parts": [
     {
       "slug": "2026-06-feature-moneyball-excel-model-build-lineage-and-phases",
-      "title": "Workbook lineage and phases A-C (06-18 to 06-22)",
+      "title": "Workbook lineage (to the 06-25 Blended workbook) and phases A-C (06-18 to 06-22)",
       "summary": "Workbook lineage and file inventory and the June 2026 build phases A to C (2026-06-18 to 06-22): the original bugs and repairs, the committee and caucus rebuild, the main version with coalition profiles and the four-bucket redesign, and the agenda re-weighting",
       "domain": "domain/data",
       "home": "projects/melange-systems",

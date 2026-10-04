@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-data-collection-lanes]]"
 
 # LobbyView lane: LDA rebuild, datasets and the FEC x LDA bridge looks (07-31 to 08-01) (Melange data-collection lanes)
 
-> The LobbyView lane of 2026-07-31 to 08-01: the positions dataset and network table acquired, the LDA rebuild, the FEC-bridge design, and the three FEC by LDA bridge rounds with their consumed looks. Part of [[2026-07-feature-data-collection-lanes]] (project [[melange-systems]]).
+> The LobbyView lane of 2026-07-31 to 08-01: the positions dataset and network table acquired, the LDA rebuild, the FEC-bridge design, and the three FEC by LDA bridge rounds (round 1 void for coverage with its look not consumed, rounds 2 and 3 with their consumed looks). Part of [[2026-07-feature-data-collection-lanes]] (project [[melange-systems]]).
 
 ## LobbyView / LDA integration lane (2026-07-31 to 2026-08-12)
 

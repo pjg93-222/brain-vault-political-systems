@@ -167,9 +167,11 @@ Decision rule: 40 KB unless more than 24 notes exceed 40 KB. 33 exceed it, so **
   sections. Project parts write `Part of [[melange-systems]].` (parent = project). A part governed under S1 rule 2 adds one
   pointer line per governing section right after the header line, naming what is corrected and linking the note that holds
   the correction, with the section named in plain text (the vault uses no `[[x#h]]` anchors), e.g.
-  `> Correction kept in [[moneyball-workbook]] (History, "Decisions and superseded rules"): the four-bucket min-max weights,
-  the 1/rank inverse weighting with its $10k cap, the June Excel COM recalc, the 0.35/0.65 influence blend and the Electoral
-  Integrity weight 0.05 recorded here are superseded.`
+  `> Correction kept in [[moneyball-workbook]] (History, "Decisions and superseded rules"): the pillar weight sets (all
+  before 2026-07-07: the four-bucket min-max weights and the 2026-06-25 delivery and final weights), the 1/rank inverse
+  weighting with its $10k cap, the June Excel COM recalc, the 0.35/0.65 influence blend and the Electoral Integrity weight
+  0.05 recorded here are superseded.` (Wording widened in batch 7: the hub strikes every pillar weight set before
+  2026-07-07, and the part records the 2026-06-25 delivery and final weights as well as the four-bucket ones.)
   B2's record parts carry `> Newest wins: the program's current state is kept in
   [[2026-07-feature-personality-psychometrics]] (Context, "Where the program stands"); where a record differs, that summary
   governs.`, and Record 1's part adds the Record 4 / Decisions pointer for the Miller & Sutherland exclusion. These lines are
@@ -289,7 +291,7 @@ Hub keeps the summary layer. Hub links: `exclude-on-contradiction-not-ambiguity`
 | Suffix | Title | Headings moved | KB |
 |---|---|---|---|
 | `-codex-executor-lane` | Codex executor lane record | `## Codex executor lane` | 35 |
-| `-quant-model-evaluation-lane` | quant-model-evaluation skill lane (2026-09-30) | `## quant-model-evaluation skill lane` | 10.5 |
+| `-quant-model-evaluation-lane` | quant-model-evaluation skill lane (2026-09-30 to 10-01) | `## quant-model-evaluation skill lane` | 10.5 |
 | `-skill-library-lane` | Moneyball skill library lane | `## Moneyball skill library` | 8 |
 | `-runpod-sessions` | RunPod Claude sessions | `## RunPod Claude sessions` | 5.5 (domain infra) |
 | `-higgsfield-account-trap` | Higgsfield connector account trap | `## Higgsfield connector account trap` | 4 |
@@ -300,7 +302,7 @@ Hub keeps the summary layer. Hub links: `exclude-on-contradiction-not-ambiguity`
 
 | Suffix | Title | Headings moved | KB |
 |---|---|---|---|
-| `-incidents` | Overnight poll-loop burn and the legislative shadow-lane failure | `## Incident: Codex overnight poll-loop burn`, `## Legislative-effectiveness shadow lane: how Codex built it and died` | 8 |
+| `-incidents` | Overnight poll-loop burn and the legislative shadow lane where Codex hit its usage limit | `## Incident: Codex overnight poll-loop burn`, `## Legislative-effectiveness shadow lane: how Codex built it and died` | 8 |
 
 **A9 `topics/2026-08-incident-refresh-automation-reliability`** (59.2 KB -> hub ~14.5 KB + 3). Home `melange-systems`. Hub keeps the summary layer plus `## Reference data`. Hub links: `melange-refresh-scheduler`, `fail-closed-gates`, `glass-box`.
 
@@ -364,7 +366,7 @@ Hub keeps the summary layer. Hub links: `exclude-on-contradiction-not-ambiguity`
 
 | Suffix | Title | Headings moved | KB |
 |---|---|---|---|
-| `-lineage-and-phases` | Workbook lineage and phases A-C (06-18 to 06-22) | `## Workbook lineage and file inventory`, `## Phase A`, `## Phase B`, `## Phase C` | 17 |
+| `-lineage-and-phases` | Workbook lineage (to the 06-25 Blended workbook) and phases A-C (06-18 to 06-22) | `## Workbook lineage and file inventory`, `## Phase A`, `## Phase B`, `## Phase C` | 17 |
 | `-scoring-refinements-and-audits` | Press alignment, CFPB split, committee scoring and the June 25 audits | `## Press raw alignment`, `## CFPB directional split`, `## Relevance-tiered committee influence scoring`, `## Presentation audit and the percentile-rank 4-pillar blend`, `## Blended workbook audit` | 14.5 |
 | `-category-stance-3d` | Category Stance 3D sheet (06-26) | `## Category Stance 3D sheet` | 13 |
 | `-scenario-tools-and-calibration` | Scenario-tool pre-flight, engine build and empirical calibration (06-26/27) | `## Scenario-tool pre-flight and engine build`, `## Empirical calibration` | 33.5 |
@@ -388,7 +390,7 @@ Hub keeps the summary layer. Hub links: `exclude-on-contradiction-not-ambiguity`
 
 | Suffix | Title | Headings moved | KB |
 |---|---|---|---|
-| `-salience-sna-wave` | Six-paper salience and press-SNA wave (07-01) | `## 2026-07-01: six-paper salience / SNA wave` | 14.5 |
+| `-salience-sna-wave` | Six-paper salience and press-SNA wave (07-01/02) | `## 2026-07-01: six-paper salience / SNA wave` | 14.5 |
 | `-receptivity-layer` | Receptivity layer (07-02 to 07-08) | `## Receptivity layer` | 24.5 |
 | `-gate2-and-say-do` | GATE-2, C retest, improvement rounds, say-do gate and pillar weights | `## 2026-07-07/08: GATE-2` | 13 |
 | `-chatgpt-lane-and-sublayer-surgery` | ChatGPT lane landing and the Sub Layer surgery (07-16/17) | `## 2026-07-16: ChatGPT`, `## 2026-07-16/17: Sub Layer off-by-one surgery` | 8 |
@@ -751,7 +753,7 @@ notes as plain titles).
 | `census-before-claims` (agent-ops) | Measure (census, live file, `git status` + byte diff) before stating a mechanism, number or completion; never infer | 11 notes, 3 folders. verification agreement L4 "never infer completion, demand a census before repeating a mechanism claim"; workstation-disk L7 "Re-run the census before quoting any number"; lg-gram L119 "re-run the census before quoting them"; melange-fec-pipeline L264 "run the batched drift census first"; glass-box L64, metaloop L150, agent-tooling L377 "Never infer the outcome"; audio L125; mentat-failings L104 "verify, don't infer"; paul-goff L9 | leaves: verification agreement, workstation-disk; actors: lg-gram-workstation, glass-box, metaloop, melange-fec-pipeline |
 | `four-pillar-percentile-blend` (data) | Moneyball rank = weighted blend of committee, legislative, press and demographic percentile ranks; three weight sets exist and only Paul ratifies; read the live set | 21 notes, 4 folders. moneyball-workbook L4 "canonical output of the 4-pillar percentile-rank blend"; excel build L47 "percentile-rank 4-pillar blend"; audits L12 "Pillar weights ... exist in THREE sets"; melange-systems L28 "Pillar weights: all three sets (resolution 3)"; influence-vs-alignment L24; primacy L10 "NOT ranks_python.json (the four-pillar rank)"; cosponsor L16; sentinel-collectors L54 | leaves: excel build, primacy, audits; actors: moneyball-workbook, melange-fec-pipeline; concept: influence-vs-alignment-axes; project: melange-systems |
 | `settled-findings-stay-settled` (agent-ops) | A finding refuted by measurement or ruled intentional is recorded once (binding refuted list, "do not re-flag") and not re-litigated | 10 notes, 3 folders. audits L10 "binding refuted lists ... (do not re-flag)"; mentat-collection L458 and mentat-fec-pipeline L316 "do not re-litigate"; primacy L100 "do NOT re-flag it"; lobbyview-collector L82; single-look L76; orchestration L119; staffer-data L294; legislative L133; influence L73 | leaves: verification agreement, audits; actors: mentat-fec-pipeline, lobbyview-collector; projects: melange-systems, mentat |
-| `say-do-gate` (research) | A member is Champion/Defender only if stated stance is backed by authored or original-cosponsored action (Rule A cap) | 6 notes, 3 folders. influence L4 "GATE-2 and say-do gate"; legislative L60 "satisfies say-do Champion A-path"; single-look L70 "Say-do gate LANDED @18ce3b3"; coalition-builder discussion L54 "PRE-say-do-gate"; cu-stance L118 "say-do calibration"; primacy L469 "ratified say-do Rule A" | leaf: influence; concept: influence-vs-alignment-axes; project: melange-systems |
+| `say-do-gate` (research) | A member is Champion/Defender only if stated stance is backed by a costly signal: an authored or original-cosponsored bill (Path A, the 2026-07-07 Rule A cap) or, since the 2026-07-08 generalization, a recorded CU-aligned final-passage vote (Path V) or a Chair or Ranking seat on a committee of jurisdiction over a gatekeep category (Path J) | 6 notes, 3 folders. influence L4 "GATE-2 and say-do gate"; legislative L60 "satisfies say-do Champion A-path"; single-look L70 "Say-do gate LANDED @18ce3b3"; coalition-builder discussion L54 "PRE-say-do-gate"; cu-stance L118 "say-do calibration"; primacy L469 "ratified say-do Rule A" | leaf: influence; concept: influence-vs-alignment-axes; project: melange-systems |
 | `trend-over-significance` (research) | Report sign, size and fold consistency before p-values, as real R `summary(lm())` output | 8 notes, 4 folders. communication L4 "trend over significance"; sector-growth L4 "reported trend-first"; forecast-giving L112 and forecast-redesign L124 "lead with sign/size/fold consistency"; quant-model-evaluation-skill L24, single-look L184, luna L13, agent-tooling L262 cite `trend-over-significance-2026-09-26` | leaves: communication, sector-growth; actor: quant-model-evaluation-skill; project: forecast-redesign |
 
 Why census-before-claims and four-pillar pass the "title subject" test that rank-authority fails: the verification agreement
@@ -958,9 +960,9 @@ the same protocol with `REQ=a,b,c,d,f,g,h,i,j,k` and no pending file, and run th
 8. G-post (11.2) on the batch's `commit.ts --export` tree, like every batch: batches 4-5 with `REQ=a,b,c,d,f,g,h,i,j,k` and
    the pending file; batch 6 with the same `REQ` and no pending file (step 6 deleted it, so every check runs in full). In
    batch 6, once step 9 has pinned the counts, step 8 also checks the snapshot on that export:
-   `bun .bedrock/graph/build.ts --vault "$X" --out "$X/page.html" && bun .bedrock/graph/snapshot.ts --file "$X/page.html"`.
+   `bun .bedrock/graph/build.ts --vault "$X" --out "$X-page.html" && bun .bedrock/graph/snapshot.ts --file "$X-page.html"`.
 9. Batch 6 only, from the step-8 export: build its page and read the counts (`build.ts --vault "$X" --out
-   "$X/page.html"`); set `SNAPSHOT` in `.bedrock/graph/snapshot.ts` to those nodes, links, mentions and per-type counts
+   "$X-page.html"`); set `SNAPSHOT` in `.bedrock/graph/snapshot.ts` to those nodes, links, mentions and per-type counts
    (expected types: actor 47, concept 14, discussion 6, person 1, project 4, topic 132, team 0, fleeting = the fleeting
    notes tracked in HEAD, 3 at plan time, which Phase 2 never stages); update its header comment. Write
    `.bedrock/reorg/stale-statements.md` (decisions 12 and 16): one row per stale statement that predates Phase 2 and falls
@@ -1035,7 +1037,7 @@ bun .bedrock/reorg/commit.ts --batch N --expect-head $BASE_N --paths-file .bedro
   --message "$MSG" --log "$LOG" --when "$WHEN" --export "$X"   # throwaway index; the real index is not written
 bun .bedrock/reorg/check.ts --vault "$X" --strict --require $REQ --pending-splits "$X/.bedrock/reorg/spec/pending-splits.txt"
 #   (runs before the selftest, which rewrites "$X/index.md"; batch 6 and fix rounds then add, once SNAPSHOT is pinned:)
-#   bun .bedrock/graph/build.ts --vault "$X" --out "$X/page.html" && bun .bedrock/graph/snapshot.ts --file "$X/page.html"
+#   bun .bedrock/graph/build.ts --vault "$X" --out "$X-page.html" && bun .bedrock/graph/snapshot.ts --file "$X-page.html"
 BRAIN_VAULT="$X" bun .bedrock/recall/selftest.ts      # deciding run: the would-be-committed tree, no hook output
 bun .bedrock/recall/selftest.ts                        # working tree: informational (fleeting notes and hook output may differ)
 git diff --cached --quiet                              # still nothing staged in the real index
@@ -1064,7 +1066,7 @@ bun .bedrock/graph/build.ts && bun .bedrock/graph/verify.ts
 git cat-file -e HEAD:.bedrock/reorg/stale-statements.md      # decision 16: the list is committed
 X=$(cygpath -m "$(mktemp -d)"); git archive HEAD | tar -x -C "$X"
 bun .bedrock/reorg/check.ts --vault "$X" --strict            # before the selftest, which rewrites "$X/index.md"
-bun .bedrock/graph/build.ts --vault "$X" --out "$X/page.html" && bun .bedrock/graph/snapshot.ts --file "$X/page.html"
+bun .bedrock/graph/build.ts --vault "$X" --out "$X-page.html" && bun .bedrock/graph/snapshot.ts --file "$X-page.html"
 BRAIN_VAULT="$X" bun .bedrock/recall/selftest.ts
 ```
 STOP when all pass on the working tree and the committed tree, and two consecutive final adversarial reviews pass. The gate

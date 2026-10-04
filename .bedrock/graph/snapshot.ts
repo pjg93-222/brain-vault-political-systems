@@ -1,10 +1,12 @@
 // Snapshot check: the numbers the vault had at the last deliberate update of SNAPSHOT (history: 74 notes / 260 links /
 // 1468 mentions when the graph tooling was installed on 2026-10-03; 77 / 269 / 1501 with the capture and recall
 // tooling, where the system notes index.md and log.md are excluded from the graph; 80 / 276 / 1522 after the first
-// memory sync added 3 fleeting notes; now 207 / 574 / 2082, pinned by the Phase 2 reorganisation's batch 6 (plan
+// memory sync added 3 fleeting notes; 207 / 574 / 2082, pinned by the Phase 2 reorganisation's batch 6 (plan
 // .bedrock/reorg/plan.md section 10 batch 6 step 9) from the page of its would-be-committed export: 204 curated notes
 // after the 30 splits (119 parts) and the 8 new concepts, plus the 3 fleeting notes tracked in HEAD, which Phase 2 never
-// stages; hook captures in the working tree are not counted). It proves that a change to the tooling did not change what
+// stages; hook captures in the working tree are not counted; now 207 / 574 / 2083, re-pinned by fix round batch 7 from
+// its own export: one more mention of moneyball-workbook in its lineage part, the logged decision 4(b) rewrite "(see
+// superseded in [[moneyball-workbook]])", so that pair's weight went from 6 to 7). It proves that a change to the tooling did not change what
 // the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail, which is
 // the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below (a Phase 2 fix round re-pins it
 // from its own export).
@@ -17,7 +19,7 @@ import { gate, extractData } from "./checks.ts";
 const SNAPSHOT = {
   nodes: 207,
   links: 574,
-  mentions: 2082,
+  mentions: 2083,
   types: { actor: 47, concept: 14, discussion: 6, person: 1, project: 4, topic: 132, team: 0, fleeting: 3, other: 0 } as Record<string, number>,
 };
 

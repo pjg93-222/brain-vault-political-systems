@@ -198,7 +198,7 @@ git status --porcelain=v1 -- <paths...>
 - [[2026-07-troubleshooting-melange-live-tree-git-drift]] - Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror
 - [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]] — Guardrails for any autonomous Melange audit or review run, from the run-guardrails memory of 2026-07-02 as updated through 07-10.
 - [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] — Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19.
-- [[2026-06-feature-melange-model-facts]] — Melange model facts recorded in June 2026: the regeneration pipeline, the Blended Model with its three pillar-weight sets and pillar decisions, and the member desk and SNA features.
+- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified).
 - [[2026-06-troubleshooting-melange-model-audits]] — The Melange model audits of 2026-06-26: the brutal internal audit, two independent adversarial audits with their fixes, and the FEC data-quality assessment with the HIGH-3 reversal.
 
 ## Related Projects
@@ -208,6 +208,6 @@ git status --porcelain=v1 -- <paths...>
 ## Related Concepts
 
 - [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
-- [[live-tree-patch-discipline]] — The Melange live tree changes only through one line-wise patch cut with fec/tools/live_patch.py and applied with core.autocrlf=false; never check out or merge into LIVE, and APPLY is Paul's.
+- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py and applied with core.autocrlf=false, never normalising LIVE; applying needs Paul's go.
 - [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
-- [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar percentile ranks (committee/influence, legislative, press, demographic); three weight sets are on record, only Paul ratifies one, and the live set is read where it is kept.
+- [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept.

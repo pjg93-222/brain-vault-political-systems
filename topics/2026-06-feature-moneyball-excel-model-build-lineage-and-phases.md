@@ -1,7 +1,7 @@
 ---
 type: topic
-title: "Workbook lineage and phases A-C (06-18 to 06-22) (Moneyball Excel model build)"
-aliases: ["Moneyball Excel model build (June 2026): Workbook lineage and phases A-C (06-18 to 06-22)"]
+title: "Workbook lineage (to the 06-25 Blended workbook) and phases A-C (06-18 to 06-22) (Moneyball Excel model build)"
+aliases: ["Moneyball Excel model build (June 2026): Workbook lineage (to the 06-25 Blended workbook) and phases A-C (06-18 to 06-22)"]
 category: "feature"
 status: "completed"
 people: []
@@ -15,7 +15,7 @@ tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 part_of: "[[2026-06-feature-moneyball-excel-model-build]]"
 ---
 
-# Workbook lineage and phases A-C (06-18 to 06-22) (Moneyball Excel model build)
+# Workbook lineage (to the 06-25 Blended workbook) and phases A-C (06-18 to 06-22) (Moneyball Excel model build)
 
 > Workbook lineage and file inventory and the June 2026 build phases A to C (2026-06-18 to 06-22): the original bugs and repairs, the committee and caucus rebuild, the main version with coalition profiles and the four-bucket redesign, and the agenda re-weighting. Part of [[2026-06-feature-moneyball-excel-model-build]] (project [[melange-systems]]).
 > Correction kept in [[2026-06-feature-moneyball-excel-model-build]] (Superseded guidance, "Excel COM as the write path"): the June Excel COM write path recorded here, including the COM recalc after openpyxl edits and the COM-era recalc tips, is superseded by Phase 2: ranks_python.json is the authority, the workbook is a view, and no COM is used anywhere.

@@ -98,7 +98,7 @@ python brainctl.py off <folder>     # remove only the managed block
 ## Related Topics
 
 - Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
-- [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where sessions draft updates and only Paul runs brainctl.
+- [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired.
 
 ## Related Projects
 

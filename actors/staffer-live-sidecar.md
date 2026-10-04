@@ -180,7 +180,7 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
 ## Related Concepts
 
 - [[concurrent-service-overlap-edge-rule]] - Staffer social-network edge rule: a person-person edge needs real concurrent service in one container; sequence is trajectory, not an edge.
-- [[live-tree-patch-discipline]] — The Melange live tree changes only through one line-wise patch cut with fec/tools/live_patch.py and applied with core.autocrlf=false; never check out or merge into LIVE, and APPLY is Paul's.
+- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py and applied with core.autocrlf=false, never normalising LIVE; applying needs Paul's go.
 
 ## Discussions
 

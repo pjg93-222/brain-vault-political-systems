@@ -37,8 +37,8 @@
     },
     {
       "slug": "2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane",
-      "title": "quant-model-evaluation skill lane (2026-09-30)",
-      "summary": "The quant-model-evaluation skill lane of 2026-09-30: findings F1 to F5, the N19 hold fix, the leakage fix and the production chain left pending",
+      "title": "quant-model-evaluation skill lane (2026-09-30 to 10-01)",
+      "summary": "The quant-model-evaluation skill lane of 2026-09-30 to 10-01: Paul's rulings on F1 to F6, the N19 hold fix, the leakage fix and the production chain left pending",
       "domain": "domain/platform",
       "home": "projects/melange-systems",
       "sections": [
@@ -80,7 +80,7 @@
     {
       "slug": "2026-07-feature-agent-tooling-stack-higgsfield-account-trap",
       "title": "Higgsfield connector account trap",
-      "summary": "The Higgsfield connector account trap: the connector bound to a free account until Paul re-authorized it on the plus plan",
+      "summary": "The Higgsfield connector account trap: the connector bound to a free account, re-authorized by Paul on the plus plan on 2026-09-19, then back on a free account on 2026-09-30 and 2026-10-01",
       "domain": "domain/platform",
       "home": "projects/melange-systems",
       "sections": [
@@ -94,7 +94,7 @@
     {
       "slug": "2026-07-feature-agent-tooling-stack-project-brain-toolkit",
       "title": "Project Brain toolkit",
-      "summary": "The Project Brain toolkit: durable per-project memory for disposable AI sessions, where sessions draft updates and only Paul runs brainctl",
+      "summary": "The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired",
       "domain": "domain/platform",
       "home": "projects/melange-systems",
       "sections": [
@@ -108,7 +108,7 @@
     {
       "slug": "2026-07-feature-agent-tooling-stack-glass-box-lock-hang",
       "title": "GLASS BOX lane-lock hang and Grok balance",
-      "summary": "The GLASS BOX lane-lock hang that blocked metaloop starts, and the shared Grok usage balance",
+      "summary": "The GLASS BOX lane-lock hang that blocked metaloop starts, and the Grok lane taken down on 2026-08-06 by an exhausted Grok Build usage balance",
       "domain": "domain/platform",
       "home": "projects/melange-systems",
       "sections": [

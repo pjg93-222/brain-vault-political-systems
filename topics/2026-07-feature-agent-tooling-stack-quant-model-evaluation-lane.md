@@ -1,7 +1,7 @@
 ---
 type: topic
-title: "quant-model-evaluation skill lane (2026-09-30) (Agent tooling stack)"
-aliases: ["Agent tooling stack: quant-model-evaluation skill lane (2026-09-30)"]
+title: "quant-model-evaluation skill lane (2026-09-30 to 10-01) (Agent tooling stack)"
+aliases: ["Agent tooling stack: quant-model-evaluation skill lane (2026-09-30 to 10-01)"]
 category: "feature"
 status: "in-progress"
 people: []
@@ -15,9 +15,9 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"
 part_of: "[[2026-07-feature-agent-tooling-stack]]"
 ---
 
-# quant-model-evaluation skill lane (2026-09-30) (Agent tooling stack)
+# quant-model-evaluation skill lane (2026-09-30 to 10-01) (Agent tooling stack)
 
-> The quant-model-evaluation skill lane of 2026-09-30: findings F1 to F5, the N19 hold fix, the leakage fix and the production chain left pending. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
+> The quant-model-evaluation skill lane of 2026-09-30 to 10-01: Paul's rulings on F1 to F6, the N19 hold fix, the leakage fix and the production chain left pending. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
 
 ## quant-model-evaluation skill lane (source: quant-model-evaluation-skill-lane-2026-09-30, last modified 2026-10-01; see [[quant-model-evaluation-skill]])
 

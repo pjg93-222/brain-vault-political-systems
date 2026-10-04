@@ -96,7 +96,7 @@ tags: ["type/project", "status/active", "domain/data"]
 
 ## Parts
 
-- [[2026-06-feature-melange-model-facts]] — Melange model facts recorded in June 2026: the regeneration pipeline, the Blended Model with its three pillar-weight sets and pillar decisions, and the member desk and SNA features.
+- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified).
 - [[2026-06-feature-melange-scenario-model-build]] — The Melange scenario model build of 2026-06-26: the source timeline, the pre-flight pass, the budget what-if tool, the electoral model, money response and pathfinding, the step-3 finish with the reorg, the scenario runner, flip channels and the diminishing-returns reconciliation.
 - [[2026-06-troubleshooting-melange-model-audits]] — The Melange model audits of 2026-06-26: the brutal internal audit, two independent adversarial audits with their fixes, and the FEC data-quality assessment with the HIGH-3 reversal.
 
@@ -234,7 +234,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-06-working-agreement-change-control-and-decision-authority]] | Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code. |
 | [[2026-07-feature-agent-tooling-stack]] | Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap. |
 | [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] | part: The Codex executor lane record: how Claude and Codex were… |
-| [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] | part: The quant-model-evaluation skill lane of 2026-09-30… |
+| [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] | part: The quant-model-evaluation skill lane of 2026-09-30 to… |
 | [[2026-07-feature-agent-tooling-stack-skill-library-lane]] | part: The Moneyball skill library: how the repo skills were… |
 | [[2026-07-feature-agent-tooling-stack-runpod-sessions]] | part: Running Claude sessions on the RunPod pod: Paul's rulings… |
 | [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] | part: The Higgsfield connector account trap: the connector bound… |
@@ -261,7 +261,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-feature-legislative-pillar-acu-review-letters-and-legfix-1-4]] | part: The legislative pillar from 2026-07-17 to 07-25… |
 | [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] | part: legfix5 of 2026-07-27: the six-year full-text collection… |
 | [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] | part: The legislative-effectiveness shadow lane of 2026-09-10 to… |
-| [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] | part: The bill-lobbying regression lane of 2026-09-04: making… |
+| [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] | part: The bill-lobbying regression lane of 2026-09-04: Paul's… |
 | [[2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance]] | part: The 2026-07-10 corpus census and the bill-plane audit and… |
 | [[2026-07-feature-member-approach-briefs]] | Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps. |
 | [[2026-07-feature-personality-psychometrics]] | Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade. |
@@ -303,7 +303,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-09-feature-ui-redesign-boards]] | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
 | [[2026-09-feature-ui-redesign-boards-melange-boards-and-build]] | part: The Melange dashboard redesign boards of 2026-09-22 and… |
 | [[2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks]] | part: The UI finalize after the reboot (2026-09-23 to 09-25)… |
-| [[2026-06-feature-melange-model-facts]] | part: Melange model facts recorded in June 2026: the… |
+| [[2026-06-feature-melange-model-facts]] | part: Melange model facts: the regeneration pipeline, the… |
 | [[2026-06-feature-melange-scenario-model-build]] | part: The Melange scenario model build of 2026-06-26: the source… |
 | [[2026-06-troubleshooting-melange-model-audits]] | part: The Melange model audits of 2026-06-26: the brutal… |
 
@@ -345,11 +345,11 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - [[influence-vs-alignment-axes]] - Modeling principle: rank = INFLUENCE, per-category stance = ALIGNMENT; two separate axes, underdogs surface in a separate efficiency view.
 - [[fail-closed-gates]] - When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
-- [[live-tree-patch-discipline]] - The Melange live tree changes only through one line-wise patch cut with fec/tools/live_patch.py and applied with core.autocrlf=false; never check out or merge into LIVE, and APPLY is Paul's.
-- [[gold-set-validation]] - A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
-- [[four-pillar-percentile-blend]] - The Moneyball rank is a weighted blend of four pillar percentile ranks (committee/influence, legislative, press, demographic); three weight sets are on record, only Paul ratifies one, and the live set is read where it is kept.
+- [[live-tree-patch-discipline]] - Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py and applied with core.autocrlf=false, never normalising LIVE; applying needs Paul's go.
+- [[gold-set-validation]] - A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
+- [[four-pillar-percentile-blend]] - The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept.
 - [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
-- [[say-do-gate]] - A member is shown as Champion or Defender in a category only if the stated stance is backed by authored or original-cosponsored action there (Rule A cap); otherwise the cell displays Ally.
+- [[say-do-gate]] - A member is shown as Champion or Defender in a category only if the stated stance is backed by a costly signal there: an authored or original-cosponsored bill (Path A, the 2026-07-07 Rule A) or, since 2026-07-08, a recorded CU-aligned final-passage vote (Path V) or a Chair or Ranking seat on a committee of jurisdiction over a gatekeep category (Path J); otherwise the cell displays Ally.
 - [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
 - [[two-hop-stance-decomposition]] - CU alignment = stance hop (speaker to target) x valence hop (target to CUs); the ceiling is the valence hop, fixed by a curated registry
 - [[concurrent-service-overlap-edge-rule]] - Staffer social-network edge rule: a person-person edge needs real concurrent service in one container; sequence is trajectory, not an edge.

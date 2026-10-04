@@ -31,8 +31,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 - [[2026-07-feature-legislative-pillar-acu-review-letters-and-legfix-1-4]] — The legislative pillar from 2026-07-17 to 07-25: integration of the 7 letters, the read-only data-plane audit, the legfix and LEGFIX2 bundles, the Tier-1 wiring deploy and the legfix4 residue close-out.
 - [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] — legfix5 of 2026-07-27: the six-year full-text collection, the GovInfo official-text lane and culling engine, and the acu-outline rulings carried into it.
-- [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] — The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built, Claude verified read-only and Paul applied.
-- [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] — The bill-lobbying regression lane of 2026-09-04: making the cosponsor forecaster self-updating from the workbook and the sentinel collectors, and whether a logistic model fits better.
+- [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] — The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built and Claude verified read-only, applied to the live tree at Paul's request.
+- [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] — The bill-lobbying regression lane of 2026-09-04: Paul's ask to make the cosponsor forecaster self-updating, the finding that it is already a ridge logistic model, and the BILLSTATUS bulk refresh and hash-gated forecaster step applied to the live tree.
 - [[2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance]] — The 2026-07-10 corpus census and the bill-plane audit and press media-stance display from 2026-07-19 on, through the crown and money rulings, tier weights and Codex-lane hardening.
 
 ## Context

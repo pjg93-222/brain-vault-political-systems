@@ -2,7 +2,7 @@
 type: concept
 name: "Live-tree patch discipline"
 aliases: ["live_patch.py patch rule"]
-description: "The Melange live tree changes only through one line-wise patch cut with fec/tools/live_patch.py and applied with core.autocrlf=false; never check out or merge into LIVE, and APPLY is Paul's."
+description: "Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py and applied with core.autocrlf=false, never normalising LIVE; applying needs Paul's go."
 related_to: []
 sources: []
 updated_at: 2026-10-04
@@ -12,20 +12,20 @@ tags: ["type/concept", "domain/platform"]
 
 # Live-tree patch discipline
 
-> The Melange live tree changes only through one line-wise patch cut with `fec/tools/live_patch.py` and applied with `core.autocrlf=false`; never check out or merge into LIVE, and APPLY is Paul's.
+> Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with `fec/tools/live_patch.py` and applied with `core.autocrlf=false`, never normalising LIVE; applying needs Paul's go.
 
 ## Description
 
-The canonical Melange checkout ("LIVE") is not an ordinary working tree: it can sit on another session's branch, it holds live-only files that committed code imports, and its line endings differ from the committed blobs, so a checkout or merge into it would normalise line endings across files nobody meant to touch. The 2026-09-19 reconcile and its line-ending census produced the rule and the tool: work lands on a branch or worktree, and LIVE receives one patch cut against its own bytes by the line-wise cutter `fec/tools/live_patch.py`, applied with `git -c core.autocrlf=false apply`, never normalising LIVE. The cutter classifies each file (exit 0 identical bytes, 1 line-ending-only drift, 2 content drift), so a patch carries content changes only.
+The canonical Melange checkout ("LIVE") is not an ordinary working tree: it can sit on another session's branch, it holds live-only files that committed code imports, and its line endings differ from the committed blobs, so a checkout or merge that rewrites a file normalises that whole file's line endings, including lines nobody meant to touch. The 2026-09-19 line-ending census produced the rule and the tool: work lands on a branch or worktree, and a drifted LIVE target receives one patch cut against its own bytes by the line-wise cutter `fec/tools/live_patch.py`, applied with `git -c core.autocrlf=false apply`, never normalising LIVE. The cutter classifies each file (exit 0 identical bytes, 1 line-ending-only drift, 2 content drift), so a patch carries content changes only.
 
-Applying the patch, and restarting a live service such as the 8841 sidecar after it, is Paul's action; a lane delivers the patch and stops.
+Applying the patch, and restarting a live service such as the 8841 sidecar after it, needs Paul's explicit go; in the staffer sidecar lanes both are his own actions.
 
 ## Key Characteristics
 
-- One patch per lane, cut against LIVE bytes with `fec/tools/live_patch.py`; never a checkout, merge or whole-file copy into LIVE.
+- One patch per lane, cut against LIVE bytes with `fec/tools/live_patch.py` from anchor-matched edits, never a whole-file copy over LIVE's drifted files; before any merge into LIVE, check that no path it touches is dirty.
 - Apply with `core.autocrlf=false` (the system default is `autocrlf=true`); never normalise LIVE's line endings.
 - The cutter's exit code separates identical bytes, line-ending-only drift and content drift.
-- APPLY and any restart are Paul's; the agent cuts and verifies the patch.
+- APPLY and any restart need Paul's explicit go; the agent cuts and verifies the patch.
 - Cut patches as bytes: a cutter that goes through a text console mangles non-ASCII bytes.
 
 ## Where it Applies

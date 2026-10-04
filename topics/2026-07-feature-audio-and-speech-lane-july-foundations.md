@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-audio-and-speech-lane]]"
 
 # Speaker verification, ES cross-modal validation, narratives and the Senate gold design (07-09 to 07-16) (Audio and speech lane)
 
-> The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09, the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16. Part of [[2026-07-feature-audio-and-speech-lane]] (project [[melange-systems]]).
+> The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09 (superseded the same day as gender-confounded), the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16. Part of [[2026-07-feature-audio-and-speech-lane]] (project [[melange-systems]]).
 
 ## Audio speaker verification and ES cross-modal validation (2026-07-09; source: moneyball-audio-narratives-2026-07-09)
 

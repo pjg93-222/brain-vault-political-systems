@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-agent-tooling-stack]]"
 
 # Project Brain toolkit (Agent tooling stack)
 
-> The Project Brain toolkit: durable per-project memory for disposable AI sessions, where sessions draft updates and only Paul runs brainctl. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
+> The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
 
 ## Project Brain toolkit (source: project-brain-toolkit-2026-08-11, last modified 2026-09-19; see [[project-brain]])
 

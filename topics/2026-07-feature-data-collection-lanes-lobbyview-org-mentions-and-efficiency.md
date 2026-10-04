@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-data-collection-lanes]]"
 
 # LobbyView lane: org-mention measurement, industry-family UI, efficiency layers (08-07/08) (Melange data-collection lanes)
 
-> The LobbyView lane of 2026-08-07/08: the org-mentions audit and fix rounds, the shipped org-mention measurement, the industry-family UI cleanup, the efficiency layers, and the CU-set ruling with the round-4 overnight run. Part of [[2026-07-feature-data-collection-lanes]] (project [[melange-systems]]).
+> The LobbyView lane of 2026-08-07/08: the org-mentions audit and fix rounds, the shipped org-mention measurement, the industry-family UI cleanup and the efficiency layers, with the earlier CU-set ruling of 2026-07-31 and round-4 overnight run of 2026-08-01. Part of [[2026-07-feature-data-collection-lanes]] (project [[melange-systems]]).
 
 ## LobbyView / LDA integration lane (2026-07-31 to 2026-08-12)
 

@@ -2,7 +2,7 @@
 type: concept
 name: "Gold-set validation"
 aliases: ["gold-set gate"]
-description: "A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees."
+description: "A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test."
 related_to: []
 sources: []
 updated_at: 2026-10-04
@@ -12,18 +12,18 @@ tags: ["type/concept", "domain/research"]
 
 # Gold-set validation
 
-> A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
+> A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
 
 ## Description
 
-Across the Melange scoring lanes a reader, model or instrument earns trust by its score on a gold set: a frozen collection of labels made independently of the thing being tested and adjudicated by Paul. The Big Five instrument is anchored to the *Personality on the Hill* appendix panels (129 Senate insiders and 125 academics); the stance stack is measured against a human gold queue; the fine-tuned DEBATE stance model was deployed after scoring about 85% (kappa 0.76) on a member-grouped human-gold test. The pipeline under test runs blind to the gold labels, as Paul's "bullseye" ruling of 2026-08-28 requires.
+Across the Melange scoring lanes a reader, model or instrument earns trust by its score on a gold set: a frozen collection of labels made independently of the thing being tested. The Big Five instrument is anchored to the *Personality on the Hill* appendix panels (129 Senate insiders and 125 academics); the stance stacks are measured against Paul's own gold labels; the fine-tuned DEBATE stance model was deployed after scoring about 85% (kappa 0.76) on a member-grouped human-gold test. The contact-inference pipeline runs blind to its gold labels, as Paul's "bullseye" ruling of 2026-08-28 requires.
 
-Where no gold criterion exists, a lane says so and gates on what it can show instead (construct integrity and fresh reliability for the N slot), rather than claiming convergence with a criterion it does not have. A component that was never measured against human gold is recorded as unmeasured.
+Where no gold criterion exists, a lane says so and gates on what it can show instead (construct integrity and fresh reliability for the N-slot re-anchor of 2026-07-11, before the Senate gold), rather than claiming convergence with a criterion it does not have. A component that was never measured against human gold is recorded as unmeasured.
 
 ## Key Characteristics
 
-- The gold set is fixed before the look and labelled independently of the pipeline; gold is Paul's adjudication.
-- The pipeline under test runs blind to the gold labels.
+- The gold set is fixed before the look and labelled independently of the pipeline; Paul rules on its use, and in the stance lanes the gold labels are his own adjudications.
+- The pipeline is scored on gold it did not train on (a held-out, firewalled or member-grouped split); the contact-inference pipeline runs fully blind to its gold.
 - Validity is stated per axis or reader, at the strength the gold supports (for example both panels clearing the association and strict-discriminant gates).
 - A gold look is a confirmatory look and follows the single-look discipline.
 - No gold criterion means no criterion claim: the gate falls back to construct integrity and reliability, and says so.
@@ -31,14 +31,14 @@ Where no gold criterion exists, a lane says so and gates on what it can show ins
 ## Where it Applies
 
 - [[2026-07-feature-personality-psychometrics]] — E and A are ACTIVE_EXTERNAL_GOLD_ANCHORED: both Senate gold panels clear the association and strict-discriminant gates
-- [[2026-06-feature-cu-stance-and-sentiment]] — the stance stack is measured against a human gold queue (312 items, 171 members); more gold labels on bill-naming releases is the open fix
+- [[2026-06-feature-cu-stance-and-sentiment]] — the stance stacks are measured against Paul's gold labels (the 400 tweet golds and the 760-row press gold frame); re-enabling the bill-sign override needs an aboutness guard and more gold labels on bill-naming releases
 - [[debate-stance-model]] — 54 billstatus rows still sit among the gold labels of the DEBATE retrain TRAIN split, an open follow-up since 2026-06-30
-- [[melange-systems]] — the project whose scoring layers are validated this way
+- [[melange-systems]] — the project whose stance, Big Five and contact-inference lanes are scored against gold sets
 
 ## Related Concepts
 
-- [[two-hop-stance-decomposition]] — its valences were auto-typed by PMI on the gold human labels
-- [[single-look-holdout-discipline]] — the frozen Senate gold (the "golden template") is spent under the one-look rule
+- [[two-hop-stance-decomposition]] — its valence registry is derived from Paul's own gold valence judgments under honest cross-validation; per-target valence is curated, not automated
+- [[single-look-holdout-discipline]] — each look against the frozen Senate gold (the "golden template") is spent once under the one-look rule
 
 ## Evidence
 

@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-legislative-pillar-acu-review]]"
 
 # Legislative-effectiveness (Volden-Wiseman) shadow lane (09-10 to 09-12) (Legislative pillar and ACU review)
 
-> The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built, Claude verified read-only and Paul applied. Part of [[2026-07-feature-legislative-pillar-acu-review]] (project [[melange-systems]]).
+> The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built and Claude verified read-only, applied to the live tree at Paul's request. Part of [[2026-07-feature-legislative-pillar-acu-review]] (project [[melange-systems]]).
 
 ## Legislative-effectiveness (Volden-Wiseman five-stage) shadow lane (2026-09-10 to 2026-09-12)
 
@@ -67,4 +67,4 @@ Related memories: `codex-executor-lane-2026-07-18`, `no-git-plain-review-2026-09
 
 ## Related Topics
 
-- [[codex-executor-incidents]] — Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane Codex built and then lost on 2026-09-10/11.
+- [[codex-executor-incidents]] — Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane of 2026-09-10/11, where Codex built it but hit its usage limit before the validation report, and Claude finished the verification read-only.

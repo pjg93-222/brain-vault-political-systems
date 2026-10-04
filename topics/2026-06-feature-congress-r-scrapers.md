@@ -34,13 +34,13 @@ tags: ["type/topic", "status/completed", "domain/data", "category/feature"]
 ## Parts
 
 - [[2026-06-feature-congress-r-scrapers-member-scraper]] — The congress.gov member scraper of 2026-06-02 to 06-10: purpose and outputs, result-row markup, the Cloudflare bypass and cookie-replay fast path, official-name roster rules, the pinned roster order, the bug-audit fixes and the chunked verbatim-URL rule.
-- [[2026-06-feature-congress-r-scrapers-legislative-score-17x3]] — The integrated 17-topic by 3-role scraper behind the Moneyball Legislative Score: its current design inside the member scraper, the stability guard, the cosponsor SNA edges, the June 24 refinements and guardrails, and the two superseded approaches.
+- [[2026-06-feature-congress-r-scrapers-legislative-score-17x3]] — The integrated 17-topic by 3-role scraper behind the Moneyball Legislative Score: its 2026-06-22 design inside the member scraper, the stability guard, the cosponsor SNA edges, the June 24 refinements and guardrails, and the two superseded approaches.
 - [[2026-06-feature-congress-r-scrapers-cu-press-scraper]] — The CU press-release scraper from its 2026-06-10 start through the June 12 audits, plus the five-step fallback chain, archive and third-party sources, bill-sponsorship coverage, the ACU harvest and the per-member web grind of 2026-06-18.
 - [[2026-06-feature-congress-r-scrapers-press-collector-pipeline]] — The press text collector and one-command pipeline of 2026-06-18/19: anti-stall hardening, the fast analyzer, the combined driver, throughput tuning, the collector crash fix, the chromote 403 lane and coverage bugs, and the validity verdict.
 - [[2026-06-feature-congress-r-scrapers-press-discovery-and-attribution-fixes]] — Press scraper fixes of 2026-06-20/21: discovery truncation and sitemap completion, the recency-decay reversals, the news-attribution surname guard, parallel-scoring capture, the collector stall watchdog and parallel Stage-5 scoring.
 - [[2026-06-feature-congress-r-scrapers-graded-scoring-and-audits]] — Graded press scoring of 2026-06-14 to 06-21: the graded scale, lean-aware hidden coalitions, the audit passes on tail compression, crypto orientation, matching breadth, big-bank and anti-CU detection, the date-parse bug and the graded member by category sheet.
 - [[2026-06-feature-congress-r-scrapers-stage5-debate-lsd]] — The Stage 5 overhaul of 2026-06-21 to 06-24 that replaced regex scoring with Political DEBATE stance and Lexicoder LSD tone: design, environment constraints, validation, the fine-tuned base model, the deliverable change and the full-corpus deploy.
-- [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] — The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, locked design and live status.
+- [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] — The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18.
 
 ## Context
 

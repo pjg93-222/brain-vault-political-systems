@@ -17,7 +17,7 @@ part_of: "[[2026-07-bugfix-mentat-collection-and-attribution]]"
 
 # System-debug lane (2026-09-13 to 09-15) (Mentat collection and attribution)
 
-> The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a review bucket, Chart Studio patches and redesign, and the usability lanes with their commits. Part of [[2026-07-bugfix-mentat-collection-and-attribution]] (project [[mentat]]).
+> The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a zeroed review bucket (a design superseded on 2026-09-17/18 by the contradiction rule), Chart Studio patches and redesign, and the usability lanes with their commits. Part of [[2026-07-bugfix-mentat-collection-and-attribution]] (project [[mentat]]).
 
 ## System-debug lane, 2026-09-13 to 2026-09-15 (source: `mentat-system-debug-lane-2026-09-13`, last modified 2026-09-15; the console UI side is [[mentat-console-chart-studio-and-system-debug|Mentat console]])
 

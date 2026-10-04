@@ -52,7 +52,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 ## Related Concepts
 
 - [[census-before-claims]] — rules R1 and R2 of this agreement: never infer completion, and demand a census before repeating a mechanism claim
-- [[settled-findings-stay-settled]] — R7 anchors every claim to the recorded state instead of contradicting it; R9 is the counterpart: only Paul reopens a closed question
+- [[settled-findings-stay-settled]] — R7 anchors every claim to the recorded state instead of contradicting it; R9 is the counterpart: the Agreeableness validation search that Paul reopened is not bound by the old closures
 
 ## Related Topics
 

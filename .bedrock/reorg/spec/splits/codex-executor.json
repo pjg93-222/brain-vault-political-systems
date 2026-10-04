@@ -23,8 +23,8 @@
   "parts": [
     {
       "slug": "codex-executor-incidents",
-      "title": "Overnight poll-loop burn and the legislative shadow-lane failure",
-      "summary": "Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane Codex built and then lost on 2026-09-10/11",
+      "title": "Overnight poll-loop burn and the legislative shadow lane where Codex hit its usage limit",
+      "summary": "Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane of 2026-09-10/11, where Codex built it but hit its usage limit before the validation report, and Claude finished the verification read-only",
       "domain": "domain/platform",
       "home": "projects/melange-systems",
       "sections": [
@@ -116,7 +116,7 @@
       "old": "- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: \"that is unacceptable.\" Related: the brain's DE-018 (see above).",
       "mark": "rewrite",
       "why": "\"the brain's DE-018 (see above)\": the DE-018 note above is the usage-limit bullet of ## Role split and standing rules (file line 168), which the hub keeps; this line moves to -incidents",
-      "new": "- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: \"that is unacceptable.\" Related: the brain's DE-018 (see in [[codex-executor]]).",
+      "new": "- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: \"that is unacceptable.\" Related: the brain's DE-018 (see [[codex-executor]]).",
       "referent": "codex-executor"
     },
     {

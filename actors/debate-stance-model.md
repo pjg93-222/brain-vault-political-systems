@@ -158,7 +158,7 @@ Where the label template lives: the CU press sentiment/stance R pipeline and its
 ## Related Concepts
 
 - [[two-hop-stance-decomposition]] - CU alignment = stance hop (speaker to target) x valence hop (target to CUs); the ceiling is the valence hop, fixed by a curated registry
-- [[gold-set-validation]] — A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
+- [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
 
 ## Notes
 

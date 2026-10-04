@@ -70,7 +70,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 ## Related Concepts
 
 - [[two-hop-stance-decomposition]] - CU alignment = stance hop (speaker to target) x valence hop (target to CUs); the ceiling is the valence hop, fixed by a curated registry
-- [[gold-set-validation]] — the stance readers are scored on a human gold queue (312 items, 171 members); more gold labels on bill-naming releases is the open fix
+- [[gold-set-validation]] — the stance readers are scored on Paul's gold labels (the 400 tweet golds and the 760-row press gold frame); re-enabling the bill-sign override needs an aboutness guard and more gold labels on bill-naming releases
 
 ## Related Topics
 

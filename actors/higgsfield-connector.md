@@ -120,8 +120,8 @@ Related Mentat-lane figures (from `mentat-redesign-boards-2026-09-21`, a source 
 - Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-09-feature-mentat-console-ui]] - Mentat console UI lanes 2026-09-11..25: Chart Studio, clean-up, polish, load-time/FEC links, Graph and pie quirks.
 - [[2026-09-feature-ui-redesign-boards]] - Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks.
-- [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] — The Higgsfield connector account trap: the connector bound to a free account until Paul re-authorized it on the plus plan.
-- [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] — The Mentat console redesign boards of 2026-09-21/22: fourteen Higgsfield boards, the board-wins ruling and the build-01 shell.
+- [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] — The Higgsfield connector account trap: the connector bound to a free account, re-authorized by Paul on the plus plan on 2026-09-19, then back on a free account on 2026-09-30 and 2026-10-01.
+- [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] — The Mentat console redesign boards of 2026-09-21/22: two rounds of Higgsfield boards (14 on 09-21, 17 on 09-22), the decision that boards win over prompt numbers, and the build-01 shell.
 
 ## Related Projects
 

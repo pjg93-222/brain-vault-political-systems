@@ -182,4 +182,4 @@ part_of: "[[2026-07-feature-audio-and-speech-lane]]"
 
 ## Related Topics
 
-- [[2026-07-feature-audio-and-speech-lane-july-foundations]] — The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09, the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16.
+- [[2026-07-feature-audio-and-speech-lane-july-foundations]] — The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09 (superseded the same day as gender-confounded), the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16.
