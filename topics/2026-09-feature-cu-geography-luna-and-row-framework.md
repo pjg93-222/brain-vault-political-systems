@@ -5,7 +5,7 @@ aliases: ["CU-geography Luna model and row framework"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[quant-model-evaluation-skill]]"
   - "[[runpod-pod]]"
@@ -14,8 +14,8 @@ created_at: 2026-09-29
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/cu-row-framework-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\cu-row-framework-2026-09-30.md", sha256: "d7f07745e795faa8dadec2fef7f0f193f6ad03914bd6a65b82c2bd6c28fd2e79"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/luna-stratified-scaling-review-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\luna-stratified-scaling-review-2026-09-29.md", sha256: "fa047e83455b71681045d3bcee783f50bb00e230f3fc0b1e0ebc5d5b44dc0d7d"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -27,7 +27,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 - Project: [[cu-geography]]. Luna root (also called ROOT): `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography`. It is NOT covered by the Melange brain (only dead end DE-047 lives there). The handoff `LUNA_HANDOFF.md` has a "Review findings and follow-up" section.
 - The app is ROOT itself: Django + React/MapLibre on port 8765, launched by `Start.ps1`. It does not read model exports, and its bundle validator rejects modelled fields.
-- Decision maker: [[paul-goff]] approved each change explicitly in chat (an earlier executor dispatch was blocked by the auto-mode classifier until he did). The row-framework work was run through the [[quant-model-evaluation-skill]] (`/quant-model-evaluation`, 2026-09-30).
+- Decision maker: Paul Goff approved each change explicitly in chat (an earlier executor dispatch was blocked by the auto-mode classifier until he did). The row-framework work was run through the [[quant-model-evaluation-skill]] (`/quant-model-evaluation`, 2026-09-30).
 - Heavy modelling rounds used the [[runpod-pod]] (RunPod H200 pod) under approved de-identified-data scope; the row-ranking lane then moved off it ("Move on out of the pod", 2026-09-30 evening) and works locally.
 - The discipline that governs the holdout (used twice, no untouched labelled data remains) is [[single-look-holdout-discipline]].
 - Related memory notes (not vault entities): `luna-stratified-scaling-review-2026-09-29`, `cu-row-framework-2026-09-30`, `pod-for-memory-heavy-tasks-2026-09-30`, `runpod-claude-sessions-2026-09-30`, `ask-before-substantive-changes`, `trend-over-significance-2026-09-26`, `verify-dont-infer-completion-2026-08-04`, `codex-overnight-poll-loop-burn-2026-09-13`.
@@ -36,7 +36,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

@@ -85,8 +85,8 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_member_desk_integration.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_member_desk_integration.md", sha256: "77b0312aa6bcd56f96361ddcdb9e881aafc90eae83297e75efeadeccfda060e2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -369,7 +369,11 @@ M1, M2, M3, M4 (pushed), M5, L4 (see the list above); MEDIUM-1, LOW-1, LOW-3, LO
 |---|---|
 | [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
-## Related Topics
+## Map
+
+Every note of this project by type, one line each; parts follow their parent.
+
+### Related Topics
 
 | Topic | Relation |
 |---|---|
@@ -396,7 +400,7 @@ M1, M2, M3, M4 (pushed), M5, L4 (see the list above); MEDIUM-1, LOW-1, LOW-3, LO
 | [[2026-09-feature-staffer-network-surfaces]] | Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane. |
 | [[2026-09-feature-ui-redesign-boards]] | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
 
-## Related Actors
+### Related Actors
 
 | Actor | Relation |
 |---|---|
@@ -417,17 +421,27 @@ M1, M2, M3, M4 (pushed), M5, L4 (see the list above); MEDIUM-1, LOW-1, LOW-3, LO
 | [[sentinel-collectors]] | Sentinel press/hearing collectors and bill ingestion feeding the Melange workbook; promotion and scheduler re-enable are Paul-gated |
 | [[staffer-live-sidecar]] | Local sidecar on 127.0.0.1:8841: people-only staffer graph, Dijkstra office routes, self-healing identity loop; Codex-built. |
 
-## Related Concepts
+### Related Concepts
 
 - [[influence-vs-alignment-axes]] - Modeling principle: rank = INFLUENCE, per-category stance = ALIGNMENT; two separate axes, underdogs surface in a separate efficiency view.
+- [[fail-closed-gates]] - When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
+- [[live-tree-patch-discipline]] - The Melange live tree changes only through one line-wise patch cut with fec/tools/live_patch.py and applied with core.autocrlf=false; never check out or merge into LIVE, and APPLY is Paul's.
+- [[gold-set-validation]] - A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
+- [[four-pillar-percentile-blend]] - The Moneyball rank is a weighted blend of four pillar percentile ranks (committee/influence, legislative, press, demographic); three weight sets are on record, only Paul ratifies one, and the live set is read where it is kept.
+- [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
+- [[say-do-gate]] - A member is shown as Champion or Defender in a category only if the stated stance is backed by authored or original-cosponsored action there (Rule A cap); otherwise the cell displays Ally.
+- [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
+- [[two-hop-stance-decomposition]] - CU alignment = stance hop (speaker to target) x valence hop (target to CUs); the ceiling is the valence hop, fixed by a curated registry
+- [[concurrent-service-overlap-edge-rule]] - Staffer social-network edge rule: a person-person edge needs real concurrent service in one container; sequence is trajectory, not an edge.
+- [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
 
-## Discussions
+### Discussions
 
 - [[2026-07-27-acu-outline-north-star-rulings]] - Paul's 2026-07-27 rulings: ACU Search Outline docx is the 19-category review north star; letters mandatory; amendments count half
 - [[2026-07-30-coalition-builder-redesign-session]] - 2026-07-30 design session: static-substrate/dynamic-eval verdict, 8 positions with critic verdicts, merge-main precondition
 - [[2026-09-03-staffer-network-architecture]] - Paul's 2026-09-03 ant-colony ruling: staffer network = own social network beneath members; member graph kept; OVERLAP is the only edge rule.
 - [[2026-09-06-staffer-sorting-rulings]] - Paul's nine 2026-09-06 staffer sorting rulings: name standard + spine re-key, Groups tab, LDA plain labels, git lifted for this lane.
 
-## Related Projects
+### Related Projects
 
 - [[mentat]] - R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.

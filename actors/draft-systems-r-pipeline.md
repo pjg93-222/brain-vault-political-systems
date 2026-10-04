@@ -29,8 +29,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_congress_scraper.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_congress_scraper.md", sha256: "cee61c688ca2e469d0d63a8331f106f4c24f41f05d2ca11236bdf8619b5289ae"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -56,7 +56,7 @@ Sibling folder: `Melange Systems` holds only Excel mirrors and scored outputs (`
 - **Upstream data sources:** congress.gov advanced search (Cloudflare-protected; ~5 requests/s sustained cap) and member bill pages; member `.house.gov`/`.senate.gov` press sites; govinfo BILLSTATUS XML (`https://www.govinfo.gov/bulkdata/BILLSTATUS/119/{s,hr,sjres,hjres}/BILLSTATUS-119{type}{num}.xml`); America's Credit Unions news archive (sitemap); archive.org Wayback CDX; `https://unitedstates.github.io/congress-legislators/legislators-current.csv` (roster; NOT theunitedstates.io, NOT raw.githubusercontent), `committee-membership-current.yaml` and the congress-legislators JSON; Census Bureau API (needs `CENSUS_API_KEY`); MIT Election Lab (MEDSL) files on Harvard Dataverse; Ballotpedia (AWS WAF); House CMO list (`119th_Congress_CMO_List_Feb2026.docx`); LSD2015 dictionary (https://www.snsoroka.com/s/LSDaug2015.zip); HuggingFace `mlburnham/Political_DEBATE_base_v1.0` (and large); Anthropic API (`claude_stance.py` rater).
 - **Downstream:** the Moneyball model workbook "Moneyball Main Version - Presentation.xlsx" (sheet "Legislative Score - Raw", Table1, rows 3-535; Press layer; Sub Layer AW:BA for Ballotpedia output) - project [[melange-systems]]; the FEC side of the model is the separate [[melange-fec-pipeline]]. Press-value outputs are delivered as a standalone Excel (`CU_Press_Stance_Tone.xlsx`) and not wired into the model (decision 2026-06-22).
 - **Local tooling:** Chrome (real headful for Cloudflare, headless for chromote lanes), Excel (locks outputs), OneDrive (locks outputs), Python 3.12 via winget, HF hub cache (offline mode).
-- **Related notes:** the model-centric stance view is in [[2026-06-feature-cu-stance-and-sentiment]] and [[debate-stance-model]]; the Excel model build is in [[2026-06-feature-moneyball-excel-model-build]]; the full June 2026 history and every audit round is in [[2026-06-feature-congress-r-scrapers]]; environment traps in [[2026-06-working-agreement-tooling-and-environment-traps]]. Owner/user: [[paul-goff]].
+- **Related notes:** the model-centric stance view is in [[2026-06-feature-cu-stance-and-sentiment]] and [[debate-stance-model]]; the Excel model build is in [[2026-06-feature-moneyball-excel-model-build]]; the full June 2026 history and every audit round is in [[2026-06-feature-congress-r-scrapers]]; environment traps in Tooling and environment traps. Owner/user: [[paul-goff]].
 
 ## Flows
 
@@ -335,7 +335,7 @@ The narrative of each audit round lives in [[2026-06-feature-congress-r-scrapers
 - [[2026-06-feature-congress-r-scrapers]] - June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
 - [[2026-06-feature-moneyball-excel-model-build]] - June 2026 build of the 533-member Moneyball workbook: four buckets, percentile-rank blend, calibration, scenario tooling
-- [[2026-06-working-agreement-tooling-and-environment-traps]] - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
+- Tooling and environment traps - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
 
 ## Related Projects
 

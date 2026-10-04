@@ -5,7 +5,7 @@ aliases: ["UI redesign boards (Melange and Mentat)"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[higgsfield-connector]]"
   - "[[melange-dashboard]]"
@@ -19,14 +19,14 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-redesign-build-lane-2026-09-22.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-redesign-build-lane-2026-09-22.md", sha256: "7347ffc019dfb06d6bf41991d1c9c1bd4d6fc6804c3d287ee94da4fe507d45c5"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-redesign-boards-2026-09-22.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-redesign-boards-2026-09-22.md", sha256: "2b7d9f761beeed02ad734103878f763aac50962402282e1ba159ffc20ae75c3d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-redesign-boards-2026-09-21.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-redesign-boards-2026-09-21.md", sha256: "f6f7dec8e219f8c549b279aa4e9cc6f8fadc533ea1187ac22edfa4c9e9a36459"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 ---
 
 # UI redesign boards (Melange and Mentat)
 
-> September 2026 redesign of the [[mentat-console]] (part of [[mentat]]) and the [[melange-dashboard]] (part of [[melange-systems]]): boards made with the [[higgsfield-connector]], approved by [[paul-goff]], built as 8 Mentat prompts and 16 Melange prompts, finalized after a reboot (Melange LIVE on 8841), reconciled on 2026-09-25, plus the 2026-09-24 graph-quirks lane. The Mentat console's own ongoing UI record is [[2026-09-feature-mentat-console-ui]].
+> September 2026 redesign of the [[mentat-console]] (part of [[mentat]]) and the [[melange-dashboard]] (part of [[melange-systems]]): boards made with the [[higgsfield-connector]], approved by Paul Goff, built as 8 Mentat prompts and 16 Melange prompts, finalized after a reboot (Melange LIVE on 8841), reconciled on 2026-09-25, plus the 2026-09-24 graph-quirks lane. The Mentat console's own ongoing UI record is [[2026-09-feature-mentat-console-ui]].
 
 ## Context
 
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

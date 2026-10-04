@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-80 notes.
+88 notes.
 
 ## Actors (25)
 
@@ -32,12 +32,20 @@
 - [[sentinel-collectors]] — Melange press/hearing collection and sentinel-to-workbook bill ingestion layer (Codex-built, Claude-finished) with system-manifest regeneration and self-falsifying audit sentinels; merged to main 313eaaad1 for the ingestion part, press...
 - [[staffer-live-sidecar]] — The live staffer-network graph surface: fec/surfaces/staffer_live (UI) plus staffer_live_server.py and sibling modules, a people-only staffer graph with automatic duplicate-person consolidation, current-coworker cost-1 routing and a...
 
-## Concepts (6)
+## Concepts (14)
 
+- [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
 - [[concurrent-service-overlap-edge-rule]] — OVERLAP is the only person-to-person edge rule of the staffer social network: no edge without actual temporal overlap in the same container; career sequence is trajectory; payroll-container co-tenure is a clique degree, not co-work.
 - [[exclude-on-contradiction-not-ambiguity]] — Paul's rule for Mentat cross-verification: a row is excluded or zeroed only on CONTRADICTION (its own text names another organisation); missing or ambiguous information keeps the row counted with an unverified flag.
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
+- [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar percentile ranks (committee/influence, legislative, press, demographic); three weight sets are on record, only Paul ratifies one, and the live set is read where it is kept.
+- [[gold-set-validation]] — A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
 - [[influence-vs-alignment-axes]] — Moneyball modeling principle (2026-06-29, cost many rounds): rank measures INFLUENCE while per-category stance measures ALIGNMENT; keep them as separate axes so active opponents can rank on influence while the stance layer and optimizer...
+- [[live-tree-patch-discipline]] — The Melange live tree changes only through one line-wise patch cut with fec/tools/live_patch.py and applied with core.autocrlf=false; never check out or merge into LIVE, and APPLY is Paul's.
+- [[say-do-gate]] — A member is shown as Champion or Defender in a category only if the stated stance is backed by authored or original-cosponsored action there (Rule A cap); otherwise the cell displays Ally.
+- [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
 - [[single-look-holdout-discipline]] — Working discipline across the Moneyball/Melange lanes: every confirmatory look (holdout score, pre-registered test, one-shot validator) is spent exactly once against criteria locked before the run, a consumed look is never re-run, and a...
+- [[trend-over-significance]] — Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar.
 - [[two-hop-stance-decomposition]] — Decomposition of CU-alignment scoring into a stance hop (member toward a target) and a valence hop (target good/bad for credit unions); the valence hop (0.689 vs stance 0.915) is the accuracy bottleneck and is fixed with a curated...
 - [[zero-rank-delta-verification]] — Verification protocol for Melange refactors and reorgs: kernel tests -> full pipeline -> rank delta vs the last ranks file must be ZERO (unless the change is meant to move ranks) -> audit clean; proven by ranks staying byte-identical...
 
@@ -95,7 +103,7 @@
 - [[2026-09-feature-sector-growth-study]] — Exploratory regression lane (worktree sector-growth-political-spending-9cc0c8) that upgrades the Mentat Insights forecast; Paul has final say and wants to be consulted at each step.
 - [[2026-09-feature-staffer-network-data-and-math]] — Rolling record of the staffer-network lane of melange-systems from the 2026-09-01 employment-tenure adjudication to the 2026-09-08 ship of the v6 social network on the v7 re-keyed spine.
 - [[2026-09-feature-staffer-network-surfaces]] — Rolling record (2026-09-04 to 2026-10-03) of how the staffer network reached Paul's screen: the live sidecar (staffer-live-sidecar, 127.0.0.1:8841), the fourth surface of the melange-dashboard (#app-staffer in Moneyball.html), the...
-- [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of mentat) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by paul-goff, built as 8 Mentat prompts and 16 Melange prompts...
+- [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of mentat) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by Paul Goff, built as 8 Mentat prompts and 16 Melange prompts...
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 

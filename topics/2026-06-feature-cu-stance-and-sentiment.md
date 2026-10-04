@@ -5,7 +5,7 @@ aliases: ["CU stance and sentiment scoring"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[debate-stance-model]]"
   - "[[draft-systems-r-pipeline]]"
@@ -25,8 +25,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/press-classification-user-domain.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\press-classification-user-domain.md", sha256: "6e1310392195fbe49609bc3192fa03bdb2d7efeb3cde41785469cb2843eab86a"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_cfpb_directional_split.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_cfpb_directional_split.md", sha256: "5fc9fa475539871976b414bc873272b3da3f530c75a67a961291a55cd1ef0f1a"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_stance_sentiment_overhaul.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_stance_sentiment_overhaul.md", sha256: "990a30a6744244ca03cabb88df52a0d057efc8f6e91804833ce50bc6e36ba1a1"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - **What it scores (verified 2026-07-15):** only TWO channels in production: (1) Quorum tweets (`quorum_member_tweets.csv`, 9,465 rows, CU-topic-FILTERED, has a `cu_relevant` col; 28% literally mention "cfpb"; 485/533 members) -> `tweet_stance_stack.py` -> `tweet_stance_final.csv`; (2) CU-relevant press (Draft `cu_press_stance_tone.csv`, 2,388 rows; 385 members; 1,569 own-.gov + 819 trade) -> `press_stance_stack.py` -> `press_stance_final.csv`. Both feed `build_media_blend.py` -> workbook `Press Release - Raw` -> the media pillar of [[melange-systems]]. Gated channels (floor speeches, hearings, interviews, Bluesky) were built later (see Channels).
 - **Origin (June 2026):** Stage 5 of the CU press scraper was redesigned into Stage 5a STANCE = Political DEBATE (fine-tuned, CPU) and Stage 5b TONE = Lexicoder LSD, replacing a regex/graded scorer: see [[debate-stance-model]] and [[draft-systems-r-pipeline]] (R pipeline code root, also the home of `cu_stance_label_set.csv`).
 - **Conceptual model:** CU alignment = stance hop x valence hop: [[two-hop-stance-decomposition]]. Accuracy ceiling lives in the valence hop (0.689 vs 0.915 stance), fixed with a curated per-target valence registry (`cu_valence_registry.json`), not more model spend.
-- **Authority:** press labels / stance direction on contested issues (especially CFPB) are Paul's domain. Rule recorded in the working-agreement topic [[2026-06-working-agreement-change-control-and-decision-authority]]; see Decisions. Owner: [[paul-goff]].
+- **Authority:** press labels / stance direction on contested issues (especially CFPB) are Paul's domain. Rule recorded in the working-agreement topic Change control and Paul's decision authority; see Decisions. Owner: Paul Goff.
 - Related topics: scrapers that collect the corpus [[2026-06-feature-congress-r-scrapers]]; the Excel model build the CFPB directional split belongs to [[2026-06-feature-moneyball-excel-model-build]]; the bill/legislative side [[2026-07-feature-legislative-pillar-acu-review]]; audit history [[2026-07-troubleshooting-melange-audits-and-reviews]].
 - Newest source touched 2026-09-14 (`cfpb-sentiment-recorrection-2026-07-15`, last_modified).
 
@@ -47,7 +47,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -63,12 +63,13 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 ## Related Concepts
 
 - [[two-hop-stance-decomposition]] - CU alignment = stance hop (speaker to target) x valence hop (target to CUs); the ceiling is the valence hop, fixed by a curated registry
+- [[gold-set-validation]] — the stance readers are scored on a human gold queue (312 items, 171 members); more gold labels on bill-naming releases is the open fix
 
 ## Related Topics
 
 - [[2026-06-feature-congress-r-scrapers]] - June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance
 - [[2026-06-feature-moneyball-excel-model-build]] - June 2026 build of the 533-member Moneyball workbook: four buckets, percentile-rank blend, calibration, scenario tooling
-- [[2026-06-working-agreement-change-control-and-decision-authority]] - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
+- Change control and Paul's decision authority - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
 - [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
 - [[2026-07-troubleshooting-melange-audits-and-reviews]] - Melange audit runs, guardrails, 09-13 five-lane code review, hallucination framework (D-007), provenance census, laundry-list close-out
 

@@ -5,7 +5,7 @@ aliases: ["Sector growth x political spending study"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[mentat-fec-pipeline]]"
 objective: "Upgrade the Mentat Insights forecast by testing whether election timing, actual and predicted industry growth, and expected party control explain political spending, across nine sectors for the 2020-2026 cycles, with the study living in C:\\Users\\pgoff\\Mentat\\sector_growth_study\\ and Paul as final say."
@@ -14,8 +14,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/r-summary-regression-presentation-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\r-summary-regression-presentation-2026-09-25.md", sha256: "cec8d3d0a6c5b1a74d626a0fe910ecc2ecfafc8bbe65326ad29e7771786bac64"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sector-growth-study-lane-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sector-growth-study-lane-2026-09-25.md", sha256: "83c5b7bb8159bb94d3993774a8cad534ee6602ee75a5dbda4be9f31df456af7c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/trend-over-significance-2026-09-26.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\trend-over-significance-2026-09-26.md", sha256: "57abe79649883dd148cc5f8b319ac769c70b8228cf8202306fe42b79f7d5b984"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -25,7 +25,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 ## Context
 
-**The lane:** it upgrades the Mentat Insights forecast. The current forecast is `_forecast()` at `mentat/app/analysis_metrics.py:674-767`. It is seasonal-naive and withholds without four consecutive complete cycles (`:696`). The upgrade tests election timing, actual and predicted industry growth, and expected party control against spending. Mentat context: [[mentat]], [[mentat-fec-pipeline]], [[forecast-redesign]]; owner and final authority [[paul-goff]]; presentation rules shared with [[2026-06-working-agreement-communication-and-presentation-style]].
+**The lane:** it upgrades the Mentat Insights forecast. The current forecast is `_forecast()` at `mentat/app/analysis_metrics.py:674-767`. It is seasonal-naive and withholds without four consecutive complete cycles (`:696`). The upgrade tests election timing, actual and predicted industry growth, and expected party control against spending. Mentat context: [[mentat]], [[mentat-fec-pipeline]], [[forecast-redesign]]; owner and final authority Paul Goff; presentation rules shared with Communication and presentation style.
 
 - North star: `C:\Users\pgoff\Downloads\Sector_Growth_and_Political_Spending_Research_Plan.md`
 - Paul has final say and wants to be consulted at each step.
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -52,9 +52,13 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - [[forecast-redesign]] - Mentat forecasting program: 09-29 model audit, F2 'Giving by cycle' redesign with integrity reconciliation, PAC accuracy attempt 2 (HOLD).
 - [[mentat]] - R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
 
+## Related Concepts
+
+- [[trend-over-significance]] — the study reports results trend-first (Paul, 2026-09-26), as real R summary(lm()) output
+
 ## Related Topics
 
-- [[2026-06-working-agreement-communication-and-presentation-style]] - Rules for reporting to Paul: never appease, real R summary(lm()), trend over significance, visible PowerShell, close supplied items.
+- Communication and presentation style - Rules for reporting to Paul: never appease, real R summary(lm()), trend over significance, visible PowerShell, close supplied items.
 
 ## History
 
@@ -120,7 +124,7 @@ Paul, 2026-09-26 ~01:50 (new session b82a832c), verbatim: "Keep those recepits".
 
 My rulings (2026-09-26, run `analysis-R-20260926T070630Z`): unweighted primary; SATURATED label kept; DS+Hill on; the fintech 2026 flag uses verified facts only (no "co-founders"). My $25K threshold, SHIFT-All-primary and weighting choices were post-result, so they are EXPLORATORY only; the original SHIFT stays primary (Codex review).
 
-Framing and presentation (feedback rules, also recorded in [[2026-06-working-agreement-communication-and-presentation-style]]):
+Framing and presentation (feedback rules, also recorded in Communication and presentation style):
 - **Show regressions as R `summary(lm())` output** (Paul 2026-09-25) - see the Presentation rules section.
 - **Trend over significance** (Paul 2026-09-26) - see the Presentation rules section.
 - Open for Paul: 538 for every year (replacing IEM), or only 2023+?

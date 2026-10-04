@@ -41,7 +41,7 @@ focal_points:
 related_topics:
   - "[[2026-06-working-agreement-change-control-and-decision-authority]]"
   - "[[2026-07-bugfix-mentat-collection-and-attribution]]"
-  - "[[2026-09-feature-forecast-giving-redesign]]"
+  - "2026-09-feature-forecast-giving-redesign"
   - "[[2026-09-feature-mentat-console-ui]]"
   - "[[2026-09-feature-mentat-failings-pac-evidence]]"
   - "[[2026-09-feature-sector-growth-study]]"
@@ -160,7 +160,7 @@ Detailed per-lane history, numbers and traps: [[2026-07-bugfix-mentat-collection
 
 ## Related work areas (topics)
 
-- Console UI: [[2026-09-feature-mentat-console-ui]]; failings lanes and PAC evidence: [[2026-09-feature-mentat-failings-pac-evidence]]; forecast and giving-view redesign: [[2026-09-feature-forecast-giving-redesign]]; sector growth study: [[2026-09-feature-sector-growth-study]]; UI redesign boards: [[2026-09-feature-ui-redesign-boards]]; cross-reference review: [[2026-09-17-mentat-xref-council-review]].
+- Console UI: [[2026-09-feature-mentat-console-ui]]; failings lanes and PAC evidence: [[2026-09-feature-mentat-failings-pac-evidence]]; forecast and giving-view redesign: Forecast audit, giving-view redesign and PAC accuracy; sector growth study: [[2026-09-feature-sector-growth-study]]; UI redesign boards: [[2026-09-feature-ui-redesign-boards]]; cross-reference review: [[2026-09-17-mentat-xref-council-review]].
 
 
 ## Focal Points
@@ -169,20 +169,24 @@ Detailed per-lane history, numbers and traps: [[2026-07-bugfix-mentat-collection
 |---|---|
 | [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
-## Related Topics
+## Map
+
+Every note of this project by type, one line each; parts follow their parent.
+
+### Related Topics
 
 | Topic | Relation |
 |---|---|
 | [[2026-06-working-agreement-change-control-and-decision-authority]] | Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code. |
 | [[2026-07-bugfix-mentat-collection-and-attribution]] | Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code. |
-| [[2026-09-feature-forecast-giving-redesign]] | Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD). |
+| Forecast audit, giving-view redesign and PAC accuracy | Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD). |
 | [[2026-09-feature-mentat-console-ui]] | Mentat console UI lanes 2026-09-11..25: Chart Studio, clean-up, polish, load-time/FEC links, Graph and pie quirks. |
 | [[2026-09-feature-mentat-failings-pac-evidence]] | Mentat failings lanes S2-S8 (street columns, PAC evidence, industry addressing, URL scope, panes, categories, map) + PAC map audit. |
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
 | [[2026-09-feature-ui-redesign-boards]] | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
 | [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] | Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR unopened), tidy Data workbook, console hang fix. |
 
-## Related Actors
+### Related Actors
 
 | Actor | Relation |
 |---|---|
@@ -190,11 +194,16 @@ Detailed per-lane history, numbers and traps: [[2026-07-bugfix-mentat-collection
 | [[mentat-fec-pipeline]] | Mentat's R + Python FEC collector and Excel workbook builder (API pool over a DPAPI key store); 7 industries; code at C:\Users\pgoff\Mentat |
 | [[runpod-pod]] | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
 
-## Discussions
+### Related Concepts
+
+- [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
+- [[exclude-on-contradiction-not-ambiguity]] - Brain D-040: exclude a row only when its own evidence contradicts the attribution; missing or ambiguous info is flagged, not excluded.
+
+### Discussions
 
 - [[2026-09-17-mentat-xref-council-review]] - 2026-09-17 council: cross-reference does not minimise vs workbook (Banking $72.1M vs $54.8M); Paul ruled it redundant and kept it dwarfed.
 
-## Related Projects
+### Related Projects
 
 - [[forecast-redesign]] - Mentat forecasting program: 09-29 model audit, F2 'Giving by cycle' redesign with integrity reconciliation, PAC accuracy attempt 2 (HOLD).
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.

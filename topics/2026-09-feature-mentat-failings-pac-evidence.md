@@ -5,7 +5,7 @@ aliases: ["Mentat failings lanes and PAC evidence"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[mentat-console]]"
   - "[[mentat-fec-pipeline]]"
@@ -20,14 +20,14 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-failings-lane-s6-2026-09-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-failings-lane-s6-2026-09-17.md", sha256: "7b0862af83290e8c9365f2f6b7a4fe42925d28f93a25a69196c73435eae2f71a"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-failings-lane-s7-2026-09-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-failings-lane-s7-2026-09-17.md", sha256: "90809c5b0c1949689f353b8fab95bca8650020f34735b4158048131416d42103"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-failings-lane-s2-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-failings-lane-s2-2026-09-16.md", sha256: "3f92f6f68637d048e5f4c9de6d0aecc9219bb5abd0ec209f06ca6ce30b893a81"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 ---
 
 # Mentat failings lanes and PAC evidence
 
-> One topic for the whole Mentat failings lane S2-S8 (2026-09-16 to 2026-09-18) and its sequel, the PAC map downstream-viz audit (2026-09-25 to 2026-09-27). Code lives in `C:\Users\pgoff\Mentat` on branch `codex/mentat-crypto` (the console is [[mentat-console]]; the collection side is [[mentat-fec-pipeline]]; project [[mentat]]; owner [[paul-goff]]).
+> One topic for the whole Mentat failings lane S2-S8 (2026-09-16 to 2026-09-18) and its sequel, the PAC map downstream-viz audit (2026-09-25 to 2026-09-27). Code lives in `C:\Users\pgoff\Mentat` on branch `codex/mentat-crypto` (the console is [[mentat-console]]; the collection side is [[mentat-fec-pipeline]]; project [[mentat]]; owner Paul Goff).
 
 ## Context
 
@@ -40,7 +40,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

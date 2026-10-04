@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/n-slot-reanchor-2026-07-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\n-slot-reanchor-2026-07-11.md", sha256: "e45c60d71c2689672cec1494ff32a691eac421ffc384113239cd1dc6a2b6b0e4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -163,6 +163,8 @@ Session 2026-07-16 (worktree `loving-payne`, branch `claude/gallant-gates-982203
 - [[2026-09-feature-forecast-giving-redesign]] - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
 - [[cu-geography]] - Codex-run CU geography lane: Luna RF/KNN model (closed 09-30) and 491,308-row ranking framework in Paul's four groups.
 - [[2026-10-03-pac-accuracy-attempt2-rulings]] - Paul's 2026-10-03 rulings on PAC accuracy attempt 2: B1-B3, then C1 (UT-X sealed) and C2 (FILED = lower bound).
+- [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[forecast-redesign]] — Mentat forecasting program: 09-29 model audit, F2 'Giving by cycle' redesign with integrity reconciliation, PAC accuracy attempt 2 (HOLD).
 
 ## Case 4: Luna CU-geography holdouts (2026-09-29 to 2026-09-30, `luna-stratified-scaling-review-2026-09-29`)
 
@@ -224,3 +226,7 @@ PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's
 - S2C narrow repair -> v3 freeze -> ONE Opus verifier gate (not 3). S2C launched about 06:2x UTC (exact minute not given).
 - **Why:** UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it.
 - **How to apply:** never launch S3 without Paul's OK and a fresh gate on the v2 freeze. The Glass Box watcher must run alongside every stage (S2's first 49 min were unwatched). Related: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
+
+## Related Concepts
+
+- [[gold-set-validation]] — A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.

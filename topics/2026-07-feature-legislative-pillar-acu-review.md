@@ -5,7 +5,7 @@ aliases: ["Legislative pillar and ACU review"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[codex-executor]]"
   - "[[sentinel-collectors]]"
@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/acu-outline-northstar-2026-07-27.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\acu-outline-northstar-2026-07-27.md", sha256: "57e514181f5b7a31dd47613f27469d213e4736e9e7d2e18b7ef3fe708ad596d5"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/bill-coverage-and-media-stance-2026-07-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\bill-coverage-and-media-stance-2026-07-19.md", sha256: "1da688547f3da7df29b21e33f260cb890cd71d06f0276cd4fa2b8e82b5de31b4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/corpus-coverage-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\corpus-coverage-2026-07-10.md", sha256: "3e7274e4a21a03ce436192bb23f99426b96abbec928d9f44b4a4ccf12e753c60"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -29,7 +29,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 ## Context
 
-- Owner and decider on every user-gated item: [[paul-goff]]. Code authorship is Codex's ([[codex-executor]]); Claude designs, specs, reviews. Press stance stays untouched per `press-classification-user-domain`.
+- Owner and decider on every user-gated item: Paul Goff. Code authorship is Codex's ([[codex-executor]]); Claude designs, specs, reviews. Press stance stays untouched per `press-classification-user-domain`.
 - Time span of the sources: 2026-07-10 corpus census through 2026-09-14 (legfix history memory last modified 2026-09-14). Newest facts: the legislative-effectiveness shadow lane (2026-09-11/12, applied to live 2026-09-11 ~23:16 ET, rulings D-026/D-027/D-028 on 2026-09-12) and the bill-lobbying forecast refresh (2026-09-04).
 - Status snapshot: the legfix5 full-text collection is DONE (with a 2026-07-27 evening correction: 18,552 verified + 2 authoritative-no-text + 3 zero-filled, not 18,557 clean). The 19-category review has NEVER been performed, so `category_evidence` is empty on all 18,557 candidates and culling cannot finalize. Paul's 2026-07-27 rulings that govern that review are in [[2026-07-27-acu-outline-north-star-rulings]].
 - Data-plane siblings: the collection lanes are in [[2026-07-feature-data-collection-lanes]]; the interview/hearing stance and press layer is in [[2026-06-feature-cu-stance-and-sentiment]]; the bill-side "sentinel" is [[sentinel-collectors]] (Codex's Sentinel Bill Ledger.xlsx, see below).
@@ -40,7 +40,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

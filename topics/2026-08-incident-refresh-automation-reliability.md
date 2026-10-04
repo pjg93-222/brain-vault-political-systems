@@ -5,7 +5,7 @@ aliases: ["Refresh automation reliability"]
 category: "incident"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[codex-executor]]"
   - "[[glass-box]]"
@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/daily-refresh-lane-closeout-2026-09-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\daily-refresh-lane-closeout-2026-09-19.md", sha256: "acbca8cd3aba1e0d1eee6ee888e3d72e8c9e5af51a3340a65e4fa24db1c850ef"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/codex-overnight-poll-loop-burn-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\codex-overnight-poll-loop-burn-2026-09-13.md", sha256: "f4674518cac30842e12c700511711b0e769e6f69c91a3b784592b5413423dc5e"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/weekly-refresh-email-not-active-2026-08-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\weekly-refresh-email-not-active-2026-08-09.md", sha256: "14b3930e5f5f1f93732ee3b65af53471d1d9250b699899a025e8552c5c3489f3"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 ---
 
@@ -29,7 +29,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 
 ## Context
 
-- Scope: the unattended refresh automation of [[melange-systems]], implemented by the actor [[melange-refresh-scheduler]] (weekly refresh, daily congress chain, `refresh_email.py`). Owner and decision maker: [[paul-goff]].
+- Scope: the unattended refresh automation of [[melange-systems]], implemented by the actor [[melange-refresh-scheduler]] (weekly refresh, daily congress chain, `refresh_email.py`). Owner and decision maker: Paul Goff.
 - Newest-wins note: the 2026-09-19 audit (file `weekly-refresh-self-sufficiency-audit-2026-09-19`, last modified 2026-09-20) is the current state and corrects, in place, several earlier press claims made earlier the same day in that same audit; the older claims are kept below as dated struck-through bullets.
 - Never tell Paul the refresh "runs weekly": check the last `WEEKLY REFRESH COMPLETE` line in `data\engine\weekly_refresh.log` first. 6 `WEEKLY REFRESH COMPLETE` lines exist; the last is 2026-07-19 06:53.
 - The refresh-email recipient is a personal iCloud address: `[personal email omitted]`.
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
@@ -53,9 +53,13 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
 
+## Related Concepts
+
+- [[fail-closed-gates]] — the refresh gates are deliberate fail-closed rulings: never weaken the audit or weekly_refresh.py's hard=True to make Sundays green; loosening is Paul's call
+
 ## Related Topics
 
-- [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
+- Agent orchestration and model tiering rules - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 
 ## History
 
@@ -294,7 +298,7 @@ Incident (2026-09-12 23:29 to 2026-09-13 10:58 local, Codex Desktop thread `01a0
 
 - Paul asked for an end-to-end recurring congress.gov bills -> sponsors -> media -> Excel -> dashboard refresh that "triggers every time I open my laptop", and said explicitly: "No not an AI process, something in my windows, like a Python process." Codex built the right artifact (`fec/legislation/refresh_congress_pipeline.py` + `fec/daily_refresh.py` + two Windows scheduled tasks `MoneyballCongressRefresh` / `MoneyballDailyRefreshRetry`), then stayed in the loop itself: 542 empty `write_stdin({chars:"", yield_time_ms:30000})` polls on its own background shell (03:36Z to 14:57Z), 280 `wait_agent` blocks, 4 spawned agents each doing the same, and 27 `approvals_reviewer: auto_review` guardian threads that made zero tool calls yet consumed ~59M tokens re-reading context.
 - Session family total: 673,856,790 tokens (674M) across 32 rollout files; ended with `usage_limit_exceeded`, next window 2026-09-19 23:50. Quota was already at 89% when the thread started. Nothing external re-invoked Codex: no scheduler, no wrapper, no `codex exec` loop; the Python code never calls OpenAI/Codex.
-- Why it matters: the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: "that is unacceptable." Related: the brain's DE-018 (a Codex usage-limit error does not mean the subprocess stopped - inspect outputs before re-dispatching). Governing rules live in [[2026-07-working-agreement-agent-orchestration-rules]].
+- Why it matters: the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: "that is unacceptable." Related: the brain's DE-018 (a Codex usage-limit error does not mean the subprocess stopped - inspect outputs before re-dispatching). Governing rules live in Agent orchestration and model tiering rules.
 - How to apply: a long-running Python job is finished when its receipt/status file says so, not when a model has watched it finish. Launch it detached (Task Scheduler, `Start-Process`), then use ONE Bash `run_in_background` `until` loop or one `Monitor` on the status file. Never a per-turn poll loop, never `wait`/`sleep` turns, never spawn helper agents to "watch". Do not create Codex heartbeat automations as a scheduler. Three PAUSED heartbeats still exist in `C:\Users\pgoff\.codex\automations\` (`finish-collection-integrity-overnight` hourly, `finish-staffer-lda-reconciliation` every MINUTE, `legislation-acceptance-continuation` every 10 min); any of them flipping ACTIVE is a recurring burner. Flag, don't flip. `approvals_reviewer: auto_review` in Codex thread settings fans out guardian threads that bill against the same weekly limit: treat it as a cost multiplier on long threads. "Independent of AI" is not fully true of the chain yet: step 3 `fec/legislation/refresh_sentinel_admissions.py:288-290` calls `api.anthropic.com` with `fec/anthropic_key.txt` (fingerprint-cached; pre-existing sentinel-lane code). That is Paul's call to keep or remove, never the assistant's. Related: `verify-dont-infer-completion-2026-08-04`, `glassbox-everything-rule-2026-07-27`, `codex-executor-lane-2026-07-18`, `ultracode-orchestration-standing-2026-08-18`.
 - Repair lane 2026-09-13 afternoon (Fable session, live tree, UNCOMMITTED at the time and the whole subsystem UNTRACKED in git): the real reason the Windows job never finished was three collectors treated as fatal: (1) press collector exits 3 BY DESIGN when body backlog remains (`refresh_press_delta.R:843`; 2,200 pending, `JS_MEMBER_BUDGET 600` in Draft Systems R, fold OFF) - now PARTIAL, not FAIL, and the press_intake/press_feed/press_baseline_fold steps plus `all_intake` are PARKED (`SKIPPED_PARTIAL`) because `build_press_engine_feed.py:99-101` (ratified partial-run rejection) would refuse the incomplete generation; the gate itself was NOT touched; `run_pipeline.py:52` already skips refused runs and uses the last complete press generation. (2) discovery dies when Playwright cannot launch Chrome (`launchPersistentContext` 180 s timeout, not the Cloudflare cooldown, so the GovInfo fallback never fires) - wrapper now retries discovery once after 300 s, then DEFERS it (`deferred_steps`) and continues. (3) calibration budget 120 s was too tight under disk load (71-107 s measured) - now 900 s.
 - Plus: `--smoke` (skip discovery, admissions `--limit 1 --no-llm --no-install`, media crec/chrg/bluesky only, full `run_pipeline.py` because it cannot be shortened), `--no-llm` in admissions (carry forward old decisions with OLD fingerprint; never seal a hold), glassbox `current`/`total` + heartbeats + `data/engine/congress_pipeline_live.log`, before-snapshot hashes the two 98 MB HTML files (11 min -> 0.4 s), watcher `fec/legislation/watch_congress_pipeline.ps1` + `open_congress_pipeline_monitor.ps1`, exit-75 reasons, 4 pytest suites registered in `_LANE_PYTEST` (160 tests). The auto-mode classifier BLOCKED `taskkill` + `Disable-ScheduledTask`; a scheduler-launched run then took the lock the same second as the first smoke launch - launch races with the :39 retry are real. Smoke run PID 81500 (17:00 local): every collection step PASS with zero model calls; `run_pipeline.py` died at step 17 because the Codex session's UNCOMMITTED `fec/stance/extract_cu_bluesky.py` change (handle-registry UNVERIFIED gate) drops four House members' posts and 5 of Paul's bluesky gold rows no longer bind - first executed by the smoke; nothing of his touched; fix = Paul confirms the handles or reverts that change (he later ruled "Revert", see the smoke table). Also found+fixed: writers lost `os.replace` races with readers (`WinError 5/32/33`) - `fec/lane_file_io.replace_atomic()` 40-attempt jittered retry now used by all daily writers; watcher reads with FileShare Delete. No `PIPELINE COMPLETE` line exists on disk after 2026-07-28 (chain unproven for 7 weeks by any launcher). Scheduler ran on its own 17:39/18:39/19:39 with discovery DEFERRED working in production.

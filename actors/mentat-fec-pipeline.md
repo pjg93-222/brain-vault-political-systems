@@ -33,8 +33,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-zero-row-scalar-assign-bug.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-zero-row-scalar-assign-bug.md", sha256: "6232c91f4ebe37d472bdef37d62ed7caa7c25d65bf8b5567bf7cc8a85b74a1c9"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -195,6 +195,7 @@ Agent-routing fact: the auto-mode classifier BLOCKS subagents editing `fec_key_s
 ## Related Concepts
 
 - [[exclude-on-contradiction-not-ambiguity]] - Brain D-040: exclude a row only when its own evidence contradicts the attribution; missing or ambiguous info is flagged, not excluded.
+- [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
 
 ## Related People
 

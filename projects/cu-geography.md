@@ -51,8 +51,8 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/cu-row-framework-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\cu-row-framework-2026-09-30.md", sha256: "d7f07745e795faa8dadec2fef7f0f193f6ad03914bd6a65b82c2bd6c28fd2e79"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/luna-stratified-scaling-review-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\luna-stratified-scaling-review-2026-09-29.md", sha256: "fa047e83455b71681045d3bcee783f50bb00e230f3fc0b1e0ebc5d5b44dc0d7d"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -165,19 +165,23 @@ SORT item.deadline ASC
 |---|---|
 | [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
-## Related Topics
+## Map
+
+Every note of this project by type, one line each; parts follow their parent.
+
+### Related Topics
 
 | Topic | Relation |
 |---|---|
 | [[2026-09-feature-cu-geography-luna-and-row-framework]] | CU-geography: Luna RF/KNN review closed 09-30 (section 30 GPU model current) plus the 491,308-row framework in Paul's four groups (P0/P1). |
 
-## Related Actors
+### Related Actors
 
 | Actor | Relation |
 |---|---|
 | [[quant-model-evaluation-skill]] | General read-only skill for evaluating models, numbers and claims; merged to main c13f3a5d4 (2026-09-30); Melange gates in a binding. |
 | [[runpod-pod]] | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
 
-## Related Concepts
+### Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model

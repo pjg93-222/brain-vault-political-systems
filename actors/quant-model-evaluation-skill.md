@@ -22,8 +22,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/quant-model-evaluation-skill-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\quant-model-evaluation-skill-lane-2026-09-30.md", sha256: "4a3dbc28397c5529127d6a1943bdedc8e9d6ea1607f1e586168e6d095be4f34f"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -173,3 +173,4 @@ pip install ... --use-deprecated=legacy-certs
 ## Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
+- [[trend-over-significance]] — Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar.

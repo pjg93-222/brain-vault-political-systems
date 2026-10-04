@@ -5,7 +5,7 @@ aliases: ["Cosponsor and sector networks"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[lobbyview-collector]]"
   - "[[melange-dashboard]]"
@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/holistic-network-configs-2026-08-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\holistic-network-configs-2026-08-18.md", sha256: "424837f3392231942c750425a17527dc970514fc64f8261f1fd14059e1fa4d5f"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-network-viz-requests.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-network-viz-requests.md", sha256: "b914b3def327c411bfb7106b668249169524d904a021f40306f9b0d8392bd5f6"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_network_enhancement.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_network_enhancement.md", sha256: "56e787ceb9e5884ed0aede95be8ae332f8f485e27b107a7faa57af08c3dcfb5e"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -29,7 +29,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 ## Context
 
-- **Origin (2026-06-25, source: project_moneyball_network_enhancement):** [[paul-goff]] supplied 5 papers to drive enhancement of the Moneyball co-sponsor network (the network inside `Moneyball Main Version - Blended.xlsx`), in 3 phases:
+- **Origin (2026-06-25, source: project_moneyball_network_enhancement):** Paul Goff supplied 5 papers to drive enhancement of the Moneyball co-sponsor network (the network inside `Moneyball Main Version - Blended.xlsx`), in 3 phases:
   - **Edge weights** = P4 Sotoudeh/Porter/Krishnagopal 2024 (success-weighted, decayed, size-normalized cosponsorship influence).
   - **Coalitions** = P3/P5 Aref & Neal 2020/2021 (globally-optimal partitioning of *signed* collaboration+opposition networks; "hidden 3rd coalition" of effective majority-aligned legislators).
   - **Allocation** = P1/P2 Chen/Kamarthi/Wilder/Tambe (influence maximization / contingency-aware seeding).
@@ -44,7 +44,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

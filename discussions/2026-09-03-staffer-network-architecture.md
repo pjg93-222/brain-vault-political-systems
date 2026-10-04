@@ -21,7 +21,7 @@ related_topics:
 related_actors:
   - "[[staffer-live-sidecar]]"
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[melange-systems]]"
 related_teams: []
@@ -29,8 +29,8 @@ source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-architecture-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-architecture-2026-09-03.md", sha256: "369fa550046b0fc885dc8b5d86333520a61f5299769f1aa252812e68ccd9d586"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-overlap-rule-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-overlap-rule-2026-09-03.md", sha256: "de5f13a314b7571f09b00e67d11f208a1cc67e2cb78e5a6786d8d896c8aa34d4"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -50,7 +50,7 @@ Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `st
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Discussed Actors
 

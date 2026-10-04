@@ -5,7 +5,7 @@ aliases: ["Melange architecture and system of record"]
 category: "rfc"
 status: "completed"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[melange-fec-pipeline]]"
   - "[[moneyball-workbook]]"
@@ -18,8 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-architecture.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-architecture.md", sha256: "bb9bffef2af3af7152fdcf5bf852e8bef18952f37abaf7f978ae0b596ed25ee5"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-model-config.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-model-config.md", sha256: "c03f7392e0186530056021fc752ad16ceccc0d652f6af1457ed31447e9527056"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-committee-scoring.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-committee-scoring.md", sha256: "1355480b1a6f9efc6320bbd4af506e14182257013cfb1237170fa29f75b8368c"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/completed", "domain/backend", "category/rfc"]
 ---
 
@@ -32,14 +32,14 @@ tags: ["type/topic", "status/completed", "domain/backend", "category/rfc"]
 - Moneyball = credit-union legislative-influence model at `C:\Users\pgoff\OneDrive\Desktop\Melange Systems` (workbook `Moneyball Main Version - Blended.xlsx`, dashboard `Moneyball.html`, engine in `fec/`). It is the code home of the project [[melange-systems]]; the engine lives in the pipeline actor [[melange-fec-pipeline]] and the workbook is [[moneyball-workbook]].
 - Architecture review: `ARCHITECTURE_REVIEW_2026-07-02.md`; user "Proceed down list". Refactor executed 2026-07-02, VERIFIED behavior-preserving (kernel tests 28/28 + pipeline + audit 50/50 + **zero rank delta** across 533 members); see [[zero-rank-delta-verification]].
 - Phase 2 (commits 23c48ea + fd9f3d6, user sign-off) INVERTED the system of record: `ranks_python.json` = THE rank authority; the workbook is a self-refreshing VIEW.
-- Model dials of the pillar stack (weights, committee formula) are recorded below; the two axes the model distinguishes are in [[influence-vs-alignment-axes]]. Owner/decision authority: [[paul-goff]].
+- Model dials of the pillar stack (weights, committee formula) are recorded below; the two axes the model distinguishes are in [[influence-vs-alignment-axes]]. Owner/decision authority: Paul Goff.
 - **Superseded guidance (resolution 5):** the June / 2026-07-02 guidance that workbook writes go through Excel COM (win32com, Excel must be closed, `run_pipeline.py [--recalc]` with recalc step) is SUPERSEDED by "**NO COM anywhere**" (Phase 2, see Decisions). The older text is kept as a dated struck-through entry because it explains older commits/artifacts (`.PRE-*` / `BACKUP-*` workbook copies, COM-written columns).
 
 ## People Involved
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
