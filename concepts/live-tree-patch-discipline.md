@@ -22,7 +22,7 @@ Applying the patch, and restarting a live service such as the 8841 sidecar after
 
 ## Key Characteristics
 
-- One patch per lane, cut against LIVE bytes with `fec/tools/live_patch.py` from anchor-matched edits, never a whole-file copy over LIVE's drifted files; before any merge into LIVE, check that no path it touches is dirty.
+- One patch per lane, cut against LIVE bytes with `fec/tools/live_patch.py` from anchor-matched edits, never a whole-file copy over LIVE's drifted files; before any merge into LIVE, check that no path it touches is dirty (but see "Pending newer capture" at the end of this note: D-060, 2026-10-03, forbids merging or checking out a branch into LIVE).
 - Apply with `core.autocrlf=false` (the system default is `autocrlf=true`); never normalise LIVE's line endings.
 - The cutter's exit code separates identical bytes, line-ending-only drift and content drift.
 - APPLY and any restart need Paul's explicit go; the agent cuts and verifies the patch.

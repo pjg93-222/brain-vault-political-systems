@@ -2,7 +2,7 @@
 type: concept
 name: "Settled findings stay settled"
 aliases: ["do not re-flag rule"]
-description: "A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it."
+description: "A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement."
 related_to: []
 sources: []
 updated_at: 2026-10-04
@@ -12,7 +12,7 @@ tags: ["type/concept", "domain/agent-ops"]
 
 # Settled findings stay settled
 
-> A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it.
+> A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
 
 ## Description
 
