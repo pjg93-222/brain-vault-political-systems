@@ -1,0 +1,268 @@
+{
+  "id": "A6",
+  "what": "Batch 4 split of topics/2026-09-feature-ui-redesign-boards (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A6); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-09-feature-ui-redesign-boards",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "actors/higgsfield-connector",
+      "actors/melange-dashboard",
+      "actors/mentat-console"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-09-feature-ui-redesign-boards-mentat-console-boards",
+      "title": "Mentat console boards (09-21/22)",
+      "summary": "The Mentat console redesign boards of 2026-09-21/22: fourteen Higgsfield boards, the board-wins ruling and the build-01 shell",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## Mentat console redesign boards (2026-09-21 to 2026-09-22; `mentat-redesign-boards-2026-09-21`)"
+      ],
+      "keep": [
+        "actors/higgsfield-connector"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-ui-redesign-boards-melange-boards-and-build",
+      "title": "Melange boards and build lane (09-22/23)",
+      "summary": "The Melange dashboard redesign boards of 2026-09-22 and the Melange build lane of 09-22/23, with its method, traps and overlay-first architecture",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Melange redesign boards (2026-09-22; `melange-redesign-boards-2026-09-22`)",
+        "## Melange build lane (2026-09-22 to 2026-09-23; `melange-redesign-build-lane-2026-09-22`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks",
+      "title": "UI finalize, review reconcile and graph quirks (09-23 to 09-25)",
+      "summary": "The UI finalize after the reboot (2026-09-23 to 09-25), the UI review reconcile of 09-25 and the Graph UI quirks and colouring lane",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## UI finalize after reboot (2026-09-23 to 2026-09-25; `ui-finalize-after-reboot-2026-09-23`)",
+        "## UI review reconcile (2026-09-25; `ui-review-reconcile-2026-09-25`)",
+        "## Graph UI quirks and colouring lane (2026-09-24 to 2026-09-25; `graph-ui-quirks-lane-2026-09-24`)"
+      ],
+      "keep": [],
+      "s11": true,
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K6",
+      "a": "topics/2026-09-feature-ui-redesign-boards-mentat-console-boards",
+      "b": "actors/mentat-console-redesign-boards"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "K13",
+      "a": "topics/2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks",
+      "b": "topics/2026-09-feature-mentat-console-ui-load-time-and-graph-quirks",
+      "event": "same graph-quirks lane"
+    },
+    {
+      "id": "K14",
+      "a": "topics/2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks",
+      "b": "actors/mentat-console-startup-and-polish-lanes",
+      "event": "same graph-quirks lane"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 35,
+      "old": "- **Later phases:** after the boards, Paul said \"Finish the interface according to the instructions, familiarize yourself, then finish\" (2026-09-22) and \"Once you are done building do a one-to-one, finalize, and then debug\"; the finalize run, three reconcile rounds, commits and the 09-24/25 quirks lane followed.",
+      "mark": "not positional",
+      "why": "the label \"Later phases\" is time"
+    },
+    {
+      "line": 65,
+      "old": "| 2026-09-17 | Higgsfield connector account trap (free plan) noted; see [[higgsfield-connector]]. Earlier boards 1-9 from 2026-09-19 exist (`approved_board*`). |",
+      "mark": "external",
+      "why": "\"see [[higgsfield-connector]]\" names another note; \"Earlier boards 1-9\" is time"
+    },
+    {
+      "line": 86,
+      "old": "- **Figma:** Paul \"Figma gets my authorization\"; method chosen to save the 20 calls/month (see Melange section).",
+      "mark": "rewrite",
+      "why": "\"see Melange section\" is the Melange boards and build sections, both of which move to -melange-boards-and-build",
+      "new": "- **Figma:** Paul \"Figma gets my authorization\"; method chosen to save the 20 calls/month (see Melange section in [[2026-09-feature-ui-redesign-boards-melange-boards-and-build]]).",
+      "referent": "2026-09-feature-ui-redesign-boards-melange-boards-and-build"
+    },
+    {
+      "line": 87,
+      "old": "- **Higgsfield method (reuse):** see Mentat section; pilot one board before the batch.",
+      "mark": "rewrite",
+      "why": "\"see Mentat section\" is ## Mentat console redesign boards, which moves to -mentat-console-boards",
+      "new": "- **Higgsfield method (reuse):** see Mentat section in [[2026-09-feature-ui-redesign-boards-mentat-console-boards]]; pilot one board before the batch.",
+      "referent": "2026-09-feature-ui-redesign-boards-mentat-console-boards"
+    },
+    {
+      "line": 88,
+      "old": "- **Graph-quirks rulings (Paul via AskUserQuestion, 2026-09-24):** frame the linked core on open; add hide/show to the Targets panel, open by default; do all the rest; no commit. Mid-turn: \"Reasoning stays in Opus\" (see `reasoning-in-fable-code-in-opus-2026-09-16`).",
+      "mark": "external",
+      "why": "\"see `reasoning-in-fable-code-in-opus-2026-09-16`\" names a memory file"
+    },
+    {
+      "line": 93,
+      "old": "- ~~Prompt 01 numbers (208px sidebar, 38px rows, 40px title; `.primary` gold)~~ (2026-09-22) - superseded same day by \"board wins\" (see above).",
+      "mark": "same note",
+      "why": "\"superseded same day by \\\"board wins\\\" (see above)\" is the Boards win over prompt numbers bullet of the same Decisions section, above it in the hub"
+    },
+    {
+      "line": 96,
+      "old": "- ~~Native mock-up flow with Figma for every board~~ (2026-09-22) - Figma not used for the Mentat boards (plugin figma MCP needs authorizing); Melange later got a Figma file after Paul's authorization.",
+      "mark": "not positional",
+      "why": "\"Melange later got a Figma file\" is time"
+    },
+    {
+      "line": 99,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 101,
+      "old": "- [ ] Paul reviews each Mentat proof (`proof\\NN`) adversarially against its board and the live route; he commits and restarts 8806 to see changes.",
+      "mark": "not positional",
+      "why": "\"restarts 8806 to see changes\" is the verb see"
+    },
+    {
+      "line": 111,
+      "old": "- [ ] Melange: next chain run's `sync_live_dashboard_alias.py` would overwrite the v2 shell with `Moneyball.html` (pre-existing; flag to Paul).",
+      "mark": "not positional",
+      "why": "\"next chain run\" is time"
+    },
+    {
+      "line": 118,
+      "old": "**State (2026-09-21):** 14 boards made (`gpt_image_2_5`, high, 2k, 16:9; 3 credits each, 42 total; balance left 266.9). Review page https://claude.ai/artifact/FFSK1XiZQ2wBkgjhCQtkXP holds the boards, today's screens and a \"Don't copy\" list per board. Numbers continue after the 09-19 boards 1-9 so a reply cannot collide: B10/B11 Graph (four analyses above the fold / compare by industry, cycle or company), B12/B13 Chart Studio (quiet builder / guided sentence mode), B14/B15 Insights (paired panels / then-and-now), B16/B17 Cross-reference (triage table / inspection queue), B18/B19 PAC evidence (suggested start / picker rail), B20/B21 Loading (steps 1 and 2, compatible), B22/B23 Collection (run card / status grid). Files in that session's scratchpad `mentat_ui_review/` (`mockups/*.png` full size, `page/`, `current/` captures, `capture_views.cjs`). Figma was NOT used: the plugin figma MCP needs authorizing.",
+      "mark": "not positional",
+      "why": "\"four analyses above the fold\" is a position on the screen"
+    },
+    {
+      "line": 120,
+      "old": "**Next (then):** Paul picks, then one exacting build prompt per pick: grid and measurements, acu-theme tokens, every control mapped to its owning file, all copy, empty/loading/error states, the board's Don't-copy list, side-by-side acceptance at 1440 and 1920. Nothing in the Mentat tree changes until his go.",
+      "mark": "not positional",
+      "why": "the label \"Next (then)\" is time"
+    },
+    {
+      "line": 132,
+      "old": "**Naming trap (mine):** the \"B\" board prefix collided with the A/B option letters; Paul asked \"What about the ones where I picked A?\" about B12/B16/B20/B22. Next time number boards neutrally (e.g. \"#10\") and name options in words.",
+      "mark": "not positional",
+      "why": "\"Next time\" is time"
+    },
+    {
+      "line": 152,
+      "old": "ADOPTED by the 01 session (09-22 ~09:45): the board wins over prompt numbers (see Decisions). 01 touched ONLY `acu-theme.css` (+13 tokens) and `workspace-polish.css` (-2 hiding lines, +104-line LF block); no template, JS or test changed; all five suites green before and after. Later in the same memory the final counts read `acu-theme.css` (+15, CRLF) and `workspace-polish.css` (+118/-2, block in LF like its tail).",
+      "mark": "rewrite",
+      "why": "\"the board wins over prompt numbers (see Decisions)\" names the hub's ## Decisions (Boards win over prompt numbers); \"Later in the same memory\" points at the memory file and at time",
+      "new": "ADOPTED by the 01 session (09-22 ~09:45): the board wins over prompt numbers (see Decisions in [[2026-09-feature-ui-redesign-boards]]). 01 touched ONLY `acu-theme.css` (+13 tokens) and `workspace-polish.css` (-2 hiding lines, +104-line LF block); no template, JS or test changed; all five suites green before and after. Later in the same memory the final counts read `acu-theme.css` (+15, CRLF) and `workspace-polish.css` (+118/-2, block in LF like its tail).",
+      "referent": "2026-09-feature-ui-redesign-boards"
+    },
+    {
+      "line": 154,
+      "old": "**Build 01 DONE 2026-09-22 (uncommitted, awaiting Paul's review):** one Opus architect built the shell. Proof in `proof\\01\\` (30 files + `DIFFERENCES.md`). The first pass used my prompt's numbers (208px sidebar, 38px rows, 40px title); the peer session holding 02 measured M4 and showed they were wrong. The board wins: the build is now 200px, 13px nav on 25.5px rows, 31px title, card edge 226. Gold is opt-in `class=\"primary primary--gold\"`; `.primary` stays plum (five plum buttons use it). Its four open calls were settled 09-22 (see Wave 2). The builder stalled once at 600s at a foreground server start; resuming via `SendMessage` kept its context. Peer session \"Mentat console redesign build packet\" owns 02.",
+      "mark": "same note",
+      "why": "\"see Wave 2\" names the **Wave 2, 2026-09-22 ~10:20** label of the same section, which lands in -mentat-console-boards with this line"
+    },
+    {
+      "line": 180,
+      "old": "Open item B15: the EVIDENCE nav group sits 3px high, because M4's gap above it is 2px wider. Match the board (one-to-one), bundled with the `#view-graph` retirement.",
+      "mark": "not positional",
+      "why": "\"M4's gap above it\" is a position on the screen"
+    },
+    {
+      "line": 184,
+      "old": "Next then: review each proof adversarially against its board and the live route, then start 06 once 04 and 05 finish. Paul reviews every proof and commits; he restarts 8806 to see the changes.",
+      "mark": "not positional",
+      "why": "the label \"Next then\" is time; \"to see the changes\" is the verb see"
+    },
+    {
+      "line": 200,
+      "old": "**Method that worked:** an architect agent captures + censuses the live page read-only (in-script Node static server on 127.0.0.1:8802, block the 8841 staffer probe), a second pass extracts the exact values each board needs; pilot board `#27` with today's Members list as `image_references`, then every later board uses the pilot's job id (`03f7e0ad-0d4e-4c3f-b085-6c5f27c6e35a`) as style reference; `gpt_image_2_5` high 2k 16:9 = 3 credits each (60 total per the transaction log, 13:39-14:19Z; balance read 107.9 after because another lane's 17 boards, 51 credits stamped 04:01-04:09Z, posted in between: balance deltas mislead, use `transactions`).",
+      "mark": "not positional",
+      "why": "\"every later board\" is the order of the boards (time)"
+    },
+    {
+      "line": 202,
+      "old": "**Traps seen (put in each build prompt's Don't-copy list):** model copies a value from the row above (`#43` Monroe 1,194 vs 1,907); invents totals (`#37` bar tops); mislabels years (`#36` \"2025 so far\"); fills matrix cells wrongly (`#32` Vargas FOM); paints data bars gold (`#38`, `#41`) although gold is chrome; draws decorative network layouts (`#24`-`#26`).",
+      "mark": "not positional",
+      "why": "\"the row above\" is a row in a generated board image"
+    },
+    {
+      "line": 218,
+      "old": "**Next (then):** build the mocks, then spend about 10 calls, then add Figma node links plus codemap sections to the prompts, then publish the packet. Nothing in the live tree changes until his go.",
+      "mark": "not positional",
+      "why": "the label \"Next (then)\" is time"
+    },
+    {
+      "line": 227,
+      "old": "- **Architecture decision (lead's, brain decision draft): OVERLAY-FIRST** (see Decisions).",
+      "mark": "rewrite",
+      "why": "\"see Decisions\" names the hub's ## Decisions (OVERLAY-FIRST)",
+      "new": "- **Architecture decision (lead's, brain decision draft): OVERLAY-FIRST** (see Decisions in [[2026-09-feature-ui-redesign-boards]]).",
+      "referent": "2026-09-feature-ui-redesign-boards"
+    },
+    {
+      "line": 228,
+      "old": "- **Facts that bit or will bite:** the README's `--ml-*` tokens are NOT used by the served v2 shell (unprefixed `:root` in `approved/clean/app.css`, identical values); 8841 serves `Moneyball_Redesign.html` + `staffer_live/approved/*` (byte copies of `approved/clean/*` made by `build_clean_workspace.py`, which has no copy-only mode and regenerates all presentation data); the next chain run's `sync_live_dashboard_alias.py` would overwrite the v2 shell with `Moneyball.html` (pre-existing, flag to Paul).",
+      "mark": "not positional",
+      "why": "\"the next chain run\" is time"
+    },
+    {
+      "line": 232,
+      "old": "- **Disk 2026-09-22 23:3x:** C: hit 0.4 GB free (AppXSvc commit 37 GB led to pagefile growth). Paul: \"clear 50 GB\". Sparse-checkout `/*` + `!/audits/legfix5/` applied to `melange-ui-redesign-372c43`, `busy-kapitsa-3272db`, `nervous-hamilton-7e2d50`, giving 53 GB free, git status unchanged, undo = `sparse-checkout disable`. TRAP: from Git Bash the pattern MUST run with `MSYS_NO_PATHCONV=1`, else it is stored as `!C:/Program Files/Git/audits/legfix5/` and silently does nothing. AppXSvc cannot be stopped even elevated (1051 dependent WSAIFabricSvc; then \"cannot be stopped\"; taskkill access denied); only a reboot frees it (see `appxsvc-leak-pythonmanager-2026-09-23`).",
+      "mark": "external",
+      "why": "\"see `appxsvc-leak-pythonmanager-2026-09-23`\" names a memory file"
+    },
+    {
+      "line": 233,
+      "old": "- **Reboot + finalize plan (Paul 09-23 00:3x: \"When it is ready to reboot, reboot\"; earlier: \"Once you are done building do a one-to-one, finalize, and then debug\"):** the lean build run is `wf_de0fe38b-a24` (script `ui-finish-lean`). When it completes: reboot (`shutdown /r /t 120`), which frees AppXSvc (41.7 GB commit) and the grown pagefile. After restart (Paul reopens this session): Paul restarts 8841 (his), then launch the FINALIZE workflow: one-to-one audit of every Melange screen (integration stage `SP\\stage\\integration`, boards /1.867) and every Mentat screen (boards /1.25) by two Fable auditors each + debug sweep (console, interactions, data: Mentat Insights Recipients \"-\" and $0 new/no-longer bars; PAC maps nearly empty; Melange Influence Targets 7 rows vs board 12 (`build_clean_workspace` `ORD.slice 7`), Color default Field record vs Overall standing, Industry leftover Posture wording panel), then fix (one writer per product), re-audit until clean, apply Melange to LIVE hash-guarded (`APPLY_MANIFEST.md`; run LIVE `build_clean_workspace.py`), publish a report Artifact with side-by-sides + scores. No commits.",
+      "mark": "not positional",
+      "why": "\"earlier: \\\"Once you are done building ...\\\"\" is what Paul said earlier (time)"
+    },
+    {
+      "line": 245,
+      "old": "- **UPDATE 09-23 14:55:** first-pass Fable audits DONE (scores + 103 defects in `SP\\final\\defects_r1.json`; Melange ~93 avg, Mentat ~84; 0 blockers, 16 majors). The team run `wf_5aee5b60-49b` was stopped (its fix phase split into 33 tiny fixers and starved Mentat). Replacement run `wf_e606ffea-bc7` (script under the session's `workflows\\scripts\\ui-finish-fast-*.js`): 10 area fixers (`SP\\final\\r1_areas\\<AREA>.json`; Melange MA-ME, Mentat TA/TBS/TBI/TC/TD), per-product merge, Sonnet re-audit per area (Paul: 'The next audit can be done in sonnet'), one final major-only pass, LIVE apply, report `SP\\final\\report\\`. Shared read-only Mentat console on 8812; Paul's 8841 = PID 14504 (restarted by him after reboot).",
+      "mark": "not positional",
+      "why": "\"The next audit can be done in sonnet\" is Paul's quote about the next audit (time)"
+    },
+    {
+      "line": 246,
+      "old": "- **CLOSE-OUT 09-23 (late):** Melange applied to LIVE (695/695 files incl. people-days shards; backup + `python \"SP\\final\\rollback_live.py\"`), final avg 95.7. Paul's Melange rulings: Days on the record column BUILT (`people_days()` in `build_clean_workspace.py`, 97.6% coverage); 13px filter text OK; selection ring stays AMBER (not white); Efficiency colours OK; live People status kept. Mentat (uncommitted, Paul restarts 8806 to see it): Paul said Chart Studio \"got rid of the buckets\", so reconcile run `wf_0c7f1160-987` restored S1 Dimensions/Measures buckets, S1 teal, hideable Data pane/shelves/Inspector + \"Expand chart\" (remembered), map mark option A (test green); Company comparison keeps its dollar column in board style (Paul: \"Keep the dollar column, match the aesthetic\"). Scores: Chart Studio 92/90, Company comparison 94. OPEN for Paul: (1) drawer shows ONE \"Contributions / Other\" segment beside Support/Oppose; Paul's \"Should have contributions and other\" may mean two separate segments: ask, do not assume; (2) \"hide the buckets, nodes, etc\" implemented in Chart Studio only; Graph tab has no hide/expand control yet. Report: https://claude.ai/artifact/P3hz5SgGCqETRkHuiDAhdg (v2). Hang watchdog stopped.",
+      "mark": "not positional",
+      "why": "\"restarts 8806 to see it\" is the verb see"
+    },
+    {
+      "line": 247,
+      "old": "- **ROUND 3, 09-24 ~02:45 (DONE, uncommitted):** Paul ruled: drawer \"It should be two separate segments\"; Graph \"expand each section individually like with a census panel\" (= PAC evidence Census \"Source details\" disclosure pattern); Chart Studio \"utterly maluable\". Built: drawer Contributions | Other | Support | Oppose split by FEC transaction type (dollars reconcile to the cent; candidate counts overlap, disclosed by an overlap line + tooltips, removable if Paul objects); every Graph section and 15 Chart Studio sections fold individually, open by default, remembered; Chart Studio all 24 Show Me tiles enabled, 26 marks draw as themselves, any pill any shelf, sort any mark, group limit All, honesty guards annotate only; engine: stacking/Size/Tooltip/dual axis etc., `contribution-charts.js` rewritten. Suites 920/921 (fail = `test_transfer_graph.py` R check owned by another lane). 8812 restarted. Records: `SP\\final\\r3\\PRODUCT.md`, backups `SP\\final\\r3\\backup\\`. OPEN: worksheet Map/Filled map draw as bars (no current worksheet has ZIP/state); builder deviations (Labels disabled on Text, new MARKS header) await Paul. **LESSON:** Paul lost patience with 3-round verify loops at ~2h; next time one verify+fix round then product check.",
+      "mark": "not positional",
+      "why": "\"next time one verify+fix round\" is time"
+    },
+    {
+      "line": 271,
+      "old": "Paul 2026-09-24 sent 5 screenshots: \"UI quirks ... mainly just pertaining to how the graph is presented. The graph should be the main focus ... and then some coloring\". Rulings via AskUserQuestion: frame the linked core on open; add hide/show to the Targets panel, open by default; do all the rest; no commit. Mid-turn: \"Reasoning stays in Opus\" (see `reasoning-in-fable-code-in-opus-2026-09-16`).",
+      "mark": "external",
+      "why": "\"see `reasoning-in-fable-code-in-opus-2026-09-16`\" names a memory file"
+    }
+  ]
+}

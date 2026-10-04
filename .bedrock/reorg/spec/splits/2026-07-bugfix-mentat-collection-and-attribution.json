@@ -1,0 +1,503 @@
+{
+  "id": "A1",
+  "what": "Batch 4 split of topics/2026-07-bugfix-mentat-collection-and-attribution (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A1); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-bugfix-mentat-collection-and-attribution",
+  "home": "projects/mentat",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## Related Discussions",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "concepts/exclude-on-contradiction-not-ambiguity",
+      "actors/mentat-fec-pipeline"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-standing-rules",
+      "title": "Standing rules (money code, roster, shared checkout, zero-row crash)",
+      "summary": "Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code on inference, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## Standing rules (feedback memories)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship",
+      "title": "July 2026 pipeline build and ship",
+      "summary": "How the Mentat FEC pipeline was defined, built, reviewed and shipped from 2026-07-18 to 2026-07-24, from Paul's founding decisions to the 07-21 fleet halt and the pagination-shortfall policy call",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## July 2026 pipeline build, ship and hardening (source: `mentat-pipeline-2026-07-18`, project, last modified 2026-07-24)",
+        "### Integration to main (2026-07-24)",
+        "### Project definition and Paul's decisions (2026-07-18)",
+        "### Build and crypto test (2026-07-18 evening)",
+        "### Review + fix batch R1 (same evening)",
+        "### SHIPPED 2026-07-20 (6 industries; API lane superseded Chrome-scrape for scale)",
+        "### Alias-gap + PAC audit (2026-07-20 night; Paul: \"no stone unturned\")",
+        "### Parallelism ceiling + worker-shard audit (2026-07-21, 16 keys added)",
+        "### FLEET HALTED 02:34 2026-07-21",
+        "### OPEN POLICY CALL FOR PAUL: pagination-shortfall guard"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-july-hardening",
+      "title": "July 2026 hardening and the load-bearing review findings",
+      "summary": "The July 2026 hardening of the Mentat pipeline (07-22/23): corruption defects re-tested, acronym-variant collisions, the override matcher fix, lineages and the CRLF trap, the Fintech ordeal and perf round 2, plus the load-bearing review findings",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "### Master-corruption defects re-tested against live data (2026-07-22): 4 of 7 REFUTED",
+        "### Acronym-variant collisions are systemic (2026-07-22, UNFIXED, awaiting Paul: roster-identity calls)",
+        "### The override matcher was silently over-rejecting: FIXED @bulk `c45bd03` (2026-07-22)",
+        "### Version control (2026-07-22)",
+        "### Override registry is itself divergent and regresses on every merge (2026-07-22)",
+        "### Lineage map and the CRLF trap (2026-07-22 reconciliation)",
+        "### Fintech ordeal diagnosed + perf round-2 at Paul's gate (2026-07-23, /codex lane)",
+        "### Round-2 shipped + benchmark passed (2026-07-23 night; Paul's \"do what is most optimal\")",
+        "### Load-bearing review findings (all live-verified 2026-07-18)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-audit-r12-trade-association",
+      "title": "2026-07-27 audit, R12 reconciliation and the trade-association $0 fix",
+      "summary": "The six-agent Mentat audit of 2026-07-27, the R12 reconciliation and the trade-association $0 gap, which turned out to be the same defect as the ~$163k Candidate swap and was fixed at read time in report.R",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## Full-codebase audit, 2026-07-27 (source: `mentat-full-audit-2026-07-27`)",
+        "## R12 reconciliation, 2026-07-27 (source: `mentat-r12-reconciliation-2026-07-27`, last modified 2026-07-28)",
+        "## Trade-association $0 gap = the \"~$163k Candidate swap\" (source: `mentat-trade-association-gap-2026-07-27`, SOLVED)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-september-collector-lanes",
+      "title": "September 2026 collector lanes and the two API-key stores",
+      "summary": "The September 2026 Mentat collector lanes: worker scaling (09-09), the every-lane-failing collector outage of 09-17/18, and the two API-key stores",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## Worker scaling lane, 2026-09-09 (source: `mentat-worker-scaling-lane-2026-09-09`)",
+        "## Collector \"every lane failing / 0 workers\", 2026-09-17/18 (source: `mentat-collector-slowdown-lane-2026-09-17`)",
+        "## Two API-key stores (source: `api-key-repository-2026-08-28`, user memory, newest modification 2026-09-18)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-cross-verification",
+      "title": "Contradictions-not-ambiguity rule and the xref vs workbook review",
+      "summary": "The contradictions-not-ambiguity rule for Mentat cross-verification (D-040, 2026-09-17) and the cross-reference versus workbook council review that left the cross-reference tab dwarfed",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## Cross-verification: contradictions, not ambiguity (source: `xref-contradictions-not-ambiguity-2026-09-17`; concept page: [[exclude-on-contradiction-not-ambiguity]])",
+        "## Cross-reference vs workbook review, 2026-09-17 (source: `mentat-xref-workbook-review-2026-09-17`; full record in [[2026-09-17-mentat-xref-council-review]])"
+      ],
+      "keep": [
+        "concepts/exclude-on-contradiction-not-ambiguity"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane",
+      "title": "System-debug lane (2026-09-13 to 09-15)",
+      "summary": "The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a review bucket, Chart Studio patches and redesign, and the usability lanes with their commits",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## System-debug lane, 2026-09-13 to 2026-09-15 (source: `mentat-system-debug-lane-2026-09-13`, last modified 2026-09-15; the console UI side is [[mentat-console]])"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K1",
+      "a": "topics/2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship",
+      "b": "actors/mentat-fec-pipeline-history-build-and-ship"
+    },
+    {
+      "id": "K2",
+      "a": "topics/2026-07-bugfix-mentat-collection-and-attribution-july-hardening",
+      "b": "actors/mentat-fec-pipeline-history-hardening"
+    },
+    {
+      "id": "K3",
+      "a": "topics/2026-07-bugfix-mentat-collection-and-attribution-audit-r12-trade-association",
+      "b": "actors/mentat-fec-pipeline-history-audit-r12"
+    },
+    {
+      "id": "K4",
+      "a": "topics/2026-07-bugfix-mentat-collection-and-attribution-september-collector-lanes",
+      "b": "actors/mentat-fec-pipeline-history-september-lanes"
+    },
+    {
+      "id": "K5",
+      "a": "topics/2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane",
+      "b": "actors/mentat-console-chart-studio-and-system-debug"
+    }
+  ],
+  "candidates": [],
+  "relations": [
+    {
+      "id": "D5",
+      "part": "topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification",
+      "with": "discussions/2026-09-17-mentat-xref-council-review"
+    }
+  ],
+  "retarget": [
+    {
+      "note": "discussions/2026-09-17-mentat-xref-council-review",
+      "from": "topics/2026-07-bugfix-mentat-collection-and-attribution",
+      "to": "topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification",
+      "why": "D5 (4.4 C4, 4.7)"
+    }
+  ],
+  "s10": [
+    {
+      "line": 44,
+      "old": "- Status is `in-progress` because the collection/attribution layer is live and several items are still open with Paul (see Next Steps).",
+      "mark": "same note",
+      "why": "\"see Next Steps\" names ## Next Steps, which the hub keeps"
+    },
+    {
+      "line": 97,
+      "old": "| 2026-10-02/03 | Live Mentat tree pushed to GitHub (see [[mentat]]). |",
+      "mark": "external",
+      "why": "\"see [[mentat]]\" names another note"
+    },
+    {
+      "line": 101,
+      "old": "- **Money-collection and receipt-counting code is frozen** (2026-09-27, Paul). Never change it unless Paul explicitly approves that specific change. Superseded: the 2026-09-26 rule changes (`0ce240d9e`, `504d2cfd1`), reverted in `7a31f8ae2` (see Standing rules).",
+      "mark": "rewrite",
+      "why": "\"see Standing rules\" names ## Standing rules (feedback memories), which moves to -standing-rules",
+      "new": "- **Money-collection and receipt-counting code is frozen** (2026-09-27, Paul). Never change it unless Paul explicitly approves that specific change. Superseded: the 2026-09-26 rule changes (`0ce240d9e`, `504d2cfd1`), reverted in `7a31f8ae2` (see Standing rules in [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]]).",
+      "referent": "2026-07-bugfix-mentat-collection-and-attribution-standing-rules"
+    },
+    {
+      "line": 104,
+      "old": "- **Exclude on contradiction, not ambiguity** (D-040, 2026-09-17): see [[exclude-on-contradiction-not-ambiguity]].",
+      "mark": "external",
+      "why": "\"see [[exclude-on-contradiction-not-ambiguity]]\" names another note"
+    },
+    {
+      "line": 113,
+      "old": "- ~~\"api_request_budget has no key column\"~~ (2026-07-21 claim) - refuted 2026-07-22 (schema always supported multiple budget rows; the CODE hardcoded `budget_id='openfec'`); see Corrections in the July pipeline section.",
+      "mark": "rewrite",
+      "why": "\"see Corrections in the July pipeline section\": the correction of the \"no key column\" claim (PARTIALLY CORRECTED 2026-07-22) sits in ### Parallelism ceiling + worker-shard audit of the July pipeline section, which moves to -july-build-and-ship",
+      "new": "- ~~\"api_request_budget has no key column\"~~ (2026-07-21 claim) - refuted 2026-07-22 (schema always supported multiple budget rows; the CODE hardcoded `budget_id='openfec'`); see Corrections in the July pipeline section in [[2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship]].",
+      "referent": "2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship"
+    },
+    {
+      "line": 115,
+      "old": "- ~~Console-side fix options for the \"$37M\" display (relabel, \"excluded from totals\" caption, cycles next to the money) proposed only, \"Paul has not ruled\"~~ (2026-09-13) - overtaken by the 2026-09-17 rulings.",
+      "mark": "not positional",
+      "why": "\"cycles next to the money\" is a position on the screen"
+    },
+    {
+      "line": 117,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 128,
+      "old": "- [ ] Paul (console lanes, as of 2026-09-15): commits for later lane work need his go each time; restart consoles 8802/8803/8804/8808 (superseded: only one Paul console, 8806, was found on 2026-09-15); Ride 2 not run; retest steps 17 and 27 on 8806. (The three pre-ride rulings were answered 2026-09-15 via the wording ruling: group limit 60, slide template unchanged.)",
+      "mark": "not positional",
+      "why": "\"later lane work\" is time"
+    },
+    {
+      "line": 159,
+      "old": "- Note the interplay with the contradiction rule: the 2026-09-17/18 cross-verification rework (`627300bc9`, in the cross-reference engine) was authorised by Paul himself (\"Finish and then commit\"); the 2026-09-27 freeze governs later unapproved changes.",
+      "mark": "not positional",
+      "why": "\"later unapproved changes\" is time"
+    },
+    {
+      "line": 169,
+      "old": "- **How to apply:** raw/extract sheets show 100% of rows; analysis/total sheets may apply the memo rule (see `mentat-memo-x-dedup-rule`) but must flag, not hide, and say so.",
+      "mark": "external",
+      "why": "\"see `mentat-memo-x-dedup-rule`\" names a memory file"
+    },
+    {
+      "line": 171,
+      "old": "- Later reconfirmation: conduit legs COUNT (R8 re-ratified 2026-07-27); the memo rule only flags (see the 2026-09-17 contradiction rule: unverified rows count and are flagged).",
+      "mark": "rewrite",
+      "why": "\"Later reconfirmation\" is time; \"see the 2026-09-17 contradiction rule\" (one of the plan's own S10 examples) is ## Cross-verification: contradictions, not ambiguity, which moves to -cross-verification",
+      "new": "- Later reconfirmation: conduit legs COUNT (R8 re-ratified 2026-07-27); the memo rule only flags (see the 2026-09-17 contradiction rule in [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]]: unverified rows count and are flagged).",
+      "referent": "2026-07-bugfix-mentat-collection-and-attribution-cross-verification"
+    },
+    {
+      "line": 227,
+      "old": "- **State at 2026-07-18 (before build):** finalized spec = `mentat/MENTAT_SEQUENCING_v2.md` in the melange-ticketing-module-2f8aad worktree (branch claude/pipeline-generation-review-89167f), UNCOMMITTED. Source zip (`Downloads/Mentat-20260718T072249Z-1-001.zip`) has `Company Name.xlsx` (variant blocks; Crypto sheet = columns, others = rows; annotations are rules not search terms), 2 leadership-PAC CSVs (2021-22, 2023-24 only), `Trade Associations.docx`. **NO CODE BUILT YET - Paul gates the build** per `ask-before-substantive-changes` (superseded by the build below).",
+      "mark": "same note",
+      "why": "\"superseded by the build below\" is ### Build and crypto test (2026-07-18 evening), which lands in -july-build-and-ship with this line and stays below it"
+    },
+    {
+      "line": 239,
+      "old": "- Retag on live DB: passthrough 4,594 to 72 (JFC-only), `memo_review` 4,603, countable 3,711 to 3,739 (+28 only: triple-overlap absorbed most of the over-broad pattern). Resume-skip REMOVED (idempotent re-walk) [later contradicted, see 2026-07-21 audit item (1)]. `attribution_conflicts` table live (0 rows in crypto). Tests 3/3 PASS (incl. new `test_names.R`); reconciliation re-verified 1,181/1,189 = 99.33%. 18 review minors deferred, listed in the workflow wf_87a1ec92-290 journal.",
+      "mark": "same note",
+      "why": "\"later contradicted, see 2026-07-21 audit item (1)\" is item (1) of the 4-agent audit in ### Parallelism ceiling + worker-shard audit (2026-07-21), which lands in -july-build-and-ship with this line"
+    },
+    {
+      "line": 248,
+      "old": "- 4 API keys in `AppData\\Local\\Mentat\\keys.txt` (all tested 200; the earlier set was LOST with overwritten launcher scripts: keep keys OUT of launchers).",
+      "mark": "not positional",
+      "why": "\"the earlier set was LOST\" is time"
+    },
+    {
+      "line": 255,
+      "old": "- **CRITICAL DISCOVERY:** overrides written/approved in PRIOR sessions (the original 77-row `company_match_overrides.csv`, e.g. TMCC/Truckee Meadows, Optimum collisions) were written to the CSV but NEVER reconciled into collected data: no mechanism existed to re-apply them. Built `reclassify_overrides.py` (dry-run-first, rowid-level ledger, never touches raw columns) and ran it: **16,932 rows reclassified in master** (Verizon 9,074 review to accepted $396k; Altice 790 accepted to rejected $339k Optimum-collision purge; Comcast 5,353 review to accepted $228k; Toyota 1,508 accepted to rejected $42k TMCC purge; Gemini 206 mixed). Propagated to all per-industry source DBs so the next `merge_all.py` run doesn't regress it.",
+      "mark": "not positional",
+      "why": "\"the next `merge_all.py` run\" is time"
+    },
+    {
+      "line": 266,
+      "old": "- ~~THE structural finding: `api_request_budget` is tracked PER-DATABASE, not per-key: one row (`budget_id='openfec'`), NO key column.~~ (2026-07-21) **PARTIALLY CORRECTED 2026-07-22: \"no key column\" was FALSE.** The schema is `api_request_budget(budget_id TEXT PRIMARY KEY, window_started_epoch, requests_used)` and is **byte-identical in all four lineages**: it always supported multiple budget rows. What was true is that the CODE hardcoded `budget_id='openfec'`, collapsing every worker onto one 1,000/hr bucket. A LATER fix in `mall`/`Mentat\\mentat` only (`fec_api_budget_id()`, a polynomial digest of the key) makes the budget genuinely per-key. **Its premise (that api.data.gov enforces the hourly cap per registered KEY) is UNVERIFIED and contradicts the note's original conclusion.** Do not propagate that fix or promise throughput gains from more keys until an empirical two-key test settles per-key vs per-IP/per-database. Paul QUARANTINED it 2026-07-22: present where it already is, added nowhere. Verify budget rows before promising any throughput gain.",
+      "mark": "not positional",
+      "why": "\"A LATER fix\" is time"
+    },
+    {
+      "line": 294,
+      "old": "- Prime suspect: **`phase2_names=TRUE`**, newly enabled 2026-07-20 (it had been silently FALSE, which is why earlier employer-only runs banked 730k rows fine). The identity/P2_name pass appears to spend the entire hourly key budget on per-donor lookups without ever marking a unit `stored_complete=1`, so every budget window is re-spent on the same work forever. **Do NOT restart the fleet with phase2 on until this is understood**; each window costs a full key-hour per lane and hammers FEC's API for nothing.",
+      "mark": "not positional",
+      "why": "\"earlier employer-only runs\" is time"
+    },
+    {
+      "line": 295,
+      "old": "- First diagnostics to run: does any P2_name unit EVER reach `stored_complete=1`; does the pass commit on budget-pause or discard partial work; are fetched identity rows all INSERT-OR-IGNORE duplicates of employer-pass rows (redundant work by design). Baseline to compare against: pc_2024 and cb are COMPLETE (19/19, 195/195) and were collected employer-only. (The two root causes in the section above, found the same evening, are the resolution of this halt.)",
+      "mark": "same note",
+      "why": "\"The two root causes in the section above\" is the BOTH PHASE-2 ROOT CAUSES bullet of ### Parallelism ceiling + worker-shard audit (file line 285), which lands in -july-build-and-ship with this line and stays above it"
+    },
+    {
+      "line": 371,
+      "old": "- Verification: 6/6 Python suites (system py3.14), **11/11 R suites** (`R_LIBS_USER` set; Codex sandbox cannot see the R library: Claude must run R tests), 7 .ps1 parse-clean PS5.1, node --check OK, roster smoke 7/7.",
+      "mark": "not positional",
+      "why": "\"cannot see the R library\" is the verb see"
+    },
+    {
+      "line": 383,
+      "old": "- **BONUS DISCOVERY: the previous day's crash-recovered Fintech workbook UNDERCOUNTS:** SoFi corporate pass 16,170 rows short (20,281 to 36,451), Cash App corporate 22 to 507; cycle totals rise ~+40-98% (e.g. 2021-22 $953k to $1.89M). The workbook Paul has open is materially incomplete; v5's sits in `mentat/.cache/bench-20260723-output/` awaiting his deploy call.",
+      "mark": "not positional",
+      "why": "\"the previous day's crash-recovered Fintech workbook\" is time"
+    },
+    {
+      "line": 384,
+      "old": "- **NEXT SPEED LEVER** identified from receipts: the company-to-lane merge invariant serializes SoFi's 3 cycles (306 + 226 + 195 s = 727 s, about the entire 732 s collection critical path); relaxing to (company,cycle)-to-lane would cut collection to ~5 min, total ~11 min.",
+      "mark": "not positional",
+      "why": "the label \"NEXT SPEED LEVER\" is time"
+    },
+    {
+      "line": 392,
+      "old": "- Conduit rule = drop ActBlue/WinRed-recipient legs + memo'd pass-through legs (3-row earmark anatomy, MEMO_CD='X' side invisible to the employer-filtered scrape) [later superseded: conduit legs COUNT, R8 re-ratified 2026-07-27].",
+      "mark": "not positional",
+      "why": "\"[later superseded: conduit legs COUNT ...]\" is time (S1: marked in place)"
+    },
+    {
+      "line": 399,
+      "old": "Six parallel agents audited every Mentat source file 2026-07-27. Continues the trade-association gap work below.",
+      "mark": "same note",
+      "why": "\"Continues the trade-association gap work below\" is ## Trade-association $0 gap, which lands in -audit-r12-trade-association with this line and stays below it"
+    },
+    {
+      "line": 410,
+      "old": "4. **Candidate <-> Leadership PAC swap in 2023-24 in ALL SIX books** (~$163k; P&C $77,152.77). Recipient List and Spending Overview classify via different paths; the swaps offset exactly, which is why total-level checks passed. (REFUTED later the same day: see the trade-association section, F6 and F8 are one defect.)",
+      "mark": "same note",
+      "why": "\"REFUTED later the same day: see the trade-association section\" is ## Trade-association $0 gap, in the same part"
+    },
+    {
+      "line": 427,
+      "old": "- `performance.getEntriesByType` accumulates for page lifetime, so a stale 429 would have hung every later scrape.",
+      "mark": "not positional",
+      "why": "\"every later scrape\" is time"
+    },
+    {
+      "line": 442,
+      "old": "- ~~F6 is the audit's \"~$163k Candidate/Leadership, identical in all six books\" = the trade money ($162,458.32)~~ - that claim by the R12 session is **WITHDRAWN**: $162,458 is a sum ACROSS books, per-book-identical would total ~$975k, and trade money is book-specific and **$0.00 in Fintech**. **F6 was REOPENED, not solved.** What IS established: classifier and registers are clean (Candidate 4x-14x Leadership every cycle, zero candidate committees in the leadership lookup), builder is transposition-free, neither changed after those books were built. G6 is the standing detector. (Final resolution, later the same day: F6 and F8 are one defect, the trade-PAC defect below; the $162,458.32 figure does match the national trade PACs measured read-only on the 07-23 snapshots.)",
+      "mark": "same note",
+      "why": "\"the trade-PAC defect below\" is ## Trade-association $0 gap, which lands in -audit-r12-trade-association with this line and stays below it; \"later the same day\" is time"
+    },
+    {
+      "line": 450,
+      "old": "**Also NOT an invariant:** `Support + Oppose <= Downstream`. FEC correction/refund rows are negative and carry neither direction code, so they pull the unsigned total below the components. 272/2,979 CU rows, all residuals negative, to -$735,710. Don't re-add that assertion.",
+      "mark": "not positional",
+      "why": "\"below the components\" is a number comparison"
+    },
+    {
+      "line": 460,
+      "old": "- `scrape_progress.zero_verified`: a zero must prove itself. Only the **browser** lane stamps 1 (its readiness gate requires DataTables' confirmed-empty row); the **API lane leaves 0** because a double-504 becomes an `unservable_query`, gets decomposed, and can synthesise count=0. Upsert uses `MAX(existing, incoming)` so a later unverified write can't downgrade. Migration does NOT backfill legacy rows to 1. Guard **G3 zero_provenance** reports unverified zeros (warn). Timing cannot substitute: Farmers' poisoned zero ran 0.68 s/set, Bitnomial's real zero 0.65 s.",
+      "mark": "not positional",
+      "why": "\"a later unverified write\" is time"
+    },
+    {
+      "line": 462,
+      "old": "- **Master Overview Average row**, every column, every cycle block. Sits BELOW the table and **outside the ListObject**: mandatory, because the finalizer assigns one formula per whole table column, and its reconciliation sums every non-\"Industry Total\" row and would throw. Writes must also be **outside `if (!deferFormulas)`**: production always sets `MENTAT_DEFER_FORMULAS=1`, so that block is dead code and anything inside ships blank. Blocks now end at row 48 (was 45).",
+      "mark": "not positional",
+      "why": "\"Sits BELOW the table\" is a position in the workbook sheet"
+    },
+    {
+      "line": 471,
+      "old": "Community Banks having no Company PAC money is CORRECT (Paul confirmed). Fintech Trade Association $0 is an honest zero: none of the 12 verified fintech trade PACs appear in its data; FTA has no federal PAC at all. Trap: `CRYPTO INNOVATION` C00804732 is a SUPER PAC, not Crypto Council for Innovation (C00942318). See `ask-before-substantive-changes`, `mentat-full-audit-2026-07-27`.",
+      "mark": "external",
+      "why": "\"See `ask-before-substantive-changes`, `mentat-full-audit-2026-07-27`\" names memory files"
+    },
+    {
+      "line": 493,
+      "old": "This is NOT a \"coverage gap\" and calling it one was wrong. The register does not gate collection. All $556,742 of trade-association money is already captured in the workbooks, attributed to the right companies, with downstream paths traced and correctly marked \"not attributed\" (see any `<Company> View` sheet, Source Committee / Path column). The register only assigns a LABEL. So the register gap changes whether ~$265k of P&C money reads `Trade Association` vs `Unclassified` in one rollup row: a presentation defect. No dollar total, company total, or member ranking is affected. Paul was right.",
+      "mark": "external",
+      "why": "\"see any `<Company> View` sheet\" points at the workbooks"
+    },
+    {
+      "line": 511,
+      "old": "**STALE: the earlier ingest-side override step was DELETED in R12.** It referenced `trade_overrides` / `trade_override_applied`, neither ever assigned, and hard-crashed `write_reports()` on all three callers with `object 'trade_overrides' not found`. Do not restore it; `report.R` is the single implementation. Workbooks still showed $0 until a regen (not run: Paul's call).",
+      "mark": "not positional",
+      "why": "\"the earlier ingest-side override step\" is time"
+    },
+    {
+      "line": 518,
+      "old": "- **WITHDRAWN: asserted and did not survive:** \"$2,484,046 published as $0\" (computed against the wrong DB); \"the workbook was built from a run logged as failed\" (later runs exist; `started` rows with end=NULL are not proof); per-cell dollar deltas vs a `company_match_status='accepted'` filter (that filter is NOT the export rule: the workbook shows MORE than it for Chubb/Binance, so the reconstruction is wrong); the agent's `scrape_progress records_total=0` evidence (State Farm/Allstate/USAA have many 0 rows too: they are per-variant_set checkpoints, not failure signals).",
+      "mark": "not positional",
+      "why": "\"later runs exist\" is time"
+    },
+    {
+      "line": 520,
+      "old": "- **METHOD LESSON:** verify which artifact is authoritative BEFORE comparing, and do not report a finding until the comparison basis is proven. Three claims here were retracted for exactly that failure. See `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"See `ask-before-substantive-changes`\" names a memory file"
+    },
+    {
+      "line": 525,
+      "old": "Mentat collection (`C:\\Users\\pgoff\\Mentat`, the R+Python FEC console, separate from the Moneyball worktree) was running a single worker and ignoring stored keys. Diagnosed and fixed 2026-09-09 on Paul's \"finish the job / get it done\" gate. Shipped UNCOMMITTED in the live Mentat tree (`.bak-20260909` beside each file); later landed by commit `494dc133c` (see the collector lane).",
+      "mark": "same note",
+      "why": "\"see the collector lane\" is ## Collector \"every lane failing / 0 workers\", which lands in -september-collector-lanes with this line; \"later landed\" is time"
+    },
+    {
+      "line": 540,
+      "old": "- Imported the 7 `data_gov` keys from `Desktop\\API Keys\\keys.json` (see the key-store section below); store now holds **22**.",
+      "mark": "same note",
+      "why": "\"see the key-store section below\" is ## Two API-key stores, which lands in -september-collector-lanes with this line and stays below it"
+    },
+    {
+      "line": 548,
+      "old": "**Safety property worth keeping:** a stopped run can never write the source database. Stop cancels queued lanes, tasks go unfinished, `final_failed` is non-empty, and the `if not final_failed:` guard skips the merge entirely. Resume with `--resume` later.",
+      "mark": "not positional",
+      "why": "\"Resume with `--resume` later\" is time"
+    },
+    {
+      "line": 552,
+      "old": "Pre-existing and NOT from this lane: `mentat/tests/test_names.R` shows modified. See also `api-key-repository-2026-08-28`.",
+      "mark": "external",
+      "why": "\"See also `api-key-repository-2026-08-28`\" names a memory file"
+    },
+    {
+      "line": 576,
+      "old": "**How to apply next time:** ask \"what HTTP status/body did the archived response carry\" (`fec_response_observations` + `fec_response_archive` in the LANE db) before theorising about checkpoints.",
+      "mark": "not positional",
+      "why": "\"How to apply next time\" is time"
+    },
+    {
+      "line": 582,
+      "old": "The shared-checkout law and \"authorization does not relay\" notes from this lane are in Standing rules above.",
+      "mark": "rewrite",
+      "why": "\"in Standing rules above\" names ## Standing rules (feedback memories), which moves to -standing-rules",
+      "new": "The shared-checkout law and \"authorization does not relay\" notes from this lane are in Standing rules in [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]].",
+      "referent": "2026-07-bugfix-mentat-collection-and-attribution-standing-rules"
+    },
+    {
+      "line": 584,
+      "old": "**Open for Paul** (from this lane; also in Next Steps): the 09-17 12:41 CU run stands 27/30, killed without a terminal state, now resumable from console 8806. Console startup can hang on `git rev-parse` through OneDrive (unkillable child, `lru_cache` races two threads); task chip queued. Single-cycle runs fail the workbook wanting cm22. Runtime paths >~275 chars break `sys.path[0]`. Brain drafts (STATE, DE-026, D-040) are in the packet. `Desktop\\API Keys\\keys.json` is NOT Mentat's key store: the DPAPI store is. See `mentat-worker-scaling-lane-2026-09-09`, `mentat-failings-lane-s2-2026-09-16`.",
+      "mark": "rewrite",
+      "why": "\"also in Next Steps\" names ## Next Steps, which stays in the hub while this line moves to -september-collector-lanes; \"See `mentat-worker-scaling-lane-2026-09-09`, ...\" names memory files",
+      "new": "**Open for Paul** (from this lane; also in Next Steps in [[2026-07-bugfix-mentat-collection-and-attribution]]): the 09-17 12:41 CU run stands 27/30, killed without a terminal state, now resumable from console 8806. Console startup can hang on `git rev-parse` through OneDrive (unkillable child, `lru_cache` races two threads); task chip queued. Single-cycle runs fail the workbook wanting cm22. Runtime paths >~275 chars break `sys.path[0]`. Brain drafts (STATE, DE-026, D-040) are in the packet. `Desktop\\API Keys\\keys.json` is NOT Mentat's key store: the DPAPI store is. See `mentat-worker-scaling-lane-2026-09-09`, `mentat-failings-lane-s2-2026-09-16`.",
+      "referent": "2026-07-bugfix-mentat-collection-and-attribution"
+    },
+    {
+      "line": 616,
+      "old": "- **Measured (Banking run `20260918T030844`, 650 s; before = `20260913T074303`):** observed original giving $72,103,655.70 to $77,054,485.76; employee giving $70,446,487.57 to $71,246,149.34; unverified funding $1,657,168.13 to $5,808,336.42; PAC activity $22,774,438.00 and baseline $133,516,227.27 unchanged; review queue 76,197 rows / $49.93M to 46,156 rows / $16.99M. All 36,241 previously zeroed rows accounted for: 29,816 excluded as contradicted ($32,538,668.49), 6,266 released with a flag, 159 settled as non-giving.",
+      "mark": "not positional",
+      "why": "\"previously zeroed rows\" is time"
+    },
+    {
+      "line": 618,
+      "old": "- Observed giving still sits above the published $54,762,844.05 Banking workbook total, as it did before the change; the before/after pair spans four other commits, so the clean patch-attributable measure is the row-level trace in REVIEW.md 5f.",
+      "mark": "not positional",
+      "why": "\"sits above the published $54,762,844.05\" is a number comparison"
+    },
+    {
+      "line": 620,
+      "old": "- **Process lessons:** a long run started from a subagent's background shell is killed when that agent's turn ends (the Banking run died mid-verify with no exit line, while Fintech's ended `exit=0`); start long runs from the main session's background Bash. The `C:\\Users\\pgoff\\Mentat` index is SHARED with every other session working in that tree: the abort guard ran `git reset` and cleared another lane's staged file list (no content lost; they re-stage). Stage and commit atomically, and use `git commit --only -- <paths>`, never a bare reset. See `mentat-failings-lane-s8-2026-09-18`, `mentat-xref-workbook-review-2026-09-17`, `mentat-system-debug-lane-2026-09-13`, `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"See `mentat-failings-lane-s8-2026-09-18`, ...\" names memory files"
+    },
+    {
+      "line": 632,
+      "old": "- **Gate census** (read-only, R gate reproduced, twin-checked vs `pac_evidence.py`, 0 verdict disagreements over 28,548 tuples): ruleset v4 refusals total 948 / $192.0M (Banking 593 / $1.80M, NOT 2,070 / $20.7M of the 09-12 ruleset (1,477 rows resolved by the 09-13 edit); Crypto 80 / $187.5M: Coinbase to Fairshake blank-line rows $19.3M, BTC/USDC \"previously disclosed\" duplicates $132.5M, \"NON CONTRIBUTION\" $35M; others Community Banks 11, Credit Arms 17, Credit Union 4, Fintech 94, P&C 53, Telecom 96). 503 rows have NO description; F13 (inaugural committee, $3.05M) absent from the form map. Ruling table R1-R17 drafted for Paul. SECOND BLOCKER: `report.R:2032/:2051` select `contributor_street_1/2` unconditionally (commit `d78cf0b8f`), so NO rebuild can start; patch `gate_census/report_R_street_tolerant.patch` cut and proven. Banking DB `.cache/report-repairs/banking-20260910/data/mentat.db` (sha 4abdea58...).",
+      "mark": "not positional",
+      "why": "\"previously disclosed\" is a quoted FEC description"
+    },
+    {
+      "line": 634,
+      "old": "- **Follow-up rulings, same day:** \"'contradictions, not ambiguity' engine rework. This is the one\"; \"Crypto's money is correct\"; \"Outliers should be relative\"; \"Apply\" (brain D-040 + STATE bullet as `40434c6`); \"Delete\" (11 `.bak-20260917-xref/-wsg` files); \"you are only fixing systems not regenerating anything, I will do that myself\" (NO reruns/census/rebuilds from a lane; both Opus architects were killed mid-measurement, code already landed). Engine rework `c62cc6eb6` (REVIEW/blank/accepted-no-company rows count with `attribution_status = unverified`, queued as `company_attribution_unverified`; REJECTED and source-policy exclusions stay; relative outliers: `MENTAT_XREF_LARGE_PERCENTILE` 99.9 / `MENTAT_XREF_LARGE_MEDIAN_MULTIPLE` 20; python 108 OK); export-gate rework `7d364883e` (the gate refuses only a self-contradicting row; unresolved roles ship counted with `receipt_role_unverified` + `receipt_role_reason` in the raw export; blank line number recovered from the `SA<line>.` transaction-id prefix; \"previously disclosed\" excluded only when a counted line-11 twin with the same committee/cycle/amount exists; ruleset v5 = contradiction patterns only, F13 as contribution; copy at `gate_census/fec_receipt_rules.v5.json` because `inputs/` is gitignored; test_receipt_roles PASS, test_rules PASS, python twin 11 OK). Brain STATE amended to LANDED.",
+      "mark": "not positional",
+      "why": "\"previously disclosed\" is a quoted FEC description"
+    },
+    {
+      "line": 635,
+      "old": "- **CROSS-SESSION CONFLICT (resolved by Paul):** at 11:29 ET the same day Paul's S3 session recorded the contradictions-not-ambiguity ruling (the $37.9M unmatched-donor and $8.5M memo buckets \"must count\"; a NEW session must rework the engine and re-run), later than the ~10:55 ET dwarf ruling and made looking at the OLD tab on 8806. The lane here was told not to start that rework; Paul's follow-up (\"This is the one\") settled it.",
+      "mark": "not positional",
+      "why": "\"later than the ~10:55 ET dwarf ruling\" is time"
+    },
+    {
+      "line": 652,
+      "old": "- Console-side fix options were proposed only (relabel, \"excluded from totals\" caption, cycles next to the money); Paul had not ruled (overtaken by the 2026-09-17 rulings above).",
+      "mark": "rewrite",
+      "why": "\"cycles next to the money\" is a position on the screen; \"the 2026-09-17 rulings above\" are recorded in the hub's Decisions (Exclude on contradiction; Cross-reference is dwarfed) and in the cross-verification and xref-review sections, which move to -cross-verification, so \"above\" becomes \"in [[a]] and [[b]]\"",
+      "new": "- Console-side fix options were proposed only (relabel, \"excluded from totals\" caption, cycles next to the money); Paul had not ruled (overtaken by the 2026-09-17 rulings in [[2026-07-bugfix-mentat-collection-and-attribution]] and [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]]).",
+      "referent": "2026-07-bugfix-mentat-collection-and-attribution, 2026-07-bugfix-mentat-collection-and-attribution-cross-verification"
+    },
+    {
+      "line": 656,
+      "old": "- **S2 split view:** `server.py:1119` sent `frame-ancestors 'none'` on every response, so same-origin pane iframes (`/?studioPane=B`, built from `new URL(location.href)`) failed with `net::ERR_BLOCKED_BY_RESPONSE` (\"refused to connect\"), and `chart-comparison.js` threw SecurityError reading `contentWindow.MentatStudioPane`; the patch scopes `frame-ancestors 'self'` to the pane document only (`tests/test_contribution_http.py:74` still passes). ALSO: Paul's long-running consoles (ports 8802/8803/8804/8808, started 09-11..09-12) 404 `/chart-comparison.js` because `server.py`'s static allow-list is Python frozen at process start and `server.py` was edited 2026-09-13 01:31: they need a RESTART to see the split view at all.",
+      "mark": "not positional",
+      "why": "\"to see the split view\" is the verb see"
+    },
+    {
+      "line": 667,
+      "old": "- **Test ride** (read-only `python server.py --port 8812 --read-only`, fresh process, Banking): **20/20 script steps PASS after the Date-part fix.** Cold load = exactly 1 `POST /api/contributions/query` (the earlier ~160-request storm is gone; on a cold load only one code path reaches the query API), no new console errors, pane B renders inside the 2-chart grid (contentDocument readable, no CSP block), aggregation Mean + undo, presets, Treat-as refusal, empty filter, include/exclude/range filters, Analytics dashed mean line (\"Mean of shown marks: $5.5M\") and treemap refusal, Canvas only/Builder, Company overview four cards + picker + Open in builder + undo, worksheet mode (overview disabled with reason; Treat as Dimension promotes a numeric column and persists). Independent verifier: 8/8 checks PASS on the receipt (hashes, scope, patches intact, tests, line endings, markers, HTML/CSS balance, HTTP smoke) plus a re-check after the Date-part fix.",
+      "mark": "not positional",
+      "why": "\"the earlier ~160-request storm\" is time"
+    },
+    {
+      "line": 701,
+      "old": "- **THREE INTEGRATION DEFECTS the per-lane unit tests could not see:** D1 Save view 400: E-client sends `source` as a STRING (`viewSourceLabel()`, chart-studio.js:1803/1849) while E-server demands a dict (server.py:918-920), so no view ever reached disk; D2 briefing provenance: `currentChart()` (chart-studio.js:1739) sends `source`/`provenance` as strings, server.py:988-989 replaces non-dicts with `{}`, and chart-briefing.js:325/:430 then prints \"[object Obje\" as the SHA in every .pptx and HTML bundle; D5 `POST /api/restart` answers `{\"restarting\":true}` even when the console is current (the launcher correctly reuses it, the page polls 2 min then tells the reader to close the tab). Also D6: the reconciliation strip needs `#graph-run`, which is empty until the Graph view has rendered once (`chart-studio.js:2194`), and D3: `test_publish_pocket.py:239-240` leaks a worker into the next test. Fix lane dispatched ~16:45 (one architect, backups `.bak-20260914-fix1`, own writable console 8824, must re-verify with the real client the way the verifier did). Lanes F and E remained UNCOMMITTED until this lane verified.",
+      "mark": "not positional",
+      "why": "\"could not see\" is the verb see; \"the next test\" is the order of tests in a suite"
+    },
+    {
+      "line": 749,
+      "old": "- **PARALLEL-LANE CONTRACT TRAP (2026-09-14):** two architects built the client and server halves of the same feature from one written API contract, each side's tests passed against its own reading of the contract (string vs dict for `source`/`provenance`), and only a live run of the real page against a writable console exposed the mismatch: a server unit test passes either way. Rule: when a feature is split across lanes, the contract must carry example payloads (not prose), one lane owns the shared fixture both suites import, and the lane is not \"done\" until a real-client integration pass on a writable instance has run every write path (save, export, publish), not just reads. See `verify-dont-infer-completion-2026-08-04`.",
+      "mark": "external",
+      "why": "\"See `verify-dont-infer-completion-2026-08-04`\" names a memory file"
+    }
+  ]
+}

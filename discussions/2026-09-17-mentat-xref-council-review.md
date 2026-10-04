@@ -19,7 +19,7 @@ action_items:
   - "Tidy patches P6c and P7b wait for the other lane's commit of report_insights.py (not rebaseable now)."
   - "README still describes the old cross-reference tab (dirty by another lane)."
 related_topics:
-  - "[[2026-07-bugfix-mentat-collection-and-attribution]]"
+  - "[[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]]"
 related_actors:
   - "[[mentat-console]]"
 related_people:
@@ -45,7 +45,7 @@ Paul (2026-09-17, `/ecc:council` then `/ecc:python-patterns`): "review the cross
 
 - Worktree: `mentat-xref-spreadsheet-review-3f1ff0`; code in `C:\Users\pgoff\Mentat` (codex/mentat-crypto, HEAD `3fdfeae8f`, a peer S3 session committing concurrently).
 - Packet: `C:\Users\pgoff\Mentat\audits\mentat_xref_workbook_review_20260917\` (REVIEW.md, RECEIPT_RULING_TABLE, COMMIT_PLAN, BRAIN_UPDATE_DRAFT, gate_census/, receipts/, tidy_rebase/).
-- Continues `mentat-system-debug-lane-2026-09-13` (the $37.9M versus $12M settlement, see [[2026-07-bugfix-mentat-collection-and-attribution]]) and `mentat-tidy-workbook-lane-2026-09-14`.
+- Continues `mentat-system-debug-lane-2026-09-13` (the $37.9M versus $12M settlement, see [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification|Mentat collection and attribution]]) and `mentat-tidy-workbook-lane-2026-09-14`.
 - Project: [[mentat]]; the console that renders the tab: [[mentat-console]]; decision-maker: Paul Goff.
 
 ## Participants
@@ -66,7 +66,7 @@ Paul (2026-09-17, `/ecc:council` then `/ecc:python-patterns`): "review the cross
 
 ## Related Topics
 
-- [[2026-07-bugfix-mentat-collection-and-attribution]] - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
+- [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification|Mentat collection and attribution]] - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
 
 ## Related Concepts
 

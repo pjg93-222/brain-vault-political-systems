@@ -99,7 +99,7 @@ export function fmEnd(lines: string[]): number {
   for (let i = 1; i < lines.length; i++) if (/^---[ \t]*$/.test(lines[i])) return i;
   return -1;
 }
-function yamlOf(n: Note): Record<string, unknown> {
+export function yamlOf(n: Note): Record<string, unknown> {
   const e = fmEnd(n.lines);
   if (e < 0) return {};
   try {
@@ -115,11 +115,11 @@ export function titleOf(n: Note): string {
   const y = yamlOf(n);
   return scalar(y.title) ?? scalar(y.name) ?? n.slug;
 }
-const bodyStart = (n: Note) => fmEnd(n.lines) + 1;
-const isLeafNote = (n: Note) => !n.fleeting && (LEAF_TOPS.has(n.top) || hasPartOf(n));
-const isHubNote = (n: Note) => !n.fleeting && HUB_TOPS.has(n.top) && !hasPartOf(n);
+export const bodyStart = (n: Note) => fmEnd(n.lines) + 1;
+export const isLeafNote = (n: Note) => !n.fleeting && (LEAF_TOPS.has(n.top) || hasPartOf(n));
+export const isHubNote = (n: Note) => !n.fleeting && HUB_TOPS.has(n.top) && !hasPartOf(n);
 /** part_of holds a value (check.ts rawKeyBlock + hasValue: the key's line plus its indented or "- " continuation lines) */
-function hasPartOf(n: Note): boolean {
+export function hasPartOf(n: Note): boolean {
   const e = fmEnd(n.lines);
   if (e < 0) return false;
   for (let i = 1; i < e; i++) {
@@ -148,9 +148,9 @@ export function resolveInner(v: Vault, inner: string): string | null {
   if (v.byRel.has(p)) return p;
   return v.relBySlug.get(p.split("/").pop()!) ?? null;
 }
-type LineKind = { fm: boolean; key: string | null; scanned: boolean };
+export type LineKind = { fm: boolean; key: string | null; scanned: boolean };
 /** per line: frontmatter or body, its top-level key, and whether the graph scans it (not the sources: block) */
-function lineKinds(n: Note): LineKind[] {
+export function lineKinds(n: Note): LineKind[] {
   const e = fmEnd(n.lines);
   const kinds: LineKind[] = [];
   let key: string | null = null;
@@ -200,8 +200,8 @@ export function oneWayLinks(v: Vault): { from: string; to: string }[] {
 // =====================================================================================================================
 // sections
 
-type Heading = { idx: number; level: number; text: string };
-function headingsOf(n: Note): Heading[] {
+export type Heading = { idx: number; level: number; text: string };
+export function headingsOf(n: Note): Heading[] {
   const res: Heading[] = [];
   let fence = false;
   for (let i = bodyStart(n); i < n.lines.length; i++) {
@@ -213,8 +213,8 @@ function headingsOf(n: Note): Heading[] {
   }
   return res;
 }
-type Section = { head: number; end: number; level: number; text: string };
-function findSection(n: Note, text: string, level: number | null = 2, within?: Section): Section | null {
+export type Section = { head: number; end: number; level: number; text: string };
+export function findSection(n: Note, text: string, level: number | null = 2, within?: Section): Section | null {
   const hs = headingsOf(n);
   for (let k = 0; k < hs.length; k++) {
     const h = hs[k];
@@ -225,10 +225,10 @@ function findSection(n: Note, text: string, level: number | null = 2, within?: S
   }
   return null;
 }
-const isItem = (l: string) => /^\s{0,3}[-*+]\s/.test(l);
-const isRow = (l: string) => /^\s*\|/.test(l);
+export const isItem = (l: string) => /^\s{0,3}[-*+]\s/.test(l);
+export const isRow = (l: string) => /^\s*\|/.test(l);
 /** the index after the last list item (with its indented continuation lines) or table row of the section, or -1 */
-function afterLastItem(n: Note, s: Section, row: boolean): number {
+export function afterLastItem(n: Note, s: Section, row: boolean): number {
   let last = -1;
   for (let i = s.head + 1; i < s.end; i++) if (row ? isRow(n.lines[i]) : isItem(n.lines[i])) last = i;
   if (last < 0) return -1;
@@ -288,7 +288,7 @@ function taglineOf(n: Note): string | null {
   return null;
 }
 /** index of the tagline line (the first blockquote after the H1), or -1 */
-function taglineIdx(n: Note): number {
+export function taglineIdx(n: Note): number {
   let h1 = -1;
   for (let i = bodyStart(n); i < n.lines.length; i++) {
     if (h1 < 0) {
@@ -300,7 +300,7 @@ function taglineIdx(n: Note): number {
   }
   return -1;
 }
-function plainOf(v: Vault, s: string): string {
+export function plainOf(v: Vault, s: string): string {
   return s.replace(WIKI, (_m, inner: string) => {
     const u = inner.replace(/\\\|/g, "|");
     const p = u.indexOf("|");
@@ -324,7 +324,7 @@ export function summaryOf(v: Vault, harvest: Map<string, string>, rel: string): 
   }
   return titleOf(n);
 }
-function clip(s: string, max: number): string {
+export function clip(s: string, max: number): string {
   if (s.length <= max) return s;
   const cut = s.slice(0, max - 1);
   const sp = cut.lastIndexOf(" ");
@@ -428,19 +428,19 @@ export function loadSpec(file: string, v: Vault, pending: Set<string>): Spec {
 // =====================================================================================================================
 // edits
 
-export type Phase = "apply" | "maps" | "reconcile";
+export type Phase = "apply" | "maps" | "reconcile" | "split";
 export type Edit = { phase: Phase; note: string; kind: "convert" | "insert" | "create-section" | "wrap" | "demote" | "stamp"; rule: string; line?: number; old?: string; new?: string; section?: string; tagline?: boolean };
 
 export type Ctx = { v: Vault; spec: Spec; pending: Set<string>; harvest: Map<string, string>; date: string; edits: Edit[]; phase: Phase };
 const slugOf = (ctx: Ctx, rel: string) => ctx.v.byRel.get(rel)!.slug;
 /** the wikilink text for a target: its slug, or its path when the slug is shared or resolves elsewhere */
-function linkName(ctx: Ctx, rel: string): string {
+export function linkName(ctx: Ctx, rel: string): string {
   const s = slugOf(ctx, rel);
   return ctx.v.relBySlug.get(s) === rel ? s : rel;
 }
 
 /** C1 / C2: turn every mention of a target in `targets` into plain text; returns the number of mentions converted */
-function convertMentions(ctx: Ctx, n: Note, targets: Map<string, string>): number {
+export function convertMentions(ctx: Ctx, n: Note, targets: Map<string, string>): number {
   if (n.fleeting) throw new Error(`internal: a conversion was planned in the fleeting note ${n.rel}`);
   const kinds = lineKinds(n);
   const tl = taglineIdx(n);
@@ -467,9 +467,9 @@ function convertMentions(ctx: Ctx, n: Note, targets: Map<string, string>): numbe
   return count;
 }
 
-type Where = { section: string; level: number; within?: { text: string; level: number }; create: "before-related-topics" | "after-related-actors" };
+export type Where = { section: string; level: number; within?: { text: string; level: number }; create: "before-related-topics" | "after-related-actors" };
 /** insert one line into a section (created where the plan says when missing), keeping the section's list or table form */
-function insertLine(ctx: Ctx, n: Note, w: Where, line: string, rule: string, rowLine?: string) {
+export function insertLine(ctx: Ctx, n: Note, w: Where, line: string, rule: string, rowLine?: string) {
   if (n.fleeting) throw new Error(`internal: an insertion was planned in the fleeting note ${n.rel}`);
   const within = w.within ? findSection(n, w.within.text, w.within.level) ?? undefined : undefined;
   if (w.within && !within) throw new Error(`internal: ${n.rel} has no "${"#".repeat(w.within.level)} ${w.within.text}" section`);
@@ -514,7 +514,7 @@ function insertLine(ctx: Ctx, n: Note, w: Where, line: string, rule: string, row
 }
 
 /** the C5 receiving section of `receiver` for a line about `about` */
-function receivingSection(ctx: Ctx, receiver: Note, about: Note): Where {
+export function receivingSection(ctx: Ctx, receiver: Note, about: Note): Where {
   if (receiver.top === "concepts") return about.top === "concepts" ? { section: "Related Concepts", level: 2, create: "before-related-topics" } : { section: "Where it Applies", level: 2, create: "before-related-topics" };
   if (about.top === "concepts") return { section: "Related Concepts", level: 2, create: "before-related-topics" };
   if (receiver.top === "actors" && about.top === "projects") return { section: "Related Projects", level: 2, create: "before-related-topics" };
@@ -522,11 +522,11 @@ function receivingSection(ctx: Ctx, receiver: Note, about: Note): Where {
   return { section: "Related Topics", level: 2, create: "before-related-topics" };
 }
 /** a project's Map section for a note of a type */
-function mapSectionFor(about: Note): string {
+export function mapSectionFor(about: Note): string {
   return about.top === "topics" ? "Related Topics" : about.top === "discussions" ? "Discussions" : about.top === "actors" ? "Related Actors" : about.top === "concepts" ? "Related Concepts" : about.top === "projects" ? "Related Projects" : "Related Topics";
 }
 
-function stamp(ctx: Ctx, n: Note) {
+export function stamp(ctx: Ctx, n: Note) {
   if (fmEnd(n.lines) < 0) return;
   const set = (key: string, value: string) => {
     const e = fmEnd(n.lines);
@@ -637,7 +637,7 @@ function insertMapRow(ctx: Ctx, P: Note, about: Note, rule: string) {
 }
 
 /** section 5: `## Map` + the intro sentence before the project's Related sections, each demoted one level */
-function ensureMap(ctx: Ctx, P: Note) {
+export function ensureMap(ctx: Ctx, P: Note) {
   if (findSection(P, "Map", 2)) return;
   const hs = headingsOf(P);
   const isMapSec = (h: Heading) => h.level === 2 && MAP_SECTIONS.some((s) => s.toLowerCase() === h.text.toLowerCase());
@@ -763,7 +763,7 @@ function writeChanges(ctx: Ctx, manifest: string | null): string[] {
   for (const n of touched) n.origText = n.lines.join("\n");
   return touched.map((n) => n.path);
 }
-function writeAtomicFile(path: string, content: string) {
+export function writeAtomicFile(path: string, content: string) {
   mkdirSync(dirname(path), { recursive: true });
   const tmp = join(dirname(path), "." + path.split(/[\\/]/).pop() + ".tmp-" + process.pid);
   writeFileSync(tmp, content, { encoding: "utf8" });
