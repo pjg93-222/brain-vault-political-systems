@@ -18,9 +18,9 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/api-key-repository-2026-08-28.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\api-key-repository-2026-08-28.md", sha256: "f33fd855d4557d62c018aa8e6eb704337e0dd2be31b2bf7a6ac4ef023b3a77b3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/user-name-paul.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\user-name-paul.md", sha256: "31d96d7db8f1af09845e734883335e0ecba51caffbee6456832bb19d4d7e1bcf"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/user_r_environment.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\user_r_environment.md", sha256: "4b3db963331292e353d1e0be4ac6e238a7f81e451bc60a806719c97d3963316f"}
-updated_at: 2026-10-03
-updated_by: "preserve@agent"
-tags: ["type/person", "domain/data"]
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/person", "domain/agent-ops"]
 ---
 
 # Paul Goff
