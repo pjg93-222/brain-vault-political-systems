@@ -23,7 +23,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 # Mentat repo state and workbooks
 
-> Troubleshooting record for the [[mentat]] code tree (`C:\Users\pgoff\Mentat`, branch `codex/mentat-crypto`) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the GitHub migration branch pushed 2026-10-02/03 with the PR still unopened, the Tableau-shaped companion Data workbook lane, and the [[mentat-console]] startup hang caused by an unbounded subprocess timeout. Pipeline-side items are in [[mentat-fec-pipeline]].
+> Troubleshooting record for the [[mentat]] code tree (`C:\Users\pgoff\Mentat`, branch `codex/mentat-crypto`) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the GitHub migration branch pushed 2026-10-02/03 with the PR opened and merged 2026-10-03, the Tableau-shaped companion Data workbook lane, and the [[mentat-console]] startup hang caused by an unbounded subprocess timeout. Pipeline-side items are in [[mentat-fec-pipeline]].
 
 Dated correction (2026-10-04, fleeting pass; source `mentat-github-migration-2026-10-02`): the PR left unopened in the summary above was opened on 2026-10-03 (Melange PR #2) and merged the same day at Paul's request; see GitHub migration.
 

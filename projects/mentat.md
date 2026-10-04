@@ -2,7 +2,7 @@
 type: project
 name: "Mentat (FEC contributions intelligence)"
 aliases: ["Mentat project", "FEC contributions intelligence"]
-description: "Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks, plus a local Python console (Chart Studio, Graph, Insights, PAC evidence panes and district map). Pushed to GitHub branch claude/mentat-migration-onto-main (PR unopened). Money/receipt-counting code is frozen by Paul's ruling."
+description: "Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks, plus a local Python console (Chart Studio, Graph, Insights, PAC evidence panes and district map). Pushed to GitHub branch claude/mentat-migration-onto-main (PR opened and merged 2026-10-03). Money/receipt-counting code is frozen by Paul's ruling."
 status: "active"
 deadline: ""
 progress: "Pipeline shipped (7 industries ready; workbooks built and rebuilt); console, Chart Studio and PAC-evidence lanes ongoing; live tree pushed to GitHub branch claude/mentat-migration-onto-main (tip 28c27a47) on 2026-10-02/03, then opened as Melange PR #2 and merged 2026-10-03 at Paul's request (merge commit 54433266); v5 corrected Fintech workbook awaits Paul's deploy call."
