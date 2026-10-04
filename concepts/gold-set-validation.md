@@ -6,7 +6,7 @@ description: "A measure earns trust by scoring against a fixed, independently la
 related_to: []
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -34,6 +34,7 @@ Where no gold criterion exists, a lane says so and gates on what it can show ins
 - [[2026-06-feature-cu-stance-and-sentiment]] — the stance stacks are measured against Paul's gold labels (the 400 tweet golds and the 760-row press gold frame); re-enabling the bill-sign override needs an aboutness guard and more gold labels on bill-naming releases
 - [[debate-stance-model]] — 54 billstatus rows still sit among the gold labels of the DEBATE retrain TRAIN split, an open follow-up since 2026-06-30
 - [[melange-systems]] — the project whose stance, Big Five and contact-inference lanes are scored against gold sets
+- [[2026-07-feature-data-collection-lanes-contact-inference-design-and-evaluation]] — the contact-inference evaluation plan: disclosed lobbying targets as gold, an organization-grouped split, bars frozen before one look
 
 ## Related Concepts
 

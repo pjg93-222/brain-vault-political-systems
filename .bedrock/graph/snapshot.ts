@@ -10,7 +10,12 @@
 // fleeting pass of 2026-10-04 from its own export: the three fleeting notes tracked in HEAD were organized and deleted, so -3
 // nodes, -7 links (their pairs with the notes they updated) and -21 mentions (each target named three times: updates:,
 // Possible Connections, Capture Context), and the forecast-redesign / paul-goff pair went from 12 to 14 mentions (the owner of
-// a new action item, in the frontmatter and the table); ledger .bedrock/reorg/ledger/fleeting-pass.md). It proves that a change to the tooling did not change what
+// a new action item, in the frontmatter and the table); ledger .bedrock/reorg/ledger/fleeting-pass.md; now 221 / 616 / 2205,
+// re-pinned by the document import of 2026-10-04 (branch import-core-docs-2026-10-04) from its own export: 17 new notes (7 concepts,
+// 3 discussions, 5 topics of which 4 are parts, 2 actors), so +17 nodes; +49 links, every one a new pair that touches one of the 17
+// (the home project of a note, its family and its selective links, each reciprocated by one line in the linked note); +141 mentions,
+// all in those 49 pairs; the new text of the 34 enriched notes links only to the new notes, so no existing pair changed weight and none
+// was removed). It proves that a change to the tooling did not change what
 // the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail, which is
 // the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below (a Phase 2 fix round re-pins it
 // from its own export).
@@ -21,10 +26,10 @@ import { DEFAULT_OUT, argValue } from "./common.ts";
 import { gate, extractData } from "./checks.ts";
 
 const SNAPSHOT = {
-  nodes: 204,
-  links: 567,
-  mentions: 2064,
-  types: { actor: 47, concept: 14, discussion: 6, person: 1, project: 4, topic: 132, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
+  nodes: 221,
+  links: 616,
+  mentions: 2205,
+  types: { actor: 49, concept: 21, discussion: 9, person: 1, project: 4, topic: 137, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
 };
 
 const FILE = argValue("--file") ?? DEFAULT_OUT;

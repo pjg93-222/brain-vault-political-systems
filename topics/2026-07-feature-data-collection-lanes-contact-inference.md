@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-07-10
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-data-collection-lanes]]"
 ---
@@ -94,3 +94,5 @@ Contact-inference augmented extraction lane (Paul-ordered 2026-08-28, metaloop r
 - Open items for Paul: merge gate (live-tree kernel gate must run at merge: registration adds 2 suites, expect 162 to 164); G3 adjudication of the blind samples (`samples/*_blind.jsonl`, seed 616161); the E1 ruling with the refreshed numbers; the eval-doc amendments; FIRST_EQUIV shared-resolver widening (alejandro/alex, joseph/trey currently local to the extractor).
 - Standing traps learned: post-auto-update Codex MCP stays pinned to a deleted install (headless `codex exec` is the bridge; exec-level flags BEFORE `resume`); the ledger receipt structure check rejects backticked tags; `grok -p` may need a re-dispatch demanding the finished critique in one reply.
 - Related: `lobbying-member-link-is-circular-2026-08-19`, `lobbyview-integration-2026-07-31`.
+
+The design and evaluation drafts this lane shipped on its branch are summarized in [[2026-07-feature-data-collection-lanes-contact-inference-design-and-evaluation]].

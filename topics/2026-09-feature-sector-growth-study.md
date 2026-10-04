@@ -14,8 +14,12 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/r-summary-regression-presentation-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\r-summary-regression-presentation-2026-09-25.md", sha256: "cec8d3d0a6c5b1a74d626a0fe910ecc2ecfafc8bbe65326ad29e7771786bac64"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sector-growth-study-lane-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sector-growth-study-lane-2026-09-25.md", sha256: "83c5b7bb8159bb94d3993774a8cad534ee6602ee75a5dbda4be9f31df456af7c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/trend-over-significance-2026-09-26.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\trend-over-significance-2026-09-26.md", sha256: "57abe79649883dd148cc5f8b319ac769c70b8228cf8202306fe42b79f7d5b984"}
+doc_sources:
+  - path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-26\\loo\\outputs\\original_study_reconciliation\\ORIGINAL_MODEL_CONTRACT.md"
+    sha256: "997c2853a31907eed3c20c728f4e32345eb4e161122319e06e5e144892fd3029"
+    as_of: "2026-09-27"
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -253,6 +257,18 @@ Handoff: `C:\Users\pgoff\Documents\Codex\2026-09-26\loo\outputs\LANE_HANDOFF.md`
 - C (own win probability): ns.
 - Codex reconciliation: probabilities identical on 44,300 rows, 0 band differences.
 - Everything is ONE election (2022) until the 2020 money joins.
+
+## Original-study model contract (Codex reconciliation, 2026-09-27)
+
+Source: `ORIGINAL_MODEL_CONTRACT.md` in the Codex `loo` chat outputs (not under version control). It transcribes the three original studies from the supplied brief; later requests for forecast-growth, expected-seat, incumbency and race-rating tests are separate extensions.
+- **Definitions:** G is actual industry growth standardized within sector; Neg = 1 when raw actual prior-year growth is below zero (the sign is not taken after z-scoring). Original explanatory estimation may include same-year growth, which is not the information set of a real forecast.
+- **(1) Total campaign giving:** log Contrib_it = α_i + β1 G_i,t−1 + β2 G_it + β3 Neg_i,t−1 + γM Midterm_t + γP Pres_t + δ Tossup_t + η Trend_t + u_it.
+- **(2) Partisan direction of candidate giving, by recipient chamber c:** RShare_ict = α_i + β1 G_i,t−1 + β2 G_it + φ Shift_ct + ψ RMajNow_ct + γM Midterm_t + γP Pres_t + u_ict, with Shift = P − RMajNow, Tossup = 1 − |2P − 1|, RShare = R / (R + D) and P the Republican majority probability. RShare is a fraction (multiply by 100 for percentage points); a gain probability or seat count is not a valid substitute coding.
+- **(3) Lobbying:** log Lobby_it = α_i + ρ log Lobby_i,t−1 + β1 G_i,t−1 + β2 G_it + β3 Neg_i,t−1 + h Unified_t + γM Midterm_t + γP Pres_t + u_it.
+- **Rules:** dollar outcomes are CPI-deflated before logging; missing and zero outcomes need a documented treatment (no arbitrary log offset or forecast filling); year fixed effects test growth but cannot separately identify national P, Shift or Tossup effects; genuine forecasting must use training-only, as-of values.
+- **Inference:** the brief asks for wild sector-cluster bootstrap with Driscoll-Kraay sensitivity; neither may be silently replaced with CR2, HC3 or calendar-score HAC.
+- **Population:** 2008-2025 across commercial banks, credit unions, life insurance, auto manufacturing and crypto (crypto separate where growth is incomparable); missing coverage is a limitation, not permission to rename a shorter regression as the original study.
+- **Before another original-study run:** one contract row per model (population, perimeter, outcome unit, growth variable and vintage, both lags, political event definition and horizon, observation dates, controls, estimator, inference, comparison sample), each result classed as original, amended, sensitivity or exploratory, never by its p-value. The contract authorizes no change to collected data or results.
 
 ## Presentation rules (feedback)
 

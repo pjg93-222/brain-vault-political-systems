@@ -19,10 +19,23 @@ known_issues:
   - "Carbonite coverage of the four new mirror folders unconfirmed (Paul to check green badge)"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
+doc_sources:
+  - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
+    sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
+    as_of: "2026-10-04"
+  - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DEADENDS.md"
+    sha256: "0ca3fe08fabc97a9bfdbe13abc7770e791e6ae614aba2e1f34e55ad312ec9ebc"
+    as_of: "2026-10-04"
+  - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\CONSTRAINTS.md"
+    sha256: "b55a968483db21bc16823628d99d468292dfd26bcf401a512fd822f7caff0df7"
+    as_of: "2026-09-30"
+  - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brainctl.py"
+    sha256: "24183aa183e80817eb36ed371f7a900c26ad4c6b33db1114921a24a1f94c68e5"
+    as_of: "2026-08-11"
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -73,6 +86,20 @@ python brainctl.py off <folder>     # remove only the managed block
 - The evaluation pilot (5-10 scorecarded sessions, audits, pre-committed kill criteria) is defined in EVALUATION.md but not started.
 - Whether Carbonite covers the four new folders is Paul's to confirm (green badge).
 
+## The melange-systems brain's decision log (pointer; counts as of 2026-10-04)
+
+The brain at `C:\Users\pgoff\OneDrive\Desktop\Project Brain\brains\melange-systems-brain\` is its own git repository (218 commits, tip `81f6c99` of 2026-10-04 15:37, mirrored to `C:\Users\pgoff\GitMirrors`). Three of its files are the decision record this vault cites as D-### and DE-###; their entries are not copied here.
+
+| File | Size and count | Entry format |
+|---|---|---|
+| `DECISIONS.md` | 744 lines; 86 entries D-001 to D-087 (D-044 absent), 85 ACTIVE and 1 SUPERSEDED, dated 2026-08-11 to 2026-10-03 | `## D-### — Title`, then Date, Status, Decision, Context, Rationale, Reversal condition; append-only, and a reversal only flips Status |
+| `DEADENDS.md` | 501 lines; 57 entries DE-001 to DE-057 (DE-028 and DE-029 have colon headings and no Date line), dated 2026-08-12 to 2026-10-03 | `## DE-### — Title`, then Date, Approach, Failure mode, Root cause, Would reconsider if |
+| `CONSTRAINTS.md` | 199 lines; sourced invariants in six groups: Data, Definitions, Tooling, Audience, Claims, Never do | one constraint per bullet, each ending with its source |
+
+**How to query it.** brainctl has no search command. `python brainctl.py boot <brain>` prints the whole boot bundle (BOOT, STATE, CONSTRAINTS, DECISIONS, DEADENDS and the skills index) to stdout, and `python brainctl.py status <brain>` reports the `Last verified` age (warning after 7 days), each core file's line count (warning above 500 lines) and uncommitted changes. To read one entry, search its heading in the brain folder, for example `rg -n -A8 "^## D-042 " DECISIONS.md` or `rg -n -A6 "^## DE-021 " DEADENDS.md`. `decide` and `deadend` append new entries.
+
+**Entries no vault note cites (checked 2026-10-04, before the document import of that date).** 51 of 143: decisions D-001, D-002, D-003, D-004, D-008, D-009, D-011, D-012, D-014, D-016, D-017, D-020, D-021, D-024, D-035, D-045, D-046, D-053, D-054, D-055, D-056, D-066, D-067, D-068, D-069, D-071, D-072, D-073, D-077, D-078, D-079 (31), and dead ends DE-002, DE-003, DE-005, DE-006, DE-007, DE-008, DE-009, DE-010, DE-013, DE-014, DE-017, DE-019, DE-025, DE-027, DE-031, DE-037, DE-038, DE-049, DE-050, DE-052 (20). Some are covered by paraphrase without the ID (for example the forecast decisions D-066 to D-069 in the forecast-redesign project). The other notes added by the 2026-10-04 import cite D-020, D-024, D-035 and D-068; the remaining 47 appear in this vault only in this list.
+
 ## Standing rules and decisions
 
 - **Why Project Brain exists:** Paul wants durable per-project memory for disposable AI sessions, with himself as sole owner.
@@ -99,6 +126,10 @@ python brainctl.py off <folder>     # remove only the managed block
 
 - Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired.
+
+## Related Concepts
+
+- [[boot-protocol-evaluation-framework]] — the governing v2 framework this toolkit implements: entry schemas, staleness and compaction, the session scorecard, four integrity audits and the kill criteria.
 
 ## Related Projects
 

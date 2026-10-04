@@ -11,7 +11,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-cotenure-clique-2026-09-07.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-cotenure-clique-2026-09-07.md", sha256: "2a33b944e2600e4a49aa955fceafdd731640da42df8bd4eaab06f4dcf369606d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-overlap-rule-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-overlap-rule-2026-09-03.md", sha256: "de5f13a314b7571f09b00e67d11f208a1cc67e2cb78e5a6786d8d896c8aa34d4"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/concept", "domain/data"]
 ---
 
@@ -73,6 +73,7 @@ Follow-through facts (shipping state, the v6 rebuild where admin exclusion took 
 - [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
 - [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture]] — The employment-tenure data adjudication of 2026-09-01 to 09-03, from the verdict and Paul's rulings to the play queue and the authoritative coverage metric, with the architecture and overlap rulings carried into the lane.
 - [[2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane]] — The SNA math audit of 2026-09-05 and the co-tenure clique lane of 2026-09-07 with its shipping state, the groups-role defect, the open producer findings and the move tables.
+- [[2026-09-feature-staffer-network-data-and-math-duration-ranking-and-v8-cutover]] — the 2026-09-08 ranking math on this edge rule: overlap days counted once, shared-role cells damped instead of excluded, intern pools dropped
 
 ## Related notes
 

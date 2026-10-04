@@ -87,7 +87,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "teach@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -245,6 +245,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-feature-audio-and-speech-lane-july-foundations]] | part: The July 2026 audio foundations: speaker verification and… |
 | [[2026-07-feature-audio-and-speech-lane-n-audio-route-and-measurements]] | part: The N audio route of 2026-08-21 to 08-25 from the ES… |
 | [[2026-07-feature-audio-and-speech-lane-complementary-layers-and-lessons]] | part: The complementary layers lane of 2026-09-07 and its… |
+| [[2026-07-feature-audio-and-speech-lane-corpus-data-guide]] | part: How to read the Congress speech and audio corpus as of… |
 | [[2026-07-feature-data-collection-lanes]] | Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills |
 | [[2026-07-feature-data-collection-lanes-collection-scope]] | part: Melange data-collection scope: the corpus coverage census… |
 | [[2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency]] | part: The LobbyView lane of 2026-08-07/08: the org-mentions… |
@@ -252,6 +253,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade]] | part: The LobbyView lane of 2026-08-05/06: the five-lane pass… |
 | [[2026-07-feature-data-collection-lanes-contact-inference]] | part: The contact-inference extraction lane of 2026-08-28/29… |
 | [[2026-07-feature-data-collection-lanes-sentinel-lanes]] | part: The September 2026 sentinel lanes: the press and hearing… |
+| [[2026-07-feature-data-collection-lanes-contact-inference-design-and-evaluation]] | part: The design and the evaluation plan for a… |
 | [[2026-07-feature-influence-engine-internals]] | July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder |
 | [[2026-07-feature-influence-engine-internals-salience-sna-wave]] | part: The six-paper salience and press-SNA wave of 2026-07-01 in… |
 | [[2026-07-feature-influence-engine-internals-receptivity-layer]] | part: The receptivity layer of the influence engine (2026-07-02… |
@@ -295,11 +297,14 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-08-incident-workstation-disk-and-backup]] | C: filled by repo worktrees, cleared repeatedly (185.9 GB free on 2026-09-18); OneDrive stalled since 08-11; backup gaps |
 | [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] | part: The workstation backup coverage gap measured on 2026-09-07… |
 | [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]] | part: The disk clearances and worktree retirements of 2026-09-11… |
+| [[2026-09-feature-cosponsor-first-signature-forecast-experiments]] | The 2026-09-05 research series that forecast which of 377 continuing members would make a first… |
 | [[2026-09-feature-staffer-network-data-and-math]] | Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship. |
 | [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture]] | part: The employment-tenure data adjudication of 2026-09-01 to… |
 | [[2026-09-feature-staffer-network-data-and-math-sorting-lane]] | part: The staffer sorting lane of 2026-09-06 to 09-08: its… |
 | [[2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane]] | part: The SNA math audit of 2026-09-05 and the co-tenure clique… |
 | [[2026-09-feature-staffer-network-data-and-math-stale-imports-and-v7-spine]] | part: The stale-imports lane of 2026-09-06 and the closeout of… |
+| [[2026-09-feature-staffer-network-data-and-math-duration-ranking-and-v8-cutover]] | part: The staffer co-tenure ranking contract implemented and… |
+| [[2026-09-feature-staffer-network-data-and-math-successor-design-and-release-gates]] | part: The 2026-09-08 successor design for the staffer network… |
 | [[2026-09-feature-staffer-network-surfaces]] | Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane. |
 | [[2026-09-feature-ui-redesign-boards]] | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
 | [[2026-09-feature-ui-redesign-boards-melange-boards-and-build]] | part: The Melange dashboard redesign boards of 2026-09-22 and… |
@@ -350,18 +355,25 @@ Every note of this project by type, one line each; parts follow their parent.
 - [[gold-set-validation]] - A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
 - [[four-pillar-percentile-blend]] - The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept.
 - [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
-- [[say-do-gate]] - A member is shown as Champion or Defender in a category only if the stated stance is backed by a costly signal there: an authored or original-cosponsored bill (Path A, the 2026-07-07 Rule A) or, since 2026-07-08, a recorded CU-aligned final-passage vote (Path V) or a Chair or Ranking seat on a committee of jurisdiction over a gatekeep category (Path J); otherwise the cell displays Ally.
+- [[say-do-gate]] - A Champion or Defender cell in the category-stance matrix stands only if the stated stance is backed by a recorded action there: an authored or original-cosponsored bill (Path A) or a CU-aligned final-passage vote (Path V); otherwise Ally.
 - [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
 - [[two-hop-stance-decomposition]] - CU alignment = stance hop (speaker to target) x valence hop (target to CUs); the ceiling is the valence hop, fixed by a curated registry
 - [[concurrent-service-overlap-edge-rule]] - Staffer social-network edge rule: a person-person edge needs real concurrent service in one container; sequence is trajectory, not an edge.
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
+- [[stance-pipeline-integrity-contract]] - The 2026-07-15 production contract for Melange stance labels: one fixed ten-band scale for every domain, bounded exceptional rounding, General CU allocation, the A/V say-do rule, fail-closed identity joins and regeneration checks.
+- [[demographic-potential-method]] - The district and state market score behind the desk's Demographic Potential label: v2.1 growth room (2026-07-25 doc, eight judgmental weights), replaced as default on 2026-09-16 by v3.0 credit-union footprint.
+- [[behavior-qualified-recognition]] - Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
+- [[boot-protocol-evaluation-framework]] - The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
 
 ### Discussions
 
 - [[2026-07-27-acu-outline-north-star-rulings]] - Paul's 2026-07-27 rulings: ACU Search Outline docx is the 19-category review north star; letters mandatory; amendments count half
 - [[2026-07-30-coalition-builder-redesign-session]] - 2026-07-30 design session: static-substrate/dynamic-eval verdict, 8 positions with critic verdicts, merge-main precondition
+- [[2026-08-29-politico-pro-access-and-permission-rulings]] - Two 2026-08-29 records on the Politico Pro staff directory: a terms-based ruling prohibited automated extraction; a supplement on Paul's attested permission letter authorized a rate-limited, contact-free crawl, kept off for canonical use.
 - [[2026-09-03-staffer-network-architecture]] - Paul's 2026-09-03 ant-colony ruling: staffer network = own social network beneath members; member graph kept; OVERLAP is the only edge rule.
 - [[2026-09-06-staffer-sorting-rulings]] - Paul's nine 2026-09-06 staffer sorting rulings: name standard + spine re-key, Groups tab, LDA plain labels, git lifted for this lane.
+- [[2026-09-08-staffer-spine-identity-adjudication]] - The 2026-09-08 adjudication, on Paul's instruction, of the staffer spine identity audit: bounded name repairs plus a fail-closed merge guard instead of automatic merging; title matches are review candidates only; v8 spine verified 50/50.
+- [[2026-09-20-primacy-diagnostic-adoption]] - Paul ratified the primacy diagnostic CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating on 2026-09-20: a beneficiary-weighted legislative grade and CU-weighted press from a fixed 7,413-item ledger; PRIMACY_METHOD=legacy rolls it back.
 
 ### Related Projects
 

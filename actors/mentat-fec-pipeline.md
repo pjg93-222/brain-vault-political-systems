@@ -35,7 +35,7 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -52,6 +52,7 @@ Code root: `C:\Users\pgoff\Mentat` (a registered worktree of the Melange repo on
 - [[mentat-fec-pipeline-history-hardening]] — History of the Mentat FEC pipeline hardening on 2026-07-22/23: corruption defects re-tested, acronym-variant collisions, the override matcher fix, version control and lineages, the Fintech ordeal and perf round 2.
 - [[mentat-fec-pipeline-history-audit-r12]] — History of the six-agent audit of 2026-07-27, the trade-association $0 fix and the R12 reconciliation, as recorded on the Mentat FEC pipeline.
 - [[mentat-fec-pipeline-history-september-lanes]] — History of the Mentat FEC pipeline lanes of September 2026, from worker scaling and the tidy workbook to the collector slowdown, the truncated-key outage and the uncommitted reconcile.
+- [[mentat-fec-pipeline-runbook]] — How the Mentat R pipeline is run and kept correct (README of 2026-09-26): resilient industry runner, mentat.R flags, adding an industry, API collection rules, cross-reference before export, source and dollar reconciliation.
 
 ## Details
 
@@ -187,6 +188,7 @@ Practical: Write/Edit refuse `C:\Users\pgoff\Mentat` from a Melange worktree ses
 
 - [[exclude-on-contradiction-not-ambiguity]] - Brain D-040: exclude a row only when its own evidence contradicts the attribution; missing or ambiguous info is flagged, not excluded.
 - [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
+- [[mentat-fec-accounting-methodology]] - The six-step accounting standard (version 5) this pipeline implements: original giving counted once, PAC outgoing shown separately, four accuracy measures.
 
 ## Related People
 

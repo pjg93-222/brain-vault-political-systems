@@ -9,8 +9,12 @@ actors: []
 objective: ""
 created_at: 2026-06-26
 sources: []
+doc_sources:
+  - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\research\\MEMBER_PERSONAL_RELATIONSHIPS_V3_MATH.md"
+    sha256: "9b464077d9155e371815d51c099626a4641b2a8821e8cede93937dd50e84f61c"
+    as_of: "2026-09-19"
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 part_of: "[[2026-06-feature-cosponsor-and-sector-networks]]"
 ---
@@ -40,3 +44,16 @@ Memory description: "Member personal relationships model (friendship/friction fr
 - **Why (Paul's spec):** degrees of friendship AND friction vs ordinary chamber behaviour, estimate/evidence/confidence separate, original cosponsorship required.
 - **Pair scoring (P1-5/6/8/11) DONE 09-12:** `pair_scoring.py`, three runs (`20260911_pair_scores[_residuals|_115_119]`, ~500 MB each): 141,246 pairs; joint estimate for 196,758 of 282,492 directed rows; sign rows reproduce the contract (109/180, 114/140); LORO MAE vs original grades 0.816 (23) / 0.728 (9), vs blind-agreed 0.720 (29) / 1.051 (22); 47-pair AUC unreportable (all affinity cells presence, all but one friction cell ordinary): label supply, not model. Lane suite 591.
 - **How to apply:** quote every AUC with denominator and row spec; unmeasurable dyads = evidence availability, never imputed; the expression contrast is "excess ritual warmth" until the cue classifier is replaced; evidence records must store verbatim passages plus locators (DE-020 candidate). Next: Paul adjudicates 31 + 38 items, rules on raw-vs-residual work channel, the 10 PDF-only links, the canonical universe (115-119?), the 13 pair-scoring design choices; then test registration and the `blind_grading` QWK guard fix; more labels needed before any presence-vs-ordinary AUC. See `ask-before-substantive-changes`, `no-git-plain-review-2026-09-01`, `disk-census-2026-09-11`.
+
+## Full-history method v3 (`research/MEMBER_PERSONAL_RELATIONSHIPS_V3_MATH.md`, 2026-09-10)
+
+The implemented methodology after the user's corrections: observed cosponsorship propensity over available history, jointly cosponsored bills, political and geographic context held constant, and personal language read relative to the speaker. It is an evidence assessment with transparent components, not the earlier small fitted classifier.
+- **Data:** H.R. and S. bills of Congresses 116-119; a target roster of 532 members with dated service at the 2026-09-10 cutoff; only duplicate canonical bill IDs are collapsed.
+- **Opportunity and propensity:** E(i,b) = 1 if member i served in the bill's chamber between introduction and the earlier of Congress end or cutoff and was not its sponsor; A(i,b) = 1 if i joined during dated service in that window (no 30-day gate). Direct propensity P_direct(i,j) = D(i,j) / N(i,j), signatures on j's bills over opportunities; a zero denominator is unavailable, not zero support.
+- **Shared cosponsorship:** C(i,j) = Σ_b A(i,b)A(j,b) over third members' bills, with P_shared = C / T; the comparison feature is a weighted Jaccard overlap with bill weight w(b) = 1/max(1, k(b) − 1) for a bill with k cosponsors, so large coalitions count less.
+- **Context held constant:** targets are compared with peers of the same party relation, state relation, chamber relation, DW-NOMINATE distance bin (0.2) and issue-profile similarity bin (0.25); at least five peers are required, and nothing is subtracted for shared geography or ideology.
+- **Network proximity:** Q(i,j), the cosine similarity of i's and j's weighted cooperation profiles excluding both endpoints; no enemy-of-an-enemy rule.
+- **Personality and speech:** trait similarity S_t = exp(−|z_i − z_j|), with E, A and O as the primary compatibility indicator (supportive only when at least two are observed and the mean is at or above the roster median; missing or dissimilar traits are never negative evidence). Speech cues are lexical retrieval statistics needing source review, and a proposed distinctiveness weight M(i) = 1 + (1 − q(i)) × reserved(i), ranging 1 to 2, weights rare warmth from reserved speakers more; the source states it is not validated.
+- **Decision rules:** documented friendship needs a context-reviewed personal statement; inferred affinity needs at least two supports (selective sustained cooperation, above-median compatibility, network proximity at or above the 75th comparison percentile, repeated reviewed positive episodes, or M ≥ 1.5); the legislative review flag needs shared Jaccard at or above the 90th percentile plus direct propensity at or above the 75th or proximity at or above the 90th, at least five shared bills and shared bills in at least two Congresses. Dislike needs reviewed person-directed hostility; mismatch, low cooperation, ideology or distance never create it.
+- **Testing:** regression cases, full-panel invariants, independent bill recounts, and the original documented pairs with their personal statements hidden from the work and network calculations; a retrospective check, not a calibrated accuracy claim. Outputs: `outputs/member_personal_relationships/20260910_full_history`.
+- **Dated note:** this method's A(i,b) counts any join during dated service. The rulings recorded above for 2026-09-10 made the canonical benchmark original-cosponsorship-only and strictly before, and the pair-scoring sign rows reproduce that contract. Both are dated 2026-09-10; check which definition a run used before citing its numbers.
