@@ -13,17 +13,18 @@ pci: false
 known_issues:
   - "A hung lane console (console.ps1 -Lane <x>) holds state\\lane-<x>.runtime.lock (FileShare::None) and blocks every metaloop start; launch.ps1 will not clear it: kill the PID"
   - "The auto-mode classifier blocks Stop-Process: killing the hung PID needs Paul's approval (ask once, with the PID and start time)"
-  - "settings.json hook mirror stopped being invoked in app sessions ~2026-08-06 (zero hook-sourced events, zero agent.*/task.* ever); coordinator must emit agent.*/task.* pairs itself"
+  - "settings.json hook mirror stopped being invoked in app sessions ~2026-08-06 (zero hook-sourced events, zero agent.*/task.* ever); coordinator must emit agent.*/task.* pairs itself. Correction 2026-10-03: the 16 mirror.ps1 hooks were dead from about 2026-08-02 because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths; fixed 2026-10-03 with forward slashes"
   - "Grok lane down 2026-08-06: HTTP 402 Grok Build usage balance exhausted"
   - "Codex MCP idle timeout aborts long codex-reply ('sent no response or progress'); edits may have partially landed"
   - "Array params must be passed via -Command, never -File (silent bind failure)"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/glassbox-lane-lock-hang-2026-08-06.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\glassbox-lane-lock-hang-2026-08-06.md", sha256: "931cdc0deb8e18dce2c3b3f12415d5baca4fcfb57bf79d0e98089dd5fee3092b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/glassbox-everything-rule-2026-07-27.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\glassbox-everything-rule-2026-07-27.md", sha256: "d803cdacd32e6f6d3fbac015ed401fa5898e1bf27a82dafa6d237bad6a85b787"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e/memory/windows-hook-shell-git-bash.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e\\memory\\windows-hook-shell-git-bash.md", sha256: "a239f75054598a3e26fa33f532b3a325b6501c3277add53d25908a2055522138"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -88,6 +89,8 @@ flow.ps1 -Action skip                              # skip a lane that is a capab
   - Remedy: confirm the PID's command line is the expected `console.ps1 -Lane <x>`, `Stop-Process -Id <pid> -Force`, delete `state\lane-<x>.heartbeat.json`, then start again. The auto-mode classifier blocks `Stop-Process`, so this needs Paul's approval: ask once, with the PID and its start time. Killing a lane console is safe: it is a viewer, the event log is the source of truth.
   - Likely trigger: a console frozen on QuickEdit text selection.
 - **GLASSEYE (2026-08-09):** the settings.json hook mirror stopped being invoked in app sessions ~2026-08-06 (zero hook-sourced events since, zero `agent.*`/`task.*` ever); `mirror.ps1` itself verified healthy against synthetic payloads (the harness stopped calling it; all hook names remain canonical per docs, no documented schema change). Workaround: the coordinator emission section above.
+  - **Correction 2026-10-03 (source `windows-hook-shell-git-bash`):** the harness did call the hooks; their commands failed. Claude Code on this machine runs hook commands through Git Bash, which strips the backslashes from an unquoted Windows path (`-File C:\...\x.ps1`), so the 16 `mirror.ps1` hooks in `~/.claude/settings.json` were dead from about 2026-08-02 until 2026-10-03, silently, because async hook failures are silent. Fixed with forward slashes (original backed up at `settings.json.bak-glassbox-2026-10-03`); the hooks hot-reload, and live sessions began emitting glassbox events within about 46 seconds. Rule and hook test recipe: Tooling and environment traps, Rule 6.
+  - Reviving the hooks also restarts retention: `common.ps1` keeps the newest 5000 `*.json` files in `events/`, pruned about every 5 minutes.
 - **Grok lane down.** `grok -p` returned HTTP 402 `Grok Build usage balance exhausted` on 2026-08-06. The lane is a capability block, not a work failure: emit `flow.ps1 -Action skip` for it and reroute the independent review to a FRESH `mcp__codex__codex` thread (read-only sandbox, reviewer framing). That substitution worked well: the review found 11 real defect groups.
 - **Codex MCP idle timeout.** A long `codex-reply` aborted with "sent no response or progress"; the edits had partially landed. Never infer the outcome: `git status` + a byte-diff audit is the only truth. Set a per-server `timeout` in MCP settings or `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` to avoid it.
 - Codex escalated FOUR genuine contradictions in Claude-authored specs during this run (a freeze-list/substitution conflict, a data token being rethemed, bad count arithmetic, and an unused token that would inject a frozen literal). The escalation protocol is earning its keep: never treat a Codex stop as obstruction. (See `melange-ui-retheme-2026-08-06`.)
@@ -115,7 +118,7 @@ Any process (collector, restore, audit, pipeline stage, background watcher) must
 - HOOKS INSTALLED + PROVEN 2026-07-24 23:42: Paul hand-authored `settings.json` (3rd attempt; 1st never saved, 2nd had paste debris), PARSE-VERIFIED: 2 dispatch allow rules + PostToolUse hook (Write|Edit|NotebookEdit|PowerShell|Bash|mcp codex tools -> `mirror.ps1`, timeout 15). Mirror path proven end-to-end (fake `mcp__codex__codex` JSON piped through `mirror.ps1` displayed in the GREEN window and consumed, inbox 0 pending). Hooks fire only in sessions started AFTER the save.
 - CORRECTION 2026-07-24: `settings.json` mtime 7/7 + 38 bytes proved the allow rules were NEVER on disk at the earlier point (Paul's Copy-Item never landed); dispatch calls then succeeded on classifier goodwill (user approval on record), not on any rule.
 - `/glassbox` slash command rewritten grant-free and BOM-less (first bytes 45,45,45,10): it dispatches a hello through each lane to open all windows. The earlier `~/.claude/commands/glassbox.md` was BROKEN (UTF-8 BOM killed its frontmatter); never recreate its allowed-tools auto-apply form (that exact write was classifier-blocked). PS5.1 `Set-Content -Encoding utf8` writes a BOM: never use it for files needing frontmatter (use `[IO.File]::WriteAllText` with `UTF8Encoding($false)`). `settings.json.bak` is the backup.
-- Full-visibility architecture: transcript = visible PowerShell commands (always-on rule); desktop = 4 lane windows fed by (a) `dispatch.ps1` live execution and (b) harness-enforced PostToolUse mirrors across ALL sessions/projects.
+- Full-visibility architecture: transcript = visible PowerShell commands (always-on rule); desktop = 4 lane windows fed by (a) `dispatch.ps1` live execution and (b) harness-enforced PostToolUse mirrors across ALL sessions/projects. (Part (b) was dead from about 2026-08-02 to 2026-10-03; see the GLASSEYE correction.)
 
 ## Timeline
 
@@ -124,8 +127,9 @@ Any process (collector, restore, audit, pipeline stage, background watcher) must
 | 2026-07-24 | Desktop rig built, lane-aware four windows; mirror layer; hooks hand-installed and proven (23:42) |
 | 2026-07-27 | Paul's standing everything-through-Glass-Box rule after two invisible-work failures |
 | 2026-08-06 | Hung lane console blocks metaloop start; Grok balance exhausted (HTTP 402); Codex MCP idle timeout |
-| 2026-08-06 | Hook mirror stops being invoked in app sessions (found 2026-08-09, GLASSEYE) |
+| 2026-08-06 | Hook mirror stops being invoked in app sessions (found 2026-08-09, GLASSEYE); corrected 2026-10-03: dead from about 2026-08-02, a Git Bash path failure, not a harness change |
 | 2026-08-09 | GLASSEYE: coordinator-side emission adopted (metaloop.md section @18dab6b) |
+| 2026-10-03 | Hook mirror revived: the 16 `mirror.ps1` hooks rewritten with forward-slash paths; events flowed again within about 46 seconds; retention restarted |
 
 ## Related Actors
 

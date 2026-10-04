@@ -13,11 +13,12 @@ actors:
 objective: "Make the Mentat console forecasts both look better and be right: audit the three forecasts and their regressions, rebuild the giving view as board F2 'Giving by cycle' with projections checked for logical validity against the test results, and refine PAC-to-candidate giving accuracy (attempt 2, HOLD, UT-X sealed)."
 created_at: 2026-09-29
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "e86a3ffa346737c317992a3510f25a8d3430b833077ad8b3eb615faa53be2bb8"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "89d010b300fa8907c87ea70a53067bc75410687e7e5c6cbed1c0e493912232b3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "320afff4a5fabfd67d9f4db59835885458211ec89b63ac75655e91a19b3a0da3"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "048c64646a7b93e51387a406ab238c2cb85a30f8679607b83424e06616fc5c1c"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -87,6 +88,9 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 | 2026-10-01 10:58:25Z | F2 UI LIVE (`apply_f2.py` 829cd9da; 3 review rounds). |
 | 2026-10-01 | Forecast UI v3 direction: Paul rejected the 3 Nano Banana boards; next boards in GPT Image 2.5. |
 | 2026-10-02 / 2026-10-03 | PAC-to-candidate accuracy refinement attempt 2 (S0-S7 stages); S2 gate BLOCKED, S2B repaired, gate HELD; Paul's B1-B3 then C1-C2 rulings; S2C launched ~06:2x UTC on 2026-10-03. |
+| 2026-10-03 ~08:45 UTC | Attempt 2 FINISHED (Paul: "finish"): S2C gate PASS, S3 dev-only one pass, S4 ACCEPT_WITH_REPAIRS, S5 disclosure repairs, S6 ACCEPT_WITH_NOTES, S7 delivery; goal NOT met, HOLD unchanged, UT-X SEALED_NOT_SCORED; Paul OK'd the one-time scoring task for 2027-03-08. |
+| 2026-10-03 | v4 branch (Paul: "use the pas208 and pas210 files as history"): one V3 RESCORE pass; v4 WORSE for banks nowcasts; v3 stays the record. Then Paul's directive: further accuracy work looks back only 6 years (ruled ROLLING the same day) and must come from methodology; v4 is a regression. |
+| 2026-10-04 | Paul's v5 rulings on `strategy/V5_AMENDMENT.md`: strict 3-cycle cap, a fixed-rule primary, a v5 2026 line in the March 2027 job, and 2028 prepared as the first clean test with the needed FEC downloads authorised. |
 
 ## Decisions
 
@@ -108,6 +112,8 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - Paul's rulings on landing (2026-10-01): "D4, B. Apply rest" (anchors exclude non_giving; calc fixes).
 - Display rule: "No fucking headline"; Paul rejected the 3 Nano Banana boards; v3 boards use GPT Image 2.5, time-series stacked D/R bars by cycle.
 - PAC accuracy attempt 2 (2026-10-03): B1 the 1% rule applies to "cycles the cell reads" (threshold unchanged); B2 strict own-PAC P&C identity; B3 FILED = as-of-issue vintage rebuild; C1 UT-X stays SEALED, S3 dev-only; C2 FILED = disclosed amendment-loss lower bound, no-downloads stands. Full text in [[2026-10-03-pac-accuracy-attempt2-rulings]].
+- PAC accuracy attempt 2, v4 branch (Paul 2026-10-03, "use the pas208 and pas210 files as history"; source `pac-accuracy-attempt2-lane-2026-10-03`, newer version): D1 inputs only, D2 v4 live freeze, D3 lean run. Result: v4 is WORSE for banks nowcasts, so v3 stays the record (detail in PAC accuracy attempt 2).
+- Six-year lookback directive (Paul 2026-10-03, ruled ROLLING the same day) and the v5 rulings (2026-10-04): accuracy work may look back only the 3 cycles (6 years) before each forecast's issue date, gains must come from methodology, and older history is never again proposed as an accuracy lever (detail in Six-year lookback directive and v5 rulings).
 - ~~Pod rule (2026-09-30 angry): "Why hasn't all of these processes been moved over to the Pod?" -> ALL heavy compute goes to the pod; agents only edit locally.~~ Superseded the same day: pod "Don't need that right now" (run locally), then a new pod, then the late reversal ("Go onto the pod to work" / "Move out of the pod" / "Bring everything out with it") which lifted the pod-only rule for this lane; kept because it explains older artifacts.
 
 ## Next Steps
@@ -120,7 +126,10 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - [ ] Open questions for Paul on LDA: `sector_spend` has only crypto/credit_union/bank/fintech (no auto, no P&C) and two never-combined series (income_total vs expenses_total)
 - [ ] P&C needs from Paul: OpenSecrets F3400 totals 2008-2024 + candidate recipients 2012-2024, IBISWorld 52412 2025+ edition (see Decisions: F3400 has no public page; F09 used)
 - [ ] Paul cleanup list: C: ~5 GB free, Paul offered a cleanup list (review copies); deletion is his
-- [ ] PAC accuracy attempt 2: finish S2C narrow repair -> v3 freeze -> ONE Opus verifier gate; never launch S3 without Paul's OK and a fresh gate on the v2 freeze; Glass Box watcher alongside every stage
+- [x] PAC accuracy attempt 2: finish S2C narrow repair -> v3 freeze -> ONE Opus verifier gate; never launch S3 without Paul's OK and a fresh gate on the v2 freeze; Glass Box watcher alongside every stage. Done 2026-10-03: the S2C gate PASSED, S3 ran dev-only (one pass) on Paul's "finish", and the attempt finished ~08:45 UTC (see PAC accuracy attempt 2).
+- [ ] Paul to rule on S6 MAJOR-2 (FILED UNAVAILABLE cells still publish per-target predictions: a breach of the withheld pin?), open since 2026-10-03.
+- [ ] 2027-03-08 09:00 ET: the one-time scheduled task `score-pac-live-freeze-2026` (Paul OK'd 2026-10-03; it stops if there is no local pas226 edition dated >= 2027-03-01) scores v3 (the record) and LIVE_FREEZE_V4_1 side by side, plus the v5 2026 line Paul added on 2026-10-04.
+- [ ] v5: freeze the method and plan before 2027-01-31 for 2028, the first clean test, and freeze each forecast within 14 days of its issue date (Paul's D8, 2026-10-04).
 - [ ] Phase 1-6 remainder: Phase 3 deliverables rollback-on-partial-write fix, Phase 4 D1 copy_back rollback REQUIRED + D2-D4 wording/README, Phase 2 anchor addendum + feeds spec (state at the 09-30 pause; later phases applied, see History)
 
 ## Audit lane, 2026-09-29 (worktree `forecasting-model-audit-5603f2`)
@@ -215,6 +224,24 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - S2B done ~05:46 UTC, v2 freeze; gate HELD (`receipts/GATE_S2B_COORDINATOR.md`): certification structurally unreachable (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4), P&C cohort = Travelers + legacy Chubb Corp only, FEC bulk files keep only latest report version so FILED can't be truly as-of-issue.
 - Paul's rulings 2026-10-03 (second round): C1 UT-X stays SEALED this attempt; S3 dev-only (banks, SchoolsFirst), METHOD_SPEC still frozen; opening UT-X needs new owner ruling. C2 FILED = disclosed amendment-loss lower bound; no-downloads stands. S2C narrow repair -> v3 freeze -> ONE Opus verifier gate (not 3). S2C launched ~06:2x UTC.
 - **Why:** UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it. **How to apply:** never launch S3 without Paul's OK and a fresh gate on the v2 freeze. Glass Box watcher must run alongside every stage (S2's first 49 min were unwatched). Related memory names: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
+- **FINISHED 2026-10-03 ~08:45 UTC** (Paul: "finish"; newer version of the source memory): S2C gate PASS -> S3 dev-only one pass -> S4 ACCEPT_WITH_REPAIRS -> S5 disclosure repairs -> S6 ACCEPT_WITH_NOTES -> S7 zip `delivery/attempt2_pac_accuracy_20261003.zip` plus an Artifact report (`https://claude.ai/artifact/FatsU6m8xyePv2QnTTdyCx`). Goal NOT met; HOLD unchanged.
+  - Banks FC DUE (dev): ORIGIN 88.89 FAIL, m12 89.32 FAIL, m15 92.33 / m18 91.70 / m21 97.26 / L 96.30 OBSERVED_PASS (earliest m=15). SchoolsFirst FC: all FAIL (m21 91.38 FAIL_SUBGROUP, pres 88.87). UT-X SEALED_NOT_SCORED.
+  - LIVE_FREEZE 2026 is frozen; scoring it (about March 2027) needed Paul's OK, given 2026-10-03: the one-time scheduled task `score-pac-live-freeze-2026` fires 2027-03-08 09:00 ET and stops if there is no local pas226 edition dated >= 2027-03-01.
+  - Open for Paul: S6 MAJOR-2 (FILED UNAVAILABLE cells still publish per-target predictions: a breach of the withheld pin?).
+- **v4 branch** (Paul 2026-10-03: "use the pas208 and pas210 files as history"; rulings D1 inputs only, D2 v4 live freeze, D3 lean run): V1 amendment -> V2A blocked (stale pre-S3 tests; coordinator ruling R-V2B deselect) -> V2B ready -> gate blocked (v3-tree check reference) -> V2R fix R-V2R plus the superseding freeze V4_1 -> re-gate PASS -> V3 RESCORE, one pass -> V4R ACCEPT_WITH_NOTES. Result: v4 is WORSE for banks nowcasts (m15 92.33 -> 86.38; earliest clearing m15 -> m21), driven by the 2010 pace ratio 2.36; ORIGIN unchanged. v3 stays the record; the March 2027 job now scores v3 and LIVE_FREEZE_V4_1 side by side. The report was republished as v2 at the same Artifact URL (page file `v4/report/report.html`; `delivery/report.html` untouched).
+
+## Six-year lookback directive and v5 rulings (2026-10-03/04; source `pac-accuracy-six-year-lookback-directive-2026-10-03`)
+
+Memory file description: "Paul 2026-10-03 - PAC giving forecast accuracy work may look back only 6 years; gains must come from methodology, not more history; v4 (2008/2010 history) = regression".
+
+- **Paul, 2026-10-03, after the attempt-2 v4 RESCORE (verbatim):** "For further accuracy we should only be looking 6 years back from current, not more years, what needs to improve is methodology, I consider this overall a regression."
+- Never propose adding older history (pre-2012 files, longer pace sets, more cycles) as an accuracy lever again.
+- Accuracy proposals must change methodology (model form, selection, pace estimation, cohort handling, nowcast blending), within a 6-year lookback.
+- The v4 branch (pas208/pas210 as history) is judged a regression; v3 stays the attempt-2 record.
+- **Why:** v4 added 2008/2010 and banks nowcasts got worse (m15 92.33 -> 86.38), driven by the 2010 outlier cycle; Paul reads more history as noise, not signal.
+- **Ruled the same day:** "6 years back" is ROLLING: each forecast uses only the 3 prior cycles (6 years) before its own issue date, and the 2016-2024 backtests still run. The current v3 reads up to 4 cycles back in some pace sets, so a methodology attempt must trim that. The March 2027 job keeps scoring BOTH v3 (the record) and v4 (labelled a post-hoc regression).
+- **v5 rulings (Paul, 2026-10-04, on `strategy/V5_AMENDMENT.md`):** D1 strict cap (Cap-W: the whole information set inside the 3 prior cycles, so no nested selection); D3/D4 primary = a fixed rule: ORIGIN = B1, NOWCAST = an equal-weight 3-cycle window pace blended 50/50 with B1 in remaining-period space (K1+K2), with N2/N4/N5 and selection dropped; D6 YES, add a v5 2026 line to the March 2027 job (v3 stays the reference); D8 YES, prepare 2028 as the first clean test and AUTHORISE the needed FEC downloads (method and plan frozen before 2027-01-31; each forecast frozen within 14 days of its issue date). Coordinator defaults, not objected: D2 exclude 2010, D5 three arms CAP_W / CAP_S / PA, D7 no on-time 2026 m21 line, D9 Sonnet builds (the standing 2026-10-01 rule).
+- **How to apply:** in any PAC-accuracy strategy, predeclaration or review, cap every model input and pace set at the 3 cycles before the forecast's issue date, and frame every candidate improvement as a methodology change. Related memory: `pac-accuracy-attempt2-lane-2026-10-03`.
 
 ## Traps and lessons (consolidated)
 
@@ -226,3 +253,4 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - Claude desktop app restarts kill agents mid-task (not the pod).
 - Never use or store a pasted password; IBIS = inbox ingester only; OpenSecrets fetcher: no bot-detection/CAPTCHA circumvention.
 - Legacy response fields keep negative/budget_inconsistent values; UI must read `remaining_allocation` + `*_given_observed_*`.
+- Launch long stages DETACHED (`Start-Process`): the background shell has a 2-hour cap (PAC attempt 2, v4 branch, 2026-10-03).

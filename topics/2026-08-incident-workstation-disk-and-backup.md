@@ -12,12 +12,12 @@ actors:
 objective: "Keep the LG Gram's single C: drive from filling (every new session worktree costs ~18 GB via tracked audits/legfix5) and close the backup gaps: OneDrive stopped ingesting on ~2026-08-11, Carbonite does not cover melange-data, and ~48 GB of audio is unrecoverable if C: dies."
 created_at: 2026-08-11
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "d344e91e5b143e36a8846cbd15ea7bc1b0d65cd3f448a0b623bbeddf921803d1"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "7cfbd6eb35a782151a209c74bb3499efeeb44b9462dfcc4606da4eff5dd9ad09"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-cleanup-lane-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-cleanup-lane-2026-09-16.md", sha256: "8a4846eaf6cbb47d9096e3340c8987a7d3b07d75edd9c6bc5f8b8c919d54b1cc"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-census-2026-09-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-census-2026-09-11.md", sha256: "a60c04e092cb6a9de1332fc0c52b98fac2d1c0b481506063cdccd3dd5ef4687f"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/backup-coverage-gap-2026-09-07.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\backup-coverage-gap-2026-09-07.md", sha256: "7338b06f727216529838a57ea43fa60ca3e94f42420f8346d5014aad1a5db1d0"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 ---
 
@@ -106,13 +106,13 @@ Newest first within each topic; superseded rulings are struck through and kept b
 
 ## Mirror state (summary; detail in the mirror entity)
 
-Remote `mirror` = `C:\Users\pgoff\GitMirrors\melange-systems.git` (Carbonite-covered; first push sha-identical `@b76d8807`). 2026-08-18: all 174 branches + 3 tags pushed. 2026-09-19: mirror `main` had sat at `2049fea9f` since 2026-09-08 and 88 of 292 local branches were absent (incl. `claude/melange-systems-code-review-859518`, only home of the 09-13 packet at `77959ae74`); `git push mirror main` then `--all` and `--tags`: 90 refs pushed, 0 rejected, 292 of 292 present, `main` = `a19c796d2`, 3.1 GB; `post-commit` / `post-merge` hooks (brain D-059, `<live>\.git\hooks\`) push the branch just committed (failures in `.git\mirror-push-failures.log`, Glass Box source `melange-mirror-hook`, proven by commit `b99ba565d`). GitHub is blocked by 2.6 GB blobs; see [[melange-repo-mirror]].
+Remote `mirror` = `C:\Users\pgoff\GitMirrors\melange-systems.git` (Carbonite-covered; first push sha-identical `@b76d8807`). 2026-08-18: all 174 branches + 3 tags pushed. 2026-09-19: mirror `main` had sat at `2049fea9f` since 2026-09-08 and 88 of 292 local branches were absent (incl. `claude/melange-systems-code-review-859518`, only home of the 09-13 packet at `77959ae74`); `git push mirror main` then `--all` and `--tags`: 90 refs pushed, 0 rejected, 292 of 292 present, `main` = `a19c796d2`, 3.1 GB; `post-commit` / `post-merge` hooks (brain D-059, `<live>\.git\hooks\`) push the branch just committed (failures in `.git\mirror-push-failures.log`, Glass Box source `melange-mirror-hook`, proven by commit `b99ba565d`). 2026-10-03 (Paul: "refresh the mirror with all branches"; source `repo-mirror-2026-08-11`, newer version): `--all` and `--tags`, no force, never `--mirror`: 27 new branches pushed, 339 of 339 local branches present and current, `main` = `3248a6a02`; three mirror-only refs left alone. GitHub is blocked by 2.6 GB blobs; see [[melange-repo-mirror]].
 
 ## Next Steps
 
 - [ ] Paul to decide: untrack `audits/legfix5` or have a post-checkout hook apply the sparse pattern to new session worktrees (the structural fix; a hook is persistent configuration, never install unasked).
 - [ ] Paul to decide the items found and left for him (see "Left for Paul"): 43.17 GB `charming-chatterjee-d81c90` scratchpad `temp_console_old_code\state`; slim `mentat-failings-lane-a615fa` (17.5 GB); `C:\tmp\clone_probe` (6.65 GB); a reboot to shrink `pagefile.sys` (84.5 GB); `powercfg /h off` for hiberfil.sys (12.6 GB).
-- [ ] Mirror the two branches not on the mirror: `claude/wizardly-wilbur-e2d1a0`, `claude/melange-data-expansion-958236` ([[melange-repo-mirror]]).
+- [x] Mirror the two branches not on the mirror: `claude/wizardly-wilbur-e2d1a0`, `claude/melange-data-expansion-958236` ([[melange-repo-mirror]]). Resolved: the full refreshes of 2026-09-19 (292 of 292) and 2026-10-03 (339 of 339) verified every local branch present and current on the mirror (source `repo-mirror-2026-08-11`, newer version).
 - [ ] Re-census (100 s) before quoting any free-space number; always diff a second census to find new session worktrees.
 - [ ] Close the backup gaps: bring `C:\melange-data` (167.3 GB) and `AppData\Local\Melange` (21.7 GB) into a backup; find why OneDrive stopped (item count 563,215 vs ~300k ceiling and/or quota, unconfirmed); get an external drive for the ~48 GB unrecoverable audio.
 - [ ] Held worktrees still awaiting a Paul decision: `mentat-systems-production-file-53552c`, `melange-coalition-builder-design-7babbe`, Codex `4f35`, `melange-members-section-fixes-6613db` (live lane).

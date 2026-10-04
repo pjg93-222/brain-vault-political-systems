@@ -24,10 +24,11 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-console-startup-hang-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-console-startup-hang-2026-09-18.md", sha256: "64f937877616a1ec94000d791831999bba8f53fab41a80e28b8a26a2dce04a9d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-system-debug-lane-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-system-debug-lane-2026-09-13.md", sha256: "e7118cf1a8941e3e3c3ba7bdbc7b658fb29d27a2ebd23994606aa2370858b990"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-chart-studio-2026-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-chart-studio-2026-09.md", sha256: "9a490f3f4b6f52f21581ea4df39b58ea59cc6035c9aa0186f3a65ab7e940695d"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/frontend"]
 ---
 
@@ -167,7 +168,7 @@ MENTAT_COMPACT_RAW=1  MENTAT_FORMULA_FACTS=1  MENTAT_DETAIL_ROW_CAP  MENTAT_INDU
 - [[2026-09-feature-mentat-console-ui]] - Mentat console UI lanes 2026-09-11..25: Chart Studio, clean-up, polish, load-time/FEC links, Graph and pie quirks.
 - [[2026-09-feature-mentat-failings-pac-evidence]] - Mentat failings lanes S2-S8 (street columns, PAC evidence, industry addressing, URL scope, panes, categories, map) + PAC map audit.
 - [[2026-09-feature-ui-redesign-boards]] - Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks.
-- [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] - Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR unopened), tidy Data workbook, console hang fix.
+- [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] - Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR merged 2026-10-03), tidy Data workbook, console hang fix.
 
 ## Related Projects
 

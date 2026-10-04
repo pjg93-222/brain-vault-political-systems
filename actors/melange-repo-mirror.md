@@ -18,13 +18,15 @@ known_issues:
   - "A failed hook push exits 0 and is only recorded in .git\\mirror-push-failures.log: check it at close-out"
   - "git update-ref / branch -f moves fire no hook"
   - "Scope limit: covers git-tracked work only; the glassbox runtime at ~\\.claude\\glassbox is UNTRACKED and single-disk"
-  - "The mirror holds 2 branches that no longer exist locally (left alone); claude/wizardly-wilbur-e2d1a0 and claude/melange-data-expansion-958236 are NOT on the mirror"
+  - "As of 2026-10-03 the mirror holds 3 refs that no longer exist locally (left alone): claude/loving-hugle-6ebcb4, claude/holistic-normalized and backup/melange-math-eval-skill-18e907-4d54uu (the ONLY copy of 4 QME commits); every local branch (339 of 339) is present and current. This replaces the older item: 2 mirror-only branches, and claude/wizardly-wilbur-e2d1a0 and claude/melange-data-expansion-958236 NOT on the mirror (2026-09-18)"
+  - "Never git push --mirror to it: that would prune the mirror-only refs, including the only copy of 4 QME commits"
+  - "The post-commit hook pushes only the branch just committed, so branches created without a commit (worktree branches) drift until a --all refresh"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "d344e91e5b143e36a8846cbd15ea7bc1b0d65cd3f448a0b623bbeddf921803d1"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "7cfbd6eb35a782151a209c74bb3499efeeb44b9462dfcc4606da4eff5dd9ad09"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
 
@@ -68,9 +70,10 @@ Set up and Carbonite badge confirmed 2026-08-11 (Paul-directed). The bare repo l
 # Refresh after any merge to main (not automatic for main-only; hooks cover committed/merged branch)
 git -C "<repo>" push mirror main
 
-# Full mirror (Paul-ordered 2026-08-18 and 2026-09-19), no force
+# Full mirror (Paul-ordered 2026-08-18, 2026-09-19 and 2026-10-03), no force
 git push mirror --all
 git push mirror --tags
+# never `git push mirror --mirror`: it would prune mirror-only refs (2026-10-03)
 
 # Check what the mirror actually holds before claiming anything is unmirrored
 git ls-remote --heads mirror
@@ -94,8 +97,10 @@ Failure log to check at close-out: `.git\mirror-push-failures.log` (in the worki
 - Rewritten (non-fast-forward) branches are never forced and stay stale on the mirror until someone decides.
 - `git update-ref` / `branch -f` moves fire no hook.
 - Scope limit: git-tracked work only. The glassbox runtime at `~\.claude\glassbox` is UNTRACKED and remains single-disk.
-- 2 branches exist on the mirror that no longer exist locally (left alone).
-- As of 2026-09-18 two local branches are NOT on the mirror: `claude/wizardly-wilbur-e2d1a0` and `claude/melange-data-expansion-958236` (the backup bundle that held them was cleared after verifying each head was identical to the local branch; see [[2026-08-incident-workstation-disk-and-backup]]).
+- 2 branches exist on the mirror that no longer exist locally (left alone). As of 2026-10-03 there are 3 such refs: `claude/loving-hugle-6ebcb4`, `claude/holistic-normalized` and `backup/melange-math-eval-skill-18e907-4d54uu`, the ONLY copy of 4 QME commits (source `repo-mirror-2026-08-11`, newer version).
+- As of 2026-09-18 two local branches are NOT on the mirror: `claude/wizardly-wilbur-e2d1a0` and `claude/melange-data-expansion-958236` (the backup bundle that held them was cleared after verifying each head was identical to the local branch; see [[2026-08-incident-workstation-disk-and-backup]]). Superseded: the full refreshes of 2026-09-19 (292 of 292) and 2026-10-03 (339 of 339) verified every local branch present and current on the mirror.
+- Never `git push --mirror` to it: it would prune the mirror-only refs, including the only copy of 4 QME commits (2026-10-03).
+- The post-commit hook pushes only the branch just committed, so branches created without a commit (worktree branches) drift; refresh with `--all` at close-out (2026-10-03).
 
 ## Why it exists: OneDrive dehydration is not corruption
 
@@ -107,6 +112,7 @@ The working repo's `.git` lives under OneDrive. Files-on-demand dehydration make
 - Check `git ls-remote --heads mirror` before claiming anything is unmirrored (the old "only main is backed up" assumption is dead).
 - A future cloud remote (GitHub) is IMPOSSIBLE without history surgery; tracked blobs up to 2.6 GB (audits/legfix5 packets) vs the 100 MB limit, so never suggest a plain `git push` to GitHub as a quick option. `gh` CLI is not installed.
 - At lane close-out check `git ls-remote --heads mirror main` against local main, and check `.git\mirror-push-failures.log`.
+- Refresh with `git push mirror --all` + `--tags` at close-out (no force): the hooks push only the branch just committed or merged, so worktree branches created without a commit drift. Never use `--mirror`, which would prune mirror-only refs such as `backup/melange-math-eval-skill-18e907-4d54uu`, the only copy of 4 QME commits (2026-10-03).
 
 ## History
 
@@ -118,6 +124,7 @@ The working repo's `.git` lives under OneDrive. Files-on-demand dehydration make
 | 2026-09-08 | Mirror `main` last updated here (`2049fea9f`); it then sat eleven days behind. |
 | 2026-09-19 | Full mirror again (Paul: "push the mirror"). The mirror's `main` had sat at `2049fea9f` since 2026-09-08 (eleven days, every lane's commits behind) and 88 of 292 local branches were absent (among them `claude/melange-systems-code-review-859518`, the only home of the 09-13 code-review packet at `77959ae74`). `git push mirror main`, then `--all` and `--tags`, no force: 90 refs pushed, 0 rejected; verified 292 of 292 local branches present and current, tags 3 of 3, `main` = `a19c796d2`, mirror 3.1 GB. The mirror holds 2 branches that no longer exist locally (left alone). |
 | 2026-09-19 | Same day: the Project Brain repos (which had no remote at all) got "set up the brain mirror" and now push themselves from a post-commit hook (see `project-brain-toolkit-2026-08-11`). Paul then ordered "add the hook to melange too" (brain D-059): hooks installed on melange (see below). Proven by a real empty commit `b99ba565d` on the session branch. |
+| 2026-10-03 | Full mirror (Paul: "refresh the mirror with all branches"): `git push mirror --all` + `--tags`, no force, never `--mirror` (it would prune mirror-only refs, including `backup/melange-math-eval-skill-18e907-4d54uu`, the ONLY copy of 4 QME commits). 27 new branches pushed, 0 rejected; verified 339 of 339 local branches present AND current, tags 3 of 3, `main` = `3248a6a02` on both sides. Mirror-only, left alone: `claude/loving-hugle-6ebcb4`, `claude/holistic-normalized`, `backup/melange-math-eval-skill-18e907-4d54uu`. The post-commit hook pushes only the branch just committed, so branches created without a commit (worktree branches) still drift: refresh with `--all` at close-out. |
 
 ## Automatic push hooks (brain D-059, 2026-09-19)
 
