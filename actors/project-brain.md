@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "preserve@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -43,7 +43,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 
 ## Dependencies
 
-- Serves [[melange-systems]] (the `melange-systems-brain` is seeded and boots via CLAUDE.md) and the parent topic [[2026-07-feature-agent-tooling-stack]].
+- Serves [[melange-systems]] (the `melange-systems-brain` is seeded and boots via CLAUDE.md) and the parent topic Agent tooling stack.
 - Depends on: the framework document `boot-protocol-framework.md` (copy lives in the repo), git, Python, the mirror bare repos at `C:\Users\pgoff\GitMirrors\<name>.git` (outside OneDrive, beside the Melange and glassbox-runtime mirrors), and OneDrive/Carbonite for backup (Carbonite coverage of the four new folders is Paul's to confirm).
 - Codex lane coupling: the Codex receipt-omission class (5-for-the-day on 2026-08-11) led to the receipt-first preamble amendment; related memory `universal-lane-laws-2026-08-09`.
 
@@ -97,7 +97,8 @@ python brainctl.py off <folder>     # remove only the managed block
 
 ## Related Topics
 
-- [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where sessions draft updates and only Paul runs brainctl.
 
 ## Related Projects
 

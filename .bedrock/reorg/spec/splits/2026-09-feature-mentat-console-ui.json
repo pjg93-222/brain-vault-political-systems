@@ -1,0 +1,252 @@
+{
+  "id": "A5",
+  "what": "Batch 4 split of topics/2026-09-feature-mentat-console-ui (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A5); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-09-feature-mentat-console-ui",
+  "home": "projects/mentat",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Exact-spelling notes (source artifacts)"
+    ],
+    "links": [
+      "actors/mentat-console",
+      "actors/higgsfield-connector"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-09-feature-mentat-console-ui-chart-studio",
+      "title": "Chart Studio v1, review fixes and the fields lane (09-11/12)",
+      "summary": "Chart Studio v1 on the Mentat console (2026-09-11), its review and P1 fixes, and the Chart Studio fields lane of 2026-09-12",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## Chart Studio v1 (2026-09-11, session lane `claude/mentat-tableau-chart-interface-6bbf01`)",
+        "## Chart Studio review and P1 fixes (2026-09-11 / 2026-09-12, worktree `mentat-chart-studio-bugs-bb0e92`)",
+        "## Chart Studio fields lane (2026-09-12, worktree `mentat-chart-studio-fields-40f2ca`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-mentat-console-ui-cleanup-and-polish",
+      "title": "UI clean-up UI1 and the polish lane (09-17 to 09-19)",
+      "summary": "The Mentat console UI clean-up lane UI1 (2026-09-17) and the polish lane (2026-09-19), with its board-driven spec changes, commits and traps",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## UI clean-up lane UI1 (2026-09-17)",
+        "## Polish lane (2026-09-19; packet `audits/mentat_ui_polish_20260919/`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-mentat-console-ui-load-time-and-graph-quirks",
+      "title": "Load-time and FEC-link lane, graph quirks (09-24)",
+      "summary": "The Mentat console load-time and FEC-link lane and the Graph UI quirks and colouring lane, both of 2026-09-24",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## Load-time and FEC-link lane (2026-09-24, worktree `vibrant-khayyam-65f943`)",
+        "## Graph UI quirks + colouring lane (2026-09-24, session 6cce0269)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K12",
+      "a": "topics/2026-09-feature-mentat-console-ui-load-time-and-graph-quirks",
+      "b": "actors/mentat-console-startup-and-polish-lanes",
+      "event": "graph-quirks lane, session 6cce0269"
+    },
+    {
+      "id": "K13",
+      "a": "topics/2026-09-feature-mentat-console-ui-load-time-and-graph-quirks",
+      "b": "topics/2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks",
+      "event": "same graph-quirks lane"
+    },
+    {
+      "id": "K15",
+      "a": "topics/2026-09-feature-mentat-console-ui-chart-studio",
+      "b": "actors/mentat-console-chart-studio-and-system-debug",
+      "event": "Chart Studio"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 27,
+      "old": "> Rolling record of the UI, performance and Chart Studio lanes on the [[mentat-console]] (part of the [[mentat]] project), from Paul's first Tableau-style Chart Studio brief on 2026-09-11 to the Graph/pie quirks lane of 2026-09-24/25. The later redesign boards sit in [[2026-09-feature-ui-redesign-boards]]; mockups and boards were generated with the [[higgsfield-connector]].",
+      "mark": "not positional",
+      "why": "tagline: \"The later redesign boards\" are the boards made after these lanes (time)"
+    },
+    {
+      "line": 77,
+      "old": "- Rulings folded in 2026-09-12: filters-shelf reorder is a SILENT no-op (verified on the reloaded bundle; the earlier \"already has a filter\" note came from a STALE in-memory bundle; the served file has the guard + a data-dragging fallback); Subject is a derived default (mirrors the classic dialog).",
+      "mark": "not positional",
+      "why": "\"the earlier \\\"already has a filter\\\" note\" was an earlier observation (time)"
+    },
+    {
+      "line": 78,
+      "old": "- Granularity: \"BOTH, two altitudes\" (worksheet generation + chart engine), Paul \"cause is two-sided; do both\"; recommended A+B; B executed and live-verified, A built and dry-run, Banking rebuild = Paul's go (launched, then failed; see the fields lane section).",
+      "mark": "rewrite",
+      "why": "\"see the fields lane section\" is ## Chart Studio fields lane, which moves to -chart-studio",
+      "new": "- Granularity: \"BOTH, two altitudes\" (worksheet generation + chart engine), Paul \"cause is two-sided; do both\"; recommended A+B; B executed and live-verified, A built and dry-run, Banking rebuild = Paul's go (launched, then failed; see the fields lane section in [[2026-09-feature-mentat-console-ui-chart-studio]]).",
+      "referent": "2026-09-feature-mentat-console-ui-chart-studio"
+    },
+    {
+      "line": 80,
+      "old": "- Polish lane rulings 2026-09-19: rows A (aligned bars); downstream A (drawer); in-app Back only (D-039 ruling C stands); industry compare B (paired panels); PAC map needs an enlarge option and a layer control for region, state, congressional district, state legislative district, ZIP; \"Use GeoPy and Jinja2\" clarified as \"Jinja2 in general\" (templating across the console); animated flair after the polish, consult first, use Higgsfield. Later: motion = EXPRESSIVE; PAC map fully interactive (zoom, pan, donor locations, \"the whole nine yards\").",
+      "mark": "not positional",
+      "why": "\"Later: motion = EXPRESSIVE\" is time"
+    },
+    {
+      "line": 89,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 91,
+      "old": "- [ ] Paul: restart 8806 (loads the whole load-time lane; the warmer then warms 3 missing Graph views + 8 Insights defaults and re-plans daily) - done 2026-09-24 at 14:20 and ~16:00, but any later server-code edit needs another restart.",
+      "mark": "not positional",
+      "why": "\"any later server-code edit\" is time"
+    },
+    {
+      "line": 92,
+      "old": "- [ ] Paul: delete the Recycle Bin copies of the abandoned 09-21 `.pending` builds (12.84 GB; hard delete is not the agent's); the earlier 13,143 MiB figure was the pre-recycle size.",
+      "mark": "not positional",
+      "why": "\"the earlier 13,143 MiB figure\" is the figure recorded at the time (the load-time lane's Open for Paul list), a value qualified by time, not a pointer to a place in the note"
+    },
+    {
+      "line": 93,
+      "old": "- [ ] Paul: commit the Graph quirks lane (no commit was ordered): Melange 3 sources + Mentat 9 modified + 1 new test file (see Graph quirks section).",
+      "mark": "rewrite",
+      "why": "\"see Graph quirks section\" is ## Graph UI quirks + colouring lane, which moves to -load-time-and-graph-quirks",
+      "new": "- [ ] Paul: commit the Graph quirks lane (no commit was ordered): Melange 3 sources + Mentat 9 modified + 1 new test file (see Graph quirks section in [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]]).",
+      "referent": "2026-09-feature-mentat-console-ui-load-time-and-graph-quirks"
+    },
+    {
+      "line": 98,
+      "old": "- [ ] Banking rebuild (Option A ruleset adjudication, see fields lane) remains Paul's.",
+      "mark": "rewrite",
+      "why": "\"see fields lane\" is ## Chart Studio fields lane, which moves to -chart-studio",
+      "new": "- [ ] Banking rebuild (Option A ruleset adjudication, see fields lane in [[2026-09-feature-mentat-console-ui-chart-studio]]) remains Paul's.",
+      "referent": "2026-09-feature-mentat-console-ui-chart-studio"
+    },
+    {
+      "line": 105,
+      "old": "- **Commit:** 2026-09-11 late evening on Paul's one-word \"Commit\": branch `codex/mentat-crypto` commit `090879ad8` \"Add Chart Studio v1 to the Mentat console\" (10 files, +3,912/-225); the six shared console files carry the 09-08..10 lanes' pending edits too (stated in the message); the rest of that pending work under mentat/R, tools, tests and other app files stays uncommitted. The auto-mode classifier BLOCKS git index surgery (`hash-object`/`update-index --cacheinfo`), sweeping `add -A` of other lanes' files, and copying .bak files over live files, so a clean two-commit split was not possible; plain `git add <paths>` + `commit -F` passes. The lane worktree commit of the brief + `tmp/disk_cleanup_20260911` was staged (6 files, +3,212) and left running; `git commit` on the OneDrive worktree ran past 25 minutes (see the CONSTRAINT on OneDrive git). `.claude/launch.json` in the lane worktree is TRACKED - the preview config overwrote it; restored with `git checkout --` before committing.",
+      "mark": "external",
+      "why": "\"see the CONSTRAINT on OneDrive git\" names a brain constraint that is not in this note"
+    },
+    {
+      "line": 157,
+      "old": "- **TWO PRE-EXISTING BLOCKERS FOUND:** (1) another lane's UNCOMMITTED `buildAuditTable(\"Accounting Basis\", ...)` in the builder had no `sheetOrder` entry, so EVERY workbook build threw (absent at HEAD; present in the pre-lane backup) - FIXED on Paul's instruction 2026-09-12 (one line, \"Accounting Basis\" placed after \"Beneficiary Bridge\"); (2) the Crypto and Community Banks `receipt-metadata-repair-20260910` snapshots FAIL `fec_assert_receipt_evidence` (Crypto: 87 rows with memo blobs in receipt_type_full) before any of this work - the dry run dropped them from the SCRATCH copy only; the Banking DB's pre-flight read \"0 unresolved rows\" but that result was VACUOUS (see the Banking rebuild failure below: the script defaulted the industry to Crypto and matched zero rows); the real count is 2,070. Other lanes' failing tests, not ours: `tests\\test_request_windows.R` (FEC pagination fixture) and one HTTP test in `tests\\test_report_insights.py`. Cap floor (>= 100) lives on the env var in the exporter; the function itself accepts any positive cap so tests can fold at 6.",
+      "mark": "same note",
+      "why": "\"see the Banking rebuild failure below\" is the **Banking rebuild:** bullet of the same section (## Chart Studio fields lane), which lands in -chart-studio with this line and stays below it"
+    },
+    {
+      "line": 159,
+      "old": "- **LESSON (git):** `git apply --cached --unidiff-zero` SILENTLY MISPLACES pure-insertion hunks when earlier hunks were dropped (cumulative +N offset drift) and `--check` passes anyway (no context to validate) - it corrupted the builder index (functions landed inside buildAuditTable / a Map literal = invalid JS). Fix that WORKED: reconstruct HEAD+A by `git apply`-ing A's default-context hunks onto the pristine `git show HEAD:file` blob (core.autocrlf=false so scratch stays LF), delete the lone foreign line, let `git diff` author a clean default-context A-only patch, `apply --cached` that; PROVE with `node --check` on the staged blob (`git show :file`). STILL UNCOMMITTED after `b44fcef7a`: every other lane's foreign hunks + all .bak-* + node_modules.",
+      "mark": "not positional",
+      "why": "\"earlier hunks\" are hunks earlier in a patch file, not text in the note"
+    },
+    {
+      "line": 160,
+      "old": "- **Banking rebuild:** launched 2026-09-12 16:47 ET on Paul's go (`build_industry_report.ps1 -Industry Banking`, log in scratchpad `A\\banking_rebuild_stdout.log`; pre-rebuild workbook backup sha256 842BA7A2... at `.cache\\industry-report\\backups\\banking-pre-rebuild-20260912`). Box was at its commit limit (88-94 of 96 GB; AppXSvc svchost PID 8424 holding ~36 GB commit = leak; 8841 staffer sidecar 7.7 GB); Paul ordered \"restart the AppX service and retry if it fails\"; one elevated `Restart-Service AppXSvc` attempt (UAC-approved) did NOT take effect (no 7036 event; host PID unchanged). A stale 1.44 GB `industry_data-4abdea58....json.pending-22944` from 2026-09-10 sits in `.cache\\industry-report\\banking` (an interrupted earlier export; cleanup = Paul).",
+      "mark": "not positional",
+      "why": "\"an interrupted earlier export\" is time"
+    },
+    {
+      "line": 174,
+      "old": "  - Cut the patch from the builder's own file list, never from the list written before the build. The first cut missed four files the builder had touched, including `acu-theme.css` (the party colour tokens) and a one-line `chart-comparison.js` fix without which the new segmented control loses a button. `git diff --stat` on a guessed list looks complete.",
+      "mark": "not positional",
+      "why": "\"the builder's own file list\" and \"the list written before the build\" are file lists in the lane, not text in the note"
+    },
+    {
+      "line": 200,
+      "old": "- Later the same session: motion = EXPRESSIVE; the PAC map must be fully interactive: zoom, pan, donor locations, \"the whole nine yards\". Checked live: industry workbooks carry City, State, ZIP and NO street address (Community Banks file, 35 columns), so donor locations from a workbook are ZIP-level circles; street-level only for sources with addresses via the existing Census geocode job. ZIP centre points are not on disk (small Census gazetteer file needed). No internet map tiles: console is local-only (design choice; NOT D-050, which is the report-build network fallback, corrected 2026-09-24). Boards 6 and 7 show the map.",
+      "mark": "not positional",
+      "why": "\"Later the same session\" is time"
+    },
+    {
+      "line": 203,
+      "old": "- Board-driven spec changes: Top N is one compact select (\"Top 10\") on the title row; candidate and company names LEFT-aligned after the dot, recipient types right-aligned; Top organizations uses two-line rows (name above bar); map circle SIZE = donor-count buckets (1, 2-5, 6-10, 11+), heat = amount; inset locator; legend card inside the map; the ranked list becomes \"Donors in <selection>\" when a shape is selected; pane Summary has a map thumbnail.",
+      "mark": "not positional",
+      "why": "\"name above bar\" is a position on the screen"
+    },
+    {
+      "line": 204,
+      "old": "- When a feature has no board yet, generate one and show him BEFORE building. Done for industry comparison: he chose BOARD 8 (two aligned columns inside every card, `board8_compare_two_columns`) over the butterfly proposal (board 9). His reply \"I like image 2\" was ambiguous against the older \"board 2\", so the agent asked; ASK when an image reference could mean two things, and number deliveries to match board numbers next time.",
+      "mark": "not positional",
+      "why": "\"next time\" is time"
+    },
+    {
+      "line": 210,
+      "old": "- Also COMMITTED: `991b06568` J1 Jinja2 runtime render + `8db5cff94` its repair (see trap below); `862a6c46a` P4a geography tools + tests (generated JSON, 105 files 14.4 MB, left UNTRACKED on purpose until P4b fixes its shape: per-state coordinate space, because 267 lower + 31 upper districts are sub-pixel at the national canvas). Console 8806 RESTARTED onto `8db5cff` through its own Restart button while idle; served `/` sha256 == git blob of `index.html`, CSP unchanged. At the session end of the source note J1 and P4a were still RUNNING (J1: `index.html` kept as a test-pinned GOLDEN render because 14 tests read it from disk; templates must join the build-stamp hash; P4a: geo data, new files only).",
+      "mark": "same note",
+      "why": "\"see trap below\" is the **TRAP that cost an incomplete commit (`991b06568`):** bullet two lines below in the same ### Commits and state (the resolver's automatic match on the bare label TRAP: of the load-time lane was wrong and is overridden)"
+    },
+    {
+      "line": 212,
+      "old": "- **TRAP that cost an incomplete commit (`991b06568`):** the Mentat repo's root `.gitignore` has `*.html` AND `*.txt` AND `*.json` (`index.html` is tracked only because it was force-added). `git add` silently skipped nine new `.html` partials, and git's stderr had been sent to /dev/null, so the \"paths are ignored\" warning never showed; the identity check passed because it ran in the WORKING TREE where the files existed. Rules: never redirect git's stderr on add/commit; after every commit read its own \"create mode\" list against the file list you meant; prove HEAD from `git -c core.autocrlf=false archive HEAD ... | tar -x` in a fresh scratch folder, with the previous commit as a negative control; run `git check-ignore -v` on every NEW file first. Fix: added `!mentat/app/templates/*.html`. Mentat python suites must be run from INSIDE `mentat/tests` (sibling-module imports), and a partial export cannot import `server` (needs `mentat/inputs`).",
+      "mark": "not positional",
+      "why": "\"the previous commit as a negative control\" is a commit, not text in the note"
+    },
+    {
+      "line": 214,
+      "old": "- ~~**State (older, superseded above):** P1 (layout polish) dispatched to one Opus architect, uncommitted, no restart.~~ P1 puts the measured-fit helper on `MentatTheme` in `theme.js`, NOT a new `names.js`, because a new static file needs a `server.py` whitelist line and a console restart and would 404 on his live console until then. P2 sort/labels, P3 return/links, P4 PAC evidence (+ map enlarge and layers), P5 drawer, P6 paired panels follow sequentially: they share `graph.js`, `chart-studio.js` and `index.html`, so parallel agents in one tree would lose hunks. Jinja2 migration must wait for P1. Neither geopy nor jinja2 was in the launcher Python; system Python had jinja2 only.",
+      "mark": "same note",
+      "why": "\"superseded above\" is the newer state bullet just above it in the same ### Commits and state (S1: marked in place)"
+    },
+    {
+      "line": 225,
+      "old": "- Paul cannot see the Higgsfield MCP gallery widget in the desktop Code tab. Download outputs and send them with SendUserFile, or publish an Artifact with the images as supporting files.",
+      "mark": "not positional",
+      "why": "\"cannot see the Higgsfield MCP gallery widget\" is the verb see"
+    },
+    {
+      "line": 261,
+      "old": "- `analysis_data.py` (sync disk-hit, adaptive retry 300/750/1500, cross-process build lock `state\\insights\\building\\<key>.lock`, `hints.json` when HINTS_ENABLED), `report_insights.py` (streamed receipts), NEW `source_memo.py` (`install()` rebinds `contribution_data._sources`; `contribution_data.py` untouched so no index rebuild), NEW `prewarm.py` + `glassbox_emit.py` (harness: plan/run/warm/verify/bench/status JSON, recovery contract, ledger, Glass Box events; startup warm thread + below-normal disk warmer launched by a non-read-only console), `insights.js` (poll floor 200 ms, early first query), `evidence_csv.py`/`evidence_geo.py`/`evidence.js`/`contribution-studio.js` + NEW `fec_citation.py` (Source ID -> pinned `mentat.db` link with committee+amount identity check; ActBlue/WinRed -> docquery forms \"FEC report\"; spend rows -> honest committee pointer), `server.py main()` +9 lines (`source_memo.install`, `HINTS_ENABLED = not read_only`, `prewarm.start_startup_warm`, `prewarm.launch_warmer`).",
+      "mark": "not positional",
+      "why": "\"below-normal disk warmer\" is a process priority"
+    },
+    {
+      "line": 270,
+      "old": "- **Peer coordination WORKS once Paul approves the message in that window** (first note expired unapproved). Peer \"Melange UI redesign\" owns (r5, uncommitted, commits next): `graph.js`, `graph.css`, `graph_data.py`, `scope.js`, `comparison.js`, `chart-studio*.js/.css`, `contribution-*.js`, `chart-math.js`, `grouped-chart.js`, `charts.js`, workspace-polish/acu-theme CSS, page_shell/page_head, `cross-reference.*`, `evidence.js/.css`, `evidence-map.js`, `graph-explorer.js`, `insights.js/.css`, `app.js`, `coverage-view.js`, templates, `index.html`. This lane owns `response_cache.py`, `drawer_sidecars.py`, `view_cache.py`, `comparison_data.py`, `downstream.py`, `native_scan.py`, `analysis_*.py`, `prewarm.py`, `server.py`. Browser-side cache/prefetch (`graph.js`, `insights.js`) ON HOLD until the peer's r5 sha arrives. `prewarm.py` pins the `graph.js` sparkline and `insights.js` first-open request bodies (`test_prewarm.py`).",
+      "mark": "not positional",
+      "why": "\"commits next\" is time"
+    },
+    {
+      "line": 274,
+      "old": "- Builders ran 1-2 h each; next time time-box builders to ~30-45 min and land proven parts.",
+      "mark": "not positional",
+      "why": "\"next time\" is time"
+    },
+    {
+      "line": 284,
+      "old": "- **TRAP:** `contribution_query_store.py`'s sha (LOADED_SHA) is in EVERY response key incl. Insights, and its `_loaded()` guard makes running consoles refuse Insights + chart queries until restart: a cap change = full re-warm (116 tasks; 14/116 an hour later on the loaded box).",
+      "mark": "not positional",
+      "why": "\"an hour later\" is time"
+    },
+    {
+      "line": 290,
+      "old": "Paul 2026-09-24 sent 5 screenshots: \"UI quirks ... mainly just pertaining to how the graph is presented. The graph should be the main focus ... and then some coloring\". Scope: Melange Influence dropdowns/framing/legend/rail/badge + Mentat Chart Studio pie fit/title/12 colours/labels. Rulings via AskUserQuestion: frame the linked core on open; add hide/show to the Targets panel, open by default; do all the rest; no commit. Mid-turn: \"Reasoning stays in Opus\" (see `reasoning-in-fable-code-in-opus-2026-09-16`).",
+      "mark": "external",
+      "why": "\"see `reasoning-in-fable-code-in-opus-2026-09-16`\" names a memory file"
+    }
+  ]
+}

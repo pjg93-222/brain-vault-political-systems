@@ -23,8 +23,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "d344e91e5b143e36a8846cbd15ea7bc1b0d65cd3f448a0b623bbeddf921803d1"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
 
@@ -145,6 +145,7 @@ The working repo's `.git` lives under OneDrive. Files-on-demand dehydration make
 
 - [[2026-07-troubleshooting-melange-live-tree-git-drift]] - Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror
 - [[2026-08-incident-workstation-disk-and-backup]] - C: filled by repo worktrees, cleared repeatedly (185.9 GB free on 2026-09-18); OneDrive stalled since 08-11; backup gaps
+- [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] — The workstation backup coverage gap measured on 2026-09-07 and the point-in-time disk census of 2026-09-11.
 
 ## Related Projects
 

@@ -1,0 +1,324 @@
+{
+  "id": "A9",
+  "what": "Batch 4 split of topics/2026-08-incident-refresh-automation-reliability (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A9); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-08-incident-refresh-automation-reliability",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Reference data"
+    ],
+    "links": [
+      "actors/melange-refresh-scheduler",
+      "concepts/fail-closed-gates",
+      "actors/glass-box"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner",
+      "title": "Weekly refresh: measured state, orchestrator, tick runner and the inactive email",
+      "summary": "The weekly Melange refresh as of 2026-09-19: measured state, sandbox run, the abandoned orchestrator, the tick-runner ruling and build, the corrected press facts and the inactive weekly email",
+      "domain": "domain/infra",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Measured state 2026-09-19 (current; verified by the assistant unless marked agent)",
+        "## Sandbox test run 2026-09-19 evening",
+        "## Orchestrator build state (2026-09-19 ~18:45 local) - ABANDONED",
+        "## RULED 2026-09-19 ~19:30 - tick runner",
+        "## Press facts corrected 2026-09-19 ~20:20 (decisive lines re-read; supersedes earlier press claims)",
+        "## Tick runner built + reviewed 2026-09-19 ~23:30 (branch `claude/refresh-tick-20260919`, NOT yet landed at this writing)",
+        "## Weekly refresh email: not active (file `weekly-refresh-email-not-active-2026-08-09`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes",
+      "title": "Daily congress refresh close-out and the suite flake lane",
+      "summary": "The daily congress refresh close-out of 2026-09-19 and the daily-refresh test-suite flake lane closed on 2026-09-20",
+      "domain": "domain/infra",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Daily congress refresh: close-out 2026-09-19 (file `daily-refresh-lane-closeout-2026-09-19`)",
+        "## Daily-refresh suite flake lane (file `daily-refresh-suite-flake-lane-2026-09-19`) - CLOSED 2026-09-20"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn",
+      "title": "Codex overnight poll-loop burn (2026-09-12/13)",
+      "summary": "The Codex overnight poll-loop burn of 2026-09-12/13 as recorded in the refresh incident: the 30 s poll loop, the quota loss and the repair lane",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Codex overnight poll-loop burn 2026-09-12/13 (file `codex-overnight-poll-loop-burn-2026-09-13`, a feedback rule)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K8",
+      "a": "topics/2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn",
+      "b": "actors/codex-executor-incidents"
+    }
+  ],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 33,
+      "old": "- Newest-wins note: the 2026-09-19 audit (file `weekly-refresh-self-sufficiency-audit-2026-09-19`, last modified 2026-09-20) is the current state and corrects, in place, several earlier press claims made earlier the same day in that same audit; the older claims are kept below as dated struck-through bullets.",
+      "mark": "rewrite",
+      "why": "\"earlier press claims made earlier the same day\" is time; \"the older claims are kept below as dated struck-through bullets\": the struck press claims are the hub's Decisions bullet (file line 97, same note, still below) and the -weekly-refresh-and-tick-runner bullets (lines 161 and 240), so below stays and \"and in [[part]]\" is added (S10 \"below and in [[a]]\")",
+      "new": "- Newest-wins note: the 2026-09-19 audit (file `weekly-refresh-self-sufficiency-audit-2026-09-19`, last modified 2026-09-20) is the current state and corrects, in place, several earlier press claims made earlier the same day in that same audit; the older claims are kept below and in [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]] as dated struck-through bullets.",
+      "referent": "2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner"
+    },
+    {
+      "line": 36,
+      "old": "- Related lanes (not vault entities): `laundry-list-closeout-2026-09-18`, `sentinel-collectors-lane-2026-09-01`, `lg-gram-npu-crash-2026-08-17` (machine crashes; documented in the LG Gram workstation actor, `lg-gram-workstation`), `glassbox-everything-rule-2026-07-27` (every action emits Glass Box events; see [[glass-box]]), `verify-dont-infer-completion-2026-08-04`, `codex-executor-lane-2026-07-18`, `ultracode-orchestration-standing-2026-08-18`, `melange-ui-retheme-2026-08-06`, `moneyball-audit-run-guardrails`, `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"see [[glass-box]]\" names another note"
+    },
+    {
+      "line": 76,
+      "old": "| 2026-08-09, 2026-08-16, 2026-08-30 | Three Sunday fires left no trace at all with the machine awake (see audit item 5). |",
+      "mark": "rewrite",
+      "why": "\"see audit item 5\" names item 5 (BLIND: exit-75 paths leave no status) of the audit's ranked list under ### What plagues it, ranked, which moves to -weekly-refresh-and-tick-runner",
+      "new": "| 2026-08-09, 2026-08-16, 2026-08-30 | Three Sunday fires left no trace at all with the machine awake (see audit item 5 in [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]]). |",
+      "referent": "2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner"
+    },
+    {
+      "line": 82,
+      "old": "| 2026-09-12 23:29 to 2026-09-13 10:58 | Codex Desktop thread `01a098ce-d021-7d42-9383-5affc2a0bdfb` burns the weekly Codex quota in a 30 s poll loop (see section below). |",
+      "mark": "rewrite",
+      "why": "\"see section below\" is the ## Codex overnight poll-loop burn section, which moves to -codex-poll-loop-burn",
+      "new": "| 2026-09-12 23:29 to 2026-09-13 10:58 | Codex Desktop thread `01a098ce-d021-7d42-9383-5affc2a0bdfb` burns the weekly Codex quota in a 30 s poll loop (see section in [[2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn]]). |",
+      "referent": "2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn"
+    },
+    {
+      "line": 83,
+      "old": "| 2026-09-13 | Last weekly log line `[2026-09-13 06:00:02] WEEKLY REFRESH BLOCKED - Moneyball pipeline is already running (pid 31516, owner congress_pipeline)`: exit 75 in 2 s, zero steps, no retry. Daily-refresh repair lane (Fable session, live tree): see section below. Press run `press_refresh_20260913` is `PARTIAL`, `pending_body_urls=2200`. |",
+      "mark": "rewrite",
+      "why": "\"Daily-refresh repair lane (Fable session, live tree): see section below\" is the Repair lane 2026-09-13 afternoon (Fable session, live tree) bullet of the ## Codex overnight poll-loop burn section, which moves to -codex-poll-loop-burn",
+      "new": "| 2026-09-13 | Last weekly log line `[2026-09-13 06:00:02] WEEKLY REFRESH BLOCKED - Moneyball pipeline is already running (pid 31516, owner congress_pipeline)`: exit 75 in 2 s, zero steps, no retry. Daily-refresh repair lane (Fable session, live tree): see section in [[2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn]]. Press run `press_refresh_20260913` is `PARTIAL`, `pending_body_urls=2200`. |",
+      "referent": "2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn"
+    },
+    {
+      "line": 89,
+      "old": "- Resume rule (Paul 2026-09-19): resume plus retry, but a checkpoint/fail-safe for one worker must not apply to all and stop the whole process (see Paul's rulings below).",
+      "mark": "rewrite",
+      "why": "\"see Paul's rulings below\" names the two ### Paul's rulings sections (2026-09-19 verbatim; second batch), both of which move to -weekly-refresh-and-tick-runner",
+      "new": "- Resume rule (Paul 2026-09-19): resume plus retry, but a checkpoint/fail-safe for one worker must not apply to all and stop the whole process (see Paul's rulings in [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]]).",
+      "referent": "2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner"
+    },
+    {
+      "line": 97,
+      "old": "- ~~Old press claim: baseline frozen since 2026-06-24, 2,200 unfetchable bodies, 36 h walk as runtime~~ (2026-09-19 earlier text) - corrected ~20:20 the same evening (see Press facts corrected).",
+      "mark": "rewrite",
+      "why": "\"2026-09-19 earlier text\" is the text written earlier that day (time); \"see Press facts corrected\" names ## Press facts corrected, which moves to -weekly-refresh-and-tick-runner (the plan's own S10 example)",
+      "new": "- ~~Old press claim: baseline frozen since 2026-06-24, 2,200 unfetchable bodies, 36 h walk as runtime~~ (2026-09-19 earlier text) - corrected ~20:20 the same evening (see Press facts corrected in [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]]).",
+      "referent": "2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner"
+    },
+    {
+      "line": 104,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 107,
+      "old": "- [ ] Paul: decide FAIL-CLOSED vs LABEL-CLOSED publication (council disagreement, below).",
+      "mark": "rewrite",
+      "why": "\"council disagreement, below\" is ### Council 2026-09-19 evening, which moves to -weekly-refresh-and-tick-runner",
+      "new": "- [ ] Paul: decide FAIL-CLOSED vs LABEL-CLOSED publication (council disagreement, in [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]]).",
+      "referent": "2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner"
+    },
+    {
+      "line": 117,
+      "old": "- [ ] Paul: wrapper defects W1-W3 of the daily lane (below) await his apply gate.",
+      "mark": "rewrite",
+      "why": "\"wrapper defects W1-W3 of the daily lane (below)\" are the W1-W3 bullet of ## Daily congress refresh: close-out, which moves to -daily-refresh-closeout-and-flakes",
+      "new": "- [ ] Paul: wrapper defects W1-W3 of the daily lane (in [[2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes]]) await his apply gate.",
+      "referent": "2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes"
+    },
+    {
+      "line": 136,
+      "old": "3. THE MACHINE: Kernel-Power 41 unexpected shutdowns = 23 between 2026-07-28 and 2026-09-15, TWELVE since 2026-09-01 (so the 2026-08-17 NPU fix did not end them; see `lg-gram-workstation`). About one per 2 days against a 76 h budget. The 2026-09-06 run died silently inside the press walk. `SetThreadExecutionState` blocks idle sleep only.",
+      "mark": "external",
+      "why": "\"see `lg-gram-workstation`\" names another note"
+    },
+    {
+      "line": 141,
+      "old": "8. TIME BOMBS: `official_membership_movements.py:69` raises after 8 days; consumer `build_archive_legislative.py` loads it at module scope (not optional) while its only producer `verify_collector_roster_updates.py` IS optional and gets skipped when inputs are missing; refreshed 2026-09-19T19:46Z, so the next deadline is 2026-09-27T19:46Z. SEPARATELY, per the laundry-list lane's index entry (NOT verified by the assistant): the chain dies from 2026-09-21T03:41Z because `sentinel_admissions` needs a PAID step that is Paul's ruling (`laundry-list-closeout-2026-09-18`).",
+      "mark": "not positional",
+      "why": "\"the next deadline is 2026-09-27T19:46Z\" is time"
+    },
+    {
+      "line": 142,
+      "old": "9. Smaller: outer chain bound 7200 s (`:464`) is below the inner 10800 s per-step bound, so the inner one can never fire under the weekly (but the chain inside the weekly has never exceeded 2,076 s; the 261.6 min figure quoted earlier came from Glass Box durations of FAILED manual runs and was called \"healthy\" without evidence); a timeout and a failure both write `HARD_FAILURE`; `save_workbook_atomic` (`moneyball_core.py:232`) has no PermissionError retry though `lane_file_io.replace_atomic` has one; daily-job run dirs grew 733 MB in 2 days with no pruning; PID reuse can wedge the lease; tasks need an interactive logon.",
+      "mark": "not positional",
+      "why": "\"7200 s is below the inner 10800 s\" is a number comparison; \"the 261.6 min figure quoted earlier\" was quoted in an earlier session (the figure appears nowhere else in the note)"
+    },
+    {
+      "line": 154,
+      "old": "LANDED the same day: `62aea2f76` weekly steps launch through `bounded_subprocess.run_bounded` (timeouts unchanged, no wait without a timeout left; `test_bounded_subprocess` 36/36). IN FLIGHT at write time (worktree `vibrant-sammet-a549a5`, Opus architects): (a) resumable orchestrator: new `fec/refresh_orchestrator.py` (per-step Ledger at `data/engine/weekly_refresh_run.json`, 72 h resume window, failures FILED and retried after the collection session, dependency-aware skipping instead of whole-run abort, `--resume-only`), lease poll with live `WAITING_FOR_LEASE` status, status/Glass Box moved above the locks, recycled-pid verification in `pipeline_lock.py` via process start time, publish step skip-if-unconfigured; (b) read-only press-format investigation (`scratchpad\\press_format\\`); (c) read-only crash forensics (`scratchpad\\crash_forensics\\`). NOT started then: the Excel-dependency design (pillar snapshot vintage), the logon-triggered `--resume-only` scheduled task (to be registered after (a) lands), a scheduled status check as the alert channel, the daily job's launcher (`refresh_congress_pipeline.py:262/265`).",
+      "mark": "not positional",
+      "why": "\"status/Glass Box moved above the locks\" is a position in the code"
+    },
+    {
+      "line": 161,
+      "old": "- ~~Why it is slow: the base index has been FROZEN since 2026-06-24 because the refresh never writes back; every run re-fetches the whole backlog (~34,700 URLs, ~6 h); `fold_promoted_press_runs.py` sits AFTER the press step so a failing press step blocks the fold = feedback loop.~~ (2026-09-19 earlier text; the frozen-baseline and ~34,700 URLs claims were wrong, see corrections below. The ordering fact, `fold_promoted_press_runs.py` after the press step, stands.)",
+      "mark": "same note",
+      "why": "\"2026-09-19 earlier text\" is time; \"see corrections below\" is ## Press facts corrected, which lands in -weekly-refresh-and-tick-runner with this line and stays below it"
+    },
+    {
+      "line": 210,
+      "old": "- N5: a BLOCKED fire overwrites the previous run's outcome and leaves no ledger.",
+      "mark": "not positional",
+      "why": "\"the previous run's outcome\" is time"
+    },
+    {
+      "line": 225,
+      "old": "## Press facts corrected 2026-09-19 ~20:20 (decisive lines re-read; supersedes earlier press claims)",
+      "mark": "not positional",
+      "why": "heading: \"supersedes earlier press claims\" means claims made earlier the same day (time); the claims it corrects are struck in place in this part and in the hub (S1)"
+    },
+    {
+      "line": 227,
+      "old": "SEVERAL EARLIER PRESS CLAIMS IN THE SAME AUDIT WERE WRONG. Current (newest) facts:",
+      "mark": "not positional",
+      "why": "\"SEVERAL EARLIER PRESS CLAIMS IN THE SAME AUDIT\" were made earlier in time in the audit file"
+    },
+    {
+      "line": 238,
+      "old": "10. Silent zero-row regression on 2026-09-13: C001118, F000462, W000802 yielded rows in every earlier run, zero then.",
+      "mark": "not positional",
+      "why": "\"every earlier run\" is time"
+    },
+    {
+      "line": 240,
+      "old": "- Superseded earlier claims, kept: ~~baseline frozen since 2026-06-24~~; ~~76.4 h observed runtime / 36 h walk~~ (bound only); ~~2,200 unfetchable bodies~~; ~~~34,700 URLs re-fetched per run (~6 h)~~ (2026-09-19, earlier in the audit).",
+      "mark": "external",
+      "why": "\"earlier claims\" and \"earlier in the audit\" point at the audit file (`weekly-refresh-self-sufficiency-audit-2026-09-19`) and at time, not at this note"
+    },
+    {
+      "line": 248,
+      "old": "- KERNEL FROM A BYTE-EXACT EXPORT IS NOT 246/2: an export lacks untracked runtime data, so main gives 220 passed / 29 FAILED there; tip = 222/30 with the IDENTICAL 29 + three new suites OK + `test_daily_refresh`, a PRE-EXISTING timing flake (5/12 runs fail on main's export; spawned task; see the flake lane below). Real gate = kernel from LIVE after landing (expect 249 passed / 2 baseline reds).",
+      "mark": "rewrite",
+      "why": "\"see the flake lane below\" is ## Daily-refresh suite flake lane, which moves to -daily-refresh-closeout-and-flakes",
+      "new": "- KERNEL FROM A BYTE-EXACT EXPORT IS NOT 246/2: an export lacks untracked runtime data, so main gives 220 passed / 29 FAILED there; tip = 222/30 with the IDENTICAL 29 + three new suites OK + `test_daily_refresh`, a PRE-EXISTING timing flake (5/12 runs fail on main's export; spawned task; see the flake lane in [[2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes]]). Real gate = kernel from LIVE after landing (expect 249 passed / 2 baseline reds).",
+      "referent": "2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes"
+    },
+    {
+      "line": 253,
+      "old": "- Known limits: `C:\\melange-data\\*` audio outputs unwatched; a legit permanent zero-row file blocks until Paul intervenes (no `--accept` flag yet); ~7 MB pre-snapshot per step = ~350 MB OneDrive churn per full tick (persist one + deltas later); reference-layer step still calls the AI (peer session owns the degrade).",
+      "mark": "not positional",
+      "why": "\"persist one + deltas later\" is future work (time)"
+    },
+    {
+      "line": 257,
+      "old": "Lane: Paul's 2026-09-13 order after the Codex burn: make the Windows-scheduled congress refresh (`fec/daily_refresh.py` + `fec/legislation/refresh_congress_pipeline.py`) independent of AI, give him a screen, run it ONCE on a small segment. Subsystem was COMMITTED by `melange-live-tree-reconcile-2026-09-19` (see the git-drift topic). Both daily tasks (`MoneyballCongressRefresh`, `MoneyballDailyRefreshRetry`) are Disabled. The scheduler-owned Python process works through every collection step with zero AI, but a FULL chain PASS is blocked at step 3.",
+      "mark": "external",
+      "why": "\"see the git-drift topic\" names another note"
+    },
+    {
+      "line": 264,
+      "old": "| 2026-09-13 23:00 | `MemoryError` in 1.2 s. Machine commit exhausted: AppXSvc svchost leaking (67.6 GB then; 50 GB again on 2026-09-19 three days after a reboot; root cause in the topic `2026-07-incident-workstation-stability`, see `lg-gram-workstation`). Restart needs elevation, which a session does not have. |",
+      "mark": "external",
+      "why": "\"see `lg-gram-workstation`\" names another note"
+    },
+    {
+      "line": 270,
+      "old": "- Wrapper defects found, NOT fixed (presented to Paul, his apply gate): W1 no rollback of the fetched repository on early chain failure (automate the repair above). W2 `daily_refresh.py` has no per-day attempt cap, so an unpassable day reruns the multi-hour chain hourly forever. W3 `fec/legislation/open_congress_pipeline_monitor.ps1` passes `$watcher` and `$Root` unquoted to `Start-Process`; \"Melange Systems\" has a space, so the window dies instantly. The watcher works when launched with both paths wrapped in quotes.",
+      "mark": "same note",
+      "why": "\"automate the repair above\" is the reusable-repair bullet just above it in the same section (## Daily congress refresh: close-out)"
+    },
+    {
+      "line": 275,
+      "old": "Lane: `fec/tests/infra/test_daily_refresh.py` fails at random on main `61be75ddc`, which made kernel comparisons between commits unreliable. Session worktree `busy-kapitsa-3272db`. Sibling of the daily-refresh closeout above.",
+      "mark": "same note",
+      "why": "\"the daily-refresh closeout above\" is ## Daily congress refresh: close-out, which lands in -daily-refresh-closeout-and-flakes with this line and stays above it"
+    },
+    {
+      "line": 278,
+      "old": "- The task's hypothesis was half wrong: it said `time.time()` is precise and file stamps are coarse. Under Python 3.12.10 (what `python`, the kernel and both Disabled scheduled tasks (`Python312\\pythonw.exe`) run) `time.time()` is `GetSystemTimeAsFileTime`, the SAME coarse tick NTFS stamps with: the file's nanosecond stamp was never below the clock's in 3,000 writes. The inversion lives in floats: `time.time()` is `ns/1e9`, `st_mtime` is `sec + 1e-9*nsec`, and for one instant they differ by exactly one float step (2.384e-07 s) in 13.4% of instants each way. Under 3.14.5 (the `py` launcher default here) `time.time()` is `GetSystemTimePreciseAsFileTime` and the hypothesis holds: stamps up to 9.5 ms older, 4 of 1,500 replayed launches failed. Coarse-behind-precise lag: median 4.4 ms, p99 15.3 ms, max 19.33 ms.",
+      "mark": "not positional",
+      "why": "\"never below the clock's\" is a number comparison"
+    },
+    {
+      "line": 279,
+      "old": "- A fourth comparison nobody listed: line 194. `started_at` comes from `datetime.now()`, floored to the microsecond, and reads 0.24 to 0.95 microseconds below `started_epoch` in the same tick. A three-clause fix (file times only) was green 30 of 30 with real fsync and is still WRONG; timing amplification exposed it (17 of 23 amplified failures were the line 194 message). Fix = one-second tolerance on all four completion checks.",
+      "mark": "not positional",
+      "why": "\"0.24 to 0.95 microseconds below started_epoch\" is a number comparison"
+    },
+    {
+      "line": 282,
+      "old": "- Also found: no test pins the three file-time clauses (51 of 51 green with them deleted). The repo already fixed this class once in `fec/legislation/refresh_congress_pipeline.py:197-203` (`st_mtime <= started - 1`, with a deterministic 20 ms test) and `daily_refresh.py` never got it. Closest an earlier attempt ever came to the next: 19 s (14 FAILED/BUSY attempts, all 2026-09-13).",
+      "mark": "not positional",
+      "why": "\"an earlier attempt ... the next\" is the order of attempts (time)"
+    },
+    {
+      "line": 288,
+      "old": "- 2026-08-09 crash (metaloop `run-20260809T2331205425533Z-a0cc20e9e7`, HIGH confidence): see History. Ruled out: Ctrl+C, shutdown, 3 h limit, alternate log paths. TaskScheduler Operational event log is DISABLED on this machine (evidence gap).",
+      "mark": "rewrite",
+      "why": "\"see History\" names the hub's ## History",
+      "new": "- 2026-08-09 crash (metaloop `run-20260809T2331205425533Z-a0cc20e9e7`, HIGH confidence): see History in [[2026-08-incident-refresh-automation-reliability]]. Ruled out: Ctrl+C, shutdown, 3 h limit, alternate log paths. TaskScheduler Operational event log is DISABLED on this machine (evidence gap).",
+      "referent": "2026-08-incident-refresh-automation-reliability"
+    },
+    {
+      "line": 289,
+      "old": "- Fix F1+F2: `codex/refresh-crash-vis2` @ `a1436f9`: banner + `log()` + atexit email hook moved before the producer `os.walk` scan (walk wrapped: FATAL pre-step failure logged + re-raised); SIGBREAK handler logs KILLED line + `sys.exit(1)` so atexit fires on console-close/logoff/shutdown. Verified: py_compile clean, counts 1/1/1, order banner(27) -> hook(37) -> handler(42) -> walk(44), moved blocks token-identical vs `0a3d26d`, dual review (Codex xhigh executed; inline Fable adversarial second pass; codex MCP disconnected + CLI absent that night). Deployed 2026-08-09 ~21:24 (see History): live `weekly_refresh.py` content-identical to the fix (`git diff a1436f9 HEAD -- <file>` empty; raw-MD5 delta = CRLF rewrite by merge, benign).",
+      "mark": "rewrite",
+      "why": "\"see History\" names the hub's ## History",
+      "new": "- Fix F1+F2: `codex/refresh-crash-vis2` @ `a1436f9`: banner + `log()` + atexit email hook moved before the producer `os.walk` scan (walk wrapped: FATAL pre-step failure logged + re-raised); SIGBREAK handler logs KILLED line + `sys.exit(1)` so atexit fires on console-close/logoff/shutdown. Verified: py_compile clean, counts 1/1/1, order banner(27) -> hook(37) -> handler(42) -> walk(44), moved blocks token-identical vs `0a3d26d`, dual review (Codex xhigh executed; inline Fable adversarial second pass; codex MCP disconnected + CLI absent that night). Deployed 2026-08-09 ~21:24 (see History in [[2026-08-incident-refresh-automation-reliability]]): live `weekly_refresh.py` content-identical to the fix (`git diff a1436f9 HEAD -- <file>` empty; raw-MD5 delta = CRLF rewrite by merge, benign).",
+      "referent": "2026-08-incident-refresh-automation-reliability"
+    },
+    {
+      "line": 291,
+      "old": "- 2026-08-16 forecast: now UNKNOWN (was FAIL). Prior Sunday failures FIXED (2026-07-26 via `89b6219`; 2026-08-02 via the 2026-08-03 13:11 promotion). The old standing crown-law red's fate changed the night of 2026-08-09 (see History: the crown-law merge and its kernel receipt); Sunday's outcome depended on how THAT lane's cycle landed - their lane, not adjudicated here. NEVER weaken the audit or `weekly_refresh.py`'s `hard=True` to make Sundays green. The live tree also had ` M data/stance/own_source_stance_model.joblib` (mid-run churn) - not this lane's, do not clean.",
+      "mark": "rewrite",
+      "why": "\"see History: the crown-law merge\" names the hub's ## History",
+      "new": "- 2026-08-16 forecast: now UNKNOWN (was FAIL). Prior Sunday failures FIXED (2026-07-26 via `89b6219`; 2026-08-02 via the 2026-08-03 13:11 promotion). The old standing crown-law red's fate changed the night of 2026-08-09 (see History in [[2026-08-incident-refresh-automation-reliability]]: the crown-law merge and its kernel receipt); Sunday's outcome depended on how THAT lane's cycle landed - their lane, not adjudicated here. NEVER weaken the audit or `weekly_refresh.py`'s `hard=True` to make Sundays green. The live tree also had ` M data/stance/own_source_stance_model.joblib` (mid-run churn) - not this lane's, do not clean.",
+      "referent": "2026-08-incident-refresh-automation-reliability"
+    },
+    {
+      "line": 297,
+      "old": "Incident (2026-09-12 23:29 to 2026-09-13 10:58 local, Codex Desktop thread `01a098ce-d021-7d42-9383-5affc2a0bdfb`; see [[codex-executor]]):",
+      "mark": "external",
+      "why": "\"see [[codex-executor]]\" names a note outside this family (retargeted to its part by K8)"
+    },
+    {
+      "line": 300,
+      "old": "- Session family total: 673,856,790 tokens (674M) across 32 rollout files; ended with `usage_limit_exceeded`, next window 2026-09-19 23:50. Quota was already at 89% when the thread started. Nothing external re-invoked Codex: no scheduler, no wrapper, no `codex exec` loop; the Python code never calls OpenAI/Codex.",
+      "mark": "not positional",
+      "why": "\"next window 2026-09-19 23:50\" is time"
+    },
+    {
+      "line": 304,
+      "old": "- Plus: `--smoke` (skip discovery, admissions `--limit 1 --no-llm --no-install`, media crec/chrg/bluesky only, full `run_pipeline.py` because it cannot be shortened), `--no-llm` in admissions (carry forward old decisions with OLD fingerprint; never seal a hold), glassbox `current`/`total` + heartbeats + `data/engine/congress_pipeline_live.log`, before-snapshot hashes the two 98 MB HTML files (11 min -> 0.4 s), watcher `fec/legislation/watch_congress_pipeline.ps1` + `open_congress_pipeline_monitor.ps1`, exit-75 reasons, 4 pytest suites registered in `_LANE_PYTEST` (160 tests). The auto-mode classifier BLOCKED `taskkill` + `Disable-ScheduledTask`; a scheduler-launched run then took the lock the same second as the first smoke launch - launch races with the :39 retry are real. Smoke run PID 81500 (17:00 local): every collection step PASS with zero model calls; `run_pipeline.py` died at step 17 because the Codex session's UNCOMMITTED `fec/stance/extract_cu_bluesky.py` change (handle-registry UNVERIFIED gate) drops four House members' posts and 5 of Paul's bluesky gold rows no longer bind - first executed by the smoke; nothing of his touched; fix = Paul confirms the handles or reverts that change (he later ruled \"Revert\", see the smoke table). Also found+fixed: writers lost `os.replace` races with readers (`WinError 5/32/33`) - `fec/lane_file_io.replace_atomic()` 40-attempt jittered retry now used by all daily writers; watcher reads with FileShare Delete. No `PIPELINE COMPLETE` line exists on disk after 2026-07-28 (chain unproven for 7 weeks by any launcher). Scheduler ran on its own 17:39/18:39/19:39 with discovery DEFERRED working in production.",
+      "mark": "rewrite",
+      "why": "\"he later ruled\" is time; \"see the smoke table\" is the ### Smoke history table of ## Daily congress refresh: close-out, which moves to -daily-refresh-closeout-and-flakes",
+      "new": "- Plus: `--smoke` (skip discovery, admissions `--limit 1 --no-llm --no-install`, media crec/chrg/bluesky only, full `run_pipeline.py` because it cannot be shortened), `--no-llm` in admissions (carry forward old decisions with OLD fingerprint; never seal a hold), glassbox `current`/`total` + heartbeats + `data/engine/congress_pipeline_live.log`, before-snapshot hashes the two 98 MB HTML files (11 min -> 0.4 s), watcher `fec/legislation/watch_congress_pipeline.ps1` + `open_congress_pipeline_monitor.ps1`, exit-75 reasons, 4 pytest suites registered in `_LANE_PYTEST` (160 tests). The auto-mode classifier BLOCKED `taskkill` + `Disable-ScheduledTask`; a scheduler-launched run then took the lock the same second as the first smoke launch - launch races with the :39 retry are real. Smoke run PID 81500 (17:00 local): every collection step PASS with zero model calls; `run_pipeline.py` died at step 17 because the Codex session's UNCOMMITTED `fec/stance/extract_cu_bluesky.py` change (handle-registry UNVERIFIED gate) drops four House members' posts and 5 of Paul's bluesky gold rows no longer bind - first executed by the smoke; nothing of his touched; fix = Paul confirms the handles or reverts that change (he later ruled \"Revert\", see the smoke table in [[2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes]]). Also found+fixed: writers lost `os.replace` races with readers (`WinError 5/32/33`) - `fec/lane_file_io.replace_atomic()` 40-attempt jittered retry now used by all daily writers; watcher reads with FileShare Delete. No `PIPELINE COMPLETE` line exists on disk after 2026-07-28 (chain unproven for 7 weeks by any launcher). Scheduler ran on its own 17:39/18:39/19:39 with discovery DEFERRED working in production.",
+      "referent": "2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes"
+    },
+    {
+      "line": 305,
+      "old": "- OPEN for Paul (2026-09-13): admissions `transport claude-cli` (24 `claude.exe` calls per pass on his Claude subscription), press backlog budget/fold, committing the untracked subsystem (done later by the 2026-09-19 reconcile), retry task `ExecutionTimeLimit PT0S`.",
+      "mark": "not positional",
+      "why": "\"done later by the 2026-09-19 reconcile\" is time"
+    }
+  ]
+}

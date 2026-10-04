@@ -45,7 +45,7 @@ related_topics:
   - "[[2026-09-feature-mentat-console-ui]]"
   - "[[2026-09-feature-mentat-failings-pac-evidence]]"
   - "[[2026-09-feature-sector-growth-study]]"
-  - "[[2026-09-feature-ui-redesign-boards]]"
+  - "2026-09-feature-ui-redesign-boards"
   - "[[2026-09-troubleshooting-mentat-repo-state-and-workbooks]]"
 related_actors:
   - "[[mentat-console]]"
@@ -160,7 +160,7 @@ Detailed per-lane history, numbers and traps: [[2026-07-bugfix-mentat-collection
 
 ## Related work areas (topics)
 
-- Console UI: [[2026-09-feature-mentat-console-ui]]; failings lanes and PAC evidence: [[2026-09-feature-mentat-failings-pac-evidence]]; forecast and giving-view redesign: Forecast audit, giving-view redesign and PAC accuracy; sector growth study: [[2026-09-feature-sector-growth-study]]; UI redesign boards: [[2026-09-feature-ui-redesign-boards]]; cross-reference review: [[2026-09-17-mentat-xref-council-review]].
+- Console UI: [[2026-09-feature-mentat-console-ui]]; failings lanes and PAC evidence: [[2026-09-feature-mentat-failings-pac-evidence]]; forecast and giving-view redesign: Forecast audit, giving-view redesign and PAC accuracy; sector growth study: [[2026-09-feature-sector-growth-study]]; UI redesign boards: UI redesign boards (Melange and Mentat); cross-reference review: [[2026-09-17-mentat-xref-council-review]].
 
 
 ## Focal Points
@@ -179,11 +179,26 @@ Every note of this project by type, one line each; parts follow their parent.
 |---|---|
 | [[2026-06-working-agreement-change-control-and-decision-authority]] | Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code. |
 | [[2026-07-bugfix-mentat-collection-and-attribution]] | Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code. |
+| [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]] | part: Paul's standing feedback rules for Mentat collection… |
+| [[2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship]] | part: How the Mentat FEC pipeline was defined, built, reviewed… |
+| [[2026-07-bugfix-mentat-collection-and-attribution-july-hardening]] | part: The July 2026 hardening of the Mentat pipeline (07-22/23)… |
+| [[2026-07-bugfix-mentat-collection-and-attribution-audit-r12-trade-association]] | part: The six-agent Mentat audit of 2026-07-27, the R12… |
+| [[2026-07-bugfix-mentat-collection-and-attribution-september-collector-lanes]] | part: The September 2026 Mentat collector lanes: worker scaling… |
+| [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]] | part: The contradictions-not-ambiguity rule for Mentat… |
+| [[2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane]] | part: The Mentat system-debug lane of 2026-09-13 to 09-15: the… |
 | Forecast audit, giving-view redesign and PAC accuracy | Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD). |
 | [[2026-09-feature-mentat-console-ui]] | Mentat console UI lanes 2026-09-11..25: Chart Studio, clean-up, polish, load-time/FEC links, Graph and pie quirks. |
+| [[2026-09-feature-mentat-console-ui-chart-studio]] | part: Chart Studio v1 on the Mentat console (2026-09-11), its… |
+| [[2026-09-feature-mentat-console-ui-cleanup-and-polish]] | part: The Mentat console UI clean-up lane UI1 (2026-09-17) and… |
+| [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] | part: The Mentat console load-time and FEC-link lane and the… |
 | [[2026-09-feature-mentat-failings-pac-evidence]] | Mentat failings lanes S2-S8 (street columns, PAC evidence, industry addressing, URL scope, panes, categories, map) + PAC map audit. |
+| [[2026-09-feature-mentat-failings-pac-evidence-street-columns-addressing-navigation]] | part: Mentat failings lanes S2, S4 and S5 of 2026-09-16/17… |
+| [[2026-09-feature-mentat-failings-pac-evidence-pac-evidence-ingestion]] | part: Mentat failings lane S3 of 2026-09-16/17: ingesting PAC… |
+| [[2026-09-feature-mentat-failings-pac-evidence-pac-evidence-readers]] | part: Mentat failings lanes S6 to S8 of 2026-09-17/18: the PAC… |
+| [[2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane]] | part: The PAC map downstream audit and visualisation lane of… |
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
-| [[2026-09-feature-ui-redesign-boards]] | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
+| UI redesign boards (Melange and Mentat) | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
+| [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] | part: The Mentat console redesign boards of 2026-09-21/22… |
 | [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] | Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR unopened), tidy Data workbook, console hang fix. |
 
 ### Related Actors
@@ -191,7 +206,16 @@ Every note of this project by type, one line each; parts follow their parent.
 | Actor | Relation |
 |---|---|
 | [[mentat-console]] | Local Python web console for Mentat: Chart Studio, Graph, Insights, PAC evidence and maps; Paul on 8806, read-only 8812. |
+| [[mentat-console-chart-studio-and-system-debug]] | part: The Chart Studio tab of the Mentat console and the… |
+| [[mentat-console-startup-and-polish-lanes]] | part: The Mentat console startup hang fix of 2026-09-18 and… |
+| [[mentat-console-redesign-boards]] | part: The Mentat console redesign boards of 2026-09-21/22: the… |
+| [[mentat-console-pac-map-viz-lane]] | part: The PAC map and downstream visualisation lane on the… |
 | [[mentat-fec-pipeline]] | Mentat's R + Python FEC collector and Excel workbook builder (API pool over a DPAPI key store); 7 industries; code at C:\Users\pgoff\Mentat |
+| [[mentat-fec-pipeline-key-stores]] | part: Where the Mentat FEC API keys are stored (the encrypted… |
+| [[mentat-fec-pipeline-history-build-and-ship]] | part: History of the Mentat FEC pipeline from the 2026-07-18… |
+| [[mentat-fec-pipeline-history-hardening]] | part: History of the Mentat FEC pipeline hardening on… |
+| [[mentat-fec-pipeline-history-audit-r12]] | part: History of the six-agent audit of 2026-07-27, the… |
+| [[mentat-fec-pipeline-history-september-lanes]] | part: History of the Mentat FEC pipeline lanes of September… |
 | [[runpod-pod]] | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
 
 ### Related Concepts

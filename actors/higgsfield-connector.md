@@ -23,8 +23,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-redesign-boards-2026-09-22.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-redesign-boards-2026-09-22.md", sha256: "2b7d9f761beeed02ad734103878f763aac50962402282e1ba159ffc20ae75c3d"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -47,7 +47,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 
 - **Depends on:** the Higgsfield account that authorized the connector (a Georgetown address, [personal email omitted]); the desktop app's OAuth authorization (Settings > Connectors), which alone sets the account; the connector's session tools `balance`, `list_workspaces`, `get_cost`, `jobs_wait`, `transactions`, `media_upload`/`media_confirm`.
 - **Does NOT control the account:** `list_workspaces` only lists workspaces of the authorized account; `reconnect_session_connector` only re-dials a failed server; entering a password to authenticate is off-limits for the assistant in any case.
-- **Depended on by:** the redesign work in [[2026-09-feature-ui-redesign-boards]] (Mentat boards 2026-09-21/22 and Melange boards `#24`-`#43` of 2026-09-22, built for [[melange-systems]] and [[mentat-console]]), the Mentat console UI lane [[2026-09-feature-mentat-console-ui]], and the agent tooling stack [[2026-07-feature-agent-tooling-stack]]. Fallback when the plan is free: full-fidelity HTML mock-ups rendered to PNG through the Mentat tests' Playwright (see Dev Commands). Related memory: `mentat-ui-cleanup-lane-2026-09-17`.
+- **Depended on by:** the redesign work in [[2026-09-feature-ui-redesign-boards]] (Mentat boards 2026-09-21/22 and Melange boards `#24`-`#43` of 2026-09-22, built for [[melange-systems]] and [[mentat-console]]), the Mentat console UI lane [[2026-09-feature-mentat-console-ui]], and the agent tooling stack Agent tooling stack. Fallback when the plan is free: full-fidelity HTML mock-ups rendered to PNG through the Mentat tests' Playwright (see Dev Commands). Related memory: `mentat-ui-cleanup-lane-2026-09-17`.
 
 ## Flows
 
@@ -117,9 +117,11 @@ Related Mentat-lane figures (from `mentat-redesign-boards-2026-09-21`, a source 
 
 ## Related Topics
 
-- [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-09-feature-mentat-console-ui]] - Mentat console UI lanes 2026-09-11..25: Chart Studio, clean-up, polish, load-time/FEC links, Graph and pie quirks.
 - [[2026-09-feature-ui-redesign-boards]] - Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks.
+- [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] — The Higgsfield connector account trap: the connector bound to a free account until Paul re-authorized it on the plus plan.
+- [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] — The Mentat console redesign boards of 2026-09-21/22: fourteen Higgsfield boards, the board-wins ruling and the build-01 shell.
 
 ## Related Projects
 

@@ -1,13 +1,3 @@
-topics/2026-07-bugfix-mentat-collection-and-attribution
-actors/mentat-fec-pipeline
-actors/mentat-console
-topics/2026-09-feature-mentat-failings-pac-evidence
-topics/2026-09-feature-mentat-console-ui
-topics/2026-09-feature-ui-redesign-boards
-topics/2026-07-feature-agent-tooling-stack
-actors/codex-executor
-topics/2026-08-incident-refresh-automation-reliability
-topics/2026-08-incident-workstation-disk-and-backup
 topics/2026-06-feature-congress-r-scrapers
 topics/2026-07-feature-personality-psychometrics
 topics/2026-06-feature-cu-stance-and-sentiment

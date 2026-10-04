@@ -79,3 +79,4 @@ Observed giving still sits above the published $54,762,844.05 Banking workbook t
 - [[2026-07-bugfix-mentat-collection-and-attribution]] - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
 - [[2026-09-17-mentat-xref-council-review]] - 2026-09-17 council: cross-reference does not minimise vs workbook (Banking $72.1M vs $54.8M); Paul ruled it redundant and kept it dwarfed.
 - [[mentat]] — R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
+- [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]] — The contradictions-not-ambiguity rule for Mentat cross-verification (D-040, 2026-09-17) and the cross-reference versus workbook council review that left the cross-reference tab dwarfed.

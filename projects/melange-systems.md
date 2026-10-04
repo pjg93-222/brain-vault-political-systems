@@ -384,6 +384,13 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-06-feature-moneyball-excel-model-build]] | June 2026 build of the 533-member Moneyball workbook: four buckets, percentile-rank blend, calibration, scenario tooling |
 | [[2026-06-working-agreement-change-control-and-decision-authority]] | Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code. |
 | [[2026-07-feature-agent-tooling-stack]] | Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap. |
+| [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] | part: The Codex executor lane record: how Claude and Codex were… |
+| [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] | part: The quant-model-evaluation skill lane of 2026-09-30… |
+| [[2026-07-feature-agent-tooling-stack-skill-library-lane]] | part: The Moneyball skill library: how the repo skills were… |
+| [[2026-07-feature-agent-tooling-stack-runpod-sessions]] | part: Running Claude sessions on the RunPod pod: Paul's rulings… |
+| [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] | part: The Higgsfield connector account trap: the connector bound… |
+| [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] | part: The Project Brain toolkit: durable per-project memory for… |
+| [[2026-07-feature-agent-tooling-stack-glass-box-lock-hang]] | part: The GLASS BOX lane-lock hang that blocked metaloop starts… |
 | [[2026-07-feature-audio-and-speech-lane]] | Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims. |
 | [[2026-07-feature-data-collection-lanes]] | Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills |
 | [[2026-07-feature-influence-engine-internals]] | July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder |
@@ -395,16 +402,24 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-troubleshooting-melange-audits-and-reviews]] | Melange audit runs, guardrails, 09-13 five-lane code review, hallucination framework (D-007), provenance census, laundry-list close-out |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift]] | Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror |
 | [[2026-08-incident-refresh-automation-reliability]] | Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn |
+| [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]] | part: The weekly Melange refresh as of 2026-09-19: measured… |
+| [[2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes]] | part: The daily congress refresh close-out of 2026-09-19 and the… |
+| [[2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn]] | part: The Codex overnight poll-loop burn of 2026-09-12/13 as… |
 | [[2026-08-incident-workstation-disk-and-backup]] | C: filled by repo worktrees, cleared repeatedly (185.9 GB free on 2026-09-18); OneDrive stalled since 08-11; backup gaps |
+| [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] | part: The workstation backup coverage gap measured on 2026-09-07… |
+| [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]] | part: The disk clearances and worktree retirements of 2026-09-11… |
 | [[2026-09-feature-staffer-network-data-and-math]] | Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship. |
 | [[2026-09-feature-staffer-network-surfaces]] | Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane. |
 | [[2026-09-feature-ui-redesign-boards]] | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
+| [[2026-09-feature-ui-redesign-boards-melange-boards-and-build]] | part: The Melange dashboard redesign boards of 2026-09-22 and… |
+| [[2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks]] | part: The UI finalize after the reboot (2026-09-23 to 09-25)… |
 
 ### Related Actors
 
 | Actor | Relation |
 |---|---|
 | [[codex-executor]] | Codex (ChatGPT/Astra) as Paul's executor: Claude reasons and reviews, Codex writes code; MCP lane dead since 2026-09-17 |
+| [[codex-executor-incidents]] | part: Two Codex incidents: the overnight poll-loop burn of… |
 | [[debate-stance-model]] | Fine-tuned Political DEBATE NLI stance model (CPU) plus Lexicoder LSD tone; replaced the regex scorer in Stage 5 of the CU press pipeline |
 | [[draft-systems-r-pipeline]] | Draft Systems R code root: congress.gov, CU press, Census CD and Ballotpedia scrapers plus the DEBATE+LSD stance pipeline |
 | [[higgsfield-connector]] | Higgsfield MCP connector (89 tools) used to render UI boards; bound to whichever account authorized it; Paul must re-authorize to switch. |

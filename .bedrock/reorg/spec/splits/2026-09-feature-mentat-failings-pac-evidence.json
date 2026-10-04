@@ -1,0 +1,228 @@
+{
+  "id": "A4",
+  "what": "Batch 4 split of topics/2026-09-feature-mentat-failings-pac-evidence (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A4); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-09-feature-mentat-failings-pac-evidence",
+  "home": "projects/mentat",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Corrections and superseded statements recorded in the sources"
+    ],
+    "links": [
+      "actors/mentat-console",
+      "actors/mentat-fec-pipeline"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-09-feature-mentat-failings-pac-evidence-street-columns-addressing-navigation",
+      "title": "S2 street columns, S4 cross-industry addressing, S5 navigation",
+      "summary": "Mentat failings lanes S2, S4 and S5 of 2026-09-16/17: contributor street columns, cross-industry addressing, and console navigation and linking",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## S2: contributor street columns (2026-09-16)",
+        "## S4: cross-industry addressing (2026-09-16/17)",
+        "## S5: navigation and linking (2026-09-17)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-mentat-failings-pac-evidence-pac-evidence-ingestion",
+      "title": "S3 PAC evidence ingestion",
+      "summary": "Mentat failings lane S3 of 2026-09-16/17: ingesting PAC evidence from FEC filings into the Mentat console, with its money rules and caps",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## S3: PAC evidence ingestion (2026-09-16 to 2026-09-17)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-mentat-failings-pac-evidence-pac-evidence-readers",
+      "title": "PAC evidence readers: S6 panes, S7 committee categories, S8 district map",
+      "summary": "Mentat failings lanes S6 to S8 of 2026-09-17/18: the PAC evidence v2 panes and compare view, committee categories, and the district map",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## S6: PAC evidence v2, panes and compare (2026-09-17)",
+        "## S7: PAC evidence committee categories (2026-09-17)",
+        "## S8: PAC evidence district map (2026-09-17/18)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane",
+      "title": "PAC map downstream audit and viz lane (09-25 to 09-27)",
+      "summary": "The PAC map downstream audit and visualisation lane of 2026-09-25 to 09-27 as recorded in the failings topic: boards, builders, rulings, fidelity and the money revert",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## PAC map downstream audit and viz lane (2026-09-25 to 2026-09-27)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K7",
+      "a": "topics/2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane",
+      "b": "actors/mentat-console-pac-map-viz-lane"
+    }
+  ],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 34,
+      "old": "- Lane shape: a seven-session \"Mentat failings\" lane. The S0 packet is at `C:\\Users\\pgoff\\Mentat\\audits\\mentat_failings_20260915\\` (HANDOFF.md ledger, `patches\\`, `receipts\\`, `S4_DESIGN.md`, `S6_DESIGN.md`, `S6_MOCKUP_Main.dc.html`, `S6_MOCKUP_Map.dc.html`, `S7_DESIGN.md`). It was UNTRACKED at S2 start (precondition \"committed by Paul\" not met; Paul said continue); committed later as `11654f911` (Paul's own commit, 44 files incl. S2 receipts/patches/contract; needed `git add -f` because the root `.gitignore` eats `*.json`/`*.txt`). S1 = the collect lane (waived for S4 as disjoint files; S1's files `collect.R` / `fec_api.R` were routed separately).",
+      "mark": "not positional",
+      "why": "\"committed later as `11654f911`\" is time"
+    },
+    {
+      "line": 58,
+      "old": "Per-lane table (lane, date, commits, open patches, outcomes). Full detail for each lane is in the sections below.",
+      "mark": "rewrite",
+      "why": "\"Full detail for each lane is in the sections below\": the lane sections S2-S8 and the PAC map lane move to the four parts, so the positional word becomes \"in [[a]], [[b]], [[c]] and [[d]]\" (S10, a referent spanning several notes)",
+      "new": "Per-lane table (lane, date, commits, open patches, outcomes). Full detail for each lane is in the sections in [[2026-09-feature-mentat-failings-pac-evidence-street-columns-addressing-navigation]], [[2026-09-feature-mentat-failings-pac-evidence-pac-evidence-ingestion]], [[2026-09-feature-mentat-failings-pac-evidence-pac-evidence-readers]] and [[2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane]].",
+      "referent": "2026-09-feature-mentat-failings-pac-evidence-street-columns-addressing-navigation, 2026-09-feature-mentat-failings-pac-evidence-pac-evidence-ingestion, 2026-09-feature-mentat-failings-pac-evidence-pac-evidence-readers, 2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane"
+    },
+    {
+      "line": 74,
+      "old": "- S2: street physically LAST in the table (not after occupation) because `merge_company_shards.ensure_schema_compatible` compares PRAGMA order and `ALTER TABLE` only appends; raw warehouse headers derive from PRAGMA order (option B), never a table rebuild; `fec_response_archive` (never deleted; checkpoints ARE deleted on store) is the durable record store.",
+      "mark": "not positional",
+      "why": "\"street physically LAST in the table\" is a database table"
+    },
+    {
+      "line": 86,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 88,
+      "old": "- [ ] Paul: verify `mentat/inputs/fec_transaction_types.json` against fec.gov and flip `verified` to true (S3f); next data rules: amended-filing de-duplication (AMNDT_IND/FILE_NUM, latest wins) and a reconciliation test against openFEC /totals.",
+      "mark": "not positional",
+      "why": "\"next data rules\" is time"
+    },
+    {
+      "line": 100,
+      "old": "**Built (live tree, committed later; sessions never commit unless ruled):** `contributor_street_1/2 TEXT` appended LAST to `contributions`, `bulk_candidates`, `corporate_giving` + migration (schema.R); mapped at the four R choke points (`contribution_columns()`, `flatten_fec_rows`, `corporate_columns`, `fec_api_corporate_records`) plus the browser-lane projection; `report.R spending_raw_report_rows()` two SELECTs; `export_raw_contribution_warehouse.py` contract ordering + manifest/receipt `missing_contract_columns` + stderr warning (both full and fast paths); R stage 52 cols; `crypto_workbook_builder.mjs` rawHeaders 37 (8 column-letter sites shifted); `tidy_stage.R` 58-field registry + `build_tidy_workbook.py` sheet entries; NEW `tools/backfill_contributor_street.py` (dry-run default, `--apply`, evidence = `fec_response_archive` then checkpoints, refuses un-migrated DBs naming `init_schema`). Contract `contracts/raw_contribution_columns.json` generated by scratch `gen_contract.py`; tests `test_raw_contribution_columns.{py,R,cjs}`, `test_backfill_contributor_street.py`, extended `test_export_raw_contribution_warehouse.py`. RED receipts then GREEN. Patches `patches/S2_street_columns.patch` (14 files) and `S2_street_columns_collect.patch` (collect.R + fec_api.R, S1's files, routed separately); both reverse-apply clean and rebuild byte-identical. Sweeps: Python 600/0 (startup suite dropped), R 24/24, PS 5/5, Node 27/32 (all reds baseline or load flakes).",
+      "mark": "not positional",
+      "why": "\"committed later\" is time"
+    },
+    {
+      "line": 104,
+      "old": "**Why / decisions:** street physically LAST because `merge_company_shards.ensure_schema_compatible` compares PRAGMA order and `ALTER TABLE` only appends; placement is not contractual, exporters relocate the block. Raw warehouse headers derive from PRAGMA order (option B), never a table rebuild. `fec_response_archive` (never deleted; checkpoints ARE deleted on store) is the durable record store: 100% of existing rows backfillable in-lane by sub_id, so S1 re-collect is NOT needed for street (CORRECTED by the production dry run below: true only for the 2026-09-15 CU run).",
+      "mark": "same note",
+      "why": "\"CORRECTED by the production dry run below\" is the **Production dry run** paragraph of the same ## S2 section, which lands in -street-columns-addressing-navigation with this line and stays below it"
+    },
+    {
+      "line": 152,
+      "old": "- memo rows (MEMO_CD X or J-codes) and RPT_TP 24/48 notice rows keep channel/direction but stay out of totals; unknown codes name the table.",
+      "mark": "not positional",
+      "why": "\"unknown codes name the table\" is a data table"
+    },
+    {
+      "line": 154,
+      "old": "`normalize()` reads only `transaction_tp`, so workbook `transaction_type` columns are untouched (pinned by test). REJECTED: reusing the openFEC classifier (bulk rows lack its fields; a shim = second classifier). DEFERRED = Paul's next data rules: amended-filing de-duplication (AMNDT_IND/FILE_NUM, latest wins) and a reconciliation test against openFEC /totals. Evidence: red on `d71d2b813` (0 != 6), green readers 44 / readers+legacy+collector 61 (launcher Python) / stream 18; `receipts/S3f_bulk_codes.txt`; `patches/S3f_bulk_transaction_codes.patch`. Landing lessons: a Bash-side rewrite put real CR LF inside a string literal (SyntaxError) and a stray backslash before the middle dot in 'Independent spending · support' (KeyError): write patch scripts with the Write tool and pass Windows paths to Windows Python (`/c/...` paths fail in `python -c`). Paul must RESTART the console (server code changed; launcher did not).",
+      "mark": "not positional",
+      "why": "\"Paul's next data rules\" is time"
+    },
+    {
+      "line": 158,
+      "old": "**How to apply (S3):** start from HANDOFF.md's appended S3 section; check `S3_after_browser.txt` first. From a Melange worktree session the Write/Edit tools REFUSE `C:\\Users\\pgoff\\Mentat` (outside the session worktree): agents must write via scratchpad + `cp` or a Python script; never unquoted heredocs (see `shell-heredoc-mangling-2026-08-19`). Verifiers can write receipts into the wrong tree, so check paths. Never bind 8802/8806/8808/8841. Timing numbers on this host are unreliable under memory pressure. Related memories: `mentat-failings-lane-s2-2026-09-16`, `mentat-system-debug-lane-2026-09-13`, `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"see `shell-heredoc-mangling-2026-08-19`\" names a memory file"
+    },
+    {
+      "line": 162,
+      "old": "Source memory `mentat-failings-lane-s4-2026-09-16` (session `0b85c89b-e0b5-4619-ada5-b2f661f60e01`, last modified 2026-09-17). Worktree `multi-industry-snapshot-support-7c95a9`; code in `C:\\Users\\pgoff\\Mentat` on `codex/mentat-crypto`. Paul: \"The condition is met, proceed\" after the design (`audits/mentat_failings_20260915/S4_DESIGN.md`). S3 committed `303409192`; S3's later whole-file HANDOFF commit `91fe7402a` carried S4's ownership rows. S1 waived (disjoint files). Everything S4 built is UNCOMMITTED in the Mentat tree at memory time; Paul commits from `patches/S4_cross_industry_contract.patch`.",
+      "mark": "not positional",
+      "why": "\"S3's later whole-file HANDOFF commit\" is time"
+    },
+    {
+      "line": 178,
+      "old": "Source memory `mentat-failings-lane-s5-2026-09-17` (session `cd887bcc-f5ac-4e6b-84b5-54cb65978f8a`, last modified 2026-09-17). Same worktree session as S4 after a process restart; code in `C:\\Users\\pgoff\\Mentat` on `codex/mentat-crypto`. Paul: \"Go with your recommendations on A, B and C, proceed\", then \"Commit and restart\". COMMITTED `a7e09ed8c` (14 files, +2,506/-16). The HANDOFF S5 section landed earlier inside S3e's whole-file `522e3ad31`; the `/scope.js` STATIC_ASSETS line inside S3d's `a565216bf`. Console 8806 current on assets `9350a964…`, serving /scope.js.",
+      "mark": "not positional",
+      "why": "\"landed earlier inside S3e's whole-file `522e3ad31`\" is time"
+    },
+    {
+      "line": 186,
+      "old": "- `test_console_browser.cjs` S0 known-red (:188, later :196) was a race: the assertion on the History run-group button ran before `/api/runs` returned. Fixed with the file's own `waitForFunction`. Red under load, green on a warm box; never a code defect.",
+      "mark": "not positional",
+      "why": "\"(:188, later :196)\" is time"
+    },
+    {
+      "line": 188,
+      "old": "- Three review findings the 13-step browser pass could not see: `latest=1` overriding a permalink's cycle (fixture's newest cycle hid it); `saved=` outliving edits (reload re-opened the saved view over them); empty industry answer labelled \"Latest run\".",
+      "mark": "not positional",
+      "why": "\"could not see\" is the verb see"
+    },
+    {
+      "line": 197,
+      "old": "**Shape (Paul's rulings 1-7, all the recommended options):** one scope bar (Source = every ready import plus every saved snapshot, Committee type, Find a PAC, PAC, Cycle, Add pane, Import file and New snapshot drawers, Follow Graph toggle, one status region), a chip row of open panes, up to FOUR panes side by side from any industry file or snapshot, and a Compare strip (Receipts, per cycle, rows supported/excluded, top contributor, category, source) whose bars are scaled per row. URL keys are prefixed `a.*` to `d.*` (source/id/committee/cycle) per the HANDOFF rule; the single-pane keys reserved earlier are never written. `evidence-csv.js` is retired; the whole tab lives in the new `mentat/app/evidence.js`; `app.js` lost its 168-line evidence block. New server bits: the summary endpoint (`?summary=1` -> totals_by_cycle, counterparties, counts) and `industry` derived from the workbook name and backfilled in `stored_catalog`.",
+      "mark": "not positional",
+      "why": "\"the single-pane keys reserved earlier\" is time"
+    },
+    {
+      "line": 211,
+      "old": "**Diagnosis (measured on consoles 8806/8802, data root `C:\\Users\\pgoff\\AppData\\Local\\Mentat\\console`):** Fairshake was NOT excluded from the PAC evidence list. The Crypto workbook import lists it with 28 rows, but 22 were `Record Type = CORPORATE` (Coinbase treasury giving) and `TYPES` in `mentat/app/evidence_csv.py` mapped `contribution` but never `corporate`, so every corporate row in every workbook was \"unsupported\" (Crypto 333/333, Credit Union 202/202). Fairshake showed $1.0M instead of $177,980,393.39. The list also had no committee-type filter: one 523-entry select sorted by ID, no search, while the workbook's `Recipient Category` column and `graph_data.py` CATEGORIES already carried exactly the taxonomy Paul asked for (Super PAC, Trade Association, JFC, Company PAC, Leadership PAC, Carey, Other PAC, Candidate, Party Committee, Unclassified). The evidence reader ignored the column. The \"Saved FEC snapshots\" source lists only the typed committee IDs (not a defect).",
+      "mark": "not positional",
+      "why": "\"the PAC evidence list\" and \"The list also had no committee-type filter\" are a list in the console UI"
+    },
+    {
+      "line": 232,
+      "old": "**Package check that changed the design:** `politicsnlp` (PyPI 0.0.21, 2023) is a political-vocabulary NLP library with no geocoding and no districts; `geopy` returns coordinates, not districts. Neither can do this job and neither is installed. What does it: the FEC candidate master already in the repo (`inputs/fec_beneficiary/cn22|cn24|cn26`) for money TO candidates, exact and instant; the Census ZCTA-to-district crosswalk for money FROM contributors, approximate and labelled; the Census cartographic district files converted once to SVG paths shipped under `app/geo/`. GeoPy stays an optional provider for the later street-address lane (S8b, not built).",
+      "mark": "not positional",
+      "why": "\"the later street-address lane (S8b, not built)\" is time"
+    },
+    {
+      "line": 250,
+      "old": "**Higgsfield stack = boards first, then Opus builders.** Boards #44-#53 (numbering continues after Melange #24-#43): #44 PAC evidence Flow tab (FAIRSHAKE, real figures from the trace), #45 Graph follow-the-money (industry, attributed estimate), #46 Chart Studio Flow mark (Stages shelf), #47 Chart Studio map layers from 3 sources, #48 PAC map heat + Layers popover, #49 Manhattan tracts + Tableau Layer control + offline street base, #50 Tableau marks card, #51 S1 shelf rows + 14-icon mark strip, #52 one marks card per measure (dual axis), #53 Aggregate-by popover (ZIP/County/District/Hexbin/Density/Points). Later boards #54 (authoring) and #55 (viewer) from the Tableau map-model exploration. Review page https://claude.ai/artifact/CwP3BxSuC7HSRLxHRyg5x3 (source: session scratchpad `review\\mentat-flow-maps-marks.html`, images `review\\img\\b*.webp`; full PNGs `hf\\boards\\`; review page v8 later carries the fidelity table and gallery). Related boards memory: `mentat-redesign-boards-2026-09-21`; connector trap: `higgsfield-connector-account-trap-2026-09-17`.",
+      "mark": "not positional",
+      "why": "\"Later boards #54 and #55\" and \"review page v8 later carries\" are time"
+    },
+    {
+      "line": 260,
+      "old": "### Dated log, 2026-09-25 (later the same day: rulings and state)",
+      "mark": "not positional",
+      "why": "heading: \"later the same day\" is time"
+    },
+    {
+      "line": 270,
+      "old": "- Later: DONE lane C (F4 disclosure + cash model rule + evidence-geo contract v4 + CULAC refund line; shares now of LOCATED spending), lane D (F3 SLF snapshot-28d0bc70..., F5 FAIRSHAKE snapshot-b26761887...; exact vs FEC; budgets capped 24/8 to avoid party giants), lane F a+b (`/api/flow` + `flow-layout.js` + `flow-chart.js` + `evidence-flow.js` + `graph-flow.js`; FAIRSHAKE 2024 to the cent), lane G (geo v2 in STAGING `mentat/.cache/geo_build/v2`, 866 files; install blocked on `evidence_geo.py:70` scan), lane M (Marks v3, studio_api v3; clean-commit sim green; 3 test re-pins for Paul). Paul approved F12 (date-aware walk -> lane B) and \"give Mentat its own venv\" (lane V). Peer found fread doubled-quote crash in v6 records -> lane A porting fix (hold workbook rebuild until landed). Open for Paul: Coinbase $125.5M (workbook) vs $69.5M (FAIRSHAKE filings, crypto once) gap being decomposed by lane F; industry flow follows top-N first recipients only (confirm); Alaska inset pre-existing 67% scale defect; geo v2 gitignore proposal; cash estimates regen. RUNNING ~23:xx: P (maps), F(c) Flow mark, A (quote fix), B (F12), V (venv).",
+      "mark": "not positional",
+      "why": "\"Later: DONE lane C\" is time"
+    },
+    {
+      "line": 286,
+      "old": "- **Paul's next ask.** \"compare screenshots against the mockups and give accuracy when adjusting the additions made since\". Round 0 scored by the assistant: mean 54% (checklists in scratchpad `fidelity\\scores_round0.md`). Root causes: type about 1.3x the boards', the Flow collapse bug, the Studio auto-title and KPI strip, map overlays, verbose additions.",
+      "mark": "not positional",
+      "why": "the label \"Paul's next ask\" is time"
+    },
+    {
+      "line": 293,
+      "old": "- **Fidelity.** 54% -> 88% on the assistant's 10-item checklists (round0/round1/round1b in scratchpad `fidelity`). Review page v8 has the table and the gallery.",
+      "mark": "not positional",
+      "why": "\"Review page v8 has the table and the gallery\" is a table on the review page"
+    },
+    {
+      "line": 299,
+      "old": "- **Money revert.** Paul: \"The mentat money collection system is fucking perfect, don't change it\". Reverted `0ce240d9e` + `504d2cfd1` in `7a31f8ae2`; see `dont-be-jumpy-removing-money-2026-09-26`. (The J2/J3 money-removal fixes and the NON-CONTRIBUTION counting of 09-26 are therefore superseded; kept as dated entries above because they explain those commits.)",
+      "mark": "same note",
+      "why": "\"kept as dated entries above\" are the J2 audit and commit entries of the same ## PAC map downstream audit and viz lane section, above it in -pac-map-viz-lane; \"see `dont-be-jumpy-removing-money-2026-09-26`\" names a memory file"
+    }
+  ]
+}

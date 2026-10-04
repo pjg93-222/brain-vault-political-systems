@@ -1,5 +1,5 @@
 {
-  "what": "Batch 3 link model (plan .bedrock/reorg/plan.md Revision 4: 4.6 people/paul-goff 50 -> 14, 4.7 the 19 non-split leaves with D1-D6, section 6 concept links, section 5 C6 back-links). Read by .bedrock/reorg/relink.ts (A.5).",
+  "what": "Batch 3 link model (plan .bedrock/reorg/plan.md Revision 4: 4.6 people/paul-goff 50 -> 14, 4.7 the 19 non-split leaves with D1-D6, section 6 concept links, section 5 C6 back-links). Batch 4: D5 retargeted from the mentat-collection hub to its -cross-verification part (4.4 C4, 4.7). Read by .bedrock/reorg/relink.ts (A.5).",
   "leaves": {
     "topics/2026-06-working-agreement-change-control-and-decision-authority": { "home": "projects/melange-systems", "keep": ["people/paul-goff", "projects/mentat", "actors/moneyball-workbook"] },
     "topics/2026-06-working-agreement-communication-and-presentation-style": { "home": null, "keep": ["people/paul-goff", "concepts/trend-over-significance"] },
@@ -18,7 +18,7 @@
     "discussions/2026-07-30-coalition-builder-redesign-session": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-influence-engine-internals", "actors/melange-dashboard"] },
     "discussions/2026-09-03-staffer-network-architecture": { "home": "projects/melange-systems", "keep": ["topics/2026-09-feature-staffer-network-data-and-math", "actors/staffer-live-sidecar", "concepts/concurrent-service-overlap-edge-rule"] },
     "discussions/2026-09-06-staffer-sorting-rulings": { "home": "projects/melange-systems", "keep": ["topics/2026-09-feature-staffer-network-data-and-math"] },
-    "discussions/2026-09-17-mentat-xref-council-review": { "home": "projects/mentat", "keep": ["topics/2026-07-bugfix-mentat-collection-and-attribution", "actors/mentat-console", "concepts/exclude-on-contradiction-not-ambiguity"] },
+    "discussions/2026-09-17-mentat-xref-council-review": { "home": "projects/mentat", "keep": ["topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification", "actors/mentat-console", "concepts/exclude-on-contradiction-not-ambiguity"] },
     "discussions/2026-10-03-pac-accuracy-attempt2-rulings": { "home": "projects/forecast-redesign", "keep": ["topics/2026-09-feature-forecast-giving-redesign", "concepts/single-look-holdout-discipline"] }
   },
   "paul": [
@@ -42,7 +42,7 @@
     ["discussions/2026-07-30-coalition-builder-redesign-session", "topics/2026-07-feature-influence-engine-internals"],
     ["discussions/2026-09-03-staffer-network-architecture", "topics/2026-09-feature-staffer-network-data-and-math"],
     ["discussions/2026-09-06-staffer-sorting-rulings", "topics/2026-09-feature-staffer-network-data-and-math"],
-    ["discussions/2026-09-17-mentat-xref-council-review", "topics/2026-07-bugfix-mentat-collection-and-attribution"],
+    ["discussions/2026-09-17-mentat-xref-council-review", "topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification"],
     ["discussions/2026-10-03-pac-accuracy-attempt2-rulings", "topics/2026-09-feature-forecast-giving-redesign"]
   ],
   "concepts": {

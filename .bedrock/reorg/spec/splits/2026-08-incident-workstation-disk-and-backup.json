@@ -1,0 +1,260 @@
+{
+  "id": "A10",
+  "what": "Batch 4 split of topics/2026-08-incident-workstation-disk-and-backup (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A10); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-08-incident-workstation-disk-and-backup",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Mirror state (summary; detail in the mirror entity)",
+      "## Next Steps",
+      "## Left for Paul (open, 2026-09-18)",
+      "## Never touch list (consolidated)"
+    ],
+    "links": [
+      "actors/melange-repo-mirror",
+      "actors/lg-gram-workstation",
+      "concepts/census-before-claims"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-08-incident-workstation-disk-and-backup-backup-gap-and-census",
+      "title": "Backup coverage gap and the 2026-09-11 census",
+      "summary": "The workstation backup coverage gap measured on 2026-09-07 and the point-in-time disk census of 2026-09-11",
+      "domain": "domain/infra",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Backup coverage gap (measured 2026-09-07)",
+        "## Census 2026-09-11 (point-in-time; free-space figures superseded)"
+      ],
+      "keep": [
+        "actors/melange-repo-mirror"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-08-incident-workstation-disk-and-backup-clearances-and-retirements",
+      "title": "Disk clearances and worktree retirements (09-11 to 09-18)",
+      "summary": "The disk clearances and worktree retirements of 2026-09-11 to 09-18, with the brain updates of the disk lane",
+      "domain": "domain/infra",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Clearance 2026-09-11 (applied 22:55 on Paul's \"Apply the disk cleanup\")",
+        "## Retirement 2026-09-13 (session cc617a6c)",
+        "## Retirement 2026-09-15 (session mentat-excel-tableau-format-8ac097)",
+        "## Clearance 2026-09-16 (session eab5d209-66c7-4fce-b03e-a00af5204b0e)",
+        "## Brain updates (disk lane)",
+        "## Second clearance 2026-09-18 (Paul: \"Go clear 100 GB's and then finish\")",
+        "## Third clearance 2026-09-18 evening (session clear-storage-space-d8b0a5)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 29,
+      "old": "> The census figures from 2026-09-11 (949.8 GB used / 2.7 GB free) are point-in-time and are SUPERSEDED by the cleanup lane: the latest measured state is **185.9 GB free on 2026-09-18 evening** (after about 212 GB cleared; two new session worktrees took 36 GB back while the lane ran). The census figures are kept below as dated bullets. Re-run the census before quoting any number.",
+      "mark": "rewrite",
+      "why": "tagline, second sentence (the first sentence, which index.md and recall read, is unchanged): \"The census figures are kept below as dated bullets\": the census bullets of ## Census 2026-09-11 move to -backup-gap-and-census, while the hub keeps dated census figures below (History row 2026-09-11, the struck census claim in Decisions), so below stays and \"and in [[part]]\" is added",
+      "new": "> The census figures from 2026-09-11 (949.8 GB used / 2.7 GB free) are point-in-time and are SUPERSEDED by the cleanup lane: the latest measured state is **185.9 GB free on 2026-09-18 evening** (after about 212 GB cleared; two new session worktrees took 36 GB back while the lane ran). The census figures are kept below and in [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] as dated bullets. Re-run the census before quoting any number.",
+      "referent": "2026-08-incident-workstation-disk-and-backup-backup-gap-and-census"
+    },
+    {
+      "line": 33,
+      "old": "- Host: [[lg-gram-workstation]] (only C: and WinRE exist; no external drive is attached). Code tree: Melange Systems under OneDrive (`C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems`), see [[melange-systems]]; the off-box git mirror is [[melange-repo-mirror]]; live-tree/git-drift context in [[2026-07-troubleshooting-melange-live-tree-git-drift]]. Owner: Paul Goff.",
+      "mark": "external",
+      "why": "\"see [[melange-systems]]\" names another note"
+    },
+    {
+      "line": 35,
+      "old": "- **Backup structure:** OneDrive (consumer account, active to 2027-05-25, 144.61 GB already stored) silently stopped ingesting new files in the code tree on ~2026-08-11; Carbonite (`Personal Plus`) covers ~420-440 GB of the profile but not `C:\\melange-data`; the git mirror is Carbonite-covered. See \"Backup coverage gap\" below.",
+      "mark": "rewrite",
+      "why": "\"See \\\"Backup coverage gap\\\" below\" names ## Backup coverage gap, which moves to -backup-gap-and-census",
+      "new": "- **Backup structure:** OneDrive (consumer account, active to 2027-05-25, 144.61 GB already stored) silently stopped ingesting new files in the code tree on ~2026-08-11; Carbonite (`Personal Plus`) covers ~420-440 GB of the profile but not `C:\\melange-data`; the git mirror is Carbonite-covered. See \"Backup coverage gap\" in [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]].",
+      "referent": "2026-08-incident-workstation-disk-and-backup-backup-gap-and-census"
+    },
+    {
+      "line": 36,
+      "old": "- Paul's prompts for the four clearances: 2026-09-11 \"clear 100 GB without destroying essential systems\" (census; \"Apply the disk cleanup\"); 2026-09-13 \"Free 100 GB\", \"You don't need to ask, just remove\", \"just get rid of 50 gigabytes of finished trees right now\", \"We are not compressing we are removing\"; 2026-09-15 \"we need to clear 100 GB of space, nothing less\" then \"Show me the list and just remove the finished worktrees\"; 2026-09-16 evening \"Clear 100+ GB's of Space without destroying systems\", \"Show me the list and just remove the finished worktrees\", \"Don't remove the lane coordination worktree\", \"Keep the scratchpads\"; 2026-09-18 \"Go clear 100 GB's and then finish\"; 2026-09-18 evening \"You need to clear 200 gigabytes on this computer. There are certain branches that have been tabled, such as the friendship network, audio, lobbying inference, among other things that should be saved ... Do whatever is necessary to clear the space, and regenerate the scratchpads that were deleted\".",
+      "mark": "not positional",
+      "why": "\"Show me the list\" (twice) is Paul's quoted request in a session, not a reference to the note"
+    },
+    {
+      "line": 74,
+      "old": "| 2026-09-11 03:40 | Disk hit 0 bytes (during the member-relationships lane; see `member-relationships-lane-review-2026-09-10`). |",
+      "mark": "external",
+      "why": "\"see `member-relationships-lane-review-2026-09-10`\" names a memory file"
+    },
+    {
+      "line": 78,
+      "old": "| 2026-09-16 | Four clean worktrees removed: 6.5 -> 24.8 -> 42.5 -> 61 -> 79.4 GB free. 2026-09-17 ~00:15 own-tree removal and brain update `247ce10` / `d2a5aff` (see Brain updates). |",
+      "mark": "rewrite",
+      "why": "\"see Brain updates\" names ## Brain updates (disk lane), which moves to -clearances-and-retirements",
+      "new": "| 2026-09-16 | Four clean worktrees removed: 6.5 -> 24.8 -> 42.5 -> 61 -> 79.4 GB free. 2026-09-17 ~00:15 own-tree removal and brain update `247ce10` / `d2a5aff` (see Brain updates in [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]]). |",
+      "referent": "2026-08-incident-workstation-disk-and-backup-clearances-and-retirements"
+    },
+    {
+      "line": 86,
+      "old": "Newest first within each topic; superseded rulings are struck through and kept because they explain earlier artifacts.",
+      "mark": "not positional",
+      "why": "\"earlier artifacts\" are artifacts of earlier work (time)"
+    },
+    {
+      "line": 89,
+      "old": "- **Relevance is read from the running program's code**, not from size or age (Paul's redirect 2026-09-18: \"Did you clear irrelevant trees? Look at the main state of the program, and then compare irrelevant files for both mentat and melange other than what I have specified as off limits\"); brain DE-030 \"code-grep-as-relevance-test\" records that a grep over code is NOT a relevance test on its own (see Near miss).",
+      "mark": "rewrite",
+      "why": "\"see Near miss\" names the **NEAR MISS worth remembering:** bullet of ## Third clearance, which moves to -clearances-and-retirements",
+      "new": "- **Relevance is read from the running program's code**, not from size or age (Paul's redirect 2026-09-18: \"Did you clear irrelevant trees? Look at the main state of the program, and then compare irrelevant files for both mentat and melange other than what I have specified as off limits\"); brain DE-030 \"code-grep-as-relevance-test\" records that a grep over code is NOT a relevance test on its own (see Near miss in [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]]).",
+      "referent": "2026-08-incident-workstation-disk-and-backup-clearances-and-retirements"
+    },
+    {
+      "line": 93,
+      "old": "- **Standing KEEP rulings of Paul (2026-09-16):** `mentat-failings-lane-a615fa` = the Mentat failings lane-coordination worktree (session title \"Mentat failings lane coordination\"): NEVER remove it even when idle and clean. ~~Session scratchpads under `C:\\Users\\pgoff\\AppData\\Local\\Temp\\claude\\` are KEPT, even the closed tidy-workbook session's 64.9 GB one and the S2 session's 9.0 GB one; do not propose them again as a lever unless Paul reopens it.~~ (2026-09-16) - the 64.9 GB `...mentat-excel-tableau-format-8ac097` scratchpad was DELETED on 2026-09-18 by the clearing session overriding the ruling (see 2026-09-18 first clearance); the S2 9.0 GB scratchpad was kept. The session says it should have asked rather than judge the ruling reopened by phrasing; if Paul wants the ruling restored verbatim, treat that deletion as the exception and ask next time.",
+      "mark": "rewrite",
+      "why": "\"see 2026-09-18 first clearance\" is the first clearance of 2026-09-18, ## Second clearance 2026-09-18 (the History row \"2026-09-18 (first)\"), whose override bullet moves to -clearances-and-retirements; \"ask next time\" is time",
+      "new": "- **Standing KEEP rulings of Paul (2026-09-16):** `mentat-failings-lane-a615fa` = the Mentat failings lane-coordination worktree (session title \"Mentat failings lane coordination\"): NEVER remove it even when idle and clean. ~~Session scratchpads under `C:\\Users\\pgoff\\AppData\\Local\\Temp\\claude\\` are KEPT, even the closed tidy-workbook session's 64.9 GB one and the S2 session's 9.0 GB one; do not propose them again as a lever unless Paul reopens it.~~ (2026-09-16) - the 64.9 GB `...mentat-excel-tableau-format-8ac097` scratchpad was DELETED on 2026-09-18 by the clearing session overriding the ruling (see 2026-09-18 first clearance in [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]]); the S2 9.0 GB scratchpad was kept. The session says it should have asked rather than judge the ruling reopened by phrasing; if Paul wants the ruling restored verbatim, treat that deletion as the exception and ask next time.",
+      "referent": "2026-08-incident-workstation-disk-and-backup-clearances-and-retirements"
+    },
+    {
+      "line": 95,
+      "old": "- ~~Census plan (2026-09-11): per `ask-before-substantive-changes` nothing was deleted; \"Retiring worktrees is Paul's action (git is his under `no-git-plain-review-2026-09-01`)\".~~ (2026-09-11) - superseded by Paul's direct words in later lanes (\"Apply the disk cleanup\" 2026-09-11, \"You don't need to ask, just remove\" 2026-09-13, \"Show me the list and just remove the finished worktrees\" 2026-09-15/16); sub-agents still refuse destructive steps on relayed authorization, so worktree removal runs in the main session on Paul's direct word.",
+      "mark": "not positional",
+      "why": "\"later lanes\" is time; \"Show me the list\" is Paul's quoted request"
+    },
+    {
+      "line": 104,
+      "old": "Remote `mirror` = `C:\\Users\\pgoff\\GitMirrors\\melange-systems.git` (Carbonite-covered; first push sha-identical `@b76d8807`). 2026-08-18: all 174 branches + 3 tags pushed. 2026-09-19: mirror `main` had sat at `2049fea9f` since 2026-09-08 and 88 of 292 local branches were absent (incl. `claude/melange-systems-code-review-859518`, only home of the 09-13 packet at `77959ae74`); `git push mirror main` then `--all` and `--tags`: 90 refs pushed, 0 rejected, 292 of 292 present, `main` = `a19c796d2`, 3.1 GB; `post-commit` / `post-merge` hooks (brain D-059, `<live>\\.git\\hooks\\`) push the branch just committed (failures in `.git\\mirror-push-failures.log`, Glass Box source `melange-mirror-hook`, proven by commit `b99ba565d`). GitHub is blocked by 2.6 GB blobs; see [[melange-repo-mirror]].",
+      "mark": "external",
+      "why": "\"see [[melange-repo-mirror]]\" names another note"
+    },
+    {
+      "line": 106,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 109,
+      "old": "- [ ] Paul to decide the items found and left for him (see \"Left for Paul\"): 43.17 GB `charming-chatterjee-d81c90` scratchpad `temp_console_old_code\\state`; slim `mentat-failings-lane-a615fa` (17.5 GB); `C:\\tmp\\clone_probe` (6.65 GB); a reboot to shrink `pagefile.sys` (84.5 GB); `powercfg /h off` for hiberfil.sys (12.6 GB).",
+      "mark": "same note",
+      "why": "\"see \\\"Left for Paul\\\"\" names ## Left for Paul, which the hub keeps"
+    },
+    {
+      "line": 115,
+      "old": "- [ ] Console UI follow-ups not in this topic; see the Mentat topics.",
+      "mark": "external",
+      "why": "\"see the Mentat topics\" names other notes"
+    },
+    {
+      "line": 156,
+      "old": "Paul asked (2026-09-11) to \"clear 100 GB without destroying essential systems\". C: was **949.8 GB used / 2.7 GB free** (superseded by the later figures above). A READ-ONLY census (attribute-only walk, 659,182 dirs / 2,299,071 files, 20 min) presented a plan; per `ask-before-substantive-changes` nothing was deleted by the census.",
+      "mark": "rewrite",
+      "why": "\"the later figures above\": the later free-space figures are the hub's tagline and History rows of 2026-09-13 to 09-18, which stay in the hub; this line moves to -backup-gap-and-census (\"later\" is time)",
+      "new": "Paul asked (2026-09-11) to \"clear 100 GB without destroying essential systems\". C: was **949.8 GB used / 2.7 GB free** (superseded by the later figures in [[2026-08-incident-workstation-disk-and-backup]]). A READ-ONLY census (attribute-only walk, 659,182 dirs / 2,299,071 files, 20 min) presented a plan; per `ask-before-substantive-changes` nothing was deleted by the census.",
+      "referent": "2026-08-incident-workstation-disk-and-backup"
+    },
+    {
+      "line": 163,
+      "old": "**Deliverables** (in the tableau worktree, `tmp\\disk_cleanup_20260911\\`): `free_space_plan.ps1` (report-by-default; opt-in items; per-worktree `git status` with 300 s timeout; refuses dirty worktrees unless `-ForceDirty`; protected list; Glass Box emits; smoke-tested in report mode), `DISK_CLEANUP_PLAN_2026-09-11.md`, the census script `disk_audit.ps1` and its md/csv outputs. Note: `free_space_plan.ps1` from 09-11 no longer exists anywhere (per the 2026-09-16 session). Recommended first batch = the six August worktrees (mentat-systems-production-file-53552c, industry-spending-attribution-d809c2, trusting-hugle-7a369a, goofy-chaum-819f72, intelligent-grothendieck-2171e7, infallible-chebyshev-c1f6cd). KEEP: staffer-social-ranking-math-738a24 (variant A built), employment-tenure-adjudication-e27de8 (member-relationships records), staffer-network-stale-imports-2e9e82 (reopened), graph-consolidation-identity-d8d358 (active), the tableau worktree. The gate was later patched so `D`-only entries never block (Modified/Deleted/Untracked columns; `-AllowUntracked`).",
+      "mark": "not positional",
+      "why": "\"The gate was later patched\" is time"
+    },
+    {
+      "line": 178,
+      "old": "- **Tooling lessons:** `Get-Item` on `hiberfil.sys`/`pagefile.sys` returns nothing even with `-Force` (use `Get-ChildItem C:\\ -Force -File`); the PowerShell tool's destructive-command scanner blocks a here-string whose TEXT contains delete commands (write such scripts with the Write tool, then parse-check visibly); six `git.exe` processes were alive during the session, so worktree removal must wait for them (see the CONSTRAINT on stranded index.lock).",
+      "mark": "external",
+      "why": "\"see the CONSTRAINT on stranded index.lock\" names a brain constraint that appears nowhere in this note"
+    },
+    {
+      "line": 191,
+      "old": "Paul: \"we need to clear 100 GB of space, nothing less\" then \"Show me the list and just remove the finished worktrees\".",
+      "mark": "not positional",
+      "why": "\"Show me the list\" is Paul's quoted request"
+    },
+    {
+      "line": 195,
+      "old": "- Held for Paul: mentat-system-debug-5be715 and melange-members-section-fixes-6613db (written 09-14 evening, the latter with 14 untracked `audits/members_section_20260914` files = live lanes), mentat-systems-production-file-53552c (29 uncommitted docs, unmerged), Codex 4f35 (36 uncommitted staffer files), melange-coalition-builder-design-7babbe (an OneDrive online-only placeholder, 0 local bytes).",
+      "mark": "same note",
+      "why": "\"the latter\" is the second tree named in the same sentence"
+    },
+    {
+      "line": 201,
+      "old": "- Applied (main thread, one PowerShell call per tree with literal paths): removed `mentat-excel-tableau-format-8ac097`, `mentat-system-failings-c5d7d4`, `mentat-system-debug-5be715`, `contributor-street-columns-0a1726` (18.2 GB / ~42,074 files each; all clean, 0 ignored non-cache, 0 commits ahead; sessions idle since 09-15 23:23 / 09-15 23:32 / 09-16 22:40 / 09-16 21:24). C: free 6.5 -> 24.8 -> 42.5 -> 61 -> 79.4 GB. Branches all still present. Each top folder survives as an empty 0-byte stub held by another process (same as youthful-murdock on 09-11); `git worktree prune` deregistered all four. Trees 1-2 were removed BEFORE the `--ignored` check was added (status clean covers only tracked+untracked); the later two had 0 ignored entries, so the risk on the first two is low but not proven.",
+      "mark": "not positional",
+      "why": "\"the later two\" are the third and fourth trees removed (order of removal)"
+    },
+    {
+      "line": 204,
+      "old": "- **PowerShell destructive-scanner lessons:** (1) a bare `C:` token ANYWHERE in the command text (even inside a quoted emit summary like 'C: free 6.5->24.8') plus a Remove-Item = blocked as \"system path 'C:'\"; (2) a regex containing `/` (e.g. `(^|/)(__pycache__)(/|$)`) in the same command as Remove-Item = blocked as \"system path '/'\"; (3) two Remove-Item calls in one command = blocked. Keep each removal in its own call: literal path, no regex, no 'C:' prose. Do read-only verification (status, `--ignored`, ahead count) in a separate prior call, then re-check plain status inside the removal call. Two removal calls issued in parallel both passed this time. Later triggers (2026-09-18): `/1GB` anywhere in a command that also has Remove-Item is read as system path '/1GB' (multiply by `9.31322574615479E-10` instead); a string that begins a path segment with a backslash, such as `\"$k\\ledger.sqlite\"` or a format string `{1}\\ledger.sqlite`, is read as system path '\\ledger.sqlite' (use nested `Join-Path` with the leaf in a variable); a `foreach` over a literal array with ONE textual Remove-Item passes, so one call can clear several approved targets. `if` is not an expression in PS 5.1, so it cannot be inlined inside a `-f` format argument (use a prior variable assignment).",
+      "mark": "not positional",
+      "why": "\"Later triggers (2026-09-18)\" is time"
+    },
+    {
+      "line": 211,
+      "old": "- **2026-09-17 00:06 ET, on Paul's \"Apply the brain update\":** brain repo commits `247ce10` (STATE disk bullet + next-action bullet + Verified-by scope; D-038 \"Worktree retirement rule and protected trees\"; DE-024 \"Parallel directory walks for a disk census on this box\") and `d2a5aff` (untracked a stray `STATE.md.PRE-STAFFER-DASHBOARD-20260905.bak` that `flush`'s `git add -A` had swept in; its blob stays in history). IDs are D-038/DE-024, NOT the D-030/DE-022 the draft assumed: the Members Section lane committed D-031..D-037 + DE-023 the same evening (`e7f5900`), so always re-read the last ID right before appending. Follow-up commits `2ea8c8a` (next-action (a) marked DONE) and `ee18ca5` (untracked the .bak a SECOND time: the brain repo has NO `.gitignore`, so EVERY `flush` re-adds it via `add -A`). Committed STATE.md blobs are LF throughout; the CRLF on disk is `core.autocrlf=true` from Git's system config, not damage. `brainctl.py decide/deadend` cannot take a date and each auto-commits with `add -A`; hand-append + one `flush` is the cleaner path. `flush` stamps `Last verified` with a time (`2026-09-17 00:05`), which the parser accepts. Paul's word \"apply\" resolves the CLAUDE.md-vs-D-006 draft/commit conflict for that lane only.",
+      "mark": "not positional",
+      "why": "\"next-action bullet\" and \"next-action (a)\" are brain section names"
+    },
+    {
+      "line": 219,
+      "old": "- **The S2 9.0 GB scratchpad was KEPT** (`...contributor-street-columns-0a1726`, `s2_prod_dryrun/`) deliberately, because `mentat-failings-lane-s2-2026-09-16` records that `report-input-20260910` and `repair-20260908` have NO archive (no directory of either name survives anywhere under the Mentat tree; only `repair-20260908-{databases,inputs,recollection}`), so those dry-run DBs may be the last copies. Do not delete it without Paul's word. (Later on 09-18 at 16:31 another session archived the S2 sole copies to `C:\\melange-data\\archive\\s2-sole-copy-2026-09-18`: 54 files / 6.61 GB, `_MANIFEST.csv`, dupe and sidecar verdict CSVs; the S2 scratchpad itself is untouched.)",
+      "mark": "not positional",
+      "why": "\"Later on 09-18 at 16:31\" is time"
+    },
+    {
+      "line": 220,
+      "old": "- **Deleted, all orphans whose worktree no longer exists:** the 64.9 GB one above, plus `employment-tenure-adjudication-e27de8` 1.89, `graph-consolidation-identity-d8d358` 1.12, `melange-dashboard-fixes-83c994` 0.85, `mentat-chart-studio-fields-40f2ca` 0.46, `melange-systems-code-review-859518` 0.16, `mentat-system-debug-1f368e` 0.06, `mentat-system-debug-5be715` 0.04, `mentat-system-failings-c5d7d4` 0.02, `mentat-chart-studio-bugs-bb0e92` 0.01, `mentat-tableau-chart-interface-6bbf01` 0.01, `clear-storage-space-5b4a81` 0.01 GB. **Orphan test that worked:** a scratchpad directory name encodes its worktree path, so any name absent from `git worktree list` is dead weight. (But it FAILS by construction for regenerated roots, see third clearance.)",
+      "mark": "same note",
+      "why": "\"the 64.9 GB one above\" is the override bullet of the same section (## Second clearance 2026-09-18); \"see third clearance\" names ## Third clearance, which lands in -clearances-and-retirements with this line"
+    },
+    {
+      "line": 223,
+      "old": "- **PRESERVED BEFORE DELETING:** `mentat-collector-slowdown-dfbf5b` held `audits/mentat_collector_slowdown_20260917/` untracked, and that packet existed NOWHERE else. Copied to `C:\\Users\\pgoff\\Mentat\\audits\\mentat_collector_slowdown_20260917` (6 files, 0.13 MB, file counts verified equal) before removal, so the collector-slowdown diagnosis (see the Mentat FEC pipeline (`mentat-fec-pipeline`)) survives and is now committable from the Mentat tree. **Rule: a worktree with 0 commits ahead can still hold the only copy of a lane's packet; check every untracked path and rehome it before removing.**",
+      "mark": "external",
+      "why": "\"see the Mentat FEC pipeline (`mentat-fec-pipeline`)\" names another note"
+    },
+    {
+      "line": 225,
+      "old": "- **A RUN DIRECTORY IS AUDIT EVIDENCE** (discovered 2026-09-18 by the cross-reference lane). Under `%LOCALAPPDATA%\\Mentat\\console\\<roster-id>\\runs\\<run-id>\\industries\\<slug>\\fanout\\lanes\\lane-NN\\mentat.db` sit the per-lane collection databases, and since 2026-09-15 those carry `fec_response_archive`: the verbatim FEC response bodies. They are the ONLY way to prove what a row's source text said at collection time; the merged database a run produces keeps the rows but no bodies. Banking's 09-09/10 run named all ten of its lane databases in `.cache\\report-repairs\\banking-20260910\\fanout-receipt.json` under roster `79c7c0f2728b43888a39106312afbaa2`, and all ten are gone while eight other rosters survive; what removed them was not established (it may have been console retention rather than either clearance). The cost is concrete: brain D-043 now excludes 29,816 Banking rows worth $32,538,668.49 on the strength of their employer text, and whether that text was recorded faithfully is unanswerable offline because those ten files no longer exist (a live FEC re-fetch is the only instrument). **Before removing anything under a console data root, or proposing it as a lever, check whether a run's lane databases are the last evidence for a number someone is relying on**; the scratchpad orphan test does not apply there, because a run directory has no worktree to be orphaned from. Related: `xref-contradictions-not-ambiguity-2026-09-17`; see the Mentat FEC pipeline (`mentat-fec-pipeline`).",
+      "mark": "external",
+      "why": "\"see the Mentat FEC pipeline (`mentat-fec-pipeline`)\" names another note"
+    },
+    {
+      "line": 233,
+      "old": "- **Scratchpads REGENERATED on Paul's order.** Fourteen deleted scratchpads (the twelve from the morning, plus collector-slowdown and xref-spreadsheet-review, which something else deleted between 15:30 and 16:50) were rebuilt from the session transcripts: 2,392 authored files / 12.5 MB at their final state with last-edit times restored; 13 roots each carry `REGENERATED_README.txt` + `REGENERATED_MANIFEST.json` (`mentat-system-failings-c5d7d4` had no authored file). Method: replay every successful Write/Edit/MultiEdit tool call in timestamp order; where a result records `toolUseResult.originalFile`, the Edit is applied to that, so it never depends on an earlier replay; failed calls (GateGuard first-touch denials are common) are skipped by pairing each call with its `tool_result`. NOT regenerable, listed rather than guessed: shell-produced files (1,004 literal paths under `shell_only_paths`) and 409 Edits whose base content is not in the transcript (every sampled one was a subagent edit of a scratch copy of a repo file; subagent transcripts carry no `originalFile`; those lanes' results live in their commits). The 64.9 GB Mentat state copy was deliberately NOT re-copied. `archive_worktree.ps1` (21 KB) is back under the regenerated `clear-storage-space-5b4a81` root. These roots FAIL the orphan test by construction; never delete them on that test. A transcript `file_path` can carry a trailing newline; strip it.",
+      "mark": "not positional",
+      "why": "\"an earlier replay\" is the order of the replay steps (time)"
+    },
+    {
+      "line": 236,
+      "old": "- **Approved by Paul and applied, 59.3 GB:** (1) six `runtime\\mentat\\inputs\\fec_beneficiary` copies (five console rosters plus the Codex package's private copy), 35.97 GB. `server.py:1041-1053` (`start_prepared_process`) copies R, tools and inputs and then `copy_fec_sources` into `<roster>\\runtime\\mentat` on every launch or resume, so they are regenerable pins; each of the 36 files was re-checked against the active source inside the deleting call. (2) `ledger.sqlite` ONLY, in the four superseded Banking runs of 09-12/13 plus the incomplete `20260917T191516` (no `report.json`, so it can never be selected), 16.83 GB. The console picks the newest run per industry (`cross_reference_data.py:283-309`) and analytics the newest compatible ledger (`contribution_data.py:393-411`). Kept whole: baseline `20260913T074303`, measured-after `20260918T030844`, all three of 09-18's later runs, every Fintech run. The three kept ledgers' SHA-256 were verified against `report.json.ledger_sha256` BEFORE anything was deleted, and every Banking run shares db sha `4abdea581b`, so a dropped ledger re-derives in about 11 minutes. (3) Melange: `audits\\self_update_20260908\\stage` 2.83, `.git\\lost-found` 2.37 (the 07-27 fsck dump), `orphan\\snapshots` 0.82 EXCEPT its one tracked file `.Rhistory` (kept so the live tree's status stays clean; \"all untracked\" was wrong and the look-before-delete step caught it), 33 git `tmp_obj` garbage files 0.47.",
+      "mark": "not positional",
+      "why": "\"09-18's later runs\" is time"
+    },
+    {
+      "line": 239,
+      "old": "- **CLEAN-HOUSE PASS** (Paul, ~19:00: \"Apply the brain update, and fucking clean house\"). Read as the list just put to him, NOT as reopening the three items he had declined an hour earlier (D-038's reversal needs a scratchpad NAMED). Cleared: the two intermediate 09-18 Banking ledgers (`20260918T164949`, `20260918T173505`, 6.84 GB; pointer and newest run re-checked first); the `.git\\codex-worktree-backups` bundle (2.95 GB, after verifying each of its 3 heads is identical to the local branch; `claude/wizardly-wilbur-e2d1a0` and `claude/melange-data-expansion-958236` are NOT on the mirror); dead console cache generations via `clean_mentat_caches.py` (10.38 GB: each analytics index names its workbook in `metadata.manifest`, so keep the newest per workbook and drop 31 older ones plus 8 `<token>.<uuid>` build leftovers; each query-cache view proof records `identity.source_stamp` = path, size, mtime_ns, ctime_ns, so 536 view files whose stamp no longer matches are dead; several proofs pointed at `%TEMP%\\tmp*\\facts.sqlite`, i.e. a test suite wrote into the real cache root); and, inside the backup-like dirs, ONLY generated dashboard copies of 20 MB and up (83 files, 6.57 GB: `Moneyball*.html`, `member_desk_bundle.json`, `cu-member-desk-profiles.js`, `index.html`) under `label_correction_20260913`, `self_update_20260908\\production_before` and `congress_pipeline`, keeping receipts, workbooks, logs, data files and the congress runs `20260914T042414Z` + `20260913T210003Z` whole. A size-and-name threshold is the right tool in a backup-like directory: it frees nearly all the bytes and cannot touch hand-labelled data.",
+      "mark": "not positional",
+      "why": "\"the list just put to him\" was the list put to Paul in the session; \"declined an hour earlier\" is time"
+    },
+    {
+      "line": 250,
+      "old": "- Still open after the clean-house pass, all Paul's: `self_update_20260908\\production_before` 2.00 GB (holds the cited 15-row `bluesky_cu.csv`); six `label_correction_20260913` activation snapshots 3.22 GB; `audits\\congress_pipeline` 19 run dirs 4.06 GB (the thirteen failed 09-13 attempts carry a 0.28 GB `before` snapshot each); stale `contribution-analytics` generations plus `<hash>.<uuid>` partial builds and 09-12/13 `contribution-query-cache` entries (an estimated 5-7 GB; naming the dead ones needs `_token(source)` for the 8 live sources, since partly addressed by `clean_mentat_caches.py`); the three declined items above.",
+      "mark": "same note",
+      "why": "\"the three declined items above\" are the scratchpad, failings-lane and clone_probe bullets just above it in ## Left for Paul, which the hub keeps"
+    }
+  ]
+}
