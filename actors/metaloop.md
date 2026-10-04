@@ -12,7 +12,7 @@ criticality: "high"
 pci: false
 known_issues:
   - "A hung GLASS BOX lane console (frozen heartbeat) blocks every metaloop start; launch.ps1 will not clear it; kill the PID with Paul's approval"
-  - "Hooks are dead in app sessions (~2026-08-06): coordinator must emit agent.*/task.* pairs itself"
+  - "Hooks are dead in app sessions (~2026-08-06): coordinator must emit agent.*/task.* pairs itself. Correction 2026-10-03 (source windows-hook-shell-git-bash): the 16 mirror.ps1 hooks were dead from about 2026-08-02 because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths; fixed 2026-10-03 with forward slashes (see GLASS BOX)"
   - "Codex MCP transport serializes parallel calls anyway; same-session parallel dispatch gives MCP error -32000 Connection closed"
   - "Harness restart severs Codex MCP threads (recover by inspecting surface and opening a fresh thread)"
   - "Receipt-block emission dropped 6/8 first attempts across phases; the coordinator VERIFY TOOTH is the enforcement (caught 6/6); a mechanical receipt-presence gate is only recommended"
@@ -21,10 +21,11 @@ known_issues:
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/codex-executor-lane-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\codex-executor-lane-2026-07-18.md", sha256: "afc4c835d129259e477c1e91bfbbb1d26c9b996bc86b4fb6092896e705ee81b2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/universal-lane-laws-2026-08-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\universal-lane-laws-2026-08-09.md", sha256: "797a1d0065036dc8507e051f4dcbd3a26386d338602f9ffc27dad5404f0e49b0"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e/memory/windows-hook-shell-git-bash.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Roaming-Claude-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-03-35774e\\memory\\windows-hook-shell-git-bash.md", sha256: "a239f75054598a3e26fa33f532b3a325b6501c3277add53d25908a2055522138"}
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -75,7 +76,7 @@ git diff --no-index --ignore-cr-at-eol <a> <b>   # confirm copy drift (EOL-only 
 ## Known Issues
 
 - Hung lane console blocks start (remedy above); likely trigger a console frozen on QuickEdit text selection.
-- Hooks dead in app sessions since about 2026-08-06; coordinator emission is the workaround.
+- Hooks dead in app sessions since about 2026-08-06; coordinator emission is the workaround. Correction 2026-10-03 (source `windows-hook-shell-git-bash`): the hooks were dead from about 2026-08-02 to 2026-10-03, because Git Bash stripped the backslashes of their unquoted Windows paths, and were fixed with forward slashes; see GLASS BOX.
 - Codex MCP concurrency is mechanically unavailable (transport serializes parallel calls; P3.4 REJECTED); same-session parallel gave `MCP error -32000: Connection closed`.
 - Harness restart severs Codex MCP threads (not a protocol failure): inspect the surface, open a fresh thread.
 - Receipt-block emission dropped 6/8 first attempts across phases; the VERIFY TOOTH caught 6/6; mechanical receipt-presence gate only recommended.
@@ -90,7 +91,7 @@ Canonical text: `.claude/commands/metaloop.md` section UNIVERSAL LANE LAWS @86ba
 1. **Role monopolies** - Fable alone reasons/decides and keeps design, spec, review, git, docs, memory; Codex alone executes; Gemini alone perceives; Grok alone critiques. A stuck lane escalates, never substitutes.
 2. **Escalate, don't reason** - any lane hitting a flaw/bug/dilemma/ambiguity/capability-loss stops reasoning and reports to Fable through its structured channel: Codex STOP REPORT / DECISION REQUEST mid-turn (blockers) + ESCALATIONS / POTENTIAL IMPROVEMENTS end-of-turn (non-blockers) - now built into the Standing dispatch preamble's EIGHT labeled lists, so every dispatch at every entry point carries them; Gemini/Grok have BLOCKED lists; subagents return the question as their result. Fable adjudicates and re-dispatches down the same lane.
 3. **Never downgrade** - Codex xhigh/priority; Grok grok-4.5; Gemini gemini-3.6-flash-high; subagents inherit the coordinator's model.
-4. **Glasseye** - every lane action emits; hooks are dead in app sessions (about 2026-08-06), so the coordinator emits agent.*/task.* pairs via `emit.ps1` around every fan-out and background task.
+4. **Glasseye** - every lane action emits; hooks are dead in app sessions (about 2026-08-06), so the coordinator emits agent.*/task.* pairs via `emit.ps1` around every fan-out and background task. (Dated note 2026-10-03, source `windows-hook-shell-git-bash`: the hooks were dead from about 2026-08-02 because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths, and were revived on 2026-10-03; see GLASS BOX.)
 5. **One writer** - only Codex touches the tree; Codex dispatches serialized through the coordinator.
 6. **Minimum latency** - blocking escalations return immediately; non-blockers ride end-of-turn lists at zero extra round-trips; read-only lanes parallelize freely.
 7. **Copy sync** - repo copy canonical; after a ratified change, sync user scope and md5-verify. Drift is a defect.

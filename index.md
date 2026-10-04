@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-207 notes.
+204 notes.
 
 ## Actors (47)
 
@@ -63,7 +63,7 @@
 - [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press...
 - [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
 - [[influence-vs-alignment-axes]] — Moneyball modeling principle (2026-06-29, cost many rounds): rank measures INFLUENCE while per-category stance measures ALIGNMENT; keep them as separate axes so active opponents can rank on influence while the stance layer and optimizer...
-- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py and applied with core.autocrlf=false, never normalising LIVE; applying needs Paul's go.
+- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
 - [[say-do-gate]] — A member is shown as Champion or Defender in a category only if the stated stance is backed by a costly signal there: an authored or original-cosponsored bill (Path A, the 2026-07-07 Rule A) or, since 2026-07-08, a recorded CU-aligned...
 - [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with...
 - [[single-look-holdout-discipline]] — Working discipline across the Moneyball/Melange lanes: every confirmatory look (holdout score, pre-registered test, one-shot validator) is spent exactly once against criteria locked before the run, a consumed look is never re-run, and a...
@@ -225,9 +225,3 @@
 - [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of Mentat (FEC contributions intelligence)) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by Paul Goff, built as 8 Mentat...
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
-
-## Fleeting (3)
-
-- [[melange-systems--mentat-github-migration-2026-10-02]] — Mentat tree pushed to GitHub branch claude/mentat-migration-onto-main; PR to main still unopened (Paul deferred); full local history unpublishable as-is
-- [[melange-systems--pac-accuracy-attempt2-lane-2026-10-03]] — PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history
-- [[melange-systems--people-network-route-latency-lane-2026-10-02]] — People-network (staffer sidecar 8841) latency lane 2026-10-02: default office route = one-directional work_time Dijkstra to a sink (no heuristic anywhere); Paul ruled full scope (bidirectional core + cancel/progressive + typeahead)...

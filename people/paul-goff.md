@@ -18,8 +18,9 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/api-key-repository-2026-08-28.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\api-key-repository-2026-08-28.md", sha256: "f33fd855d4557d62c018aa8e6eb704337e0dd2be31b2bf7a6ac4ef023b3a77b3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/user-name-paul.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\user-name-paul.md", sha256: "31d96d7db8f1af09845e734883335e0ecba51caffbee6456832bb19d4d7e1bcf"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/user_r_environment.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\user_r_environment.md", sha256: "4b3db963331292e353d1e0be4ac6e238a7f81e451bc60a806719c97d3963316f"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/person", "domain/agent-ops"]
 ---
 
@@ -82,7 +83,7 @@ Source note `api-key-repository-2026-08-28` (user memory, newest modification 20
 - Sets every threshold, weight and methodology ruling and holds the APPLY gate; see [[2026-06-working-agreement-change-control-and-decision-authority]].
 - Mentat roster rule (2026-07-19): the roster is ONLY the companies he lists; raw sheets show every row. Mentat money-collection / receipt-counting code is frozen on his ruling ("don't change it", 2026-09-27). Detail: Mentat collection and attribution.
 - His "contradictions, not ambiguity" rule for Mentat cross-verification: `exclude-on-contradiction-not-ambiguity` (concept page in the vault); the council review that produced the dwarfed cross-reference tab: Mentat cross-reference council review.
-- Mentat GitHub migration (2026-10-02): PR to main deferred by Paul ("we can do it later"); see Mentat repo state and workbooks and [[mentat]].
+- Mentat GitHub migration (2026-10-02): PR to main deferred by Paul ("we can do it later"); see Mentat repo state and workbooks and [[mentat]]. On 2026-10-03 he signed in to GitHub in the built-in browser himself and had the PR (#2) opened and merged.
 
 
 ## Focal Points
@@ -135,7 +136,7 @@ Source note `api-key-repository-2026-08-28` (user memory, newest modification 20
 - Staffer network data and math - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
 - Staffer network surfaces - Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane.
 - UI redesign boards (Melange and Mentat) - Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks.
-- Mentat repo state and workbooks - Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR unopened), tidy Data workbook, console hang fix.
+- Mentat repo state and workbooks - Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR merged 2026-10-03), tidy Data workbook, console hang fix.
 - Brain vault setup and Claude memory import - Consolidated Claude Code memories into the private brain vault (2026-10-03): import decisions, verification, dependencies, graphify review, open items
 
 ## Discussions

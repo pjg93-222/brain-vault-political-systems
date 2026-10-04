@@ -9,21 +9,23 @@ people:
 actors:
   - "[[mentat-console]]"
   - "[[mentat-fec-pipeline]]"
-objective: "Record the state of the Mentat code tree and its workbooks as of 2026-10-03: the 2026-09-18/19 uncommitted-tree reconcile (HEAD had been broken in 12 places), the 2026-10-02/03 push to a GitHub migration branch (PR still unopened), the 2026-09-14/15 Tableau-shaped companion Data workbook lane, and the 2026-09-18 console startup hang (unbounded subprocess timeout)."
+objective: "Record the state of the Mentat code tree and its workbooks as of 2026-10-03: the 2026-09-18/19 uncommitted-tree reconcile (HEAD had been broken in 12 places), the 2026-10-02/03 push to a GitHub migration branch (PR still unopened at the time; opened and merged 2026-10-03), the 2026-09-14/15 Tableau-shaped companion Data workbook lane, and the 2026-09-18 console startup hang (unbounded subprocess timeout)."
 created_at: 2026-09-14
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "6f79da7a4bd449fca5c98a6db61acb2bf2750b62c21c903f17cd8ae2d2d12774"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-uncommitted-reconcile-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-uncommitted-reconcile-2026-09-18.md", sha256: "a35561613ba5e4bd3ee27565ed8e97717aa311f7d0c0d9ac708dd549b1a3cf3b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-console-startup-hang-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-console-startup-hang-2026-09-18.md", sha256: "64f937877616a1ec94000d791831999bba8f53fab41a80e28b8a26a2dce04a9d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-tidy-workbook-lane-2026-09-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-tidy-workbook-lane-2026-09-14.md", sha256: "677e56dbeec24480b98de0f8d6e355e198c46cbc0c12604b717e6c5ded4b5a5f"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 ---
 
 # Mentat repo state and workbooks
 
-> Troubleshooting record for the [[mentat]] code tree (`C:\Users\pgoff\Mentat`, branch `codex/mentat-crypto`) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the GitHub migration branch pushed 2026-10-02/03 with the PR still unopened, the Tableau-shaped companion Data workbook lane, and the [[mentat-console]] startup hang caused by an unbounded subprocess timeout. Pipeline-side items are in [[mentat-fec-pipeline]].
+> Troubleshooting record for the [[mentat]] code tree (`C:\Users\pgoff\Mentat`, branch `codex/mentat-crypto`) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the GitHub migration branch pushed 2026-10-02/03 with the PR opened and merged 2026-10-03, the Tableau-shaped companion Data workbook lane, and the [[mentat-console]] startup hang caused by an unbounded subprocess timeout. Pipeline-side items are in [[mentat-fec-pipeline]].
+
+Dated correction (2026-10-04, fleeting pass; source `mentat-github-migration-2026-10-02`): the PR left unopened in the summary above was opened on 2026-10-03 (Melange PR #2) and merged the same day at Paul's request; see GitHub migration.
 
 ## Context
 
@@ -58,7 +60,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 | 2026-09-15 | Paul: "Apply the patches and run the Crypto dry run", then "Scratch-copy run without a ruling", "Include-list of categorical columns": all 15 patches APPLIED uncommitted; scratch dry run exit 0, 90/90 checks. Evening: "Commit the remaining 14 files" -> commit `bd5dc8ea18a1641f3e08116f0d666fa98ba8750f` (10 clean files, +4,115/-0); P6a already inside Paul's Ride-1 commit `a4b3c8e2e` (13:40). Cleanup: 13 lane backups + 516 MB dry-run scratch deleted. |
 | 2026-09-18 | Paul: "there are a bunch of uncommitted files in the Mentat system, go over all of them reconcile, and commit that shit, also if there is unfinished work, I know there is, finish it." Reconcile first pass: 28 commits `1d4524048`..`755680241`. Same day: console startup hang diagnosed and fixed (`0ad366e01`, `aa8a3f884`). |
 | 2026-09-19 | Second pass (8 commits `193337707`..`a6c3129d8`), then close-out ("Finish the still-open items and push to the mirror"): final HEAD `59a87a70b`, 38 commits; mirror sha-identical for `codex/mentat-crypto` and `main`. |
-| 2026-10-02/03 | Live Mentat tree pushed to github.com/pjg93-222/Melange (private) on `claude/mentat-migration-onto-main`, tip `28c27a47` (19 plumbing-built commits on origin main `ce213058`); PR to main still unopened ("we can do it later"). |
+| 2026-10-02/03 | Live Mentat tree pushed to github.com/pjg93-222/Melange (private) on `claude/mentat-migration-onto-main`, tip `28c27a47` (19 plumbing-built commits on origin main `ce213058`); PR to main still unopened ("we can do it later"); superseded by the next row. |
+| 2026-10-03 | PR opened from the built-in browser after Paul signed in to GitHub there himself: `https://github.com/pjg93-222/Melange/pull/2` (base `claude/melange-math-eval-skill-18e907`, head `claude/mentat-migration-onto-main`); MERGED the same day at Paul's request (merge commit `54433266`, the 19 commits kept); the head branch was then deleted on origin, and at Paul's request so were `claude/melange-math-eval-skill-18e907-4d54uu` and the partial ref `claude/mentat-github-migration-b06195`. |
 
 ## Decisions
 
@@ -68,7 +71,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 - **Reconcile authority (Paul, 2026-09-18):** reconcile and commit everything, finish unfinished work ("Keep going, finish all of this / all of it" x3, including after the agent said it was writing the accounting fix up rather than changing it); lane-only authority.
 - **Filing-version identity rule D-049 (2026-09-19):** `count_latest` by default per D-040's principle (index VERSION 4 / PAS2 parser "5"); the one judgement call worth $182K flips with one constant per side (`AMBIGUOUS_VERSION_POLICY`, `FEC_PAS2_AMBIGUOUS_VERSION_POLICY`). Brain D-049 states Paul has not read the ruling record and that it is reversed, not defended, if he rules otherwise.
 - **"Remove the N charts strip, keep the Board" (Paul ruling):** the older "N charts" split strip RETIRED in `2b1a62dea` (brain D-061); the agent had asked instead of removing it.
-- **GitHub migration (2026-10-02):** push a Mentat-only branch on origin's main `ce213058` (never the worktree's own branch); open the PR and any history rewrite are deferred / Paul's decisions.
+- **GitHub migration (2026-10-02):** push a Mentat-only branch on origin's main `ce213058` (never the worktree's own branch); open the PR and any history rewrite are deferred / Paul's decisions. 2026-10-03: the PR was opened after Paul signed in to GitHub himself, and merged at his request (Melange PR #2, merge commit `54433266`); the history rewrite is still his decision.
 - **Console fix (2026-09-18):** serve `'unknown'` while the git sha resolves in the background (safe: `app.js:436` falls back to `code_sha256`; D-029's restart gate compares `code_sha256`, never the git sha).
 - ~~Mock/proposal-only lane scope (apply = Paul's)~~ (2026-09-14) - superseded 2026-09-15 by Paul's "Apply the patches and run the Crypto dry run"; kept because it explains why the packet and `.bak` files existed.
 - ~~Rollback of the four deferred uncommitted files via `.bak` copies (`<file>.bak-20260914-tidy`, `<file>.bak-20260915-fix1`)~~ (2026-09-15) - the backups were deleted in the 2026-09-15 evening cleanup; rollback is now `git apply -R <P2|P5|P6c|P7b>` from the packet (`audits\mentat_tidy_workbook_20260914\patches`).
@@ -76,8 +79,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 ## Next Steps
 
-- [ ] Open the PR for `claude/mentat-migration-onto-main` (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. Offer this FIRST next session; regenerate the body (`pr-body.md`, drafted in the session scratchpad, may be gone) from the commit messages.
-- [ ] Decide whether to delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits).
+- [x] Open the PR for `claude/mentat-migration-onto-main` (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. Offer this FIRST next session; regenerate the body (`pr-body.md`, drafted in the session scratchpad, may be gone) from the commit messages. Done 2026-10-03: opened from the built-in browser after Paul signed in to GitHub there (Melange PR #2) and merged at his request.
+- [x] Decide whether to delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits). Done 2026-10-03: deleted on origin at Paul's request; still kept as a local branch and on remote `mirror`.
 - [ ] Publishing the full local history needs `filter-repo` or LFS (origin main shares NO history with the local repo; 28 blobs over 100 MB under `audits/legfix5`): a history rewrite is Paul's decision.
 - [ ] Paul rebuilds workbooks himself (the first rebuild reparses PAS2 ~3 min and is the first since 2026-09-10 with real Conditional estimates).
 - [ ] Console UI does not expose the two xref switches; console serves the new client at once but drops `board` on save until the launcher restarts `server.py`.
@@ -90,11 +93,14 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 - On 2026-10-02/03 the live Mentat tree (`C:\Users\pgoff\Mentat\mentat`, plus `.claude/launch.mentat.json` and a vendored snapshot of `~/.claude/plugins` at `.claude/vendored-plugins`) was pushed to github.com/pjg93-222/Melange (private) on branch `claude/mentat-migration-onto-main`, tip `28c27a47`. It is 19 plumbing-built commits on origin's main `ce213058`. `mentat/state` is included. Files over 50 MB and `.cache` stay local, listed in `mentat/EXCLUDED_FROM_GIT.md`. Verification passed (file lists identical, blob spot-checks match, remote equals tip).
 - **PENDING, Paul said "we can do it later":**
-  - Open the PR (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. The body was drafted in the session scratchpad as `pr-body.md`, which may be gone; regenerate it from the commit messages if needed.
-  - Delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits).
+  - Open the PR (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. The body was drafted in the session scratchpad as `pr-body.md`, which may be gone; regenerate it from the commit messages if needed. Done 2026-10-03 (next bullets).
+  - Delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits). Done 2026-10-03: deleted on origin.
   - Publishing full local history: origin main shares NO history with the local repo, and the local history has 28 blobs over 100 MB under `audits/legfix5`. Publishing it would need `filter-repo` or LFS, and a history rewrite is Paul's decision.
+- **PR opened and merged, 2026-10-03** (newer version of the source memory, captured 2026-10-03): `https://github.com/pjg93-222/Melange/pull/2` (base `claude/melange-math-eval-skill-18e907`, head `claude/mentat-migration-onto-main`), opened from the built-in browser after Paul signed in to GitHub there himself; MERGED the same day at Paul's request (merge commit `54433266` into `claude/melange-math-eval-skill-18e907`; the 19 commits kept). The head branch `claude/mentat-migration-onto-main` was then deleted on origin (its tip `28c27a47` is the merge's second parent). No CI is configured; `gh` is still NOT installed.
+- **Also deleted on origin at Paul's request, 2026-10-03:** `claude/melange-math-eval-skill-18e907-4d54uu` (4 UNMERGED commits: the 10-01 QME apply script and handoff, tip `4e0aaa52`), saved first as branch `backup/melange-math-eval-skill-18e907-4d54uu` and pushed to remote `mirror` (Carbonite carries it off-box); the LOCAL copy was then deleted at Paul's request, so `mirror` holds the only copy. The partial ref `claude/mentat-github-migration-b06195` (`6f76c3415`) was deleted on origin too (Paul asked) and is still kept as a local branch and on `mirror`. Origin now has only `claude/melange-math-eval-skill-18e907`.
+- **Still pending:** publishing the full local history (`filter-repo` or LFS; a history rewrite is Paul's decision).
 - **Why:** pushes of the full history 500'd (3 GB single merge `af1160dd8`). The Mentat-only branch on `ce213058` avoided both the size and the unrelated-history problems.
-- **How to apply:** next session, offer to open the PR first. Never push from the worktree's own branch (it carries the oversized history). Pack files are read-only on Windows, so Remove-Item needs `-Force`. Related: `repo-mirror-2026-08-11`, `live-tree-eol-census-2026-09-19`.
+- **How to apply:** next session, offer to open the PR first. Never push from the worktree's own branch (it carries the oversized history). Pack files are read-only on Windows, so Remove-Item needs `-Force`. Related: `repo-mirror-2026-08-11`, `live-tree-eol-census-2026-09-19`. (The "offer to open the PR first" step is superseded: the PR was opened and merged on 2026-10-03.)
 
 ## Uncommitted-tree reconcile (2026-09-18/19; source `mentat-uncommitted-reconcile-2026-09-18`, modified 2026-09-19)
 
