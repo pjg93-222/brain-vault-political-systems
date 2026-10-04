@@ -146,6 +146,8 @@ The working repo's `.git` lives under OneDrive. Files-on-demand dehydration make
 - [[2026-07-troubleshooting-melange-live-tree-git-drift]] - Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror
 - [[2026-08-incident-workstation-disk-and-backup]] - C: filled by repo worktrees, cleared repeatedly (185.9 GB free on 2026-09-18); OneDrive stalled since 08-11; backup gaps
 - [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] — The workstation backup coverage gap measured on 2026-09-07 and the point-in-time disk census of 2026-09-11.
+- [[melange-fec-pipeline-live-tree-drift-and-eol]] — Live tree versus committed tree drift of the fec/ pipeline: the 2026-09-13 census, the 09-19 reconcile, and the line-ending census with the shared line-wise patch cutter and its kernel results.
+- [[2026-07-troubleshooting-melange-live-tree-git-drift-branch-state-and-mirror]] — The off-box git mirror of the Melange repository and the dated live tree branch state entries from 2026-07-14 to 08-14.
 
 ## Related Projects
 

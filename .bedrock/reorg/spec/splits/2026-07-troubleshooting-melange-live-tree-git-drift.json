@@ -1,0 +1,177 @@
+{
+  "id": "C8",
+  "what": "Batch 6 split of topics/2026-07-troubleshooting-melange-live-tree-git-drift (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C8); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-troubleshooting-melange-live-tree-git-drift",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "actors/melange-repo-mirror",
+      "actors/melange-fec-pipeline",
+      "concepts/live-tree-patch-discipline"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-troubleshooting-melange-live-tree-git-drift-branch-state-and-mirror",
+      "title": "Live tree branch state and the off-box mirror",
+      "summary": "The off-box git mirror of the Melange repository and the dated live tree branch state entries from 2026-07-14 to 08-14",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Off-box git mirror (file `repo-mirror-2026-08-11`: off-box git mirror, remote \"mirror\", Carbonite-covered; OneDrive fsck \"missing objects\" = dehydration, not corruption; GitHub blocked by 2.6GB blobs; see also [[melange-repo-mirror]])",
+        "## Live tree branch state (file `live-tree-branch-state-2026-07-14`, newest entries first)"
+      ],
+      "keep": [
+        "actors/melange-repo-mirror"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-troubleshooting-melange-live-tree-git-drift-drift-reconcile-eol",
+      "title": "Committed vs live drift, the 09-19 reconcile and the line-ending census",
+      "summary": "Committed versus live drift of 2026-09-13, the reconcile of 09-19 with the findings that overturn recorded beliefs, and the line-ending census with the shared patch cutter",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Reconcile 2026-09-19 (file `melange-live-tree-reconcile-2026-09-19`)",
+        "## Committed vs live drift (2026-09-13; file `committed-vs-live-drift-2026-09-13`)",
+        "## Line-ending census and the shared patch cutter (2026-09-19; file `live-tree-eol-census-2026-09-19`)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K11",
+      "a": "topics/2026-07-troubleshooting-melange-live-tree-git-drift-drift-reconcile-eol",
+      "b": "actors/melange-fec-pipeline-live-tree-drift-and-eol"
+    }
+  ],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 32,
+      "old": "- Operating convention that created the gap: \"work in the live tree, commit later\"; the commit gap grew until main was not a working system and worktree reviews saw stale code. The live tree is what runs; main is a partial record of it.",
+      "mark": "not positional",
+      "why": "\"commit later\" is time"
+    },
+    {
+      "line": 70,
+      "old": "| 2026-08-14 | Big worktree sweep: registered worktrees 40 -> 20, admin dirs 90 -> 19; later 10 trees relocated to `C:\\melange-worktrees\\<name>`; CPU-pegging incident (97.7% of 8 cores -> ~35%); loving-payne landed @ `846d90ae3`; sharp-kapitsa discarded; glasseye amendment to `.claude/commands/metaloop.md` left alone. |",
+      "mark": "not positional",
+      "why": "\"later 10 trees relocated\" is time"
+    },
+    {
+      "line": 92,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 109,
+      "old": "- STILL PAUL'S: R1 class-B/E code-review content, R2 the 2026-09-08 engine imputation rule, R3 the 644-acts re-pin - each commit message says \"records the live state, does not ratify\"; R6, R7, R10, R11, R12 (see Next Steps). Mirror PUSHED 2026-09-19 on Paul's \"push the mirror\": main `a19c796d2` plus all 292 branches and 3 tags, 0 rejected.",
+      "mark": "rewrite",
+      "why": "\"(see Next Steps)\" names ## Next Steps, which the hub keeps, while this line moves to -drift-reconcile-eol",
+      "new": "- STILL PAUL'S: R1 class-B/E code-review content, R2 the 2026-09-08 engine imputation rule, R3 the 644-acts re-pin - each commit message says \"records the live state, does not ratify\"; R6, R7, R10, R11, R12 (see Next Steps in [[2026-07-troubleshooting-melange-live-tree-git-drift]]). Mirror PUSHED 2026-09-19 on Paul's \"push the mirror\": main `a19c796d2` plus all 292 branches and 3 tags, 0 rejected.",
+      "referent": "2026-07-troubleshooting-melange-live-tree-git-drift"
+    },
+    {
+      "line": 116,
+      "old": "- The close-out packet's \"part of the modified count is CRLF-only\" is FALSE: 0 of 149 (`git diff` normalises before comparing). CORRECTED 2026-09-19 by the EOL census (below): `git status` CAN show a pure-EOL change as ` M` because it flags on on-disk size vs index-recorded size without comparing content; the 0/149 result still stands (LIVE's index sizes equal the working sizes, 0 phantom ` M` measured). All 147 text files are functional (+7,453/-2,281); 2 are tracked binaries.",
+      "mark": "same note",
+      "why": "\"the EOL census (below)\" is ## Line-ending census and the shared patch cutter, which follows ## Reconcile 2026-09-19 in -drift-reconcile-eol as in the note"
+    },
+    {
+      "line": 123,
+      "old": "- How to apply: (1) before any whole-file commit from a shared dirty checkout, run a BEHIND-HEAD census: commits staged with `git apply --cached` or from other worktrees put content in HEAD that the working file never received, and such a file shows ` M` exactly like new work; decide direction by CONTENT (parent of the introducing commit vs HEAD vs live vs any pre-image), never by commit date vs mtime (DE-028); result here: 0 behind, 0 diverged, 20 ambiguous deletions in 11 files to read before committing their groups. (2) Take ONE lock-free snapshot (`GIT_OPTIONAL_LOCKS=0 git status --porcelain=v1 -z`, `ls-files --others --exclude-standard -z`, `diff --cached --name-status -z`; 50 s total here) and have every agent consume it; forbid agents `status`, walks, and anything under `fec/`. (3) `git grep <pattern> main -- fec audits` exceeds the 2-minute tool timeout because of `audits/legfix5`; scope the pathspec. (4) GateGuard demands its four facts for every new file, scratchpad included, and its two facts before the first Bash call - state them and retry the identical call. (5) Opus architect agents with a full up-front brief, explicit forbidden-verb lists and mandatory positive/negative controls returned censuses that survived spot checks; the one weak signal (mtime vs commit date on `audit_full.py`) was caught by the next agent's content test.",
+      "mark": "not positional",
+      "why": "\"the next agent's content test\" is time"
+    },
+    {
+      "line": 132,
+      "old": "- Defects fixed ONLY in live (uncommitted at that date): POSSIBLE_ONLY co-tenure filter at the snapshot read; the live Groups tab route and allowlist; the CREC \"no session\" typed 404 check; the Fox `--strict` contract; the audio adapter/descriptor key handoff; the narrative ledger audio shapes (partly); the missing-suite tolerance in `run_tests.py`. (Largely committed by the 2026-09-19 reconcile above.)",
+      "mark": "same note",
+      "why": "\"the 2026-09-19 reconcile above\" is ## Reconcile 2026-09-19, which precedes ## Committed vs live drift in -drift-reconcile-eol as in the note"
+    },
+    {
+      "line": 135,
+      "old": "- Why: the repo's operating convention is \"work in the live tree, commit later\"; the commit gap has grown to the point where main is not a working system and worktree reviews see stale code.",
+      "mark": "not positional",
+      "why": "\"commit later\" is time; \"see stale code\" is a verb"
+    },
+    {
+      "line": 136,
+      "old": "- How to apply: (1) a HEAD-only finding is provisional until the live file is read; run the batched drift census first (three git calls: `ls-tree -r HEAD`, `ls-files`, `hash-object --stdin-paths`; never per-file git on the OneDrive tree). (2) HEAD-based patches must be `git apply --check`ed against a scratch copy of the live file; expect failures in `run_tests.py`, `verify_collector_roster_updates.py`, the staffer surfaces. (3) The highest-value action Paul can take is a reviewed commit pass of the live tree (weights ruling first, see `code-review-five-lanes-2026-09-13` S-5). Related: `live-tree-branch-state-2026-07-14`, `scout-census-traps-2026-09-13`.",
+      "mark": "external",
+      "why": "\"see `code-review-five-lanes-2026-09-13` S-5\" names a memory file"
+    },
+    {
+      "line": 145,
+      "old": "- KERNEL in LIVE at `423820d76`: 243 passed / 4 FAILED, 31.9 min; `test_live_patch` green in the runner. Reds: the two baseline reds the laundry-list landing already carried (`test_bill_collision_guards` - missing `backups\\bill_directions.PRE-LEGFIX3.csv`; `test_make_staffer_network_html` - unrecognised verdict); `test_staffer_network_section`, red ONLY because its producer child (`build_staffer_network_section.py --root %TEMP%\\...\\v6-groups-real-role`) sat 14 min with no CPU and no I/O - the test's `subprocess.run` has NO timeout, so one hung child stalls the whole kernel silently (its log is block-buffered and shows nothing) - the assistant killed that one child; and `test_press_baseline_fold` (errors=1 in-kernel, 21/21 OK alone minutes later = flake under load). Lesson: when the kernel log stops growing, list the python process tree with CPU + Win32_Process I/O counters; a leaf with frozen counters is hung, not slow. A token-free local watchdog (kill idle LEAF descendants of the kernel pid after 240 s, log every kill) kept the run bounded; it made 0 kills.",
+      "mark": "not positional",
+      "why": "\"minutes later\" is time"
+    },
+    {
+      "line": 151,
+      "old": "- LAUNCHERS FIXED on Paul's \"add the timeouts to run_pipeline and run_tests too\" + \"land it when the architect is done\": `624e593eb` LANDED in LIVE main (mirror current) - `fec/bounded_subprocess.py` = THE shared bounded launcher (`run_bounded(argv, timeout, env, cwd)`: Popen + real temp files + `wait(timeout)` + process-TREE kill via bounded `taskkill /F /T`; any other exception during the wait also kills the tree before propagating, because unwinding releases `.pipeline_run.lock`); constants, NO env dial: chain step 10800 s (2.6x the slowest step on record, 4,148.7 s over 677 step-runs), kernel suite 1800 s; a timeout returns 124 + a note (pid, args) in stderr / step line / Glass Box summary; 124 != tolerated 2, so a timed-out step HALTS the chain even in TOLERANT_STEPS. `test_bounded_subprocess` 19/19. KERNEL in LIVE through it: 246 passed / 2 FAILED in 7.6 min = exactly the two baseline reds. NOT run: the real chain. NOT changed (flagged to Paul): `fec/weekly_refresh.py` own launcher (`:279 communicate(timeout=)`, `:312` unbounded `proc.wait()` after kill; whole-chain bound 7200 s at `:464` is below the 261.6 min the chain once took) - later bounded by `62aea2f76` (see the refresh-reliability topic); per-producer atomicity under a kill unaudited. Review lesson: when replacing `subprocess.run`, keep its `except: kill(); raise` - an architect dropped it and only the inline read caught it. Size a timeout from the Glass Box `pipeline.step` history (`staffer_hang\\chain_step_durations.py`), not taste. `Popen.wait(timeout)` on Win 8+ does not count sleep time.",
+      "mark": "external",
+      "why": "\"(see the refresh-reliability topic)\" names another note; \"is below the 261.6 min\" is a numeric comparison; \"later bounded\" is time"
+    },
+    {
+      "line": 156,
+      "old": "`python fec/tools/live_patch.py eol <file>...` prints `size= crlf= lf= lone_cr= class=`; `... drift <a> <b>` exits 0 IDENTICAL_BYTES / 1 EOL_ONLY / 2 CONTENT. In a cutter script load it by file path (import == execution elsewhere in the repo; this module is import-safe): `LiveFile.read(root, rel)`, `insert_after / insert_before / replace / delete` with a one-line or multi-line anchor (matched per line, terminator stripped, exactly one hit or `AnchorError`), `PatchSet().add(f).write(path)` (also writes `<path>.manifest.json`), `prove(patch, {label: (before, after)})`, `check_against(LIVE, patch)`, then `apply_to(LIVE, patch)` or the argv from `apply_argv()`. Keep cut patches OUTSIDE the repo or under a `-text` attribute. Always apply with `-c core.autocrlf=false` (see git behaviour below).",
+      "mark": "same note",
+      "why": "\"(see git behaviour below)\" is ### Measured git behaviour, which follows ### The tool in ## Line-ending census and moves with it to -drift-reconcile-eol"
+    },
+    {
+      "line": 191,
+      "old": "## Off-box git mirror (file `repo-mirror-2026-08-11`: off-box git mirror, remote \"mirror\", Carbonite-covered; OneDrive fsck \"missing objects\" = dehydration, not corruption; GitHub blocked by 2.6GB blobs; see also [[melange-repo-mirror]])",
+      "mark": "external",
+      "why": "\"see also [[melange-repo-mirror]]\" in the ## heading names another note"
+    },
+    {
+      "line": 197,
+      "old": "- The Project Brain repos had no remote at all; the same day Paul ordered \"set up the brain mirror\" and they now push themselves from a post-commit hook (see `project-brain-toolkit-2026-08-11`). Then Paul: \"add the hook to melange too\" (brain D-059): `<live>\\.git\\hooks\\post-commit` and an identical `post-merge` push the branch just committed or merged (ONE branch, never forced, synchronous - measured 0.2-1.2 s; tags not pushed). The hooks dir is shared by all 16 linked worktrees, `C:\\Users\\pgoff\\Mentat` included. A failed push exits 0, appends to `.git\\mirror-push-failures.log` and emits one FAIL Glass Box event (source `melange-mirror-hook`) - check that log at close-out; a rewritten (non-fast-forward) branch is never forced, so it stays stale on the mirror until someone decides. Proven by a real empty commit `b99ba565d` on the session branch. Hooks are unversioned: re-create after a re-clone. `git update-ref` / `branch -f` moves fire no hook.",
+      "mark": "external",
+      "why": "\"(see `project-brain-toolkit-2026-08-11`)\" names a memory file"
+    },
+    {
+      "line": 198,
+      "old": "- How to apply: push mirror main at every merge gate (it is not automatic); a future cloud remote (GitHub) is IMPOSSIBLE without history surgery - tracked blobs up to 2.6 GB (`audits/legfix5` packets) vs the 100 MB limit - so never suggest a plain `git push` to GitHub as a quick option. `gh` CLI is not installed. Mirror path is on the same physical C: drive as the working repo (no protection on its own; Carbonite carries it, see Workstation disk and backup). Links: `universal-lane-laws-2026-08-09`, `live-tree-branch-state-2026-07-14`.",
+      "mark": "external",
+      "why": "\"see Workstation disk and backup\" is the title of another note, topics/2026-08-incident-workstation-disk-and-backup"
+    },
+    {
+      "line": 202,
+      "old": "### 2026-08-14 (later, CPU-pegged incident): worktrees now live OUTSIDE OneDrive at `C:\\melange-worktrees\\<name>`",
+      "mark": "not positional",
+      "why": "\"(later, CPU-pegged incident)\" is time (later that day)"
+    },
+    {
+      "line": 215,
+      "old": "- LATER SAME DAY: (1) another lane RELOCATED ~10 kept trees off OneDrive to `C:\\melange-worktrees\\` and git tracked the move - when a worktree looks deleted, check `git worktree list` FIRST, it probably moved; (2) loving-payne EXAMINED then LANDED on Paul's ruling: its dirt was the SOLE RECORD of the consumed 2026-07-16 O look (DUAL_PANEL_SUCCESSOR_MISS - see `psych-audit-2026-07-09`) while main still advertised an open license; merged @ `846d90ae3`, kernel 154/0, mirror pushed, worktree + branch retired - an unlanded-look hazard class: a month-old dirty tree can hold a spent scientific license main doesn't know about; (3) sharp-kapitsa examined per Paul then DISCARDED on his ruling (registered 20 -> 19): its uncommitted edit (LADDER_CHAMP 2.6 / LADDER_OPP -1.8 dials on the `overall_tier` if-chain, mid-July vintage) was FULLY SUPERSEDED on main by the table-driven `OVERALL_BANDS` refactor + `OVERALL_CHAMPION_SCORE_FLOOR=3.65` + env-overridable `OVERALL_OPPONENT_CUTOFF` with a fail-closed monotonicity validator; its \"ranks are invariant\" comment was over-narrow (HS->Opponent moves SGATE 0.45->0.35 and PERS 0.15->0.08, so engine outputs shift). Note `git worktree remove` can fail Permission-denied where python `shutil.rmtree` succeeds - restore -> rmtree -> prune is the reliable discard sequence. ALSO: the live tree carries another lane's UNCOMMITTED `.claude/commands/metaloop.md` amendment (glasseye mechanised 2026-08-14: hook mirror measured dead, derived-fanout override; runtime half already deployed - terminal receipts now carry a `fanout` block). Leave it to its lane; never clobber or commit it.",
+      "mark": "external",
+      "why": "\"see `psych-audit-2026-07-09`\" names a memory file; \"LATER SAME DAY\" is time; \"the table-driven `OVERALL_BANDS` refactor\" is an adjective"
+    },
+    {
+      "line": 232,
+      "old": "- Why this bites: the skills treat the live tree as \"canonical\" and assume live == main. But `paths.py` ROOT resolves to this tree for DATA regardless of which worktree's CODE you run (qualified by the 2026-07-15 `MONEYBALL_ROOT` correction above). (1) `audit_full.py` reads live SOURCE files via `B = ROOT` (e.g. `open(B+r'\\fec\\templates\\make_member_desk_00.tpl')`), so it audits the live tree's checked-out branch, not yours - it can report FAILURES that belong to another branch's uncommitted state (2026-07-14: the assistant's worktree audit reported 3 desk-psychometric FAILs - checks 497/507/513 - because the live codex template lacked the `5/5 evidence` strings its own audit expects; the assistant's branch template satisfied all 3; zero to do with the change). (2) Running the chain from your worktree writes the SHARED live artifacts, so you can transiently overwrite another session's display artifacts.",
+      "mark": "same note",
+      "why": "\"the 2026-07-15 `MONEYBALL_ROOT` correction above\" is the CORRECTION to the DATA claim (MONEYBALL_ROOT unset on 2026-07-15) in an earlier-listed, newer entry of ## Live tree branch state, which moves whole to -branch-state-and-mirror"
+    }
+  ]
+}

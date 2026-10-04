@@ -25,7 +25,8 @@
 //
 // Spec (plan A.7): { id, parent, home, hub: { keep: [heading lines], links: [rels] | null }, parts: [{ slug, title,
 //   summary, domain, home, sections: [heading lines in order], keep: [rels], s11?, pointers?: ["> ..."] }],
-//   named: [{ id, a, b }] (K pairs; a is this family's part), candidates: [{ id, a, b, event }] (K12-K25; b is a part of
+//   named: [{ id, a, b }] (K pairs; a is this family's part, b a part of this run or one an earlier batch created, e.g. K9
+//   and K10 in batch 6, whose S11 slot was kept free), candidates: [{ id, a, b, event }] (K12-K25; b is a part of
 //   this run, a part an earlier batch created (evaluated on its current text and links, e.g. K16 in batch 5), or a part
 //   of a later batch (deferred, with the slot a keeps free)),
 //   relations: [{ id, part, with }] (D relations of a part), retarget: [{ note, from, to, why }] (C4 outside the family),
@@ -38,7 +39,9 @@
 // everything before its first ##, the kept sections, and gains `## Parts` before its first ##; S4 part frontmatter = the
 // folder template with every key, part_of, sources: [], parent's status/category/created_at, tags = parent's type/status/
 // category + one domain; S5 part body = # title, "> <summary>. Part of [[parent]] (project [[home]]).", pointer lines, the
-// moved sections; S10 positional references (detection, resolver, rewrites, log); C1/C2 conversions, C4 retargets, C5
+// moved sections; S3/S4/S5/S6 a project's parts (C10) are topics/ notes with topic naming (<yyyy-mm>-<category>-<name>),
+// titled by the table title alone, tagged type/topic, status/completed, category/<per slug> and one domain, homed in the
+// project, with "Part of [[project]]." in the header; S10 positional references (detection, resolver, rewrites, log); C1/C2 conversions, C4 retargets, C5
 // reciprocal lines, R1-R3, section-5 Map rows ("| [[part]] | part: <summary, at most 60 characters> |" after the parent).
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -79,6 +82,9 @@ export type SplitSpec = {
 };
 const relArg = (p: string) => String(p).trim().replace(/\\/g, "/").replace(/^\.\//, "").replace(/\.md$/i, "");
 const slugOfRel = (rel: string) => rel.split("/").pop()!;
+/** the topic categories of the vault's topics/_template.md; a project part's slug carries one (S4: "per their slug") */
+const TOPIC_CATEGORIES = ["bugfix", "troubleshooting", "rfc", "incident", "feature", "deprecation", "compliance"];
+const PROJECT_PART_SLUG = new RegExp(`^\\d{4}-\\d{2}-(${TOPIC_CATEGORIES.join("|")})-[a-z0-9-]+$`);
 
 export function loadSplitSpec(file: string, v: R.Vault, written = false): SplitSpec {
   if (!existsSync(file)) throw new Refusal(`--spec ${file} does not exist`);
@@ -109,6 +115,7 @@ export function loadSplitSpec(file: string, v: R.Vault, written = false): SplitS
   for (const t of hubLinks ?? []) if (!v.byRel.has(t) || v.byRel.get(t)!.fleeting) errors.push(`hub.links: ${t} is not a curated note`);
   const folder = P ? (P.top === "projects" ? "topics" : P.top) : "topics";
   const type: "topic" | "actor" = folder === "actors" ? "actor" : "topic";
+  const projectParent = P?.top === "projects";
   const parts: PartSpec[] = [];
   const slugs = new Set<string>();
   for (const [k, p] of (Array.isArray(j.parts) ? j.parts : []).entries()) {
@@ -129,6 +136,11 @@ export function loadSplitSpec(file: string, v: R.Vault, written = false): SplitS
     if (!/^domain\/[a-z0-9-]+$/.test(domain)) errors.push(`${what}: domain must be domain/<name>`);
     const phome = relArg(p?.home ?? home);
     if (!isProject(phome)) errors.push(`${what}: home ${phome} is not a projects/ note`);
+    if (projectParent) {
+      // S3/S4/S6: a part of a project is a topics/ note named as a topic (its slug carries the category) and its home is the project
+      if (!PROJECT_PART_SLUG.test(slug)) errors.push(`${what}: a project part takes topic naming, <yyyy-mm>-<category>-<name> with category ${TOPIC_CATEGORIES.join("|")} (S4)`);
+      if (phome !== parent) errors.push(`${what}: the home of a project part is the project itself, ${parent} (S6)`);
+    }
     const sections = strList(p?.sections, `${what}.sections`);
     if (!sections.length) errors.push(`${what}: no sections`);
     const keep = strList(p?.keep, `${what}.keep`).map(relArg);
@@ -706,9 +718,18 @@ export function shortName(title: string): string {
   return (cut.length ? title.slice(0, Math.min(...cut)) : title).trim();
 }
 
+/** S4 title of a part: "<table title> (<parent short name>)"; a project's parts take the table title alone */
+export function partTitle(P: R.Note, p: PartSpec): string {
+  return P.top === "projects" ? p.title : `${p.title} (${shortName(R.titleOf(P))})`;
+}
+/** S5 "Part of" clause: "Part of [[parent]] (project [[home]])."; a project's parts write "Part of [[project]]." */
+export function partOfClause(P: R.Note, p: PartSpec): string {
+  return P.top === "projects" ? `Part of [[${slugOfRel(P.rel)}]].` : `Part of [[${slugOfRel(P.rel)}]] (project [[${slugOfRel(p.home)}]]).`;
+}
+
 function partFrontmatter(v: R.Vault, P: R.Note, p: PartSpec, date: string): string[] {
   const ptitle = R.titleOf(P);
-  const title = `${p.title} (${shortName(ptitle)})`;
+  const title = partTitle(P, p);
   const alias = `${ptitle}: ${p.title}`;
   const y = R.yamlOf(P);
   const ptags: string[] = Array.isArray(y.tags) ? y.tags.map(String) : [];
@@ -721,8 +742,14 @@ function partFrontmatter(v: R.Vault, P: R.Note, p: PartSpec, date: string): stri
     } else if (/^(type|status|category)\//.test(t)) tags.push(t);
   }
   if (!domainDone) tags.push(p.domain);
-  const status = yamlScalar(P, "status") ?? "";
-  const category = yamlScalar(P, "category") ?? "";
+  let status = yamlScalar(P, "status") ?? "";
+  let category = yamlScalar(P, "category") ?? "";
+  if (P.top === "projects") {
+    // S4: project parts take topic tags instead: type/topic, status/completed (dated records), category/<per slug>, one domain
+    category = p.slug.match(PROJECT_PART_SLUG)![1];
+    status = "completed";
+    tags.splice(0, tags.length, "type/topic", "status/completed", `category/${category}`, p.domain);
+  }
   const tagText = "[" + tags.map(q).join(", ") + "]";
   if (p.type === "topic") {
     const created = fmRawValue(P, "created_at") ?? date;
@@ -885,8 +912,8 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
     const parts: R.Note[] = [];
     for (const p of b.spec.parts) {
       const body = b.partLines.get(p.rel)!;
-      const title = `${p.title} (${shortName(R.titleOf(P))})`;
-      const header = [`# ${title}`, "", `> ${p.summary}. Part of [[${slugOfRel(P.rel)}]] (project [[${slugOfRel(p.home)}]]).`, ...p.pointers, ""];
+      const title = partTitle(P, p);
+      const header = [`# ${title}`, "", `> ${p.summary}. ${partOfClause(P, p)}`, ...p.pointers, ""];
       parts.push(newNote(v, p.rel, [...partFrontmatter(v, P, p, o.date), "", ...header, ...body.lines]));
     }
     P.lines = [...b.hubLines];
@@ -898,17 +925,63 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
   const batchLeaf = (rel: string) => partSpecOf.has(rel) || (hubOf.has(rel) && hubOf.get(rel)!.topicHub);
 
   // ---------------- named relations: K pairs (planned), D relations, K candidates
+  // a part an earlier batch created (4.7 "4 -> 5", "6 (S11 slot reserved in batch 4)"): an existing curated part outside
+  // this run. Its free slots are counted from its current links the way check i counts them (targets minus family links
+  // minus one home project), against the 3-other budget.
+  const partOfTarget = (n: R.Note): string | null => {
+    const m = (fmRawValue(n, "part_of") ?? "").match(/\[\[([^\[\]\n]+?)\]\]/);
+    return m ? R.resolveInner(v, m[1]) : null;
+  };
+  const earlierPart = (rel: string): R.Note | null => {
+    const n = v.byRel.get(rel);
+    return n && !n.fleeting && n.origText !== "\u0000new" && !partSpecOf.has(rel) && R.hasPartOf(n) ? n : null;
+  };
+  const othersOfExisting = (n: R.Note): Set<string> => {
+    const out = R.outTargets(v, n);
+    const parent = partOfTarget(n);
+    const family = new Set<string>();
+    if (parent) family.add(parent);
+    for (const x of v.notes) {
+      if (x.fleeting || x.rel === n.rel || !R.hasPartOf(x)) continue;
+      const p = partOfTarget(x);
+      if (p === n.rel || (parent && p === parent)) family.add(x.rel);
+    }
+    const projects = [...out.keys()].filter((t) => !family.has(t) && v.byRel.get(t)?.top === "projects");
+    const home = projects.sort((x, y) => (out.get(y) ?? 0) - (out.get(x) ?? 0) || cmp(x, y))[0] ?? null;
+    return new Set([...out.keys()].filter((t) => !family.has(t) && t !== home));
+  };
   const kPairs = new Map<string, Pair>();
   for (const f of families) for (const k of f.b.spec.named) if (!kPairs.has(k.id)) kPairs.set(k.id, k);
+  // a planned pair whose counterpart b an earlier batch created (K9, K10: S11 kept b's third slot free for it). The pair
+  // is linked as any planned pair: C4 retargets where either side's moved text links the other's parent, C5 lines
+  // otherwise; b must still have the free slot.
+  const earlierNamed = new Map<string, R.Note>();
+  const earlierNamedReport = new Map<string, string>();
   for (const [id, k] of kPairs) {
-    if (!partSpecOf.has(k.a) || !partSpecOf.has(k.b)) problems.push(`${id}: both ${k.a} and ${k.b} must be parts created in this run`);
+    const e = partSpecOf.has(k.a) && !partSpecOf.has(k.b) ? earlierPart(k.b) : null;
+    if (e) {
+      earlierNamed.set(id, e);
+      const aParent = partSpecOf.get(k.a)!.f.hub.rel;
+      const now = othersOfExisting(e);
+      const after = new Set(now);
+      after.delete(aParent); // a link of b to a's parent is retargeted to a (C4), not added
+      after.add(k.a);
+      earlierNamedReport.set(id, `${slugOfRel(k.b)} was created by an earlier batch: ${now.size} other(s) now, ${after.size} with the pair`);
+      if (after.size > 3) problems.push(`${id}: the earlier part ${k.b} has no free other slot for ${k.a} (${now.size} others: ${[...now].map(slugOfRel).join(", ")})`);
+      continue;
+    }
+    if (!partSpecOf.has(k.a) || !partSpecOf.has(k.b)) problems.push(`${id}: both ${k.a} and ${k.b} must be parts created in this run (or b a part an earlier batch created)`);
   }
   const counterparts = new Map<string, Set<string>>();
   const addCp = (a: string, b: string) => counterparts.set(a, new Set([...(counterparts.get(a) ?? []), b]));
-  for (const k of kPairs.values()) if (partSpecOf.has(k.a) && partSpecOf.has(k.b)) {
-    addCp(k.a, k.b);
-    addCp(k.b, k.a);
+  for (const k of kPairs.values()) {
+    if (partSpecOf.has(k.a) && partSpecOf.has(k.b)) {
+      addCp(k.a, k.b);
+      addCp(k.b, k.a);
+    } else if (earlierNamed.has(k.id)) addCp(k.a, k.b);
   }
+  /** the parent of a counterpart: a part of this run, or a part an earlier batch created */
+  const cpParentOf = (cp: string): string | null => partSpecOf.get(cp)?.f.hub.rel ?? (v.byRel.has(cp) ? partOfTarget(v.byRel.get(cp)!) : null);
   const relationOf = new Map<string, Set<string>>();
   for (const f of families) for (const r of f.b.spec.relations) relationOf.set(r.part, new Set([...(relationOf.get(r.part) ?? []), r.with]));
   // the keep set of every batch leaf
@@ -941,32 +1014,9 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
   const seenCand = new Set<string>();
   // candidates in id order (K12, K13, ...), so the free-slot test does not depend on the order of the --spec files
   const allCands = families.flatMap((f) => f.b.spec.candidates).sort((x, y) => Number(x.id.replace(/\D/g, "")) - Number(y.id.replace(/\D/g, "")) || cmp(x.id, y.id));
-  // a counterpart an earlier batch created (4.7 "4 -> 5", e.g. K16): an existing curated part outside this run. Its
-  // evidence is its body below the part header; its free slots are counted from its current links the way check i
-  // counts them (targets minus family links minus one home project), against the 3-other budget. (An earlier part whose
-  // third slot S11 reserves for a planned K pair of a later batch must not be named as a candidate's counterpart.)
-  const partOfTarget = (n: R.Note): string | null => {
-    const m = (fmRawValue(n, "part_of") ?? "").match(/\[\[([^\[\]\n]+?)\]\]/);
-    return m ? R.resolveInner(v, m[1]) : null;
-  };
-  const earlierPart = (rel: string): R.Note | null => {
-    const n = v.byRel.get(rel);
-    return n && !n.fleeting && n.origText !== "\u0000new" && !partSpecOf.has(rel) && R.hasPartOf(n) ? n : null;
-  };
-  const othersOfExisting = (n: R.Note): Set<string> => {
-    const out = R.outTargets(v, n);
-    const parent = partOfTarget(n);
-    const family = new Set<string>();
-    if (parent) family.add(parent);
-    for (const x of v.notes) {
-      if (x.fleeting || x.rel === n.rel || !R.hasPartOf(x)) continue;
-      const p = partOfTarget(x);
-      if (p === n.rel || (parent && p === parent)) family.add(x.rel);
-    }
-    const projects = [...out.keys()].filter((t) => !family.has(t) && v.byRel.get(t)?.top === "projects");
-    const home = projects.sort((x, y) => (out.get(y) ?? 0) - (out.get(x) ?? 0) || cmp(x, y))[0] ?? null;
-    return new Set([...out.keys()].filter((t) => !family.has(t) && t !== home));
-  };
+  // a candidate's counterpart an earlier batch created (4.7 "4 -> 5", e.g. K16): its evidence is its body below the part
+  // header; its free slots are counted by othersOfExisting. (An earlier part whose third slot S11 reserves for a planned
+  // K pair of a later batch must not be named as a candidate's counterpart.)
   const bodyBelowHeader = (n: R.Note): string[] => {
     const ls = n.lines.slice(R.fmEnd(n.lines) + 1);
     let k = 0;
@@ -1041,7 +1091,7 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
     // actors: actor notes that are not parts (a part is a leaf, and other leaves are never chosen), by mention count
     const actors = order.filter((t) => v.byRel.get(t)?.top === "actors" && !fam.has(t) && !R.hasPartOf(v.byRel.get(t)!)).sort((x, y) => count.get(y)! - count.get(x)! || order.indexOf(x) - order.indexOf(y));
     // the counterpart's parent is retargeted to the counterpart (C4), so it is not an actor choice of its own
-    const cpParents = new Set(plannedCps.map((c) => partSpecOf.get(c)?.f.hub.rel).filter(Boolean) as string[]);
+    const cpParents = new Set(plannedCps.map((c) => cpParentOf(c)).filter(Boolean) as string[]);
     const pick: string[] = [];
     for (const t of [...named, ...concepts, ...actors.filter((a) => !cpParents.has(a))]) if (pick.length < cap && !pick.includes(t)) pick.push(t);
     const proposedOthers = pick.filter((t) => !named.includes(t));
@@ -1063,9 +1113,14 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
     for (const cp of cps) {
       const k = [...kPairs.values()].find((x) => (x.a === rel && x.b === cp) || (x.b === rel && x.a === cp))!;
       if (candidatePairs.has(k.id)) continue; // a candidate never displaces a planned link: C5 lines only
-      const cpParent = partSpecOf.get(cp)!.f.hub.rel;
-      retargetMentions(ctx, v.byRel.get(rel)!, cpParent, cp, `C4 retarget (${k.id})`);
+      const cpParent = cpParentOf(cp);
+      if (cpParent) retargetMentions(ctx, v.byRel.get(rel)!, cpParent, cp, `C4 retarget (${k.id})`);
     }
+  }
+  // a planned pair with an earlier part: that part's (earlier moved) text may still link the new part's parent: C4 the same way
+  for (const [id, e] of earlierNamed) {
+    const k = kPairs.get(id)!;
+    retargetMentions(ctx, e, partSpecOf.get(k.a)!.f.hub.rel, k.a, `C4 retarget (${id}, earlier part)`);
   }
   for (const f of families) for (const r of f.b.spec.retarget) retargetMentions(ctx, v.byRel.get(r.note)!, r.from, r.to, `C4 retarget (${r.why || "spec"})`);
 
@@ -1104,7 +1159,18 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
   }
 
   // ---------------- R1 / R3: every kept link is answered
-  const summaryOf = (rel: string) => R.summaryOf(v, harvest, rel);
+  // a part's summary is the first sentence of its header blockquote (S5). For a part an earlier batch created, the
+  // harvested echo can be its clipped Map row ("part: ...…"), which wins a tie with its Parts line, so an existing part
+  // is described by its own header summary
+  const summaryOf = (rel: string) => {
+    const n = v.byRel.get(rel);
+    if (n && !n.fleeting && n.origText !== "\u0000new" && R.hasPartOf(n)) {
+      const tl = n.lines[R.taglineIdx(n)] ?? "";
+      const own = tl.replace(/^>\s?/, "").match(/^(.*\.)\s+Part of \[\[[^\]\n]+\]\]/);
+      if (own) return R.plainOf(v, own[1]).replace(/\s+/g, " ").trim();
+    }
+    return R.summaryOf(v, harvest, rel);
+  };
   const answer = (from: string, to: string, rule: string) => {
     const T = v.byRel.get(to)!;
     if (R.outTargets(v, T).has(from)) return;
@@ -1200,7 +1266,7 @@ export async function run(o: RunOpts): Promise<{ code: number; text: string }> {
   L.push("", "==== links (4.3 proposals vs spec keep lists)");
   for (const pz of proposals) L.push("  " + pz);
   L.push("", "==== K pairs and candidates");
-  for (const [id, k] of kPairs) if (!candidatePairs.has(id)) L.push(`  ${id} ${slugOfRel(k.a)} <-> ${slugOfRel(k.b)}: planned`);
+  for (const [id, k] of kPairs) if (!candidatePairs.has(id)) L.push(`  ${id} ${slugOfRel(k.a)} <-> ${slugOfRel(k.b)}: planned${earlierNamedReport.has(id) ? ` (${earlierNamedReport.get(id)})` : ""}`);
   for (const c of candReport) L.push("  " + c);
   L.push("", "==== sizes (final, after the link model)");
   for (const s of sizes) L.push("  " + s);

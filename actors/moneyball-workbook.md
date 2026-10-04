@@ -188,6 +188,7 @@ Undervaluation lens (added 2026-06-25): Intrinsic (0.5 Leg% + 0.5 Centrality%) m
 - Influence engine internals - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
 - [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
 - [[2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits]] — Scoring refinements of 2026-06-24/25: press raw alignment, the CFPB directional split, relevance-tiered committee influence scoring, the presentation audit with the percentile-rank 4-pillar blend, and the Blended workbook audit.
+- [[melange-fec-pipeline-architecture]] — Architecture of the Melange fec/ pipeline: paths and the shared kernel after the 2026-07-02 refactor, the audit guardrails, the inverted system of record, the staff directory and desk CRM, and the audit runbook with weekly automation.
 
 ## Related Projects
 

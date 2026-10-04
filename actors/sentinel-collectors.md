@@ -49,7 +49,7 @@ tags: ["type/actor", "status/active", "domain/data"]
 ## Dependencies
 
 - **Depends on:** the Melange refresh chain and scheduler [[melange-refresh-scheduler]] (`MoneyballWeeklyRefresh`, Sun 06:00; both schedulers Disabled at the 2026-09-02 production hold, `MoneyballWeeklyRefresh` ENABLED 2026-09-04 after Paul's "Apply, Pass all, enable"); the FEC/legislation pipeline [[melange-fec-pipeline]] (`fec/` tree, `sync_sentinel_bill_ledger.py`, `build_archive_legislative.py`, `compute_pillars`); Congress.gov scrape (6-hour); the Codex runtime cache `~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/` (`@oai/artifact-tool`, Playwright; created 09-03 21:43) pinned via `data/engine/artifact_tool_runtime.json`; the speech lane (`build_descriptive_speech.py`, `canonical_source_lineage_v1.receipt.json`).
-- **Depended on by:** the legislative pillar [[2026-07-feature-legislative-pillar-acu-review]] (contract-gated), the system-of-record architecture [[2026-07-rfc-melange-architecture-system-of-record]], the dashboard publish step (`publish_dashboard.py`), stance cells (`archive_leg` feeds stance, not ranks), hearing antagonism (`hearing_antagonism_build.py`), press stream (`press_stream.py`), the Mentat/Melange project [[melange-systems]].
+- **Depended on by:** the legislative pillar [[2026-07-feature-legislative-pillar-acu-review]] (contract-gated), the system-of-record architecture Melange architecture and system of record, the dashboard publish step (`publish_dashboard.py`), stance cells (`archive_leg` feeds stance, not ranks), hearing antagonism (`hearing_antagonism_build.py`), press stream (`press_stream.py`), the Mentat/Melange project [[melange-systems]].
 - **External:** Codex/ChatGPT app (ChatGPT.exe polls `git status` on the live tree continuously), Codex MCP threads, Windows Task Scheduler.
 - Lane context and full chronicle: [[2026-07-feature-data-collection-lanes]].
 
@@ -140,8 +140,10 @@ diff --strip-trailing-cr <live fec/> <main fec/>              # Codex flipped li
 
 - [[2026-07-feature-data-collection-lanes]] - Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills
 - [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
-- [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
+- Melange architecture and system of record - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
 - [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] — The bill-lobbying regression lane of 2026-09-04: making the cosponsor forecaster self-updating from the workbook and the sentinel collectors, and whether a logistic model fits better.
+- [[2026-07-feature-data-collection-lanes-sentinel-lanes]] — The September 2026 sentinel lanes: the press and hearing collector repair of 09-01/02, the workbook bill ingestion of 09-04/05 and the system manifest sentinel of 09-06.
+- [[2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest]] — The REORG phases, tripwires and lessons of 2026-08-04/05, and the system manifest and sentinel lane of 2026-09-06.
 
 ## Related Projects
 

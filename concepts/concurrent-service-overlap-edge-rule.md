@@ -71,6 +71,8 @@ Follow-through facts (shipping state, the v6 rebuild where admin exclusion took 
 - [[2026-09-feature-staffer-network-data-and-math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
 - [[2026-09-03-staffer-network-architecture]] - Paul's 2026-09-03 ant-colony ruling: staffer network = own social network beneath members; member graph kept; OVERLAP is the only edge rule.
 - [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture]] — The employment-tenure data adjudication of 2026-09-01 to 09-03, from the verdict and Paul's rulings to the play queue and the authoritative coverage metric, with the architecture and overlap rulings carried into the lane.
+- [[2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane]] — The SNA math audit of 2026-09-05 and the co-tenure clique lane of 2026-09-07 with its shipping state, the groups-role defect, the open producer findings and the move tables.
 
 ## Related notes
 

@@ -44,3 +44,4 @@ Paul commissioned (Codex Desktop, 2026-09-10 23:03 ET) a Bucchianeri/Volden/Wise
 ## Related Topics
 
 - [[2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn]] — The Codex overnight poll-loop burn of 2026-09-12/13 as recorded in the refresh incident: the 30 s poll loop, the quota loss and the repair lane.
+- [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] — The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built, Claude verified read-only and Paul applied.
