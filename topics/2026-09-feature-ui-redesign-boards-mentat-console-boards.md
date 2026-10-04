@@ -17,7 +17,7 @@ part_of: "[[2026-09-feature-ui-redesign-boards]]"
 
 # Mentat console boards (09-21/22) (UI redesign boards)
 
-> The Mentat console redesign boards of 2026-09-21/22: fourteen Higgsfield boards, the board-wins ruling and the build-01 shell. Part of [[2026-09-feature-ui-redesign-boards]] (project [[mentat]]).
+> The Mentat console redesign boards of 2026-09-21/22: two rounds of Higgsfield boards (14 on 09-21, 17 on 09-22), the decision that boards win over prompt numbers, and the build-01 shell. Part of [[2026-09-feature-ui-redesign-boards]] (project [[mentat]]).
 
 ## Mentat console redesign boards (2026-09-21 to 2026-09-22; `mentat-redesign-boards-2026-09-21`)
 

@@ -143,7 +143,7 @@ Any process (collector, restore, audit, pipeline stage, background watcher) must
 - Agent orchestration and model tiering rules - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 - [[2026-08-incident-refresh-automation-reliability]] - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
 - Forecast audit, giving-view redesign and PAC accuracy - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
-- [[2026-07-feature-agent-tooling-stack-glass-box-lock-hang]] — The GLASS BOX lane-lock hang that blocked metaloop starts, and the shared Grok usage balance.
+- [[2026-07-feature-agent-tooling-stack-glass-box-lock-hang]] — The GLASS BOX lane-lock hang that blocked metaloop starts, and the Grok lane taken down on 2026-08-06 by an exhausted Grok Build usage balance.
 
 ## Related Projects
 

@@ -164,7 +164,7 @@ pip install ... --use-deprecated=legacy-certs
 
 - Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-09-feature-cu-geography-luna-and-row-framework]] - CU-geography: Luna RF/KNN review closed 09-30 (section 30 GPU model current) plus the 491,308-row framework in Paul's four groups (P0/P1).
-- [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] — The quant-model-evaluation skill lane of 2026-09-30: findings F1 to F5, the N19 hold fix, the leakage fix and the production chain left pending.
+- [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] — The quant-model-evaluation skill lane of 2026-09-30 to 10-01: Paul's rulings on F1 to F6, the N19 hold fix, the leakage fix and the production chain left pending.
 
 ## Related Projects
 

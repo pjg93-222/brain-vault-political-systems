@@ -17,7 +17,7 @@ part_of: "[[2026-07-bugfix-mentat-collection-and-attribution]]"
 
 # Standing rules (money code, roster, shared checkout, zero-row crash) (Mentat collection and attribution)
 
-> Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code on inference, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class. Part of [[2026-07-bugfix-mentat-collection-and-attribution]] (project [[mentat]]).
+> Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code without his explicit approval of that specific change, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class. Part of [[2026-07-bugfix-mentat-collection-and-attribution]] (project [[mentat]]).
 
 ## Standing rules (feedback memories)
 

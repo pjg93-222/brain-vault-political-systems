@@ -26,7 +26,7 @@ The rule binds agents, not Paul. A question Paul reopens is open again: the old 
 - The settlement is written once, at the place the finding would be raised again, in words a reviewer can match ("do not re-flag", "SETTLED, do not re-litigate").
 - Before raising a finding, check the note's refuted lists and decisions.
 - Accepted residuals are documented with the change that accepted them.
-- Only Paul reopens a settled question; when he does, the earlier closures stop binding.
+- Paul can reopen a settled question, and so can new evidence that meets the reopen condition recorded with the settlement (new data, a new basis); a search Paul reopened is not bound by the earlier closures.
 
 ## Where it Applies
 

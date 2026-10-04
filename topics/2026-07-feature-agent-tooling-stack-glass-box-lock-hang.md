@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-agent-tooling-stack]]"
 
 # GLASS BOX lane-lock hang and Grok balance (Agent tooling stack)
 
-> The GLASS BOX lane-lock hang that blocked metaloop starts, and the shared Grok usage balance. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
+> The GLASS BOX lane-lock hang that blocked metaloop starts, and the Grok lane taken down on 2026-08-06 by an exhausted Grok Build usage balance. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
 
 ## GLASS BOX lane-lock hang and Grok balance (source: glassbox-lane-lock-hang-2026-08-06, last modified 2026-08-10; see [[glass-box]])
 

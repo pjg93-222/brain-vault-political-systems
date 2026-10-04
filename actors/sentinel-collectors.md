@@ -141,7 +141,7 @@ diff --strip-trailing-cr <live fec/> <main fec/>              # Codex flipped li
 - [[2026-07-feature-data-collection-lanes]] - Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills
 - [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
 - Melange architecture and system of record - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
-- [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] — The bill-lobbying regression lane of 2026-09-04: making the cosponsor forecaster self-updating from the workbook and the sentinel collectors, and whether a logistic model fits better.
+- [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] — The bill-lobbying regression lane of 2026-09-04: Paul's ask to make the cosponsor forecaster self-updating, the finding that it is already a ridge logistic model, and the BILLSTATUS bulk refresh and hash-gated forecaster step applied to the live tree.
 - [[2026-07-feature-data-collection-lanes-sentinel-lanes]] — The September 2026 sentinel lanes: the press and hearing collector repair of 09-01/02, the workbook bill ingestion of 09-04/05 and the system manifest sentinel of 09-06.
 - [[2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest]] — The REORG phases, tripwires and lessons of 2026-08-04/05, and the system manifest and sentinel lane of 2026-09-06.
 

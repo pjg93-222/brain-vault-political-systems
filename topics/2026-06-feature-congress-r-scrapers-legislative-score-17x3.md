@@ -17,7 +17,7 @@ part_of: "[[2026-06-feature-congress-r-scrapers]]"
 
 # Integrated 17-topic x 3-role legislative scraper (Congress R scrapers)
 
-> The integrated 17-topic by 3-role scraper behind the Moneyball Legislative Score: its current design inside the member scraper, the stability guard, the cosponsor SNA edges, the June 24 refinements and guardrails, and the two superseded approaches. Part of [[2026-06-feature-congress-r-scrapers]] (project [[melange-systems]]).
+> The integrated 17-topic by 3-role scraper behind the Moneyball Legislative Score: its 2026-06-22 design inside the member scraper, the stability guard, the cosponsor SNA edges, the June 24 refinements and guardrails, and the two superseded approaches. Part of [[2026-06-feature-congress-r-scrapers]] (project [[melange-systems]]).
 
 ## Integrated 17-topic x 3-role scraper (Moneyball Legislative Score - Raw)
 

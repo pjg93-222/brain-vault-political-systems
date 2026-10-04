@@ -17,7 +17,7 @@ part_of: "[[2026-06-feature-congress-r-scrapers]]"
 
 # Census CD and Ballotpedia CU-influence scrapers (Congress R scrapers)
 
-> The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, locked design and live status. Part of [[2026-06-feature-congress-r-scrapers]] (project [[melange-systems]]).
+> The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18. Part of [[2026-06-feature-congress-r-scrapers]] (project [[melange-systems]]).
 
 ## Census CD scraper (`census_cd_scraper.R`, 2026-06-16)
 

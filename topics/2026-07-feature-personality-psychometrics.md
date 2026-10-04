@@ -79,7 +79,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 ## Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
-- [[gold-set-validation]] — the instrument counts as valid only where it scores against the Personality on the Hill Senate gold panels (the gold-anchored axes)
+- [[gold-set-validation]] — E and A are gold-anchored on both Personality on the Hill Senate panels (association and strict-discriminant gates); O, C and N are one-panel association supported
 
 ## Related Topics
 

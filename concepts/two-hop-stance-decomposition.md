@@ -85,4 +85,4 @@ The 10 support-to-oppose **sign-flips** in `cu_stance_label_set` (pre_label vs h
 
 ## Related Concepts
 
-- [[gold-set-validation]] — A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
+- [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.

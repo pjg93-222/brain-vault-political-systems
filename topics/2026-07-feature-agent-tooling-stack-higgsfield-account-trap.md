@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-agent-tooling-stack]]"
 
 # Higgsfield connector account trap (Agent tooling stack)
 
-> The Higgsfield connector account trap: the connector bound to a free account until Paul re-authorized it on the plus plan. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
+> The Higgsfield connector account trap: the connector bound to a free account, re-authorized by Paul on the plus plan on 2026-09-19, then back on a free account on 2026-09-30 and 2026-10-01. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
 
 ## Higgsfield connector account trap (source: higgsfield-connector-account-trap-2026-09-17, last modified 2026-10-01; see [[higgsfield-connector]])
 

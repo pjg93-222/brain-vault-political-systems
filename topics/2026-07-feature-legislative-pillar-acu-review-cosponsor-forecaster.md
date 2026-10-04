@@ -17,7 +17,7 @@ part_of: "[[2026-07-feature-legislative-pillar-acu-review]]"
 
 # Bill-lobbying regression lane: the cosponsor forecaster (09-04) (Legislative pillar and ACU review)
 
-> The bill-lobbying regression lane of 2026-09-04: making the cosponsor forecaster self-updating from the workbook and the sentinel collectors, and whether a logistic model fits better. Part of [[2026-07-feature-legislative-pillar-acu-review]] (project [[melange-systems]]).
+> The bill-lobbying regression lane of 2026-09-04: Paul's ask to make the cosponsor forecaster self-updating, the finding that it is already a ridge logistic model, and the BILLSTATUS bulk refresh and hash-gated forecaster step applied to the live tree. Part of [[2026-07-feature-legislative-pillar-acu-review]] (project [[melange-systems]]).
 
 ## Bill-lobbying regression lane (2026-09-04): the cosponsor forecaster
 

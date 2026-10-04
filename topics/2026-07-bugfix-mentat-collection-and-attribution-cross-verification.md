@@ -51,5 +51,5 @@ Council review + build 2026-09-17: the cross-reference does NOT minimize versus 
 
 ## Related Topics
 
-- [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]] — Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code on inference, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class.
-- [[2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane]] — The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a review bucket, Chart Studio patches and redesign, and the usability lanes with their commits.
+- [[2026-07-bugfix-mentat-collection-and-attribution-standing-rules]] — Paul's standing feedback rules for Mentat collection: never change money or receipt-counting code without his explicit approval of that specific change, the roster and raw-sheet rules, the shared-checkout law and the zero-row crash class.
+- [[2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane]] — The Mentat system-debug lane of 2026-09-13 to 09-15: the $37.9M unattributed figure settled as a zeroed review bucket (a design superseded on 2026-09-17/18 by the contradiction rule), Chart Studio patches and redesign, and the usability lanes with their commits.

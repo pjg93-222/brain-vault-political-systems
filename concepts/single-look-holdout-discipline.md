@@ -165,7 +165,7 @@ Session 2026-07-16 (worktree `loving-payne`, branch `claude/gallant-gates-982203
 - [[2026-10-03-pac-accuracy-attempt2-rulings]] - Paul's 2026-10-03 rulings on PAC accuracy attempt 2: B1-B3, then C1 (UT-X sealed) and C2 (FILED = lower bound).
 - [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
 - [[forecast-redesign]] — Mentat forecasting program: 09-29 model audit, F2 'Giving by cycle' redesign with integrity reconciliation, PAC accuracy attempt 2 (HOLD).
-- [[2026-07-feature-audio-and-speech-lane-july-foundations]] — The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09, the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16.
+- [[2026-07-feature-audio-and-speech-lane-july-foundations]] — The July 2026 audio foundations: speaker verification and the ES cross-modal validation of 07-09 (superseded the same day as gender-confounded), the audio-side facts of the suggested-approach narratives, and the Senate gold and audio identity design of 07-16.
 
 ## Case 4: Luna CU-geography holdouts (2026-09-29 to 2026-09-30, `luna-stratified-scaling-review-2026-09-29`)
 
@@ -230,4 +230,4 @@ PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's
 
 ## Related Concepts
 
-- [[gold-set-validation]] — A measure is trusted only after it scores against a fixed, independently labelled, owner-ruled gold set that the pipeline under test never sees.
+- [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.

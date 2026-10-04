@@ -38,12 +38,12 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"
 ## Parts
 
 - [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] — The Codex executor lane record: how Claude and Codex were wired, the injected-preamble finding, the Gemini and Grok lanes, Paul's amended rules and the integration history.
-- [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] — The quant-model-evaluation skill lane of 2026-09-30: findings F1 to F5, the N19 hold fix, the leakage fix and the production chain left pending.
+- [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] — The quant-model-evaluation skill lane of 2026-09-30 to 10-01: Paul's rulings on F1 to F6, the N19 hold fix, the leakage fix and the production chain left pending.
 - [[2026-07-feature-agent-tooling-stack-skill-library-lane]] — The Moneyball skill library: how the repo skills were built, merged into git and audited for stale facts.
 - [[2026-07-feature-agent-tooling-stack-runpod-sessions]] — Running Claude sessions on the RunPod pod: Paul's rulings on the H200, the data scope he allowed and the never-stop rule.
-- [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] — The Higgsfield connector account trap: the connector bound to a free account until Paul re-authorized it on the plus plan.
-- [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where sessions draft updates and only Paul runs brainctl.
-- [[2026-07-feature-agent-tooling-stack-glass-box-lock-hang]] — The GLASS BOX lane-lock hang that blocked metaloop starts, and the shared Grok usage balance.
+- [[2026-07-feature-agent-tooling-stack-higgsfield-account-trap]] — The Higgsfield connector account trap: the connector bound to a free account, re-authorized by Paul on the plus plan on 2026-09-19, then back on a free account on 2026-09-30 and 2026-10-01.
+- [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired.
+- [[2026-07-feature-agent-tooling-stack-glass-box-lock-hang]] — The GLASS BOX lane-lock hang that blocked metaloop starts, and the Grok lane taken down on 2026-08-06 by an exhausted Grok Build usage balance.
 
 ## Context
 

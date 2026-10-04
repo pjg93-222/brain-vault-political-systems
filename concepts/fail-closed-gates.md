@@ -18,7 +18,7 @@ tags: ["type/concept", "domain/platform"]
 
 A design rule that recurs across the Melange pipeline, its refresh jobs and the agent tooling: a gate that cannot verify its input stops instead of producing a plausible-looking result. A tripped guard exits with zero artifacts, a layer with no accepted input publishes nothing, and an expired admission makes the chain and the desk stop. The 2026-09-19 refresh audit repeated the standing rule recorded on 2026-08-09: the refresh gates are deliberate fail-closed rulings, the audit and `weekly_refresh.py`'s `hard=True` are never weakened to make a Sunday run green, and loosening a gate is Paul's call.
 
-The rule is about missing or unverifiable evidence, not only wrong answers: a coordination evaluator refuses a verdict on missing or self-generated evidence, and a review loop stops for review on a safety flag instead of rewording and retrying. Where a gate is deliberately fail-open, the record says so at the gate: the say-do gate is fail-OPEN when its evidence source is unreadable.
+The rule is about missing or unverifiable evidence, not only wrong answers: a coordination evaluator refuses a verdict on missing or self-generated evidence, and a review loop stops for review on a safety flag instead of rewording and retrying. Where a gate is deliberately fail-open, the record says so at the gate: the say-do gate was landed (2026-07-07, kept in the 2026-07-08 generalization) to fail OPEN when its evidence source is unreadable, though the 2026-09-12 kernel run reported its "missing evidence source fails OPEN" check failing as a pre-existing defect.
 
 ## Key Characteristics
 

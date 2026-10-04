@@ -57,7 +57,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 ## Related Concepts
 
-- [[live-tree-patch-discipline]] — the 2026-09-19 reconcile landed fec/tools/live_patch.py; LIVE changes only by a patch applied with core.autocrlf=false, never by a checkout that normalises its line endings
+- [[live-tree-patch-discipline]] — the 2026-09-19 EOL census lane landed fec/tools/live_patch.py; changes to a drifted LIVE go in as a patch applied with core.autocrlf=false, never through a checkout that normalises its line endings
 
 ## Related Topics
 
