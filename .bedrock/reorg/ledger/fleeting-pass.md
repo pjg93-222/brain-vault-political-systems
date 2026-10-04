@@ -26,6 +26,9 @@ is the line in the tree this pass commits.
   after a blank line, so neither the index summary (first paragraph) nor the graph tagline (first `>` line) changes. The one
   summary edited is the Phase 2 concept `live-tree-patch-discipline`, whose summary the fix rounds already corrected (batches
   7 and 8); it changed in every copy (description, tagline, three echo lines), at 234 characters (the index clips at 240).
+  Follow-up, 2026-10-04: on the owner's ruling that a summary surfaced by recall and `index.md` must be true, the Mentat
+  project `description` and the repo-state topic's tagline were then corrected in place too (R63, R64); their dated correction
+  paragraphs stay as history.
 - **Append-only bodies.** Topics, concepts, discussions and projects keep every old line; a superseded line gets a dated note next
   to it or is struck through with a dated "Resolved" note; a resolved checkbox becomes `[x]` with a dated note. Actor frontmatter
   `known_issues` items were rewritten in place (Bedrock: actors may be modified), each saying what changed. Discussions got
@@ -175,7 +178,7 @@ Quotes are shortened with "…". Evidence is the frozen capture line.
 | R2 | PM:10 `blockers` 1 | "PR to main unopened: gh is NOT installed and Claude in Chrome was not connected, … (Paul deferred: 'we can do it later')." | "Resolved 2026-10-03 (was: PR to main unopened; …): Paul signed in to GitHub in the built-in browser, the PR was opened there as Melange PR #2 and merged at his request." | F1:30 |
 | R3 | PM:15-16 action item | "Offer to open the PR …", status `todo` | same text + "Done 2026-10-03: opened as Melange PR #2 and merged …", status `done` | F1:30 |
 | R4 | PM:19-20 action item | "Decide whether to delete or keep the partial ref …", status `todo` | same text + "Done 2026-10-03: deleted on origin at Paul's request; still kept as a local branch and on remote mirror.", status `done` | F1:33 |
-| R5 | PM:5 `description` ("…(PR unopened)…") | unchanged (a summary) | dated correction paragraph after the tagline, PM:67 | F1:30 |
+| R5 | PM:5 `description` ("…(PR unopened)…") | unchanged (a summary) | dated correction paragraph after the tagline, PM:67; the description itself was corrected afterwards (R63) | F1:30 |
 | R6 | PM:83 Status, Progress | "…GitHub push of the live tree done 2026-10-02/03, PR to main unopened." | "…done 2026-10-02/03; PR to main opened and merged 2026-10-03 (Melange PR #2)." | F1:30 |
 | R7 | PM:91-92 Action Items table | both rows `todo` | both rows `done`, with "(done 2026-10-03: …)" | F1:30, F1:33 |
 | R8 | PM:117 Blockers | "- PR to main unopened (Paul deferred); `gh` is NOT installed and Claude in Chrome was not connected (2026-10-02/03)." | struck through + "Resolved 2026-10-03: … PR #2 … merged … (merge commit `54433266`); `gh` is still not installed." | F1:30 |
@@ -183,7 +186,7 @@ Quotes are shortened with "…". Evidence is the frozen capture line.
 | R10 | PM:131 How to apply | "next session, offer to open the PR first. …" | kept + "(The "offer to open the PR first" step is superseded: the PR was opened and merged on 2026-10-03.)" | F1:30 |
 | R11 | PM:206 Map row (repo-state topic) | "GitHub branch pushed (PR unopened)" | "GitHub branch pushed (PR merged 2026-10-03)" | F1:30 |
 | R12 | T:12 `objective` | "…GitHub migration branch (PR still unopened), …" | "…GitHub migration branch (PR still unopened at the time; opened and merged 2026-10-03), …" | F1:30 |
-| R13 | T:26 tagline ("…with the PR still unopened…") | unchanged (the summary) | dated correction paragraph after it, T:28 | F1:30 |
+| R13 | T:26 tagline ("…with the PR still unopened…") | unchanged (the summary) | dated correction paragraph after it, T:28; the tagline itself was corrected afterwards (R64) | F1:30 |
 | R14 | T:63 History 2026-10-02/03 | "…PR to main still unopened ("we can do it later")." | kept + "; superseded by the next row." and the new 2026-10-03 row T:64 | F1:30 |
 | R15 | T:74 Decisions, GitHub migration | "…open the PR and any history rewrite are deferred / Paul's decisions." | kept + "2026-10-03: at Paul's request the PR was opened and merged (Melange PR #2, merge commit `54433266`); the history rewrite is still his decision." | F1:30, F1:34 |
 | R16 | T:82-83 Next Steps | `[ ]` open the PR; `[ ]` partial-ref decision | `[x]` both, with dated "Done 2026-10-03" notes | F1:30, F1:33 |
@@ -233,6 +236,16 @@ Quotes are shortened with "…". Evidence is the frozen capture line.
 | R60 | GB:121 full-visibility architecture | "…(b) harness-enforced PostToolUse mirrors across ALL sessions/projects." | kept + "(Part (b) was dead from about 2026-08-02 to 2026-10-03; see the GLASSEYE correction.)" | F6:25 |
 | R61 | GB:130 Timeline 2026-08-06 | "Hook mirror stops being invoked in app sessions (found 2026-08-09, GLASSEYE)" | kept + "; corrected 2026-10-03: dead from about 2026-08-02, a Git Bash path failure, not a harness change" | F6:25 |
 | R62 | TR:143 "HOOKS INSTALLED + PROVEN 2026-07-24 23:42 … harness-enforced PostToolUse mirrors across ALL sessions/projects" (kept) | — | new TR:144 "CORRECTION 2026-10-03 (…; supersedes "harness-enforced PostToolUse mirrors across ALL sessions/projects" for the period): these `mirror.ps1` hooks were dead from about 2026-08-02 until 2026-10-03, …" | F6:25 |
+| R63 | PM:5 `description` (follow-up) | "…Pushed to GitHub branch claude/mentat-migration-onto-main (PR unopened). Money/receipt-counting code…" | "…Pushed to GitHub branch claude/mentat-migration-onto-main (PR opened and merged 2026-10-03). Money/receipt-counting code…" | F1:30 (PR #2 opened and merged 2026-10-03, merge commit `54433266`); owner ruling below |
+| R64 | T:26 tagline (follow-up) | "…the GitHub migration branch pushed 2026-10-02/03 with the PR still unopened, the Tableau-shaped…" | "…the GitHub migration branch pushed 2026-10-02/03 with the PR opened and merged 2026-10-03, the Tableau-shaped…" | F1:30; owner ruling below |
+| R65 | PF:43 `action_items` owner and PF:107 Action Items table (follow-up): the new v5 item "freeze the method and plan for 2028, the first clean test" (PF:40-43, PF:107) | owner "coordinator agent" | owner "unassigned (capture names none)", in both copies | F4:35 records Paul's D8 ruling (prepare 2028 as the first clean test; "method+plan frozen before 2027-01-31; each forecast frozen within 14 days of its issue date") and names no owner for the freeze; its "Coordinator defaults" are D2, D5, D7 and D9, not this item. The owner was this pass's inference |
+
+R63-R65 are a follow-up to the pass commit `fec3771`, made the same day on the same branch. R63 and R64: the owner ruled that
+recall and `index.md` surface these summary lines, so a false summary must be corrected. That is an exception to the vault rule
+that the summaries of existing notes are never edited (vault CLAUDE.md), and it replaces the correction-paragraph-only handling
+of R5 and R13; the dated correction paragraphs PM:67 and T:28 are kept unchanged as history. R65 corrects an inference of this
+pass: the capture gives the item no owner. R63-R65 change words inside existing lines, so no note line number cited in this
+ledger moved.
 
 Inference flagged: R23 says "the stop, apply and restart then followed once the check had passed" without naming who ran them; the
 capture records Paul's instruction ("stop, apply, start once the check passes") and the exact stop and start times, which reads as

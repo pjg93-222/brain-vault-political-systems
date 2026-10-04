@@ -40,7 +40,7 @@ action_items:
   - description: "v5: freeze the method and plan for 2028, the first clean test (each forecast frozen within 14 days of its issue date)"
     status: "todo"
     deadline: "2027-01-31"
-    owner: "coordinator agent"
+    owner: "unassigned (capture names none)"
   - description: "Run the Glass Box watcher stage_watch.ps1 alongside every stage"
     status: "todo"
     deadline: ""
@@ -104,7 +104,7 @@ tags: ["type/project", "status/active", "domain/data"]
 | Finish S2C narrow repair, v3 freeze, ONE Opus verifier gate (done 2026-10-03: S2C gate PASS) | done | none | coordinator agent |
 | Launch S3 only with Paul's OK and a fresh gate on the v2 freeze; opening UT-X needs a new owner ruling (done 2026-10-03: S3 dev-only one pass on Paul's "finish"; UT-X sealed, not scored) | done | none | [[paul-goff]] |
 | Rule on S6 MAJOR-2 of attempt 2 (FILED UNAVAILABLE cells still publish per-target predictions) | todo | none | [[paul-goff]] |
-| v5: freeze the method and plan for 2028, the first clean test | todo | 2027-01-31 | coordinator agent |
+| v5: freeze the method and plan for 2028, the first clean test | todo | 2027-01-31 | unassigned (capture names none) |
 | Glass Box watcher alongside every stage | todo | none | coordinator agent |
 | Forecast UI v3 from the new boards | todo | none | coordinator agent |
 | Windows scheduled tasks after landing; commit sector_growth_study; clean IP/cookie evidence | todo | none | coordinator agent |
