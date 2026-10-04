@@ -1,0 +1,379 @@
+{
+  "id": "B9",
+  "what": "Batch 5 split of topics/2026-07-feature-primacy-and-industry-tier-boards (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B9); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-primacy-and-industry-tier-boards",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Reference data: 2026-07-16 ChatGPT lane landing (`chatgpt-lane-landed-2026-07-16`)"
+    ],
+    "links": [
+      "actors/melange-dashboard",
+      "concepts/four-pillar-percentile-blend"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-primacy-and-industry-tier-boards-primacy-factor-drift-crown",
+      "title": "Factor-only primacy board, tier drift trace and champion crown law",
+      "summary": "The factor-only primacy board ruled on 2026-07-29 with its consequences and layers, the primacy tier drift trace of 2026-08-11 with the tensor-cell fix, and the champion crown law of 2026-08-09",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Primacy board scores on the factor alone (2026-07-29, `primacy-board-factor-only-2026-07-29`)",
+        "## Primacy tier drift trace (2026-08-11, `primacy-tier-drift-2026-08-11`)",
+        "## Champion crown law (2026-08-09, `champion-crown-law-2026-08-09`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build",
+      "title": "Industry-tab interactions and the per-industry boards build (08-03 to 08-10)",
+      "summary": "Industry-tab interactions of 2026-08-03 and the per-industry tier boards build of 2026-08-09/10, from the deploy and the valence fix to the BNPL, bank, CU-axis and association-anchor work and Paul's uniformity ruling",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Industry-tab interactions (2026-08-03, `industry-tab-interactions-2026-08-03`)",
+        "## Per-industry tier boards (2026-08-09 onward, `industry-tier-recreation-2026-08-09`)",
+        "### Deploy @d07eaea (2026-08-09)",
+        "### Original branch record (superseded by the deploy above)",
+        "### Valence resolved 2026-08-10 (Paul: \"Fix it, try A, see what happens\"; option A DEPLOYED @77a5293, merged @4049267, full chain green)",
+        "### BNPL promotion 2026-08-10 (Paul: \"promote the BNPL acts\") @91f7749 / merge 15554d1, main synced",
+        "### Bank sweep + tier-1 floor 2026-08-10 @573cf9b / merge 27c6986, main synced at Paul's order",
+        "### CU AXIS shipped @c54ed56 (2026-08-10) and the axes spec @a4d2146",
+        "### Association-anchor campaign 2026-08-10 (Paul: \"bulk up Bank... full throttle\" then \"same sweep for fintech and crypto trade associations\"; sourcing = the trades' own highlighted bills: ABA / ICBA / BlockchainAssociation / AFC)",
+        "### Paul ratified the boards and ordered uniformity: UNIFORM-CLEAN-V1 @7809e75 / merge 249a61a, main synced"
+      ],
+      "keep": [],
+      "s11": true,
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor",
+      "title": "Per-industry boards: tensor cells, case studies and the responsiveness surface (08-10/11)",
+      "summary": "The per-industry boards tensor work of 2026-08-10/11: the phase-3 recon and pilot, the positions sweeps, the phase-4 machinery and signed cells, the scope receipt, the rhetoric transfiguration, the backfire and Barr case studies and the responsiveness surface",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### Tensor phase-3 recon (spec correction + Paul-gated)",
+        "### Phase-3 pilot executed (Paul: \"Reconnect the positions and pilot the bank column\") @b517946, main synced",
+        "### Crypto / fintech positions sweep @a0a53d4, main synced",
+        "### Phase-4 tensor machinery shipped @3e2b15a / merge e04575a (Paul: \"Build phase 4, empty-tensor byte-identity gate first\"), main synced @9cc47f1",
+        "### First cells signed @7cf1903 (Paul: \"Sign the ILC cells\"), main synced",
+        "### Bank column cells @1cb6fc6 (Paul: \"same tensor cells for bank and crypto\"), main synced - tensor 2 -> 11 cells",
+        "### CU column cells @0a0aba1 (Paul: \"same sweep for the credit union column\"), main synced - tensor 11 -> 21",
+        "### Scope receipt @b76d880 (Paul: \"I really need it to be full proof\"; born from my Sherman-450 mischaracterization)",
+        "### Rhetoric transfiguration @8c615d2 (Paul: \"don't we have that in the main dashboard? Can't we just transfigure that over?\" - yes)",
+        "### Tree consolidated to main (another lane, ~2026-08-11 01:00) and receipt law",
+        "### Chain wiring, alignment fix and other mechanics",
+        "### Backfire analysis 2026-08-11 @59e7ae5 / 1b03cfe (Paul via metaloop: \"could lobbying a separate industry's ally/champion ever backfire\", run c35009a837)",
+        "### Barr case study 2026-08-11 @bb9fb02 / a02973a (Paul: \"when credit unions tried to court Andy Barr, is that a reason it backfired? how would they best go about this\", run f61bfb225d)",
+        "### Responsiveness surface shipped 2026-08-11 @1022a81 / f3255f8"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-primacy-and-industry-tier-boards-methodology-lane",
+      "title": "Primacy-board methodology lane (2026-09-19/20)",
+      "summary": "The primacy-board methodology lane of 2026-09-19/20: the main point and drafts, Paul's rulings, the dry runs, the council review, METHOD V1 and V1.1, the rejected redesign, the experiments and the live-board augmentation, with its newest-wins contradictions",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Primacy-board methodology lane (2026-09-19, `primacy-methodology-lane-2026-09-19`)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 68,
+      "old": "| 2026-07-17 | Main fast-forwarded e3d2923 -> 7aa36d1 by Paul (merge debt zero; live tree checked out on the cfpb branch == main). Later same-day commits ebbee29/7853b56/9aa9677 continued that lineage (end state main == live @9aa9677, see `legislative-letters-2026-07-17`). |",
+      "mark": "external",
+      "why": "\"see `legislative-letters-2026-07-17`\" names a memory file; \"Later same-day commits\" is time"
+    },
+    {
+      "line": 70,
+      "old": "| 2026-07-29 or later (date not given) | Amendments = 0.5 measure weight in `primacy_factors` @68f1fbe (`PRIMACY_AMENDMENT_W`). |",
+      "mark": "not positional",
+      "why": "\"2026-07-29 or later (date not given)\" is time"
+    },
+    {
+      "line": 84,
+      "old": "- **Evidence floor (2026-07-29, @cae6c58)**: \"purity ranks, evidence qualifies\" - Paul: \"Lets go with this, conduct as you most see optimal\". `PRIMACY_MIN_CUPRIM=0.75`.",
+      "mark": "not positional",
+      "why": "\"conduct as you most see optimal\" is a quoted verb"
+    },
+    {
+      "line": 95,
+      "old": "- **Methodology lane 2026-09-19**: keep within-chamber seating (\"we will keep within chamber seating\", D-027) -> later \"One cross-chamber sort is the way to go\" -> later rejected all redesigns and made the base the LIVE board (\"I like the live board I just think it can be further augmented\"). See the methodology section for the full ledger of rulings and their order.",
+      "mark": "rewrite",
+      "why": "\"See the methodology section\" names ## Primacy-board methodology lane, which moves to -methodology-lane; both \"later\" are time",
+      "new": "- **Methodology lane 2026-09-19**: keep within-chamber seating (\"we will keep within chamber seating\", D-027) -> later \"One cross-chamber sort is the way to go\" -> later rejected all redesigns and made the base the LIVE board (\"I like the live board I just think it can be further augmented\"). See the methodology section in [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] for the full ledger of rulings and their order.",
+      "referent": "2026-07-feature-primacy-and-industry-tier-boards-methodology-lane"
+    },
+    {
+      "line": 101,
+      "old": "- ~~2026-07-16 ratified 17-placement tier contract (forced T1 = Barr, Young Kim, Roger Williams, Tim Scott, Fitzpatrick, Torres, Hagerty, Cortez Masto, Timmons, Nunn; Barr landed first)~~ - the board was later rescored (2026-07-29 factor-only moved Huizenga to 18, Kim to 14) and Paul's ruling on 2026-09-19 is that Barr \"naturally belongs in tier 3\"; the older contract is kept because it explains older commits and pins.",
+      "mark": "not positional",
+      "why": "\"the board was later rescored\" is time"
+    },
+    {
+      "line": 104,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 114,
+      "old": "- [ ] Open items listed in each section below (fintech filler below 6; cross-primary valence ILC-as-fintech-anti = tensor phase 4; DAAMLA-119 reintro unverified; responsiveness V2 queue).",
+      "mark": "rewrite",
+      "why": "\"Open items listed in each section below\": the sections below Next Steps are the hub's Reference data and all four parts (open items such as fintech filler, the tensor phase-4 valence and the responsiveness V2 queue sit in the parts); below stays and the parts are added; \"fintech filler below 6\" is a count and stays",
+      "new": "- [ ] Open items listed in each section below and in [[2026-07-feature-primacy-and-industry-tier-boards-primacy-factor-drift-crown]], [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build]], [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor]] and [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] (fintech filler below 6; cross-primary valence ILC-as-fintech-anti = tensor phase 4; DAAMLA-119 reintro unverified; responsiveness V2 queue).",
+      "referent": "2026-07-feature-primacy-and-industry-tier-boards-primacy-factor-drift-crown, 2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build, 2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor, 2026-07-feature-primacy-and-industry-tier-boards-methodology-lane"
+    },
+    {
+      "line": 122,
+      "old": "- OPEN after landing: the unadjudicated deep legislative-input drift (a COM recalc refreshed `pillar_inputs_snapshot` at 20:12 - see `press-fix-incidents-2026-07-16`, the 522-move; ranks now stable on that refreshed basis and Paul's tier is pin-protected, but the old-vs-new leg basis question was never formally adjudicated); the fec-rank-integrity audit Workflow (wf_73d7c183-627) running at memory-write time; CCM's exact #8 position emerges only from channel evidence, currently #12 by score within T1 (membership pinned).",
+      "mark": "external",
+      "why": "\"see `press-fix-incidents-2026-07-16`\" names a memory file"
+    },
+    {
+      "line": 123,
+      "old": "- UPDATE 2026-07-17 morning: main FAST-FORWARDED e3d2923 -> 7aa36d1 by Paul - merge debt zero; the live tree stays checked out on the cfpb branch (== main). Later same-day commits (ebbee29/7853b56/9aa9677) continued and merged on that lineage - see `legislative-letters-2026-07-17` for the end state (main == live @9aa9677).",
+      "mark": "external",
+      "why": "\"see `legislative-letters-2026-07-17`\" names a memory file; \"Later same-day commits\" is time"
+    },
+    {
+      "line": 132,
+      "old": "- The grievance/delivery **conduct ladder is INERT**: nobody scores high enough for a ceiling to bite (it previously held Barr 18 -> 38, Rose 38 -> 37), so a grievance cure now earns nothing back. Its `(9.0, 6.0, 3.0)` thresholds were calibrated against the old score scale.",
+      "mark": "not positional",
+      "why": "\"it previously held Barr 18 -> 38\" is time"
+    },
+    {
+      "line": 137,
+      "old": "- **EVIDENCE FLOOR @cae6c58**: Paul ratified \"purity ranks, evidence qualifies\" (\"Lets go with this, conduct as you most see optimal\"): `PRIMACY_MIN_CUPRIM=0.75` cu_primary role-credit required to OCCUPY a tier seat; ranking among the qualified stays pure factor. 14 thin-evidence members dropped (Magaziner 86, Maloy 88), T1 untouched, McClain/Smith/Foster seated. It is an ELIGIBILITY gate, never a volume score term. Placements are exempt; absent factors file stands the gate DOWN (fail-open); gate is factor-mode only. Chain receipts: kernel 89/0, audit 192/2 (same 2 pre-existing), rank delta 0/533 with all four pillars byte-stable.",
+      "mark": "not positional",
+      "why": "\"conduct as you most see optimal\" is a quoted verb"
+    },
+    {
+      "line": 149,
+      "old": "- Treat the board as purity-scored. Never propose re-adding a volume/throughput term, re-tuning shrinkage to favor high-credit members, or \"fixing\" the ratio - all were considered and rejected. Below ~slot 13 the band is 0.052 wide on a 0.5075 baseline, so read Tier 2/3 as SETS, not rankings.",
+      "mark": "not positional",
+      "why": "\"Below ~slot 13\" is a board slot range"
+    },
+    {
+      "line": 160,
+      "old": "- **CULLING PROMOTION ENACTED 2026-08-03** (live tree, branch `claude/cfpb-sentiment-recorrection`) via `promote_greenlit_primacy_integration.py --greenlight GREENLIGHT_INTEGRATION`. `legislation_culling_status.json` now reads `status=PASS_PRODUCTION_CULLING_INTEGRATED`, `phase=production`. Kernel 89/0 unchanged. The `phase=staged` failure above is CLOSED.",
+      "mark": "same note",
+      "why": "\"The `phase=staged` failure above\" is the pre-existing culling failure listed in ### Open, deliberately untouched, earlier in the same primacy-board section and part"
+    },
+    {
+      "line": 164,
+      "old": "- **`tier_overrides.json` `_README` REGRESSED by the promotion - awaiting Paul.** `weights` / `placements` / `_conduct_mirror` verified byte-identical, but the promoted `_README` is an OLDER revision that DROPS the amendment-weight clause documented above. Worse than a gap: its surviving clause still asserts \"seated Young Kim in Tier 1 (slot 13)\", which the amendment fix superseded - live `primacy_factors.json` confirms `roster_baseline=0.512613`, `amendment_measure_weight=0.5`, and `factor_ranked` Vargas .587197 > Crapo .582896 > Kim .581250. So the file misdocuments the shipped board. No dial or seat moved. Intact text preserved at `backups\\pre-greenlight-primacy-20260803T171109Z\\tier_overrides.json`. Both revisions share a pre-existing wart: the opening says \"SIX deliberate things\" while listing nine.",
+      "mark": "same note",
+      "why": "\"the amendment-weight clause documented above\" is the AMENDMENTS = 0.5 MEASURE WEIGHT bullet of ### Layers added the same day, earlier in the same section and part"
+    },
+    {
+      "line": 169,
+      "old": "**Question (Paul, 2026-08-11): trace which factor moved Cortez Masto and Huizenga.** Kernel test `test_primacy_tier` fails on 2 ratified pins; drift confirmed pre-existing (see `ui-simplification-2026-08-11`). Full read-only trace + 2-agent audit (workflow wf_205ae2ff-25a); the mirror reproduced all 533 shipped `factor_ranked` values with **0 mismatches** and the live board exactly.",
+      "mark": "external",
+      "why": "\"see `ui-simplification-2026-08-11`\" names a memory file"
+    },
+    {
+      "line": 198,
+      "old": "- Math: Huizenga's factor is 0.586607 with the three crypto acts REMOVED, 0.579508 live (floored 0.5), 0.550820 unfloored (0.15). Holding them LOWERS him 0.0071 vs not holding them; an act at 0.5 sits below his 0.58 mean. **What he got is a SHIELD, not a gain**: the campaign demoted 18 `shared` acts to 0.15 - **14 demotions took effect, 4 were cancelled by the ACU SUPPORT floor** (H.R.1919, S.1124, H.R.2392, S.919; CLARITY was already crypto-classed). His portfolio kept its pre-campaign valuation while peers were marked down. Tier-1 seat = exemption from a markdown, plus baseline shift.",
+      "mark": "not positional",
+      "why": "\"an act at 0.5 sits below his 0.58 mean\" is a magnitude comparison"
+    },
+    {
+      "line": 199,
+      "old": "- **The project's own rules say the category is not CU-scoped.** L4 rule (`PRIMACY_IMPLEMENTATION_SPEC_2026-07-28.md:20`, verbatim): \"a category is CU-scoped when ≥⅓ of its search identifiers name CU tokens — Exam & Supervision 40% in, Mortgage 31% out, no hand-picking\". `technology_emerging_issues` (where the outline files all four crypto bills, under heading \"Payment & Technology\" -> \"Technology & Emerging Issues\") scores **2/13 = 15.4%** - below the threshold, i.e. NOT CU-scoped. That is exactly why they were originally `L4:registry-cross-industry` -> `shared`.",
+      "mark": "not positional",
+      "why": "\"below the threshold\" is a magnitude comparison"
+    },
+    {
+      "line": 229,
+      "old": "- **Prong 2 DEPLOYED** @6911b10 -> main 38b9769 -> live chain 2026-08-10: Barr + Sessions left CU champions (Finstad + Lucas backfill), Blumenthal + Durbin + Sanders + Warren left bank (Bennet + Ernst + Murray + Wyden), Booker left crypto (no pool, 26 -> 25); Scott crown-protected keeps CU + crypto seats; threats/mixed byte-identical; 16 below-cap class strips receipt-only; audit now 202 checks / culling-red-only, third check enforces prong 2. Two-pass `build_payload` (stage sectors -> global retained-threat set -> class strip before cap).",
+      "mark": "not positional",
+      "why": "\"16 below-cap class\" is a cap comparison"
+    },
+    {
+      "line": 234,
+      "old": "  2. The combine initially refused: the industry-tier feature's merged consumers require `data\\lobbying\\industry_tiers.json` whose producer (`fec/lobbying/industry_tiers.py`, NOT a chain step) had never run - I ran it per its documented order (producer before family build; \"exact CU parity\" receipt), which activated that feature's tier boards on the deployed family pages (see `industry-tier-recreation-2026-08-09`).",
+      "mark": "external",
+      "why": "\"see `industry-tier-recreation-2026-08-09`\" names a memory file"
+    },
+    {
+      "line": 245,
+      "old": "  - POSITION -> \"Both — ship column now, classify later.\" Column ships wired and empty; running `classify_bill_positions.py` is a SEPARATE gated step he had not authorized yet at that time.",
+      "mark": "not positional",
+      "why": "\"classify later\" is quoted time"
+    },
+    {
+      "line": 256,
+      "old": "- **THE 2026-08-03 DEPLOY FAILURE - the lesson.** I built both pages into a scratchpad preview dir, verified them there, and told Paul where they were. He opened his own tree and saw nothing: `lobby-network.html` was still the Aug 2 build with **zero outbound links of any kind**. Then the \"rebuild\" command I handed him (`python fec/make_lobby_interactions_html.py`) was a file-not-found, because that file only existed in the worktree. **Building is not delivering. Deploy to the artifact the user actually opens, then verify THERE.** Contributing cause since fixed: the interactions builder defaulted `--out` to a derived staging dir while its sibling defaulted to MB_ROOT - a builder that prints success while the page nobody can see stays stale. Both now default to the live tree.",
+      "mark": "not positional",
+      "why": "\"the page nobody can see\" is a verb"
+    },
+    {
+      "line": 276,
+      "old": "### Original branch record (superseded by the deploy above)",
+      "mark": "same note",
+      "why": "the ### heading's \"superseded by the deploy above\" is ### Deploy @d07eaea right before it, in the same part -industry-boards-build"
+    },
+    {
+      "line": 283,
+      "old": "### Valence resolved 2026-08-10 (Paul: \"Fix it, try A, see what happens\"; option A DEPLOYED @77a5293, merged @4049267, full chain green)",
+      "mark": "not positional",
+      "why": "\"try A, see what happens\" is a quoted verb"
+    },
+    {
+      "line": 321,
+      "old": "- OPEN: fintech filler below 6; cross-primary valence (ILC-as-fintech-anti -0.15) = tensor phase 4; DAAMLA-119 reintro unverified. Counts: cu 61, bank 10, crypto 101, fintech 10.",
+      "mark": "not positional",
+      "why": "\"fintech filler below 6\" is a count"
+    },
+    {
+      "line": 363,
+      "old": "- **CRYPTO COLUMN = HONESTLY ZERO off-diagonal candidates (as then believed)** - every crypto-directional act is already crypto_primary + ledger-signed (densest column: 101 primary, 53a / 24n / 24p); recorded so future sessions do not force cells. (Later corrected, see below.)",
+      "mark": "same note",
+      "why": "\"(Later corrected, see below.)\" is the \"Crypto '0-by-evidence' was WRONG\" bullet of ### CU column cells, later in the same part -industry-boards-tensor"
+    },
+    {
+      "line": 386,
+      "old": "- **RECEIPT LAW (2026-08-11 canon, augmentation P1-P3): the coordination ledger now requires a receipt event per dispatch (verify-then-record; sequencing: dispatch -> receipt -> next dispatch - batch-registering closes windows permanently); my `phase4:r1` flag cleared with an honest retroactive receipt (`verified=true` - the work WAS contract-verified pre-law); `metaloop.md` now 8 laws + SKILL.md RECEIPT-first preamble - RE-READ BOTH before the next Codex dispatch.**",
+      "mark": "not positional",
+      "why": "\"dispatch -> receipt -> next dispatch\" and \"before the next Codex dispatch\" are sequence and time"
+    },
+    {
+      "line": 391,
+      "old": "- **Deploy sequencing**: `industry_tiers.json` is a HARD input to the lobby family build. **Chain wiring DONE @dcd9b8d** (2026-08-09 late): `industry_tiers.py` runs after `efficiency_layers.py`, before `make_lobby_network_html.py`, previous-cycle-bundle semantics like champions_v2; roster validated at chain import (unique-basename walk); ordering locked by a negative-controlled contract test in `fec/tests/engine/test_primacy_tier.py` @9f846db (source-text parse of CHAIN, no import). Parallel lanes the same night: chain reorder @22d2112 / e08c1ac (efficiency_layers after champions_v2), and a cross-sector-exclusivity champions run was starting as this closed.",
+      "mark": "not positional",
+      "why": "\"previous-cycle-bundle semantics\" is time"
+    },
+    {
+      "line": 401,
+      "old": "- ANSWER: yes, two ways - (1) crypto fault line: negative exposure x alignment interactions when traditional industries court crypto-aligned members (t = -4.6 .. -6.1), REVERSE direction positive (conversion flows toward crypto, not from it); (2) conflict cells: the harmed industry's own engagement surface authors its harm (Kennedy / ILC fintech-above-roster; Hickenlooper + Warren / yield = HIGH-EXPOSURE LOW-ALIGNMENT red flag). Baseline elsewhere mildly friendly (alignments correlate +0.52 .. +0.82; bank-fintech 0.82, crypto most distinct).",
+      "mark": "not positional",
+      "why": "\"fintech-above-roster\" is a comparison"
+    },
+    {
+      "line": 413,
+      "old": "- **E2 RESPONSIVENESS @4f4e400 (Paul: \"he ignored us... don't manufacture truth\") - the ignore-signal FOUND IN EVIDENCE: activity-near is not responsiveness-to.** Barr post-117 take-up of ACU flagship vehicles = 0/15 (Board Modernization joined 117th then skipped both reintros while 9/30 and 7/30 of his House-R-finance in-group joined; KIMCRAPO 119 CDFI letter = 14/30 in-group signed, Barr absent, on his own Champion-rhetoric letter-leading topic); responsive-share 55% vs finance-House mean 87% (self-author profile). Fair-scoping discipline: VetMBL / CUGMA absences in-group-normal (0-3/30), W&M-scoped letter unscored, partisan / out-of-chamber letters unscored. METHOD LESSON (permanent): boards price ACTS HELD, not ASKS ANSWERED - for association-client questions always run the responsiveness cut (per-letter / per-vehicle take-up vs exact in-group from `member_desk_bundle` bills ledger, the full non-LDA-limited membership source at repo root). Desk-bundle bills + primacy mix 'letter' credits = the signer data. Responsiveness surface = open Paul-gated proposal (then shipped, below).",
+      "mark": "same note",
+      "why": "\"(then shipped, below)\" is ### Responsiveness surface shipped 2026-08-11, right after this ### in the same part -industry-boards-tensor"
+    },
+    {
+      "line": 445,
+      "old": "- **What the archive arms show with seating kept** (A4 = today's purity factor, within-chamber, NO grade multiplier): Meuser 19, Barr 38, Cortez Masto 42, Davis 271, Ciscomani 24, Gottheimer 41, versus live 13/38/40/156/19/41. The grade multiplier alone moves 511 of 533 seats, mean 64.3 places, about 4x seating or the evidence refresh. French Hill 400 -> 68 is the multiplier: his purity 0.4585 is BELOW the 0.4814 baseline, the multiplier scales the low-activity baseline mass toward 0.80 and him near 1.00 (pure rank 102), then the evidence floor clears 34 gate-failers above him (68); the conduct step does NOT move him (an earlier tracer line saying so was wrong). Barr never moved: 38 is the FIRST Tier-3 slot, the conduct floor seats a breached member at the top of his ceiling tier. No success/advancement term exists anywhere on the board: `per_area_grade.py` has none (verified by search) and D-032 dropped D-028's \"success\" component when it swapped the delivery blend for the grade. Meuser's 23 agenda credits shield a middling share (0.5158) from shrinkage while thin members with raw shares of 0.60-0.72 are pulled to baseline and docked.",
+      "mark": "not positional",
+      "why": "\"BELOW the 0.4814 baseline\" and \"34 gate-failers above him\" are comparisons; \"an earlier tracer line\" is time"
+    },
+    {
+      "line": 455,
+      "old": "- UNRESOLVED CONTRADICTION (at that moment): \"we will keep within chamber seating\" (earlier) vs \"R1 - Go as recommended\" (R1 recommended one cross-chamber sort) - I assumed within-chamber and asked. He wants baseline + docking RE-THOUGHT: my critique = unknown treated as average, thin+pure punished twice, baseline drifts (0.5126 -> 0.4866 -> 0.4814), 15 is a cliff of unknown origin, K=0.25 was set around Vargas's seat.",
+      "mark": "not positional",
+      "why": "\"(earlier)\" is time"
+    },
+    {
+      "line": 456,
+      "old": "- **RULED later on 2026-09-19 (supersedes the \"unresolved contradiction\" above):** after seeing Tier 1 + Tier 2 under both seatings, \"One cross-chamber sort is the way to go\" (reverses D-027 for this board); \"I approve of the two product split\" = the BOARD (allegiance; relevance = centred on credit unions) and the ISSUE MAP (positions per field; relevance = centred on the issue) are separate products on one corpus that never feed each other (his own idea: \"one media path for the overall rank, and another media path for the sub-categories\"); \"the unknown should be excluded from the calculation\"; \"We need to be careful with the thin members, they are really important, and we need to combat size bias\" - so my draft-1 handicap k (pull toward ZERO) is WITHDRAWN as size-biased; draft 2 = raw share, ONE symmetric pull toward the average of RANKED members with data-estimated strength, no docking, Delivery divided by an OPPORTUNITY premium (chair / vice chair / ranking; jurisdiction-committee member; off-committee), size bias reported as corr(Seat, record size). Draft 2 + brain drafts (5 DECISIONS, 1 DEADEND) are in `audits/primacy_methodology_20260919/CLEAN_METHODOLOGY_DRAFT.md`. STILL OPEN: thin-member rule not yet ruled; conduct rows into the ledger (retire the ladder?); label words per product; the read-only dry run and the Sonnet 4.5 classifier pilot both await his word. I twice said the dry run runs \"on your word\" - do NOT launch it unprompted.",
+      "mark": "same note",
+      "why": "\"supersedes the 'unresolved contradiction' above\" is the UNRESOLVED CONTRADICTION bullet right before it in the same ### and part; \"RULED later\" is time"
+    },
+    {
+      "line": 461,
+      "old": "- RUN 1 was INVALID through MY spec error (pull estimator assumed each row = 1.0 but records are in strength units, median row 0.10 -> tau2 negative -> silent clamp -> every share flattened -> a Delivery board). RUN 2 fixed only that (Kish effective rows; fail loudly): k_hat = 13.0 effective rows, median trust 0.375, Spearman(seat, Primacy) 0.965; size bias below today's board in every variant (V1 +0.318 vs V0 +0.418).",
+      "mark": "not positional",
+      "why": "\"size bias below today's board\" is a magnitude comparison"
+    },
+    {
+      "line": 463,
+      "old": "  1. With the estimated pull big above-average records take the top (Barr 5, Meuser 18, Ciscomani 9 -> 30); with NO pull six of Paul's seven checks land where he said (Barr 54, Meuser 83, Hill 206, Ciscomani 9, Gottheimer 302, Cortez Masto 139; Davis 423 is the miss, a media case) BUT six of the top eight seats go to one- or two-row records (Menefee, Mejia, Van Epps, Fuller, Grijalva, Walkinshaw) -> neither extreme works; my recommendation = NO pull + a minimum independent record to hold a seat (start 3 effective rows, report 2/3/5).",
+      "mark": "not positional",
+      "why": "\"big above-average records\" is a magnitude"
+    },
+    {
+      "line": 488,
+      "old": "- Run 3 (matter units, V1's 3/5/8 standards with purity-first among all who qualify) FAILED on face validity: records of 3-5 matters filled Tiers 2-3 (Massie, Speaker Johnson above Tim Scott 25 matters/11 led, Crapo, Cramer, Timmons; Barr / Meuser / Cortez Masto / Kim / Huizenga met the top standard yet were unseated; top Tier-3 score 0.94 > every Tier-1 score) = the failure Codex had named (\"A small, selectively visible record can look purer than a tested relationship\"). Full-champion-credential-first failed the other way (Jack Reed share 0.41 seated above Fitzpatrick 33 matters/10 direct/never led).",
+      "mark": "not positional",
+      "why": "\"Speaker Johnson above Tim Scott\" and \"seated above Fitzpatrick\" are board rankings"
+    },
+    {
+      "line": 510,
+      "old": "- Paul: \"Lets do those recommendations, and add one thing at a time seeing what works best\" -> clarified \"I want to see all the combinations of the rules together\" -> \"Lets also include the two excluded rules [votes, cross-posts], and lets also wire in the primacy press into it\" -> \"Turn on the press, and lets try it but with the latest criteria, where Barr was 77, lets experiment.\"",
+      "mark": "not positional",
+      "why": "\"seeing what works best\" and \"I want to see all the combinations\" are quoted verbs"
+    },
+    {
+      "line": 554,
+      "old": "- Paul: \"Young Kim should be tier 1, along with Sherman, we had a method that included them in earlier. Rounds, Daines, and Crapo should exit. Sullivan should be lower. Did we have something similar to that? Also prepare a markdown for codex.\"",
+      "mark": "not positional",
+      "why": "\"we had a method that included them in earlier\" is quoted time"
+    },
+    {
+      "line": 555,
+      "old": "- ANSWER FOUND: the LIVE board (09-17 method) already has that pattern - Kim 10, Sherman 8, Sullivan 11, Crapo 22, Daines 26, Rounds 32 - and the rule doing it is WITHIN-CHAMBER SEATING (senators compete only with senators), which Paul dropped earlier today (\"One cross-chamber sort is the way to go\"). Same rule also pushes Cramer to 17 and admits Huizenga 9, Sessions 13; the GRADE multiplier is what lifts Meuser (grade pct 0.998) to 14.",
+      "mark": "not positional",
+      "why": "\"which Paul dropped earlier today\" is time"
+    },
+    {
+      "line": 563,
+      "old": "- FLOOR mechanics: below 0.75 cu_primary credit a member is pushed to seat 86+ in factor order (`grid_core.py:736-740, 586-599`), before the conduct ladder. Passers 114 (legislative) -> 122 with amended press credit; 8 cross on press alone, all from exactly 0.50 (Case, Collins, Lee, M. Rogers, Craig, Miller-Meeks, Magaziner, Fischbach).",
+      "mark": "not positional",
+      "why": "\"below 0.75 cu_primary credit\" is a threshold"
+    },
+    {
+      "line": 564,
+      "old": "- Floor OFF: 20 below-floor members enter the 85 (Cassidy 18, Kustoff 31, Norton 42, R. Menendez 52, Fischer 57, Neguse 59, Ernst 61, Moran 63, Schatz 64, Rosen 67, Bergman 70, Coons 73, Hinson 75, Hoeven 76, Capito 78, Lankford 79, Grassley 81, Stauber 82, Bacon 83, Moolenaar 85); Tier 1 unchanged.",
+      "mark": "not positional",
+      "why": "\"20 below-floor members\" is a threshold"
+    },
+    {
+      "line": 566,
+      "old": "- THIRD-PARTY ITEMS: 577 of 7,413 rows (7.8%) are America's Credit Unions newsroom articles (`americascreditunions.org`; 254 articles fanned out to members by a `#BIOGUIDE` URL fragment, one article under 19 members), all channel press, polarity = model output (558 support / 19 oppose, gold 0). They are 440 of the 1,069 CU_DIRECT (41%). Own-words direct counts: Kim 24 -> 6, Fitzpatrick 19 -> 7, Sherman 19 -> 10, S. Fitzgerald 16 -> 7, Tim Scott 12 -> 3, Crapo 7 -> 0, Barr 13 -> 5. This is the long-standing \"CU press\" source (see `cu-sentiment-coverage`): a source-type ruling for Paul, not a collector bug.",
+      "mark": "external",
+      "why": "\"see `cu-sentiment-coverage`\" names a memory file"
+    },
+    {
+      "line": 582,
+      "old": "- Eight boards pass all 12 checks; closest to old rule = 10110100101 (DOCK off, GRADE on, SEATING on, FLOOR off, VOTES off, PRESSFACTOR on). Found by searching on names and FLOOR off admits about 20 below-floor members: evidence about switches, NOT a recommendation.",
+      "mark": "not positional",
+      "why": "\"below-floor members\" is a threshold"
+    },
+    {
+      "line": 585,
+      "old": "- STRUCTURAL: Tier 3's factor range (0.4807-0.4418) is wholly below the roster baseline 0.482; about 37 members above baseline; the floor (122 passers) decides who is in the 85, the share only orders them.",
+      "mark": "not positional",
+      "why": "\"wholly below the roster baseline\" and \"above baseline\" are comparisons"
+    },
+    {
+      "line": 601,
+      "old": "- Seating: \"we will keep within chamber seating\" (earlier 2026-09-19) -> \"One cross-chamber sort is the way to go\" (later same day) -> base becomes the LIVE board (within-chamber seating) on \"I like the live board I just think it can be further augmented\" (night). The last statement governs; the cross-chamber sort and the restore are parked, not ruled out as history.",
+      "mark": "not positional",
+      "why": "\"(earlier 2026-09-19)\" and \"(later same day)\" are time"
+    },
+    {
+      "line": 603,
+      "old": "- Media: \"R6, Yes\" (separate factor) vs the pasted block (act kind inside the purity factor) -> resolved to one ledger; later press inside the factor at statement weight 0.10 x intensity gave the best result.",
+      "mark": "not positional",
+      "why": "\"later press inside the factor\" is time"
+    }
+  ]
+}

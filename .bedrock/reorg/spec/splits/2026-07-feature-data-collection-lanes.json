@@ -1,0 +1,422 @@
+{
+  "id": "C1",
+  "what": "Batch 6 split of topics/2026-07-feature-data-collection-lanes (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C1); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-data-collection-lanes",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## FEC-as-precognition lane (2026-07-31)",
+      "## LobbyView / LDA integration lane (2026-07-31 to 2026-08-12)"
+    ],
+    "links": [
+      "actors/lobbyview-collector",
+      "actors/sentinel-collectors"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-data-collection-lanes-collection-scope",
+      "title": "Corpus census, demographic expansion A-H and the five-paper research integration",
+      "summary": "Melange data-collection scope: the corpus coverage census of 2026-07-10, the demographic expansion A to H of 2026-07-24/25 and the five-paper research-integration lane of 2026-08-14",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Corpus coverage census (2026-07-10)",
+        "## Demographic expansion A-H (2026-07-24 / 2026-07-25)",
+        "## Research-integration lane, five papers (2026-08-14)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency",
+      "title": "LobbyView lane: org-mention measurement, industry-family UI, efficiency layers (08-07/08)",
+      "summary": "The LobbyView lane of 2026-08-07/08: the org-mentions audit and fix rounds, the shipped org-mention measurement, the industry-family UI cleanup and the efficiency layers, with the earlier CU-set ruling of 2026-07-31 and round-4 overnight run of 2026-08-01",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### ORG-MENTIONS AUDIT + FIX ROUNDS (2026-08-07/08)",
+        "### ORG-MENTION MEASUREMENT SHIPPED (2026-08-07, Paul \"build the press release and social media mention measurement\")",
+        "### INDUSTRY-FAMILY UI CLEANUP SHIPPED (2026-08-07, Paul screenshot round)",
+        "### EFFICIENCY LAYERS SHIPPED (2026-08-07, Paul's ROI + lobbying-efficiency directive, codex-built E1)",
+        "### CU-set ruling and the round-4 overnight run"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge",
+      "title": "LobbyView lane: LDA rebuild, datasets and the FEC x LDA bridge looks (07-31 to 08-01)",
+      "summary": "The LobbyView lane of 2026-07-31 to 08-01: the positions dataset and network table acquired, the LDA rebuild, the FEC-bridge design, and the three FEC by LDA bridge rounds (round 1 void for coverage with its look not consumed, rounds 2 and 3 with their consumed looks)",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### POSITIONS DATASET ACQUIRED (2026-08-01)",
+        "### BRIDGE ROUND 3 - LOOK CONSUMED (2026-08-01 @36afda8/@4fddaa7): UNCORROBORATED, and DECISIVE",
+        "### BRIDGE ROUND 3 LOCKED (@bb8a034, 2026-08-01, pre-collection)",
+        "### BRIDGE ROUND 2 - LOOK CONSUMED (2026-08-01 @c9fc43a): UNCORROBORATED at p=.098",
+        "### FEC x LDA BRIDGE PREREG (ROUND 1): VOID-FOR-COVERAGE (2026-08-01) - LOOK NOT CONSUMED",
+        "### LDA REBUILD LANE (2026-08-01, Paul \"Apply for the surgical\", committed @b12bbfc on the handoff branch)",
+        "### NETWORK TABLE ACQUIRED (2026-07-31, late session)",
+        "### FEC-bridge design (proposed, awaiting Paul) and core data facts"
+      ],
+      "keep": [
+        "actors/lobbyview-collector"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade",
+      "title": "LobbyView lane: five-lane pass, contest and territorial looks, scale upgrade (08-05/06)",
+      "summary": "The LobbyView lane of 2026-08-05/06: the five-lane pass, the Wintermute convergence and repository fixes, the contest by shared-bills and territorial looks, and the shipped C4+A1+B1+C1 scale upgrade",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### FIVE-LANE PASS (2026-08-05, merged @2857c99)",
+        "### WINTERMUTE CONVERGENCE + REPOSITORY FIXES (2026-08-05, in flight) and BATCH CLOSED (merged @b4f66fe, main ff'd)",
+        "### CONTEST x SHARED-BILLS looks (2026-08-05/06)",
+        "### Territorial looks (2026-08-06): demographics, fertile soil, state league",
+        "### SCALE UPGRADE C4+A1+B1+C1 SHIPPED (2026-08-06, merged @e779727, codex-executed)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-data-collection-lanes-contact-inference",
+      "title": "Contact-inference extraction lane (08-28/29)",
+      "summary": "The contact-inference extraction lane of 2026-08-28/29: the bullseye ruling and gold-set examination, blind dev-gold rounds, the look ledger, the constituency campaign, the G3 adjudication with the committee-proxy clarification, and the overnight autonomy run",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Contact-inference extraction lane (2026-08-28 / 2026-08-29)"
+      ],
+      "keep": [
+        "actors/lobbyview-collector"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-data-collection-lanes-sentinel-lanes",
+      "title": "Sentinel lanes: press/hearing repair, bill ingestion, system manifest (09)",
+      "summary": "The September 2026 sentinel lanes: the press and hearing collector repair of 09-01/02, the workbook bill ingestion of 09-04/05 and the system manifest sentinel of 09-06",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Sentinel collectors lane: press/hearing repair (2026-09-01 / 2026-09-02)",
+        "## Sentinel workbook bill ingestion lane (2026-09-04 / 2026-09-05)",
+        "## System manifest sentinel lane (2026-09-06)"
+      ],
+      "keep": [
+        "actors/sentinel-collectors"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K17",
+      "a": "topics/2026-07-feature-data-collection-lanes-collection-scope",
+      "b": "topics/2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance",
+      "event": "2026-07-10 corpus census (counterpart created in batch 5)"
+    },
+    {
+      "id": "K24",
+      "a": "topics/2026-07-feature-data-collection-lanes-sentinel-lanes",
+      "b": "topics/2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest",
+      "event": "system-manifest sentinel lane"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 35,
+      "old": "Lanes covered (each has its own section below; dates are the source memory dates):",
+      "mark": "rewrite",
+      "why": "\"each has its own section below\": the FEC-as-precognition section and the LobbyView heading with its own text stay in the hub below; the census, demographic and research-integration lanes move to -collection-scope, contact inference to -contact-inference and the three sentinel lanes to -sentinel-lanes",
+      "new": "Lanes covered (each has its own section below and in [[2026-07-feature-data-collection-lanes-collection-scope]], [[2026-07-feature-data-collection-lanes-contact-inference]] and [[2026-07-feature-data-collection-lanes-sentinel-lanes]]; dates are the source memory dates):",
+      "referent": "2026-07-feature-data-collection-lanes-collection-scope, 2026-07-feature-data-collection-lanes-contact-inference, 2026-07-feature-data-collection-lanes-sentinel-lanes"
+    },
+    {
+      "line": 51,
+      "old": "Standing law across lanes (recorded in the source memories): Paul's ask-first directive gates every production mutation; merges, ratifications, scheduler re-enables and promotions are Paul's; Codex-built work is always re-verified after any MCP timeout (see each lane's Codex notes).",
+      "mark": "rewrite",
+      "why": "\"see each lane's Codex notes\" names the Codex notes inside every lane section; they now sit in the six parts (demographic lane, the three LobbyView parts, contact inference, the sentinel lanes; the FEC lane's stays in the hub)",
+      "new": "Standing law across lanes (recorded in the source memories): Paul's ask-first directive gates every production mutation; merges, ratifications, scheduler re-enables and promotions are Paul's; Codex-built work is always re-verified after any MCP timeout (see each lane's Codex notes in [[2026-07-feature-data-collection-lanes-collection-scope]], [[2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency]], [[2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge]], [[2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade]], [[2026-07-feature-data-collection-lanes-contact-inference]] and [[2026-07-feature-data-collection-lanes-sentinel-lanes]]).",
+      "referent": "2026-07-feature-data-collection-lanes-collection-scope, 2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency, 2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge, 2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade, 2026-07-feature-data-collection-lanes-contact-inference, 2026-07-feature-data-collection-lanes-sentinel-lanes"
+    },
+    {
+      "line": 53,
+      "old": "Pillar weights, recorded wherever they appear (all three sets, never let the newest read as ratified): `.40/.30/.20/.10` (2026-06-29, historical); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED); `45/10/40/5` (live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). See the Sentinel workbook ingestion section for the 2026-09-04 out-of-lane flag and the 2026-09-05 lane-local treatment.",
+      "mark": "rewrite",
+      "why": "\"See the Sentinel workbook ingestion section\" names ## Sentinel workbook bill ingestion lane, which moves to -sentinel-lanes",
+      "new": "Pillar weights, recorded wherever they appear (all three sets, never let the newest read as ratified): `.40/.30/.20/.10` (2026-06-29, historical); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED); `45/10/40/5` (live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). See the Sentinel workbook ingestion section in [[2026-07-feature-data-collection-lanes-sentinel-lanes]] for the 2026-09-04 out-of-lane flag and the 2026-09-05 lane-local treatment.",
+      "referent": "2026-07-feature-data-collection-lanes-sentinel-lanes"
+    },
+    {
+      "line": 92,
+      "old": "| 2026-08-19 | Paul asks about lobbied-member to joined-bill correlation; the member link is found circular (see [[lobbyview-collector]]) |",
+      "mark": "external",
+      "why": "\"see [[lobbyview-collector]]\" names another note"
+    },
+    {
+      "line": 93,
+      "old": "| 2026-08-28 | Contact-inference lane ordered and shipped @055b9fccc (metaloop run-20260828T0421211456636Z-101ac9dfe4); sessions 1-2 and Rounds 1-4, Looks 1-3, G3 adjudication, rulings (see section) |",
+      "mark": "rewrite",
+      "why": "\"(see section)\" in the 2026-08-28 contact-inference row is ## Contact-inference extraction lane, which moves to -contact-inference",
+      "new": "| 2026-08-28 | Contact-inference lane ordered and shipped @055b9fccc (metaloop run-20260828T0421211456636Z-101ac9dfe4); sessions 1-2 and Rounds 1-4, Looks 1-3, G3 adjudication, rulings (see section in [[2026-07-feature-data-collection-lanes-contact-inference]]) |",
+      "referent": "2026-07-feature-data-collection-lanes-contact-inference"
+    },
+    {
+      "line": 95,
+      "old": "| 2026-09-01 | Sentinel Collectors Repair copied byte-identically to worktree `sentinel-collectors-progress-f7de7d` and committed (`7e1cb0e66`, `dbdac0ca1`, `8d21605bc`); \"stop using git\" directive issued; `weekly_refresh_status.json` run that is later found to be a corpse starts 13:56:36 |",
+      "mark": "not positional",
+      "why": "\"later found to be a corpse\" is time"
+    },
+    {
+      "line": 111,
+      "old": "- NO-TIERS ruling (Paul 2026-08-28): tier architecture rejected, one calibrated score for every pair (see contact-inference section). Do not re-propose.",
+      "mark": "rewrite",
+      "why": "\"(see contact-inference section)\" names ## Contact-inference extraction lane, which moves to -contact-inference",
+      "new": "- NO-TIERS ruling (Paul 2026-08-28): tier architecture rejected, one calibrated score for every pair (see contact-inference section in [[2026-07-feature-data-collection-lanes-contact-inference]]). Do not re-propose.",
+      "referent": "2026-07-feature-data-collection-lanes-contact-inference"
+    },
+    {
+      "line": 113,
+      "old": "- Git directive history: ~~\"stop using git\" (2026-09-01)~~ stands as the baseline; it beat \"commit on a branch before merging\" in the Sentinel ingestion lane; lifted ONCE on 2026-09-05 for \"finish the remaining items and commit\" (a one-time lift, not a revocation); later git ban lifted per lane 2026-09-06 (see working-agreement topics).",
+      "mark": "external",
+      "why": "\"(see working-agreement topics)\" names other notes; \"later git ban lifted\" is time"
+    },
+    {
+      "line": 114,
+      "old": "- Pillar weights: see the Context section for all three sets with status labels. The 2026-09-05 lane-local statement \"weights 45/10/40/5 treated as ratified (reversal: Paul says otherwise)\" is recorded as a working assumption of that lane only; for the vault the live set is UNRATIFIED pending S-5.",
+      "mark": "same note",
+      "why": "\"see the Context section\" is ## Context, which the hub keeps"
+    },
+    {
+      "line": 117,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 123,
+      "old": "- [ ] Paul: Section 8.4 menu of the research-integration deliverable; if yes late on campaign-site collection, collect FIRST, polish later (clock: dies at the November 2026 election).",
+      "mark": "not positional",
+      "why": "\"polish later\" is time"
+    },
+    {
+      "line": 137,
+      "old": "- The broadcast family is about 10 legs (under-listed before), all in `fetch_interviews.py` under `collector_supervisor.py` (relaunches every 10 min): CNN, MTP, CBS (Face the Nation), ABC (This Week), PBS, NPR (4 programs), NPR podcast (1A/H&N - DEAD, see `psych-audit-2026-07-09`), Fox, Hugh Hewitt (~2005 to present radio), MS NOW. All resumable via `iv_fetch_log`.",
+      "mark": "external",
+      "why": "\"see `psych-audit-2026-07-09`\" names a memory file"
+    },
+    {
+      "line": 138,
+      "old": "- Fox ceiling sharpened: code says posting STOPPED ~2024-10 (archive back ~2018; volume already collapsed by 2023); post-2024-10 needs YouTube-caption diarization (does not exist). CNN is fully walked and `cnn-deep` backfills below 2024-06 to CNN's own ~2023-05 publishing floor.",
+      "mark": "not positional",
+      "why": "\"backfills below 2024-06\" is a date bound"
+    },
+    {
+      "line": 147,
+      "old": "**Ratified up front:** scope A-F (G employers and H financial DEFERRED as follow-on campaigns, later fired); division by CD-count = display plus new artifacts ONLY (workbook Demo% pillar untouched - rank-moving, his gate); pie = all 20 NAICS in a 4-family palette; employers later = automate-tractable plus queue.",
+      "mark": "not positional",
+      "why": "\"later fired\" and \"employers later\" are time"
+    },
+    {
+      "line": 197,
+      "old": "**Adversarial round: 12 findings.** 3 REFUTED by measurement (sub-cent rounding exact to the penny vs receipts; detail-vs-map category mismatch = 0 occurrences; the 2 roster-unmatched members are Moylan/Guam and Plaskett/VI non-voting delegates, not former members - now excluded from rankings via `in_roster`), 8 fixed, 3 documented as accepted residuals inside the artifact's own caveats. Fixed latent landmine: refunds can drive an aggregate negative (Tuberville fintech 2025-2026 = -$1,700) so `log2` is out of domain; surge/lean inputs now clamp at 0 with raw values still visible.",
+      "mark": "not positional",
+      "why": "\"not former members\" means former members of Congress"
+    },
+    {
+      "line": 203,
+      "old": "**SAME-DAY REWIRE @3f66ac9 (also merged to main), per Paul's directive:** \"Associated <industry> Funding\" on the Beneficiary Summary **Industry Total** row = the member-level reference; \"Ratify wiring\"; \"Adjust as you see optimal\". Measured: that column is committee-path EXPOSURE, fan-out 6.7-16.1x vs true totals, NEVER summable across members; Bridge==Summary per-(cycle,candidate) exact on all 1,444 keys (now a permanent fail-closed guard).",
+      "mark": "not positional",
+      "why": "\"Adjust as you see optimal\" is the verb in Paul's quote"
+    },
+    {
+      "line": 223,
+      "old": "Collector-level facts (vintage, NAICS, regex, receipts, guards, API, network table, positions dataset, LDA rebuild) are recorded on [[lobbyview-collector]]; this section holds the full lane chronicle: the contradiction note, org-mentions, UI cleanup, efficiency layers, bridge rounds, looks, scale upgrade and champions work.",
+      "mark": "rewrite",
+      "why": "\"this section holds the full lane chronicle\": the section's heading, contradiction note and Basics stay in the hub, but its chronicle moved: org-mentions, UI cleanup and efficiency layers to -lobbyview-org-mentions-and-efficiency, the bridge rounds to -lobbyview-lda-rebuild-and-bridge, the looks, scale upgrade and champions work to -lobbyview-looks-and-scale-upgrade; \"in [[note]]\" follows each named item",
+      "new": "Collector-level facts (vintage, NAICS, regex, receipts, guards, API, network table, positions dataset, LDA rebuild) are recorded on [[lobbyview-collector]]; this section holds the full lane chronicle: the contradiction note; org-mentions, UI cleanup, efficiency layers in [[2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency]]; bridge rounds in [[2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge]]; looks, scale upgrade and champions work in [[2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade]].",
+      "referent": "2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency, 2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge, 2026-07-feature-data-collection-lanes-lobbyview-looks-and-scale-upgrade"
+    },
+    {
+      "line": 254,
+      "old": "- Tier-0 badge suppressed (tier 0 = CORRECT data, \"untiered - below the 85-seat primacy cutoff\", BUCKETS 13/24/48 `tier_util.py:44`; the bug was `v2Member()` printing integer 0; NEVER \"fix\" the upstream artifacts).",
+      "mark": "not positional",
+      "why": "\"below the 85-seat primacy cutoff\" is a rank threshold"
+    },
+    {
+      "line": 294,
+      "old": "- **CLOSURE BINDS:** the 2023-2026 window on this instrument is CLOSED; a different control set on this window is NOT a successor. **STANDING PRODUCT RULE (twice-locked now): FEC exposure is NEVER presented as a lobbying predictor;** the structural variables (party/chamber/committee - already core model pillars) ARE the attention predictors; current-period lobbying questions use the DIRECT sweep-based measurement (current to ~1 quarter). The FEC lane's real role = the money-relationship dimension itself. Future-legitimate: a change-on-change (first-difference) design on a later window = different estimand, new prereg, NOT now.",
+      "mark": "not positional",
+      "why": "\"a later window\" is time"
+    },
+    {
+      "line": 300,
+      "old": "- Needed before the look (all later done): Codex builds (sweep-page ingestion + client_id harvest + committee-roster artifact + `fec_lda_bridge3_look.py` - script commit must precede COLLECTION RECORD), sweeps 2023-2026 completing (~17k pages, monitor armed), pinned 2023-24 delta fetch, COLLECTION RECORD, battery. Closure if UNCORROBORATED covers the WINDOW (de-gamed wording).",
+      "mark": "not positional",
+      "why": "\"(all later done)\" is time"
+    },
+    {
+      "line": 305,
+      "old": "- Pooled Spearman +0.259 (above the .20 bar), volume partial +0.170 (above .10), but permutation p=.098 missed .05 at N=52 (credit_union coverage-limited in OUR strict table; fintech 30 + crypto 22 pairs only). Locked verdict wording binds: FEC exposure = target-side money prior ONLY, predictor framing BARRED. NOT disproven - told Paul honestly: right direction, right size, underpowered window.",
+      "mark": "not positional",
+      "why": "\"above the .20 bar\" and \"above .10\" are numeric comparisons"
+    },
+    {
+      "line": 321,
+      "old": "- **THE construction discovery, PROVEN set-identical: LobbyView network edges = sponsor + ALL COSPONSORS of each lobbied bill** (BECU 2021: 181 edges = exactly HR1996's 1+180 people, zero symmetric difference). The shipped `lobby-network.html` label \"sponsored\" needs the one-line \"sponsored or cosponsored\" fix (QUEUED; later landed).",
+      "mark": "not positional",
+      "why": "\"later landed\" is time"
+    },
+    {
+      "line": 327,
+      "old": "- IN FLIGHT then: finance-set fetch (7,717 filings, 281 lob_ids, worklist `finance_2021_2024_filings_worklist.json`) - ~8.6 h anonymous, RESUMABLE, jumps 8x if Paul registers a free LDA API key at lda.gov (HIS action - account creation; set `LDA_API_KEY` env). NEXT after the fetch: build the 2021-2023 finance network, dashboard feed switch to OUR table, 2024-2026 sweeps (key), THEN a fresh prereg for FEC x LDA on our instrument (real 2021-2026 overlap).",
+      "mark": "not positional",
+      "why": "\"NEXT after the fetch\" is the next step in time"
+    },
+    {
+      "line": 335,
+      "old": "- Collector re-run: manifest `network` present:true processed:false (inventory-only, FUTURE_TABLE), data_rows + md5 match an independent scan; data CSVs byte-identical pre/post, JSON outputs re-hash per run (embedded provenance - expected). NEVER use the deprecated v2021 legacy zip (incompatible identifiers). Still missing as bulk: `issue_text` (texts), bills. NEXT (design presented, awaiting Paul's Apply): collector network-processing extension + industry x member x year repository artifact + dashboard drill-in (industries, most-lobbied members, YoY, honest label \"member's sponsored bills lobbied\").",
+      "mark": "not positional",
+      "why": "\"NEXT (design presented ...)\" is the next step in time"
+    },
+    {
+      "line": 340,
+      "old": "- Material finding (standing): LobbyView `naics` is entity-linkage metadata, NOT an industry classifier; names decisive, NAICS suggestive only; 5221 to financial_other never bank; HIGH confidence = unambiguous name token (53 banks, 50 CUs), LOW = generic `\\bBANK\\b` or NAICS-only (191 banks) = review queue; adversary sets built from HIGH only, sets remain candidate status awaiting Paul's ratification. Regex, receipts, guards and API facts: see [[lobbyview-collector]].",
+      "mark": "external",
+      "why": "\"see [[lobbyview-collector]]\" names another note"
+    },
+    {
+      "line": 356,
+      "old": "- \"MEMBERS LOBBIED ALL SAME COUNT\" = CONFIRMED ERROR (Paul's catch): rows are the bill's sponsor/cosponsor roster (`interaction_bill_members.csv` role + `sponsorship_date`) and v1 stamped the BILL-level interaction total on every member row. v2: NO per-member number (LDA never names lobbied members), roles + `is_former` flags, sponsor-first-then-date order, bill total ships once as `totals.interactions`; schema `bill-lobbying-sidecar-v2`; tpl renders no fake counts, \"former member\" markers, `mlink` degrades to text for non-roster names.",
+      "mark": "not positional",
+      "why": "\"`is_former` flags\" and \"former member\" markers mean former members of Congress"
+    },
+    {
+      "line": 370,
+      "old": "- **ROUND 3 + EXPLORATORY SUITE (2026-08-05, R3 look consumed; suite item (A) was NEVER a look - see below; blocks B and D carry circular / degree-preserving nulls, block A carries none; scripts in session scratchpad plus `bill_stages.csv` REUSABLE 2955/2955 BILLSTATUS advancement ladder 1-5):** R3 five controls (+ real advancement momentum): CU x FINTECH SURVIVES THIRD TIME +0.129 p=.0007, robust in BOTH chambers (House .112/.004, Senate .277/.0017) and both halves; bank x CU stays absorbed (.068/.062; Senate-only ~.20 flag).",
+      "mark": "same note",
+      "why": "\"see below\" is the (A) NOT A LOOK sub-bullet right under this bullet in ### CONTEST x SHARED-BILLS looks, which moves whole to -lobbyview-looks-and-scale-upgrade"
+    },
+    {
+      "line": 396,
+      "old": "- **FAMILY x RETHEME MERGE (2026-08-06, merge @e00d963, main ff clean):** PARALLEL-SESSION HAZARD REALIZED - Paul merged the black/gold retheme to main (@08aa584/82f3f6c, indicator colours FROZEN, Mentat glyph, per-OCCURRENCE colour law documented in its commit) while this branch carried the five-page split; branches diverged from e779727. RESOLUTION DOCTRINE: my structure, Paul's palette - 3 conflict regions resolved taking retheme values (hover #F3F3E6, detailrow #282113, display-face typography block) into the split's architecture; Mentat glyph ported into `_assemble_page` (ALL family pages carry it; titles now \"Melange · <page>\"). Self-containment tests amended: SVG xmlns in the data:-URI favicon = namespace identifier not network ref (count-equality assertions in `test_lda_rebuild` x2 + `test_lobby_interactions`). ALWAYS check main for parallel-session commits BEFORE ff attempts. Cycle receipts: downstream 2b74f5c4, planning 430f702a. STILL PENDING then: champions-v2 three-board page wiring (codex dispatch), posture badges still direction-blind, L1 forecast display/coalition-composition diagnosis, L2 remaining ingredients (industry giving patterns per-company), L3 press/social mention measurement (L3 later shipped 2026-08-07, see above).",
+      "mark": "rewrite",
+      "why": "plan S10 fixture: \"see above\" is ### ORG-MENTION MEASUREMENT SHIPPED (2026-08-07), which moves to -lobbyview-org-mentions-and-efficiency; \"later shipped\" is time",
+      "new": "- **FAMILY x RETHEME MERGE (2026-08-06, merge @e00d963, main ff clean):** PARALLEL-SESSION HAZARD REALIZED - Paul merged the black/gold retheme to main (@08aa584/82f3f6c, indicator colours FROZEN, Mentat glyph, per-OCCURRENCE colour law documented in its commit) while this branch carried the five-page split; branches diverged from e779727. RESOLUTION DOCTRINE: my structure, Paul's palette - 3 conflict regions resolved taking retheme values (hover #F3F3E6, detailrow #282113, display-face typography block) into the split's architecture; Mentat glyph ported into `_assemble_page` (ALL family pages carry it; titles now \"Melange · <page>\"). Self-containment tests amended: SVG xmlns in the data:-URI favicon = namespace identifier not network ref (count-equality assertions in `test_lda_rebuild` x2 + `test_lobby_interactions`). ALWAYS check main for parallel-session commits BEFORE ff attempts. Cycle receipts: downstream 2b74f5c4, planning 430f702a. STILL PENDING then: champions-v2 three-board page wiring (codex dispatch), posture badges still direction-blind, L1 forecast display/coalition-composition diagnosis, L2 remaining ingredients (industry giving patterns per-company), L3 press/social mention measurement (L3 later shipped 2026-08-07, see [[2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency]]).",
+      "referent": "2026-07-feature-data-collection-lanes-lobbyview-org-mentions-and-efficiency"
+    },
+    {
+      "line": 406,
+      "old": "- **TIME-BOXED:** the 2026 general-election campaign-site collection (CampaignView protocol, ~870 House + Senate class) must run Sept-Oct 2026 - sites decay after the November election. If Paul says yes late, collect FIRST, polish later.",
+      "mark": "not positional",
+      "why": "\"polish later\" is time"
+    },
+    {
+      "line": 421,
+      "old": "- Paul ordered INFERENCES over the full previous universe - built as receipts-only annotation (H8): all 624,870 ledger pairs annotated (39 disclosed / 227 revdoor-same / 12 revdoor-prior / 624,592 structural-only), plus the key find: 5,875 same-activity C1 links on ledger acts, only 227 on-roster; 2,012 off-roster + in-office = reach the circular join never showed (3,636 out-of-office excluded by the eligibility gate). Artifacts: `INFERRED_CONTACT_RECEIPTS_REVIEW` + `SNAPSHOT_TOP_INFERRED_TARGETS` + dyads CSV in the audit dir (uncommitted).",
+      "mark": "not positional",
+      "why": "\"the full previous universe\" is the earlier scope of the ledger (time)"
+    },
+    {
+      "line": 423,
+      "old": "- **Later rulings (2026-08-28, verbatim intent):** (1) FIRE C2, C4, C5 - Paul's order; C4 built the same day (74,929 dyad-congress cells, 20,500 with prior-Congress history, 16,107 dyads); C2 limited to 118th/119th until Paul picks a G2 roster source for 115-117. (2) **GOLD SET RULED (resolves G6 scope): interactions known with 100% certainty - LDA-disclosed named targets + media clippings correlated CHRONOLOGICALLY with LDA filings**; the media-correlation lane is a new build, G3 adjudication still open. (3) Paul cited Mentat/FEC donation records, so C3 org-level receipts are to be computed but its DISPLAY inclusion is his explicit call; the H3 language bar (no donations-predict-contact wording) stands regardless. (4) C1-alone activity-count rankings ruled misleading by evidence (Tim Scott 202 acts = 7 humans, 1 ex-LA = 189 of them via Allstate's filing volume) - dyad-level units (distinct former staffers, distinct orgs) are the C1-faithful display.",
+      "mark": "not positional",
+      "why": "\"Later rulings\" is time; \"distinct former staffers\" is an adjective"
+    },
+    {
+      "line": 441,
+      "old": "- R1 details: ablations C5 0.531 > C2 0.512 > C1 0.498 (chance!) > C4 0.486. Only solid coefficient: committee LEADERSHIP +0.22; receptivity NEGATIVE (anachronistic covariate - drop next iteration). Diagnosis: receipts-existence is not within-radius ranking; union-roster grain dilutes (bill-specific features = lever No. 1); C1 finance-dense vs health/veterans-heavy gold (E1-b transport tension measured); unadjudicated gold attenuates. **HOLDOUT SEALED: 1,155 pos, zero looks, `dev_holdout_sealed.jsonl`; looks counted = Paul's.** Iteration on dev-train is the authorized free zone.",
+      "mark": "not positional",
+      "why": "\"drop next iteration\" is time"
+    },
+    {
+      "line": 443,
+      "old": "- R3 details: activity grain was the big lever. Config B applies **Paul's committee-proxy protocol ruling (2026-08-28, verbatim intent: \"if you see a members name, you know it MUST BE one of the members, potentially the one listed, within the committee THAT MEMBER LISTED belongs to\")** as negative-set cleaning: committee-mates of named members = label-uncertain, excluded (22,107 negatives, 8.4%); P@1 rise is the false-negatives-at-rank-1 signature, confirming his read. Proxy rule usable only for 118/119 (G2 roster gap). PRUNING SIGNAL: the 3-feature activity block alone = 0.779 CV > full 10-feature model (0.752) - round-4 lever = leaner declared set + C2 timing + staff keying; ceiling-raiser stays G3 adjudication. Trajectory: 0.538 to 0.615 to 0.752/0.754. Holdout sealed through ALL rounds (zero looks, files `dev_holdout_sealed*.jsonl`).",
+      "mark": "not positional",
+      "why": "\"if you see a members name\" is the verb in Paul's quote"
+    },
+    {
+      "line": 453,
+      "old": "- **LOOK No. 1 (dev-gold holdout; Paul ruled full-model + P@1): HIT** - P@1 19.7% [16.3-23.1] vs 3.0% base, mean AUC 0.779 / median 0.897 REPLICATED on unseen orgs. Nuance: raw P@1 above dev (13.5%) because the holdout fields are smaller (base 3.0% vs 0.9%) - higher raw, lower multiple (6.5x vs 15x), report both.",
+      "mark": "not positional",
+      "why": "\"raw P@1 above dev (13.5%)\" is a numeric comparison"
+    },
+    {
+      "line": 455,
+      "old": "- (Note on numbering: the source uses \"LOOK #2\" for TWO different looks - the cross-source gold-source-b MISS above, and later the clean-trained holdout look (below). The dev-gold holdout ledger closed after 3 looks: Look 1 dirty-trained, Look 2 clean-trained, Look 3 per-activity. Both usages are kept as recorded.)",
+      "mark": "same note",
+      "why": "\"the cross-source gold-source-b MISS above\" is the LOOK No. 2 MISS bullet just before it in ### LOOK LEDGER, and \"the clean-trained holdout look (below)\" is LOOK No. 2 SPENT in ### G3 adjudication; the whole contact-inference section moves to -contact-inference in order; \"later\" is time"
+    },
+    {
+      "line": 462,
+      "old": "- **NO-TIERS RULING (Paul, 2026-08-28, verbatim intent): \"I am not having tiers... EVERY INTERACTION NEEDS TO BE MEASURED without it, it is an unusable tool.\"** Tier architecture REJECTED - do not re-propose. Product spec = ONE calibrated score S(o,m,q) for EVERY pair, no display abstention: bill-targeted model where bills exist, geo/venue/money/C1 features elsewhere, calibration is the honesty mechanism (thin evidence gives honest near-base-rate numbers). Disclosed names stay OUT of the score pending the C6-promotion ruling (folding them in kills future evaluability). LobbyView claim ANSWERED WITH RECEIPTS (examined twice, codebooks verbatim): they infer nothing - sponsor-only definitional join, complete-by-circularity per Paul's own 08-19 ruling (see [[lobbyview-collector]]); our ledger already exceeds it. Blockers to the unified calibrated fusion: G3 gold adjudication, sealed-reserve look (64), org-grain money re-derivation from raw Mentat workbooks, G2 rosters. `MODEL_EXAMINATION_2026-08-28.md` = the document of record for the full campaign state.",
+      "mark": "external",
+      "why": "\"(see [[lobbyview-collector]])\" names another note"
+    },
+    {
+      "line": 469,
+      "old": "- **LOOK No. 2 SPENT (clean-trained, Paul-ordered, prereg'd):** P@1 22.4% primary (R6) / 25.5% secondary (R5) vs 3.0% base [CIs 16.9-27.8 / 19.7-31.2] - HIT vs chance 7.5-8.5x; **50% floor NOT met overall**; champion primary UNDERPERFORMED the plain secondary out-of-sample (champion features cost accuracy - confirmed marginal-to-negative). **POST-HOC (declared descriptive, same spent look): P@1 by field size - FOCUSED-FILER QUARTILE (median 22 candidates, 55/220 groups) = 61.8% top-1, ABOVE Paul's floor, unseen orgs**; sprawling portfolios (142-420 fields) 6-15%. Failure mode = field size, entirely. NOT tiers: field size lives in the calibrated score. The Q1 figure needs a fresh-gold prereg confirmation to headline. Next levers ranked: per-ACTIVITY candidate fields (small fields = where the model is lethal; activities are naturally small), org-grain money, sponsor-boundary ruling, title channels. Holdout ledger COMPLETE at that point (Look 1 dirty, corrected read, Look 2 clean - all spent).",
+      "mark": "not positional",
+      "why": "\"ABOVE Paul's floor\" is a comparison; \"Next levers ranked\" is time"
+    },
+    {
+      "line": 509,
+      "old": "Lane `claude/legislative-workbook-ingestion-bbb3e1` (worktree `hungry-edison-77305f`, at main `8953e7181`, zero lane commits at the start). Paul: \"Finish this up\" against a three-bullet analysis (media ingests; bills never reach `Legislative Score - Raw`; refresh marker stuck `RUNNING`). Record: `audits/SENTINEL_WORKBOOK_INGESTION_FINISH_2026-09-04.md` in the worktree. Headline state at 2026-09-05: Codex's 2026-09-03 integration was UNCOMMITTED in the live tree; review found it unsafe unattended; a finishing patch set was BUILT in scratch with a hash-gated apply script; later applied, committed and merged (see below); the legislative pillar stays contract-gated.",
+      "mark": "same note",
+      "why": "\"(see below)\" is the **Post-apply** record later in ## Sentinel workbook bill ingestion lane, which moves whole to -sentinel-lanes; \"later applied\" is time"
+    },
+    {
+      "line": 525,
+      "old": "- **THE SECOND CYCLE EXPOSED A PERIOD-2 OSCILLATION in Codex's integration:** the verifier is diff-only vs the previous bundle (`already_present` 5,208), so sync rebuilt the ledger from the delta, 201 verified rows fell to 3; the archive lost 119:hr:1181 (128 rows, sentinel-only bill), so 88 Data Privacy & Cyber stance cells flipped; ranks/tiers untouched (`archive_leg` feeds stance, not ranks).",
+      "mark": "not positional",
+      "why": "\"the previous bundle\" is the prior bundle in time"
+    },
+    {
+      "line": 546,
+      "old": "- Decisions closed: D3 = history stays append-only, withdrawals mark rows non-scoring when they exist; teardown crash after hash-verified export stays PASS; weights 45/10/40/5 treated as ratified by this lane (reversal: Paul says otherwise) - for the vault this set is recorded as LIVE BUT UNRATIFIED (S-5 awaits Paul's ruling), see Context. Stranded `.git/index.lock` (0 bytes, 09-04 15:27) removed only in a zero-git window per CONSTRAINTS.",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"see Context\" is ## Context, which the hub keeps, while the line moves to -sentinel-lanes",
+      "new": "- Decisions closed: D3 = history stays append-only, withdrawals mark rows non-scoring when they exist; teardown crash after hash-verified export stays PASS; weights 45/10/40/5 treated as ratified by this lane (reversal: Paul says otherwise) - for the vault this set is recorded as LIVE BUT UNRATIFIED (S-5 awaits Paul's ruling), see Context in [[2026-07-feature-data-collection-lanes]]. Stranded `.git/index.lock` (0 bytes, 09-04 15:27) removed only in a zero-git window per CONSTRAINTS.",
+      "referent": "2026-07-feature-data-collection-lanes"
+    },
+    {
+      "line": 548,
+      "old": "- **How to apply:** before touching this lane, diff live `fec/` against main with `--strip-trailing-cr` (Codex flipped line endings), confirm the Codex cache still exists, run `apply_sentinel_finish.ps1 -WhatIf` to see drift, and re-read the decision menu in the record (section 6). Related: `ask-before-substantive-changes`, `no-git-plain-review-2026-09-01`, `sentinel-collectors-lane-2026-09-01`, `legfix5-collection-complete-2026-07-27`, `legislative-audit-2026-07-24`, `verify-dont-infer-completion-2026-08-04`.",
+      "mark": "not positional",
+      "why": "\"to see drift\" is a verb"
+    },
+    {
+      "line": 556,
+      "old": "- **Regenerating is riskier than it looks.** `dump_atomic` overwrites `data/system/system_manifest.json` unconditionally - NO backup, no hash gate - and the prior manifest is uncommitted, so it is the only copy. Copy it aside first. (The \"manifests in backups/, hash-gated\" memory belongs to the sentinel-workbook lane, a different apparatus - see the previous section.) Invoke the LIVE tree's script by absolute path: `paths.py` is imported from the script's own tree (`:81-82`), so `MONEYBALL_ROOT` fixes `ROOT` but not which code runs, and the worktree's producer is a different file.",
+      "mark": "same note",
+      "why": "\"see the previous section\" is ## Sentinel workbook bill ingestion lane, which precedes ## System manifest sentinel lane in -sentinel-lanes as in the note"
+    },
+    {
+      "line": 558,
+      "old": "- **Live-regen then live-audit is NOT the DE-012 vacuous pass.** `system_manifest_check.py:8-13` refuses any manifest that does not predate the checking process and asserts the producer is absent from `sys.modules`. But 582/0 straight after a regen is over-fit by construction - A2/A2b cannot fail when the manifest is 78 s old. The meaningful test is the next chain-terminal audit.",
+      "mark": "not positional",
+      "why": "\"the next chain-terminal audit\" is time"
+    },
+    {
+      "line": 562,
+      "old": "- **How to apply:** before touching the manifest, back it up, run live's producer by absolute path, and verify `generator_sha256` against the on-disk producer. Never read a post-regen 582/0 as proof the data is healthy. See `moneyball-audit-run-guardrails` and `verify-dont-infer-completion-2026-08-04`.",
+      "mark": "external",
+      "why": "\"See `moneyball-audit-run-guardrails` and `verify-dont-infer-completion-2026-08-04`\" names memory files"
+    }
+  ]
+}

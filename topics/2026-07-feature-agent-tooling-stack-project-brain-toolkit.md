@@ -1,0 +1,29 @@
+---
+type: topic
+title: "Project Brain toolkit (Agent tooling stack)"
+aliases: ["Agent tooling stack: Project Brain toolkit"]
+category: "feature"
+status: "in-progress"
+people: []
+actors: []
+objective: ""
+created_at: 2026-07-10
+sources: []
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"]
+part_of: "[[2026-07-feature-agent-tooling-stack]]"
+---
+
+# Project Brain toolkit (Agent tooling stack)
+
+> The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired. Part of [[2026-07-feature-agent-tooling-stack]] (project [[melange-systems]]).
+
+## Project Brain toolkit (source: project-brain-toolkit-2026-08-11, last modified 2026-09-19; see [[project-brain]])
+
+- **Project Brain** lives at `C:\Users\pgoff\OneDrive\Desktop\Project Brain` - its own git repo, fully outside Melange (built 2026-08-11, run run-20260811T2032536926854Z-9504fd764f, toolkit commit 34a773a). It is the brainctl starter kit (from Paul's project-brain.zip) hardened with every Part-3 amendment of `boot-protocol-framework.md` (copy lives in the repo): D-###/DE-### entry schemas with reversal conditions, supersession-never-deletion (`decide --supersedes` flips Status), 7-day `Last verified` staleness, boot confirmation that must cite a decision ID + dead-end ID, conflict precedence CONSTRAINTS > DECISIONS > STATE (contradictions halt), 500-line ARCHIVE/ compaction (manual only), protocol self-governance via DECISIONS.md, plus an EVALUATION.md scorecard/audit instrument (never read at boot).
+- **MIRRORED 2026-09-19 (Paul: "set up the brain mirror", brain D-058):** the toolkit and all three brains (`melange-systems-brain`, `folder-brain`, `pilot-brain`) each have a remote `mirror` -> `C:\Users\pgoff\GitMirrors\<name>.git` (toolkit = `project-brain.git`), bare, outside OneDrive, beside the Melange and glassbox-runtime mirrors. Each repo's `.git/hooks/post-commit` pushes `--all` and `--tags` to the mirror after EVERY commit (`|| true`, exit 0, so it can never fail or delay a brainctl commit). Verified: heads equal and fsck clean on all four, and a live brainctl commit moved the mirror's master by itself. The hook is NOT versioned - re-create it after any re-clone; BOM-less LF file written with `[IO.File]::WriteAllText(..., UTF8Encoding($false))`. Whether Carbonite covers the four new folders is Paul's to confirm (green badge).
+- **Why:** Paul wants durable per-project memory for disposable AI sessions, with himself as sole owner: sessions DRAFT updates; only Paul runs brainctl and commits (SUPERSEDED 2026-08-12, below). Ratified 2026-08-11: location = Desktop, toolkit + empty pilot brain (`brains\pilot-brain`, commit 1ce7347, project unnamed - Paul seeds STATE/CONSTRAINTS), brainctl scope = full hardening incl. `scorecard`.
+- **Folder toggle (Paul-ratified same day, commit a3ac26b):** `python brainctl.py on <folder>` / `off <folder>` - writes/removes a managed block (exact markers `PROJECT-BRAIN:BEGIN/END`) in that folder's CLAUDE.md so Claude Code sessions there auto-boot from the brain; one sticky brain per folder (`.origin` provenance, sha256-8 collision fallback), auto-created under `brains\`; `off` removes only the block, byte-preserving the rest. An adversarial review round adjudicated 13 fixes into the same commit (staleness robustness, output fidelity, fresh-brain "none yet" citation, etc.); deferred nits: missing-file tracebacks, framework's inverted update-drafts ratio (Paul's call), init-on-file crash, EVALUATION exempt from line-count check, `on` against a nonexistent folder, deep-path git "Filename too long".
+- **One-shot close-out (Paul: "Finish it all", same day):** commits 33ffb02 (evaluation ratio corrected to drafts / events + 5 robustness fixes: nonexistent-folder guard, friendly missing-file errors, init-on-file error, EVALUATION status row, `core.longpaths`) and 8f6cef9 (`boot-protocol-framework_3-DRAFT.md` - **v3 is DRAFT, v2 governs until Paul ratifies via DECISIONS**). Codex receipt-omission class hit 5-for-the-day -> receipt-first preamble amendment landed on live main 14cde015d + user copy md5-synced; prose demonstrably weak - the durable fix is a MECHANICAL receipt-presence gate (recommend at next lane-law review). Remaining cosmetic nits: "Restore from git" message on git-less brains, on-a-file says "folder does not exist", status double-message when STATE absent, orphan-brain path if a toolkit template file is missing.
+- **How to apply - SUPERSEDED 2026-08-12, Paul: "yes that override stands going forward":** Claude MAY write into a brain's files and commit them directly (brainctl `decide` / `deadend` / `skill` / `flush`, or editing STATE/CONSTRAINTS then `flush`). The original rule - draft text and hand it to Paul, never write - is RETIRED; do not re-propose it or ask permission per-commit. What still holds: the brain is Paul's record, so entries must be accurate, sourced, and reversible-by-supersession (never delete an entry, flip its Status), and anything genuinely contentious still goes to him as a question rather than into the file as a fact. First exercise of the override: the melange-systems brain seed, commit 2026-08-12 12:09. Brains are nested git repos under `brains\`; the toolkit's .gitignore keeps them out of the toolkit repo - don't "fix" that. Framework Phase-1 backfill (a Melange-seeded brain) was offered, not chosen - don't re-propose unprompted. The evaluation pilot (5-10 scorecarded sessions, audits, pre-committed kill criteria) is defined in EVALUATION.md but not started. Known build history: Codex receipt-omission recurred twice in this build (ledger evts 189/190) - `universal-lane-laws-2026-08-09`.

@@ -7,7 +7,7 @@ status: "open"
 people:
   - "[[paul-goff]]"
 actors:
-  - "[[claude-code-harness]]"
+  - "claude-code-harness"
 objective: "Standing feedback rules on how agents must verify and evidence claims before telling Paul anything: completion is proven by artifact, mechanism claims need a census or counterfactual, existence claims need a repo-wide search, scouts fabricate and are verified adversarially, spawned-task premises and line numbers are checked against the committed tree, established context is re-read from memory, and two standing research corrections (Danish elite Big Five data exists; the Agreeableness validation search stays open until Paul says stop)."
 created_at: 2026-07-09
 sources:
@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/a-validation-open-search-2026-07-12.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\a-validation-open-search-2026-07-12.md", sha256: "b9e7efb3af47eef88592706728626b29e3511718f2a40a62cf7c3cb4a94e3225"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/danish-external-criterion-2026-07-12.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\danish-external-criterion-2026-07-12.md", sha256: "8b29888b5a4e1c8216fe4d84642e157bf41c7b058725f8a86a8b3e53980455c2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/dont-drop-context-anchor-memory.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\dont-drop-context-anchor-memory.md", sha256: "19a63a8ec0ebf3f48eaecd7f010a31adc7cb4cf0f9aa196e6ed7cea6e151b6ad"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreement"]
 ---
 
@@ -34,7 +34,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 
 - Paul's repeated corrections of agent claims in the Melange / Moneyball / Mentat work produced these rules. Each rule below is a bullet with its **Why** (the measured incident) and **How to apply**.
 - Newest source in this topic: 2026-09-18 (`receipt-line-pins-vs-live-tree-2026-09-18`). Oldest: 2026-07-09 (`dont-drop-context-anchor-memory`).
-- The rules were learned in the audio/speech lane ([[2026-07-feature-audio-and-speech-lane]]), the personality / Big Five psychometrics work ([[2026-07-feature-personality-psychometrics]]), the Melange audits and code-review fan-outs ([[2026-07-troubleshooting-melange-audits-and-reviews]]) and delegated sessions in the [[claude-code-harness]]; the person they protect from wrong claims is [[paul-goff]].
+- The rules were learned in the audio/speech lane (Audio and speech lane), the personality / Big Five psychometrics work (Personality psychometrics (Big Five)), the Melange audits and code-review fan-outs (Melange audits and code reviews) and delegated sessions in the Claude Code harness; the person they protect from wrong claims is [[paul-goff]].
 - Related memories (not vault entities): `verify-dont-infer-completion-2026-08-04`, `dont-drop-context-anchor-memory`, `examination-lane-lessons-2026-08-14`, `audio-lane-verification-lessons-2026-09-07`, `scout-census-traps-2026-09-13`, `spawned-task-premise-may-be-stale-2026-09-14`, `receipt-line-pins-vs-live-tree-2026-09-18`, `a-validation-open-search-2026-07-12`, `danish-external-criterion-2026-07-12`, `hallucination-framework-lane-2026-08-13`, `committed-vs-live-drift-2026-09-13`, `code-review-five-lanes-2026-09-13`, `members-section-consistency-lane-2026-09-15`, `audio-complementary-layers-lane-2026-09-07`, `psych-audit-2026-07-09`, `moneyball-big5-campaign`, `moneyball-receptivity-layer`, `n-slot-reanchor-2026-07-11`, `reorg-phase0-tripwires-2026-08-04`, `glassbox-everything-rule-2026-07-27`, `live-tree-branch-state-2026-07-14`, `codex-executor-lane-2026-07-18`.
 
 ## People Involved
@@ -47,13 +47,18 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 
 | Actor | Relation |
 |---|---|
-| [[claude-code-harness]] | Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH. |
+| Claude Code harness | Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH. |
+
+## Related Concepts
+
+- [[census-before-claims]] — rules R1 and R2 of this agreement: never infer completion, and demand a census before repeating a mechanism claim
+- [[settled-findings-stay-settled]] — R7 anchors every claim to the recorded state instead of contradicting it; R9 is the counterpart: the Agreeableness validation search that Paul reopened is not bound by the old closures
 
 ## Related Topics
 
-- [[2026-07-feature-audio-and-speech-lane]] - Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims.
-- [[2026-07-feature-personality-psychometrics]] - Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade.
-- [[2026-07-troubleshooting-melange-audits-and-reviews]] - Melange audit runs, guardrails, 09-13 five-lane code review, hallucination framework (D-007), provenance census, laundry-list close-out
+- Audio and speech lane - Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims.
+- Personality psychometrics (Big Five) - Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade.
+- Melange audits and code reviews - Melange audit runs, guardrails, 09-13 five-lane code review, hallucination framework (D-007), provenance census, laundry-list close-out
 
 ## History
 
@@ -109,7 +114,7 @@ Four verification failure modes, each measured on 2026-08-04, not hypothesised.
 
 ### R2. Demand a census before repeating a mechanism claim (`audio-lane-verification-lessons-2026-09-07`, Paul-facing lesson 2026-09-07)
 
-In the 2026-09-07 audio lane (`audio-complementary-layers-lane-2026-09-07`; see [[2026-07-feature-audio-and-speech-lane]]) four separate agent claims were confidently stated and later measured FALSE. The agent repeated three of them to Paul before they were checked.
+In the 2026-09-07 audio lane (`audio-complementary-layers-lane-2026-09-07`; see Audio and speech lane) four separate agent claims were confidently stated and later measured FALSE. The agent repeated three of them to Paul before they were checked.
 
 1. "Members are dropped when `nonfloor_exact_windows_total == 0`." False. Measured 2x2: 156 members with zero non-floor windows ARE in the descriptive artifact. The real discriminator is presence in the accepted clip manifest.
 2. "Chip Roy loses a verbatim quote to the composer budget." False. The branch is unreachable: 0 of 529 composed members trip it; `build_rows` at 250 vs 100000 gives zero differences. A fix was recommended to Paul for a defect that did not exist.
@@ -190,7 +195,7 @@ Three more from the 2026-09-15 members-section lane (gan-build run as a read-onl
 - **Why it matters:** SUPERSEDES the `psych-audit-2026-07-09` "ES routes exhausted / no gold-standard N criterion" framing as a universal statement. Re-opens external validation via **cross-national method-transfer** (apply the text method to named European politicians' speech, correlate vs their self-report).
 - **Key caveat (cuts both ways):** elite self-report INFLATES emotional stability / desirable traits (social desirability; Schumacher & Zettler), so even the "gold" self-report criterion is biased for N/ES; a behavioral/text measure may be *less* biased, not more.
 - **Convergence already found (agent's data):** Polipers independently derived N-facets "Pessimism & Doubt" + "Poise & Composure" (neg-emotion/volatility under stress), which MATCH the agent's affective-N facets (pessimism/anxiety/depression/volatility). The 4 facets cohere as one N domain: **Cronbach alpha .911, 1st PC = 79%, mean inter-facet r .72** (n=469). Split-half of the promoted measure **r_sb .907** (n=446 full sample, 95% CI .881-.928; a salvaged n=141 partial had read .931), so the `n-slot-reanchor-2026-07-11` measure is highly stable, not just internally consistent.
-- **How to apply:** never again say "no external criterion exists" flatly; say "none for US Congress; European self-report exists and transfers at the method level." Obtainability of the Danish data for an actual correlation was being chased in workflow `wf_cf13e766` (Schumacher-Zettler OSF? named vs anonymized? Folketing speech linkage?); check that outcome before claiming a correlation is or is not runnable. Relates to `psych-audit-2026-07-09`, `dont-drop-context-anchor-memory`. Domain home for the Big Five work: [[2026-07-feature-personality-psychometrics]].
+- **How to apply:** never again say "no external criterion exists" flatly; say "none for US Congress; European self-report exists and transfers at the method level." Obtainability of the Danish data for an actual correlation was being chased in workflow `wf_cf13e766` (Schumacher-Zettler OSF? named vs anonymized? Folketing speech linkage?); check that outcome before claiming a correlation is or is not runnable. Relates to `psych-audit-2026-07-09`, `dont-drop-context-anchor-memory`. Domain home for the Big Five work: Personality psychometrics (Big Five).
 
 ### R9. Keep the A-validation search open (`a-validation-open-search-2026-07-12`, Paul's STANDING directive 2026-07-12)
 
@@ -214,7 +219,7 @@ Three more from the 2026-09-15 members-section lane (gan-build run as a read-onl
   - Significance caveat: only Pink-C +.174 and Blue-ES +.233 are individually significant at n~147; Pink-O +.111 is ns alone but corroborated by blind adjudication.
 - **Levers to try:** `agency_communion.json` (communion ~ warmth, could decorrelate O-A by construction; section 15 lines 319-320 flagged this); a "genuine warmth vs performed courtesy" acting-vs-actuality cut analogous to affective-N/antagonism-v3; alternative behavioral A criteria beyond cosponsorship (gratitude/credit-giving, yielding, casework); RKH lifeAgree external (n=147). Supersedes the "A routes exhausted, never propose" line in `psych-audit-2026-07-09` for THIS search only, under Paul's direction.
 
-### R10. Findings-examination framework lane (`hallucination-framework-lane-2026-08-13`, project record 2026-08-13/14; feeds [[2026-07-troubleshooting-melange-audits-and-reviews]])
+### R10. Findings-examination framework lane (`hallucination-framework-lane-2026-08-13`, project record 2026-08-13/14; feeds Melange audits and code reviews)
 
 The standards above were formalised in a framework lane. Paul ordered a hallucination/error-identification framework for the forecast-findings analyses, then ruled ADOPT, then had every follow-on built. All merged to main, mirror-pushed at every gate: `8cdd18003` -> `b52a2a582` -> `6e27bcb2c`. What exists now:
 

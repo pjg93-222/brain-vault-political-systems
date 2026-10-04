@@ -1,0 +1,236 @@
+{
+  "id": "C5",
+  "what": "Batch 6 split of actors/melange-dashboard (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C5); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/melange-dashboard",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## Standing design laws and Paul's rulings",
+      "## Related Actors",
+      "## Related Topics",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Discussions"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "melange-dashboard-artifact-family-and-surfaces",
+      "title": "Artifact family and surfaces",
+      "summary": "The Melange dashboard artifact family and its surfaces, with the staffer surface's language law, its crawler operations and the self-healing dashboard directive",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Artifact family and surfaces"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "melange-dashboard-preview-and-desk-rules",
+      "title": "Preview and verification workflow, desk media and desk template rules",
+      "summary": "The dashboard preview and verification workflow, the desk media footprint, the desk template rules learned, and the dashboard-fixes verification and publication state",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Preview and verification workflow (reference, 2026-08-18)",
+        "## Desk media footprint (2026-07-16, branch dashboard-press-media-expansion)",
+        "## Desk template rules learned (2026-08-11 simplification, 2026-08-31 plain-language)",
+        "## Dashboard-fixes verification and publication state (2026-09-05)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "melange-dashboard-june-capstone",
+      "title": "June 2026 capstone dashboard: spec and engine (06-26/27)",
+      "summary": "The June 2026 capstone dashboard spec and engine of 06-26/27: the live engine and pathfinders, the head-to-head and cheapest-flip batch, research-grounded pathfinder and budget modes, the realism pass, the active-ask chain-hold and the July network viz requests",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## June 2026 capstone dashboard: spec and engine (2026-06-26/27)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "melange-dashboard-v2-redesign-overlay",
+      "title": "v2 redesign overlay and finalize (09-22 to 09-25)",
+      "summary": "The v2 redesign overlay of the Melange dashboard and its finalize, 2026-09-22 to 09-25",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## v2 redesign overlay and finalize (2026-09-22 to 2026-09-25)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K10",
+      "a": "actors/melange-dashboard-v2-redesign-overlay",
+      "b": "topics/2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "K22",
+      "a": "actors/melange-dashboard-june-capstone",
+      "b": "topics/2026-06-feature-melange-dashboard-ui-evolution-capstone-to-desk-media",
+      "event": "June capstone and desk media"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 71,
+      "old": "- **Deploy (documented but broken):** `lock_dashboard.py` encrypts `Moneyball.html` -> `deploy/index.html`; `publish_dashboard.py` reads the password file. See Known Issues.",
+      "mark": "same note",
+      "why": "automatic mark signed off: \"See Known Issues\" is ## Known Issues, which the hub keeps"
+    },
+    {
+      "line": 116,
+      "old": "Listed in the header and expanded in the sections below (publish blocker, untracked chain modules, broken publication path, redesign server backlog, stale mtime flags, audit checks that read built HTML).",
+      "mark": "rewrite",
+      "why": "\"expanded in the sections below\": the sections after ## Known Issues that expand the header's issues (the stale mtime flag in ## Preview and verification workflow, the publish blocker and the stale deploy in ## Dashboard-fixes verification and publication state, the redesign server backlog in ## v2 redesign overlay and finalize) move to -preview-and-desk-rules and -v2-redesign-overlay; the only section the hub keeps after it, the design laws, expands none",
+      "new": "Listed in the header and expanded in the sections in [[melange-dashboard-preview-and-desk-rules]] and [[melange-dashboard-v2-redesign-overlay]] (publish blocker, untracked chain modules, broken publication path, redesign server backlog, stale mtime flags, audit checks that read built HTML).",
+      "referent": "melange-dashboard-preview-and-desk-rules, melange-dashboard-v2-redesign-overlay"
+    },
+    {
+      "line": 135,
+      "old": "- The staffer graph is its OWN layer below members; anything relating two members is \"shared staff\" (people attached to both offices), never a member tie or weight; the zero-overlap REJECTED pair count (16,001,459) must be visible on the surface; everything exploratory / REVIEW_REQUIRED.",
+      "mark": "not positional",
+      "why": "\"its OWN layer below members\" is the network hierarchy"
+    },
+    {
+      "line": 152,
+      "old": "Paul's words: \"the goal is for the sentinels to create a self-healing dashboard a live feed.\" In code that is chain steps 11-12 (`verify_collector_roster_updates.py`, `sync_sentinel_bill_ledger.py`), the hash-gated `refresh_cosponsor_forecast.py`, intake receipts, and `audit_full.py`'s freshness/reconciliation checks as the terminal release gate. Regenerating \"with the self-healing features\" = running the chain in the LIVE tree; another lane ran the full chain 19:33-19:53 on 2026-09-04, and the staffer lane re-ran from `make_combined.py` after adding the section. Paul's directives that lane (verbatim intent): \"Finish this up, and regenerate the dashboard with all the self-healing features and the new network integrated into the moneyball dashboard as its own section\"; \"resume the crawler and keep going. FINISH IT UP\"; \"run the finishing chain yourself, I approve the review layers\"; \"finish it up and send me the dashboard\". Also ruled mid-lane: long-form profile regeneration WAITS for the full 533 long-form pass and then runs through the HOLISTIC evidence merge (long-form = supplemental signal, never a replacement); nothing in that lane regenerates profiles. Detail on the crawl/chain operations: [[2026-09-feature-staffer-network-surfaces]].",
+      "mark": "not positional",
+      "why": "\"after adding the section\" and \"as its own section\" are the dashboard's staffer section, not a note section"
+    },
+    {
+      "line": 158,
+      "old": "- **Black/gold with the split-role colour law** (below); Paul rejected a minimalist repaint (2026-08-31: \"keep black/gold\").",
+      "mark": "same note",
+      "why": "\"(below)\" is ### The split-role colour law, a child of ## Standing design laws and Paul's rulings, which the hub keeps whole"
+    },
+    {
+      "line": 162,
+      "old": "- **Lesson from the 09-24 redesign:** Paul lost patience with 3-round verify loops at about 2h; next time one verify+fix round, then a product check.",
+      "mark": "not positional",
+      "why": "\"next time\" is time"
+    },
+    {
+      "line": 175,
+      "old": "- **Font:** no webfont embedded (surfaces are self-contained and near a page-size ceiling). Stack `\"Century Gothic\",\"Tw Cen MT\",Futura,\"Avenir Next\",\"Segoe UI\"` (Century Gothic and Tw Cen MT are installed on this box). Chrome only; `#mname` and the dynamic industry/organization/member `h2`s are excluded via `:not()` so real names are never uppercased or letterspaced.",
+      "mark": "not positional",
+      "why": "\"Avenir Next\" is a font name"
+    },
+    {
+      "line": 187,
+      "old": "- **READ THE PREVIOUS SENTENCE BEFORE DEBUGGING AN ANIMATION. 2026-08-18: I did not, and burned five rounds \"diagnosing\" correct code.** In the Claude_Browser pane `document.visibilityState` is `'hidden'` and **rAF fires ZERO frames**, and it STAYS hidden after `tabs_select` / fronting, so you cannot fix it by fronting the tab. `computer{action:'screenshot'}` also refuses (\"the Browser pane is not displayed, so the page is not compositing frames\"). An rAF-driven tween therefore executes its synchronous frame 0 (which by construction sets position = start) and then freezes, so **working code presents exactly as \"the feature does nothing\"**, and every assertion downstream fails, which reads as a broken implementation rather than a broken harness.",
+      "mark": "same note",
+      "why": "\"READ THE PREVIOUS SENTENCE\" is the rAF-throttling bullet right before it in ## Preview and verification workflow, which moves whole to -preview-and-desk-rules"
+    },
+    {
+      "line": 191,
+      "old": "- **SAFE PREVIEW PORT = 8802.** Port 8801 is Paul's own server: never bind it. The safe preview recipe is a scratchpad build served on 8802, never a write to the live tree root. See the memory `audit-run2-2026-07-02` for where the 8801/8802 split was set. (From the 2026-08-19 compaction note.)",
+      "mark": "external",
+      "why": "\"See the memory `audit-run2-2026-07-02`\" names a memory file"
+    },
+    {
+      "line": 193,
+      "old": "- **Frank Lucas electoral 'defend' glitch = stale electoral_plays.json** (47 members stale: their R&A col-7 overall moved in the 07-08 refresh but `build_electoral_plays.py` wasn't re-run; Lucas Ally -> Highly-Persuadable so should be 'none'). Fix = re-run `build_electoral_plays.py` -> `build_dashboard_bundle.py` -> `make_dashboard_html.py` (awaited user go-ahead: it reclassifies 47, their domain). **Resolution (2026-07-10):** Paul authorized the re-run (\"Re-Run\", confirmed via an explicit gate question). `build_electoral_plays.py` produced a BYTE-IDENTICAL artifact (md5 9f240552... unchanged; Lucas already play=none / overall=Highly Persuadable; 5 contest / 41 defend / 487 none): the 47-member reclassification had already landed in an earlier regeneration; the surviving 07-09 flag was mtime-ordering only. Downstream regen skipped (that day's post-merge chain had already built all display artifacts from this exact content). Lesson: an mtime-stale flag is a lead, not proof of content drift. The re-run gate (law 11) stands for future episodes.",
+      "mark": "not positional",
+      "why": "\"an earlier regeneration\" is time"
+    },
+    {
+      "line": 232,
+      "old": "- NEXT (user wants to \"explore other modes along the way\"): candidate modes to offer: multi-target (reach several persuadables), cheapest-path-to-majority, defend-a-sponsor, budget-constrained path, head-to-head route vs a competitor's. Dashboard 221 KB, code balanced.",
+      "mark": "not positional",
+      "why": "\"NEXT (user wants to ...)\" is the next step in time"
+    },
+    {
+      "line": 243,
+      "old": "- **MODES built** (toggle in pathfinder; path-to-majority SCRAPPED per user \"insane\"): (1) Sponsor -> target = optimal chain + reliability% + per-hop $/prob + people + influence cascade; (2) Best sponsor = rank pro members by reliability/cost of their chain to a target (paper 04); (3) Multi-target = shared recruitment tree to several targets, coverage X/N + per-target reliability (paper 06). The grounding footnote cites the papers in-UI. Validated in Python. Dashboard 226 KB, balanced. HEAD-TO-HEAD route (CU vs industry counter-chain) still available to add next.",
+      "mark": "not positional",
+      "why": "\"still available to add next\" is time"
+    },
+    {
+      "line": 270,
+      "old": "2. **Signed cross-media REFERENCE layer (\"who references whom, positively or negatively\"):** new analyzer `member_reference_layer.py`: scan the speeches table (CREC + CHRG + INTERVIEW, 20M+ words, full text) + press titles + tweet RT/mentions for roster-member references in another member's OWN speech; extract context windows; valence each via the Fable API (cost-gated: probe mention volume first, cap contexts per dyad about 5); output signed directed edges {a,b,source,n,valence}, a toggleable layer + desk relationship panel. This supersedes/absorbs the earlier dyadic-warmth probe (which found the signal real but starved at 434 tweet mentions and fooled lexically; the full speech corpus + Fable valence fixes both). Attribution discipline: QA2-hardened name resolution (first-name compatibility, accent transliteration, no unique-surname guessing).",
+      "mark": "not positional",
+      "why": "\"the earlier dyadic-warmth probe\" is time"
+    },
+    {
+      "line": 273,
+      "old": "5. **BOTH SHIPPED 2026-07-04 (verified in browser, no console errors):** `build_dashboard_bundle.py` now emits `elay` (420-char per-drawn-edge provenance code from the AUG Provenance sheet: c/s/h/e/m; top-420 mix was c=337 s=1 e=17 m=65) + `refs` (1,437 signed dyads from `member_references.json`, n_scored>=2, [ia,ib,net,n]); the dashboard tpl has a LAYERS checkbox bar (cosponsor/social/committee/engagement/references±, refs default OFF); refs draw green (net>+0.15) / red (net<-0.15) / grey, alpha by evidence count, under the node dots, in both layouts. Bundle 218KB. The pipeline reruns bundle+html on next run; the changes are in the live-tree scripts so they persist.",
+      "mark": "not positional",
+      "why": "\"on next run\" is time"
+    },
+    {
+      "line": 279,
+      "old": "Interviews, hearings and bluesky were added to the desk \"Press & social media\" section (tpl line about 520); full record in [[2026-06-feature-melange-dashboard-ui-evolution]]. Revert switch `DESK_FOOTPRINT=0`; cap `DESK_MEDIA_CAP=50` per member per source; the 27 MB desk page defeats in-app screenshots (see Artifact family).",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"(see Artifact family)\" names ## Artifact family and surfaces, which moves to -artifact-family-and-surfaces while this line moves to -preview-and-desk-rules",
+      "new": "Interviews, hearings and bluesky were added to the desk \"Press & social media\" section (tpl line about 520); full record in [[2026-06-feature-melange-dashboard-ui-evolution]]. Revert switch `DESK_FOOTPRINT=0`; cap `DESK_MEDIA_CAP=50` per member per source; the 27 MB desk page defeats in-app screenshots (see Artifact family in [[melange-dashboard-artifact-family-and-surfaces]]).",
+      "referent": "melange-dashboard-artifact-family-and-surfaces"
+    },
+    {
+      "line": 287,
+      "old": "- **533 approach briefs** have existed at `data/members/member_narratives.json` since **2026-07-13**, all ok:true, 368-403 words, plain prose. They do not render because the loader reads `member_narratives_v2.json` (never created) and needs a schema/status/basis_sha256 envelope the real file lacks: three gate conditions, all failing against a file that is not there. (See [[2026-06-feature-melange-dashboard-ui-evolution]] and the member approach brief topic in the project index.)",
+      "mark": "external",
+      "why": "\"(See [[2026-06-feature-melange-dashboard-ui-evolution]] and the member approach brief topic in the project index.)\" names other notes"
+    },
+    {
+      "line": 302,
+      "old": "- **Facts that bit or will bite:** the README's `--ml-*` tokens are NOT used by the served v2 shell (unprefixed `:root` in `approved/clean/app.css`, identical values); 8841 serves `Moneyball_Redesign.html` + `staffer_live/approved/*` (byte copies of `approved/clean/*` made by `build_clean_workspace.py`, which has no copy-only mode and regenerates all presentation data); the next chain run's `sync_live_dashboard_alias.py` would overwrite the v2 shell with Moneyball.html (pre-existing, flag to Paul).",
+      "mark": "not positional",
+      "why": "\"the next chain run\" is time"
+    },
+    {
+      "line": 306,
+      "old": "- **Disk 2026-09-22 23:3x:** C: hit 0.4 GB free (AppXSvc commit 37 GB -> pagefile growth). Paul: \"clear 50 GB\". Sparse-checkout `/*` + `!/audits/legfix5/` applied to melange-ui-redesign-372c43, busy-kapitsa-3272db, nervous-hamilton-7e2d50 -> 53 GB free, git status unchanged, undo = `sparse-checkout disable`. TRAP: from Git Bash the pattern MUST run with `MSYS_NO_PATHCONV=1`, else it is stored as `!C:/Program Files/Git/audits/legfix5/` and silently does nothing. AppXSvc cannot be stopped even elevated (1051 dependent WSAIFabricSvc; then \"cannot be stopped\"; taskkill access denied): only a reboot frees it. See the memory `appxsvc-leak-pythonmanager-2026-09-23`.",
+      "mark": "external",
+      "why": "\"See the memory `appxsvc-leak-pythonmanager-2026-09-23`\" names a memory file"
+    },
+    {
+      "line": 307,
+      "old": "- **Reboot + finalize plan (Paul 09-23 00:3x: \"When it is ready to reboot, reboot\"; earlier: \"Once you are done building do a one-to-one, finalize, and then debug\"):** the lean build run is wf_de0fe38b-a24 (script ui-finish-lean). When it completes: reboot (`shutdown /r /t 120`), which frees AppXSvc (41.7 GB commit) and the grown pagefile. After restart (Paul reopens this session): Paul restarts 8841 (his), then launch the FINALIZE workflow: one-to-one audit of every Melange screen (integration stage `SP\\stage\\integration`, boards /1.867) and every Mentat screen (boards /1.25) by two Fable auditors each + debug sweep (console, interactions, data: Mentat Insights Recipients \"-\" and $0 new/no-longer bars; PAC maps nearly empty; Melange Influence Targets 7 rows vs board 12 (build_clean_workspace ORD.slice 7), Color default Field record vs Overall standing, Industry leftover Posture wording panel) -> fix (one writer per product) -> re-audit until clean -> apply Melange to LIVE hash-guarded (`APPLY_MANIFEST.md`; run LIVE `build_clean_workspace.py`) -> publish a report Artifact with side-by-sides + scores. No commits.",
+      "mark": "not positional",
+      "why": "\"earlier: ...\" quotes Paul's earlier instruction (time)"
+    },
+    {
+      "line": 310,
+      "old": "- **UPDATE 09-23 14:55:** first-pass Fable audits DONE (scores + 103 defects in `SP\\final\\defects_r1.json`; Melange about 93 avg, Mentat about 84; 0 blockers, 16 majors). The team run wf_5aee5b60-49b was stopped (its fix phase split into 33 tiny fixers and starved Mentat). Replacement run wf_e606ffea-bc7 (script under the session's `workflows\\scripts\\ui-finish-fast-*.js`): 10 area fixers (`SP\\final\\r1_areas\\<AREA>.json`; Melange MA-ME, Mentat TA/TBS/TBI/TC/TD), per-product merge, Sonnet re-audit per area (Paul: 'The next audit can be done in sonnet'), one final major-only pass, LIVE apply, report `SP\\final\\report\\`. Shared read-only Mentat console on 8812; Paul's 8841 = PID 14504 (restarted by him after reboot).",
+      "mark": "not positional",
+      "why": "\"The next audit can be done in sonnet\" is time"
+    },
+    {
+      "line": 311,
+      "old": "- **CLOSE-OUT 09-23 (late):** Melange applied to LIVE (695/695 files incl. people-days shards; backup + `python \"SP\\final\\rollback_live.py\"`), final avg 95.7. Paul's Melange rulings: Days on the record column BUILT (`people_days()` in `build_clean_workspace.py`, 97.6% coverage); 13px filter text OK; selection ring stays AMBER (not white); Efficiency colours OK; live People status kept. Mentat (uncommitted, Paul restarts 8806 to see it): Paul said Chart Studio \"got rid of the buckets\" -> reconcile run wf_0c7f1160-987 restored S1 Dimensions/Measures buckets, S1 teal, hideable Data pane/shelves/Inspector + \"Expand chart\" (remembered), map mark option A (test green); Company comparison keeps its dollar column in board style (Paul: \"Keep the dollar column, match the aesthetic\"). Scores: Chart Studio 92/90, Company comparison 94 (Mentat builds avg 92.8, Melange avg 95.7). OPEN for Paul at the time: (1) drawer shows ONE \"Contributions / Other\" segment beside Support/Oppose (Paul's \"Should have contributions and other\" may mean two separate segments: ask, do not assume); (2) \"hide the buckets, nodes, etc\" implemented in Chart Studio only: the Graph tab has no hide/expand control yet. Report: https://claude.ai/artifact/P3hz5SgGCqETRkHuiDAhdg (v2; artifact id P3hz5SgGCqETRkHuiDAhdg). Hang watchdog stopped.",
+      "mark": "not positional",
+      "why": "\"to see it\" is a verb"
+    },
+    {
+      "line": 312,
+      "old": "- **ROUND 3, 09-24 about 02:45 (DONE, uncommitted):** Paul ruled: drawer \"It should be two separate segments\"; Graph \"expand each section individually like with a census panel\" (= PAC evidence Census \"Source details\" disclosure pattern); Chart Studio \"utterly maluable\". Built: drawer Contributions | Other | Support | Oppose split by FEC transaction type (dollars reconcile to the cent; candidate counts overlap, disclosed by an overlap line + tooltips, removable if Paul objects); every Graph section and 15 Chart Studio sections fold individually, open by default, remembered; Chart Studio all 24 Show Me tiles enabled, 26 marks draw as themselves, any pill any shelf, sort any mark, group limit All, honesty guards annotate only; engine: stacking/Size/Tooltip/dual axis etc., `contribution-charts.js` rewritten. Suites 920/921 (fail = `test_transfer_graph.py` R check owned by another lane). 8812 restarted. Records: `SP\\final\\r3\\PRODUCT.md`, backups `SP\\final\\r3\\backup\\`. OPEN: worksheet Map/Filled map draw as bars (no current worksheet has ZIP/state); builder deviations (Labels disabled on Text, new MARKS header) await Paul. LESSON: Paul lost patience with 3-round verify loops at about 2h; next time one verify+fix round then product check.",
+      "mark": "not positional",
+      "why": "\"next time one verify+fix round\" is time"
+    },
+    {
+      "line": 322,
+      "old": "Lane `claude/melange-dashboard-fixes-83c994` (worktree at main `8953e7181`, zero lane commits). Paul pasted a \"Melange Dashboard Fixes — Simple Update\" handoff and said \"Finish those next actions\", later \"publish the snapshot\". Record: `audits/DASHBOARD_FIXES_VERIFICATION_2026-09-05.md` in the worktree. Full detail in [[2026-06-feature-melange-dashboard-ui-evolution]]; the artifact-relevant facts: publish blocked on the password file; `deploy/index.html` is 08-24 while the Moneyball.html it encrypts is 08-29 (as of 08-31); `.pipeline_run.lock` holds `{pid, token, started_utc}` and `audit_full` must not run concurrently with a live chain.",
+      "mark": "not positional",
+      "why": "\"Finish those next actions\" quotes Paul; \"later\" is time"
+    }
+  ]
+}

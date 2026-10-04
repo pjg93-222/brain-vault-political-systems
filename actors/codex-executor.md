@@ -25,14 +25,18 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/codex-web-research-for-company-ambiguity.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\codex-web-research-for-company-ambiguity.md", sha256: "ab3b471b15379353c6b6c8d004188016132018717f196f4a91b196091e559739"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
 # Codex executor lane
 
 > Codex (ChatGPT subscription; "Codex Astra" gpt-6-astra, formerly gpt-5.6-sol at xhigh) is the executor in Paul's role split: Claude reasons, designs, reviews; Codex writes the code. The MCP lane (wired 2026-07-18) is dead upstream since 2026-09-17; Astra runs only through a hardened `codex exec`.
+
+## Parts
+
+- [[codex-executor-incidents]] — Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane of 2026-09-10/11, where Codex built it but hit its usage limit before the validation report, and Claude finished the verification read-only.
 
 ## Current state (newest wins, as of 2026-09-19)
 
@@ -62,7 +66,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 ## Dependencies
 
 - Used by and used within [[melange-systems]]: the Codex lane is the DEFAULT executor path for implementation work (standing since 2026-07-19); it authored the legfix bundles of [[2026-07-feature-legislative-pillar-acu-review]] and built the legislative-effectiveness shadow lane there.
-- Part of the [[2026-07-feature-agent-tooling-stack]]; coordinated by the [[claude-code-harness]] and orchestrated end-to-end by [[metaloop]] (stage order: Fable decomposes, Codex executes, Gemini only as needed, Grok adversarial counsel); progress visible in the [[glass-box]] stream. Governing rules live in [[2026-07-working-agreement-agent-orchestration-rules]]; the poll-burn incident also feeds [[2026-08-incident-refresh-automation-reliability]].
+- Part of the [[2026-07-feature-agent-tooling-stack]]; coordinated by the [[claude-code-harness]] and orchestrated end-to-end by [[metaloop]] (stage order: Fable decomposes, Codex executes, Gemini only as needed, Grok adversarial counsel); progress visible in the [[glass-box]] stream. Governing rules live in [[2026-07-working-agreement-agent-orchestration-rules]]; the poll-burn incident also feeds Refresh automation reliability.
 - External: OpenAI ChatGPT subscription / Codex app auto-updates (the hash dir churns on app updates), `openai/codex` upstream, Google Antigravity CLI `agy` (Gemini perception lane), xAI Grok Build CLI (adversarial counsel; shares nothing with Codex quota), Windows Task Scheduler / Startup folder shim for the Grok X collector.
 - Hierarchy (2026-07-24): **Fable (Claude) > Codex > Gemini**, with Grok as counsel with zero authority/veto.
 
@@ -121,7 +125,7 @@ python -c "import py_compile; py_compile.compile(src, cfile=<scratchpad>)"
 ## Known Issues
 
 - **MCP lane broken upstream** (see Current state): `codex (CONNECTION_CLOSED)` in every new session since the 2026-09-17 app update; MCP tools connect only through the pinned 0.146.0-alpha.3.1 and only with `model: "gpt-5.6-sol"` per call.
-- **Poll-loop burn (2026-09-12/13)** drained the weekly quota (see Incident below).
+- **Poll-loop burn (2026-09-12/13)** drained the weekly quota (see Incident in [[codex-executor-incidents]]).
 - **Quota walls:** Codex weekly limit (2026-09-11, 2026-09-13); SuperGrok counsel + X harvester SHARE one pool (402 'Grok Build usage balance exhausted', 2026-07-25).
 - **Sandbox has NO python:** under `workspace-write` even the absolute Python312 path is Access-denied; edit-only contracts (REDUCE SCOPE, verification moved to Claude) are the working pattern. Codex returned IndentationError twice (block emitted at column 0), so Claude py_compiles every returned diff.
 - **MCP concurrency:** parallel same-session dispatches hit `MCP error -32000: Connection closed`; dispatch ONE call at a time. Cross-session concurrency is safe. threadId dies within ~25 min same-session ("Session not found") and on glassbox window reopen - recover with a fresh thread + self-contained contract.
@@ -137,12 +141,20 @@ python -c "import py_compile; py_compile.compile(src, cfile=<scratchpad>)"
 - [[glass-box]] - Shared GLASS BOX event stream/viewer for all lanes; every process must emit; a hung lane console blocks metaloop starts.
 - [[metaloop]] - /metaloop (shipped @46b17b9): Fable decomposes/reviews, Codex executes, Gemini perceives, Grok critiques; UNIVERSAL LANE LAWS @86ba6ef.
 
+## Related Concepts
+
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
+
 ## Related Topics
 
 - [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
 - [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
-- [[2026-08-incident-refresh-automation-reliability]] - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
+- Refresh automation reliability - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
+- [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] — The Codex executor lane record: how Claude and Codex were wired, the injected-preamble finding, the Gemini and Grok lanes, Paul's amended rules and the integration history.
+- [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] — legfix5 of 2026-07-27: the six-year full-text collection, the GovInfo official-text lane and culling engine, and the acu-outline rulings carried into it.
+- [[2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane]] — The legislative-effectiveness shadow lane of 2026-09-10 to 09-12: a Volden-Wiseman five-stage score that Codex built and Claude verified read-only, applied to the live tree at Paul's request.
+- [[2026-07-feature-legislative-pillar-acu-review-bill-plane-and-media-stance]] — The 2026-07-10 corpus census and the bill-plane audit and press media-stance display from 2026-07-19 on, through the crown and money rulings, tier weights and Codex-lane hardening.
 
 ## Related Projects
 
@@ -158,27 +170,10 @@ Paul's directive (2026-07-18): for multi-model orchestration, **Claude = reasoni
 - **Rules amended 2026-07-24 (Paul, Gemini-integration directive):** (1) **Claude NEVER writes code** - all code authorship is Codex's, including one-line fixes (edit-only dispatches); Claude keeps design, specs, review, git, docs/skill prose, memory. (2) **Double sign-off loop** (Flows above). (3) **Command hierarchy: Fable (Claude) > Codex > Gemini.**
 - **Subagent law (2026-08-07, Paul: "subagents reason through fable and execute through codex... fix it so it does"):** permanent section in `commands/metaloop.md` @f9e62cf - Workflow/Agent subagents = Fable reasoning lanes, READ-ONLY by contract (never edit files, never run producers, never dispatch Codex themselves - dispatches stay serialized through the coordinator); every subagent prompt must state the read-only contract; implementation always flows Fable spec -> coordinator's Codex dispatch (xhigh) -> Fable review. Same commit cleared the metaloop.md copy-sync debt (the repo copy had missed the 08-04 escalation/dispatch/max-effort amendments; user scope is the live surface - md5-verify both after any edit).
 - **Web research for company ambiguity (Paul 2026-07-19, verbatim: "if you are ever ambigous on a company just check via codex on the internet."):** when an employer string might be the roster company or an unrelated firm sharing the name, do NOT guess and do NOT default to asking Paul; dispatch Codex to research it on the web (network is OFF by default in the sandbox and MUST be enabled explicitly; command in Dev Commands). Give Codex the corroborating FEC evidence - **state and occupation strings are the decisive signals**. Ask for a verdict table with an evidence URL per row, and instruct it to be conservative (UNCERTAIN over a guess). Real example that worked: bare `GEMINI` in NH with occupations CNC PROGRAMMER / SIGNS is a sign manufacturer, not the NY crypto exchange. The resulting verdicts go into `inputs/company_match_overrides.csv` (employer_key, company, decision), which persists across runs. Paul picks the roster; research only ever disambiguates *within* companies he already listed, it never adds new ones (see `mentat-roster-and-culling-rules-2026-07-19`).
-- **Never supervise long jobs from an AI turn** (Incident below). A long-running Python job is finished when its receipt/status file says so, not when a model has watched it finish: launch it detached (Task Scheduler, `Start-Process`), then use ONE Bash `run_in_background` `until` loop or one `Monitor` on the status file. Never a per-turn poll loop, never `wait`/`sleep` turns, never spawn helper agents to "watch".
+- **Never supervise long jobs from an AI turn** (Incident in [[codex-executor-incidents]]). A long-running Python job is finished when its receipt/status file says so, not when a model has watched it finish: launch it detached (Task Scheduler, `Start-Process`), then use ONE Bash `run_in_background` `until` loop or one `Monitor` on the status file. Never a per-turn poll loop, never `wait`/`sleep` turns, never spawn helper agents to "watch".
 - **Do not create Codex heartbeat automations as a scheduler.** Three PAUSED heartbeats still exist in `C:\Users\pgoff\.codex\automations\` (`finish-collection-integrity-overnight` hourly, `finish-staffer-lda-reconciliation` every MINUTE, `legislation-acceptance-continuation` every 10 min); any of them flipping ACTIVE is a recurring burner. Flag, do not flip.
 - **`approvals_reviewer: auto_review`** in Codex thread settings fans out guardian threads that bill against the same weekly limit - treat it as a cost multiplier on long threads.
 - **A Codex usage-limit error does not mean the subprocess stopped** - inspect outputs before re-dispatching (brain DE-018). Example: the shadow lane's final `--verify-reproducible` re-run COMPLETED on disk at 04:09Z after the 04:07Z error.
-
-## Incident: Codex overnight poll-loop burn (2026-09-12 23:29 to 2026-09-13 10:58 local)
-
-Codex Desktop thread `01a098ce-d021-7d42-9383-5affc2a0bdfb` burned the ENTIRE weekly Codex quota (674M tokens) by babysitting a Windows Python job in a 30 s poll loop for 11 h; Paul's goal was a Python process INDEPENDENT of AI.
-- Paul asked for an end-to-end recurring congress.gov bills -> sponsors -> media -> Excel -> dashboard refresh that "triggers every time I open my laptop", and said explicitly: "No not an AI process, something in my windows, like a Python process." Codex built the right artifact (`fec/legislation/refresh_congress_pipeline.py` + `fec/daily_refresh.py` + two Windows scheduled tasks `MoneyballCongressRefresh` / `MoneyballDailyRefreshRetry`), then stayed in the loop itself: 542 empty `write_stdin({chars:"", yield_time_ms:30000})` polls on its own background shell (03:36Z -> 14:57Z), 280 `wait_agent` blocks, 4 spawned agents each doing the same, and 27 `approvals_reviewer: auto_review` guardian threads that made zero tool calls yet consumed ~59M tokens re-reading context.
-- Session family total: 673,856,790 tokens across 32 rollout files; ended with `usage_limit_exceeded`, next window 2026-09-19 23:50. Quota was already at 89% when the thread started. Nothing external re-invoked Codex: no scheduler, no wrapper, no `codex exec` loop; the Python code never calls OpenAI/Codex.
-- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: "that is unacceptable." Related: the brain's DE-018 (see above).
-- "Independent of AI" is not fully true of the chain yet: step 3 `fec/legislation/refresh_sentinel_admissions.py:288-290` calls `api.anthropic.com` with `fec/anthropic_key.txt` (fingerprint-cached; pre-existing sentinel-lane code). That is Paul's call to keep or remove, never Claude's. Related memories: `verify-dont-infer-completion-2026-08-04`, `glassbox-everything-rule-2026-07-27`, `ultracode-orchestration-standing-2026-08-18`.
-- **Repair lane 2026-09-13 afternoon (Fable session, live tree, UNCOMMITTED, the whole subsystem UNTRACKED in git):** the real reason the Windows job never finished was three collectors treated as fatal: (1) the press collector exits 3 BY DESIGN when body backlog remains (`refresh_press_delta.R:843`; 2,200 pending, `JS_MEMBER_BUDGET 600` in Draft Systems R, fold OFF) - now PARTIAL, not FAIL, and the press_intake/press_feed/press_baseline_fold steps plus `all_intake` are PARKED (`SKIPPED_PARTIAL`) because `build_press_engine_feed.py:99-101` (ratified partial-run rejection) would refuse the incomplete generation; the gate itself was NOT touched; `run_pipeline.py:52` already skips refused runs and uses the last complete press generation. (2) discovery dies when Playwright cannot launch Chrome (`launchPersistentContext` 180 s timeout, not the Cloudflare cooldown, so the GovInfo fallback never fires) - the wrapper now retries discovery once after 300 s, then DEFERS it (`deferred_steps`) and continues. (3) calibration budget 120 s was too tight under disk load (71-107 s measured) - now 900 s.
-- Plus `--smoke` (skip discovery, admissions `--limit 1 --no-llm --no-install`, media crec/chrg/bluesky only, full `run_pipeline.py` because it cannot be shortened), `--no-llm` in admissions (carry forward old decisions with OLD fingerprint; never seal a hold), glassbox `current`/`total` + heartbeats + `data/engine/congress_pipeline_live.log`, before-snapshot hashes the two 98 MB HTML files (11 min -> 0.4 s), watcher `fec/legislation/watch_congress_pipeline.ps1` + `open_congress_pipeline_monitor.ps1`, exit-75 reasons, 4 pytest suites registered in `_LANE_PYTEST` (160 tests).
-- The auto-mode classifier BLOCKED `taskkill` + `Disable-ScheduledTask`; a scheduler-launched run then took the lock the same second as the first smoke launch - launch races with the :39 retry are real. Smoke run PID 81500 (17:00 local): every collection step PASS with zero model calls; `run_pipeline.py` died at step 17 because the Codex session's UNCOMMITTED `fec/stance/extract_cu_bluesky.py` change (handle-registry UNVERIFIED gate) drops four House members' posts and 5 of Paul's bluesky gold rows no longer bind - first executed by the smoke; nothing of his touched; fix = Paul confirms the handles or reverts that change.
-- Also found + fixed: writers lost `os.replace` races with readers (`WinError 5/32/33`) - `fec/lane_file_io.replace_atomic()` 40-attempt jittered retry now used by all daily writers; the watcher reads with FileShare Delete. No `PIPELINE COMPLETE` line exists on disk after 2026-07-28 (chain unproven for 7 weeks by any launcher). The scheduler ran on its own 17:39/18:39/19:39 with discovery DEFERRED working in production.
-- OPEN for Paul: admissions `transport claude-cli` (24 `claude.exe` calls per pass on his Claude subscription), press backlog budget/fold, committing the untracked subsystem, retry task `ExecutionTimeLimit PT0S`.
-
-## Legislative-effectiveness shadow lane: how Codex built it and died (2026-09-10/11)
-
-Paul commissioned (Codex Desktop, 2026-09-10 23:03 ET) a Bucchianeri/Volden/Wiseman-style five-stage legislative effectiveness score. Codex built it in worktree `C:\Users\pgoff\.codex\worktrees\f149\Melange Systems` (detached HEAD `d68ddcda6` on top of `2f11d9490`): 11 tracked files modified (+193/-18) and 37 untracked files (9 modules, 6 unittest suites = 77 tests); its sandbox had no pytest (unittest: 68 tests OK at the time). Coordinator thread + 3 sub-agents hit `usage_limit_exceeded` at 04:07Z 2026-09-11 ("try again at Sep 17th, 2026 1:16 PM"); the `integrations` sub-agent produced nothing and the coordinator wrote the integrations itself; the final `--verify-reproducible` re-run COMPLETED on disk at 04:09Z after the error but no turn ever read it, so the validation report and the "show me the diff" step were never produced. Claude then verified read-only (46/50 outputs byte-identical on an independent re-run; `verify_effectiveness_shadow.py` PASS; inputs 20/20 and code 14/14 unchanged), and after the 2026-09-11 ~23:16 ET apply the live six suites passed 77/77. The unfinished code edits (activation, `run_tests.py` `_LANE_MODULES` registration, re-pin of `run_legislation_pillars_and_ranks.py` source literals) queue for Codex after 2026-09-17; the validated contract + ledger dispatch is run-id `legeff-runtests-20260911`, trigger `legeff-register-suites-dispatch`, evidence in f149 `audits/legislative_effectiveness_shadow_20260911/evidence/{contract.json,prompt.txt}`. Full lane in [[2026-07-feature-legislative-pillar-acu-review]].
 
 ## Wiring history and superseded statements (dated)
 

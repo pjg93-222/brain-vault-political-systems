@@ -26,8 +26,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/memory-index-restore-incident-2026-07-26.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\memory-index-restore-incident-2026-07-26.md", sha256: "b5dec0466c8f3694a00d8775d611e6278aada3d5d7d0ac88fa2a005717ad1c18"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -49,7 +49,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 ## Dependencies
 
 - Depends on: the memory directory (the exact filename `MEMORY.md` is read into context at session start; nothing else in the directory is), the session-start system reminder (de-facto backup of MEMORY.md), the harness PATH captured at session launch, the ECC GateGuard hook, and the PowerShell/Bash tool quoting layer.
-- Depended on by: every lane that reads memory or runs scripts. Related actors: [[codex-executor]] (Codex executor lane), [[lg-gram-workstation]] (the machine; AppX/PATH issues are in [[2026-07-incident-workstation-stability]]). Related topics: [[2026-06-working-agreement-tooling-and-environment-traps]] (the rules), [[2026-07-working-agreement-agent-orchestration-rules]] (SendMessage rule), [[2026-07-working-agreement-verification-and-evidence-standards]] (committed-vs-live receipts).
+- Depended on by: every lane that reads memory or runs scripts. Related actors: [[codex-executor]] (Codex executor lane), [[lg-gram-workstation]] (the machine; AppX/PATH issues are in [[2026-07-incident-workstation-stability]]). Related topics: [[2026-06-working-agreement-tooling-and-environment-traps]] (the rules), Agent orchestration and model tiering rules (SendMessage rule), Verification and evidence standards (committed-vs-live receipts).
 - Related memory notes: `powershell-visible-work`, `dont-drop-context-anchor-memory`, `ask-before-substantive-changes`, `verify-dont-infer-completion-2026-08-04`, `spawned-task-premise-may-be-stale-2026-09-14`, `committed-vs-live-drift-2026-09-13`, `go-faster-directive-2026-09-16`, `ui-finalize-after-reboot-2026-09-23`, `live-tree-branch-state-2026-07-14`, `project-brain-toolkit-2026-08-11`.
 
 ## Flows
@@ -175,10 +175,12 @@ In this environment, passing script text through the Bash tool corrupts it even 
 
 - [[codex-executor]] - Codex (ChatGPT/Astra) as Paul's executor: Claude reasons and reviews, Codex writes code; MCP lane dead since 2026-09-17
 - [[lg-gram-workstation]] - Paul's LG Gram 17Z90UB Windows 11 laptop: NPU BSODs, AppXSvc leak, Codex MSIX loop, C: disk exhaustion, OneDrive/Carbonite gaps
+- [[brain-vault-political-systems]] - Private Obsidian + Bedrock knowledge vault; this harness's per-project auto-memory files were imported into it on 2026-10-03
 
 ## Related Topics
 
 - [[2026-06-working-agreement-tooling-and-environment-traps]] - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
 - [[2026-07-incident-workstation-stability]] - LG Gram stability incidents: NPU BSOD loop, ongoing Kernel-Power shutdowns, AppXSvc commit leak, ChatGPT/Codex MSIX wedge, poppler install
-- [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
-- [[2026-07-working-agreement-verification-and-evidence-standards]] - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
+- Agent orchestration and model tiering rules - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
+- Verification and evidence standards - Verify, never infer: census before mechanism claims, repo-wide existence checks, scout NOT FOUNDs disproved, HEAD-pinned cites.
+- [[2026-10-feature-brain-vault-setup]] - Brain vault setup and Claude memory import: this harness's memory files were consolidated into the private brain vault (2026-10-03)

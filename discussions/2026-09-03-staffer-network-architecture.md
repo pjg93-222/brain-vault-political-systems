@@ -17,11 +17,11 @@ action_items:
   - "Compute eigenvector centrality per connected component and report component sizes."
   - "Keep w_edu in code at alpha=0 rather than deleting."
 related_topics:
-  - "[[2026-09-feature-staffer-network-data-and-math]]"
+  - "[[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture]]"
 related_actors:
   - "[[staffer-live-sidecar]]"
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[melange-systems]]"
 related_teams: []
@@ -29,8 +29,8 @@ source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-architecture-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-architecture-2026-09-03.md", sha256: "369fa550046b0fc885dc8b5d86333520a61f5299769f1aa252812e68ccd9d586"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-overlap-rule-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-overlap-rule-2026-09-03.md", sha256: "de5f13a314b7571f09b00e67d11f208a1cc67e2cb78e5a6786d8d896c8aa34d4"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -40,7 +40,7 @@ tags: ["type/discussion", "domain/data"]
 
 ## Context
 
-Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `staffer-social-network-architecture-2026-09-03`, type project, session `42c66666-074f-4037-b357-bdaedfd31eb1`, and `staffer-social-network-overlap-rule-2026-09-03`, type feedback, same session). Guiding docs: `STAFFER_NETWORK_EXPANSION_DESIGN_20260829.md` and `STAFFER_NETWORK_METRICS_20260829.md` (both in Downloads; dated 2026-08-31 revisions of 2026-08-29 drafts). The lane these rulings feed is [[2026-09-feature-staffer-network-data-and-math]] in the project [[melange-systems]]; the live service that later serves the network is [[staffer-live-sidecar]].
+Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `staffer-social-network-architecture-2026-09-03`, type project, session `42c66666-074f-4037-b357-bdaedfd31eb1`, and `staffer-social-network-overlap-rule-2026-09-03`, type feedback, same session). Guiding docs: `STAFFER_NETWORK_EXPANSION_DESIGN_20260829.md` and `STAFFER_NETWORK_METRICS_20260829.md` (both in Downloads; dated 2026-08-31 revisions of 2026-08-29 drafts). The lane these rulings feed is [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture|Staffer network data and math (its architecture and overlap rulings part)]] in the project [[melange-systems]]; the live service that later serves the network is [[staffer-live-sidecar]].
 
 **The metaphor, his words:** one giant ant colony. Each member is its own station. Staffers are nested in and between the stations. Lobbyists are outsiders entering the colony, navigating by who they know best.
 
@@ -50,7 +50,7 @@ Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `st
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Discussed Actors
 
@@ -64,7 +64,7 @@ Paul's rulings, 2026-09-03, on the staffer network shape (stored as memories `st
 
 ## Related Topics
 
-- [[2026-09-feature-staffer-network-data-and-math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
+- [[2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture|Staffer network data and math (its architecture and overlap rulings part)]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
 
 ## Related Concepts
 

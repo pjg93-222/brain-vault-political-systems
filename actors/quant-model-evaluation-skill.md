@@ -22,8 +22,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/quant-model-evaluation-skill-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\quant-model-evaluation-skill-lane-2026-09-30.md", sha256: "4a3dbc28397c5529127d6a1943bdedc8e9d6ea1607f1e586168e6d095be4f34f"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -45,7 +45,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 ## Dependencies
 
 - Synthesized from K-Dense-AI scientific-agent-skills (MIT, `NOTICE.md`) plus new finance / computational-social-science / regulatory / citation research.
-- Melange specifics live ONLY in `references/bindings/melange.md`; the skill is used after `moneyball-change-control` for any model/number/claim evaluation. The binding carries the house gates: ask-first, money frozen, gold = Paul's adjudication, never point `mutation_check` at `fec/` code, look fragments prereg-gated. Related projects/actors: [[melange-systems]], [[moneyball-skill-library]], [[cu-geography]] (row framework run through this skill), [[single-look-holdout-discipline]], [[2026-07-feature-agent-tooling-stack]], [[2026-09-feature-cu-geography-luna-and-row-framework]].
+- Melange specifics live ONLY in `references/bindings/melange.md`; the skill is used after `moneyball-change-control` for any model/number/claim evaluation. The binding carries the house gates: ask-first, money frozen, gold = Paul's adjudication, never point `mutation_check` at `fec/` code, look fragments prereg-gated. Related projects/actors: [[melange-systems]], [[moneyball-skill-library]], [[cu-geography]] (row framework run through this skill), [[single-look-holdout-discipline]], Agent tooling stack, [[2026-09-feature-cu-geography-luna-and-row-framework]].
 - Emits to the GLASS BOX stream (see the Glass Box rule in the agent-tooling topic).
 - Installed packages (Paul: "Install both sets"; no existing version changed): R = sandwich lmtest strucchange fixest sensemakr rdrobust Benchmarking spdep; Python = linearmodels SALib libpysal esda arch.
 - External: CrossRef (and OpenAlex, keyless, daily budget gets exhausted) for citation currency checks; `cite_check` handles 429 as UNVERIFIED-HERE, `--no-openalex`.
@@ -162,8 +162,9 @@ pip install ... --use-deprecated=legacy-certs
 
 ## Related Topics
 
-- [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-09-feature-cu-geography-luna-and-row-framework]] - CU-geography: Luna RF/KNN review closed 09-30 (section 30 GPU model current) plus the 491,308-row framework in Paul's four groups (P0/P1).
+- [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]] — The quant-model-evaluation skill lane of 2026-09-30 to 10-01: Paul's rulings on F1 to F6, the N19 hold fix, the leakage fix and the production chain left pending.
 
 ## Related Projects
 
@@ -173,3 +174,4 @@ pip install ... --use-deprecated=legacy-certs
 ## Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
+- [[trend-over-significance]] — Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar.

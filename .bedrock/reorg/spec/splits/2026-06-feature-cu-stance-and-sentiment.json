@@ -1,0 +1,350 @@
+{
+  "id": "B3",
+  "what": "Batch 5 split of topics/2026-06-feature-cu-stance-and-sentiment (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B3); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-06-feature-cu-stance-and-sentiment",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "concepts/two-hop-stance-decomposition",
+      "actors/debate-stance-model",
+      "concepts/gold-set-validation"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-06-feature-cu-stance-and-sentiment-stance-stack-design-and-accuracy",
+      "title": "Stance-stack design and accuracy",
+      "summary": "How the CU stance stack was designed and made accurate: sign-flip directionality fixes, the 2026-07-01 data audit, the two-hop stance stacks of the 07-04 campaign, the lt_priming integrity gates and the Kim position-classification benchmark",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Sign-flip directionality and the DEBATE-era fixes (2026-06-30 to 2026-07-01; source `cu-signflip-directionality`)",
+        "## Data audit 2026-07-01 and the stance-stack design (source `moneyball-data-audit-2026-07-01`)",
+        "## Two-hop stance stacks: the 2026-07-04 accuracy campaign (source `moneyball-stance-decomposition`)",
+        "## lt_priming stance-integrity gates (2026-07-04, user-ratified, Lean Skeptic carved out; source file `moneyball-lt-priming-gates.md`)",
+        "## Kim position-classification benchmark (2026-08-03; source `kim-position-classification-2026-08-03`)"
+      ],
+      "keep": [
+        "concepts/two-hop-stance-decomposition",
+        "actors/debate-stance-model"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split",
+      "title": "Stage 5 deploy, labeling template and the CFPB directional split (June)",
+      "summary": "June 2026 stance work: the labeling template and re-run recipe, the CFPB directional split in the workbook, and the Stage 5 overhaul and deploy",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Template location and re-run recipe (source `cu-sentiment-template-location`, 2026-06-30)",
+        "## CFPB directional split in the workbook (2026-06-25; source `project_cfpb_directional_split`)",
+        "## Stage 5 overhaul and deploy (June 2026; sources `project_stance_sentiment_overhaul`, `project_moneyball_deploy`)"
+      ],
+      "keep": [
+        "actors/draft-systems-r-pipeline",
+        "actors/debate-stance-model"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents",
+      "title": "CFPB re-correction, coverage, channels and press-fix incidents (07-15/16)",
+      "summary": "CU sentiment work of 2026-07-15/16: the CFPB sentiment re-correction, what is scored versus only collected, the channels built and audited, and the press-fix incidents",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## CFPB sentiment re-correction (2026-07-15; sources `cfpb-sentiment-recorrection-2026-07-15`)",
+        "## Coverage: what is scored vs only collected (source `cu-sentiment-coverage-2026-07-15`, verified 2026-07-15)",
+        "## Channels built 2026-07-15 and their audit (HEAD 5b1a541 -> 1d7e332 -> 902b2f8 -> 35b8a09)",
+        "## Press-fix incidents (2026-07-16; source `press-fix-incidents-2026-07-16`, found during Paul's 2026-07-16 \"fix this now\" Tim Scott desk labels)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-cu-stance-and-sentiment-press-and-social-display",
+      "title": "Press and social display, ops lessons and shipped state (07-19)",
+      "summary": "Press and social display of 2026-07-19: graded press and social scores shown for the first time, the expensive ops lessons, the shipped state and the bill-coverage cross-reference",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Press and social display, ops lessons, and shipped state (2026-07-19; source `bill-coverage-and-media-stance-2026-07-19`)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K20",
+      "a": "topics/2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split",
+      "b": "topics/2026-06-feature-congress-r-scrapers-stage5-debate-lsd",
+      "event": "Stage 5 overhaul"
+    },
+    {
+      "id": "K21",
+      "a": "topics/2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split",
+      "b": "topics/2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits",
+      "event": "CFPB directional split"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 39,
+      "old": "- **What it scores (verified 2026-07-15):** only TWO channels in production: (1) Quorum tweets (`quorum_member_tweets.csv`, 9,465 rows, CU-topic-FILTERED, has a `cu_relevant` col; 28% literally mention \"cfpb\"; 485/533 members) -> `tweet_stance_stack.py` -> `tweet_stance_final.csv`; (2) CU-relevant press (Draft `cu_press_stance_tone.csv`, 2,388 rows; 385 members; 1,569 own-.gov + 819 trade) -> `press_stance_stack.py` -> `press_stance_final.csv`. Both feed `build_media_blend.py` -> workbook `Press Release - Raw` -> the media pillar of [[melange-systems]]. Gated channels (floor speeches, hearings, interviews, Bluesky) were built later (see Channels).",
+      "mark": "rewrite",
+      "why": "\"(see Channels)\" names ## Channels built 2026-07-15 and their audit, which moves to -july-recorrection-channels-incidents; \"were built later\" is time",
+      "new": "- **What it scores (verified 2026-07-15):** only TWO channels in production: (1) Quorum tweets (`quorum_member_tweets.csv`, 9,465 rows, CU-topic-FILTERED, has a `cu_relevant` col; 28% literally mention \"cfpb\"; 485/533 members) -> `tweet_stance_stack.py` -> `tweet_stance_final.csv`; (2) CU-relevant press (Draft `cu_press_stance_tone.csv`, 2,388 rows; 385 members; 1,569 own-.gov + 819 trade) -> `press_stance_stack.py` -> `press_stance_final.csv`. Both feed `build_media_blend.py` -> workbook `Press Release - Raw` -> the media pillar of [[melange-systems]]. Gated channels (floor speeches, hearings, interviews, Bluesky) were built later (see Channels in [[2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents]]).",
+      "referent": "2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents"
+    },
+    {
+      "line": 40,
+      "old": "- **Origin (June 2026):** Stage 5 of the CU press scraper was redesigned into Stage 5a STANCE = Political DEBATE (fine-tuned, CPU) and Stage 5b TONE = Lexicoder LSD, replacing a regex/graded scorer: see [[debate-stance-model]] and [[draft-systems-r-pipeline]] (R pipeline code root, also the home of `cu_stance_label_set.csv`).",
+      "mark": "external",
+      "why": "\"see [[debate-stance-model]] and [[draft-systems-r-pipeline]]\" names other notes"
+    },
+    {
+      "line": 42,
+      "old": "- **Authority:** press labels / stance direction on contested issues (especially CFPB) are Paul's domain. Rule recorded in the working-agreement topic Change control and Paul's decision authority; see Decisions. Owner: Paul Goff.",
+      "mark": "same note",
+      "why": "\"see Decisions\" names ## Decisions, which the hub keeps (the resolver's mark, signed off)"
+    },
+    {
+      "line": 85,
+      "old": "| 2026-07-01 | ACU speaker-mode planned; sign-flip analysis; data audit D1-D5 + stance-stack S1-S5 design; gold queue built (312 items, 171 members) and API pre-labeled ($3.83, 312/312). Press pillar own-domain attribution fix (see the architecture note `2026-07-rfc-melange-architecture-system-of-record`). |",
+      "mark": "external",
+      "why": "\"see the architecture note `2026-07-rfc-melange-architecture-system-of-record`\" names another note"
+    },
+    {
+      "line": 88,
+      "old": "| 2026-07-07 | `policy_force` CFPB neutral-pin added to the registry/stacks (later found to overshoot). |",
+      "mark": "not positional",
+      "why": "\"(later found to overshoot)\" is time"
+    },
+    {
+      "line": 97,
+      "old": "- **Press classification is Paul's domain.** On the Moneyball/CU project Claude is NOT to relabel press-release stances using its own judgment. Paul reacted strongly (\"disregard your judgement\") when CFPB-related press labels were \"corrected\": **Credit Unions OPPOSE the CFPB**, so a member defending/expanding the CFPB is correctly `oppose`; those edits were wrong and reverted. **Why:** stance direction on contested issues (especially CFPB) is a domain call Paul owns; Claude's political-sentiment judgment is not trusted here and churns his labels. **How to apply:** build/maintain the *mechanism* that lets Paul set stances (the in-dashboard manual-override dropdown in `fec/make_member_desk.py`, which writes to `press_stance_overrides.json` and re-flows the pillar; ~~via `fec/apply_press_overrides.py`~~ superseded, see Press-fix incidents); never bake in Claude's own stance opinions. His labels go to exact-ID ledgers; NEVER blanket rules.",
+      "mark": "rewrite",
+      "why": "\"see Press-fix incidents\" names ## Press-fix incidents (2026-07-16), which moves to -july-recorrection-channels-incidents (the resolver's proposal, signed off)",
+      "new": "- **Press classification is Paul's domain.** On the Moneyball/CU project Claude is NOT to relabel press-release stances using its own judgment. Paul reacted strongly (\"disregard your judgement\") when CFPB-related press labels were \"corrected\": **Credit Unions OPPOSE the CFPB**, so a member defending/expanding the CFPB is correctly `oppose`; those edits were wrong and reverted. **Why:** stance direction on contested issues (especially CFPB) is a domain call Paul owns; Claude's political-sentiment judgment is not trusted here and churns his labels. **How to apply:** build/maintain the *mechanism* that lets Paul set stances (the in-dashboard manual-override dropdown in `fec/make_member_desk.py`, which writes to `press_stance_overrides.json` and re-flows the pillar; ~~via `fec/apply_press_overrides.py`~~ superseded, see Press-fix incidents in [[2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents]]); never bake in Claude's own stance opinions. His labels go to exact-ID ledgers; NEVER blanket rules.",
+      "referent": "2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents"
+    },
+    {
+      "line": 101,
+      "old": "- **Overall band scale: SHIFTED UP, Paul-directed, do not revert** (final cutoff -1.10; see CFPB band shift). ~~`OVERALL_OPPONENT_CUTOFF=-1.60` (user-directed 2026-07-15 via codex, manufactured >= 1 Opponent)~~ superseded; ~~-1.20 in c11ca08~~ was BROKEN (Skeptic swallowed Highly Skeptical).",
+      "mark": "rewrite",
+      "why": "\"see CFPB band shift\" is ### Band shift + branch state of the CFPB sentiment re-correction, which moves to -july-recorrection-channels-incidents",
+      "new": "- **Overall band scale: SHIFTED UP, Paul-directed, do not revert** (final cutoff -1.10; see CFPB band shift in [[2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents]]). ~~`OVERALL_OPPONENT_CUTOFF=-1.60` (user-directed 2026-07-15 via codex, manufactured >= 1 Opponent)~~ superseded; ~~-1.20 in c11ca08~~ was BROKEN (Skeptic swallowed Highly Skeptical).",
+      "referent": "2026-06-feature-cu-stance-and-sentiment-july-recorrection-channels-incidents"
+    },
+    {
+      "line": 104,
+      "old": "- **Paul is overcorrection-sensitive: apply the MINIMUM he asked, do not bundle extra \"improvements\"** (round-3 revert 2026-07-15, \"you overcorrected\"); autonomous substantive fixes were rightly called out, ask first (see `ask-before-substantive-changes`).",
+      "mark": "external",
+      "why": "\"see `ask-before-substantive-changes`\" names a memory file"
+    },
+    {
+      "line": 108,
+      "old": "- **Five-class bill-position label ships on the page** (Paul 2026-08-03: \"the 5 class matters and is more useful\"); follow In Song Kim's inferential format (Paul: \"You should be following the same format as In Song Kim when classifying, remember you were far too conservative whereas he was inferential\").",
+      "mark": "not positional",
+      "why": "\"You should be following the same format\" is a quoted verb"
+    },
+    {
+      "line": 109,
+      "old": "- **Pillar weights context** (resolution 3): the media/press pillar sits inside a score whose pillar weights changed three times; the sets are recorded with dates and status in `2026-07-rfc-melange-architecture-system-of-record` (`.40/.30/.20/.10` 2026-06-29 historical; `30/25/40/5` ratified 2026-07-07 LAST RATIFIED; `45/10/40/5` live since 2026-09-03 UNRATIFIED, code-review S-5 awaits Paul's ruling). The tier-weights 80/20 and 84/16 above are a DIFFERENT dial (Leg+Press Tier-1 crown weights).",
+      "mark": "same note",
+      "why": "\"The tier-weights 80/20 and 84/16 above\" are the Decisions bullet just above (Tier weights 80/20 -> 84/16) and the 2026-07-19 History row, both kept by the hub"
+    },
+    {
+      "line": 111,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 126,
+      "old": "- [ ] Hearing/appendix root cause (cu_passages merging overlapping windows so a chair's last turn absorbs the appendix) is a user-gated scoring change; only bounded by an audit_full tripwire (fails above 10 contaminated gold rows).",
+      "mark": "not positional",
+      "why": "\"fails above 10 contaminated gold rows\" is a threshold"
+    },
+    {
+      "line": 139,
+      "old": "- **Part B (overlays, top precedence, applied LAST):** NEW `tweet_stance_overrides.json` (mechanism added to `tweet_stance_stack`) + existing `press_stance_overrides.json` (11 press). Both keyed by quorum_id/url + text/title_contains. (Later hardened: tweet overrides are `quorum_id`-keyed, NOT `text_contains`, which overmatched 149 tweets = BUG-A; press overrides use `title_contains` + normalized-URL.)",
+      "mark": "not positional",
+      "why": "\"(Later hardened: ...)\" is time"
+    },
+    {
+      "line": 142,
+      "old": "- **1 audit item (NOT a fix bug):** codex's `OVERALL_OPPONENT_CUTOFF=-1.60` (user-directed 2026-07-15, `moneyball_core.py`) manufactures >= 1 Opponent; the media-pillar shift re-normalized Durbin above it -> 0 opponents -> `audit_full.py:42` \"overall Opponent rung populated\" FAILS (101/102). Re-tuning that cutoff is Paul's dial decision (resolved by the scale shift below).",
+      "mark": "same note",
+      "why": "\"the scale shift below\" is ### Band shift + branch state (OVERALL BAND SCALE SHIFTED UP), which moves with this ### to -july-recorrection-channels-incidents and stays below; \"Durbin above it\" is a ranking"
+    },
+    {
+      "line": 150,
+      "old": "- **OVERALL BAND SCALE SHIFTED UP (Paul-directed, do not revert)**, `fec/moneyball_core.py`: `OVERALL_OPPONENT_CUTOFF=-1.10`; `OVERALL_BANDS=((3.65,'Champion'),(3.05,'Ally'),(2.30,'Highly Persuadable'),(1.55,'Persuadable'),(1.05,'Lean Persuadable'),(0.55,'True Neutral'),(0.05,'Lean Skeptic'),(-0.70,'Skeptic'),(-1.10,'Highly Skeptical'))`. Bands evaluate top-down first-match; the ladder MUST be strictly descending or a rung goes unreachable. THE BUG (c11ca08): cutoff -1.20 sat ABOVE Skeptic -1.50, so Skeptic swallowed the Highly Skeptical range -> Opponent + Highly Skeptical empty -> 2 audit FAILs + Paul's \"what the fuck did you do.\" Fix = shift the WHOLE scale up (his words: \"just shift the whole scale up\"), keeping monotonic. Now populated: Opponent: Durbin / Gooden / Davis; Highly Skeptical: Marshall / Ivey / Hamadeh. Guard: `test_recorrection_contracts.test_overall_scale_shifted_and_ladder_monotonic` (cutoff == -1.10, cutoffs strictly descend + distinct, cutoff < Skeptic). Shifting up = harder to be Champion (only 5), easier to be skeptical; it is a DISPLAY-tier + say-do calibration, NOT a blended-rank mover (`ranks_python` top-10 unchanged: Crapo / Tim Scott / French Hill / Roger Williams / Young Kim / Andy Barr / Britt / Lummis / Velazquez / Cortez Masto).",
+      "mark": "not positional",
+      "why": "\"cutoff -1.20 sat ABOVE Skeptic -1.50\" is a numeric order"
+    },
+    {
+      "line": 152,
+      "old": "- **Legislative-Normalized one-row misalignment FOUND + REPAIRED:** every NRM value/MAX cell held RAW[r-1]/colmax (alphabetical predecessor). Repaired by `fec/repair_legislative_normalized.py` -> NRM[r] = RAW[r]/colmax; guard `tests/test_legislative_alignment.py` (script-style, exit-code, NOT unittest) now GREEN: 0/76752 misaligned. Excluded cols 144/146/148/150/151/152 (different or underivable rule). Reaches ranks only after Excel recalc (`fullCalcOnLoad`); confirmed landed 07-15. (This repair later shifted rows and exposed the Sub Layer off-by-one fixed 2026-07-17 @c6dc6b2, see `zero-rank-delta-verification`.)",
+      "mark": "external",
+      "why": "\"see `zero-rank-delta-verification`\" names the concept note; \"This repair later shifted rows\" is time"
+    },
+    {
+      "line": 157,
+      "old": "**Scored:** Quorum tweets and CU-relevant press (see Context). The CU-relevant press is full-text-filtered from a 249,769-row all-topic title index `all_press_release_index.csv` (2,388 kept: 1,569 own-.gov + 819 trade). Both feed `build_media_blend.py` -> workbook `Press Release - Raw` -> media pillar. The API stance layer (`api_stance_layer.py` -> `api_press_stance.csv` / `api_tweet_stance.csv`) was an ORPHAN (written, read by nothing): a second-opinion/review queue, NOT production.",
+      "mark": "rewrite",
+      "why": "\"(see Context)\" names ## Context, which the hub keeps while this line moves to -july-recorrection-channels-incidents (the resolver's proposal, signed off)",
+      "new": "**Scored:** Quorum tweets and CU-relevant press (see Context in [[2026-06-feature-cu-stance-and-sentiment]]). The CU-relevant press is full-text-filtered from a 249,769-row all-topic title index `all_press_release_index.csv` (2,388 kept: 1,569 own-.gov + 819 trade). Both feed `build_media_blend.py` -> workbook `Press Release - Raw` -> media pillar. The API stance layer (`api_stance_layer.py` -> `api_press_stance.csv` / `api_tweet_stance.csv`) was an ORPHAN (written, read by nothing): a second-opinion/review queue, NOT production.",
+      "referent": "2026-06-feature-cu-stance-and-sentiment"
+    },
+    {
+      "line": 168,
+      "old": "**Floor-speech channel plan (branch `claude/cfpb-sentiment-recorrection`):** API-FREE per Paul (**\"I am not paying for an API, if you need stance labels, let me label\"**; reinforces the no-API-for-stance rule: local DEBATE + `cu_valence_registry` compose + Paul's hand labels). `fec/extract_cu_speeches.py` -> `speeches_cu.csv` (bioguide via member_identity, categories via media_rules); `fec/build_speech_gold_queue.py` -> `speech_gold_queue.csv` (~300 stratified, CFPB-oversampled, free registry pre-labels for Paul to correct). Paul labels a ~250-350 training set -> train a free classical reader (like the tweet/press stacks) + relaxed-CFPB registry -> `speech_stance_final.csv` -> wire as a new channel in `build_media_blend`. Related memory: `corpus-coverage-2026-07-10` (that earlier census was about big5/personality corpora, NOT the CU-stance channel scope), `live-tree-branch-state-2026-07-14`.",
+      "mark": "not positional",
+      "why": "\"that earlier census\" is time (the 2026-07-10 corpus census)"
+    },
+    {
+      "line": 174,
+      "old": "- **ROUND-3 REVERT (Paul \"you overcorrected\", HEAD 1d7e332):** A1 snippet-centering REMOVED (was injecting a leading '...' giving \"weird symbols\"); snippet now PLAIN `text[:1200]` (bigger, was 400); A2 narrator-only drop REMOVED (keep rows where the narrator mentions CU); A3 keyword-past-cutoff drop REMOVED (keep past-limit rows). Final queues: hearing 253 blank, interview 170 (Paul had labeled 2 so far; F1 preserved them through the regen). A4/B1/C1/F3 kept. **LESSON: Paul is overcorrection-sensitive: apply the MINIMUM he asked, do not bundle extra \"improvements\".** See `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"See `ask-before-substantive-changes`\" names a memory file"
+    },
+    {
+      "line": 176,
+      "old": "- **SIX-DIMENSION AUDIT + CHANNEL TESTS (Paul-ordered, wf `w2ni62mqb`, fixes @35b8a09):** 22-agent audit (collisions / destinations / computing / redundancy / sequencing / synchronization) + live tests. TESTS ALL PASS: speech / interview / bluesky determinism byte-identical, gold preserved + bound 217/37/16, 0 orphans; heuristic-vs-gold (API-free prior only): speech .585, bluesky .625 (0 polarity inversions), interview .297 (below majority baseline: neutral-happy by design; production uses gold). CONFIRMED findings fixed (packages A/B/C, Paul delegated \"whichever optimal\"): **A gate-safety**: stacks exit 3 on gold-orphans (`CU_GOLD_ORPHAN_OK=1` overrides); blend gated blocks refuse stale `*_stance_final` vs corpus/queue mtimes (`_cu_stale`, `CU_STALE_OK=1` overrides); **B**: Z1 append read the Cell OBJECT not `.value` (would clobber provenance when the gate is ON); dead `tests/test_speech_channel.py` x-prefix fixed (was failing live); builder anchors mirror stacks (+credit card competition | durbin); F2 mask widened to bare 'financial protection'; dup-id asserts; bluesky docstring corrected (bluesky IS in the social corpus); **C**: hearing/interview blend rows weighted 1/n per (member, date) EVENT (passage-count neutrality). **DEFERRED: D** CREC near-dup collapse (5 pairs, labeled corpus, low value/risk). Known-accepted residuals: 9 interview fan-out gold rows (interview-level label on passage rows; Paul may eyeball), day-keyed carry pooled 2 same-day interview pairs (harmless, labels agreed), channel stacks NOT in the `run_pipeline` chain (the staleness guard covers the gate-flip risk instead). Gold state: speech 217/217 filled, bluesky 16/16 filled (BOTH by Paul), hearing 253 + interview 34 BLANK/ready. Hearing queue after rebalance: 263 rows (63% CFPB / 97 non-CFPB = complete inventory). Audit-driven fixes applied to all 4 channels: F1 label-preservation (builders merge existing gold by id on re-run, never blank), F2 agency-name mask (`\\bprotect` was self-firing on \"Consumer Financial PROTECTION Bureau\" -> inverted hint; masked), F3 interchange precision (drop non-financial 'interchange' = highway / -able), F4 utf-8-sig reads.",
+      "mark": "not positional",
+      "why": "\"below majority baseline\" is a comparison"
+    },
+    {
+      "line": 181,
+      "old": "1. **`fec/apply_press_overrides.py` is a SUPERSEDED, dangerous path; do not run it.** It re-flows `Press Release - Raw` from `Draft Systems/cu_press_stance_tone.csv`, which is FROZEN at 2026-06-30; the live press cells are written by the modern tiered path (`press_stance_stack.py` + `build_media_blend.py`, built on the cfpb branch 07-15, reading `press_stance_overrides.json` with url `rstrip('/')` + `title_contains`). The run flattened Durbin's Interchange cell -5.84 -> -0.007, so Durbin canaries FAILED ('Durbin is Interchange Opponent'); FULLY REVERSED via its own automatic backup (`Moneyball Main Version - Blended.PRE-PRESSOVERRIDE-20260716_201004.xlsx`, kept on disk). Press overrides = ledger-only (`press_stance_overrides.json`, git-tracked, committed @d09216a with Paul's 4 Scott url-keyed golds + 2 tweet-ledger golds); the pillar picks them up via the modern stack. The desk export button's README still points at `apply_press_overrides.py` (stale pointer, should be retired; flagged to Paul). (Later retired behind a hard guard in @a3174bc, `--merge-only` keeps the ledger merge, desk UI repointed.)",
+      "mark": "not positional",
+      "why": "\"(Later retired behind a hard guard ...)\" is time"
+    },
+    {
+      "line": 182,
+      "old": "2. **The legislative pillar had been running on a days-stale `pillar_inputs_snapshot.json`.** Blended Model leg columns (O = 0.7 x PERCENTRANK(D) + 0.3 x PERCENTRANK(G -> Primary Layer); NO press dependence, formula-traced) are formula-backed; openpyxl saves kill their caches so `compute_pillars` serves the snapshot. Typed leg inputs kept updating all week without any true Excel recalc. The COM CalculateFull (20:10) refreshed the caches; the snapshot re-captured at 20:12; **522/533 ranks moved on the rerun, leg-pillar-only (506 members), press/inf/dem byte-identical, audit 102 ALL MODULES CLEAN, Tim Scott No. 3 -> No. 4**. The PRE-tonight ranks were the stale ones; rank comparisons from earlier that week used the stale leg basis. Watch this class: `pillar_inputs_snapshot` staleness is invisible until a recalc. (Root cause later traced to the Sub Layer off-by-one, 2026-07-17; see `zero-rank-delta-verification`.) Note: the COM CalculateFull here predates / is superseded by the \"NO COM anywhere\" rule (resolution 5).",
+      "mark": "external",
+      "why": "\"see `zero-rank-delta-verification`\" names the concept note; \"from earlier that week\" and \"later traced\" are time"
+    },
+    {
+      "line": 192,
+      "old": "- Press classification stays the user's domain: `human_label` is the override column; never relabel. Related memory: `press-classification-user-domain`, `moneyball-model-config` (see `2026-07-rfc-melange-architecture-system-of-record`).",
+      "mark": "external",
+      "why": "\"see `2026-07-rfc-melange-architecture-system-of-record`\" names another note"
+    },
+    {
+      "line": 205,
+      "old": "**WIRED INTO PRODUCTION (@0ad4848 + audit fix @e5451dd, user-ratified):** `build_media_blend` per-tweet stance = stack labels (join member + norm-text 100%; tier-weighted intensity unanimous 1.0 / majority 0.7 / review 0.35; unrelated -> sign 0). 60% of tweet labels changed -> **RANK MOVEMENT 494/533 (intended)**: Warren No. 104 -> No. 421 and Chip Roy -314 (the ANTIBANK ARTIFACT unwound: their populist tweets no longer read pro-CU), Grassley +301 (neutrals recovered to support); top-10 stable (Crapo No. 1). Audit 52/52 after teaching the GOLD conflict check the 'user-resolved:' format. NEXT (user directive): same scrutiny for PRESS (5 readers available: registry x stance-hop, retrained composed, Opus flat, Fable flat, DEBATE; stack them, eval test-87 + goldeval-217, wire via override intake), then BIG 5 (LLM direct-rating ensemble, RKH late-era targets).",
+      "mark": "not positional",
+      "why": "\"NEXT (user directive)\" is time"
+    },
+    {
+      "line": 207,
+      "old": "**80 BROKEN (@f8cc8ee): `tweet_stance_stack.py` = 0.850-0.855 acc / 0.816-0.819 F1 honest OOF**: meta-LogReg (C=1, UNTUNED) over [registry-compose, classical probas, API flat + STANCE-HOP + valence + conf (from the FABLE CACHE full fields; the trimmed csv lacks them, which caused a distribution-flip bug once), hit, is_rt]. The stance-hop feature was the unlock. Corpus scored: 9,559 labeled, review tier only 745 (7.8%). Ladder: .481 -> .616 -> .737 -> .782 -> **.855**. PRE-REGISTERED: confirm on the next fresh adjudication batch; design iterated against these 400 golds (mild optimism risk). The gold sample is oppose-stratified (not the corpus distribution; prior shift noted). Initially NOT wired into the blend (needed user ratification + the verification protocol).",
+      "mark": "not positional",
+      "why": "\"on the next fresh adjudication batch\" is time"
+    },
+    {
+      "line": 232,
+      "old": "All 79 rows ruled: 56 gold changes applied (backup `cu_golden_labels.PRE-READJ-20260704_144706.csv`; 'user-resolved: X (was Y; body-informed readjudication 2026-07-04)' conflict format), 23 confirmations. New gold mix 377 sup / 240 neu / 133 opp / 10 unrel. Fresh PROD-760 on updated golds: 0.834 / 0.667 (stable; unanimous tier .963). Stack retrained + corpus rescored: unrelated collapsed 146 -> 30; HE RE-RATIFIED trade-coverage-as-evidence (45/79 verdicts = support) even seeing bodies; the mention-noise kill weakened BY HIS OWN RULING. He rules label policy; the `PRESS_THIRD_W=0.5` channel dial stays the aggregation-side control. Blend + pipeline queued behind his open Excel (waiter v2 runs blend THEN chain; fixed the earlier waiter's missing-blend gap).",
+      "mark": "not positional",
+      "why": "\"the earlier waiter's missing-blend gap\" is time"
+    },
+    {
+      "line": 244,
+      "old": "- **STATUS 2026-06-30 (DONE): `CFPB Accountability Act` added** to `cu_press_release_scraper.R`: `b(\"CFPB Accountability Act\", \"Consumer Financial Protection Bureau Accountability Act|CFPB Accountability Act\", \"S4521\", 1)` + `BILL_CATEGORY=\"CFPB\"` (lines ~1690 / 1874; backup `cu_press_release_scraper.PRE-CFPBACCT-20260630_135852.R`; parse OK). Verified: full-cache collision scan = 5 releases (Cramer, Hagerty x2, Kennedy, ACU news), ALL stance +1; bill No. S.4521 (118th) confirmed on congress.gov. **Keith Self NOT addable** (his defund release names no bill/number; a generic \"eliminate CFPB\" phrase would churn since CFPB-defenders use the same words) so Self rides the DEBATE retrain. Takes effect on the next re-score. TODO then: re-score (offline/cached scraper -> stage5), regenerate `CU_Press_Stance_Tone.xlsx` tabs via `make_standalone.py`, then build the member-prior override layer for the 5-6 \"ANTI-BANK (pro-CU)\" flips.",
+      "mark": "not positional",
+      "why": "\"on the next re-score\" is time"
+    },
+    {
+      "line": 256,
+      "old": "- **Findings (ALL user-approved and FIXED 2026-07-01 eve):** **D1** bills archive copied into the Melange root (`congress_bills_archive_20260624_115822.xlsx`), builder glob works again. **D2** 41 reverse-dup edge pairs had DIFFERENT directed weights (up to 3x); mean-symmetrize patch applied to ALL NINE loaders (7 live + assemble_viz + method_audit); pipeline regenerated; optimize base moved 119.95 -> 119.80; audit 32/32 clean. **D3** `bill_directions.csv` created (all-category per-bill direction registry seeded with the 60 CFPB entries; Direction 1/-1/0); `build_archive_legislative.py` consults it FIRST, then section defaults. **Bonus bug fixed: '0'-direction bills were mis-signed -1** (6 CFPB bills; Lummis/Tim Scott CFPB +7.8 -> +9.7, Omar/Craig phantom-negatives removed). Registry is bill-level (31 cells changed). `archive_leg.json` rebuilt (backup `archive_leg.PRE-D3.json`); NOT consumed live (effects at next stance-matrix/leg-raw rebuild). **CAVEAT: billkey ignores Congress number (pre-existing); add a Congress column when data collection re-pulls.** **D4 (limitation):** isolated-41 = LEADERSHIP (Hoyer, Clyburn, Scalise, Jordan, Jason Smith) + freshmen; leadership does not cosponsor by norm, so invisible to the network channel; future: 2nd graph layer from Committee Data co-membership. **D5 (latent):** `seccat` first-match substring could misroute hybrid section names; `matchmember` ambiguous fallback returns c[0] arbitrarily (0 hits today); tighten to None.",
+      "mark": "not positional",
+      "why": "\"at next stance-matrix/leg-raw rebuild\" is time"
+    },
+    {
+      "line": 257,
+      "old": "- **Sentiment redesign (\"stance stack\") references verified:** PSRM 2024.35 = Burnham \"Stance detection: a practical guide\" (NLI/entailment, hypothesis templates, PoliBERTweet domain models, sentiment != stance, synonymous-hypothesis validation, avoid proprietary-LLM-as-primary); arXiv 2410.07083 = Stanceformer (target-aware attention matrix, needs target spans + labels, github.com/kgarg8/Stanceformer); ICCK RoBERTa-vs-classical article was 403-blocked (identity later found: Khan et al., IECE TACS 2025, Roman Urdu tweets, Agree/Disagree/UNRELATED, classical ML <= 94% vs fine-tuned RoBERTa 97% on balanced clean labels; takeaways adopted: 'unrelated' as first-class label, macro-F1 headline, fine-tune only after labels are clean).",
+      "mark": "not positional",
+      "why": "\"identity later found\" is time"
+    },
+    {
+      "line": 275,
+      "old": "Split the single \"CFPB Issues & Structural Reform\" legislative topic into two directional topics in the Moneyball model, driven by Paul's tagged `CFPB Bills` tab: Direction +1 Reduce (49 bills) / 0 Neutral (6) / -1 Expand (5). Structure (uniform with the other 17 topics): **CFPB Restrain** = +1 bills, reused the in-place block cols 99-106 (CU:DB), renamed, legislative weight **+0.5**; extended its R&A!D formula range from 4-col `CU:CX` to 5-col `CU:CY` to include the regular Co-Sponsor column (was unlabeled/omitted; Paul confirmed the fix). **CFPB Reach (-)** = -1 bills, NEW appended block cols 145-152 (EO:EV), outside the Excel Tables; legislative weight **-1.0** (Paul chose the heavier penalty on expansion). Neutral excluded. Avg + Success-Rate columns deliberately 0 (weight-0 by design; see `feedback_spreadsheet_consult_on_errors`); only Sponsor (0.286) / OrigCosp (0.143) / Cosp (0.0714) weighted. Aggregation = sum of DecayWeight per member/role from the Sponsor + Original Co-Sponsor + Co-Sponsor Interactions sheets, joined to CFPB Bills by bill No. (Title col), filtered by direction; 100% join; verified 3,198 cells, 0 mismatches. **Result:** Reach members penalized (Al Green No. 119, McGarvey No. 142, Whitehouse No. 509); Restrain champions strong (R. Williams No. 4, Hill No. 7, Barr No. 16); Warren No. 14 (Reach penalty on legislative but committee influence keeps her high: influence-not-alignment, see `influence-vs-alignment-axes`). **COM GOTCHA (environment as of 2026-06-25):** this PowerShell-Excel COM environment threw InvalidCastException (\"cast Double/Object[,] to String\") on scalar AND 2D-array NUMERIC `.Value2` writes; workaround = write numbers as invariant-culture numeric STRINGS via `.Formula`; also `Remove-Item $var` in a script was blocked by a path guard. (Superseded practice: writes no longer go through COM, resolution 5; kept because it explains the June workbook edits.) **Open (then):** the `Legislative Score - Raw` matrix is regenerated by `congress_member_scraper.R` (`project_moneyball_integrated_scraper`); the split was workbook-only, so the R script needed the same Restrain/Reach split or a re-run would overwrite it.",
+      "mark": "external",
+      "why": "both \"see\" phrases name a memory file (`feedback_spreadsheet_consult_on_errors`) and the concept `influence-vs-alignment-axes`"
+    },
+    {
+      "line": 290,
+      "old": "- **The CU CSVs are row-aligned 1:1** with their stance CSVs (bioguide + member + date + categories agree on every row), so each passage pairs with ITS OWN grade. An earlier date-aggregating version synthesized `mixed`/`multi` labels that **do not exist in Paul's vocabulary**; caught in adversarial review, removed. **Never aggregate stance across a date.**",
+      "mark": "not positional",
+      "why": "\"An earlier date-aggregating version\" is time"
+    },
+    {
+      "line": 295,
+      "old": "1. **`make_member_desk.py` can FAIL and still leave outputs behind.** It wrote `dashboard_exclusion_reconciliation.json` then raised, so the bundle/HTML stayed STALE from an earlier run; the stale artifact was read and numbers \"verified\" that were three builds old. **Always check the exit code; never trust an output file's contents without checking its mtime.**",
+      "mark": "not positional",
+      "why": "\"STALE from an earlier run\" is time"
+    },
+    {
+      "line": 298,
+      "old": "4. **Regenerating live from WORKTREE code trips `dashboard_integrity`, correctly.** The fingerprint hashes `fec/make_member_desk.py` as it exists in the live tree, so running worktree code against live data = \"declared inputs unchanged, output changed\" -> `IntegrityError: same dashboard inputs produced a different semantic bundle`; it also leaves a landmine (the state file maps live's OLD code to the new bundle, so the next chain run from live's own code fails too). **The code must be IN the live tree before regenerating it.** Merge first, then regenerate: the fingerprint changes honestly and the guard self-heals.",
+      "mark": "not positional",
+      "why": "\"the next chain run\" is time"
+    },
+    {
+      "line": 303,
+      "old": "3 commits, **MERGED to main @ca1585a**, live tree fast-forwarded to match (it was on `claude/cfpb-sentiment-recorrection` @50da219 == main, no divergence). Live desk + `Moneyball.html` regenerated; merge debt zero. Caught in self-review after the first live regeneration: the index kept the LONGEST passage per package, which put *\"This hearing is adjourned. [Whereupon...] [Prepared statements...]\"* on Crapo's desk; cu_passages emits ~500-char windows and merges overlaps, so for a **chair** the longest passage is the transcript appendix absorbed into their final turn, and since the template clips to 400 chars, longest-wins showed the opening of the least representative passage. Now keeps the FIRST passage (earliest CU mention); keyword-count and boilerplate-exclusion were both tried and measured worse. **That appendix finding is now CLOSED, measured, immaterial** (@33b07a9). It was flagged as \"worth a look\"; measuring it says otherwise, and that was an over-escalation: 27 of 775 graded hearing passages (3.5%) are appendix/QFR rather than speech, but only **5 of the 263 GOLD rows**, and gold is the only tier `build_media_blend.py` feeds into the pillar (`CU_HEARING_CHANNEL` is gold-only). 4 of the 5 change no outcome; the 5th (Houchin) is a tie-break on a 1/1/1 split. The gold labels are Paul's own adjudications (law 1, not relabelled). Root cause (cu_passages merging overlapping windows so a chair's last turn absorbs the appendix) is NOT fixed: that would change extraction -> grading -> pillar -> ranks, i.e. a user-gated scoring change; instead bounded with an `audit_full` tripwire (fails above 10 contaminated gold rows) so it cannot grow silently. Audit -> **134**. Final verification (against live, post-merge): kernel 75/75, FULL-BODY AUDIT 133/133 ALL MODULES CLEAN, all 6 integrity reconciliations pass, coverage audit 7/0/5, **ranks md5 UNCHANGED** (`80fa70d5…`; chain never run, display-only), zero JS errors in the combined dashboard.",
+      "mark": "not positional",
+      "why": "\"fails above 10 contaminated gold rows\" is a threshold"
+    },
+    {
+      "line": 307,
+      "old": "- **Bill coverage CLEAN, nothing orphaned:** new `fec/bill_coverage_audit.py` (read-only, import-safe, `__main__`-guarded, ast-parses `moneyball_core` rather than importing it): **7 pass / 0 FAIL / 5 WARN**. 11,283 source rows -> 11,283 ledger rows; `unknown-section = 0`; all 18 slots present; no `bill_key` collisions; 19 blocks -> 18 slots; dedup never kept a weaker role. WARNs all explained: 2 non-voting delegates (Plaskett / Moylan); 17 members with zero bill evidence (16 genuinely absent, **James Clyburn's 4 rows are all user-excluded bills**, correct zero); 1 \"dead\" config row (H.R.1181, a deliberate manual rescue). **The \"data and privacy\" answer:** the over-exclusion hypothesis was WRONG: all 580 exclusion rows (19 distinct bills) matched on TITLE, zero summary-only; the real finding is concentration: **14 of 19 excluded bills would have been Data Privacy & Cyber** (upstream Quorum uses that section as a catch-all for consumer-privacy bills). 68% of the Data Privacy slot's 377 scored events are one bill family (Homebuyers Privacy Protection Act x 4 congresses = trigger-leads). **Bills are multi-slot by design:** 103 of 446 scored bills sit in > 1 category (max 5); the dedup key includes category, so a member gets credit in each. 5 bills carry truncated titles from the archive export (`H.R.4052`=\"2023\"; S.919 / S.2290 / S.1494=\"21\"). Added 4 standing checks to `audit_full.py` (orphan slot, 18-category set, unmatched-member set, bill_key collision): audit 129 -> **133 passed, 0 FAILED**.",
+      "mark": "not positional",
+      "why": "\"upstream Quorum uses that section as a catch-all\" is Quorum's Data Privacy section, not a section of the note"
+    },
+    {
+      "line": 310,
+      "old": "- **CHAMPION MONEY-IMMUNITY restored (@1856feb, Paul: \"Yeah fix it\" after \"go to an area you haven't given attention to\"):** a logic check of the money/scenario engines found a REAL defect merged that same day: the gallant-gates merge swapped `money_response.OV` from col G to `MC.overall_tier(...)`, whose own docstring says **\"Champion is deliberately absent; see overall_display_tier\"**. Col G is written by `sync_stance_g.py:20-21` WITH the Tier-1 crown, so the replacement was not equivalent: all 12 Champions read as Ally / Highly Persuadable, and since `COMMITTED={'Champion','Opponent'}` exists so terminal rungs cannot be bought away, **all 12 silently lost money-defection immunity** ($500k competitor shock defected Fitzpatrick). **Why nothing caught it: the existing immunity check INJECTS `OV[probe]='Opponent'`**, so it passes regardless of whether real members reach that rung, and there was no Champion equivalent. *A guard that tests the mechanism with synthetic input proves nothing about whether real data reaches it.* Fix: `money_response` now uses `sync_stance_g`'s exact recipe (`legislative_press_tiers(list(MAT))` + `overall_display_tier`), so engine and col G cannot diverge; missing-member default 'Neutral' -> none (a missing stance is not a neutral one; '-' no-position ontology; latent, 0/533 missing); + 2 audit checks (a REAL Champion-immunity check that FAILS on an empty Champion list, and an `OV[m] == overall_display_tier(...)` equivalence assertion). Audit -> **140**. **I OVERSTATED the impact and must not repeat the claim:** it was said the optimizer showed phantom conversion value; measured after the fix, `optimize_result.json` is **BYTE-IDENTICAL**, because the optimizer allocates at most **$10k** to any Champion (Britt; lean +0.52) against `DTHRESH=11.25`, never within ~20x of crossing. The $500k was the probe amount, not an allocation the model makes. Live pipeline impact ZERO; ranks 0/533. The real exposure is **`scenario.py`**, where a modeled large shock would have wrongly defected a Champion. So: a correctness/robustness fix, not a numbers fix. **Demonstrating reachability with a probe value is not evidence of live impact; check the actual operating regime before claiming distortion.**",
+      "mark": "external",
+      "why": "\"see overall_display_tier\" is quoted from a code docstring and names a function"
+    },
+    {
+      "line": 318,
+      "old": "Paul, 2026-08-03: \"You should be following the same format as In Song Kim when classifying, remember you were far too conservative whereas he was inferential.\" He was right, and the mechanism was measurable.",
+      "mark": "not positional",
+      "why": "\"You should be following the same format\" is a quoted verb"
+    },
+    {
+      "line": 337,
+      "old": "`fec/lobby_position_benchmark.py`: **876 (org, bill) pairs** where Kim's dataset overlaps our work items; 4,697 activity items; natural base rates, no stratification; five-class scored on the 335 llm pairs only. Five-class accuracy: **shipped 0.409 -> kim_llm4 0.821** (kim_zeroshot 0.835 on majority rule). Support count on llm pairs: **Kim 42, kim_llm4 42 (exact)**, shipped 17, kim_zeroshot 25. Amend: **nobody recovers it**: kim_llm4 finds 0 of Kim's 23; only `kim_llm4_fewshot` finds any (recall 0.217) and it costs Support (42 -> 32). **THE ACCURACY TRAP: do not select on 3-class accuracy.** Predicting Engage for all 876 pairs scores **0.8950**; the shipped prompt's 0.8961 is **+0.001 over guessing**; kim_llm4 scores 0.8071 (below baseline) while finding 59% of Kim's Supports vs shipped 35%.",
+      "mark": "not positional",
+      "why": "\"(below baseline)\" is a comparison"
+    },
+    {
+      "line": 355,
+      "old": "- **Credits ran out TWICE.** Failed calls score as misses, so a dead run reports low recall and respectable accuracy (it looks like a bad prompt). Both harnesses now abort above a 90% / 5% failure rate rather than report it as a result.",
+      "mark": "not positional",
+      "why": "\"abort above a 90% / 5% failure rate\" is a threshold"
+    }
+  ]
+}

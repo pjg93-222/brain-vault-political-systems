@@ -15,8 +15,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/supplied-data-closes-the-item-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\supplied-data-closes-the-item-2026-09-25.md", sha256: "ce421cc564c598e8ab8b7b333188d566ec24c622d6a3045e46be1fd0f5cf5763"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/powershell-visible-work.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\powershell-visible-work.md", sha256: "b58c86a319024dea28f54e3d5471d13cdbfe62c770215dcd33bcc1a83077c171"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/feedback_never_appease.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\feedback_never_appease.md", sha256: "045176f44d57a5827a3bee4c727d9f1438a801b33e4c87b77e1f5c6fc3adab3e"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreement"]
 ---
 
@@ -26,7 +26,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 
 ## Context
 
-- Rule owner: [[paul-goff]]. Sibling working agreements: [[2026-06-working-agreement-change-control-and-decision-authority]] (ask-first and decision authority; the supplied-data rule also belongs there) and [[2026-06-working-agreement-tooling-and-environment-traps]] (shell/harness traps; the visible-PowerShell rule and the Glass Box rig details live there too). The regression-presentation and trend rules were written for the sector-growth lane: [[2026-09-feature-sector-growth-study]].
+- Rule owner: [[paul-goff]]. Sibling working agreements: Change control and Paul's decision authority (ask-first and decision authority; the supplied-data rule also belongs there) and Tooling and environment traps (shell/harness traps; the visible-PowerShell rule and the Glass Box rig details live there too). The regression-presentation and trend rules were written for the sector-growth lane: Sector growth x political spending study.
 - Memory-note sources (not vault entities): `feedback_never_appease` (2026-06-27), `powershell-visible-work` (2026-07-24), `r-summary-regression-presentation-2026-09-25`, `supplied-data-closes-the-item-2026-09-25`, `trend-over-significance-2026-09-26`. Related notes: `project_moneyball_empirical_calibration`, `sector-growth-study-lane-2026-09-25`, `ask-before-substantive-changes`, `dont-drop-context-anchor-memory`, `codex-executor-lane-2026-07-18`.
 
 ## People Involved
@@ -35,11 +35,15 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 |---|---|
 | [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
+## Related Concepts
+
+- [[trend-over-significance]] — this agreement's rule of 2026-09-26: lead with sign, size and consistency; the p-value and CI follow in one line
+
 ## Related Topics
 
-- [[2026-06-working-agreement-change-control-and-decision-authority]] - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
-- [[2026-06-working-agreement-tooling-and-environment-traps]] - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
-- [[2026-09-feature-sector-growth-study]] - Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting
+- Change control and Paul's decision authority - Who decides: ask before unrequested or substantive changes; Paul owns weights, labels, exam scope, roster and Mentat money code.
+- Tooling and environment traps - Feedback rules for tool/shell traps: heredoc mangling, MEMORY.md loading contract, visible PowerShell, congress.gov URL kept verbatim.
+- Sector growth x political spending study - Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting
 
 ## History
 
@@ -95,7 +99,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
   - This overrides the harness default of preferring Write/Edit/Read tools. Related: `codex-executor-lane-2026-07-18`, `ask-before-substantive-changes`.
 - Update 2026-07-24 (later same day): the `/ps` command SHIPPED: repo copy committed @7e548f5 on `claude/powershell-smoke-screen-0436a3` (merge to main awaited Paul), user-scope copy live at `~/.claude/commands/ps.md`, md5-verified identical (E9C67889). Paul chose KEEP ALWAYS-ON: the rule applies to every prompt regardless; `/ps` is an explicit, portable reinforcer (works in other projects too), NOT the gate. Sandbox permission prompts on shell writes are expected under this mode: they are the confirmation step, not a failure; a denied prompt means stop and ask.
 - MERGED 2026-07-24: main ff'd 46b17b9 to 7e548f5, live tree branch (`claude/cfpb-sentiment-recorrection`) ff'd to the same; main == live == 7e548f5 verified. User-scope copy re-synced from the live CRLF checkout; canonical md5 is now FF653C7E (the earlier E9C67889 was the pre-checkout LF bytes; do not treat that delta as drift). NO open items on `/ps`.
-- Glass Box desktop rig (2026-07-24, same note): Paul wants glass-box commands running in a REAL desktop terminal window, not only the transcript. The rig (`C:\Users\pgoff\.claude\glassbox\`, `console.ps1` + `dispatch.ps1 -Lane claude|codex|grok|gemini`, four lane windows Claude=Cyan / Codex=Green / Gemini=Yellow / Grok=Red, mirror layer via a PostToolUse hook, hooks installed and proven 2026-07-24 23:42) is documented in full in [[2026-06-working-agreement-tooling-and-environment-traps]] (section "Glass Box rig and PowerShell-environment traps"). Full-visibility architecture: transcript = visible PowerShell commands (always-on rule); desktop = 4 lane windows fed by `dispatch.ps1` live execution and harness-enforced PostToolUse mirrors. Honest lane semantics: Codex executes out-of-band via MCP, so never claim Codex internal edits stream live. VERIFY-BEFORE-CLAIMING lesson: never accept "looks like a json"; re-read the artifact. Correction recorded: the allow rules were NEVER on disk at one point (`settings.json` mtime 7/7 + 38 bytes); dispatch calls succeeded on classifier goodwill, not on any rule.
+- Glass Box desktop rig (2026-07-24, same note): Paul wants glass-box commands running in a REAL desktop terminal window, not only the transcript. The rig (`C:\Users\pgoff\.claude\glassbox\`, `console.ps1` + `dispatch.ps1 -Lane claude|codex|grok|gemini`, four lane windows Claude=Cyan / Codex=Green / Gemini=Yellow / Grok=Red, mirror layer via a PostToolUse hook, hooks installed and proven 2026-07-24 23:42) is documented in full in Tooling and environment traps (section "Glass Box rig and PowerShell-environment traps"). Full-visibility architecture: transcript = visible PowerShell commands (always-on rule); desktop = 4 lane windows fed by `dispatch.ps1` live execution and harness-enforced PostToolUse mirrors. Honest lane semantics: Codex executes out-of-band via MCP, so never claim Codex internal edits stream live. VERIFY-BEFORE-CLAIMING lesson: never accept "looks like a json"; re-read the artifact. Correction recorded: the allow rules were NEVER on disk at one point (`settings.json` mtime 7/7 + 38 bytes); dispatch calls succeeded on classifier goodwill, not on any rule.
 - Interaction with tooling rule (see the tooling topic): the visible-PowerShell rule is about showing data extraction and content in the transcript, not about routing risky whole-file rewrites through shell quoting (the 2026-07-26 MEMORY.md incident); PS5.1 `Set-Content -Encoding utf8` writes a BOM.
 
 ### Rule: When Paul supplies data or an answer, close the item on EVERY surface at once (Paul, 2026-09-25)

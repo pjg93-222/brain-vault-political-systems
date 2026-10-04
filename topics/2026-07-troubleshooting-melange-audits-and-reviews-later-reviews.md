@@ -1,0 +1,98 @@
+---
+type: topic
+title: "Hallucination framework, five-lane code review and laundry-list close-out (Melange audits and code reviews)"
+aliases: ["Melange audits and code reviews: Hallucination framework, five-lane code review and laundry-list close-out"]
+category: "troubleshooting"
+status: "in-progress"
+people: []
+actors: []
+objective: ""
+created_at: 2026-07-01
+sources: []
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
+part_of: "[[2026-07-troubleshooting-melange-audits-and-reviews]]"
+---
+
+# Hallucination framework, five-lane code review and laundry-list close-out (Melange audits and code reviews)
+
+> Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19. Part of [[2026-07-troubleshooting-melange-audits-and-reviews]] (project [[melange-systems]]).
+
+## Findings-examination (hallucination) framework lane, 2026-08-13/14 (`hallucination-framework-lane-2026-08-13`)
+
+Findings-examination framework ADOPTED (D-007) + causal-claims lint + BARR correction arc COMPLETE and on main; load-bearing couplings: the lint is banner-gated and deliberately narrow, the responsiveness artifact is digest-pinned to the 27-row ask registry. Lane (2026-08-13/14, all merged to main, mirror-pushed at every gate: 8cdd18003, then b52a2a582, then 6e27bcb2c). Paul ordered a hallucination/error-identification framework for the forecast-findings analyses, then ruled ADOPT, then had every follow-on built. What exists now:
+
+1. **`audits/HALLUCINATION_DETECTION_FRAMEWORK_2026-08-13.md` - ADOPTED, in force** (brain D-007). Six-pass examination (numbers / words-both-directions / independence-by-layer / strata / capability / time), seven error classes, GROUNDING RULE (every class anchored to a verbatim repo instance + pointer), honest teeth inventory (section 7 says plainly which teeth are mechanical vs procedural). Its worked corpus = the CORRECTION OF RECORD blocks in `BARR_CU_COURTSHIP_BATTERY` and `CROSS_INDUSTRY_BACKFIRE_ANALYSIS` (five blocks in BARR now, append-only, never retro-edited).
+2. **Causal-claims lint** `fec/tests/docs/test_findings_causal_claims.py`, registered in `run_tests.py` (kernel = 153 suites, verified 153/0 in the live tree twice). Banner-gated: scans only `audits/*.md` whose first 60 lines carry EXPLORATORY / "no causal claims" / "nothing here is causal" (currently BARR, CROSS, D9). Joined-block matching, structural exemptions, 22-fixture answer key where every exemption test bears a live trigger. **DELIBERATELY NARROW - causal verbs only.** The feasibility census measured ~88% naive false positives across the five wording families; ABSOLUTES is unautomatable (licensed and defective uses share one surface form - "All 12 archived models reproduce" vs "NO BACKFIRE SIGNAL ON ANY TEST"). Never extend the lint to other families without new evidence; that was Paul's explicit narrow-scope selection.
+3. **Brain follow-through** (melange-systems-brain): D-007 adopt decision (reversal condition: a defect reaches Paul in a doc that RECORDS a completed six-pass exam), DE-004 headline-only-correction dead end, CONSTRAINTS "Claims" group (basis-clause rule; pooled-with-split rule), `skills/examine-a-findings-document.md` (the six passes as a cold-runnable procedure).
+4. **Correction procedure now standard** (used 3x this lane): numeric-token multiset proof over the whole file vs the committed baseline - NO NUMBER CHANGED proven, or when Paul authorizes number changes, a CONTROLLED delta asserted to equal exactly the authorized token set; propagation sweep over JOINED text for every restatement (DE-004); examined-and-left-alone recorded so the sweep is auditable; escalations for anything number-changing.
+5. **BARR endgame:** both escalations fixed by ruling (three-Ally to two at both sites after C2 re-derivation; 0/15 withdrawn), then the presentation limit LIFTED (fifth block): the honest engine-derived rate is now published - **Barr 0/7 post-117, 2/13 across 117-119**.
+
+**Load-bearing couplings discovered:**
+
+- `data/engine/responsiveness_layers.json` is **sha256-pinned to `data/lobbying/industry_ask_registry.ndjson`** (27 rows: 7 letters + 20 bills) via `receipts.registry_sha256`. ANY registry byte-change breaks the pin and forces a producer rerun = deployment cycle. Do not touch the registry for inert fields (the CUTAX `scope.committee` no-op is recorded in BARR's fifth block).
+- `fec/engine/responsiveness_layers.py` `compute_take_up`: unscored status OR any committee scope key means excluded from the denominator; eligibility = Voteview congress-time service + chamber match + party match; blank chamber = bicameral; **in-group-normal vehicles stay in the denominator BY DESIGN** (peer-comparison normalization) - E2's prose exclusions were a single-member absolute reading; do not "fix".
+- The registry's frozen spec vintage in `audits/responsiveness_build_2026-08-11/` is never edited.
+
+Links: `universal-lane-laws-2026-08-09`, `examination-lane-lessons-2026-08-14`, `verify-dont-infer-completion-2026-08-04` (also see Verification and evidence standards, which carries the framework as a working-agreement rule).
+
+## Five-lane code review 2026-09-13 (`code-review-five-lanes-2026-09-13`)
+
+Lanes: behavioral, long-form audio, webscraping, demographics, staff list. Packet at `audits/code_review_20260913/` in worktree `melange-systems-code-review-859518` (also scratchpad `packet/`): `REVIEW_REPORT_2026-09-13.md`, `FINDINGS_INDEX.md` / `.json`, `reports/`, `census/`, `combine/`, `patches/` (106 v1), `patches_v2/` (revisions + live-rebased variants). 141 finding rows, 112 confirmed.
+
+**UPDATE 2026-09-19 (verified by hunk match, see `melange-live-tree-reconcile-2026-09-19`): the "UNAPPLIED" / "NOTHING APPLIED (ask-first)" statements in the original note are STALE.** The review session applied 90/90 patches to the LIVE tree on 2026-09-14T05:58Z (71 files rewritten in one minute; byte-exact pre-images of 94 files in gitignored `backups\code_review_20260913\`, taken 02:42Z). Present in LIVE, uncommitted at that time: class A 30 full / 2 partial / 20 absent; class B (Paul-gated) 22 full / 5 partial; class E (needs revision) 2 full / 2 partial; class C 0 of 3. The packet is no longer in any worktree - read it from commit `77959ae74` (retired branch `claude/melange-systems-code-review-859518`). Paul's authorising words for the apply were not found (ruling R1 of the reconcile). Original statements (kept): review of the COMMITTED tree at HEAD 2f11d9490 (read-only worktree), 2026-09-13; nine Opus review lanes, nine adversarial verifiers, five live-tree rechecks, three mechanical censuses; all patches UNAPPLIED; worktree clean throughout.
+
+**Results:** 141 finding rows; verifier classes A 52 (safe as a set) / B 35 (Paul-gated) / C 5 (withdrawn) / D 37 (report-only) / E 12 (patch needed revision, v2 produced). 17 refuted or partly refuted by verifiers (list in `FINDINGS_INDEX.md`), which is why the adversarial pass is mandatory.
+
+**Systemic findings (S-1..S-5 in the report):**
+
+- **S-1** Committed tree is not self-contained: `run_tests.py:386` registers `test_email_package_variant` (untracked, so the committed runner crashes at import); `audit_full.py:107`, `dashboard_integrity.py:9` and via it `make_member_desk.py:28` import live-only `fec/engine/pillar_policy.py`; `weekly_refresh.py:353` needs live-only `wikipedia_biographies.py`; `staffer_live/index.html` gitignored. 53 cited files differ in content between HEAD and live; 8 findings fixed only in live. See `committed-vs-live-drift-2026-09-13` (covered on [[melange-fec-pipeline]]).
+- **S-2** Kernel gate reaches 105 of 265 tracked suites; 92 unreachable in both trees (all 3 demographics, all 11 speech, 9 collect, 8 staffer_network, 15 surfaces, more). Red registered suites: `test_combined_staffer_section` (3 stale assertions after link relocation 57f993316), `test_staffer_surface_import_modes` (stray `%TEMP%\inspect.py` shadows stdlib), `test_descriptive_contract_and_surfaces` (2 stale).
+- **S-3** Confirmed IN-CHAIN period-2 oscillation of primacy factors: `verify_collector_roster_updates.py` regenerates the sidecar whole against a bundle that already absorbed it; `primacy_factors.py:449/:357` scores from that bundle. DE-016's "standalone guard" is the wrong shape. Fix = cumulative membership source for the desk (Paul's architecture call).
+- **S-4** Brain-rule deviations: D-019 count missing in `employment_promotion` (STAFFA-4); POSSIBLE_ONLY snapshot filter exists only in live (STAFFB-1); chamber-wide cliques (STAFFA-8); WJ dedupe keeps v1 vs CONSTRAINTS "keep longer" (AUDIOA-10); truncated-surname EXACT keys vs D-025 (STAFFC-6).
+- **S-5** Pillar weights: law 14 says 30/25/40/5; `ranks_python.json` 45/10/40/5 since 09-03; live-only `pillar_policy.py` encodes 45/10/40/5 and is a fail-closed desk gate (see the three-set table in [[2026-07-troubleshooting-melange-audits-and-reviews]]: 45/10/40/5 is LIVE BUT UNRATIFIED).
+
+**How to apply:** do not re-review these lanes; start from the packet. Sequence proposed to Paul: (1) rule on S-5 and a commit pass of the live tree; (2) delete `%TEMP%\inspect.py`, fix the 3 stale assertions; (3) apply class A to the LIVE tree using `.live.patch` variants where HEAD patches fail (`run_tests.py`, SCRAPEB-10b), then kernel + `audit_full` in live; (4) rule on class B; (5) design items (SCRAPEB-1 first). Related: `ask-before-substantive-changes`, `scout-census-traps-2026-09-13`.
+
+## Laundry-list close-out 2026-09-18/19 (`laundry-list-closeout-2026-09-18`)
+
+Close-out of `HANDOFF_LAUNDRY_LIST_2026-07-16.md`: six fixes landed, interview turn-bleed repair v2 applied + landed, membership refreshed (rank-moving), the next fail-closed chain date, what still awaits Paul, and the method lessons. The 2026-07-16 handoff says "NOTHING has been applied". That is false at HEAD: the lane landed the same night as `391a4a8b5` (merged `e58a807da`, see `chatgpt-lane-landed-2026-07-16`), documented in `AUDIT_COMPLETION_REPORT_2026-07-16.md`, and its item 1 (bands/crown) was later superseded by brain D-031. On 2026-09-18/19 the session reconciled every handoff claim, finished the investigations that never finished, then built, landed and applied what Paul approved.
+
+**Packet (on main):** `audits/laundry_list_closeout_20260918/` - `LEDGER.md`, `FINDINGS.md`, `DECISIONS_FOR_PAUL.md` (the ruling sheet; newest section last), `FIXES_AND_LANDING.md`, `BRAIN_DRAFTS.md`, `landing/LANDED.md`, receipts per lane, `patches/` (`-text`). Worktree `unfinished-work-handoff-a3bbad`, branch `claude/unfinished-work-handoff-a3bbad`.
+
+**STATE AT 2026-09-19 EVENING**
+
+- Six fixes LANDED (Paul: "GO on all your recommendations", "land it"): R1 reference admission filters, A5 press release identity, N2 whole-statement cross-post key, N4b sponsor rows from the Sponsor column, R10a hub-core disclosure, N1a desk reads the engine's press stream. Brain D-052..D-057. Ranks 2/533 moved one place.
+- N12 interview turn-bleed repair: v1 (split + re-attribute) REJECTED by an independent grade (46/64 inserts speaker-correct, DE-042). v2 TRUNCATE-ONLY (Paul: "GO on the truncate-only v2"): graded independently (cut precision 90/90, 935/935 tags real), APPLIED to LIVE `social_media.db` (5,477 rows truncated, 807 skipped incl. every gold-bound + credit-union row, 0 inserted; backup `backups\social_media.PRE-TURNSPLIT-20260919.db`; `python fec\members\migrate_interview_turn_bleed.py --restore --db <path>` is byte-exact from the table `speeches_turn_split_ledger`), LANDED main `ce0dc5b21` (kernel 247/2, same two reds; dial `IV_TURN_TAGS` 2 = repaired, 1 = legacy). Interview stance channel byte-identical, so no rank input moved. Brain D-062.
+- Membership file REFRESHED (Paul: "refresh the membership file"): `official_membership_movements.json` checked_at 2026-09-19T19:46:30Z, new expiry **2026-09-27T19:46:30Z**; the 09-22 desk deadline is retired.
+- **NEXT FAIL-CLOSED DATE: 2026-09-21T03:41:10Z** - `data/legislation/sentinel_admissions.json` (oldest per-bill decision + 8 days) kills `build_archive_legislative.py` at import, so chain + desk stop. Clearing it is a PAID claude-cli step: NOT authorized, Paul's spend + model ruling (N19).
+- N5 WITHDRAWN (would hide 331 sidecar memberships). N15 CLOSED, no defect. N14 not mechanical - Paul's ruling (recommendation: desk displays what the engine scores). N13 Risch 2020-02-23 gold row scores Chris Wallace's voice-over - row left untouched by v2, still his to re-adjudicate.
+- **Awaiting Paul:** R2, R3, R4, N3, N6 (PERS parity drift), N7, A6, R8, R9, D6, N13, N14, and new N17 (chain builds champions threat boards BEFORE the desk, so any primacy-tier flip reddens an audit check until the next chain), N18 (Pete Sessions gained a tier-1 crown in the refresh run; own score identical - see the packet addendum), N19 (above), N20 (row 245558: the whole "Mike Johnson" row is a surname false positive; collector member matching by surname, count unknown).
+
+**Why:** Paul asked to "go over all the unfinished work and finish it"; his apply gate (`ask-before-substantive-changes`) still binds, so each step ran on an explicit GO and everything else is a one-line-answerable ruling sheet.
+
+**How to apply - facts about the system that outlive this lane:**
+
+- The membership refresh unit is `python fec\legislation\update_bill_repository.py --rebuild-dashboard` from the LIVE root: free GovInfo fetch + the chain from `verify_collector_roster_updates.py`, zero LLM, ~28 min. NEVER the fetch alone - the sidecar is written by that chain step and hash-bound to `bill_repository_live.json` (brain DE-043; DE-016 forbids the step standalone). It is RANK-MOVING: five days of congressional data moved 279/533 ranks (max 68: Wied, one adverse Interchange cosponsorship, topic weight 2.0; 151 movers by displacement only). Say so BEFORE running it, and take before-copies of ranks + repository + the desk bundle (there was no before-copy of `member_desk_bundle.json`, so a crown flip could not be differenced).
+- Chain exit 1 / `publication.status=FAIL` does NOT mean the refresh failed: `audit_full.py` is the last step and exits 1 on any red; with standing reds exit 0 is unattainable and PIPELINE COMPLETE never prints (DE-044). Judge by the step table + the audit FAILURES list against the previous run (now 559/9).
+- Freshness gates, soonest first: pillar snapshot vintage 14 d (already red since 09-17, audit only); sentinel admissions 8 d (09-21T03:41Z, kills the chain); membership 8 d (09-27T19:46Z); `formal_visibility_roles.json` valid_until 2027-01-03 (`compute_pillars` fatal). `fec_refresh_current.json` lives in `data/money/` and has no N-day window found.
+- The interview collector only INSERTs (`fetch_interviews.py:253`, no unique key) - it can duplicate, never rewrite. It is not a chain step (callers: `collector_supervisor.py`, `daily_media_refresh.py`).
+
+**Method lessons:**
+
+- When Paul says "GO on your recommendations" for items posed as QUESTIONS, there is no recommendation to execute: say so, measure first, never manufacture an approval after the fact.
+- Never apply a data migration on its BUILDER's grade. Buy an independent grade of the dry-run ledger and grade EVERY row of any small high-risk class. A split that re-attributes text can CREATE mis-attribution; truncate-only is the safe shape. Protect every row a label/contract points at, and prove the downstream channel byte-identical after the apply.
+- MEASURE a recommendation's blast radius BEFORE it goes on a ruling sheet (N5 would have hidden 331 rows).
+- An Opus architect's census claim needs the same adversarial re-check as a scout's (the Vargas "same title/date" pair was two releases). A URL slug only NOMINATES a duplicate; require date and title too.
+- Drifted LIVE target: put the logic in a NEW pure helper on the branch and deliver the producer hook as a patch cut against LIVE bytes (`live-tree-eol-census-2026-09-19` has the cutter, `fec/tools/live_patch.py`, see [[melange-fec-pipeline]]). Before promising a merge run `git -C <LIVE> status --porcelain -- <paths the branch touches>`: one dirty path blocks it (save, restore, merge, 3-way `git merge-file` back, `cmp`). UNTRACKED files at a path the merge creates block a fast-forward too - an architect told to save receipts "in the packet" wrote them into LIVE, not the worktree; move them.
+- main moves under a long lane: merge main INTO the branch in the worktree (no rebase), test, then `merge --ff-only` in LIVE. Git Bash mangles `branch/with/slash:path`: use the SHA + `MSYS_NO_PATHCONV=1` on that command only.
+- Receipts that record sha256 of sibling files must be stored `-text` (packet `.gitattributes`), or autocrlf breaks the hashes on a fresh checkout. Adding `-text` makes CRLF working copies read as modified: rewrite them from their index blobs (tree oid unchanged), never `checkout --` (GateGuard blocks it).
+- PowerShell 5.1 splits `git commit -m` here-strings at double quotes, so use `git commit -F <file>` written without a BOM. The repo ignores `*.txt/*.json/*.csv`, so use `git add -f`. Per-file adds over OneDrive exceed 120 s.
+- GateGuard denies the FIRST Write of every new file (scratch files too) until importers/API/schema + Paul's verbatim instruction are stated - batch content into few files.
+- A usage-limit 429 kills background agents mid-task; resume with SendMessage to the agent id - context intact.
+- Subagents (fable-baton architect) REFUSE to write report `.md` files: tell them to save scripts + raw outputs and return the report as text; the coordinator writes the report.
+- `fec/tests/run_tests.py` from a worktree gives 35 FALSE failures (`run_tests.py:8` resolves the data root from `__file__`). `fec/audit/audit_full.py` IS valid from a worktree and exits 1 on failure.
+- Start a verification chain at the EARLIEST step the change touches, not step 1, or fresh intake pollutes the rank delta.
+- The published dashboard can be censused directly: launch config `moneyball-ui-audit` serves the live root read-only on 8802; `javascript_tool` can call the page's own functions for all 533 seeds. The pane is hidden (rAF frozen), so this proves handler LOGIC only (`dashboard-preview-workflow`).
+- Check the memory index for a "landed" entry BEFORE treating an old handoff as open work (`spawned-task-premise-may-be-stale-2026-09-14`).

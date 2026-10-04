@@ -4,7 +4,7 @@ name: "Zero-rank-delta verification"
 aliases: ["byte-identical ranks protocol"]
 description: "Verification protocol for Melange refactors and reorgs: kernel tests -> full pipeline -> rank delta vs the last ranks file must be ZERO (unless the change is meant to move ranks) -> audit clean; proven by ranks staying byte-identical (736A9564...) through the 2026-07-02 refactor and the 2026-08-04/05 REORG."
 related_to:
-  - "[[2026-07-feature-influence-engine-internals]]"
+  - "2026-07-feature-influence-engine-internals"
   - "[[2026-07-rfc-melange-architecture-system-of-record]]"
   - "[[melange-fec-pipeline]]"
   - "[[moneyball-workbook]]"
@@ -12,8 +12,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/reorg-phase0-tripwires-2026-08-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\reorg-phase0-tripwires-2026-08-04.md", sha256: "a554fe2a6df1883dad24aa1fb9b973f83ee9adf2a4418b32b516f46575fc430c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sublayer-surgery-2026-07-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sublayer-surgery-2026-07-17.md", sha256: "9f165d2f3d53c188074a75a1fa16f3b6eff9021fae80183fb72a1fb771998cf7"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-architecture.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-architecture.md", sha256: "bb9bffef2af3af7152fdcf5bf852e8bef18952f37abaf7f978ae0b596ed25ee5"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/concept", "domain/backend"]
 ---
 
@@ -113,11 +113,16 @@ Kernel-runner facts: `run_tests.py` was pointed at 14 of 118 suites; its registr
 
 - [[melange-fec-pipeline]] - Melange Systems fec/ Python pipeline: paths.py, moneyball_core, run_pipeline chain, compute_pillars rank authority, kernel tests, live_patch
 - [[moneyball-workbook]] - Excel CU-influence model: 4-pillar percentile-rank blend over 533 members; now a VIEW of ranks_python.json (the rank authority).
-- [[2026-07-feature-influence-engine-internals]] - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
+- Influence engine internals - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
 - [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
+- [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] — The ChatGPT laundry-list lane landing of 2026-07-16 and the Sub Layer off-by-one surgery of 2026-07-16/17, as recorded for the influence engine.
+- [[melange-fec-pipeline-architecture]] — Architecture of the Melange fec/ pipeline: paths and the shared kernel after the 2026-07-02 refactor, the audit guardrails, the inverted system of record, the staff directory and desk CRM, and the audit runbook with weekly automation.
+- [[melange-fec-pipeline-reorganization]] — The REORG of the Melange fec/ pipeline, completed at a05a8e4 on 2026-08-05: the phase-0 tripwires, the culling lane, the 20 resolved items, the execution and phase-3 states and the post-completion fixes.
+- [[2026-07-rfc-melange-architecture-system-of-record-refactor-and-inversion]] — The July 2026 refactor and the inversion of the system of record: what moved where, the phase-2 inversion, the audit S2 remedies, roadmap item 9 phase 1, the staff directory and desk CRM, and the audit runbook.
 
 ## Applied in
 
 - The refactor and Phase 2 inversion: [[2026-07-rfc-melange-architecture-system-of-record]] (also holds the full REORG history).
-- Engine internals topic where the Sub Layer repair lives: [[2026-07-feature-influence-engine-internals]].
+- Engine internals topic where the Sub Layer repair lives: Influence engine internals.
 - Workbook the ranks used to be computed from: [[moneyball-workbook]]; pipeline entrypoints: [[melange-fec-pipeline]] (`run_pipeline.py`, `weekly_refresh.py`).

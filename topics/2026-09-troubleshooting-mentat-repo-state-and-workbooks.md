@@ -5,7 +5,7 @@ aliases: ["Mentat repo state and workbooks"]
 category: "troubleshooting"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[mentat-console]]"
   - "[[mentat-fec-pipeline]]"
@@ -16,8 +16,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-uncommitted-reconcile-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-uncommitted-reconcile-2026-09-18.md", sha256: "a35561613ba5e4bd3ee27565ed8e97717aa311f7d0c0d9ac708dd549b1a3cf3b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-console-startup-hang-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-console-startup-hang-2026-09-18.md", sha256: "64f937877616a1ec94000d791831999bba8f53fab41a80e28b8a26a2dce04a9d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-tidy-workbook-lane-2026-09-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-tidy-workbook-lane-2026-09-14.md", sha256: "677e56dbeec24480b98de0f8d6e355e198c46cbc0c12604b717e6c5ded4b5a5f"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 ---
 
@@ -36,7 +36,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

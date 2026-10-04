@@ -9,8 +9,8 @@ related_to:
   - "[[mentat-fec-pipeline]]"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/xref-contradictions-not-ambiguity-2026-09-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\xref-contradictions-not-ambiguity-2026-09-17.md", sha256: "0a02ce2a080260ebce313a38ac6a1e2b11efa8e34900bcfe9f1676a231754349"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/concept", "domain/data"]
 ---
 
@@ -78,3 +78,5 @@ Observed giving still sits above the published $54,762,844.05 Banking workbook t
 - [[mentat-fec-pipeline]] - Mentat's R + Python FEC collector and Excel workbook builder (API pool over a DPAPI key store); 7 industries; code at C:\Users\pgoff\Mentat
 - [[2026-07-bugfix-mentat-collection-and-attribution]] - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
 - [[2026-09-17-mentat-xref-council-review]] - 2026-09-17 council: cross-reference does not minimise vs workbook (Banking $72.1M vs $54.8M); Paul ruled it redundant and kept it dwarfed.
+- [[mentat]] — R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
+- [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]] — The contradictions-not-ambiguity rule for Mentat cross-verification (D-040, 2026-09-17) and the cross-reference versus workbook council review that left the cross-reference tab dwarfed.

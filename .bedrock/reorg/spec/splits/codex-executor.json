@@ -1,0 +1,171 @@
+{
+  "id": "A8",
+  "what": "Batch 4 split of actors/codex-executor (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A8); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/codex-executor",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Current state (newest wins, as of 2026-09-19)",
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## Related Actors",
+      "## Related Concepts",
+      "## Related Topics",
+      "## Related Projects",
+      "## Role split and standing rules",
+      "## Wiring history and superseded statements (dated)"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "codex-executor-incidents",
+      "title": "Overnight poll-loop burn and the legislative shadow lane where Codex hit its usage limit",
+      "summary": "Two Codex incidents: the overnight poll-loop burn of 2026-09-12/13 that drained the weekly quota, and the legislative-effectiveness shadow lane of 2026-09-10/11, where Codex built it but hit its usage limit before the validation report, and Claude finished the verification read-only",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Incident: Codex overnight poll-loop burn (2026-09-12 23:29 to 2026-09-13 10:58 local)",
+        "## Legislative-effectiveness shadow lane: how Codex built it and died (2026-09-10/11)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K8",
+      "a": "actors/codex-executor-incidents",
+      "b": "topics/2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "K16",
+      "a": "actors/codex-executor-incidents",
+      "b": "topics/2026-07-feature-legislative-pillar-acu-review-effectiveness-shadow-lane",
+      "event": "effectiveness shadow lane"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 44,
+      "old": "- **WORKING ASTRA ROUTE:** `codex.exe exec` on the app's CURRENT build, prompt on stdin (`-`), hardened exactly like the ECC council adapter (see Dev Commands); smoke 4.5 s, a 5.5 KB review packet answered in 20 s / 3,270 tokens; bounded runner + argv builder saved in the 09-19 session scratchpad `council\\run\\` (`run_codex_exec.py`, `build_argv.py`).",
+      "mark": "same note",
+      "why": "\"see Dev Commands\" names ## Dev Commands, which the hub keeps"
+    },
+    {
+      "line": 49,
+      "old": "**Quota state:** Codex quota burned 2026-09-11 (`usage_limit_exceeded` at 04:07Z; \"try again at Sep 17th, 2026 1:16 PM\"; Claude's note: locked until 2026-09-17) and again by the poll-loop incident 2026-09-13 (next window 2026-09-19 23:50). While locked, no dispatch is possible and code edits queue for Codex.",
+      "mark": "not positional",
+      "why": "\"next window 2026-09-19 23:50\" is the next quota window (time), not a place in the note"
+    },
+    {
+      "line": 123,
+      "old": "- **MCP lane broken upstream** (see Current state): `codex (CONNECTION_CLOSED)` in every new session since the 2026-09-17 app update; MCP tools connect only through the pinned 0.146.0-alpha.3.1 and only with `model: \"gpt-5.6-sol\"` per call.",
+      "mark": "same note",
+      "why": "\"see Current state\" names ## Current state (newest wins), kept by the hub"
+    },
+    {
+      "line": 124,
+      "old": "- **Poll-loop burn (2026-09-12/13)** drained the weekly quota (see Incident below).",
+      "mark": "rewrite",
+      "why": "\"see Incident below\" names ## Incident: Codex overnight poll-loop burn, which moves to -incidents",
+      "new": "- **Poll-loop burn (2026-09-12/13)** drained the weekly quota (see Incident in [[codex-executor-incidents]]).",
+      "referent": "codex-executor-incidents"
+    },
+    {
+      "line": 130,
+      "old": "- **Registry skill descriptions cache across a session** - file fixes show next session.",
+      "mark": "not positional",
+      "why": "\"next session\" is time, not a place in the note"
+    },
+    {
+      "line": 162,
+      "old": "- **Rules amended 2026-07-24 (Paul, Gemini-integration directive):** (1) **Claude NEVER writes code** - all code authorship is Codex's, including one-line fixes (edit-only dispatches); Claude keeps design, specs, review, git, docs/skill prose, memory. (2) **Double sign-off loop** (Flows above). (3) **Command hierarchy: Fable (Claude) > Codex > Gemini.**",
+      "mark": "same note",
+      "why": "\"Flows above\" names ## Flows, kept by the hub and still above this line"
+    },
+    {
+      "line": 164,
+      "old": "- **Web research for company ambiguity (Paul 2026-07-19, verbatim: \"if you are ever ambigous on a company just check via codex on the internet.\"):** when an employer string might be the roster company or an unrelated firm sharing the name, do NOT guess and do NOT default to asking Paul; dispatch Codex to research it on the web (network is OFF by default in the sandbox and MUST be enabled explicitly; command in Dev Commands). Give Codex the corroborating FEC evidence - **state and occupation strings are the decisive signals**. Ask for a verdict table with an evidence URL per row, and instruct it to be conservative (UNCERTAIN over a guess). Real example that worked: bare `GEMINI` in NH with occupations CNC PROGRAMMER / SIGNS is a sign manufacturer, not the NY crypto exchange. The resulting verdicts go into `inputs/company_match_overrides.csv` (employer_key, company, decision), which persists across runs. Paul picks the roster; research only ever disambiguates *within* companies he already listed, it never adds new ones (see `mentat-roster-and-culling-rules-2026-07-19`).",
+      "mark": "external",
+      "why": "\"see `mentat-roster-and-culling-rules-2026-07-19`\" names a memory file outside the family"
+    },
+    {
+      "line": 165,
+      "old": "- **Never supervise long jobs from an AI turn** (Incident below). A long-running Python job is finished when its receipt/status file says so, not when a model has watched it finish: launch it detached (Task Scheduler, `Start-Process`), then use ONE Bash `run_in_background` `until` loop or one `Monitor` on the status file. Never a per-turn poll loop, never `wait`/`sleep` turns, never spawn helper agents to \"watch\".",
+      "mark": "rewrite",
+      "why": "\"(Incident below)\" names ## Incident: Codex overnight poll-loop burn, which moves to -incidents",
+      "new": "- **Never supervise long jobs from an AI turn** (Incident in [[codex-executor-incidents]]). A long-running Python job is finished when its receipt/status file says so, not when a model has watched it finish: launch it detached (Task Scheduler, `Start-Process`), then use ONE Bash `run_in_background` `until` loop or one `Monitor` on the status file. Never a per-turn poll loop, never `wait`/`sleep` turns, never spawn helper agents to \"watch\".",
+      "referent": "codex-executor-incidents"
+    },
+    {
+      "line": 174,
+      "old": "- Session family total: 673,856,790 tokens across 32 rollout files; ended with `usage_limit_exceeded`, next window 2026-09-19 23:50. Quota was already at 89% when the thread started. Nothing external re-invoked Codex: no scheduler, no wrapper, no `codex exec` loop; the Python code never calls OpenAI/Codex.",
+      "mark": "not positional",
+      "why": "\"next window 2026-09-19 23:50\" is the next quota window (time)"
+    },
+    {
+      "line": 175,
+      "old": "- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: \"that is unacceptable.\" Related: the brain's DE-018 (see above).",
+      "mark": "rewrite",
+      "why": "\"the brain's DE-018 (see above)\": the DE-018 note above is the usage-limit bullet of ## Role split and standing rules (file line 168), which the hub keeps; this line moves to -incidents",
+      "new": "- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: \"that is unacceptable.\" Related: the brain's DE-018 (see [[codex-executor]]).",
+      "referent": "codex-executor"
+    },
+    {
+      "line": 189,
+      "old": "- **2026-07-18 (original wiring, SUPERSEDED in part by the 2026-09-19 update):** Codex desktop app bundles CLI (0.144.5) at `%LOCALAPPDATA%\\OpenAI\\Codex\\bin\\<versionhash>\\codex.exe`; auth.json since 07-12; `~/.codex/config.toml` pinned `model = \"gpt-5.6-sol\"`, `model_reasoning_effort = \"xhigh\"`, `service_tier = \"priority\"` - \"Paul's dials, never downgrade\" (those dials were later changed by Paul to `gpt-6-astra` / `high`). ACK round-trips 2-3 s through Paul's ChatGPT subscription - zero API spend, satisfying `cu-sentiment-coverage-2026-07-15`'s no-API rule.",
+      "mark": "not positional",
+      "why": "\"later changed by Paul\" is time, not a place in the note"
+    },
+    {
+      "line": 194,
+      "old": "- **Trigger = `/codex <task>`** - routes through the codex-executor skill protocol; falls back LOUDLY (fresh session or stdio harness), never silently solo, when MCP tools are absent. Same-session driving is possible via the stdio harness (scratchpad `smoke_codex_mcp.py` pattern). The gist's Gemini-auditor/Nanobanana legs were SKIPPED then: no Node/npm on the machine, no Google auth, Paul chose skip (later superseded by the 2026-07-24 Gemini lane).",
+      "mark": "not positional",
+      "why": "\"later superseded by the 2026-07-24 Gemini lane\" is time"
+    },
+    {
+      "line": 198,
+      "old": "- **Reflex layer 2026-07-23 (Paul: \"Codex can have reflexes per say, immediate corrections that it overrides and that sends to claude for confirmation\" + a pasted BRAIN-BODY REFLEX PROTOCOL; he REJECTED the WebFetch of the noba/NCBI nervous-system articles and handed the distilled contract directly - do not re-fetch). SHIPPED @8dcf330** (main == live == user-scope synced md5-identical; SKILL.md 184 -> 365 lines): bidirectional afferent/efferent framing + `## Reflex layer (body-before-brain)`: Codex may act BEFORE deliberation only to prevent immediate observable harm (pause/contain/preserve only), then halts and leads with a REFLEX REPORT; Claude replies CONFIRM/MODIFY/ROLLBACK/ESCALATE. **The anti-loophole clause is the load-bearing part** - harm is not ambiguity (ambiguity -> STOP, change nothing); \"correct a clear execution error\" = Codex's OWN mechanical slip in the current turn ONLY, never a defect it perceives in the spec or pre-existing code; plan-only rounds reduce the reflex to halt-and-report, never writes. **The plan-echo gate proved its worth on first real use**: Codex-as-sensor flagged 5 conflicts + 5 ambiguities, three of which changed the design - including that the drafted claim \"Claude is structurally guaranteed to see every reflex report\" was FALSE (idle-timeout can lose the response), fixed to \"loses the report but NOT the containment -> after any lost turn Claude inspects the worktree and treats unexplained state as an unreported reflex.\"",
+      "mark": "not positional",
+      "why": "\"to see every reflex report\" is the verb see, not a reference"
+    },
+    {
+      "line": 203,
+      "old": "- **Dynamic coordination v1 + full integration 2026-07-24.** Three commits on main: 0db65d5 (wires Fable-Sol runtime + coordination controls: adapters, `fable_sol_cli`, runtime contract validator, `fec/b5_narratives.py` Fable-default + Sol-routing), 9d8f2c7 (foundation doc), 80f1b79 (`dynamic_coordination.py` runtime: evaluator with EXACTLY 7 comparison names / 5 results, fail-closed on missing or self-generated evidence, only the evaluator emits REBASE_REQUIRED; episode ledger stores content as SHA-256+bytecount; replay is pure and report-only; amendment candidates are a read-only derived view, never authority). New coordination_cli subcommands: validate-observation / validate-prediction / reconcile / replay / episode / candidates (joining validate-contract / record / repeats). INTEGRATED 07-24: live tree ff'd 955b66a -> 80f1b79 on its cfpb branch (ff touched only .claude plane + b5_narratives.py; retry controller BYTE-IDENTICAL across the range); user scope re-synced - 12/12 files md5 MATCH (the 7 earlier \"diffs\" were LINE-ENDINGS ONLY, user-scope LF vs repo CRLF - confirm with `git diff --no-index --ignore-cr-at-eol` before calling drift); tests 41/41 in live tree.",
+      "mark": "not positional",
+      "why": "\"the 7 earlier diffs\" are diffs observed before the re-sync (time), not text in the note"
+    },
+    {
+      "line": 205,
+      "old": "- **/METALOOP SHIPPED @46b17b9 (Paul 'the full orchestration' + 'Gemini only as needed'):** one command = full three-lane tandem (Fable decomposes/digests, Codex executes under full protocol, Gemini STRICTLY CONDITIONAL - no media, no Gemini, never invent a perception step); repo + user-scope `commands/metaloop.md` (see [[metaloop]]).",
+      "mark": "external",
+      "why": "\"see [[metaloop]]\" names another note"
+    },
+    {
+      "line": 207,
+      "old": "- **X lane LIVE NO-KEY 2026-07-24 late (Paul 'without the twitter API key?'):** the subscription grok CLI natively carries `x_keyword_search`/`x_semantic_search`/`x_user_search`/`x_thread_fetch` - handle+date filters LIVE-VERIFIED (SenSchumer probes), NO xAI key needed, the earlier dormant note SUPERSEDED; LOCATION = SOFT ONLY (no zip/coord param). MONDAY COLLECTOR SHIPPED @deeb7d0/010b69d/6cad6bc (Codex full loop: plan STOP on stale-DORMANT conflict, 6+1 semantics adjudicated, review round 6 defects + 3 tightenings -> R1-R7, 26 tests): 506 handles -> `x_catalog.jsonl` additive (NEVER stance inputs), state + PID-lock in LOCALAPPDATA, Monday-or-stale-or-force gate, armed via STARTUP-FOLDER shim `MelangeXCollector.cmd` (Register-ScheduledTask = Access denied unelevated); bootstrap harvest launched. LESSONS: Windows subprocess reader threads SWALLOW UnicodeDecodeError (capture binary, decode strict caller-side); tail pipes mask unittest exit codes - check PIPESTATUS (one commit landed red before the catch); PS Get-Content displays UTF-8 as mojibake (verify bytes with python before flagging); `[IO.File]` relative paths resolve to PROCESS cwd not the PS location (a stray file landed in the worktree once - moved). staff_directory has NO X handles - staffers/constituents need an additive handles file from Paul.",
+      "mark": "same note",
+      "why": "\"the earlier dormant note\" is the DORMANT X-search item of the Grok companion lane bullet (file line 206), in the same hub section"
+    },
+    {
+      "line": 211,
+      "old": "- **Legfix lane execution notes (2026-07-24/25):** the legfix bundle @9c2bf41 and LEGFIX2 @5619691 were Codex-authored edit-only (sandbox has NO python; Claude executed), with 2 and 9 revision rounds respectively; a Codex patch utility cannot preserve CRLF; Codex MCP threads die on glassbox window reopen - fresh thread + self-contained contract works; the auto-mode classifier can block codex dispatches + live copies mid-campaign. See [[2026-07-feature-legislative-pillar-acu-review]].",
+      "mark": "external",
+      "why": "\"See [[2026-07-feature-legislative-pillar-acu-review]]\" names another note"
+    },
+    {
+      "line": 212,
+      "old": "- **Sol brain applied 2026-09-12:** brain commit `2a5a10b` (STATE bullet, Next action, DE-018); D-026/D-027/D-028 rulings recorded at `f8ebdf7` (see the legislative topic).",
+      "mark": "external",
+      "why": "\"see the legislative topic\" names another note (the legislative pillar topic); \"Next action\" is a brain section name, not a positional word"
+    }
+  ]
+}

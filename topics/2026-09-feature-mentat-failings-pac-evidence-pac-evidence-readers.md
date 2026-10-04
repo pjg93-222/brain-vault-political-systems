@@ -1,0 +1,73 @@
+---
+type: topic
+title: "PAC evidence readers: S6 panes, S7 committee categories, S8 district map (Mentat failings lanes and PAC evidence)"
+aliases: ["Mentat failings lanes and PAC evidence: PAC evidence readers: S6 panes, S7 committee categories, S8 district map"]
+category: "feature"
+status: "in-progress"
+people: []
+actors: []
+objective: ""
+created_at: 2026-09-16
+sources: []
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
+part_of: "[[2026-09-feature-mentat-failings-pac-evidence]]"
+---
+
+# PAC evidence readers: S6 panes, S7 committee categories, S8 district map (Mentat failings lanes and PAC evidence)
+
+> Mentat failings lanes S6 to S8 of 2026-09-17/18: the PAC evidence v2 panes and compare view, committee categories, and the district map. Part of [[2026-09-feature-mentat-failings-pac-evidence]] (project [[mentat]]).
+
+## S6: PAC evidence v2, panes and compare (2026-09-17)
+
+Source memory `mentat-failings-lane-s6-2026-09-17` (session `6e7316d8-fa52-492d-9549-5001f1656290`, last modified 2026-09-17). Lane S6 of the mentat-failings lane (worktree `pac-evidence-filters-724237`; code in `C:\Users\pgoff\Mentat` on `codex/mentat-crypto`). Paul: "go over the UI for PAC Evidence and clean it up, we also want it to be similar to Graph in that there are cross comparisons between different PAC's between Different Industries", then "I don't want a video, I want a UI update".
+
+**Shape (Paul's rulings 1-7, all the recommended options):** one scope bar (Source = every ready import plus every saved snapshot, Committee type, Find a PAC, PAC, Cycle, Add pane, Import file and New snapshot drawers, Follow Graph toggle, one status region), a chip row of open panes, up to FOUR panes side by side from any industry file or snapshot, and a Compare strip (Receipts, per cycle, rows supported/excluded, top contributor, category, source) whose bars are scaled per row. URL keys are prefixed `a.*` to `d.*` (source/id/committee/cycle) per the HANDOFF rule; the single-pane keys reserved earlier are never written. `evidence-csv.js` is retired; the whole tab lives in the new `mentat/app/evidence.js`; `app.js` lost its 168-line evidence block. New server bits: the summary endpoint (`?summary=1` -> totals_by_cycle, counterparties, counts) and `industry` derived from the workbook name and backfilled in `stored_catalog`.
+
+**Measured on the real workbooks:** Fairshake 22 supported / 6 excluded / 0 unsupported, Receipts $177,980,393.39 (2024 $125,511,179.52, 2026 $52,469,213.87; COINBASE $117,092,475 over 10 rows); DCCC $147,900/10 rows in Crypto against $3,480/48 in Credit Union; CULAC $36,870.31/594. Tests: panes browser suite ALL 28 STEPS PASSED, python 140 OK (system) and 122 OK (launcher), node scope.test.js 45/45, zero page errors. Patch `S6_pac_evidence_panes.patch` (334,493 B, 17 file diffs) applies with `git apply --cached --check` exit 0 on HEAD `a9ed5c236`. UNCOMMITTED: Paul commits, receipts need `git add -f`, then he re-runs the launcher (`evidence.js` is a new STATIC_ASSETS entry and `evidence-csv.js` is gone, so a console on the old build 404s a script).
+
+**Paul's two UI corrections on the WIP (he runs the working tree, so he sees builds mid-flight):** a Map button that cannot be clicked is worse than none, so it is HIDDEN until the map lands; and the tab was "cluttered and not fitting the specifications of the chosen images". The second needed three passes: short display names (NAME_LIMIT 34, full name on the title attribute), table-layout fixed so every compare column and bar track is equal, non-wrapping figure numbers, pane titles clamped to two lines, panes stretched to one height, and REMOVING the inline bar from the top-contributor list (never in the approved mockup and the thing that ellipsised every name).
+
+**Why:** the design, the rulings and the measured figures are settled; a future session must not re-derive them, must not restore the retired S7 evidence CSS (its markup is gone), and must know the map is a separate lane with its data layer already shipped.
+
+**How to apply:** design `audits/mentat_failings_20260915/S6_DESIGN.md` (section H is the map, lane S8), approved mockup `S6_MOCKUP_Main.dc.html` + `S6_MOCKUP_Map.dc.html`, ledger HANDOFF `## S6` plus two Fable close-out paragraphs. THREE lanes shared this tree on 2026-09-17: patches must be cut HUNK-EXACT, never whole-file. In `workspace.css` the UI clean-up lane owns hunks 1, 2 and 7 (its `#graph-open-builder` rules, the `:has(#compare-panel)` selector list, its appended Graph block) and S6 owns 3-6; in `index.html` S6 owns only the `#view-evidence` block. A peer session rewrote `workspace.css` whole at 15:21 and silently dropped ~150 lines of S6 rules; another peer offered to "restore" seven evidence rules S6 had deliberately retired, which would have re-added dead code. Tooling traps hit again: heredocs mangle python scripts (write them with the Write tool), and an edit script that picks its newline convention from the whole file can write CRLF into an LF file. Related memories: `mentat-failings-lane-s7-2026-09-17`, `mentat-failings-lane-s5-2026-09-17`, `mentat-ui-cleanup-lane-2026-09-17`, `shell-heredoc-mangling-2026-08-19`, `ask-before-substantive-changes`.
+
+## S7: PAC evidence committee categories (2026-09-17)
+
+Source memory `mentat-failings-lane-s7-2026-09-17` (session `ec8f6825-37b9-4a20-843f-a0a6d19fabec`, last modified 2026-09-17). Lane S7 (worktree `pac-evidence-filters-724237`; code in `C:\Users\pgoff\Mentat` on `codex/mentat-crypto`), built on a Fable design plus one Opus build. Paul's brief: "Fairshake missing within Crypto ... there should be a filter option ... candidate committees, trade associations, carey's, company pac's".
+
+**Diagnosis (measured on consoles 8806/8802, data root `C:\Users\pgoff\AppData\Local\Mentat\console`):** Fairshake was NOT excluded from the PAC evidence list. The Crypto workbook import lists it with 28 rows, but 22 were `Record Type = CORPORATE` (Coinbase treasury giving) and `TYPES` in `mentat/app/evidence_csv.py` mapped `contribution` but never `corporate`, so every corporate row in every workbook was "unsupported" (Crypto 333/333, Credit Union 202/202). Fairshake showed $1.0M instead of $177,980,393.39. The list also had no committee-type filter: one 523-entry select sorted by ID, no search, while the workbook's `Recipient Category` column and `graph_data.py` CATEGORIES already carried exactly the taxonomy Paul asked for (Super PAC, Trade Association, JFC, Company PAC, Leadership PAC, Carey, Other PAC, Candidate, Party Committee, Unclassified). The evidence reader ignored the column. The "Saved FEC snapshots" source lists only the typed committee IDs (not a defect).
+
+**Paul's rulings (2026-09-17):**
+1. CORPORATE folds into Receipts (not a separate channel).
+2. Honour the workbook's `Include in Analysis = No` (visible, out of totals, status `excluded`, "Excluded by the workbook: <Inclusion Reason>").
+3. FEC committee master fallback (`mentat/inputs/fec_committee_master/cm22|cm24|cm26/cm.txt`, gitignored local inputs) in `report.R`'s order J/D/X-Y-Z/O-U/V-W/H-S-P-A-P plus ORG_TP T/C-W/L-M-V for bare files.
+4. File category beats the master.
+5. One type select plus a search box.
+
+Fable's refinement under ruling 4: a file value of "Unclassified" is the absence of a classification, so the master fills it (found Chamber of Digital Commerce PAC = Trade Association, Senate Conservatives Fund and Equality PAC = Carey); with a file category column present, ORG_TP C/W maps to Other PAC, never Company PAC (that word means the industry's own PACs in a Mentat workbook).
+
+**Built (Opus architect, one dispatch + one review fix pass, ~2 h 45 min total):** categories per row and per committee (modal rule), `categories[]` rollup, `catalog_version` 2 with background re-read of stale imports on the first listing (side-by-side sqlite, row-count guard, read-only consoles only report `stale`), contract `evidence-csv-import.json` v3 with four negative controls, UI type select + search + name-sorted options with category and row counts, snapshot committees labelled from the master at read time, upload-before-token 403 race fixed (`awaitToken`). Final measured figures on the real Crypto workbook: 6,343 rows, 523 committees, 6,273 supported / 70 excluded / 0 unsupported; Fairshake 22/6/0, Receipts $177,980,393.39; Trade Association 2, Carey 23, Other PAC 4, Unclassified 8. Tests: 112 OK system Python, 91 OK launcher Python, node 163/0, browser 35/35. Patch `audits/mentat_failings_20260915/patches/S7_pac_evidence_categories.patch` (185,507 B, 15 diffs, cut as bytes) applied hunk-exact and COMMITTED as `882f1f93f` (2026-09-17 12:59 ET, 18 files, +6,257/-75, run from the proposed command block; Fable double-checked: numstat identical to the patch, no foreign hunks). Paul then re-runs the launcher for 8806/8802; existing imports re-read themselves on the first listing (~2 s Crypto, longer for CU).
+
+**Why:** a future session must not re-diagnose "Fairshake missing" as an exclusion, must know the five rulings and the Unclassified refinement are Paul's/Fable's settled calls, and must know the re-read mechanism exists (a rule change to `evidence_csv.py` needs a CATALOG_VERSION bump, nothing else).
+
+**How to apply:** design in `audits/mentat_failings_20260915/S7_DESIGN.md`, ledger in HANDOFF.md S7 section. The Write/Edit tools refuse the Mentat path from a Melange worktree session; the Opus architect writes via python scripts and `cp` from the scratchpad when told so in its FIRST prompt (worked twice this lane). A "Fact-Forcing Gate" hook blocks Bash commands containing `rm -rf`/`kill` and first-time file creations until the facts are stated in the message. Related memories: `mentat-failings-lane-s3-2026-09-16`, `mentat-failings-lane-s5-2026-09-17`, `reasoning-in-fable-code-in-opus-2026-09-16`, `go-faster-directive-2026-09-16`, `ask-before-substantive-changes`.
+
+## S8: PAC evidence district map (2026-09-17/18)
+
+Source memory `mentat-failings-lane-s8-2026-09-18` (session `6e7316d8-fa52-492d-9549-5001f1656290`, last modified 2026-09-18). Lane S8 (worktree `pac-evidence-filters-724237`; code in `C:\Users\pgoff\Mentat` on `codex/mentat-crypto`). Paul: "it have an instant map menu, where we match it to its congressional district using GeoPy and politicsnlp packages", then "Clean it up a little bit, make it simpler, and it should also show where the money they spent went in terms of geography", then "We can do a heatmap visualization on spending amounts, and all spend should be showcased".
+
+**Package check that changed the design:** `politicsnlp` (PyPI 0.0.21, 2023) is a political-vocabulary NLP library with no geocoding and no districts; `geopy` returns coordinates, not districts. Neither can do this job and neither is installed. What does it: the FEC candidate master already in the repo (`inputs/fec_beneficiary/cn22|cn24|cn26`) for money TO candidates, exact and instant; the Census ZCTA-to-district crosswalk for money FROM contributors, approximate and labelled; the Census cartographic district files converted once to SVG paths shipped under `app/geo/`. GeoPy stays an optional provider for the later street-address lane (S8b, not built).
+
+**Built and COMMITTED as `491570a0b`** (27 files, +11,064): `app/district_geo.py` (vintage load, ZIP lookup with land-area shares, candidate and committee lookups), `app/evidence_geo.py` (the `/api/evidence-geo` route), `app/geo/` (cd116/cd118/cd119 paths at 437 districts each, ZCTA crosswalks for 118/119, index.json), the map view in `evidence.js` (Raised/Spent segmented control, cycle select, layer chips per kind, log-ramp heat on shipped SVG paths, ranked list grouped by kind, district click filters the pane's rows, `<pane>.map` URL key), contract `evidence-geo.json` v1, three new test files. Tests: map browser 17/17, panes 28/28, python 184 OK (system) and 166 OK (launcher).
+
+**Measured Fairshake 2024, reconciled:** reported disbursements $195,826,511.43 = located $193,545,160.56 + unlocated $2,281,350.87. Candidates $38,381,214.73 over 28 districts (CA Senate oppose Porter $10,041,118.54 largest); transfers $86,250,000 (VA $54.55M Defend American Jobs, FL $31.7M Protect Progress); operating $5,413,950.83; conversions $63,499,995 (off the heat by default). The artboard's arithmetic was $744.99 short because the FEC summary exceeds the itemised filings; that residual is now an unlocated row rather than a silent gap.
+
+**Three rulings the code forced, all measured:** (1) `committee_state` needs the cycle, because Protect Progress is FL in cm24 and MN in cm26 and the cycle-less answer put $31.7M in Minnesota; (2) `server.py send()` JSON-encodes its value for `application/json`, so serving a .json asset read as bytes raised TypeError and dropped the connection; (3) asset conversions match payee AND description, not either, or the rule swallows $1.15M of ordinary consulting. Also settled: the 2022 cycle maps to the **118th** vintage, not the 116th, because the 2021-2022 candidate master already numbers House seats on the redistricted map (it carries NC-14); a side benefit is that 2022 now has ZIP geography, since no ZCTA crosswalk was ever published for the 116th.
+
+**Why:** a future session must not re-derive the reconciliation, must not "fix" the $745 residual, and must not reach for politicsnlp or geopy expecting district matching.
+
+**How to apply:** design `audits/mentat_failings_20260915/S6_DESIGN.md` section H, artboard `S6_MOCKUP_Map.dc.html`, ledger HANDOFF `## S8`, receipts `S8_*`. Open and Paul-gated: an all-cycles map draws nothing (a vintage belongs to a cycle); the Compare strip has no "Top districts" row; the street-address geocoding lane (S8b) with its Start button is unbuilt.
+
+**Shared-worktree lesson, cost about 40 minutes:** `C:\Users\pgoff\Mentat` is a worktree whose INDEX is shared by every session working in it. A peer ran `git reset` and cleared the staged patch mid-commit; another peer committed `index.html` and `workspace.css` whole and so carried the map markup and CSS into commit `965103db4`. Rules that follow: stage and commit in ONE atomic step, re-check `git diff --cached --name-only` immediately before committing, use `git commit --only -- <paths>` with an explicit path list, and treat an index.lock as transient by retrying rather than removing it (two peer git processes were cycling it). Related memories: `mentat-failings-lane-s6-2026-09-17`, `mentat-ui-cleanup-lane-2026-09-17`, `mentat-failings-lane-s7-2026-09-17`, `shell-heredoc-mangling-2026-08-19`.

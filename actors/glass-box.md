@@ -22,8 +22,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/glassbox-everything-rule-2026-07-27.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\glassbox-everything-rule-2026-07-27.md", sha256: "d803cdacd32e6f6d3fbac015ed401fa5898e1bf27a82dafa6d237bad6a85b787"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -44,7 +44,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 
 ## Dependencies
 
-- Depended on by: [[metaloop]] (`metaloop.ps1 -Action start` launches GLASS BOX and requires all views healthy), [[codex-executor]] (Codex lane window, mirrored via the `mcp__codex__*` hook), [[melange-refresh-scheduler]] and the refresh jobs (collector/restore/audit must emit), [[forecast-redesign]] / [[2026-09-feature-forecast-giving-redesign]] (lane work visible in the stream), [[2026-08-incident-refresh-automation-reliability]] (the invisible-restore failures of 2026-07-27), [[2026-07-feature-agent-tooling-stack]] and [[2026-07-working-agreement-agent-orchestration-rules]] (the standing everything-through-Glass-Box rule).
+- Depended on by: [[metaloop]] (`metaloop.ps1 -Action start` launches GLASS BOX and requires all views healthy), [[codex-executor]] (Codex lane window, mirrored via the `mcp__codex__*` hook), [[melange-refresh-scheduler]] and the refresh jobs (collector/restore/audit must emit), [[forecast-redesign]] / Forecast audit, giving-view redesign and PAC accuracy (lane work visible in the stream), [[2026-08-incident-refresh-automation-reliability]] (the invisible-restore failures of 2026-07-27), [[2026-07-feature-agent-tooling-stack]] and Agent orchestration and model tiering rules (the standing everything-through-Glass-Box rule).
 - Depends on: Windows PowerShell 5.1, the Claude Code settings.json PostToolUse hook (`mirror.ps1`), Grok Build CLI (`grok -p`) and the Gemini CLI (`agy`) for their lanes, Codex via MCP (out-of-band).
 - Related memory notes: `desk-media-footprint-2026-07-16`, `codex-executor-lane-2026-07-18`, `legfix5-recollection-lane-2026-07-27`, `melange-ui-retheme-2026-08-06`, `powershell-visible-work`.
 
@@ -133,12 +133,17 @@ Any process (collector, restore, audit, pipeline stage, background watcher) must
 - [[melange-refresh-scheduler]] - Unattended Melange refresh jobs: weekly refresh, congress daily chain, report email; weekly not COMPLETE since 2026-07-19
 - [[metaloop]] - /metaloop (shipped @46b17b9): Fable decomposes/reviews, Codex executes, Gemini perceives, Grok critiques; UNIVERSAL LANE LAWS @86ba6ef.
 
+## Related Concepts
+
+- [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
+
 ## Related Topics
 
 - [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
-- [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
+- Agent orchestration and model tiering rules - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
 - [[2026-08-incident-refresh-automation-reliability]] - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
-- [[2026-09-feature-forecast-giving-redesign]] - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
+- Forecast audit, giving-view redesign and PAC accuracy - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
+- [[2026-07-feature-agent-tooling-stack-glass-box-lock-hang]] — The GLASS BOX lane-lock hang that blocked metaloop starts, and the Grok lane taken down on 2026-08-06 by an exhausted Grok Build usage balance.
 
 ## Related Projects
 
