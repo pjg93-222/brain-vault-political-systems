@@ -1,0 +1,12 @@
+.bedrock/reorg/check.ts
+.bedrock/reorg/check.test.ts
+.bedrock/reorg/conserve.ts
+.bedrock/reorg/commit.ts
+.bedrock/reorg/healthcheck.ts
+.bedrock/reorg/verify-plan.ts
+.bedrock/reorg/spec/pending-splits.txt
+.bedrock/reorg/spec/split-fingerprints.txt
+CLAUDE.md
+.bedrock/reorg/plan.md
+.bedrock/reorg/ledger/batch-1-paths.txt
+.bedrock/reorg/ledger/batch-1-allow.txt
