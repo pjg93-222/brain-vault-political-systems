@@ -26,7 +26,7 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -144,6 +144,7 @@ yt-dlp --download-sections ... -f 466 -x --audio-format wav --ffmpeg-location <f
 - [[2026-07-feature-audio-and-speech-lane]] - Speech/audio lane: no shipped ASR, off-chain fail-closed, N audio route closed; audio layers complementary; four false mechanism claims.
 - [[2026-07-feature-member-approach-briefs]] - Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps.
 - [[2026-07-feature-personality-psychometrics]] - Big Five psychometrics for Congress members: instruments, pre-registered looks, Senate-gold anchoring, N/A slots; O/C/E valid, A- grade.
+- [[2026-07-feature-audio-and-speech-lane-corpus-data-guide]] - The 2026-08-31 corpus data guide: coverage tiers, identity paths, the 99.9995% specificity boundary and the display-only contract.
 
 ## Related Projects
 

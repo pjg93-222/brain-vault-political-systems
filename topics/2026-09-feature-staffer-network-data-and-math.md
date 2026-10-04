@@ -20,7 +20,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-architecture-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-architecture-2026-09-03.md", sha256: "369fa550046b0fc885dc8b5d86333520a61f5299769f1aa252812e68ccd9d586"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-social-network-overlap-rule-2026-09-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-social-network-overlap-rule-2026-09-03.md", sha256: "de5f13a314b7571f09b00e67d11f208a1cc67e2cb78e5a6786d8d896c8aa34d4"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "teach@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -34,6 +34,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - [[2026-09-feature-staffer-network-data-and-math-sorting-lane]] — The staffer sorting lane of 2026-09-06 to 09-08: its rulings, the facts established, the stage plan and the dated state log through the shipped and committed lane.
 - [[2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane]] — The SNA math audit of 2026-09-05 and the co-tenure clique lane of 2026-09-07 with its shipping state, the groups-role defect, the open producer findings and the move tables.
 - [[2026-09-feature-staffer-network-data-and-math-stale-imports-and-v7-spine]] — The stale-imports lane of 2026-09-06 and the closeout of the v6-to-v7 spine repoint on 2026-09-07.
+- [[2026-09-feature-staffer-network-data-and-math-duration-ranking-and-v8-cutover]] — The staffer co-tenure ranking contract implemented and released on 2026-09-08: each overlap day counted once, edge mass split across workplaces by days supplied, shared-role cells damped rather than dropped, intern pools excluded, and the v8 graph cut over live.
+- [[2026-09-feature-staffer-network-data-and-math-successor-design-and-release-gates]] — The 2026-09-08 successor design for the staffer network: Politico Pro and Quorum define the staffer population, LDA the lobbyist ecosystem, payroll is consulted only for a specific question, and release waits on frozen-holdout gates that are proposed, not measured.
 
 ## Context
 

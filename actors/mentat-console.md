@@ -25,10 +25,14 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-system-debug-lane-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-system-debug-lane-2026-09-13.md", sha256: "e7118cf1a8941e3e3c3ba7bdbc7b658fb29d27a2ebd23994606aa2370858b990"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-chart-studio-2026-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-chart-studio-2026-09.md", sha256: "9a490f3f4b6f52f21581ea4df39b58ea59cc6035c9aa0186f3a65ab7e940695d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
+doc_sources:
+  - path: "C:\\Users\\pgoff\\Mentat\\PRODUCT.md"
+    sha256: "586e0f53c31a5beb168521db257fdbbb1e0c08bc67513e7ec75316b56f67efc3"
+    as_of: "2026-09-20"
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/frontend"]
 ---
 
@@ -127,6 +131,15 @@ MENTAT_COMPACT_RAW=1  MENTAT_FORMULA_FACTS=1  MENTAT_DETAIL_ROW_CAP  MENTAT_INDU
 - Open (2026-09-27): A2 rebuild the workbooks (only Community Banks was rebuilt; other 7 untouched, backups `outputs\workbook-backups-20260926`) then restart 8806; A4 H3 double-counts 236.207 BTC; A5 NON-CONTRIBUTION labels counted; A6 METHODOLOGY v6; stripped browser suite leaves empty `%TEMP%\mentat-strip-reports-*`; `mentat/README.md:151` stale "index v5/parser v6" and METHODOLOGY header "Version 5" (lane L2 was to fix).
 - See the per-lane sections in [[mentat-console-chart-studio-and-system-debug]], [[mentat-console-startup-and-polish-lanes]], [[mentat-console-redesign-boards]] and [[mentat-console-pac-map-viz-lane]] for lane-specific open items.
 
+## Product definition and principles (PRODUCT.md, 2026-09-20; untracked)
+
+Confirmed by Paul during the Impeccable initialization on 2026-09-20 as the product purpose and refinement scope of the console in `mentat/app`:
+- **Users and purpose:** the user's local research workspace for collecting and comparing political giving, following downstream PAC activity and inspecting the supporting evidence; it should make giving and downstream spending understandable with source context and financial distinctions kept, and let the user move between scope selection, comparison, charts and evidence without losing context.
+- **Operating context:** a local Python-served web interface (HTML, CSS, JavaScript) that reads saved collection data and report workbooks; its workflows and visual identity are preserved during refinement.
+- **Constraints:** donor receipts, PAC transfers, observed candidate activity and modeled attribution keep separate meanings, and shared routes or company associations must not create additive spending claims; unknown or incomplete evidence stays visible and never becomes a reported zero; full names, exact values, sources and coverage limits stay reachable when labels are shortened; refinements are simple changes to the existing UI under YAGNI (no speculative features, validation layers or abstractions); the report-directory and evidence rules of `mentat/AGENTS.md` apply.
+- **Principles:** make the scope and meaning of each number clear; prefer familiar, consistent controls and readable density; keep primary tasks visible and detail on demand; preserve evidence and financial behaviour during presentation changes.
+- Saved coverage is limited and does not certify complete FEC filing coverage.
+
 ## Architecture and standing facts
 
 - **Server and assets.** `mentat/app/server.py` serves a static allow-list that is Python frozen at process start (a new static file needs a `STATIC_ASSETS` line in `server.py` and a console restart, otherwise 404). CSP: `img-src 'self' blob:` (canvas heat OK); `frame-ancestors 'none'` on every response except the Chart Studio pane document (`'self'`, 2026-09-13 patch S2). `PROJECT` in `server.py` is `<checkout>/mentat` (`parents[1]`), NOT the checkout root. Build stamp: `#build-stamp` keeps "up since" (test contract); `/api/health` + `/api/session` carry a build block; `code_sha256` vs `on_disk_code_sha256_now` is D-029's restart gate (never the git sha).
@@ -160,6 +173,7 @@ MENTAT_COMPACT_RAW=1  MENTAT_FORMULA_FACTS=1  MENTAT_DETAIL_ROW_CAP  MENTAT_INDU
 
 - [[higgsfield-connector]] - Higgsfield MCP connector (89 tools) used to render UI boards; bound to whichever account authorized it; Paul must re-authorize to switch.
 - [[mentat-fec-pipeline]] - Mentat's R + Python FEC collector and Excel workbook builder (API pool over a DPAPI key store); 7 industries; code at C:\Users\pgoff\Mentat
+- [[giving-forecast-pipeline]] - Giving Forecast R refit pipeline and its two JSON contracts; the console's `giving_forecast.py` is the calculator that consumes the published bundle and anchor snapshot.
 
 ## Related Topics
 

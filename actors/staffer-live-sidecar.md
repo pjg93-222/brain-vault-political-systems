@@ -29,7 +29,7 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "teach@agent"
 tags: ["type/actor", "status/active", "domain/backend"]
 ---
 
@@ -201,6 +201,7 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
 
 - Staffer network data and math - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
 - [[2026-09-feature-staffer-network-surfaces]] - Staffer network surfaces: live sidecar on 8841, fourth Moneyball.html surface (#app-staffer), page redesign variant C, route-latency lane.
+- [[2026-09-feature-staffer-network-data-and-math-successor-design-and-release-gates]] - Successor design (2026-09-08, proposed): populations, data contracts and release gates that would re-scope this router's consumers.
 
 ## Related Projects
 
@@ -214,3 +215,4 @@ Paul opened the lane on 2026-10-02: the people network was "almost not useable";
 ## Discussions
 
 - [[2026-09-03-staffer-network-architecture]] - Paul's 2026-09-03 ant-colony ruling: staffer network = own social network beneath members; member graph kept; OVERLAP is the only edge rule.
+- [[2026-08-29-politico-pro-access-and-permission-rulings]] - Politico Pro access ruling and permission supplement (2026-08-29): an attested, rate-limited, contact-free directory crawl was sealed; canonical use not enabled then.
