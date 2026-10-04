@@ -1,0 +1,283 @@
+{
+  "id": "C2",
+  "what": "Batch 6 split of topics/2026-09-feature-staffer-network-data-and-math (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C2); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-09-feature-staffer-network-data-and-math",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Discussions",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Contradictions and corrections recorded in the sources"
+    ],
+    "links": [
+      "discussions/2026-09-06-staffer-sorting-rulings",
+      "concepts/concurrent-service-overlap-edge-rule"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture",
+      "title": "Employment-tenure adjudication and the architecture/overlap rulings (09-01 to 09-03)",
+      "summary": "The employment-tenure data adjudication of 2026-09-01 to 09-03, from the verdict and Paul's rulings to the play queue and the authoritative coverage metric, with the architecture and overlap rulings carried into the lane",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Employment-tenure data adjudication (Fable, 2026-09-01 to 2026-09-03)",
+        "## Architecture and overlap rulings (2026-09-03), as carried in this lane"
+      ],
+      "keep": [
+        "concepts/concurrent-service-overlap-edge-rule"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-staffer-network-data-and-math-sorting-lane",
+      "title": "Sorting lane: rulings, facts and state log (09-06 to 09-08)",
+      "summary": "The staffer sorting lane of 2026-09-06 to 09-08: its rulings, the facts established, the stage plan and the dated state log through the shipped and committed lane",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Sorting lane (2026-09-06 to 2026-09-08): rulings, facts and dated state log"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane",
+      "title": "SNA math audit and the co-tenure clique lane (09-05 to 09-07)",
+      "summary": "The SNA math audit of 2026-09-05 and the co-tenure clique lane of 2026-09-07 with its shipping state, the groups-role defect, the open producer findings and the move tables",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## SNA math audit (Paul, 2026-09-05)",
+        "## Co-tenure clique lane (Paul, 2026-09-07)"
+      ],
+      "keep": [
+        "concepts/concurrent-service-overlap-edge-rule"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-staffer-network-data-and-math-stale-imports-and-v7-spine",
+      "title": "Stale imports and the v6-to-v7 spine repoint (09-06/07)",
+      "summary": "The stale-imports lane of 2026-09-06 and the closeout of the v6-to-v7 spine repoint on 2026-09-07",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Stale-imports lane (2026-09-06)",
+        "## v6-to-v7 spine repoint closeout (2026-09-07)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [
+    {
+      "id": "D3",
+      "part": "topics/2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture",
+      "with": "discussions/2026-09-03-staffer-network-architecture"
+    },
+    {
+      "id": "D4",
+      "part": "topics/2026-09-feature-staffer-network-data-and-math-sorting-lane",
+      "with": "discussions/2026-09-06-staffer-sorting-rulings"
+    }
+  ],
+  "retarget": [
+    {
+      "note": "discussions/2026-09-03-staffer-network-architecture",
+      "from": "topics/2026-09-feature-staffer-network-data-and-math",
+      "to": "topics/2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture",
+      "why": "D3 (4.4 C4, 4.7: the part carries the architecture and overlap rulings)"
+    }
+  ],
+  "s10": [
+    {
+      "line": 33,
+      "old": "- Scope: the staffer network is \"one giant ant colony\" (Paul): each member is its own station, staffers are nested in and between the stations, lobbyists are outsiders navigating by who they know best. The staffer network is its OWN social network a layer BELOW congress members; members are attachment points only; the ~535-node cosponsorship/media member graph stays independent and untouched. See [[2026-09-03-staffer-network-architecture]].",
+      "mark": "external",
+      "why": "\"See [[2026-09-03-staffer-network-architecture]]\" names another note; \"a layer BELOW congress members\" is the network hierarchy"
+    },
+    {
+      "line": 34,
+      "old": "- Only person-person edge rule: OVERLAP (concurrent service in the same container). See [[concurrent-service-overlap-edge-rule]].",
+      "mark": "external",
+      "why": "\"See [[concurrent-service-overlap-edge-rule]]\" names another note"
+    },
+    {
+      "line": 35,
+      "old": "- State on 2026-09-01 (evening): the staffer-network build (26 modules in `fec/staffer_network/`, 70 schemas, 72 scripts + ~1.5 GB of generations in `audits/staffer_network/`, 150+ reviews in `data/staffer_network/reviews/`, off-repo store `C:\\Users\\pgoff\\AppData\\Local\\Melange\\staffer_network\\`) existed ONLY as untracked files in the live tree on main; no branch carried it (only the two 08-29 design/metrics docs are committed, on `claude/melange-data-expansion-958236`). Single-disk exposure the mirror does not cover. The design/metrics docs in Downloads are the v3 revisions dated 2026-08-31 despite their `20260829` filenames. (Later census, 2026-09-07: the store was 24.8 GB / 315 dirs, not 1.5 GB; see the registry below.)",
+      "mark": "rewrite",
+      "why": "\"see the registry below\" is the Stage 0 registry bullet (`generation_registry_20260906`, store 24.8 GB / 315 dirs) in ### State 2026-09-07 ~01:00 ET of ## Sorting lane, which moves to -sorting-lane; \"Later census\" is time",
+      "new": "- State on 2026-09-01 (evening): the staffer-network build (26 modules in `fec/staffer_network/`, 70 schemas, 72 scripts + ~1.5 GB of generations in `audits/staffer_network/`, 150+ reviews in `data/staffer_network/reviews/`, off-repo store `C:\\Users\\pgoff\\AppData\\Local\\Melange\\staffer_network\\`) existed ONLY as untracked files in the live tree on main; no branch carried it (only the two 08-29 design/metrics docs are committed, on `claude/melange-data-expansion-958236`). Single-disk exposure the mirror does not cover. The design/metrics docs in Downloads are the v3 revisions dated 2026-08-31 despite their `20260829` filenames. (Later census, 2026-09-07: the store was 24.8 GB / 315 dirs, not 1.5 GB; see the registry in [[2026-09-feature-staffer-network-data-and-math-sorting-lane]].)",
+      "referent": "2026-09-feature-staffer-network-data-and-math-sorting-lane"
+    },
+    {
+      "line": 91,
+      "old": "- Own network beneath members, member graph kept, no member-member edges here, no `Â` import into staffer weights (Paul, 2026-09-03). See [[2026-09-03-staffer-network-architecture]].",
+      "mark": "external",
+      "why": "\"See [[2026-09-03-staffer-network-architecture]]\" names another note"
+    },
+    {
+      "line": 92,
+      "old": "- OVERLAP is the only person-person edge rule; sequence is trajectory (Paul, 2026-09-03). See [[concurrent-service-overlap-edge-rule]].",
+      "mark": "external",
+      "why": "\"See [[concurrent-service-overlap-edge-rule]]\" names another note"
+    },
+    {
+      "line": 98,
+      "old": "- Nine sorting rulings 2026-09-06: see [[2026-09-06-staffer-sorting-rulings]].",
+      "mark": "external",
+      "why": "\"see [[2026-09-06-staffer-sorting-rulings]]\" names another note"
+    },
+    {
+      "line": 100,
+      "old": "- Co-tenure clique rulings 2026-09-07: relabel, exclude 54 admin containers, exclude SHARED EMPLOYEE from top_staff. See [[concurrent-service-overlap-edge-rule]].",
+      "mark": "external",
+      "why": "\"See [[concurrent-service-overlap-edge-rule]]\" names another note"
+    },
+    {
+      "line": 108,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 127,
+      "old": "**How to apply:** build in the LIVE tree (the lane is untracked there; worktrees cannot see it); add files, do not edit other lanes' in-flight files; every generation twin-verified with promotion counters 0; LDA label strings live in ONE table for Paul to edit; deletion of inactive generations only after Paul confirms the concrete list. The auto-mode classifier blocked an executor launched to write THIS memory, so write memory inline.",
+      "mark": "not positional",
+      "why": "\"worktrees cannot see it\" is a verb"
+    },
+    {
+      "line": 147,
+      "old": "- Stage 5 RUNNING in two architects: sidecar (person-only source-scoped index, `/api/staffer-groups-index`, `fec/staffer_network/lda_status_labels.py`; Paul approved the words: L4/L5 \"Lobbyist · former Hill staff, confirmed\", L2/L3 \"… likely\", L0/L1 \"Lobbyist · no Hill record found\", employer line R1/R2 \"Employer on file: <registrant>\" / R0 \"Employer not on file\") and static page (`build_staffer_groups_section.py`, template `_01.tpl`, preview on 8803, not deployed).",
+      "mark": "not positional",
+      "why": "\"former Hill staff\" is an adjective"
+    },
+    {
+      "line": 157,
+      "old": "- Static page BUILT uncommitted: `build_staffer_groups_section.py`, template `_01.tpl` (+ `--template/--groups` switches, default `_00` byte-identical), `display_name_for()` via `parts_from_payee_key` in the section producer (next chain run will change shipped names from lowercase to rendered; intended). Preview 8806 (8803 held by another lane). Cap-40 payload 17.8 MB > 5 MB pin -> RULED current-day trim: offices only with current staff (721/1,745), all current people, earlier staff as a count, orgs capped 12. HON:<bioguide> offices (594) named from the House ledger's own \"HON. First Last\" strings. Banned-word scan exempts data values (Part B ruling). OPEN for Paul: LDA lobbyist names on the page (corpus receipt says `privacy_class: restricted-machine-local`; LDA filings are public).",
+      "mark": "not positional",
+      "why": "\"next chain run\" is time; \"earlier staff as a count\" means former staff; \"the section producer\" is the dashboard section's producer, not a note section"
+    },
+    {
+      "line": 177,
+      "old": "- FOREIGN WRITER RESOLVED: it was Paul's other session, the co-tenure clique lane (see the clique section below): admin containers out of co-tenure, RELABEL \"People served alongside\" (concurrent presence on the same payroll office + container name/size), SHARED EMPLOYEE out of top_staff; two bugs it found: POSSIBLE_ONLY edges read without status filter at `staffer_graph_snapshot.py:241-245`; REPORT_PERIOD stints min-to-max (67.7% too long) -> fix = union of observed periods. Its preview law: NEVER hand Paul an 80 MB Moneyball.html (crashed his browser x4); preview from staffer-network.html (4.4 MB) or Moneyball Dashboard.html (2.96 MB); localhost links may not reach him, send files. Also `backup-coverage-gap-2026-09-07`: OneDrive silently stopped syncing this tree ~08-11, so the lane is SINGLE-DISK until committed + mirror-pushed.",
+      "mark": "rewrite",
+      "why": "plan S10 example: \"see the clique section below\" is ## Co-tenure clique lane, which moves to -sna-math-and-clique-lane",
+      "new": "- FOREIGN WRITER RESOLVED: it was Paul's other session, the co-tenure clique lane (see the clique section in [[2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane]]): admin containers out of co-tenure, RELABEL \"People served alongside\" (concurrent presence on the same payroll office + container name/size), SHARED EMPLOYEE out of top_staff; two bugs it found: POSSIBLE_ONLY edges read without status filter at `staffer_graph_snapshot.py:241-245`; REPORT_PERIOD stints min-to-max (67.7% too long) -> fix = union of observed periods. Its preview law: NEVER hand Paul an 80 MB Moneyball.html (crashed his browser x4); preview from staffer-network.html (4.4 MB) or Moneyball Dashboard.html (2.96 MB); localhost links may not reach him, send files. Also `backup-coverage-gap-2026-09-07`: OneDrive silently stopped syncing this tree ~08-11, so the lane is SINGLE-DISK until committed + mirror-pushed.",
+      "referent": "2026-09-feature-staffer-network-data-and-math-sna-math-and-clique-lane"
+    },
+    {
+      "line": 186,
+      "old": "- PAUL'S RULINGS on organisations (verbatim): \"For the filer, you do what is chronologically the most recent\" = a lobbyist sits under the MOST RECENT registrant only (former registrants folded); \"If it appears they are contract/mercenary they are tied to all those organizations as clients\" = a contract filer (registrant files for clients other than itself) is listed under EVERY client organisation as \"represented by\"; that is the ruling, not duplication. Employer line = most recent registrant + as-of period (+ client_count for contract filers). Build launched as its own architect task.",
+      "mark": "not positional",
+      "why": "\"former registrants folded\" is an adjective"
+    },
+    {
+      "line": 190,
+      "old": "- 8841 sidecar DOWN after Paul's restart (was loading the new code at 07:00 ET): diagnosis scout launched; do not ask Paul to restart again until the cause is known. (Later: UP, the census \"DOWN\" was a false negative; see below.)",
+      "mark": "same note",
+      "why": "\"see below\" is the state log of ### State 2026-09-08 ~03:40 ET (the 8841 sidecar diagnosis, its correction and the census scout false negative), which moves with the whole sorting lane to -sorting-lane after this entry; \"Later\" is time"
+    },
+    {
+      "line": 230,
+      "old": "- **House 2016Q1-2026Q1 payroll match lane (11,788 rows, 3,355 people) was NOT an input to v3** (`house_payroll_rows_conserved: 32103` = the 2009Q3-2015Q4 lane only), so the priority partition and v5 do not see it; P0 = 11,643 is an upper bound.",
+      "mark": "not positional",
+      "why": "\"do not see it\" is a verb"
+    },
+    {
+      "line": 234,
+      "old": "- The lane's own \"Precise next stages\" (implementation diagnostic lines 682-725) define finishing as stage 3 (adjudicate the 7,113 P3 people) + stage 8 (binding completeness audit); both need Paul's rulings (I-4 gold owner = D-Q5, unanswered; D-Q2 LegiStorm).",
+      "mark": "not positional",
+      "why": "\"Precise next stages\" quotes a section of an external diagnostic document (time order of stages)"
+    },
+    {
+      "line": 264,
+      "old": "2. LDA filings (have): covered official positions within the preceding 20 years.",
+      "mark": "not positional",
+      "why": "\"within the preceding 20 years\" is time"
+    },
+    {
+      "line": 293,
+      "old": "Verbatim intent: \"if they are shared for the social network that means they are tied to multiple members, once we get the data collected remind me to design the layering of the networks, the idea is that staffers are nested underneath and in-between members.\" So: once collection is done, RAISE the network-layering design with him. The shared-employee class is the concrete hook: 7,605 House staffers are legitimately paid by MANY member offices at once (caucus/shared staff, e.g. Krystal Kaai CAPAC ExecDir across 28 offices at $1,000 each in 2020Q4; Kathryn Doherty 35 offices 2017Q2). Those people ARE the \"in-between members\" layer; single-office staffers are the \"nested underneath\" layer. (Paul's 2026-09-03 ant-colony ruling answered this: see [[2026-09-03-staffer-network-architecture]].)",
+      "mark": "external",
+      "why": "\"see [[2026-09-03-staffer-network-architecture]]\" names another note"
+    },
+    {
+      "line": 297,
+      "old": "\"Split the same-name collisions apart... the staffer names always appear directly below the members. The documents list them: Member, staffers of the member, misc expenses.\" The SOD document structure scopes each staffer row to the member above it, so A NAME IS AN IDENTITY ONLY WITHIN AN OFFICE; cross-office identity must be evidenced. Measured over the v1 ledger (11,723 names in >1 office): **SHARED_EMPLOYEE 7,605** (every same-quarter multi-office quarter carries `shared_employee_flag`: one person, many members), **SEQUENTIAL_ONLY 3,934** (career-move candidates), **MID_QUARTER_MOVE 161** (same quarter, two offices, service-date ranges DISJOINT at day level = one person switching jobs, typically CHIEF ADMIN OFCR -> member office), **TRUE_COLLISION 23** (day-level service-date overlap, not shared = must split). MY EARLIER WARNING THAT 11,713 \"career moves\" CARRIED COLLISION RISK WAS OVERSTATED: the real split set is 23 of 60,136 people. THE DISCRIMINATOR IS DAY-LEVEL SERVICE DATES, NOT QUARTER OVERLAP. Trap hit: reading a nonexistent span field (`shared_employee_ever`) gave a false 0, which made 7,741 people look like collisions; the real flag is `shared_employee_flag` on the OBSERVATION rows.",
+      "mark": "not positional",
+      "why": "\"directly below the members\" and \"the member above it\" describe the SOD document layout; \"MY EARLIER WARNING\" is a prior statement in time (recorded only as the hub's struck correction)"
+    },
+    {
+      "line": 311,
+      "old": "IRREDUCIBLE FLOOR (stated rather than hidden in a residual): the original claim was unpaid interns, detailees, fellows and contractors never appear on a disbursement line; and the reachable set itself has upward bias (Senate 2009-2011Q1 and House 2009Q1-Q2 score in-window but sit outside every corpus). 95% may be unattainable: measure and decompose the residual by cause rather than arguing. (The intern claim was later found FALSE; see below.)",
+      "mark": "same note",
+      "why": "\"see below\" is the bullet \"MY CLAIM THAT INTERNS/DETAILEES/FELLOWS ... IS FALSE\" in ### Authoritative coverage metric + ceiling, which follows in the same section and moves with it to -tenure-adjudication-and-architecture; \"later found\" is time"
+    },
+    {
+      "line": 313,
+      "old": "### Authoritative coverage metric + ceiling (2026-09-03; supersedes every earlier coverage figure)",
+      "mark": "not positional",
+      "why": "\"supersedes every earlier coverage figure\" is time (the figures recorded before 2026-09-03)"
+    },
+    {
+      "line": 315,
+      "old": "- Metric code of record: `scratchpad\\metric\\metric.py`; RCR = |COVERED intersect REACHABLE| / |REACHABLE|; re-run it after every play instead of re-deriving. REACHABLE = 6,867 by the ceiling classifier (a later independent pass measured 6,634 under a stated rule; both are defensible, report which).",
+      "mark": "not positional",
+      "why": "\"a later independent pass\" is time"
+    },
+    {
+      "line": 331,
+      "old": "- Architecture: the staffer network is its own social network a layer BELOW congress members, not a member-member projection; members are attachment points; no member-member edges computed here. Cosponsorship/media member graphs (~535 nodes; published CU config, BASE/AUG/NBASE/NORM, bank_reg/crypto diagnostics) KEPT independent (\"KEEP THIS\" x2).",
+      "mark": "not positional",
+      "why": "\"a layer BELOW congress members\" is the network hierarchy"
+    },
+    {
+      "line": 354,
+      "old": "- **Pathfinder:** exists ONLY in the 8841 sidecar (`fec/surfaces/staffer_routing.py`, \"A*\" with heuristic 0 = Dijkstra over persons, hop costs 1/3/2/5/8, loads only the first 10,000 co-tenure edge rows, enumerates tenure neighbours from `by_employer`). Member-network RELINK/MOPBD* is a different layer. Options A/B/C sizes: office-level graph 106,337 office pairs = 1.40 MB JSON / 366 KB gzip; per-person top-5 ~ 10.1 MB JSON. Recommended first build: option A, office-level Dijkstra in the page over CONCURRENT shared-people edges (needs one pass over the 1.5 GB edge file), no names; pushes the section past the 5 MB cap -> Paul's ruling.",
+      "mark": "not positional",
+      "why": "\"pushes the section past the 5 MB cap\" is the dashboard section, not a note section"
+    },
+    {
+      "line": 357,
+      "old": "**Why:** the network's headline rankings are currently an artefact of the teleport design and the Politico directory, and LDA is not in the graph at all despite the plan's wording; a later session must not present \"Top staff\" or LDA coverage as established.",
+      "mark": "not positional",
+      "why": "\"a later session\" is time"
+    },
+    {
+      "line": 361,
+      "old": "(Later effect: v6 replaced `ranking_controls` with `policy_link_pagerank_control`, inflation 11.6x -> 1.74x, and `office_diversity` replaced `bridging_diversity`; decay and container-size normalisation stayed `pending_rulings`.)",
+      "mark": "not positional",
+      "why": "\"Later effect\" is time"
+    },
+    {
+      "line": 375,
+      "old": "- **NEW BLOCKER (one string), later FIXED:** `build_staffer_network_section.py:1113` looked up receipt role `'staffer_social_groups'` (the filename stem); the builder emits `'groups'` (`build_staffer_social_network.py:3350`). On a v6 rebuild the groups file was silently unbound and `meta.co_tenure_office_size_source` published the FALSE claim that the file is absent. Sibling `build_staffer_groups_section.py:174` has it right (`GROUPS_ROLE = 'groups'`).",
+      "mark": "not positional",
+      "why": "\"later FIXED\" is time"
+    },
+    {
+      "line": 419,
+      "old": "- **Cross-lane write (the important part).** LIVE was already fixed at 15:54:07 on 2026-09-06 by a *different* session (worktree `politico-crawl-monitoring-e05497`, branch `claude/staffer-network-consolidation-429f0d`), with a verified pre-edit backup at `Melange Systems\\backups\\staffer_stale_imports_20260906\\` and **no record document**. Transcript timestamps prove the direction: this lane authored the idiom at 15:09:49, that session read this worktree's in-flight file at 15:17:10 (`head -30` of the worktree path) and re-emitted the same idiom into LIVE 37 minutes later, its script docstring calling it \"the established sys.path bootstrap\", a string that existed in zero committed files. The two versions are content-identical; `staffer_live_service.py` differs only by six line terminators, which will trip any byte-match/hash gate comparing LIVE to the worktree.",
+      "mark": "not positional",
+      "why": "\"37 minutes later\" is time"
+    },
+    {
+      "line": 421,
+      "old": "- **State at close: CLOSED 2026-09-06.** LIVE carries both the fix and the regression coverage. Paul gated the apply in chat (\"apply the test file and registration line to LIVE\"); `fec/tests/surfaces/test_staffer_surface_import_modes.py` (10 checks: package-mode import, script-mode subprocess with only `fec/surfaces` on the path, lane-scoped audit guard) plus its registration at `fec/tests/run_tests.py:418` are now in LIVE, uncommitted. Backup + authored manifest at `backups/staffer_import_regression_20260906/` (gitignored; it names this lane as author, unlike the earlier staffer backup). LIVE's `run_tests.py` also carries **+44 uncommitted lines from another lane** in the same `_LANE_MODULES` tuple around 336-390; the registration was appended at the END of the tuple, additive, `git diff --stat` = 46 insertions / 1 deletion (the deletion is the old tuple-closing line gaining a comma). LIVE kernel after apply: **182 passed, 1 FAILED** (was 181/1), the +1 being this suite, which appears in the run as `OK test_staffer_surface_import_modes suite clean` (proof the registration resolves). `audit_stale_imports` reports `OK … suite clean`.",
+      "mark": "not positional",
+      "why": "\"the earlier staffer backup\" is the backup made earlier in time (named in the bullet before)"
+    }
+  ]
+}

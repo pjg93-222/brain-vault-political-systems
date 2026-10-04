@@ -1,0 +1,367 @@
+{
+  "id": "A7",
+  "what": "Batch 4 split of topics/2026-07-feature-agent-tooling-stack (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A7); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-agent-tooling-stack",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "actors/codex-executor",
+      "actors/metaloop",
+      "actors/glass-box"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-codex-executor-lane",
+      "title": "Codex executor lane record",
+      "summary": "The Codex executor lane record: how Claude and Codex were wired, the injected-preamble finding, the Gemini and Grok lanes, Paul's amended rules and the integration history",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Codex executor lane (source: codex-executor-lane-2026-07-18, branch chatgpt-prompt-orchestration)"
+      ],
+      "keep": [
+        "actors/metaloop",
+        "actors/codex-executor"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane",
+      "title": "quant-model-evaluation skill lane (2026-09-30 to 10-01)",
+      "summary": "The quant-model-evaluation skill lane of 2026-09-30 to 10-01: Paul's rulings on F1 to F6, the N19 hold fix, the leakage fix and the production chain left pending",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## quant-model-evaluation skill lane (source: quant-model-evaluation-skill-lane-2026-09-30, last modified 2026-10-01; see [[quant-model-evaluation-skill]])"
+      ],
+      "keep": [
+        "actors/quant-model-evaluation-skill"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-skill-library-lane",
+      "title": "Moneyball skill library lane",
+      "summary": "The Moneyball skill library: how the repo skills were built, merged into git and audited for stale facts",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Moneyball skill library (sources: skills-library-2026-07-10, skill-library-stale-facts-lane-2026-09-30; see [[moneyball-skill-library]])"
+      ],
+      "keep": [
+        "actors/moneyball-skill-library"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-runpod-sessions",
+      "title": "RunPod Claude sessions",
+      "summary": "Running Claude sessions on the RunPod pod: Paul's rulings on the H200, the data scope he allowed and the never-stop rule",
+      "domain": "domain/infra",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## RunPod Claude sessions (source: runpod-claude-sessions-2026-09-30; see [[runpod-pod]])"
+      ],
+      "keep": [
+        "actors/runpod-pod"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-higgsfield-account-trap",
+      "title": "Higgsfield connector account trap",
+      "summary": "The Higgsfield connector account trap: the connector bound to a free account, re-authorized by Paul on the plus plan on 2026-09-19, then back on a free account on 2026-09-30 and 2026-10-01",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Higgsfield connector account trap (source: higgsfield-connector-account-trap-2026-09-17, last modified 2026-10-01; see [[higgsfield-connector]])"
+      ],
+      "keep": [
+        "actors/higgsfield-connector"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-project-brain-toolkit",
+      "title": "Project Brain toolkit",
+      "summary": "The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Project Brain toolkit (source: project-brain-toolkit-2026-08-11, last modified 2026-09-19; see [[project-brain]])"
+      ],
+      "keep": [
+        "actors/project-brain"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-agent-tooling-stack-glass-box-lock-hang",
+      "title": "GLASS BOX lane-lock hang and Grok balance",
+      "summary": "The GLASS BOX lane-lock hang that blocked metaloop starts, and the Grok lane taken down on 2026-08-06 by an exhausted Grok Build usage balance",
+      "domain": "domain/platform",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## GLASS BOX lane-lock hang and Grok balance (source: glassbox-lane-lock-hang-2026-08-06, last modified 2026-08-10; see [[glass-box]])"
+      ],
+      "keep": [
+        "actors/glass-box"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 43,
+      "old": "- The canonical orchestration rules (UNIVERSAL LANE LAWS) live in `.claude/commands/metaloop.md`; see [[metaloop]].",
+      "mark": "external",
+      "why": "\"see [[metaloop]]\" names another note"
+    },
+    {
+      "line": 97,
+      "old": "- ~~Codex may NOT run data-mutating pipeline steps (code-only in worktrees)~~ - superseded 2026-07-19 (\"change rule, codex can run data-mutating pipeline steps\"); see the rule block below.",
+      "mark": "rewrite",
+      "why": "\"see the rule block below\" is the **RULE AMENDED 2026-07-19 (Paul: \"change rule, codex can run data-mutating pipeline steps\")** block of ## Codex executor lane, which moves to -codex-executor-lane",
+      "new": "- ~~Codex may NOT run data-mutating pipeline steps (code-only in worktrees)~~ - superseded 2026-07-19 (\"change rule, codex can run data-mutating pipeline steps\"); see the rule block in [[2026-07-feature-agent-tooling-stack-codex-executor-lane]].",
+      "referent": "2026-07-feature-agent-tooling-stack-codex-executor-lane"
+    },
+    {
+      "line": 101,
+      "old": "- ~~Codex sessions drive MCP via the app's own `codex mcp-server`~~ (2026-07-18) - broken upstream 2026-09-17; repaired 2026-09-19 with a pinned build, and the working Astra route is `codex exec` (details below).",
+      "mark": "rewrite",
+      "why": "\"(details below)\" are the ### UPDATE 2026-09-19 - THE MCP LANE IS BROKEN UPSTREAM details of ## Codex executor lane, which move to -codex-executor-lane",
+      "new": "- ~~Codex sessions drive MCP via the app's own `codex mcp-server`~~ (2026-07-18) - broken upstream 2026-09-17; repaired 2026-09-19 with a pinned build, and the working Astra route is `codex exec` (details in [[2026-07-feature-agent-tooling-stack-codex-executor-lane]]).",
+      "referent": "2026-07-feature-agent-tooling-stack-codex-executor-lane"
+    },
+    {
+      "line": 107,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the ## Next Steps heading"
+    },
+    {
+      "line": 110,
+      "old": "- [ ] Mechanical receipt-presence gate for Codex dispatches (recommend at the next lane-law review; prose preamble is demonstrably weak).",
+      "mark": "not positional",
+      "why": "\"the next lane-law review\" is time"
+    },
+    {
+      "line": 113,
+      "old": "- [ ] QME lane STILL TO DO after the reboot (see the QME section): full chain; `runs\\step6_build_system_manifest.cmd`, then audit_full, then the kernel; f1f4 checks and ROI parity check; write PUBLICATION_SIGNOFF_20261001 and land it; start 8841 once; write the brain outcomes; verify.",
+      "mark": "rewrite",
+      "why": "\"see the QME section\" is ## quant-model-evaluation skill lane, which moves to -quant-model-evaluation-lane",
+      "new": "- [ ] QME lane STILL TO DO after the reboot (see the QME section in [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]]): full chain; `runs\\step6_build_system_manifest.cmd`, then audit_full, then the kernel; f1f4 checks and ROI parity check; write PUBLICATION_SIGNOFF_20261001 and land it; start 8841 once; write the brain outcomes; verify.",
+      "referent": "2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane"
+    },
+    {
+      "line": 114,
+      "old": "- [ ] Paul to confirm Carbonite covers the four new Project Brain folders (green badge); fix the stale pod CLAUDE.local.md line \"stop it in the RunPod console\" at the next pod visit.",
+      "mark": "not positional",
+      "why": "\"at the next pod visit\" is time"
+    },
+    {
+      "line": 140,
+      "old": "- **STANDING 2026-07-19 (Paul, evening: \"always work through codex\" + \"Optimize merge to your preference\")** - see Decisions. Ops: dispatch ONE codex call at a time (the morning's two parallel calls hit `MCP error -32000: Connection closed`; single sequential dispatches worked cleanly all evening); short worktree paths (`%TEMP%\\claude\\cxwt-*`) per `coop-sector-probe-2026-07-18`'s MAX_PATH lesson.",
+      "mark": "rewrite",
+      "why": "\"see Decisions\" names the hub's ## Decisions (Codex is the default executor)",
+      "new": "- **STANDING 2026-07-19 (Paul, evening: \"always work through codex\" + \"Optimize merge to your preference\")** - see Decisions in [[2026-07-feature-agent-tooling-stack]]. Ops: dispatch ONE codex call at a time (the morning's two parallel calls hit `MCP error -32000: Connection closed`; single sequential dispatches worked cleanly all evening); short worktree paths (`%TEMP%\\claude\\cxwt-*`) per `coop-sector-probe-2026-07-18`'s MAX_PATH lesson.",
+      "referent": "2026-07-feature-agent-tooling-stack"
+    },
+    {
+      "line": 150,
+      "old": "- The \"project versions win on name collision\" claim is WRONG for the current app (see Decisions); this session loaded the USER-scope SKILL.md (drifted: it missed b706ec7's sweep).",
+      "mark": "rewrite",
+      "why": "\"see Decisions\" names the hub's ## Decisions (the struck project-versions claim)",
+      "new": "- The \"project versions win on name collision\" claim is WRONG for the current app (see Decisions in [[2026-07-feature-agent-tooling-stack]]); this session loaded the USER-scope SKILL.md (drifted: it missed b706ec7's sweep).",
+      "referent": "2026-07-feature-agent-tooling-stack"
+    },
+    {
+      "line": 159,
+      "old": "- **The plan-echo gate proved its worth on first real use**: Codex-as-sensor flagged 5 conflicts + 5 ambiguities, three of which changed the design - including that Claude's drafted claim \"Claude is structurally guaranteed to see every reflex report\" was FALSE (idle-timeout can lose the response), fixed to \"loses the report but NOT the containment: after any lost turn Claude inspects the worktree and treats unexplained state as an unreported reflex.\" Lesson: ASK CODEX TO FLAG CONTRADICTIONS EXPLICITLY in the plan round - it catches Claude's own errors.",
+      "mark": "not positional",
+      "why": "\"to see every reflex report\" is the verb see"
+    },
+    {
+      "line": 162,
+      "old": "1. **Every safety limit lived in SKILL.md prose that Codex NEVER SEES - the injected preamble is the only operative text**, so the \"clear execution error\" narrowing was unenforced; the preamble is now self-sufficient and the section says so explicitly.",
+      "mark": "external",
+      "why": "\"the section says so explicitly\" is the section of the codex-executor SKILL.md, a file outside the vault"
+    },
+    {
+      "line": 178,
+      "old": "1. **Claude NEVER writes code** (see Decisions).",
+      "mark": "rewrite",
+      "why": "\"see Decisions\" names the hub's ## Decisions (Claude NEVER writes code)",
+      "new": "1. **Claude NEVER writes code** (see Decisions in [[2026-07-feature-agent-tooling-stack]]).",
+      "referent": "2026-07-feature-agent-tooling-stack"
+    },
+    {
+      "line": 179,
+      "old": "2. **Double sign-off loop** (see Decisions).",
+      "mark": "rewrite",
+      "why": "\"see Decisions\" names the hub's ## Decisions (Double sign-off loop)",
+      "new": "2. **Double sign-off loop** (see Decisions in [[2026-07-feature-agent-tooling-stack]]).",
+      "referent": "2026-07-feature-agent-tooling-stack"
+    },
+    {
+      "line": 189,
+      "old": "- Invocation: `agy -p \"<contract>\" --model gemini-3.6-flash-high --add-dir <dir>` from media cwd; `permissions.allow=[\"read_file(**)\"]` in `~/.gemini/settings.json` (BOM-FREE mandatory; superseded 2026-08-09, see below); shell tools stay soft-denied headless = LOAD-BEARING, never `--dangerously-skip-permissions`; the contract MUST explicitly instruct read_file (@-mentions don't attach in print mode; a \"no commands\" prohibition blocks the read tool - say \"no shell or terminal commands\").",
+      "mark": "external",
+      "why": "\"superseded 2026-08-09, see below\" points at a supersession that is not in this note (nothing dated 2026-08-09 about ~/.gemini/settings.json follows it; the hub History row 2026-08-09 \"Gemini lane repaired\" is above it): a pre-existing pointer into the source memory, unchanged and listed for the stale-statements pass"
+    },
+    {
+      "line": 199,
+      "old": "- **INTEGRATED 07-24 per Paul (\"don't touch the sol retry, only integrate, the rest we can improve upon\"):** live tree ff'd 955b66a to 80f1b79 on its cfpb branch (ff touched only the .claude plane + `b5_narratives.py`; retry controller BYTE-IDENTICAL across the range); user scope re-synced - 12/12 files md5 MATCH (the 7 earlier \"diffs\" were LINE-ENDINGS ONLY, user-scope LF vs repo CRLF - raw md5 sweeps false-alarm on EOL; confirm with `git diff --no-index --ignore-cr-at-eol` before calling drift); tests 41/41 in the live tree. **SOL RETRY = FROZEN per Paul - do not modify `fable_sol_retry.py`/test/adapters; the OTHER layers are explicitly open to improvement.** `/fable-audit` stays project-scope only (intentional).",
+      "mark": "not positional",
+      "why": "\"the 7 earlier diffs\" are diffs seen before the re-sync (time)"
+    },
+    {
+      "line": 203,
+      "old": "- **/METALOOP SHIPPED @46b17b9** (Paul 'the full orchestration' + 'Gemini only as needed'): one command = full three-lane tandem (Fable decomposes/digests, Codex executes under full protocol, Gemini STRICTLY CONDITIONAL - no media, no Gemini, never invent a perception step); repo + user-scope `commands/metaloop.md`. See [[metaloop]].",
+      "mark": "external",
+      "why": "\"See [[metaloop]]\" names another note"
+    },
+    {
+      "line": 220,
+      "old": "- Docs: frontmatter dormant-lie fixed, Startup-shim reality documented, metaloop rewritten clean UTF-8 with 4-role hierarchy. LESSON: registry skill descriptions cache across a session - file fixes show next session.",
+      "mark": "not positional",
+      "why": "\"file fixes show next session\" is time"
+    },
+    {
+      "line": 259,
+      "old": "## quant-model-evaluation skill lane (source: quant-model-evaluation-skill-lane-2026-09-30, last modified 2026-10-01; see [[quant-model-evaluation-skill]])",
+      "mark": "external",
+      "why": "heading: \"see [[quant-model-evaluation-skill]]\" names another note"
+    },
+    {
+      "line": 283,
+      "old": "- **F5:** the original scoring attempt stopped UNDERPOWERED before H1/H2 correlations. Paul subsequently chose archive refresh and kept gap equal to Suggested. The pod refreshed all 468 frozen bill IDs from official GovInfo XML; 6,284 dated events, zero errors. Independent replay finds 72 new-event members among the original 511 eligible members (73 events), below 150; current-roster 77 is a different denominator. Role-row multiplicity changed between archives and H2 changed after the freeze. No new counting rule or association was applied; the look remains UNSPENT. Candidate and receipts: `/workspace/f5-check`; preserved local packet in the matching session scratchpad `f6apply/f5-pod-evidence-20260930.tar.gz`.",
+      "mark": "not positional",
+      "why": "\"(73 events), below 150\" is a number comparison"
+    },
+    {
+      "line": 289,
+      "old": "- N19 fix \"Hold low-confidence + longer timeout\" = a77bfb6db: a below-high decision becomes a hold for EVERY key, including admitted bills. 119:hr:9460/9514 drop out if the classifier is unsure again.",
+      "mark": "not positional",
+      "why": "\"a below-high decision\" is a confidence level"
+    },
+    {
+      "line": 292,
+      "old": "- PHASE 2 (land a77bfb6db + fdc201076 leakage CoW fix in LIVE, then N19, membership refresh, full chain, kernel + audit) was running at 20:10 on 09-30. Verify the LIVE log before trusting this line (historical per the recovery checkpoint below).",
+      "mark": "same note",
+      "why": "\"the recovery checkpoint below\" names ### Recovery checkpoint 2026-09-30, which lands in -quant-model-evaluation-lane with this line and stays below it"
+    },
+    {
+      "line": 300,
+      "old": "- Full production chain, parity, final kernel/audit gates, output reconciliation and 8841 restart remain pending in the coordinator lane. Earlier PHASE 2 running statements are historical.",
+      "mark": "same note",
+      "why": "\"Earlier PHASE 2 running statements\" are the PHASE 2 running line of ### Regeneration rulings (file line 292), in the same part"
+    },
+    {
+      "line": 334,
+      "old": "## RunPod Claude sessions (source: runpod-claude-sessions-2026-09-30; see [[runpod-pod]])",
+      "mark": "external",
+      "why": "heading: \"see [[runpod-pod]]\" names another note"
+    },
+    {
+      "line": 340,
+      "old": "- Paul subsequently ordered every process to the newly supplied pod and explicitly allowed the entire data plane, including donor records. The code-only restriction and old address/layout below describe the first pod and must not govern this authorized math run.",
+      "mark": "same note",
+      "why": "\"the code-only restriction and old address/layout below\" are ### Historical first pod and ### Layout / how to apply, which land in -runpod-sessions with this line and stay below it"
+    },
+    {
+      "line": 349,
+      "old": "- **Paul's rulings:** \"Claude sessions there\"; keep the H200 ($3.59-4.59/hr). NEVER stop the pod, and don't nag about stopping it: Paul answered \"Does not matter\" to the stop reminder on 09-30. See `pod-for-memory-heavy-tasks-2026-09-30`. The pod's `CLAUDE.local.md` line \"stop it in the RunPod console\" is stale; fix it at the next pod visit. CODE ONLY, no Melange data (donor PII) synced (first pod only; superseded above); no secrets copied (default: none, per-secret OK required).",
+      "mark": "same note",
+      "why": "\"superseded above\" is ### Superseding math-lane checkpoint, 2026-09-30, in the same part above it; \"See `pod-for-memory-heavy-tasks-2026-09-30`\" names a memory file; \"at the next pod visit\" is time"
+    },
+    {
+      "line": 363,
+      "old": "## Moneyball skill library (sources: skills-library-2026-07-10, skill-library-stale-facts-lane-2026-09-30; see [[moneyball-skill-library]])",
+      "mark": "external",
+      "why": "heading: \"see [[moneyball-skill-library]]\" names another note"
+    },
+    {
+      "line": 371,
+      "old": "- ~~Gitignore caveat: `.claude/*` is ignored (line 28) - the library is ON DISK ONLY; to track add `!.claude/skills/` + `!.claude/skills/**` after the `!.claude/commands/*.md` block, then `git add`; Paul's call~~ - resolved 2026-07-10 afternoon (see next bullet).",
+      "mark": "same note",
+      "why": "\"see next bullet\" is the Merge debt CLEARED bullet just after it in the same section"
+    },
+    {
+      "line": 372,
+      "old": "- **Merge debt CLEARED + library IN GIT (2026-07-10 afternoon, Paul: \"merge and integrate - do it\"):** ALL branches fully merged into main - compassionate-ellis @5e63c97 (kill-ledger preregs), musing-swirles @4f7007d (9 parse fixes), magical-booth @2ce51c5 (7 HIGH fixes; conflicts resolved: `b5_behavioral_instrument` = main's version per documented rule, `audit_full` = BOTH check families, so **audit now 71**), clever-elbakyan @02a36ac (Vote Smart TIER-5 RESULT + a NEW user-directed MS NOW/ex-MSNBC transcript leg @9467fcc), with beautiful-hermann + audit/fixes-2026-07-10 merged earlier by a parallel session. Post-merge verification ALL GREEN: kernel 37/37, chain 9.8 min (coop_v2_candidate now in-chained), **ranks md5 UNCHANGED cce0c5a6 (0 moved)**, audit **71/71** twice. Library committed to main @b994d93 (gitignore keep rules added; 21 files tracked); all about 34 branch-caveat rows in the skills updated to merged-state. `git log main..<branch>` = empty for every branch. Related memories: `psych-audit-2026-07-09`, `dont-drop-context-anchor-memory`.",
+      "mark": "not positional",
+      "why": "\"merged earlier by a parallel session\" is time"
+    },
+    {
+      "line": 380,
+      "old": "- **Options put to Paul:** (A) authorize the admissions refresh (paid) + membership refresh (`update_bill_repository.py --rebuild-dashboard`, which runs the chain; DE-043), then finish the protocol - ranks will move from the input refresh, C1 cannot (no rank path); (B) zero-spend partial `run_pipeline.py --from lt_priming.py` (steps 43-74 statically LLM/network-free; `personal_texture_layer` runs `--refresh-local`) - regenerates `lt_priming.json` + dashboard but stops at the first stale-gate reader (`make_member_desk` step 74 at the latest); (C) wait for the next authorized chain. (Outcome: option A's refresh was authorized and completed 2026-10-01, see the QME lane.)",
+      "mark": "rewrite",
+      "why": "\"the next authorized chain\" is time; \"see the QME lane\" is ## quant-model-evaluation skill lane, which moves to the sibling part -quant-model-evaluation-lane",
+      "new": "- **Options put to Paul:** (A) authorize the admissions refresh (paid) + membership refresh (`update_bill_repository.py --rebuild-dashboard`, which runs the chain; DE-043), then finish the protocol - ranks will move from the input refresh, C1 cannot (no rank path); (B) zero-spend partial `run_pipeline.py --from lt_priming.py` (steps 43-74 statically LLM/network-free; `personal_texture_layer` runs `--refresh-local`) - regenerates `lt_priming.json` + dashboard but stops at the first stale-gate reader (`make_member_desk` step 74 at the latest); (C) wait for the next authorized chain. (Outcome: option A's refresh was authorized and completed 2026-10-01, see the QME lane in [[2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane]].)",
+      "referent": "2026-07-feature-agent-tooling-stack-quant-model-evaluation-lane"
+    },
+    {
+      "line": 384,
+      "old": "## Higgsfield connector account trap (source: higgsfield-connector-account-trap-2026-09-17, last modified 2026-10-01; see [[higgsfield-connector]])",
+      "mark": "external",
+      "why": "heading: \"see [[higgsfield-connector]]\" names another note"
+    },
+    {
+      "line": 388,
+      "old": "- **UPDATE 2026-09-19:** Paul re-authorized. `balance` returned plan `plus`, 1,069.9 credits; `list_workspaces` showed one private workspace on plus. `gpt_image_2_5` (reference images via role `image_references`, quality low..max, 1k/2k/4k) was available. The free-plan failure mode above is history unless `balance` says otherwise again.",
+      "mark": "same note",
+      "why": "\"the free-plan failure mode above\" is the trap described just above it in the same section"
+    },
+    {
+      "line": 393,
+      "old": "## Project Brain toolkit (source: project-brain-toolkit-2026-08-11, last modified 2026-09-19; see [[project-brain]])",
+      "mark": "external",
+      "why": "heading: \"see [[project-brain]]\" names another note"
+    },
+    {
+      "line": 397,
+      "old": "- **Why:** Paul wants durable per-project memory for disposable AI sessions, with himself as sole owner: sessions DRAFT updates; only Paul runs brainctl and commits (SUPERSEDED 2026-08-12, below). Ratified 2026-08-11: location = Desktop, toolkit + empty pilot brain (`brains\\pilot-brain`, commit 1ce7347, project unnamed - Paul seeds STATE/CONSTRAINTS), brainctl scope = full hardening incl. `scorecard`.",
+      "mark": "same note",
+      "why": "\"(SUPERSEDED 2026-08-12, below)\" is the How to apply - SUPERSEDED 2026-08-12 bullet of the same section"
+    },
+    {
+      "line": 399,
+      "old": "- **One-shot close-out (Paul: \"Finish it all\", same day):** commits 33ffb02 (evaluation ratio corrected to drafts / events + 5 robustness fixes: nonexistent-folder guard, friendly missing-file errors, init-on-file error, EVALUATION status row, `core.longpaths`) and 8f6cef9 (`boot-protocol-framework_3-DRAFT.md` - **v3 is DRAFT, v2 governs until Paul ratifies via DECISIONS**). Codex receipt-omission class hit 5-for-the-day -> receipt-first preamble amendment landed on live main 14cde015d + user copy md5-synced; prose demonstrably weak - the durable fix is a MECHANICAL receipt-presence gate (recommend at next lane-law review). Remaining cosmetic nits: \"Restore from git\" message on git-less brains, on-a-file says \"folder does not exist\", status double-message when STATE absent, orphan-brain path if a toolkit template file is missing.",
+      "mark": "not positional",
+      "why": "\"recommend at next lane-law review\" is time"
+    },
+    {
+      "line": 402,
+      "old": "## GLASS BOX lane-lock hang and Grok balance (source: glassbox-lane-lock-hang-2026-08-06, last modified 2026-08-10; see [[glass-box]])",
+      "mark": "external",
+      "why": "heading: \"see [[glass-box]]\" names another note"
+    },
+    {
+      "line": 405,
+      "old": "- **Metaloop start failure mode:** `metaloop.ps1 -Action start` failed with `GLASS BOX launch incomplete: 4/5 views healthy`. Cause: a `console.ps1 -Lane <x>` process was alive but its heartbeat had frozen about 10 h earlier. It holds `state\\lane-<x>.runtime.lock` with `FileShare::None`, so every newly spawned console hits the `catch [IO.IOException] { exit 0 }` path and dies instantly - the launcher's 10 s health deadline then fails the start.",
+      "mark": "not positional",
+      "why": "\"frozen about 10 h earlier\" is time"
+    },
+    {
+      "line": 410,
+      "old": "- Codex escalated **four** genuine contradictions in Claude-authored specs during this run (a freeze-list/substitution conflict, a data token being rethemed, bad count arithmetic, and an unused token that would inject a frozen literal). The escalation protocol is earning its keep - never treat a Codex stop as obstruction. See `melange-ui-retheme-2026-08-06`.",
+      "mark": "external",
+      "why": "\"See `melange-ui-retheme-2026-08-06`\" names a memory file"
+    }
+  ]
+}

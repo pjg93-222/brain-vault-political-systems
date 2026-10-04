@@ -24,15 +24,15 @@ related_topics:
   - "[[2026-09-feature-staffer-network-data-and-math]]"
 related_actors: []
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[melange-systems]]"
 related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-sorting-lane-2026-09-06.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-sorting-lane-2026-09-06.md", sha256: "59d8e0e9c17be38d759d7b3adac2f37fc990e0f2ab771975a7d5972360ad61c1"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -48,7 +48,7 @@ Memory `staffer-sorting-lane-2026-09-06` (type project, session `25322ef7-844b-4
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Related Projects
 
@@ -57,6 +57,7 @@ Memory `staffer-sorting-lane-2026-09-06` (type project, session `25322ef7-844b-4
 ## Related Topics
 
 - [[2026-09-feature-staffer-network-data-and-math]] - Staffer network lane 2026-09-01..08: adjudication, architecture, math audit, sorting rulings, clique fix, v7 spine and v6 ship.
+- [[2026-09-feature-staffer-network-data-and-math-sorting-lane]] — The staffer sorting lane of 2026-09-06 to 09-08: its rulings, the facts established, the stage plan and the dated state log through the shipped and committed lane.
 
 ## Rulings (Paul, 2026-09-06, answering Q1-Q9 after the compartmentalisation review)
 

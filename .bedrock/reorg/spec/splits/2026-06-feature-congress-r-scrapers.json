@@ -1,0 +1,506 @@
+{
+  "id": "B1",
+  "what": "Batch 5 split of topics/2026-06-feature-congress-r-scrapers (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B1); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-06-feature-congress-r-scrapers",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## R / RStudio working environment (user_r_environment, 2026-06-21)",
+      "## Reference data (counts and thresholds, quick lookup)"
+    ],
+    "links": [
+      "actors/draft-systems-r-pipeline",
+      "actors/debate-stance-model"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-member-scraper",
+      "title": "congress.gov member scraper",
+      "summary": "The congress.gov member scraper of 2026-06-02 to 06-10: purpose and outputs, result-row markup, the Cloudflare bypass and cookie-replay fast path, official-name roster rules, the pinned roster order, the bug-audit fixes and the chunked verbatim-URL rule",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## congress.gov member scraper (`congress_member_scraper.R`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-legislative-score-17x3",
+      "title": "Integrated 17-topic x 3-role legislative scraper",
+      "summary": "The integrated 17-topic by 3-role scraper behind the Moneyball Legislative Score: its 2026-06-22 design inside the member scraper, the stability guard, the cosponsor SNA edges, the June 24 refinements and guardrails, and the two superseded approaches",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Integrated 17-topic x 3-role scraper (Moneyball Legislative Score - Raw)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-cu-press-scraper",
+      "title": "CU press-release scraper and its coverage chain",
+      "summary": "The CU press-release scraper from its 2026-06-10 start through the June 12 audits, plus the five-step fallback chain, archive and third-party sources, bill-sponsorship coverage, the ACU harvest and the per-member web grind of 2026-06-18",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## CU press-release scraper (`cu_press_release_scraper.R`)",
+        "## Press scraper: fallback chain, third-party sources and coverage work",
+        "### 5-step fallback chain for MANUAL_PRESS_URLS members (added 2026-06-12)",
+        "### Coverage fix (2026-06-18): archive fallback for auto-discovered members",
+        "### Third-party source expansion: Stage 4d `stage_news` (2026-06-18)",
+        "### Stage 4e bill-(co)sponsorship coverage `stage_bill_cosponsors` (2026-06-18)",
+        "### Exhaustive ACU harvest + coverage audit (2026-06-18)",
+        "### Per-member web grind (2026-06-18)",
+        "### GRIND COMPLETE - all 537 hand-searched (2026-06-18)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-press-collector-pipeline",
+      "title": "Press text collector and one-command pipeline",
+      "summary": "The press text collector and one-command pipeline of 2026-06-18/19: anti-stall hardening, the fast analyzer, the combined driver, throughput tuning, the collector crash fix, the chromote 403 lane and coverage bugs, and the validity verdict",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### Text-collection anti-stall hardening (2026-06-18)",
+        "### Fast analyzer `cu_text_collector.R` (2026-06-18)",
+        "### Combined one-command driver `run_cu_pipeline.R` (2026-06-18)",
+        "### Throughput tuning (2026-06-18)",
+        "### Fast pipeline = collector + scraper; collector crash fixed (2026-06-19)",
+        "### Chromote 403 lane + THREE coverage bugs fixed (2026-06-19)",
+        "### `CU_PR_NO_CHROMOTE` leak silently killed collector chromote (2026-06-19)",
+        "### Validity verdict + signal-prioritized collection (2026-06-19)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-press-discovery-and-attribution-fixes",
+      "title": "Press discovery, recency and attribution fixes",
+      "summary": "Press scraper fixes of 2026-06-20/21: discovery truncation and sitemap completion, the recency-decay reversals, the news-attribution surname guard, parallel-scoring capture, the collector stall watchdog and parallel Stage-5 scoring",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### DISCOVERY-truncation fixes: sitemap completion (2026-06-20)",
+        "### Recency decay (added 2026-06-20; user request \"newer releases given more prominence\")",
+        "### News attribution common-word-surname bug + honorific guard (2026-06-21)",
+        "### Parallel-scoring `full`-capture bug + `CU_TC_ONLY` targeting + collector self-locate (2026-06-21)",
+        "### Collector per-shard stall WATCHDOG + pipeline self-locate (2026-06-20)",
+        "### Stage-5 scoring parallelized + REVIEW Act false-match fixed (2026-06-20)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-graded-scoring-and-audits",
+      "title": "Graded press scoring, hidden coalitions and audits",
+      "summary": "Graded press scoring of 2026-06-14 to 06-21: the graded scale, lean-aware hidden coalitions, the audit passes on tail compression, crypto orientation, matching breadth, big-bank and anti-CU detection, the date-parse bug and the graded member by category sheet",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Graded scoring, coalitions and audits (2026-06-14 to 2026-06-21, `cu_press_release_scraper.R` Stage 5)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-stage5-debate-lsd",
+      "title": "Stage 5 overhaul: DEBATE stance + LSD tone",
+      "summary": "The Stage 5 overhaul of 2026-06-21 to 06-24 that replaced regex scoring with Political DEBATE stance and Lexicoder LSD tone: design, environment constraints, validation, the fine-tuned base model, the deliverable change and the full-corpus deploy",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Stage 5 overhaul: Political DEBATE (stance) + Lexicoder LSD (tone) (2026-06-21 to 2026-06-24)"
+      ],
+      "keep": [
+        "actors/debate-stance-model"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-congress-r-scrapers-census-and-ballotpedia",
+      "title": "Census CD and Ballotpedia CU-influence scrapers",
+      "summary": "The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Census CD scraper (`census_cd_scraper.R`, 2026-06-16)",
+        "## Ballotpedia 119th CU-influence scraper (`ballotpedia_119th_cu_scraper.R`, 2026-06-17/18)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K20",
+      "a": "topics/2026-06-feature-congress-r-scrapers-stage5-debate-lsd",
+      "b": "topics/2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split",
+      "event": "Stage 5 overhaul"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 46,
+      "old": "| Stage 5 stance and tone | `run_stage5.R`, `stage5_lsd.R`, `stage5_debate.py`, `parse_lsd.R` | Political DEBATE stance x Lexicoder LSD tone (see [[2026-06-feature-cu-stance-and-sentiment]] and [[debate-stance-model]]) |",
+      "mark": "external",
+      "why": "\"see [[2026-06-feature-cu-stance-and-sentiment]] and [[debate-stance-model]]\" names other notes"
+    },
+    {
+      "line": 79,
+      "old": "| 2026-06-03 | Feedback rule recorded: build the congress.gov query from the verbatim encoded URL in chunks, never from JSON (see Rules) |",
+      "mark": "rewrite",
+      "why": "\"(see Rules)\" names ### Rules: chunked verbatim URL, no JSON, which moves with the member scraper to -member-scraper",
+      "new": "| 2026-06-03 | Feedback rule recorded: build the congress.gov query from the verbatim encoded URL in chunks, never from JSON (see Rules in [[2026-06-feature-congress-r-scrapers-member-scraper]]) |",
+      "referent": "2026-06-feature-congress-r-scrapers-member-scraper"
+    },
+    {
+      "line": 98,
+      "old": "- **Verbatim chunked URL, no JSON round-trip** (2026-06-03 rule): see Rules.",
+      "mark": "rewrite",
+      "why": "\"see Rules\" names ### Rules: chunked verbatim URL, no JSON, which moves with the member scraper to -member-scraper",
+      "new": "- **Verbatim chunked URL, no JSON round-trip** (2026-06-03 rule): see Rules in [[2026-06-feature-congress-r-scrapers-member-scraper]].",
+      "referent": "2026-06-feature-congress-r-scrapers-member-scraper"
+    },
+    {
+      "line": 126,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 129,
+      "old": "- [ ] Build a fresh adversarial scoring set before the next lexicon change (all eval corpora are in-sample, noted 2026-06-12).",
+      "mark": "not positional",
+      "why": "\"before the next lexicon change\" is time"
+    },
+    {
+      "line": 130,
+      "old": "- [ ] Re-crawl the ~21 previously-truncated members' indexes at the 2020 floor if the 2020-2021 releases are wanted (caveat from the 2026-06-20 revert; moot if the 2022 floor stays).",
+      "mark": "not positional",
+      "why": "\"previously-truncated members\" is time"
+    },
+    {
+      "line": 136,
+      "old": "- [ ] Full SNA graph later (user: \"not there yet\"); user may expand/override the 45 validation labels or hand-code a few hundred.",
+      "mark": "not positional",
+      "why": "\"Full SNA graph later\" is time"
+    },
+    {
+      "line": 156,
+      "old": "- Known risk (as written 2026-06-02): `cf_clearance` may be TLS-fingerprint-bound, so httr replay can be re-challenged; `validate_http()` (run once) tells you if the fast path works; if not, set `FETCH_MODE <- \"browser\"`. UNVERIFIED at the time - then VERIFIED by the first full 119th roster run (see Rules: no Cloudflare challenges, 536 members, 1773 bill rows).",
+      "mark": "same note",
+      "why": "\"(see Rules: ...)\" names ### Rules, which moves with this ### to -member-scraper"
+    },
+    {
+      "line": 160,
+      "old": "Diagnostics showed every page returned `title = \"Just a moment...\"` (Cloudflare interstitial) - NOT a URL or selector bug. URL construction is proven byte-identical (6922 chars; see Rules). The browser layer was rewritten:",
+      "mark": "same note",
+      "why": "\"(6922 chars; see Rules)\" names ### Rules, which moves with this ### to -member-scraper"
+    },
+    {
+      "line": 167,
+      "old": "The old nickname-first logic miscalled 33 of 536 members. congress.gov uses the OFFICIAL bioguide name = the CSV's `full_name` column, NOT the CSV `nickname` (bioguide says \"James P. McGovern\" though nickname is \"Jim\"; a \"Jim McGovern\" sponsor search returns nothing). It cuts both ways: some official names ARE nicknames (Chuck Edwards, Nikki Budzinski, Gabe Vasquez, Nick LaLota, Val Hoyle, Greg Casar). Rule now: first non-initial given-name token of `full_name` (after stripping \"quoted\"/(paren) nicknames, initials, suffixes, surname tokens) + `last_name` column. Other corrections: Bernie -> Bernard Sanders, Chuck -> Charles Schumer, Bobby -> Robert Scott, Buddy -> Earl Carter, Rick -> Eric Crawford, Hal -> Harold Rogers, Hank -> Henry Johnson, Chuy -> Jesús García, Mónica -> Monica De La Cruz. The `MEMBER_NAME_OVERRIDES` named vector (defined above the function) is the manual escape hatch for future mismatches; duplicates across members now emit a warning (currently zero collisions). Verified offline against the cached CSV: 536 unique names, all spot names correct, override hook works.",
+      "mark": "not positional",
+      "why": "\"defined above the function\" is the position in the R source file, not in the note"
+    },
+    {
+      "line": 175,
+      "old": "User pastes the clipboard columns from multiple runs/query-variants side-by-side into one spreadsheet, so every run MUST emit the identical vertical member sequence. `get_pinned_roster()`: the first run sorts the roster with locale-independent `sort(method=\"radix\")` and saves to `roster_119_names.rds`; later runs reuse that file verbatim (immune to roster-CSV churn). Deleting the cache (or editing `MEMBER_NAME_OVERRIDES`, which requires deleting it) changes the order - the user must then re-anchor the spreadsheet. The clipboard block orders via `Members[match(members, Members$Member), ]` (no locale `order()`) and first copies `Members_sorted$Member` as the anchor name column. Verified offline (pin survives a changed source; `match()` restores pinned order from a shuffled frame). (Later replaced by the direct full-sheet writer in the integrated scraper: the 533-name pinned roster and clipboard workflow were dropped.)",
+      "mark": "not positional",
+      "why": "\"later runs reuse that file\" and \"(Later replaced by ...)\" are time"
+    },
+    {
+      "line": 200,
+      "old": "- The user asked to modify THAT file, not create a new one. It `source()`s `congress_search_urls.R`, builds `SECTION_REGISTRY` (the 17 `*_url_parts` in sheet order), and loops **section -> 3 ROLES (sponsor -> original-cosponsor -> cosponsor) -> all members**, then the next section.",
+      "mark": "not positional",
+      "why": "\"then the next section\" is the scraper's loop over its 17 sections, not a section of the note"
+    },
+    {
+      "line": 208,
+      "old": "- Offline-checked via Rscript 4.6.0 (syntax parse, role-swap invariant on all 17, decay/scoring math, writexl round-trip). The 533-name pinned roster + clipboard workflow were replaced by the direct full-sheet writer. The older approaches below (separate-URLs pivot, `congress_moneyball_integrated.R`, `congress_scraper_looped.R`) are PRIOR approaches.",
+      "mark": "same note",
+      "why": "\"The older approaches below\" are ### PRIOR approach A and ### PRIOR approach B, later in the same 17x3 section and part"
+    },
+    {
+      "line": 218,
+      "old": "- **Gated `RUN_COSPONSOR_EDGES<-FALSE`** (default OFF) + resumable via `congress_cosponsor_checkpoint.rds`; igraph was installed this session. Logic offline-tested (parse, agg, igraph, node reconciliation). User envisions a full SNA graph later (\"not there yet\").",
+      "mark": "not positional",
+      "why": "\"a full SNA graph later\" is time"
+    },
+    {
+      "line": 235,
+      "old": "User wanted the SIMPLE version -> `congress_scraper_looped.R`. They rejected the role logic (field-swap / `/cosponsors` page-fetch) as overcomplicated. The role distinction was to be just MORE LINKS in `congress_search_urls.R`: sponsor / original-cosponsor / cosponsor each their own verbatim URL (congress.gov generates structurally different raw-JSON per role - NOT a token swap), added as separate `*_url_parts` vectors. `congress_scraper_looped.R` auto-detects EVERY `*_url_parts` vector in file order, runs the proven per-member scrape on each link, then moves to the next (\"just go down the list\"). Output = one Results sheet, member rows in sheet order, 3 cols per link (Count / AvgCosp / Success%) labeled by link name (17 links -> 51 cols). Default `DECAY_PER_CONGRESS=1.0` (raw integer counts, matching the original/sheet). Kept the proven machinery + all fixes (cookie-replay, rounds, `TARGET_RPS=5` pacing, NA/429 guards, progress, per-link checkpoint/resume). The big `congress_moneyball_integrated.R` below is the prior (superseded) approach.",
+      "mark": "same note",
+      "why": "\"The big `congress_moneyball_integrated.R` below\" is ### PRIOR approach B, right after this ### in the same part; \"moves to the next ('just go down the list')\" is the loop order and a quoted phrase"
+    },
+    {
+      "line": 244,
+      "old": "- **Decay** by session of congress (more logical than year), `DECAY_PER_CONGRESS=0.5` (119=1, 118=.5, 117=.25), applied to COUNT columns only; set 1.0 to disable (superseded by 0.8 on 3 counts, see above). **Why:** older bills should weigh less; congress is already on every bill.",
+      "mark": "same note",
+      "why": "\"(superseded by 0.8 on 3 counts, see above)\" is the Decay = DECAY_PER_CONGRESS=0.8 bullet of ### CURRENT design, earlier in the same 17x3 section and part"
+    },
+    {
+      "line": 250,
+      "old": "- Pre-existing quirks noticed and left alone (out of scope): \"Legislative Score - Normalized\" formulas reference the row ABOVE (e.g. `!C2` for row 3) - an off-by-one; `cdfi_fund_url_parts` decodes to an unclosed JSON array (verbatim known-good, congress.gov tolerates it). See the Moneyball model notes (`project-moneyball-model`).",
+      "mark": "external",
+      "why": "\"See the Moneyball model notes (`project-moneyball-model`)\" names a memory file; \"the row ABOVE\" is a spreadsheet row"
+    },
+    {
+      "line": 261,
+      "old": "- Efficiency changes: discovery tries chamber's top-2 CMS paths BEFORE homepage fetch (`HOUSE_PATHS_FIRST`/`SENATE_PATHS_FIRST`); pagination scheme inferred from page 1's own next/\"2\" link (`infer_pagination`, 0 extra requests) with probe fallback; `TOPIC_TIER` \"core\"/\"broad\" (default broad) splits `TOPIC_RX`; adaptive index caps `MAX_INDEX_PAGES=150` dated / `MAX_PAGES_UNDATED=40`; workers 8, delay 0.5s. Est. full run: core ~1-1.5h, broad ~2-3h, all ~6-7h (~0.9s/req, 8 workers).",
+      "mark": "not positional",
+      "why": "\"page 1's own next/'2' link\" is a pagination link on the scraped site"
+    },
+    {
+      "line": 264,
+      "old": "User supplied an explicit 537-name list of current 119th members (\"I only want these members\") - embedded VERBATIM as `MEMBER_FILTER` in `cu_press_release_scraper.R` (set to `c()` to scrape all). The list mixes formal + nickname styles (Bernard Sanders but Chuck Grassley, Earl Carter for Buddy, Harold Rogers for Hal, \"Shelley Capito\" sans \"Moore\") and includes 2025-26 special-election members (Adelita Grijalva, Menefee, Walkinshaw, Van Epps, Patronis, Fine + names like \"Analilia Mejia\", \"Clay Fuller\", \"Alan Armstrong\" that may postdate the roster CSV). Matching: `apply_member_filter()` (applied at runtime in the driver, NOT baked into the roster checkpoint - the roster checkpoint was renamed `roster_v2.rds`, now keeps first/last/nickname cols) builds (first x last) keys per roster row from first_name/nickname/full_name tokens, expands via `NICK_EQUIV` formal<->nickname classes, adds last-token-of-compound-surname keys (\"Moore Capito\" -> \"capito\"); accent-strip via iconv ASCII//TRANSLIT with chartr fallback (win_iconv can refuse TRANSLIT). Key collisions -> AMBIGUOUS, misses -> UNMATCHED; both WARNED with instruction to use `FILTER_NAME_OVERRIDES` (name -> bioguide). Never silently drops. 14 new offline tests incl. the four Scotts disambiguation, Radewagen-via-nickname, accents. Mullin/David Scott absences CONFIRMED correct: user says they are not serving, and a live check of `legislators-current.csv` (2026-06-11) shows neither is in it.",
+      "mark": "not positional",
+      "why": "\"The list mixes formal + nickname styles\" is the user's 537-name list named in the previous sentence, not a list in the note"
+    },
+    {
+      "line": 273,
+      "old": "User ran the full scrape: 533 discovery/index checkpoints, 374 fulltext, all 5 outputs written (the \"cannot open the connection\" error was a transient Excel/OneDrive lock on a CSV - a later re-run succeeded; tell user to close Excel before sourcing). Real-run sanity: Tom Emmer +22/25 releases (crypto bills), Hagerty +15 (GENIUS), Durbin -8 (CCCA) - plausible. User then said the output was \"still not uniform to the specifications\"; inspection (python zip+XML parse of the xlsx - writexl uses INLINE strings, not sharedStrings, so naive parsers see empty text cells) found 3 real defects, all fixed:",
+      "mark": "not positional",
+      "why": "\"a later re-run\" is time and \"naive parsers see empty text cells\" is a verb"
+    },
+    {
+      "line": 275,
+      "old": "2. Sheet showed roster formal names (\"Richard J. Durbin\", 'Robert C. \"Bobby\" Scott') - `apply_member_filter` now REWRITES `members$member` to the user's exact list spelling (roster formal kept in new `roster_name` col), so ALL downstream sheets are uniform with the list.",
+      "mark": "not positional",
+      "why": "\"the user's exact list spelling\" and \"uniform with the list\" are the user's member list, not a list in the note"
+    },
+    {
+      "line": 277,
+      "old": "71 tests total, all passing. After these fixes the 4 recovered members had NO checkpoints -> next `source()` scrapes just them (few min) and the net sheet becomes 537 rows.",
+      "mark": "not positional",
+      "why": "\"next `source()`\" is time"
+    },
+    {
+      "line": 292,
+      "old": "AFTER: held-out 1.000/1.000/1.000; original eval still 1.000 band2; 71 unit checks pass (71 is the true count; earlier \"68\" was a console miscount); throughput 129 docs/sec. CAVEAT recorded: both corpora now saturated = the held-out set is effectively in-sample for FUTURE edits - build a fresh adversarial set before the next lexicon change. Core-tier title recall measured 8/12 vs broad 12/12 (validates `TOPIC_TIER=\"broad\"` default).",
+      "mark": "not positional",
+      "why": "\"earlier '68'\" and \"before the next lexicon change\" are time"
+    },
+    {
+      "line": 318,
+      "old": "All harnesses green after: 92 unit checks (21 new), eval 1.000, held-out 1.000, `verify_live_outputs.R` ALL PASS (0 sponsorship contradictions, 0 attack-title-supports, every nonzero score evidenced). Final: 472 rows = 270+/173n/29-, Durbin -16 / Welch -12 (was -8; his flipped row corrected), Vargas +54, Emmer +34. NA dates 4.2%. 9 zero-word_count rows remain (failed fetches; auto-refetch next live run).",
+      "mark": "not positional",
+      "why": "\"next live run\" is time"
+    },
+    {
+      "line": 322,
+      "old": "- Honest metrics snapshot: 504/537 discovered (33 failures incl. Blackburn/Wicker/Tillis/Rick Scott/Fischer); 230,866 indexed (flat 27-35k/yr 2020-2026); 14.5% index rows undated; 12,009 topical candidates (5.2% title-pass rate); **2,247 candidates (18.7%) never fetched** -> scored set incomplete until the next live run; 472 scored over 159 members; 73 of 159 members rest on a SINGLE release (median 2); 378/537 all-zero; GENIUS Act alone = 67 rows (14%), 51 of them evidence-free default-support; evidence tiers among nonzero: 61% bill-only, 22% tone-only (weakest; top words protection/support/relief), 12% bill+corroboration, 8% phrase.",
+      "mark": "not positional",
+      "why": "\"until the next live run\" is time"
+    },
+    {
+      "line": 361,
+      "old": "2. `fetch_member_fulltext` lapply -> `for` with per-member wall-clock budget `JS_MEMBER_BUDGET<-600`s (js only; parallel members httr-bounded, budget=Inf) - on overrun save partial + `break`, resumes next run via `done<-setdiff(urls,done)`.",
+      "mark": "not positional",
+      "why": "\"resumes next run\" is time"
+    },
+    {
+      "line": 364,
+      "old": "NOT done (optional next lever): parallelizing JS members across a chromote-session pool (deliberately kept sequential - chromote-in-future-workers is unsafe). Net: worst case is now bounded (sum of js members x 600s, resumable) instead of an unbounded silent hang. (Later superseded for the collector: `setTimeLimit` replaced by chromote's own `default_timeout`, 2026-06-19, see below.)",
+      "mark": "same note",
+      "why": "\"(Later superseded for the collector ... 2026-06-19, see below.)\" is the Chromote stability+speed fix (setTimeLimit replaced) in ### Validity verdict, later in the same part -press-collector-pipeline; \"optional next lever\" is time"
+    },
+    {
+      "line": 372,
+      "old": "- **Optimization round (2026-06-18):** parse re-measured at ~30ms/page on typical pages (62ms was the one giant member's heavier pages) -> real run ~30min @6 cores. Stripping `<script>/<style>/<svg>` before `read_html` measured ZERO speedup (cost is core libxml2 parse, not inline JS) - ruled out, do not retry it. Six wins applied and integration-tested: (1) **shards balanced by URL count** (greedy: heaviest member -> lightest shard, via orchestrator-written `collector_plan.rds`) instead of name-hash, so no shard becomes the tail; (2) **one persistent curl pool per worker** (was per-chunk) -> HTTP/2 keepalive survives across chunks (later changed, see 2026-06-19 crash fix); (3) **retry only transient** (libcurl `fail` + HTTP 5xx); 4xx and empty-200 (JS-only) are permanent `miss`, no wasted second pass - big win on Wayback/dead-URL members; (4) orchestrator builds ONE plan (single index+cache scan) and workers read their slice -> no 6x redundant full scans, lighter workers; (5) heartbeat reads cheap cumulative \"ok N\" from shard logs (not re-reading all fulltext rds every 30s) + **stall guard** (break if no progress 10min -> survives a crashed worker); (6) `TOTAL_CON` 24 -> 40 (Little's law: ~0.8s latency x ~40/s core needs ~32 in-flight to not starve parse). Plan auto-unlinked at end.",
+      "mark": "same note",
+      "why": "\"(later changed, see 2026-06-19 crash fix)\" is ### Fast pipeline = collector + scraper; collector crash fixed (2026-06-19), later in the same part -press-collector-pipeline"
+    },
+    {
+      "line": 375,
+      "old": "Runs the WHOLE analysis end-to-end: `[1/2] cu_text_collector.R` (fast async body fill) then `[2/2] cu_press_release_scraper.R` (bodies now cached -> only residual JS/Wayback members + committee/third-party-news/cosponsor stages + Stage-5 scoring -> writes `cu_press_releases_scored.{csv,xlsx}`, `cu_press_releases_category_scores.csv`, `cu_net_scores_by_category.xlsx`, `all_press_release_index.csv`). Each step is a `system2(wait=TRUE)` subprocess streaming to console; env inherits 3 levels deep (pipeline -> collector -> workers, verified). Knobs: `CU_TC_PROCS` passes through; `CU_PIPE_SKIP_COLLECT=1` (re-score from cache), `CU_PIPE_COLLECT_ONLY=1` (stop after collect), `CU_PR_OFFLINE=1` (step-2 scores from cache, no network -> skips news+cosponsor). The collector itself stays collect-only; the pipeline is the combined entry. End-to-end ~30min collect + ~10-30min score. Both stages resumable so a re-run continues. (Later, 2026-06-21, Stage 5 `run_stage5.R` became step [3/3]: see the stance section.)",
+      "mark": "rewrite",
+      "why": "\"see the stance section\" names ## Stage 5 overhaul: Political DEBATE (stance) + Lexicoder LSD (tone), which moves to -stage5-debate-lsd; \"Later, 2026-06-21\" is time",
+      "new": "Runs the WHOLE analysis end-to-end: `[1/2] cu_text_collector.R` (fast async body fill) then `[2/2] cu_press_release_scraper.R` (bodies now cached -> only residual JS/Wayback members + committee/third-party-news/cosponsor stages + Stage-5 scoring -> writes `cu_press_releases_scored.{csv,xlsx}`, `cu_press_releases_category_scores.csv`, `cu_net_scores_by_category.xlsx`, `all_press_release_index.csv`). Each step is a `system2(wait=TRUE)` subprocess streaming to console; env inherits 3 levels deep (pipeline -> collector -> workers, verified). Knobs: `CU_TC_PROCS` passes through; `CU_PIPE_SKIP_COLLECT=1` (re-score from cache), `CU_PIPE_COLLECT_ONLY=1` (stop after collect), `CU_PR_OFFLINE=1` (step-2 scores from cache, no network -> skips news+cosponsor). The collector itself stays collect-only; the pipeline is the combined entry. End-to-end ~30min collect + ~10-30min score. Both stages resumable so a re-run continues. (Later, 2026-06-21, Stage 5 `run_stage5.R` became step [3/3]: see the stance section in [[2026-06-feature-congress-r-scrapers-stage5-debate-lsd]].)",
+      "referent": "2026-06-feature-congress-r-scrapers-stage5-debate-lsd"
+    },
+    {
+      "line": 385,
+      "old": "- Full-coverage run = `CU_PIPE_FETCH_RESIDUAL=1 Rscript run_cu_pipeline.R` (fast collector + the now anti-stall-bounded chromote residual lane + scoring); plain `Rscript run_cu_pipeline.R` skips the 403/JS residual for max speed. `FULLTEXT_MODE` stays \"all\" - correct here, it only governs which cached rows get SCORED (SKIP_FETCH means no fetching). (Later the same day the recommended run became plain `Rscript run_cu_pipeline.R` and `CU_PIPE_FETCH_RESIDUAL=1` became redundant: see next section.)",
+      "mark": "same note",
+      "why": "\"see next section\" is ### Chromote 403 lane + THREE coverage bugs fixed (2026-06-19), the next ### in the same part -press-collector-pipeline; \"Later the same day\" is time"
+    },
+    {
+      "line": 393,
+      "old": "**Recommended run now = plain `Rscript run_cu_pipeline.R`** (collector does curl+gentle+chromote itself; step-2 residual no longer needed; the many-to-many join warning is benign - 0 dup member URLs, it is committee/third-party attaching one url to multiple members; but see the 2026-06-20 `stage_score` dedup fix). Do not run with `CU_PIPE_FETCH_RESIDUAL=1` anymore (redundant double chromote). **Default `CU_TC_PROCS` raised 6 -> 8 (2026-06-19, user request - box has GPU/RAM headroom for 8 R workers + 8 headless Chrome).** Each worker now drives its OWN Chrome in the 403/chromote pass, so 8 shards = up to 8 Chrome instances (GPU-accelerated render); lower `CU_TC_PROCS` if RAM/GPU tight.",
+      "mark": "rewrite",
+      "why": "\"but see the 2026-06-20 `stage_score` dedup fix\" is the \"BUG in `stage_score`\" fix of ### DISCOVERY-truncation fixes (2026-06-20), which moves to -press-discovery-and-attribution-fixes",
+      "new": "**Recommended run now = plain `Rscript run_cu_pipeline.R`** (collector does curl+gentle+chromote itself; step-2 residual no longer needed; the many-to-many join warning is benign - 0 dup member URLs, it is committee/third-party attaching one url to multiple members; but see the 2026-06-20 `stage_score` dedup fix in [[2026-06-feature-congress-r-scrapers-press-discovery-and-attribution-fixes]]). Do not run with `CU_PIPE_FETCH_RESIDUAL=1` anymore (redundant double chromote). **Default `CU_TC_PROCS` raised 6 -> 8 (2026-06-19, user request - box has GPU/RAM headroom for 8 R workers + 8 headless Chrome).** Each worker now drives its OWN Chrome in the 403/chromote pass, so 8 shards = up to 8 Chrome instances (GPU-accelerated render); lower `CU_TC_PROCS` if RAM/GPU tight.",
+      "referent": "2026-06-feature-congress-r-scrapers-press-discovery-and-attribution-fixes"
+    },
+    {
+      "line": 407,
+      "old": "**FIX (`cu_press_release_scraper.R`):** (1) in `crawl_member_index`, after the page loop, if a paginated/none scheme yielded `<= SITEMAP_COMPLETE_MAXPAGES`(2) pages, union the site's XML sitemap via existing `sitemap_items(org)` (already filters to press paths via `PRESS_PATH_RX`, which matches senate/house `/media-center/press-releases/`); senate.gov/house.gov Drupal expose `<domain>/sitemap.xml` -> `press_releases-sitemap*.xml`. Deep crawls that paginate fine (many pages) are skipped -> no cost. (2) `retry_failed_checkpoints` now also clears the INDEX checkpoint (keeps discovery) of paginated members where `crawl_rows <= n_items_p1+2` so they re-crawl with completion (self-healing each run). VERIFIED: **Scott 20 -> 2,999 releases, the section 1071 URL now present.** One-time expansion of all 38: `refresh_truncated_indexes.R` (kept).",
+      "mark": "not positional",
+      "why": "\"the section 1071 URL\" is a statute section (Section 1071), not a section of the note"
+    },
+    {
+      "line": 409,
+      "old": "- Note: the member-discovery fix ALSO independently captures the signal behind all 3 URLs (Scott's own 2,999 releases cover his section 1071/regulatory stance; the housing bill via the cosponsor stage), so ACU is redundant secondary coverage. Sequencing: pipeline step-1 collector reads the index step-2 scraper rebuilds - so after expanding indexes, the NEXT `Rscript run_cu_pipeline.R` fetches+scores the recovered archives (the pre-expansion via `refresh_truncated_indexes.R` collapses it to one run).",
+      "mark": "not positional",
+      "why": "\"the NEXT `Rscript run_cu_pipeline.R`\" is time"
+    },
+    {
+      "line": 410,
+      "old": "- **Index junk guard + scoring diagnostic (2026-06-20):** added `is_junk_url()` (next to `PRESS_PATH_RX`) - rejects listing/section-root pages, RSS/taxonomy, pagination, assets, tel:/mailto:, and footer phone-number slugs from the index; CAPTURE-SAFE (keeps numeric-permalink articles like /release/16653/ and date-fragment slugs like /.../9/11 and IQ-CMS ?ID=/?ContentRecord_id= articles). Wired into `extract_index_items` base_keep AND a final `filter(!is_junk_url(url)) |> distinct(url,.keep_all=TRUE)` in `stage_index` (catches sitemap/cdx/wp-json too + dedups). Validated 10/10 junk caught, 6/6 real kept. Mirrors `is_junk_body()` (the body-cache WAF/nav guard added the same day).",
+      "mark": "not positional",
+      "why": "\"(next to `PRESS_PATH_RX`)\" is the position in the R source, not in the note"
+    },
+    {
+      "line": 416,
+      "old": "**RE-RESTORED the year filter + recency decay (2026-06-21):** the user reversed course (\"revert to having the guard-dog and year filter\") - the 2022 floor AND the decay weighting are BACK IN. `DATE_FLOOR <- as.Date(\"2022-01-01\")`; all decay code re-applied (`DECAY_HALFLIFE_YEARS` env `CU_PR_DECAY_HALFLIFE` default 2y, `recency_weight`, `wmean`, the weighted summary/cat_detail/mk_wide/build_net_by_category/detect_coalitions rollups, net columns numeric again); offline suite back to **179/179**. **\"Guard-dog\" (user's term) = the collector's PER-SHARD STALL WATCHDOG** in `cu_text_collector.R` (the orchestrator loop: `kill_shard` tree-kills a wedged worker + its Chrome children via `taskkill /F /T`, `spawn_shard` respawns it resuming-from-cache; keys on the `.hb` heartbeat FILE mtime; knobs `CU_TC_WATCHDOG_MIN=10`min, `CU_TC_MAX_RESPAWN=2`). It was never removed - present, enabled, correct. (NOT the `is_junk_body`/`is_junk_url` guards, which the assistant mislabeled as \"guard-dog\" first - those are also still active but are a different thing.) The 2026-06-20 revert below is now HISTORY (superseded).",
+      "mark": "same note",
+      "why": "\"The 2026-06-20 revert below\" is the [HISTORY, superseded 2026-06-21] REVERTED entry right after it in the same ### Recency decay"
+    },
+    {
+      "line": 418,
+      "old": "**[HISTORY, superseded 2026-06-21] REVERTED the year filter + recency decay (2026-06-20, user \"we are re-winding\"):** the 2022 floor and the decay weighting were both BACKED OUT per user request. `DATE_FLOOR` was back to `as.Date(\"2020-01-01\")` (no env knob); the collector's date pre-filter removed; ALL decay code removed (`DECAY_HALFLIFE_YEARS`, `recency_weight`, `wmean`, the `recency_weight` column in scored/`explode_categories`, and the weighted aggregations in summary/cat_detail/mk_wide/build_net_by_category/detect_coalitions - all back to unweighted sums/means; net columns back to INTEGER). `test_cu_scoring_offline.R` reverted (net-sheet wants back to integer, decay tests removed) -> back to **172/172 PASS**. **KEPT** (NOT reverted): `is_junk_url` + `is_junk_body` guards, the `stage_score` many-to-many dedup fix, the `score_release` double-scan + `score_bill_signals` pre-filter optimizations, the sitemap truncation completion, and the signal-prioritized `CU_TC_CAP`. CAVEAT for full rewind: the ~21 previously-truncated members whose indexes were re-pruned to 2022 (`refresh_truncated_indexes.R` @2022 floor) still have 2022-trimmed index checkpoints - to restore their 2020-2021 releases, re-crawl those members' indexes at the 2020 floor (network) and fetch the bodies.",
+      "mark": "not positional",
+      "why": "\"previously-truncated members\" is time"
+    },
+    {
+      "line": 428,
+      "old": "The Stage-5 parallelization was SILENTLY FALLING BACK TO SERIAL at scale - the nested `score_row` defined inside `stage_score` closed over the function's frame, which holds the ~2 GB `full` frame, so `future` tried to export 2 GB/worker and tripped `future.globals.maxSize` (500 MB); the tryCatch swallowed it -> serial. (The earlier small-fixture test never tripped it because `full` was tiny.) FIX: hoisted the scorer to TOP-LEVEL globals `.cu_score_row` + `.cu_score_chunk` (defined just before `stage_score`), `future_lapply(parts, .cu_score_chunk, ...)`. Verified via `globals::globalsOf(.cu_score_chunk, recursive=TRUE)`: 113 globals, **`full` NOT included**, total export 2.31 MB (largest are base `data.frame`/`regmatches`) -> no fallback at the 500 MB default. LESSON: never let a future-exported closure be defined inside a frame that holds a big object; define worker fns at top level.",
+      "mark": "not positional",
+      "why": "\"The earlier small-fixture test\" is time"
+    },
+    {
+      "line": 438,
+      "old": "`stage_score` was SERIAL (`lapply` over ~250k releases); now parallelized across the SAME `CU_PR_WORKERS` (=`FUTURE_WORKERS`) pool Stage 4 uses - split `full` into `FUTURE_WORKERS*3` contiguous chunks passed AS DATA (so the 250k frame is not exported whole to each worker), `future_lapply` each, `do.call(c,...)` to concat in order; gated on `FUTURE_WORKERS>1 && n>4000`; wrapped in tryCatch -> serial fallback. VERIFIED parallel == serial bit-for-bit on a 5,200-row synthetic (4,644 == 4,644, scores/bills/order identical) + offline 179/179. So `CU_PR_WORKERS=6` now drives discovery + index + Stage-4 PARALLEL fetch + Stage-5 scoring (6 workers each). `FUTURE_WORKERS` comment updated. IMPORTANT: the Stage-4 JS/chromote phase (42 seq members) stays SEQUENTIAL by design (Chrome unsafe in future workers) -> for fast PARALLEL fetch incl. chromote use `cu_text_collector.R` (`CU_TC_PROCS`). Best full run with 6 workers everywhere: `CU_TC_PROCS=6 CU_PR_WORKERS=6 Rscript run_cu_pipeline.R`. (The 2026-06-21 capture bug above later showed this parallel path had been silently serial at scale.)",
+      "mark": "same note",
+      "why": "\"The 2026-06-21 capture bug above\" is ### Parallel-scoring `full`-capture bug ... (2026-06-21), earlier in the same part -press-discovery-and-attribution-fixes; \"later showed\" is time"
+    },
+    {
+      "line": 445,
+      "old": "- **Graded scale (Haselmayer & Jenny 2017 + Rice & Zorn 2018):** `TONE_LEXICON` data frame carries per-stem intensity weights (1 weak / 2 mid / 3 strong) mirroring GEN_PRO_RX/GEN_ANTI_RX stems. `weighted_tone()` scans CU sentences applying valence shifters; predecessor tokens are derived from the prefix string (not a separate tokenization) so leading/double spaces cannot misalign them. NEGATORS_RX drops the word if it sits in EITHER of the two preceding tokens (2-token reach catches refusal frames \"refuses to support\"/\"failed to protect\" that a 1-token window scored as praise); AMPLIFIERS_RX x1.25 (`AMPLIFY_FACTOR`) and DOWNTONERS_RX x0.75 act on the immediate token only. Specific phrases + bill stances enter at weight 3. `graded_from_signed()` adds `+ 0` to collapse IEEE -0.0 -> +0.0. `graded_from_signed(Wp-Wn)` buckets |signed| by `GRADED_CUTS=c(1,2,3.5,5.5,8)` into 0/.2/.4/.6/.8/1.0 (rounded 1 dp).",
+      "mark": "not positional",
+      "why": "\"the two preceding tokens\" are text tokens, not a place in the note"
+    },
+    {
+      "line": 464,
+      "old": "The user agreed to EXPAND relevance to capture bank-bashing AS pro-CU, on condition it is sorted correctly (not diluting the anti-CU signal). `detect_anti_big_bank(sents)` fires on a BIG-bank target (`BIG_BANK_TARGET_RX`: big/biggest/large/largest/mega/wall street/too-big-to-fail...) next to hostile framing (`BANK_BASH_RX`: exploit/gouge/predatory/greed/junk fee/bailout...) in a sentence that does NOT name a credit union (CU-naming sentences -> normal CU logic). In `score_release`: a release with only this signal becomes relevant=\"anti-big-bank (pro-CU)\", scores pro (+2 to pro and +2 to Wp -> +1 / +0.4), and is tagged \"CU-Bank Competitive Dynamics\". GUARD: `anti_bank_pro <- anti_bank && (is.null(bills) || all(bills$signal >= 0))` so a tracked anti-CU bill (CCCA) still LEADS and bank-bashing never flips the sign positive. NOT a strong-tier anchor (caps at 0.6). Live: scored 510 -> 576 (+66), ALL on the positive side, NEGATIVES UNCHANGED at 29 (the user's no-dilution condition met); all 66 tagged CU-Bank Competitive Dynamics, flagged by the new relevance value for auditing.",
+      "mark": "not positional",
+      "why": "\"next to hostile framing\" is word proximity in the scored text"
+    },
+    {
+      "line": 471,
+      "old": "- FAIL-SAFE (tryCatch -> NULL) and GATED: `COMMITTEE_SOURCES_ON` is FALSE when `CU_PR_OFFLINE` set or `CU_PR_COMMITTEES=FALSE`, so it runs ONLY on a live AUTORUN, NOT in `regen_outputs_offline.R` (offline regen excludes committees -> need a live `source()` to see them in outputs). Validated live: Warren (Senate Banking) + Waters (HFSC) statements attributed, clean bodies, relevance gate drops non-CU ones, Waters' anti-bank committee statement scored +1 CU-Bank Dynamics. Tests now 171.",
+      "mark": "not positional",
+      "why": "\"to see them in outputs\" is a verb"
+    },
+    {
+      "line": 477,
+      "old": "The \"Full text retrieved for 10072 of 12219\" gap was NOT random - failures concentrated in the `pagenum` scheme (2107/4521 = 47%; 15 SENATORS at 100%, incl. Senate Banking members Van Hollen/Reed/Collins/Ernst/Cruz...). Root cause: `extract_release` did `suppressWarnings(as.Date(substr(html_attr(t1,\"datetime\"),1,10)))` - but `as.Date()` THROWS (does not warn) on a non-ISO string, and the IQ-CMS senate.gov sites put a non-ISO value in `<time datetime>`. `suppressWarnings` does not catch errors -> `extract_release` aborted for the WHOLE page -> empty body -> counted as failed fetch. FIX: `attr_date()` helper wraps `as.Date` in tryCatch then falls back to `parse_release_date`; used for both `<time datetime>` and the meta-date tags. Validated live on ernst.senate.gov: now returns date 2026-06-05 + 2688-char body (was NA). SELF-HEALING: `fetch_member_fulltext`'s `done` set requires body AND date, so these empty-body releases are already in `todo` and auto-refetch on the next live run (no force needed). NOTE: these IQ-CMS pages lack article/main/.entry-content selectors so body falls back to whole-page `<body>` (incl. nav chrome) - works for scoring but a dedicated IQ-CMS body selector would be cleaner (follow-up). Also: 458 members at Stage 4 is NOT a bug - it is the topical funnel (537 roster -> 532 with indexed releases -> 458 with >=1 finance/CU-titled release); the 74 dropped are mostly local non-CU press, though a few finance senators (Crapo/Cornyn/Grassley) have poor index extraction yielding only nav labels.",
+      "mark": "not positional",
+      "why": "\"on the next live run\" is time"
+    },
+    {
+      "line": 489,
+      "old": "Cross-reference: [[2026-06-feature-cu-stance-and-sentiment]] and [[debate-stance-model]] carry the model-centric view; this section keeps every fact recorded in the source files for this topic.",
+      "mark": "same note",
+      "why": "\"this section keeps every fact\" is the Stage 5 section the line opens, which moves whole to -stage5-debate-lsd"
+    },
+    {
+      "line": 492,
+      "old": "Overhauling Stage 5 of the CU press scraper (see the fallback-chain notes, `project_congress_press_fallbacks`) into two SEPARATED layers: **Stage 5a STANCE = Political DEBATE** (direction: support/oppose/neutral toward credit unions), **Stage 5b TONE = Lexicoder LSD** (how heated). Replaces the hand-regex `GEN_PRO_RX`/`GEN_ANTI_RX` + the graded `TONE_LEXICON`/`score_graded` \"degree valuation\". Stance and tone stay as separate audit columns AND aggregate into ONE downstream press measurable for the Moneyball: **`press_value = stance_sign(-1/0/+1) x LSD intensity(|net|/words)`**. Plan: zero-shot DEBATE first (few-shot only if it underperforms); keep the legacy regex score as a parallel comparison column through the transition; validate DEBATE stance vs a hand-coded set (accuracy/F1/Cohen's kappa). Recency decay stays, rewired to the new aggregate column.",
+      "mark": "rewrite",
+      "why": "\"see the fallback-chain notes\" names the fallback-chain material of ## Press scraper: fallback chain, third-party sources and coverage work (from `project_congress_press_fallbacks`), which moves to -cu-press-scraper",
+      "new": "Overhauling Stage 5 of the CU press scraper (see the fallback-chain notes in [[2026-06-feature-congress-r-scrapers-cu-press-scraper]], `project_congress_press_fallbacks`) into two SEPARATED layers: **Stage 5a STANCE = Political DEBATE** (direction: support/oppose/neutral toward credit unions), **Stage 5b TONE = Lexicoder LSD** (how heated). Replaces the hand-regex `GEN_PRO_RX`/`GEN_ANTI_RX` + the graded `TONE_LEXICON`/`score_graded` \"degree valuation\". Stance and tone stay as separate audit columns AND aggregate into ONE downstream press measurable for the Moneyball: **`press_value = stance_sign(-1/0/+1) x LSD intensity(|net|/words)`**. Plan: zero-shot DEBATE first (few-shot only if it underperforms); keep the legacy regex score as a parallel comparison column through the transition; validate DEBATE stance vs a hand-coded set (accuracy/F1/Cohen's kappa). Recency decay stays, rewired to the new aggregate column.",
+      "referent": "2026-06-feature-congress-r-scrapers-cu-press-scraper"
+    },
+    {
+      "line": 502,
+      "old": "1. **Only 41% of the 3637 scored releases have body TEXT** (1504/3637). The rest are `billstatus:` bill-sponsorship entries (NO text - the cosponsor-rescued rows) + americascreditunions.org / committee / news items whose bodies are not in the per-member `pr_checkpoints/fulltext/<bg>.rds` cache. DEBATE+LSD need text. **Implication: HYBRID** - DEBATE+LSD for text-bearing releases; KEEP the existing bill-signal (BILLS table) for `billstatus:` entries (a bill sponsorship's stance comes from the bill, not text). (Implemented the same day, see below.)",
+      "mark": "same note",
+      "why": "\"(Implemented the same day, see below.)\" is ### HYBRID BUILT + smoke-tested, later in the same Stage 5 section and part"
+    },
+    {
+      "line": 511,
+      "old": "### OPEN / NEXT as written 2026-06-21",
+      "mark": "not positional",
+      "why": "the heading \"OPEN / NEXT as written 2026-06-21\" is time"
+    },
+    {
+      "line": 524,
+      "old": "- Artifacts preserved: base-ft model = `debate_finetuned_base`, base report = `cu_stance_accuracy_report_base.txt`. NEXT (user \"yes to both\"): (a) LARGE fine-tune the same detached way -> push to 89-91%; (b) full-corpus re-score with the fine-tuned model (`CU_S5_DEBATE_MODEL=<ft dir> Rscript run_stage5.R`) -> `cu_press_value_by_category` -> WIRE into the Moneyball Press layer (careful openpyxl edit, backup first) [the wiring part was superseded the same day by the standalone deliverable].",
+      "mark": "not positional",
+      "why": "\"NEXT (user 'yes to both')\" is time"
+    },
+    {
+      "line": 529,
+      "old": "### Later state (from `cu-sentiment-template-location`, 2026-06-30) and the labeling template",
+      "mark": "not positional",
+      "why": "the heading \"Later state (... 2026-06-30)\" is time"
+    },
+    {
+      "line": 541,
+      "old": "- Coverage of the 5 gold gaps (see the fallback-chain notes, `project_congress_press_fallbacks`) after deploy: 3/5 recovered surgically via **LIVE** fetch (Collins + both Durbins - no archive.org needed; one-off `recover_3.R` pattern: live fetch -> `lsd_tone` + `stage5_debate.py` -> append to stance_tone -> re-aggregate). The **2 HFSC-Dems Waters releases** (`documentsingle.aspx?DocumentID=413709/412791`, 403 live) still pending an archive.org cool-down. Linked notes: `project_stance_sentiment_overhaul`, `project_moneyball_integrated_scraper`.",
+      "mark": "rewrite",
+      "why": "\"see the fallback-chain notes\" names the fallback-chain material of ## Press scraper: fallback chain, third-party sources and coverage work (from `project_congress_press_fallbacks`), which moves to -cu-press-scraper",
+      "new": "- Coverage of the 5 gold gaps (see the fallback-chain notes in [[2026-06-feature-congress-r-scrapers-cu-press-scraper]], `project_congress_press_fallbacks`) after deploy: 3/5 recovered surgically via **LIVE** fetch (Collins + both Durbins - no archive.org needed; one-off `recover_3.R` pattern: live fetch -> `lsd_tone` + `stage5_debate.py` -> append to stance_tone -> re-aggregate). The **2 HFSC-Dems Waters releases** (`documentsingle.aspx?DocumentID=413709/412791`, 403 live) still pending an archive.org cool-down. Linked notes: `project_stance_sentiment_overhaul`, `project_moneyball_integrated_scraper`.",
+      "referent": "2026-06-feature-congress-r-scrapers-cu-press-scraper"
+    },
+    {
+      "line": 563,
+      "old": "- `SKIP_ELECTIONS <- TRUE` builds the full 537-row table in ~1 min with NO per-member Ballotpedia fetch (Election_Average = NA); committees from YAML + caucuses from CSV need no browser. To generate: source, then `SKIP_ELECTIONS <<- TRUE; run_scrape(resume=FALSE)` then delete `bp119_checkpoint.rds` so it does not poison a later real elections run. Latest output: `Ballotpedia_119th_CU_Influence_<stamp>.xlsx`.",
+      "mark": "not positional",
+      "why": "\"a later real elections run\" is time"
+    },
+    {
+      "line": 568,
+      "old": "- COMMITTEES come from the same project's `committee-membership-current.yaml` (authoritative, structured, has exact role titles + subcommittees), NOT scraped from Ballotpedia - verified live (709 raw / 682 CU-relevant memberships across ~230 members; French Hill = HFSC Chair, Tim Scott = Senate Banking Chair). `COMMITTEE_SOURCE <- \"ballotpedia\"` reverts to HTML scraping. Ex-officio subcommittee seats (auto-assigned to full-cmte chairs/ranking) are EXCLUDED by default via `COUNT_EX_OFFICIO <- FALSE` so chairs are not double-credited. Ballotpedia is now only used for ELECTIONS (vote%) + caucuses (before MEDSL, see below).",
+      "mark": "same note",
+      "why": "\"(before MEDSL, see below)\" is the ELECTIONS: user chose MIT Election Lab (MEDSL) bullet of ### Status, later in the same Ballotpedia section and part"
+    },
+    {
+      "line": 571,
+      "old": "- **BUG FIXED 2026-06-18:** `party_caucus_for()` matched `PARTY_LEADERSHIP` by LAST NAME only (first-name disambiguation fired only when >1 leader shared a surname), so all 5 sitting \"Johnson\"s inherited Speaker Mike Johnson's 1.0. `PARTY_LEADERSHIP` now carries a `bioguide` column and `party_caucus_for` matches on bioguide. Re-run to regenerate clean output. This output also feeds the Moneyball model Sub Layer AW:BA - see `project_moneyball_model`.",
+      "mark": "external",
+      "why": "\"see `project_moneyball_model`\" names a memory file"
+    },
+    {
+      "line": 575,
+      "old": "- Ballotpedia is behind **AWS WAF** (CloudFront): httr GET returns HTTP 202 `x-amzn-waf-action: challenge` stub, NOT the article (it is NOT Cloudflare). Fix: fetch Ballotpedia via a persistent **chromote** headless session - VERIFIED it clears the challenge in ~2s and the aws-waf-token cookie then serves later pages directly. `httr` is kept only for the (un-WAF'd) GitHub YAML/JSON. chromote + Chrome are now REQUIRED (`ALLOW_BROWSER <- TRUE`). The old `USE_CHROME_FALLBACK` flag is gone.",
+      "mark": "not positional",
+      "why": "\"serves later pages directly\" is time"
+    },
+    {
+      "line": 580,
+      "old": "- CAUCUSES (resolved approach): the script reads a curated CSV `cu_caucus_members.csv` (columns member, caucus, role); scoring as first resolved was **Chair 1.0 / Co-Chair (or Vice Chair) 0.75 / Member 0.5** (superseded by the leadership-only restructure above: Chair 1.0 / Co-Chair-Vice Chair 0.8 / members 0). `CU_CAUCUSES` is the user's explicit 13-caucus list (Army, Bipartisan E-Learning, BPWG, Rural Broadband, Community Foundation, Crypto, Military Family, Payments & Financial Technology, Digital Trade, Financial Security, Internet, Military Veterans, Servicewomen & Women Veterans). Officers (Chair/Co-Chair) for all 13 come from the **Feb 2026 House CMO list** (`119th_Congress_CMO_List_Feb2026.docx`, 494 caucuses; parsed by `_parse_cmo_docx.R` -> `_cmo_feb2026_officers.csv`). `cu_caucus_members.csv` currently holds 38 officer rows.",
+      "mark": "same note",
+      "why": "\"the leadership-only restructure above\" is the scoring restructure of ### Locked design (cu_caucus_leadership = LEADERSHIP ONLY, Chair 1.0, Co-Chair/Vice Chair 0.8, members 0), earlier in the same Ballotpedia section and part"
+    },
+    {
+      "line": 583,
+      "old": "- Earlier dead end: the Jan 2025 CMO PDF (116 caucuses) had no finance/CU caucus; superseded by the Feb 2026 docx.",
+      "mark": "not positional",
+      "why": "\"Earlier dead end\" is time"
+    },
+    {
+      "line": 590,
+      "old": "- **Shell-syntax gotcha (give the user the RIGHT form):** their default shell is **PowerShell**, NOT bash. The bash env-var prefix `CU_TC_PROCS=12 Rscript x.R` does NOT work in PowerShell (it errors / silently fails to set the var). PowerShell: `$env:CU_TC_PROCS=12; $env:CU_PR_WORKERS=6; Rscript \"C:\\...\\x.R\"`. RStudio console: `Sys.setenv(CU_TC_PROCS=\"12\"); source(\"C:/.../x.R\")` (system2 children inherit the session env). Only use `VAR=x prog` syntax when put in Git Bash. Also: scripts that reference sibling files by relative name must run from the project dir - `run_cu_pipeline.R` now self-locates (setwd to its own `--file=` dir) so launch cwd no longer matters; the bare scraper/collector still expect the project dir as cwd (the collector later also self-locates, 2026-06-21).",
+      "mark": "not positional",
+      "why": "\"the collector later also self-locates\" is time"
+    }
+  ]
+}

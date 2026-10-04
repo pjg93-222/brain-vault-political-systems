@@ -5,7 +5,7 @@ aliases: ["Workstation stability incidents"]
 category: "incident"
 status: "completed"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
   - "[[claude-code-harness]]"
   - "[[lg-gram-workstation]]"
@@ -16,8 +16,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/lg-gram-npu-crash-2026-08-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\lg-gram-npu-crash-2026-08-17.md", sha256: "7fd81bd13a2149ed7c969a68369732a091625ab2c93d642e847b5c96fc014ae7"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/chatgpt-msix-repair-2026-07-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\chatgpt-msix-repair-2026-07-25.md", sha256: "3d31cc7adeb6be1cf8c6944c478219a33329e000a379fdd5b8154233f044ca1d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/poppler-pdf-rendering-2026-08-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\poppler-pdf-rendering-2026-08-14.md", sha256: "923256f4944de593fb9cddb76f585f1194e0d4bbcd2ba561d09c14bf461cf3b4"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/completed", "domain/infra", "category/incident"]
 ---
 
@@ -27,7 +27,7 @@ tags: ["type/topic", "status/completed", "domain/infra", "category/incident"]
 
 ## Context
 
-- Machine: the LG Gram 17Z90UB (Panther Lake, Windows 11 25H2 build 26200), actor [[lg-gram-workstation]]; owner [[paul-goff]]. Session harness effects (PATH capture, Codex MCP lane) touch the [[claude-code-harness]].
+- Machine: the LG Gram 17Z90UB (Panther Lake, Windows 11 25H2 build 26200), actor [[lg-gram-workstation]]; owner Paul Goff. Session harness effects (PATH capture, Codex MCP lane) touch the [[claude-code-harness]].
 - Status field is `completed` because each incident below has a recorded fix or workaround; the Kernel-Power class (2026-09-19 update) and the already-leaked AppXSvc commit (returned only by a reboot) are open follow-ups and are listed in Next Steps.
 - Related memory notes (not vault entities): `melange-redesign-build-lane-2026-09-22`, `disk-cleanup-lane-2026-09-16`, `weekly-refresh-self-sufficiency-audit-2026-09-19`, `codex-executor-lane-2026-07-18`, `legfix4-residue-closeout-2026-07-25`, `live-tree-branch-state-2026-07-14`, `project-brain-toolkit-2026-08-11`.
 
@@ -35,7 +35,7 @@ tags: ["type/topic", "status/completed", "domain/infra", "category/incident"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

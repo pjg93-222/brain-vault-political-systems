@@ -1,0 +1,461 @@
+{
+  "id": "B10",
+  "what": "Batch 5 split of topics/2026-07-troubleshooting-melange-audits-and-reviews (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B10); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-troubleshooting-melange-audits-and-reviews",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Pillar weights, three sets (resolution 3)",
+      "## July 2026 audit-run history (merged memory `audit-history-2026-07`; binding refuted lists, never hand-extend JSON, byte-match input-purity method, port 8802 not 8801)",
+      "## Open questions and unresolved items (for Paul)"
+    ],
+    "links": [
+      "actors/melange-fec-pipeline",
+      "concepts/settled-findings-stay-settled",
+      "concepts/four-pillar-percentile-blend"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-troubleshooting-melange-audits-and-reviews-guardrails",
+      "title": "Guardrails for any autonomous audit or review run",
+      "summary": "Guardrails for any autonomous Melange audit or review run, from the run-guardrails memory of 2026-07-02 as updated through 07-10",
+      "domain": "domain/agent-ops",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Guardrails for any autonomous audit/review run (`moneyball-audit-run-guardrails.md`, 2026-07-02, updated through 2026-07-10)"
+      ],
+      "keep": [
+        "actors/melange-fec-pipeline"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3",
+      "title": "July 2026 audit runs 1-3 and the deep audit (07-01 to 07-03)",
+      "summary": "The Melange audit runs of 2026-07-01 to 07-03: run 1, run 2, the deep audit of 07-02 and run 3",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### Run 2026-07-01 (`moneyball-audit-2026-07-01`)",
+        "### Run-2 audit 2026-07-02 (`moneyball-audit-run2-2026-07-02`)",
+        "### Deep audit 2026-07-02 (`moneyball-deep-audit-2026-07-02`)",
+        "### Run-3 audit 2026-07-03 (`moneyball-audit-run3-2026-07-03`)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Newest-wins rule kept in [[2026-07-troubleshooting-melange-audits-and-reviews]] (July 2026 audit-run history): where a run of 07-04 to 07-10 explicitly supersedes a finding recorded here, that run governs; otherwise each run stands as recorded."
+      ]
+    },
+    {
+      "slug": "2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity",
+      "title": "July 2026 runs 4-5, data-integrity, network/vote and run-through audits (07-04 to 07-10)",
+      "summary": "The Melange audit runs of 2026-07-04 to 07-10: run 4, runs 5a and 5b, the data-integrity audit, the network, vote and new-cycle audit, and the extensive audit with a true run-through",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "### Run-4 audit 2026-07-04 (`moneyball-audit-run4-2026-07-04`)",
+        "### Run-5a + 5b audit 2026-07-06 (`audit-run5ab-2026-07-06`)",
+        "### Data-integrity audit 2026-07-08 (`data-integrity-audit-2026-07-08`)",
+        "### Network / vote / new-cycle audit 2026-07-08 (`audit-network-vote-cycle-2026-07-08`)",
+        "### Extensive audit + true run-through 2026-07-10 (`audit-2026-07-10`)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Newest-wins rule kept in [[2026-07-troubleshooting-melange-audits-and-reviews]] (July 2026 audit-run history): where a run recorded here explicitly supersedes a finding of the 07-01 to 07-03 runs, it governs; otherwise each run stands as recorded."
+      ]
+    },
+    {
+      "slug": "2026-07-troubleshooting-melange-audits-and-reviews-data-integrity-and-provenance",
+      "title": "Data-integrity audit (07-01) and the data-rules provenance census (07-10)",
+      "summary": "The data-integrity audit of 2026-07-01 on the bills archive, the cosponsor network and the stance-stack plan, and the data-rules provenance census of 2026-07-10",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Data-integrity audit 2026-07-01: bills archive + cosponsor network, and stance-stack plan (`moneyball-data-audit-2026-07-01`)",
+        "## Data-rules provenance census (2026-07-10, `data-rules-provenance-2026-07-10`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-troubleshooting-melange-audits-and-reviews-later-reviews",
+      "title": "Hallucination framework, five-lane code review and laundry-list close-out",
+      "summary": "Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Findings-examination (hallucination) framework lane, 2026-08-13/14 (`hallucination-framework-lane-2026-08-13`)",
+        "## Five-lane code review 2026-09-13 (`code-review-five-lanes-2026-09-13`)",
+        "## Laundry-list close-out 2026-09-18/19 (`laundry-list-closeout-2026-09-18`)"
+      ],
+      "keep": [
+        "actors/melange-fec-pipeline"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 36,
+      "old": "- Pillar weights appear in several audit findings and exist in THREE sets (see \"Pillar weights, three sets\" below): `.40/.30/.20/.10` (2026-06-29, historical), `30/25/40/5` (ratified 2026-07-07: LAST RATIFIED), `45/10/40/5` (live in `ranks_python.json` since 2026-09-03: LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). The newest set must never be read as ratified.",
+      "mark": "same note",
+      "why": "\"(see 'Pillar weights, three sets' below)\" names ## Pillar weights, three sets, which the hub keeps below Context"
+    },
+    {
+      "line": 69,
+      "old": "| 2026-07-01 | Deep-dive audit phase 1 (math spec + audit notes + research papers; next phase data collection / sentiment rework). F1-F4 fixed; defection walks the FULL ladder; ABB26 IMP re-tier + CU Tax Status as 18th category; joint $2.5M optimizer + G-K bound; MC=20+CRN validated (100% seed overlap). |",
+      "mark": "not positional",
+      "why": "\"next phase data collection\" is time"
+    },
+    {
+      "line": 71,
+      "old": "| 2026-07-02 | Sanitized audit rubric handed to Paul for autonomous audit runs (replacing a generic Perplexity \"NextToken\" web-app rubric) - origin of the guardrails. Overnight deep audit (\"be brutal\"): 18th-category producer clobber fixed; split leak quantified; `run_pipeline.py` canonical runner. Audit II (math/logic/sourcing): W1 critical; \"fix all that\" ruled and applied same day (audit 48 checks). Run-2 audit + fix lane (branch unmerged at the time). Architecture refactor day (see [[melange-fec-pipeline]]). |",
+      "mark": "external",
+      "why": "\"(see [[melange-fec-pipeline]])\" names the actor note"
+    },
+    {
+      "line": 77,
+      "old": "| 2026-07-08 | Dataset fragment/parse audit (65 findings; 9 fixes on `claude/musing-swirles-f5e2de`, 604f786 later 4f7007d); network/vote/cycle audit (26 findings on `claude/magical-booth-f272da`); data repairs applied (Excel closed + collectors idle). |",
+      "mark": "not positional",
+      "why": "\"604f786 later 4f7007d\" is time"
+    },
+    {
+      "line": 86,
+      "old": "| 2026-09-19 | Five-lane note updated (\"UNAPPLIED\" statements stale, verified by hunk match, see `melange-live-tree-reconcile-2026-09-19`). |",
+      "mark": "external",
+      "why": "\"see `melange-live-tree-reconcile-2026-09-19`\" names a memory file"
+    },
+    {
+      "line": 90,
+      "old": "- **NEVER hand-extend a generated JSON; extend the producer.** Why: `category_stance.json` had been extended by hand to 18 categories (CU Tax Status) but the producer `per_category_stance.py` had a hard-coded 17-category list, so the next regeneration would silently drop the weight-3.0 flagship category (2026-07-02). The audit_full check `len(adv)>=18` caught it. Fix: `('CU Tax Status',16)` added to the producer (Normalized col 16).",
+      "mark": "not positional",
+      "why": "\"the next regeneration\" is time"
+    },
+    {
+      "line": 91,
+      "old": "- **Use port 8802 (launch config `moneyball-ui-audit`), not 8801.** Why: 8801 is Paul's long-running live-tree static server. Later note (2026-07-10): 8802 was Paul's long-running `http.server` (PID 50960) at that time and the worktree `.claude/launch.json` gained `moneyball-audit-8803` for preview-tool use; the 2026-09-18 laundry-list close-out again serves the live root read-only on 8802 via `moneyball-ui-audit`. Rule: never touch the user's own server; pick the launch config that is free.",
+      "mark": "not positional",
+      "why": "\"Later note (2026-07-10)\" is time"
+    },
+    {
+      "line": 95,
+      "old": "- **Audit-run execution allowlist** (2026-07-02 guardrails): only `python fec/tests/run_tests.py` and `python fec/audit_full.py` are verified read-only executables; everything else is import-unsafe or writes (see Guardrails below).",
+      "mark": "rewrite",
+      "why": "\"(see Guardrails below)\" names ## Guardrails for any autonomous audit/review run, which moves to -guardrails",
+      "new": "- **Audit-run execution allowlist** (2026-07-02 guardrails): only `python fec/tests/run_tests.py` and `python fec/audit_full.py` are verified read-only executables; everything else is import-unsafe or writes (see Guardrails in [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]]).",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-guardrails"
+    },
+    {
+      "line": 102,
+      "old": "- ~~DE-040 \"in-repo stopped matching LF-only hunks, outside-repo clean\"~~ - not reproduced (see the laundry-list section, lessons on `git apply`).",
+      "mark": "rewrite",
+      "why": "\"see the laundry-list section\" names ## Laundry-list close-out 2026-09-18/19, which moves to -later-reviews",
+      "new": "- ~~DE-040 \"in-repo stopped matching LF-only hunks, outside-repo clean\"~~ - not reproduced (see the laundry-list section in [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]], lessons on `git apply`).",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-later-reviews"
+    },
+    {
+      "line": 104,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 109,
+      "old": "- [ ] NEXT FAIL-CLOSED DATE 2026-09-21T03:41:10Z: clear `data/legislation/sentinel_admissions.json` (paid claude-cli step; Paul's spend + model ruling, N19) or the chain and desk stop.",
+      "mark": "not positional",
+      "why": "\"NEXT FAIL-CLOSED DATE\" is time"
+    },
+    {
+      "line": 113,
+      "old": "- [ ] Open items from the 07-08 audits (see the two 2026-07-08 audit sub-sections): dead `interaction_features.agree` feature, workbook durable-fix choice, press date sentinels, JS-mirror psych parity, voteview producer, S3-05 disambiguation of the two \"round 6\"s.",
+      "mark": "rewrite",
+      "why": "\"(see the two 2026-07-08 audit sub-sections)\" are ### Data-integrity audit 2026-07-08 and ### Network / vote / new-cycle audit 2026-07-08, which move to -july-runs-4-5-and-integrity",
+      "new": "- [ ] Open items from the 07-08 audits (see the two 2026-07-08 audit sub-sections in [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity]]): dead `interaction_features.agree` feature, workbook durable-fix choice, press date sentinels, JS-mirror psych parity, voteview producer, S3-05 disambiguation of the two \"round 6\"s.",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity"
+    },
+    {
+      "line": 124,
+      "old": "- Per-cell press-weight row 535 for Interchange/CU Tax Status/CCM (W1) is a different thing: category weights inside the press pillar, see the 2026-07-02 deep audit.",
+      "mark": "rewrite",
+      "why": "\"see the 2026-07-02 deep audit\" names ### Deep audit 2026-07-02, which moves to -july-runs-1-3",
+      "new": "- Per-cell press-weight row 535 for Interchange/CU Tax Status/CCM (W1) is a different thing: category weights inside the press pillar, see the 2026-07-02 deep audit in [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3]].",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3"
+    },
+    {
+      "line": 146,
+      "old": "  2. Lock heartbeats must outlive the longest step: the supervisor heartbeat only fired BETWEEN gate steps, so any >90-min step (batch re-score) went stale mid-step, the next tick stole the lock, and a concurrent gate would double-spend; fixed with a 60 s daemon-thread heartbeat.",
+      "mark": "not positional",
+      "why": "\"the next tick stole the lock\" is time"
+    },
+    {
+      "line": 156,
+      "old": "Source files of the merged record (memory file names): `audit-history-2026-07.md`, with embedded sections from `moneyball-audit-run2-2026-07-02.md`, `moneyball-audit-run3-2026-07-03.md`, `moneyball-audit-run4-2026-07-04.md`, `moneyball-audit-run-guardrails.md`, `data-integrity-audit-2026-07-08.md`, `audit-network-vote-cycle-2026-07-08.md`. Source note: this is the merged record of the 2026-07 Moneyball audit-run memories (07-01 through 07-10), each run kept as its own sub-section below, newest-wins applied only where one run explicitly supersedes another.",
+      "mark": "rewrite",
+      "why": "\"each run kept as its own sub-section below\": the hub keeps only this own text (owner ruling, decision 11) and the run sub-sections move to -july-runs-1-3 and -july-runs-4-5-and-integrity (plan B-N5: it points at the two run parts)",
+      "new": "Source files of the merged record (memory file names): `audit-history-2026-07.md`, with embedded sections from `moneyball-audit-run2-2026-07-02.md`, `moneyball-audit-run3-2026-07-03.md`, `moneyball-audit-run4-2026-07-04.md`, `moneyball-audit-run-guardrails.md`, `data-integrity-audit-2026-07-08.md`, `audit-network-vote-cycle-2026-07-08.md`. Source note: this is the merged record of the 2026-07 Moneyball audit-run memories (07-01 through 07-10), each run kept as its own sub-section in [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3]] and [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity]], newest-wins applied only where one run explicitly supersedes another.",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3, 2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity"
+    },
+    {
+      "line": 160,
+      "old": "Deep-dive audit 2026-07-01 (phase 1 done: math spec + audit notes + research papers; next phase = data collection / sentiment rework). Weights baseline: Leg 0.25 / Press 0.30 / Influence 0.40 / Demo 0.05, workbook rank-pot $2M / top-133 (NOT yet changed to 2.5M - flagged, Paul had not decided).",
+      "mark": "not positional",
+      "why": "\"next phase = data collection\" is time"
+    },
+    {
+      "line": 165,
+      "old": "- **F2 (v2, user-directed):** `defection()` now walks the FULL 10-rung ladder `[Champion, Ally, Highly Persuadable, Persuadable, Lean Persuadable, True Neutral, Lean Skeptic, Skeptic, Highly Skeptical, Opponent]`; COMMITTED = terminal rungs only; PROJ = aliases only (Defender to Champion, Neutral/Unengaged to True Neutral). **Highly Skeptical is DEEP BUT MOVABLE** (supersedes the earlier HS-to-Opponent projection; Durbin = HS defects to Opponent on a >=11.25 comp shock). One DTHRESH crossing = ONE fine rung (consistent with CONV_MAXSTEP=1). The fine tiers are real defection rungs, no longer flattened. `audit_full` checks updated (32 checks then): committed-Opponents-immune (data-driven list), HS-deep-but-movable (Durbin).",
+      "mark": "not positional",
+      "why": "\"supersedes the earlier HS-to-Opponent projection\" is time (the earlier version of the projection, superseded in this same entry)"
+    },
+    {
+      "line": 169,
+      "old": "**2026-07-01 (later): user-approved calibration wave** - verify against live code:",
+      "mark": "not positional",
+      "why": "\"2026-07-01 (later)\" is time"
+    },
+    {
+      "line": 180,
+      "old": "See `moneyball-model-config` for the config baseline (its IMP/BUDGET/defection notes are superseded by this run).",
+      "mark": "external",
+      "why": "\"See `moneyball-model-config`\" names a memory file"
+    },
+    {
+      "line": 192,
+      "old": "- **Paul pasted a live Anthropic key into chat 2026-07-03 - reminder to rotate** (an earlier paste was on 2026-07-01, reminder to rotate at console.anthropic.com; key material itself is not recorded here).",
+      "mark": "not positional",
+      "why": "\"an earlier paste was on 2026-07-01\" is time"
+    },
+    {
+      "line": 193,
+      "old": "- **PILOT-BEFORE-SPEND RULE (2026-07-04)** and **STANDING COST AUTHORIZATION (2026-07-04)**: see Decisions above (kept there with the full quotes).",
+      "mark": "rewrite",
+      "why": "\"see Decisions above\" names ## Decisions, where the hub keeps the Pilot-before-spend rule and the Standing cost authorization with their quotes; this Run-2 line moves to -july-runs-1-3",
+      "new": "- **PILOT-BEFORE-SPEND RULE (2026-07-04)** and **STANDING COST AUTHORIZATION (2026-07-04)**: see Decisions in [[2026-07-troubleshooting-melange-audits-and-reviews]] (kept there with the full quotes).",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews"
+    },
+    {
+      "line": 208,
+      "old": "**Fix lane COMPLETE (one commit per fix, kernel 30/30 after each):** S2-01 overrides via `dump_atomic`; S2-02 `audit.py` on `paths.py`; S2-03 salience `electoral_plays` loud guard; S3-01 five chain writers atomic + README honest; S3-02 `assemble_viz` legacy PERS deleted (was DEAD code, never referenced; remap concern moot); S3-03 sub-audit passed-count asserted (>=22 / >=11) + SKIP prints; S3-04 doc-rot (28 to 30 / 50 to 52, COM claim pipeline-scoped, HALF vs HALFF, salience b-clamp); S3-05 bundle/desk loud missing-input prints; S3-07 post-override NEXT hint to `run_pipeline`. Open besides S2-04: **S3-06** (`weekly_refresh` aborts dashboards if the workbook is locked at sync - design question; later RESOLVED, dashboard fallback) and `assemble_viz` PRO/ANTI predates the Defender tier (Defender camps \"neu\" in the diagnostics viz - ask Paul if Defender is in PRO).",
+      "mark": "not positional",
+      "why": "\"post-override NEXT hint\" is a printed hint and \"later RESOLVED\" is time"
+    },
+    {
+      "line": 224,
+      "old": "**CRITICAL trap (fixed): category producer clobber.** `category_stance.json` had been extended by hand to 18 cats (CU Tax Status) but the producer `per_category_stance.py` had a hard-coded 17-cat list; the next regeneration would silently drop the weight-3.0 flagship category from the stance matrix/flip/cascade/advisory while ABB26 IMP dicts kept expecting it. Fixed: `('CU Tax Status',16)` added to the producer (Normalized col 16). RULE: never extend a generated JSON by hand; extend the producer. The `audit_full` check `len(adv)>=18` is the guardrail that caught it. CU Tax Status scored with OFFENSIVE weights for now - moving it to DEFENSIVE is a `press-classification-user-domain`-style call for Paul; flag standing.",
+      "mark": "not positional",
+      "why": "\"the next regeneration\" is time"
+    },
+    {
+      "line": 226,
+      "old": "**Split leak (quantified, check installed):** 4 train-test text-hash collisions = 2 ACU articles filed under multiple members straddling splits. Leak-free test = 84.7% / 0.816 (headline IMPROVES). Paul's split never touched. `audit_full` now has a permanent check \"train/test split-leak ... within known bound\" (<=4). Next label refresh rule: same text means same split.",
+      "mark": "not positional",
+      "why": "\"Next label refresh rule\" is time"
+    },
+    {
+      "line": 247,
+      "old": "**Post-fix state:** `ranks_AFTER_fixes.json` (vs taxfix baseline: 318 moved >=5, 74 >=25, 9 >=100; top: Crapo / Barr / Roger Williams / Hill / Britt; Warren 104, Grassley 386, Durbin 531, Marshall 532). **Durbin's col-G tier is now full Opponent** (tiered weights priced his interchange opposition) - the audit's deep-but-movable check was repointed from Durbin to the whole Highly-Skeptical rung (22 members). Audit = **48 checks, all clean**. Workbook-corruption incident: recalc truncated the file to 2.2 MB, restored from BACKUP-113919; `run_pipeline` recalc now zip-validates + retries. Remaining open: flagship legislative sourcing (`bill_directions` + tax letters), shared data-loader refactor, same-text-same-split at next label refresh, M5 partisan-physics sensitivity test, Truth token / Bluesky handles (Paul's queue).",
+      "mark": "not positional",
+      "why": "\"at next label refresh\" is time"
+    },
+    {
+      "line": 255,
+      "old": "- **All gates green:** 30/30 tests; 80-file py_compile; 52/52 audit (first pass 51/52 = read contention with Paul's OWN pipeline finishing ~19:27, see Guardrails); chain 16/16 OK exit 0 (15.0 min, Excel closed so sync SAVED); ranks **0/533 delta**; determinism byte-identical (TOPIC=Interchange x2).",
+      "mark": "rewrite",
+      "why": "\"see Guardrails\" names ## Guardrails for any autonomous audit/review run, which moves to the sibling -guardrails while this Run-3 line moves to -july-runs-1-3",
+      "new": "- **All gates green:** 30/30 tests; 80-file py_compile; 52/52 audit (first pass 51/52 = read contention with Paul's OWN pipeline finishing ~19:27, see Guardrails in [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]]); chain 16/16 OK exit 0 (15.0 min, Excel closed so sync SAVED); ranks **0/533 delta**; determinism byte-identical (TOPIC=Interchange x2).",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-guardrails"
+    },
+    {
+      "line": 256,
+      "old": "- **Gate-d method that worked (reuse it):** 7 engine artifacts differed from pre-state, proved benign via (1) determinism double-run, (2) **input-purity test**: a full `budget_frontier` rerun to `FRONTIER_OUT` scratch temp byte-matched the chain's artifact, so engines are pure functions and the deltas were input changes (Paul's live `big5_traits.py` loop + bipartisan two-run convergence - the `bipartisan.json` writer is **`build_dashboard_bundle.py:250`**, chain step 12). The purity test doubles as a fixed-point/convergence-settled proof: the next run should be zero-delta across engines unless the corpus moves again.",
+      "mark": "not positional",
+      "why": "\"the next run should be zero-delta\" is time"
+    },
+    {
+      "line": 283,
+      "old": "- `fec/receptivity_sensitivity.py` (replication gate 533/533; ALL 9 `pressure_mult` constant variants decision-ROBUST, top-20 19-20/20, rho >= .998 - the untested .18 / .60 / PT / `PERSONA_W` magnitudes bounded harmless; **`seed_prob` coefficients are the leverage point**, ~200/533 move gates >0.05, so the first outcome test = `seed_prob` vs next-quarter new cosponsorships).",
+      "mark": "not positional",
+      "why": "\"next-quarter new cosponsorships\" is time"
+    },
+    {
+      "line": 296,
+      "old": "**Run-4k (annobib zip sweep + augmentations, @201a2b9; Paul: \"See if you missed anything else, implement immediate augmentations\"):** the zip = library-of-record (70 files, 12 annotation DOCX, ~24 papers new to run-4j; RKH PSRM now ON DISK). Paul's Addendum doc ratifies the 3-layer architecture: static greedy + G-K/CELF adaptive BOTH BUILT (`optimize.py`), RL envelope (S2V-DQN / GCOMB / Geometric-DQN / RL4CCIM) = his declared moat/roadmap - do NOT build uninvited; it also re-confirms Chen = UAI'21 and flags coalition formation as plausibly complex-contagion (covered: IC+LT channels, LT guarantee-free). **RKH C-criterion correction: see `moneyball-big5-campaign` (ceremonial-bill avoidance, NOT committee_leader; LEP pull unlocks it).** Implemented (non-chain diagnostics, live-root JSONs): `fec/signed_coalitions.py` (Aref-Neal frustration partition on signed mentions: 16-member antagonist splinter Schiff / Crockett / Goldman / Friedman / J.Johnson + Clyde / Luna / Mills / VanOrden / Schmitt / Evans / Gooden / McClain / Rulli / Zinke / Nehls; 87%-positive layer = near-single-bloc, k=3 empty) and `fec/kb_benchmark.py` (Battaglini-Patacchini: industry $ tracks KB centrality +0.24 > CU +0.14; G-K allocator ANTI-correlates -0.21 - ally-parity pricing central committed allies out = measured deviation-by-design; KB-to-score +0.62). Cites added: CELF to Leskovec KDD'07, pathfinder to Chen-Lam most-reliable-path. Zip-surfaced roadmap (user-gated): Gaynor LPAC member-to-member donation edges, Volden-Wiseman LEP pull, K-S-W sequential donations to lobbying + Furnas-LaPira-Brock PAC != lobbying construct note on the ind channel, Kumar GNN-IM, MultiXrank.",
+      "mark": "external",
+      "why": "\"see `moneyball-big5-campaign`\" names a memory file; \"See if you missed anything else\" is a quoted verb"
+    },
+    {
+      "line": 298,
+      "old": "**Run-4l / 4m (@ba9cfda / @31474b6):** LEP pulled + measured (see `moneyball-big5-campaign`); clean (S3 orphan .tmp deleted); WIRED: `weekly_refresh` post-chain diagnostics stage (`signed_coalitions`, `kb_benchmark`, `lep_criterion` - tolerant) + desk psychometrics \"External measures\" block (LES+pct, DW-NOM dim-1, KB centrality pct, antagonist badge; 533/533 ext, renders without text corpus; French Hill spot-check LES 90th / KB 99.8th). Verified wired state: kernel 30/30 + committed audit 53/53 ALL CLEAN. NOT wired by design: RL envelope (Paul's moat), Bakker signing (stranded branch), panel LEP rows (live-tree campaign's builder).",
+      "mark": "external",
+      "why": "\"(see `moneyball-big5-campaign`)\" names a memory file"
+    },
+    {
+      "line": 300,
+      "old": "**Run-4n (2026-07-05, \"Start the merges\" - S2-01 AND S2-02 RESOLVED, @57e4cf9 to @0e131c0):** campaign committed to main (34 files; both sessions' certified work); fixes-03 + eager-wright + epic-aryabhata all merged (one trivial conflict; epic merged ZERO-conflict - the mirrored commits were byte-identical). Full 17-step chain on merged main: 12.8 min ALL CLEAN, ranks 0/533; desk regenerated with BOTH psychometrics radars restored (run-4m's rebuild had regressed the behavioral radar by using the branch tpl - a live demonstration of the S2 risk, fixed at source by the merge) + External measures. Bakker signing applied (see `moneyball-lt-priming-gates`). **Judiciary added to the tracked committee set** (Paul's rule: add only venues where tracked legislation is introduced; evidence: 10 primary / 19 total referrals of 481 bills, the only untracked venue above noise; HSGAC 4 / Ag 3 / ArmedSvcs 3 deliberately excluded): `fec/add_judiciary_seats.py`, tier [Slightly] per the sheet's own E&C precedent (30 primary @ Slightly), 26 edits + 38 new rows (**Durbin enters, Ranking - run-4b question closed**), R&A INDEX cap 320 to 360, scorer 326/326, COM recalc, 2 workbook backups; propagation 5.6 min ALL CLEAN; movement 494/533 (434 <=5 = renormalization; risers = Judiciary cohort: Jordan +89, Raskin +79, Grassley +33; Durbin No. 532 to No. 531 - stance-signed components dominate a Slightly seat, by design). Committee-coverage decision CLOSED (gap 245 to 207, all remainder = truly seatless on CU-relevant committees). Merged branches may be deleted (Paul's call).",
+      "mark": "external",
+      "why": "\"(see `moneyball-lt-priming-gates`)\" names a memory file; \"above noise\" is a magnitude"
+    },
+    {
+      "line": 302,
+      "old": "See `moneyball-audit-run3-2026-07-03`, `moneyball-lt-priming-gates`, `moneyball-big5-campaign`, `moneyball-audit-run-guardrails`, `moneyball-receptivity-layer`.",
+      "mark": "external",
+      "why": "\"See `moneyball-audit-run3-2026-07-03`, ...\" names memory files"
+    },
+    {
+      "line": 308,
+      "old": "Mid-crawl true run-through + extensive; full record moved verbatim from the MEMORY.md index during the 2026-07-10 compaction. ALL GATES GREEN @962959d to @51f2f92: 30/30 + 105/105 compile; chain 17/17 in 5.9 min; ranks 0/533; 7/7 hashes byte-identical (incl. bundle with refs + coap); determinism ok; deep UI (French Hill, non-pilot) 0 console errors. **Audit is now 59 checks** (3 new schema guards: `big5_llm_opus` / `member_references` / `co_appearance` - the psych/media artifacts had zero coverage). **S2-01 fixed: both new legs stored 100% dateless rows** (hewitt hardcoded sitemaps 1-4; fox slug-only dates) - full sitemap-index enumeration + JSON-LD `datePublished` fallback + scoped backfill (0 dateless). **S2-02 fixed: hewitt walked ONLY the historical archive page (all posts 2011-14; the 2026 Thune post had 0 rows - the direct-fetch smoke masked it)** - enumeration = archive UNION /transcripts 360-page pagination + slug member-prefilter. New-corpus forensics: 4 legs exact-dup clean; 27 legacy ABC/CNN dups joined the Paul-gated D2 ledger (CREC 299). README gained the media/psych layer section. New-leg checklist lives in Guardrails above; report in-repo `AUDIT_FINDINGS_2026-07-06.md`.",
+      "mark": "rewrite",
+      "why": "\"New-leg checklist lives in Guardrails above\" names ## Guardrails for any autonomous audit/review run, which moves to the sibling -guardrails while this Run-5 line moves to -july-runs-4-5-and-integrity",
+      "new": "Mid-crawl true run-through + extensive; full record moved verbatim from the MEMORY.md index during the 2026-07-10 compaction. ALL GATES GREEN @962959d to @51f2f92: 30/30 + 105/105 compile; chain 17/17 in 5.9 min; ranks 0/533; 7/7 hashes byte-identical (incl. bundle with refs + coap); determinism ok; deep UI (French Hill, non-pilot) 0 console errors. **Audit is now 59 checks** (3 new schema guards: `big5_llm_opus` / `member_references` / `co_appearance` - the psych/media artifacts had zero coverage). **S2-01 fixed: both new legs stored 100% dateless rows** (hewitt hardcoded sitemaps 1-4; fox slug-only dates) - full sitemap-index enumeration + JSON-LD `datePublished` fallback + scoped backfill (0 dateless). **S2-02 fixed: hewitt walked ONLY the historical archive page (all posts 2011-14; the 2026 Thune post had 0 rows - the direct-fetch smoke masked it)** - enumeration = archive UNION /transcripts 360-page pagination + slug member-prefilter. New-corpus forensics: 4 legs exact-dup clean; 27 legacy ABC/CNN dups joined the Paul-gated D2 ledger (CREC 299). README gained the media/psych layer section. New-leg checklist lives in Guardrails in [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]]; report in-repo `AUDIT_FINDINGS_2026-07-06.md`.",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews-guardrails"
+    },
+    {
+      "line": 322,
+      "old": "- These correct their derived artifacts on the next pipeline run.",
+      "mark": "not positional",
+      "why": "\"on the next pipeline run\" is time"
+    },
+    {
+      "line": 324,
+      "old": "**Data repairs APPLIED 2026-07-08 (Excel closed + collectors idle confirmed):** workbook Press Release Articles de-mojibaked (444 cells; backup `PRE-DEMOJIBAKE-20260708_143414.xlsx`) - NOTE re-mojibakes on the next Draft R import unless fixed at the R step or the join is switched to bioguide; `social_media.db` speeches deduped to 234,827 rows (-3,810 incl. 11 post-backfill collisions; backups `PRE-SPEECHDEDUP` / `PRE-IVENTITY`) - NO unique index added (a full-text index would bloat; the dedup guard belongs in the ingest loader); 1,375 INTERVIEW rows html-unescaped; `sna_compact.json` rewritten to valid UTF-8; `congressbios.tab` 48 mojibake lines repaired (`.bak`). Scripts in scratchpad `staged_fixes` (dry-run + `--apply`, ephemeral).",
+      "mark": "not positional",
+      "why": "\"on the next Draft R import\" is time"
+    },
+    {
+      "line": 336,
+      "old": "**Index-line detail (moved verbatim from MEMORY.md, 2026-07-10 compaction):** \"Data-integrity audit 2026-07-08 - dataset fragment/parse sweep, 65 findings (1 crit / 11 high); 8 code fixes on branch claude/musing-swirles-f5e2de (uncommitted) + staged DB/workbook scripts; durable facts: workbook press sheet written by external Draft R (no fec writer) so mojibake; essays.csv cp1252-but-read-as-latin1 = fine; ranks_* / New-Ranks CSVs have no fec consumer\". Compaction 2026-08-19: \"SUPERSEDES the '8 code fixes ... (uncommitted)' line in the 2026-07-10 block above: the sweep landed as 9 fixes @4f7007d.\"",
+      "mark": "same note",
+      "why": "the quoted compaction note's \"'8 code fixes ... (uncommitted)' line in the 2026-07-10 block above\" is the index-line detail quoted earlier in this same line"
+    },
+    {
+      "line": 342,
+      "old": "**ALL 7 HIGH FIXED - COMMITTED @158d311 on `claude/magical-booth-f272da` (2026-07-09; 10 files, +393/-37)** + V-3/V-4/V-6 (vote-loop mediums). Verified: py_compile all; kernel tests 37/37; `audit_full` 64/65 (the 1 fail = pre-existing stale `electoral_plays.json`, see `dashboard-preview-workflow`, NOT a regression); `build_P` smoke-test confirms `em` applied. Edits:",
+      "mark": "external",
+      "why": "\"see `dashboard-preview-workflow`\" names a memory file"
+    },
+    {
+      "line": 360,
+      "old": "**Other HIGH:** N-2 edge-key convention mismatch double-writes 4 pairs (`build_multilayer_network.py:61/73` raw key vs :91 sorted key); V-2 `bill2cat` last-write-wins clobbers 107 multi-category bills (`vote_by_category.py:24`); C-1 GATE-2 writes `gate2.done` + self-unregisters even when post-rescore steps fail (`collector_supervisor.py:185`); C-2 `press_engagement` / `press_hcoi` never regenerated by `weekly_refresh` but baked into every fresh AUG (6-day-stale); C-3 `voteview_consistency.json` + its only consumer `b5_behavioral_instrument.py` are UNTRACKED (live only at DATA ROOT, no committed producer - see `moneyball-architecture`).",
+      "mark": "external",
+      "why": "\"see `moneyball-architecture`\" names a memory file"
+    },
+    {
+      "line": 366,
+      "old": "Related: `data-integrity-audit-2026-07-08` was a DIFFERENT audit (fragment/parse sweep). See also `moneyball-audit-run-guardrails`.",
+      "mark": "external",
+      "why": "\"See also `moneyball-audit-run-guardrails`\" names a memory file"
+    },
+    {
+      "line": 377,
+      "old": "- S2-02 FIXED: `coop_v2_candidate.json` became an engine input @94f09cf with NO chain producer (lt_priming-fossilization class) - in-chained BEFORE `receptivity_layer` @c5fe574; inherits col-G-class two-run convergence (reads the previous run's `bipartisan.json`, documented in the CHAIN comment). Coverage still 315/533 post-refresh (c2 floor; grows with the bills archive).",
+      "mark": "not positional",
+      "why": "\"reads the previous run's `bipartisan.json`\" is time"
+    },
+    {
+      "line": 384,
+      "old": "**Fix lane: branch `audit/fixes-2026-07-10` (from main), 5 commits, VERIFICATION RUN GREEN:** kernel 37/37, chain 18/18 (`coop_v2_candidate` step first, 1.5 s), ranks md5 IDENTICAL pre/post, audit ALL CLEAN with the new guard, ES caveat present in the regenerated desk (grep = 1). **MERGED TO MAIN @b0f53e1 (Paul: \"Merge to main\", 07-10); main confirmed 70/70 with the A-slot guard OK post-merge.** Note: the next chain run re-hashes `coop_v2_candidate.json` once (S3-06 provenance string) - values identical, benign.",
+      "mark": "not positional",
+      "why": "\"the next chain run\" is time"
+    },
+    {
+      "line": 398,
+      "old": "- **D3 FIXED:** `bill_directions.csv` created (all-category per-bill direction registry, seeded with the 60 CFPB entries; Direction 1/-1/0). `build_archive_legislative.py` consults it FIRST (any category), then falls back to section defaults. **Bonus bug fixed: \"0\"-direction bills were mis-signed -1** (6 CFPB bills; Lummis/Tim Scott CFPB +7.8 to +9.7, Omar/Craig phantom-negatives removed). The registry is bill-level (applies in every section a bill appears - 31 cells changed). `archive_leg.json` rebuilt (backup `archive_leg.PRE-D3.json`); NOT consumed live - effects flow at the next stance-matrix/leg-raw rebuild. **CAVEAT: `billkey` ignores the Congress number (pre-existing) - add a Congress column when data collection re-pulls.**",
+      "mark": "not positional",
+      "why": "\"at the next stance-matrix/leg-raw rebuild\" is time"
+    },
+    {
+      "line": 406,
+      "old": "**S1 BUILT (2026-07-01 evening, the first queue):** `fec/build_gold_queue.py` writes `gold_label_queue.csv` (Melange root): 533 items = FULL oppose census (194) + 174 support + 165 neutral; slices cfpb 80 / interchange 60 / creditcard 60 / bigbank 60 / acu 120 / lowconf 80 / regression 23 (from `CU_Confusion_Articles.xlsx`). Richer gold schema: `gold_target`, `gold_stance_toward_target` (support/oppose/neutral/UNRELATED), `gold_target_cu_valence`, `gold_cu_alignment`, `gold_attribution` (member-own / reported-action / third-party-voice). Paul adjudicates the `gold_*` columns. `fec/stance_eval.py [pred_col]` = harness: per-class P/R/F1 + macro-F1 + per-channel/per-slice + confusion; scores any prediction column (append nli/stanceformer/llm cols later). ICCK paper actual identity: Khan et al., IECE TACS 2025 - Roman Urdu tweets, Agree/Disagree/UNRELATED, classical ML <=94% vs fine-tuned RoBERTa 97% on balanced clean labels; takeaways adopted: \"unrelated\" as first-class label, macro-F1 headline, fine-tune only after labels are clean.",
+      "mark": "not positional",
+      "why": "\"(append nli/stanceformer/llm cols later)\" is time"
+    },
+    {
+      "line": 414,
+      "old": "**VERBATIM-VERIFIED user directives:** interviews campaign c6cd80d (B&L \"see where they source the interviews\"), Fox c6c1d8a, Hewitt 8077d4b, co-appearance a693ae0, CHRG window 60 to 400 d 850f129, coverage sweep 30bd671, supervisor delegation a3d7cce (\"Do whatever is best for the data collection\"), dedup guard e29ad25, MS NOW 9467fcc (\"Get MS NOW, more data the better\"), hearings-antag 063a47a + DW-NOMINATE a7ab015 (see `hearing-antagonism-2026-07-10`), Vote Smart (prereg user-gated), Quorum spec 07-01, `C_INT_W=2` (GATE-2 ratified).",
+      "mark": "external",
+      "why": "\"(see `hearing-antagonism-2026-07-10`)\" names a memory file; \"see where they source the interviews\" is a quoted verb"
+    },
+    {
+      "line": 446,
+      "old": "Links: `universal-lane-laws-2026-08-09`, `examination-lane-lessons-2026-08-14`, `verify-dont-infer-completion-2026-08-04` (also see Verification and evidence standards, which carries the framework as a working-agreement rule).",
+      "mark": "external",
+      "why": "\"also see Verification and evidence standards\" names the working-agreement topic, another note"
+    },
+    {
+      "line": 452,
+      "old": "**UPDATE 2026-09-19 (verified by hunk match, see `melange-live-tree-reconcile-2026-09-19`): the \"UNAPPLIED\" / \"NOTHING APPLIED (ask-first)\" statements in the original note are STALE.** The review session applied 90/90 patches to the LIVE tree on 2026-09-14T05:58Z (71 files rewritten in one minute; byte-exact pre-images of 94 files in gitignored `backups\\code_review_20260913\\`, taken 02:42Z). Present in LIVE, uncommitted at that time: class A 30 full / 2 partial / 20 absent; class B (Paul-gated) 22 full / 5 partial; class E (needs revision) 2 full / 2 partial; class C 0 of 3. The packet is no longer in any worktree - read it from commit `77959ae74` (retired branch `claude/melange-systems-code-review-859518`). Paul's authorising words for the apply were not found (ruling R1 of the reconcile). Original statements (kept): review of the COMMITTED tree at HEAD 2f11d9490 (read-only worktree), 2026-09-13; nine Opus review lanes, nine adversarial verifiers, five live-tree rechecks, three mechanical censuses; all patches UNAPPLIED; worktree clean throughout.",
+      "mark": "external",
+      "why": "\"see `melange-live-tree-reconcile-2026-09-19`\" names a memory file"
+    },
+    {
+      "line": 458,
+      "old": "- **S-1** Committed tree is not self-contained: `run_tests.py:386` registers `test_email_package_variant` (untracked, so the committed runner crashes at import); `audit_full.py:107`, `dashboard_integrity.py:9` and via it `make_member_desk.py:28` import live-only `fec/engine/pillar_policy.py`; `weekly_refresh.py:353` needs live-only `wikipedia_biographies.py`; `staffer_live/index.html` gitignored. 53 cited files differ in content between HEAD and live; 8 findings fixed only in live. See `committed-vs-live-drift-2026-09-13` (covered on [[melange-fec-pipeline]]).",
+      "mark": "external",
+      "why": "\"See `committed-vs-live-drift-2026-09-13` (covered on [[melange-fec-pipeline]])\" names a memory file and another note"
+    },
+    {
+      "line": 462,
+      "old": "- **S-5** Pillar weights: law 14 says 30/25/40/5; `ranks_python.json` 45/10/40/5 since 09-03; live-only `pillar_policy.py` encodes 45/10/40/5 and is a fail-closed desk gate (see the three-set table above: 45/10/40/5 is LIVE BUT UNRATIFIED).",
+      "mark": "rewrite",
+      "why": "\"see the three-set table above\" is the table of ## Pillar weights, three sets, which the hub keeps while this five-lane line moves to -later-reviews",
+      "new": "- **S-5** Pillar weights: law 14 says 30/25/40/5; `ranks_python.json` 45/10/40/5 since 09-03; live-only `pillar_policy.py` encodes 45/10/40/5 and is a fail-closed desk gate (see the three-set table in [[2026-07-troubleshooting-melange-audits-and-reviews]]: 45/10/40/5 is LIVE BUT UNRATIFIED).",
+      "referent": "2026-07-troubleshooting-melange-audits-and-reviews"
+    },
+    {
+      "line": 468,
+      "old": "Close-out of `HANDOFF_LAUNDRY_LIST_2026-07-16.md`: six fixes landed, interview turn-bleed repair v2 applied + landed, membership refreshed (rank-moving), the next fail-closed chain date, what still awaits Paul, and the method lessons. The 2026-07-16 handoff says \"NOTHING has been applied\". That is false at HEAD: the lane landed the same night as `391a4a8b5` (merged `e58a807da`, see `chatgpt-lane-landed-2026-07-16`), documented in `AUDIT_COMPLETION_REPORT_2026-07-16.md`, and its item 1 (bands/crown) was later superseded by brain D-031. On 2026-09-18/19 the session reconciled every handoff claim, finished the investigations that never finished, then built, landed and applied what Paul approved.",
+      "mark": "external",
+      "why": "\"see `chatgpt-lane-landed-2026-07-16`\" names a memory file; \"the next fail-closed chain date\" and \"was later\" are time"
+    },
+    {
+      "line": 475,
+      "old": "- N12 interview turn-bleed repair: v1 (split + re-attribute) REJECTED by an independent grade (46/64 inserts speaker-correct, DE-042). v2 TRUNCATE-ONLY (Paul: \"GO on the truncate-only v2\"): graded independently (cut precision 90/90, 935/935 tags real), APPLIED to LIVE `social_media.db` (5,477 rows truncated, 807 skipped incl. every gold-bound + credit-union row, 0 inserted; backup `backups\\social_media.PRE-TURNSPLIT-20260919.db`; `python fec\\members\\migrate_interview_turn_bleed.py --restore --db <path>` is byte-exact from the table `speeches_turn_split_ledger`), LANDED main `ce0dc5b21` (kernel 247/2, same two reds; dial `IV_TURN_TAGS` 2 = repaired, 1 = legacy). Interview stance channel byte-identical, so no rank input moved. Brain D-062.",
+      "mark": "not positional",
+      "why": "\"the table `speeches_turn_split_ledger`\" is a database table, not a table of the note"
+    },
+    {
+      "line": 477,
+      "old": "- **NEXT FAIL-CLOSED DATE: 2026-09-21T03:41:10Z** - `data/legislation/sentinel_admissions.json` (oldest per-bill decision + 8 days) kills `build_archive_legislative.py` at import, so chain + desk stop. Clearing it is a PAID claude-cli step: NOT authorized, Paul's spend + model ruling (N19).",
+      "mark": "not positional",
+      "why": "\"NEXT FAIL-CLOSED DATE\" is time"
+    },
+    {
+      "line": 479,
+      "old": "- **Awaiting Paul:** R2, R3, R4, N3, N6 (PERS parity drift), N7, A6, R8, R9, D6, N13, N14, and new N17 (chain builds champions threat boards BEFORE the desk, so any primacy-tier flip reddens an audit check until the next chain), N18 (Pete Sessions gained a tier-1 crown in the refresh run; own score identical - see the packet addendum), N19 (above), N20 (row 245558: the whole \"Mike Johnson\" row is a surname false positive; collector member matching by surname, count unknown).",
+      "mark": "same note",
+      "why": "\"N19 (above)\" is the NEXT FAIL-CLOSED DATE bullet right before it in the same laundry-list section (Paul's spend + model ruling, N19); \"until the next chain\" is time; \"see the packet addendum\" names a document outside the note"
+    },
+    {
+      "line": 486,
+      "old": "- Chain exit 1 / `publication.status=FAIL` does NOT mean the refresh failed: `audit_full.py` is the last step and exits 1 on any red; with standing reds exit 0 is unattainable and PIPELINE COMPLETE never prints (DE-044). Judge by the step table + the audit FAILURES list against the previous run (now 559/9).",
+      "mark": "not positional",
+      "why": "\"against the previous run\" is time"
+    },
+    {
+      "line": 496,
+      "old": "- Drifted LIVE target: put the logic in a NEW pure helper on the branch and deliver the producer hook as a patch cut against LIVE bytes (`live-tree-eol-census-2026-09-19` has the cutter, `fec/tools/live_patch.py`, see [[melange-fec-pipeline]]). Before promising a merge run `git -C <LIVE> status --porcelain -- <paths the branch touches>`: one dirty path blocks it (save, restore, merge, 3-way `git merge-file` back, `cmp`). UNTRACKED files at a path the merge creates block a fast-forward too - an architect told to save receipts \"in the packet\" wrote them into LIVE, not the worktree; move them.",
+      "mark": "external",
+      "why": "\"see [[melange-fec-pipeline]]\" names the actor note"
+    },
+    {
+      "line": 510,
+      "old": "- Which pillar-weight set governs (S-5), see the three-set table.",
+      "mark": "same note",
+      "why": "\"see the three-set table\" is the table of ## Pillar weights, three sets, which the hub keeps"
+    }
+  ]
+}

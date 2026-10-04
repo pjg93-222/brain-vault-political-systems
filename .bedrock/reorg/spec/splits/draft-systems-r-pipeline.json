@@ -1,0 +1,149 @@
+{
+  "id": "B7",
+  "what": "Batch 5 split of actors/draft-systems-r-pipeline (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B7); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/draft-systems-r-pipeline",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## Standing rules (recorded as rules for this system)",
+      "## History (dated)",
+      "## Related Actors",
+      "## Related Topics",
+      "## Related Projects",
+      "## Related People"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "draft-systems-r-pipeline-layout-and-knobs",
+      "title": "Where things live, script inventory and environment knobs",
+      "summary": "Where the Draft Systems R pipeline lives on disk, its script inventory, and its environment variables and knobs",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Where things live",
+        "## Script inventory",
+        "## Environment variables and knobs"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "draft-systems-r-pipeline-architecture",
+      "title": "Architecture of the six scrapers and stages",
+      "summary": "Architecture of the six Draft Systems R scrapers and stages: the congress.gov member scraper, the CU press-release scraper, the fast collector and driver, Stage 5 stance and tone, and the Census and Ballotpedia scrapers",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Architecture 1: congress.gov member scraper (`congress_member_scraper.R`)",
+        "## Architecture 2: CU press-release scraper (`cu_press_release_scraper.R`)",
+        "## Architecture 3: fast collector and one-command driver",
+        "## Architecture 4: Stage 5 stance and tone",
+        "## Architecture 5: Census CD scraper (`census_cd_scraper.R`)",
+        "## Architecture 6: Ballotpedia CU-influence scraper (`ballotpedia_119th_cu_scraper.R`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "draft-systems-r-pipeline-code-catalogue",
+      "title": "Code-level catalogue: markup, incidents and verified measurements",
+      "summary": "Code-level catalogue of the Draft Systems R pipeline: congress.gov markup and parser facts, press-scraper regex and scoring traps, the collector and coverage incident catalogue, and Ballotpedia and Census code facts",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Code-level catalogue: markup, incidents and verified measurements"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 52,
+      "old": "Sibling folder: `Melange Systems` holds only Excel mirrors and scored outputs (`CU_Press_Stance_Tone.xlsx`, `cu_press_releases_scored.xlsx`); the live R pipeline and data are NOT there (see Where things live).",
+      "mark": "rewrite",
+      "why": "\"see Where things live\" names ## Where things live, which moves to -layout-and-knobs",
+      "new": "Sibling folder: `Melange Systems` holds only Excel mirrors and scored outputs (`CU_Press_Stance_Tone.xlsx`, `cu_press_releases_scored.xlsx`); the live R pipeline and data are NOT there (see Where things live in [[draft-systems-r-pipeline-layout-and-knobs]]).",
+      "referent": "draft-systems-r-pipeline-layout-and-knobs"
+    },
+    {
+      "line": 93,
+      "old": "CU_TC_PROCS=6 CU_PR_WORKERS=6 Rscript run_cu_pipeline.R      # best 6-worker run (bash-style, see PowerShell form above)",
+      "mark": "same note",
+      "why": "\"see PowerShell form above\" is the \"# env vars: PowerShell form\" line higher in the same Dev Commands code block, which the hub keeps"
+    },
+    {
+      "line": 138,
+      "old": "- **Eval corpora are in-sample:** every 1.000 score is a regression gate, not a field-accuracy estimate; build a fresh adversarial set before the next lexicon change.",
+      "mark": "not positional",
+      "why": "\"before the next lexicon change\" is time"
+    },
+    {
+      "line": 197,
+      "old": "Note on the command block above: invocation forms for the harness and maintenance scripts are inferred from their script names (the sources record the scripts and their purpose, not always the exact command line); the env-var, pipeline, Stage 5, Ballotpedia and kill commands are recorded verbatim.",
+      "mark": "rewrite",
+      "why": "\"the command block above\" is the Dev Commands code block (env-var, pipeline, Stage 5, Ballotpedia and kill commands), which the hub keeps; this line moves to -layout-and-knobs, whose sections hold no code block",
+      "new": "Note on the command block in [[draft-systems-r-pipeline]]: invocation forms for the harness and maintenance scripts are inferred from their script names (the sources record the scripts and their purpose, not always the exact command line); the env-var, pipeline, Stage 5, Ballotpedia and kill commands are recorded verbatim.",
+      "referent": "draft-systems-r-pipeline"
+    },
+    {
+      "line": 201,
+      "old": "- Multi-layer R scraper for congress.gov using chromote (to bypass 403), user-agent rotation (later replaced by one consistent `CHROME_UA`, Chrome 148), randomized back-off and `future`/`future.apply` parallelism. Switch variable = the MEMBER (`original-cosponsor` value in an advanced-search query), not page number. Purpose: legislative activity (insurance/data-privacy/financial-services bills) per member across congresses 119/118/117/116.",
+      "mark": "not positional",
+      "why": "\"later replaced by one consistent CHROME_UA\" is time"
+    },
+    {
+      "line": 208,
+      "old": "- **Outputs:** one workbook `Moneyball_Legislative_Score_<ts>.xlsx`, tabs `Legislative Score - Raw` (138 cols: Name, District/State, 17x8; row 2 = exact Weight row; headers/weights embedded verbatim from \"Moneyball Main Version - Presentation.xlsx\", python-verified byte-exact; `LEGIS_HEADERS`/`WEIGHTS` truncated to 138, previously 143 with 5 committee/leadership/caucus cols) + `All Interactions` + `Sponsor` / `Original Co-sponsor` / `Co-sponsor`. Per-section col 6 \"Success Rate\" = `round(mean(SponsorSuccess, OrigCosponsorSuccess),1)` on displayed rates (~3/9129 cells differ 0.1 by R half-to-even vs Excel half-up). District/State via `get_roster_meta_119()` (sen -> state; rep -> \"Congressional District N (119th Congress), <State>\"). Date = Congress only. Regeneration is OFFLINE-FAST via the SKIP_SCRAPE path once 51/51 passes are cached.",
+      "mark": "not positional",
+      "why": "\"previously 143\" is time (the earlier column count)"
+    },
+    {
+      "line": 211,
+      "old": "- **Query variants:** disk (older) = examination/supervision/CTR/SAR terms, `original-cosponsor`, 3 subjects; pasted = credit union capital terms (supplement/secondary/subordinated debt/PCA), `sponsor`, 4 subjects (+Housing); later a single phrase \"Credit Card Competition Act\". Diff the URL block before overwriting; user iterates by swapping `raw_url_parts`.",
+      "mark": "not positional",
+      "why": "\"later a single phrase\" is time (a later query variant)"
+    },
+    {
+      "line": 221,
+      "old": "- **Outputs:** `cu_press_releases_scored.xlsx` (Scored Releases, Member Summary, Member x Category (net), Member x Category (count), Category Detail, Coverage, Member x Category (graded net), Coalition Members, Coalition Profiles; \"Net by Category\" tab first) + `cu_press_releases_scored.csv` + `cu_press_releases_category_scores.csv` + standalone `cu_net_scores_by_category.xlsx` (\"Net by Category\": Member, State, District (\"Senate\" / \"At-Large\" / number), 20 categories each with a `(n)` volume twin, Cumulative Net, Total Releases, Sum of Category Nets = 46 cols) + `all_press_release_index.csv`. `MEMBER_FILTER` = the user's 537-name list verbatim (`apply_member_filter()` rewrites `members$member` to the list spelling, keeps `roster_name`; `NICK_EQUIV`, `FILTER_NAME_OVERRIDES`; 537/537 matched). `safe_write()` timestamp fallback. `regen_outputs_offline.R` re-runs Stage 5 + outputs from checkpoints (excludes committees).",
+      "mark": "not positional",
+      "why": "\"the list spelling\" is the user's 537-name MEMBER_FILTER list named in the same sentence, not a list in the note"
+    },
+    {
+      "line": 230,
+      "old": "- **`cu_text_collector.R`:** parse-bound problem (~62ms/page = ~16 pages/s/core; later ~30ms typical) solved by sharding members across N worker processes, each with an async libcurl multi pool (HTTP/2, multiplex), reusing `extract_release` (sourced with `CU_PR_NO_AUTORUN=1`) and writing the same `pr_checkpoints/fulltext/<bg>.rds` (url,title_detail,date_detail,body). Shards balanced by URL count via `collector_plan.rds` (greedy, deterministic, auto-unlinked at end). Fresh `new_pool()` per chunk (`CHUNK=1500`; a persistent pool crashes past ~3-4k transfers on Windows) with `rm(pool);gc(FALSE)`. Retries only transient (libcurl `fail` + 5xx); 4xx and empty-200 are permanent `miss`. Gentle recovery (<=3 passes, `total_con=8 host_con=2 robust=TRUE`, `forbid_reuse`, 5s cool-down) then chromote 403 lane (own Chrome per worker, `tc_js_fetch` polls body.innerText until >400 chars and stable, ~3.2s max; bounded by chromote `default_timeout`, not `setTimeLimit`; 0.5 s/url). `TC_CHROMOTE` gate with log line `[shard N] chromote gate: enabled=… | M blocked(403) urls queued`; `Sys.unsetenv(\"CU_PR_NO_CHROMOTE\")` unless `CU_TC_NO_CHROMOTE` set. Orchestrator reads `.hb`/`.done` sentinels (written via `writeLines`, `write_hb()` every 200 bodies / 10 chromote urls), 20-min idle guard on body progress, per-shard watchdog (`collector_shard_i.pid`, `kill_shard`/`spawn_shard`, `taskkill /F /T /PID`), writes `collector_residual.csv`, `CU_TC_CAP` stratified collection (always fetch `TOPIC_CORE_RX` titles; `read_index` carries title). Measured: 6 cores ~47min, 8 ~36min; real run ~30min @6 cores; RAM ~450MB/worker (6 procs ~3GB). Coverage 254,477/293,935 = 86.6% before fixes, ~97-98% projected after (~5.1k genuine 404). Self-locates via `--file=`.",
+      "mark": "not positional",
+      "why": "\"later ~30ms typical\" is time"
+    },
+    {
+      "line": 292,
+      "old": "The narrative of each audit round lives in [[2026-06-feature-congress-r-scrapers]]; this catalogue keeps the code-level facts a maintainer needs next to the code root.",
+      "mark": "not positional",
+      "why": "\"next to the code root\" means beside the code on disk, not a place in the note"
+    },
+    {
+      "line": 302,
+      "old": "- User phrases: role distinction \"just go down the list\" (looped pivot), full SNA graph \"not there yet\", \"Moneyball ACU\" outline, \"I only want these members\" (MEMBER_FILTER), Roster names \"Shelley Capito\" (sans Moore) / \"Analilia Mejia\" / \"Moore Capito\" -> \"capito\".",
+      "mark": "not positional",
+      "why": "\"just go down the list\" is a quoted user phrase"
+    },
+    {
+      "line": 320,
+      "old": "- Parallel scoring: 5,200-row synthetic 4,644 == 4,644; 2.31 MB export vs 113 globals; `future.globals.maxSize` 500 MB; `globals::globalsOf(.cu_score_chunk, recursive=TRUE)`; shard 10 of 12 = 23 bot-blocked members (B001303 560 urls; 3,278 urls total; chromote ~40% productive); parse rule: keep `x<-if(c)a else b` on one line; error text \"Execution halted\"; user phrase \"revert to having the guard-dog and year filter\"; earlier \"we are re-winding\"; \"newer releases given more prominence\"; \"NO SHORT CUTS… NEVER STOP\"; \"silently stall\"; \"missing cu_text_collector.R (run from project dir)\".",
+      "mark": "not positional",
+      "why": "\"earlier 'we are re-winding'\" is time: an earlier user phrase"
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "id": "A2",
+  "what": "Batch 4 split of actors/mentat-fec-pipeline (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A2); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/mentat-fec-pipeline",
+  "home": "projects/mentat",
+  "hub": {
+    "keep": [
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## Pipeline design and standing rules (as recorded)",
+      "## Related Actors",
+      "## Related Topics",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related People"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "mentat-fec-pipeline-key-stores",
+      "title": "Key stores (locations and fingerprints, no key material)",
+      "summary": "Where the Mentat FEC API keys are stored (the encrypted DPAPI store Mentat collects from and the shared key repository), recorded as locations, counts and fingerprints only, never key material",
+      "domain": "domain/security",
+      "home": "projects/mentat",
+      "sections": [
+        "## Key stores (locations and fingerprints; no key material)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-fec-pipeline-history-build-and-ship",
+      "title": "History: build and ship (07-18 to 07-24)",
+      "summary": "History of the Mentat FEC pipeline from the 2026-07-18 build to its integration on main on 07-24: timeline, crypto test, review fixes, the six-industry ship, the alias-gap audit and the worker-shard audit",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## History: build and shipping (2026-07-18 to 2026-07-24)",
+        "### Timeline",
+        "### Integration to main 2026-07-24",
+        "### Build + crypto test (2026-07-18 evening)",
+        "### Review + fix batch R1 (same evening)",
+        "### SHIPPED 2026-07-20 (6 industries; API lane superseded Chrome-scrape for scale)",
+        "### Alias-gap + PAC audit (2026-07-20 night, Paul: \"no stone unturned\")",
+        "### Parallelism ceiling + worker-shard audit (2026-07-21, 16 keys added)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-fec-pipeline-history-hardening",
+      "title": "History: hardening (07-22 to 07-23)",
+      "summary": "History of the Mentat FEC pipeline hardening on 2026-07-22/23: corruption defects re-tested, acronym-variant collisions, the override matcher fix, version control and lineages, the Fintech ordeal and perf round 2",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "### Master-corruption defects re-tested against live data (2026-07-22): 4 of 7 REFUTED",
+        "### Acronym-variant collisions are systemic (2026-07-22; 48-agent audit, 64 variant sets, 9 survived double adversarial verification; UNFIXED, awaiting Paul: ROSTER-IDENTITY calls)",
+        "### The override matcher was silently over-rejecting: FIXED @bulk c45bd03 (2026-07-22)",
+        "### Version control and lineages (2026-07-22)",
+        "### Fintech ordeal diagnosed + perf round-2 at Paul's gate (2026-07-23, /codex lane)",
+        "### Round-2 shipped + benchmark passed (2026-07-23 night, Paul's \"do what is most optimal\")"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-fec-pipeline-history-audit-r12",
+      "title": "History: 2026-07-27 audit, trade-association fix and R12",
+      "summary": "History of the six-agent audit of 2026-07-27, the trade-association $0 fix and the R12 reconciliation, as recorded on the Mentat FEC pipeline",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## History: 2026-07-27 audit, trade-association fix and R12"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-fec-pipeline-history-september-lanes",
+      "title": "History: September 2026 lanes",
+      "summary": "History of the Mentat FEC pipeline lanes of September 2026, from worker scaling and the tidy workbook to the collector slowdown, the truncated-key outage and the uncommitted reconcile",
+      "domain": "domain/data",
+      "home": "projects/mentat",
+      "sections": [
+        "## History: September 2026 lanes"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K1",
+      "a": "actors/mentat-fec-pipeline-history-build-and-ship",
+      "b": "topics/2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship"
+    },
+    {
+      "id": "K2",
+      "a": "actors/mentat-fec-pipeline-history-hardening",
+      "b": "topics/2026-07-bugfix-mentat-collection-and-attribution-july-hardening"
+    },
+    {
+      "id": "K3",
+      "a": "actors/mentat-fec-pipeline-history-audit-r12",
+      "b": "topics/2026-07-bugfix-mentat-collection-and-attribution-audit-r12-trade-association"
+    },
+    {
+      "id": "K4",
+      "a": "actors/mentat-fec-pipeline-history-september-lanes",
+      "b": "topics/2026-07-bugfix-mentat-collection-and-attribution-september-collector-lanes"
+    }
+  ],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 51,
+      "old": "| Repository | `C:\\Users\\pgoff\\Mentat` (branch `codex/mentat-crypto`; registered worktree of Melange; mirrored, see below) |",
+      "mark": "same note",
+      "why": "\"mirrored, see below\" is the Backup bullet of ## Dependencies (file line 68), which the hub keeps, below it"
+    },
+    {
+      "line": 63,
+      "old": "- Depends on: the openFEC API (`api.open.fec.gov`, served via the api.data.gov key family; ~120 req/min/key, 1,000 req/hr budget per key window), FEC bulk files (`mentat/inputs/fec_committee_master/cm{22,24,26}/cm.txt`, indiv zips), the DPAPI key store (Key stores below).",
+      "mark": "rewrite",
+      "why": "\"(Key stores below)\" names ## Key stores, which moves to -key-stores",
+      "new": "- Depends on: the openFEC API (`api.open.fec.gov`, served via the api.data.gov key family; ~120 req/min/key, 1,000 req/hr budget per key window), FEC bulk files (`mentat/inputs/fec_committee_master/cm{22,24,26}/cm.txt`, indiv zips), the DPAPI key store (Key stores in [[mentat-fec-pipeline-key-stores]]).",
+      "referent": "mentat-fec-pipeline-key-stores"
+    },
+    {
+      "line": 144,
+      "old": "- Roster-identity calls awaiting Paul (UNFIXED): acronym-variant collisions (AHFC, SECU, MACU, Spectrum, FHB, Lightpath), FCU-variant expansion, 63 proposed aliases (`proposed_new_aliases.csv`), the pagination-shortfall policy (see 2026-07-21 history), and the tidy-workbook open questions (see tidy lane).",
+      "mark": "rewrite",
+      "why": "\"see 2026-07-21 history\" is the pagination-shortfall OPEN POLICY CALL of ### Parallelism ceiling + worker-shard audit (2026-07-21), which moves to -history-build-and-ship; \"see tidy lane\" is ### Tidy workbook lane, which moves to -history-september-lanes",
+      "new": "- Roster-identity calls awaiting Paul (UNFIXED): acronym-variant collisions (AHFC, SECU, MACU, Spectrum, FHB, Lightpath), FCU-variant expansion, 63 proposed aliases (`proposed_new_aliases.csv`), the pagination-shortfall policy (see 2026-07-21 history in [[mentat-fec-pipeline-history-build-and-ship]]), and the tidy-workbook open questions (see tidy lane in [[mentat-fec-pipeline-history-september-lanes]]).",
+      "referent": "mentat-fec-pipeline-history-build-and-ship, mentat-fec-pipeline-history-september-lanes"
+    },
+    {
+      "line": 146,
+      "old": "- Dormant crash class: zero-row scalar assign (see below).",
+      "mark": "same note",
+      "why": "\"(see below)\" is the **Zero-row scalar assign** rule of ## Pipeline design and standing rules (file line 178), which the hub keeps, below it"
+    },
+    {
+      "line": 156,
+      "old": "2. **Mentat's own store (governs collection):** ENCRYPTED DPAPI store `%LOCALAPPDATA%\\Mentat\\credentials\\fec-keys.dpapi`, read through `mentat/tools/fec_key_store.py` (`load_keys` / `inventory` / `set_disabled`, plus `key_id()` and `--list/--enable/--enable-all/--disable`). It holds **22 keys, 21 of 40 characters and one of 39**; flat list with no block structure, so grep does not apply. All 7 `data_gov` keys from the Desktop file are also in it; 15 keys are store-only; none are file-only. History: 2026-09-09 imported the 7 `data_gov` keys from the Desktop file (store went 15 active / 0 disabled -> 22); earlier (2026-07-20) 4 API keys lived in `AppData\\Local\\Mentat\\keys.txt` (all tested 200; an earlier set was LOST with overwritten launcher scripts, so keep keys OUT of launchers) and on 2026-07-21 16 keys were added.",
+      "mark": "not positional",
+      "why": "\"earlier (2026-07-20)\" and \"an earlier set was LOST\" are time"
+    },
+    {
+      "line": 172,
+      "old": "- **Decisions of Paul at the build (2026-07-18):** engine = headless Chrome (chromote; NOT bulk files, NOT the API: he was offered both with volume math and chose the browser) - later superseded by the API lane for scale (2026-07-20); cycles = 2021 onward (2021-22, 2023-24, 2025-26 partial); 527s and 501c's EXCLUDED; missing category workbook at `C:\\Users\\pgoff\\OneDrive\\Documents\\Super PAC, 527, Carey, 501c.xlsx` (sheets 2021-2022/2023-2024; View C/L/X = lean; x-marks = category; the \"^J\" in his link = mangled commas).",
+      "mark": "not positional",
+      "why": "\"later superseded by the API lane\" is time"
+    },
+    {
+      "line": 211,
+      "old": "| 2026-07-18 | Paul's decisions + output template (see Pipeline design). Spec `mentat/MENTAT_SEQUENCING_v2.md` in the melange-ticketing-module-2f8aad worktree (branch claude/pipeline-generation-review-89167f), UNCOMMITTED; source zip (Downloads/Mentat-20260718T072249Z-1-001.zip) has Company Name.xlsx (variant blocks; Crypto sheet = columns, others = rows; annotations are rules not search terms), 2 leadership-PAC CSVs (2021-22, 2023-24 only), Trade Associations.docx. Build was gated by Paul per `ask-before-substantive-changes`. |",
+      "mark": "rewrite",
+      "why": "\"see Pipeline design\" names the hub's ## Pipeline design and standing rules",
+      "new": "| 2026-07-18 | Paul's decisions + output template (see Pipeline design in [[mentat-fec-pipeline]]). Spec `mentat/MENTAT_SEQUENCING_v2.md` in the melange-ticketing-module-2f8aad worktree (branch claude/pipeline-generation-review-89167f), UNCOMMITTED; source zip (Downloads/Mentat-20260718T072249Z-1-001.zip) has Company Name.xlsx (variant blocks; Crypto sheet = columns, others = rows; annotations are rules not search terms), 2 leadership-PAC CSVs (2021-22, 2023-24 only), Trade Associations.docx. Build was gated by Paul per `ask-before-substantive-changes`. |",
+      "referent": "mentat-fec-pipeline"
+    },
+    {
+      "line": 213,
+      "old": "| 2026-07-19 | Zero-row scalar-assign crash class found 4x (see Pipeline design). |",
+      "mark": "rewrite",
+      "why": "\"see Pipeline design\" names the hub's ## Pipeline design and standing rules",
+      "new": "| 2026-07-19 | Zero-row scalar-assign crash class found 4x (see Pipeline design in [[mentat-fec-pipeline]]). |",
+      "referent": "mentat-fec-pipeline"
+    },
+    {
+      "line": 234,
+      "old": "- Retag on live DB: passthrough 4,594 -> 72 (JFC-only), `memo_review` 4,603, countable 3,711 -> 3,739 (+28 only; triple-overlap absorbed most of the over-broad pattern). Resume-skip REMOVED (idempotent re-walk) - but see the 2026-07-21 audit: `stored_complete=1` still skipped work. `attribution_conflicts` table live (0 rows in crypto). Tests 3/3 PASS (incl. new `test_names.R`); reconciliation re-verified 1,181/1,189 = 99.33%. 18 review minors deferred, listed in workflow wf_87a1ec92-290 journal. Note: another session clobbered the MEMORY.md index line for the source note - re-check it. Still uncommitted; Paul's gate pending.",
+      "mark": "same note",
+      "why": "\"see the 2026-07-21 audit\" is the 4-agent audit of ### Parallelism ceiling + worker-shard audit (2026-07-21), which lands in -history-build-and-ship with this line"
+    },
+    {
+      "line": 243,
+      "old": "- 4 API keys in `AppData\\Local\\Mentat\\keys.txt` (all tested 200; the earlier set was LOST with overwritten launcher scripts: keep keys OUT of launchers).",
+      "mark": "not positional",
+      "why": "\"the earlier set was LOST\" is time"
+    },
+    {
+      "line": 244,
+      "old": "- Gap-fill: `gapfill.R` (mall/, multi-cycle, phase2 default TRUE: `phase2_names=FALSE` had silently skipped corporate giving for ALL non-crypto: cu corp=0) + `bulk\\gapfleet.sh` (3 batches x 4 keys, waits on process exit never log text) + `status_mentat.py` live terminal (Paul's demand). Pending at fleet end: re-merge -> resolve -> rebuild -> verify; State Farm + Charter had ZERO rows (never fetched; State Farm later collected: 93,279 rows / 79,127 accepted by 07-22); PAC Schedule B for non-crypto = 15 PACs uncollected.",
+      "mark": "not positional",
+      "why": "\"State Farm later collected\" is time"
+    },
+    {
+      "line": 250,
+      "old": "- **CRITICAL DISCOVERY:** overrides written/approved in PRIOR sessions (the original 77-row `company_match_overrides.csv`, e.g. TMCC/Truckee Meadows, Optimum collisions) were written to the CSV but NEVER reconciled into collected data: no mechanism existed to re-apply them. Built `reclassify_overrides.py` (dry-run-first, rowid-level ledger, never touches raw columns) and ran it: **16,932 rows reclassified in master** (Verizon 9,074 review -> accepted $396k; Altice 790 accepted -> rejected $339k Optimum-collision purge; Comcast 5,353 review -> accepted $228k; Toyota 1,508 accepted -> rejected $42k TMCC purge; Gemini 206 mixed). Propagated to all per-industry source DBs so the next `merge_all.py` doesn't regress it.",
+      "mark": "not positional",
+      "why": "\"the next `merge_all.py`\" is time"
+    },
+    {
+      "line": 259,
+      "old": "- ~~THE structural finding: `api_request_budget` is tracked PER-DATABASE, not per-key: one row (`budget_id='openfec'`), NO key column.~~ **PARTIALLY CORRECTED 2026-07-22: \"no key column\" was FALSE.** The schema is `api_request_budget(budget_id TEXT PRIMARY KEY, window_started_epoch, requests_used)` and is byte-identical in all four lineages: it always supported multiple budget rows. What was true is that the CODE hardcoded `budget_id='openfec'`, collapsing every worker onto one 1,000/hr bucket. A LATER fix in `mall`/`Mentat\\mentat` only (`fec_api_budget_id()`, a polynomial digest of the key) makes the budget genuinely per-key. **Its premise (that api.data.gov enforces the hourly cap per registered KEY) is UNVERIFIED and contradicts the original conclusion. Do not propagate that fix or promise throughput gains from more keys until an empirical two-key test settles per-key vs per-IP/per-database.** Paul QUARANTINED it 2026-07-22: present where it already is, added nowhere. Verify budget rows before promising any throughput gain.",
+      "mark": "not positional",
+      "why": "\"A LATER fix\" is time"
+    },
+    {
+      "line": 266,
+      "old": "- **FLEET HALTED 02:34 2026-07-21: PHASE-2 IDENTITY PASS BURNS BUDGET AND PRODUCES NOTHING** (written before the two root causes above were fixed). Over 40 min with 7 supervised plain lanes: rows FLAT at 730,271, units completed FLAT at 420, while budgets burned (cu 941 requests, pc_2026 933, ca_w03 1000, ca_w01 995) and pending GREW 6,083 -> 8,643. Zero FAIL lines in cu/tel_*/pc_* logs. Affects PLAIN lanes too, so NOT a worker-shard problem. Prime suspect then: `phase2_names=TRUE`, newly enabled 2026-07-20 (it had been silently FALSE, which is why earlier employer-only runs banked 730k rows fine). Do NOT restart the fleet with phase2 on until understood (each window costs a full key-hour per lane). Diagnostics proposed: does any P2_name unit EVER reach `stored_complete=1`; does the pass commit on budget-pause or discard partial work; are fetched identity rows all INSERT-OR-IGNORE duplicates of employer-pass rows. Baseline: pc_2024 and cb COMPLETE (19/19, 195/195), collected employer-only.",
+      "mark": "same note",
+      "why": "\"the two root causes above\" is the BOTH PHASE-2 ROOT CAUSES FOUND + FIXED bullet just above it in the same ###; \"earlier employer-only runs\" is time"
+    },
+    {
+      "line": 313,
+      "old": "- Verification: 6/6 Python suites (system py3.14), **11/11 R suites** (R_LIBS_USER set; Codex sandbox cannot see the R library: Claude must run R tests), 7 .ps1 parse-clean PS5.1, `node --check` OK, roster smoke 7/7. GATE ITEMS: merge; live <=15 min benchmark run (hits FEC API = Paul's call); vendor node/node_modules properly (follow-up); the original R tests + inputs are UNTRACKED in the repo and should be committed.",
+      "mark": "not positional",
+      "why": "\"cannot see the R library\" is the verb see"
+    },
+    {
+      "line": 324,
+      "old": "- **BONUS DISCOVERY: the earlier crash-recovered Fintech workbook UNDERCOUNTS:** SoFi corporate pass 16,170 rows short (20,281 -> 36,451), Cash App corporate 22 -> 507; cycle totals rise ~+40-98% (e.g. 2021-22 $953k -> $1.89M). The workbook Paul had open was materially incomplete; v5's sits in `mentat/.cache/bench-20260723-output/` awaiting his deploy call.",
+      "mark": "not positional",
+      "why": "\"the earlier crash-recovered Fintech workbook\" is time"
+    },
+    {
+      "line": 325,
+      "old": "- NEXT SPEED LEVER identified from receipts: the company<->lane merge invariant serializes SoFi's 3 cycles (306+226+195 s = 727 s ~ the entire 732 s collection critical path); relaxing to (company,cycle)<->lane would cut collection to ~5 min, total ~11 min.",
+      "mark": "not positional",
+      "why": "the label \"NEXT SPEED LEVER\" is time"
+    },
+    {
+      "line": 338,
+      "old": "4. **Candidate <-> Leadership PAC swap in 2023-24 in ALL SIX books** (~$163k; P&C $77,152.77): later shown to be the same defect as the Trade Association $0 (below), not a swap.",
+      "mark": "same note",
+      "why": "\"the Trade Association $0 (below)\" is ### Trade Association $0 and the \"~$163k Candidate swap\" are ONE defect, which lands in -history-audit-r12 with this line and stays below it; \"later shown\" is time"
+    },
+    {
+      "line": 346,
+      "old": "**Own bugs written and caught by testing (do not skip the test step):** `key` as a variable name shadows data.table's `by=` resolution and silently corrupts grouping; suppressing evidence FRAGMENTS union-find (only ever ADD edges); merging on name+company alone over-merged HART MATTHEW (Racine WI CNH executive) with a Washington DC government-affairs manager (now requires a corroborating state/employer/occupation); `performance.getEntriesByType` accumulates for page lifetime so a stale 429 would have hung every later scrape.",
+      "mark": "not positional",
+      "why": "\"every later scrape\" is time"
+    },
+    {
+      "line": 357,
+      "old": "- **FRAMING CORRECTION: this is NOT a \"coverage gap\" and calling it one was wrong.** The register does not gate collection. All $556,742 of trade-association money is already captured in the workbooks, attributed to the right companies, with downstream paths traced and correctly marked \"not attributed\" (see any `<Company> View` sheet, Source Committee / Path column). The register only assigns a LABEL: the gap changes whether ~$265k of P&C money reads `Trade Association` vs `Unclassified` in one rollup row, a presentation defect. No dollar total, company total, or member ranking is affected. Paul was right.",
+      "mark": "external",
+      "why": "\"see any `<Company> View` sheet\" points at the workbooks, not at the note"
+    },
+    {
+      "line": 360,
+      "old": "- **FIX SHIPPED 2026-07-27 (R12), two layers, curated first, BOTH on `report.R`'s read-time path** (the exporter opens the DB `SQLITE_RO` and never calls the ingest resolver): (1) `inputs/trade_committee_overrides.csv`: 102 curated rows (auto-generated `source=auto:exact_token_set`, names verified against the register); (2) `trade_resolve_broad_net()` in `R/report.R`, Paul's **broad net**: match the association's full normalized name ANYWHERE inside the committee name after stripping trailing committee suffixes (PAC / POLITICAL ACTION COMMITTEE / FUND...). Guards: names <10 chars are never netted (acronym collisions); >1 matching committee_id is left unresolved, never guessed. Full-name (not acronym) matching keeps American Bankers Assn and American Bar Assn apart. Beyond the CSV it adds AMA -> AMA PAC and American Pharmacists -> APhA PAC, with 0 false positives. **STALE: the earlier ingest-side override step was DELETED in R12** (it referenced `trade_overrides`/`trade_override_applied`, neither ever assigned, and hard-crashed `write_reports()` on all three callers with `object 'trade_overrides' not found`); do not restore it; `report.R` is the single implementation. Workbooks still showed $0 until a regen (not run: Paul's call).",
+      "mark": "not positional",
+      "why": "\"the earlier ingest-side override step\" is time"
+    },
+    {
+      "line": 367,
+      "old": "- WITHDRAWN (asserted and did not survive): \"$2,484,046 published as $0\" (computed against the wrong DB); \"the workbook was built from a run logged as failed\" (later runs exist; `started` rows with end=NULL are not proof); per-cell dollar deltas vs a `company_match_status='accepted'` filter (that filter is NOT the export rule: the workbook shows MORE than it for Chubb/Binance, so the reconstruction is wrong); the agent's `scrape_progress records_total=0` evidence (State Farm/Allstate/USAA have many 0 rows too: they are per-variant_set checkpoints, not failure signals).",
+      "mark": "not positional",
+      "why": "\"later runs exist\" is time"
+    },
+    {
+      "line": 377,
+      "old": "- **F6 was REOPENED then resolved:** the R12 note claimed the audit's \"~$163k Candidate/Leadership, identical in all six books\" WAS the trade money ($162,458.32); that reasoning was WITHDRAWN at the time ($162,458 is a sum ACROSS books, per-book-identical would total ~$975k, and trade money is book-specific and **$0.00 in Fintech**). What was established: classifier and registers clean (Candidate 4x-14x Leadership every cycle, zero candidate committees in the leadership lookup), builder transposition-free, neither changed after those books were built; G6 is the standing detector. The later same-day trade-association note (above) then SOLVED it as ONE defect (Unclassified folds into Candidate). Newest statement wins: F6 = the trade-PAC resolver defect, fixed by the curated CSV + broad net.",
+      "mark": "same note",
+      "why": "\"The later same-day trade-association note (above)\" is ### Trade Association $0 ... ONE defect, which lands in -history-audit-r12 with this line and stays above it"
+    },
+    {
+      "line": 379,
+      "old": "**F3: a shipped regression the audit caught.** First attempt made party columns count `Support Activity` (24E/24F) only. Wrong: **24K, 24Z, 24C, 24P, 24R, 24H are all money FOR the candidate** and are the ordinary corporate-PAC case. That stripped **$151.4M** out of party columns (Perdue 2022 Bakkt: $2,995,566 -> $0, coverage 100% -> 0%), turned `Other / Unclassified` into a **$1.99B/$2.55B opposition dump**, and left two different coverage denominators in one workbook (Sherrod Brown 100.0% vs 0.6%, 3 rows >100%). **Shipped design = four buckets summing to the total:** Dem/Rep = `Downstream − Oppose` for that party; Oppose gets its own column; Other/Unclassified means genuinely non-D/R; Party Coverage divides by the mixed total on BOTH the summary and focused sheets. Integrity asserts `Downstream − Dem − Rep − Other − Oppose = 0` (a real check: Oppose from R, Downstream from an Excel SUMIFS). Focused sheets subtract opposition via a **Section-guarded** SUMIFS; without the guard every beneficiary row reports CHECK (74 on Crypto). **Also NOT an invariant:** `Support + Oppose <= Downstream`: FEC correction/refund rows are negative and carry neither direction code, so they pull the unsigned total below the components (272/2,979 CU rows, all residuals negative, to -$735,710). Don't re-add that assertion.",
+      "mark": "not positional",
+      "why": "\"below the components\" is a number comparison"
+    },
+    {
+      "line": 384,
+      "old": "- `scrape_progress.zero_verified`: a zero must prove itself. Only the **browser** lane stamps 1 (its readiness gate requires DataTables' confirmed-empty row); the **API lane leaves 0** because a double-504 becomes an `unservable_query`, gets decomposed, and can synthesise count=0. Upsert uses `MAX(existing, incoming)` so a later unverified write can't downgrade. Migration does NOT backfill legacy rows to 1. Guard **G3 zero_provenance** reports unverified zeros (warn). Timing cannot substitute: Farmers' poisoned zero ran 0.68 s/set, Bitnomial's real zero 0.65 s.",
+      "mark": "not positional",
+      "why": "\"a later unverified write\" is time"
+    },
+    {
+      "line": 386,
+      "old": "- **Master Overview Average row**, every column, every cycle block. Sits BELOW the table and **outside the ListObject** (mandatory: the finalizer assigns one formula per whole table column, and its reconciliation sums every non-\"Industry Total\" row and would throw). Writes must also be **outside `if (!deferFormulas)`**: production always sets `MENTAT_DEFER_FORMULAS=1`, so that block is dead code and anything inside ships blank. Blocks now end at row 48 (was 45).",
+      "mark": "not positional",
+      "why": "\"Sits BELOW the table\" is a position in the workbook sheet"
+    },
+    {
+      "line": 388,
+      "old": "**Still open after R12 (2026-07-27):** (1) Telecom blocked by the V8 512 MB string cap (see Known Issues); (2) live $176,942.05 Crypto memo double-count; (3) P&C `zero_provenance` unverified zeros (Berkshire/2026, Chubb/2022+2026, Liberty Mutual/2022+2024); (4) **Nothing promoted:** rebuilds staged in `reports/r12-regen/`; originals untouched in `reports/`. Note: Community Banks having no Company PAC money is CORRECT (Paul confirmed).",
+      "mark": "rewrite",
+      "why": "\"see Known Issues\" names the hub's ## Known Issues",
+      "new": "**Still open after R12 (2026-07-27):** (1) Telecom blocked by the V8 512 MB string cap (see Known Issues in [[mentat-fec-pipeline]]); (2) live $176,942.05 Crypto memo double-count; (3) P&C `zero_provenance` unverified zeros (Berkshire/2026, Chubb/2022+2026, Liberty Mutual/2022+2024); (4) **Nothing promoted:** rebuilds staged in `reports/r12-regen/`; originals untouched in `reports/`. Note: Community Banks having no Company PAC money is CORRECT (Paul confirmed).",
+      "referent": "mentat-fec-pipeline"
+    },
+    {
+      "line": 402,
+      "old": "- **Safety property worth keeping:** a stopped run can never write the source database. Stop cancels queued lanes -> tasks unfinished -> `final_failed` non-empty -> the `if not final_failed:` guard skips the merge entirely. Resume with `--resume` later.",
+      "mark": "not positional",
+      "why": "\"Resume with `--resume` later\" is time"
+    },
+    {
+      "line": 403,
+      "old": "- Later: these files, incl. the never-committed `api_request_pool.py`, were landed in commit `494dc133c` (see slowdown lane). Pre-existing and NOT from this lane: `mentat/tests/test_names.R` shows modified. Related: `staffer-dashboard-section-lane-2026-09-04` (classifier blocked process stops there too).",
+      "mark": "same note",
+      "why": "\"see slowdown lane\" is ### Collector slowdown lane, which lands in -history-september-lanes with this line; \"Later:\" is time"
+    },
+    {
+      "line": 410,
+      "old": "- **Design:** static values, header row 1, one ListObject per sheet, tall (cycle/tier/category/party as rows), one measure per column, real dates, real booleans, IDs as text (sub_id 19 digits), no `%`/rank columns, bridge sheets instead of `;` cells, `About` sheet carrying the literal `Source DB SHA-256: <hex>` (what `contribution_data._workbook_source` scans), `Data Quality` sheet with build-time checks whose expectations come from OTHER sources (SQL over mentat.db, payload expected totals, Overview finalizer `cycle_totals`) per DE-012, per-cycle split above `MENTAT_DATA_SPLIT_ROWS` (=console cap 50,000; names `<Sheet> <cycle>`, never a bare cycle label). Grain pin: `Contributions` = accepted rows in supported cycles (CU 28,960 / Banking 602,125), incl. excluded-from-analysis rows with flags. Architecture: R exporter writes a staging SQLite (`R/tidy_stage.R`, 6th positional arg) between `export_phase(\"payload_assembled\")` and `write_payload_json` -> `enrich_downstream.py --staging` adds the 7 Python tables -> new `tools/build_tidy_workbook.py` (openpyxl write_only) writes the book after `sourceGuard check`, published before `sourceGuard accept`. Header vocabulary chosen for the reader's regexes (`Amount`/`Analysis Amount`, `Giving`, `Gift Count`, `Distinct Contributors` = non-summable via `distinct`, `Contributor ZIP`, `Committee Type` vs `... Code`).",
+      "mark": "not positional",
+      "why": "\"per-cycle split above `MENTAT_DATA_SPLIT_ROWS`\" is a row-count threshold"
+    },
+    {
+      "line": 415,
+      "old": "- **APPLIED + DRY-RUN 2026-09-15 (Paul: \"Apply the patches and run the Crypto dry run\", later \"Scratch-copy run without a ruling\", \"Include-list of categorical columns\"):** all 15 patches APPLIED to `C:\\Users\\pgoff\\Mentat` (backups `<file>.bak-20260914-tidy`; two test targets were untracked so `??`; `app/server.py` is SHARED with another live lane's `'chip'` edit: roll back that file with `git apply -R P6a`, never the .bak), UNCOMMITTED (Paul's commit). Tests in the tree: R 56/0, Python 70 OK (73 after the fix), PS guard PASS.",
+      "mark": "not positional",
+      "why": "\"later \\\"Scratch-copy run without a ruling\\\"\" is time"
+    },
+    {
+      "line": 416,
+      "old": "  - The orchestrator dry run could NOT run: the uncommitted receipt-evidence gate (`fec_assert_receipt_evidence`, `collect.R:136`, ruleset `inputs\\fec_receipt_rules.json`) refuses ANY unresolved row: on the hydrated `.cache\\receipt-metadata-repair-20260910\\<industry>\\mentat.db` (the real input set; row counts match the accepted pointers exactly) Crypto = 80 rows, Credit Union = 4 (two \"DUPLICATE TRANSACTION SENT IN ERROR\" returns, one \"VOTER FILE PURCHASE AT FAIR MARKET VALUE\", one $2.08 F3/15 row with no description): Paul's ruling extends `non_giving_exact_descriptions` / `non_giving_exact_pattern`. (Later: the receipt-evidence gate refuses NOTHING at HEAD 7d364883e, unblocking the tidy orchestrator run.)",
+      "mark": "not positional",
+      "why": "\"(Later: the receipt-evidence gate refuses NOTHING ...)\" is time"
+    },
+    {
+      "line": 426,
+      "old": "- **COMMITTED on `codex/mentat-crypto`** (peers coordinated; packet `audits/mentat_collector_slowdown_20260917/DIAGNOSIS.md` commit `b9fe34d02`; the worktree copy was DESTROYED by the 09-18 disk clearance (it was first copied to the Mentat tree, see the workstation disk and backup topic (`2026-08-incident-workstation-disk-and-backup`)), hence filed in the Mentat repo): `494dc133c` pool quarantines API_KEY_* 403 + re-issues on a healthy key, width follows key supply (`--pool-width`), lands the whole worker-scaling set incl. never-committed `api_request_pool.py`; `f0ec60b74` moving count/shortfall/overrun re-walks (`MENTAT_RECONCILE_PASSES=3`), date windows verified vs a FRESH parent count, unresumable saved work discarded per unit, determinism spot-check made union-aware (a split unit's page 1 IS the synthetic union, so the old check was a structural false positive, 3 of 5 live failures); `bd8c65ebb` console Resume last run (`/api/resume`, `-ResumeRunId`, control reset; real-FEC e2e stop->resume merged 158 rows); `dba77f87f` estimated `is_count_exact:false` verified by date windows / window-count sum instead of failing; `2a5f05761` a run whose process is provably gone reports stopped so it becomes resumable (15-min grace when no pid).",
+      "mark": "external",
+      "why": "\"see the workstation disk and backup topic\" names another note"
+    },
+    {
+      "line": 428,
+      "old": "- **How to apply next time:** ask \"what HTTP status/body did the archived response carry\" (`fec_response_observations` + `fec_response_archive` in the LANE db) before theorising about checkpoints.",
+      "mark": "not positional",
+      "why": "\"How to apply next time\" is time (the resolver's automatic match of \"How to apply\" to the key-store ruling label is wrong and is overridden)"
+    },
+    {
+      "line": 432,
+      "old": "- **Open for Paul:** 09-17 12:41 CU run stands 27/30, killed without a terminal state, now resumable from console 8806. Console startup can hang on `git rev-parse` through OneDrive (unkillable child, `lru_cache` races two threads): task chip queued. Single-cycle runs fail the workbook wanting cm22. Runtime paths >~275 chars break `sys.path[0]`. Brain drafts (STATE, DE-026, D-040) are in the packet. `Desktop\\API Keys\\keys.json` is NOT Mentat's key store: the DPAPI store is. See `mentat-worker-scaling-lane-2026-09-09`, `mentat-failings-lane-s2-2026-09-16`.",
+      "mark": "external",
+      "why": "\"See `mentat-worker-scaling-lane-2026-09-09`, `mentat-failings-lane-s2-2026-09-16`\" names memory files"
+    },
+    {
+      "line": 441,
+      "old": "  - **Board** `3eeb99e00`: Canvas mode 1|2|4 tiles, contract `studio_api` v2 (`board` written only for 2/4 tiles, v1 views byte-identical). Three INDEPENDENT live verification passes against a real console found six defects no stubbed suite could see (pager redrew the hidden canvas under a wrong label; map-in-tile compared the wrong revision counter; Undo discarded the board; Cancel left tile requests flying; stale cross-source tile cache; refresh blanked tiles while Cancel claimed otherwise). Lesson: a builder's green suites + stub fixtures (`has_more:false`) hide exactly the state bugs a render-state refactor creates: always buy the adversarial live pass. Coexisted with the older \"N charts\" split strip. Console serves the new client at once but drops `board` on save until the launcher restarts `server.py`.",
+      "mark": "not positional",
+      "why": "\"no stubbed suite could see\" is the verb see"
+    },
+    {
+      "line": 444,
+      "old": "- **Close-out (Paul: \"Finish the still-open items and push to the mirror\"), final HEAD `59a87a70b`, 38 commits:** `c2822afd6` last two suites on a temp report root + the never-running acceptance test (`test_industry_routes.py`) now runs read-only against the smallest real workbook (11-20 s here, skips in a clean checkout); `59a87a70b` replaced index records (info files only; the 1.1 GB edge files are regenerable) under `mentat/.cache/transfer-index-backups-20260919`; mirror verified sha-identical for `codex/mentat-crypto` and `main` (a peer session had just added a post-commit hook that pushes to the mirror, so the push was already up to date; see the Melange repo mirror (`melange-repo-mirror`)).",
+      "mark": "external",
+      "why": "\"see the Melange repo mirror (`melange-repo-mirror`)\" names another note"
+    }
+  ]
+}

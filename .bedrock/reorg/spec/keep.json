@@ -1,0 +1,130 @@
+{
+  "what": "Batch 3 link model (plan .bedrock/reorg/plan.md Revision 4: 4.6 people/paul-goff 50 -> 14, 4.7 the 19 non-split leaves with D1-D6, section 6 concept links, section 5 C6 back-links). Batch 4: D5 retargeted from the mentat-collection hub to its -cross-verification part (4.4 C4, 4.7). Batch 5: D1 and D2 keep their hubs and add the parts that carry their sessions (4.7: the acu-outline discussion + -legfix5-full-text-and-culling, the coalition-builder discussion + -coalition-builder). Batch 6: D3 retargeted from the staffer-data hub to its -tenure-adjudication-and-architecture part, which carries the architecture and overlap rulings (4.4 C4, 4.7); D4: the sorting discussion keeps the hub and adds -sorting-lane (4.7). Read by .bedrock/reorg/relink.ts (A.5).",
+  "leaves": {
+    "topics/2026-06-working-agreement-change-control-and-decision-authority": { "home": "projects/melange-systems", "keep": ["people/paul-goff", "projects/mentat", "actors/moneyball-workbook"] },
+    "topics/2026-06-working-agreement-communication-and-presentation-style": { "home": null, "keep": ["people/paul-goff", "concepts/trend-over-significance"] },
+    "topics/2026-06-working-agreement-tooling-and-environment-traps": { "home": null, "keep": ["people/paul-goff", "actors/claude-code-harness"] },
+    "topics/2026-07-working-agreement-agent-orchestration-rules": { "home": null, "keep": ["people/paul-goff", "actors/codex-executor", "actors/metaloop"] },
+    "topics/2026-07-working-agreement-verification-and-evidence-standards": { "home": null, "keep": ["people/paul-goff", "concepts/census-before-claims", "concepts/settled-findings-stay-settled"] },
+    "topics/2026-07-feature-member-approach-briefs": { "home": "projects/melange-systems", "keep": ["actors/melange-audio-pipeline"] },
+    "topics/2026-07-incident-workstation-stability": { "home": null, "keep": ["actors/lg-gram-workstation", "actors/claude-code-harness"] },
+    "topics/2026-09-feature-cu-geography-luna-and-row-framework": { "home": "projects/cu-geography", "keep": ["actors/runpod-pod", "actors/quant-model-evaluation-skill", "concepts/single-look-holdout-discipline"] },
+    "topics/2026-09-feature-forecast-giving-redesign": { "home": "projects/forecast-redesign", "keep": ["discussions/2026-10-03-pac-accuracy-attempt2-rulings", "concepts/single-look-holdout-discipline", "actors/mentat-console"] },
+    "topics/2026-09-feature-sector-growth-study": { "home": "projects/forecast-redesign", "keep": ["concepts/trend-over-significance", "actors/mentat-fec-pipeline", "projects/mentat"] },
+    "topics/2026-09-feature-staffer-network-surfaces": { "home": "projects/melange-systems", "keep": ["actors/staffer-live-sidecar", "actors/melange-dashboard", "concepts/live-tree-patch-discipline"] },
+    "topics/2026-09-troubleshooting-mentat-repo-state-and-workbooks": { "home": "projects/mentat", "keep": ["actors/mentat-console", "actors/mentat-fec-pipeline"] },
+    "topics/2026-10-feature-brain-vault-setup": { "home": null, "keep": ["actors/brain-vault-political-systems", "actors/brain-graph", "actors/claude-code-harness"] },
+    "discussions/2026-07-27-acu-outline-north-star-rulings": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-legislative-pillar-acu-review", "topics/2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling"] },
+    "discussions/2026-07-30-coalition-builder-redesign-session": { "home": "projects/melange-systems", "keep": ["topics/2026-07-feature-influence-engine-internals", "actors/melange-dashboard", "topics/2026-07-feature-influence-engine-internals-coalition-builder"] },
+    "discussions/2026-09-03-staffer-network-architecture": { "home": "projects/melange-systems", "keep": ["topics/2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture", "actors/staffer-live-sidecar", "concepts/concurrent-service-overlap-edge-rule"] },
+    "discussions/2026-09-06-staffer-sorting-rulings": { "home": "projects/melange-systems", "keep": ["topics/2026-09-feature-staffer-network-data-and-math", "topics/2026-09-feature-staffer-network-data-and-math-sorting-lane"] },
+    "discussions/2026-09-17-mentat-xref-council-review": { "home": "projects/mentat", "keep": ["topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification", "actors/mentat-console", "concepts/exclude-on-contradiction-not-ambiguity"] },
+    "discussions/2026-10-03-pac-accuracy-attempt2-rulings": { "home": "projects/forecast-redesign", "keep": ["topics/2026-09-feature-forecast-giving-redesign", "concepts/single-look-holdout-discipline"] }
+  },
+  "paul": [
+    "projects/cu-geography",
+    "projects/forecast-redesign",
+    "projects/melange-systems",
+    "projects/mentat",
+    "actors/draft-systems-r-pipeline",
+    "actors/lg-gram-workstation",
+    "actors/mentat-fec-pipeline",
+    "actors/brain-vault-political-systems",
+    "actors/brain-graph",
+    "topics/2026-06-working-agreement-change-control-and-decision-authority",
+    "topics/2026-06-working-agreement-communication-and-presentation-style",
+    "topics/2026-06-working-agreement-tooling-and-environment-traps",
+    "topics/2026-07-working-agreement-agent-orchestration-rules",
+    "topics/2026-07-working-agreement-verification-and-evidence-standards"
+  ],
+  "named": [
+    ["discussions/2026-07-27-acu-outline-north-star-rulings", "topics/2026-07-feature-legislative-pillar-acu-review"],
+    ["discussions/2026-07-30-coalition-builder-redesign-session", "topics/2026-07-feature-influence-engine-internals"],
+    ["discussions/2026-07-27-acu-outline-north-star-rulings", "topics/2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling"],
+    ["discussions/2026-07-30-coalition-builder-redesign-session", "topics/2026-07-feature-influence-engine-internals-coalition-builder"],
+    ["discussions/2026-09-03-staffer-network-architecture", "topics/2026-09-feature-staffer-network-data-and-math-tenure-adjudication-and-architecture"],
+    ["discussions/2026-09-06-staffer-sorting-rulings", "topics/2026-09-feature-staffer-network-data-and-math"],
+    ["discussions/2026-09-06-staffer-sorting-rulings", "topics/2026-09-feature-staffer-network-data-and-math-sorting-lane"],
+    ["discussions/2026-09-17-mentat-xref-council-review", "topics/2026-07-bugfix-mentat-collection-and-attribution-cross-verification"],
+    ["discussions/2026-10-03-pac-accuracy-attempt2-rulings", "topics/2026-09-feature-forecast-giving-redesign"]
+  ],
+  "concepts": {
+    "fail-closed-gates": {
+      "leaves": ["topics/2026-08-incident-refresh-automation-reliability", "topics/2026-07-feature-audio-and-speech-lane"],
+      "hubs": ["actors/codex-executor", "actors/metaloop", "actors/melange-refresh-scheduler", "actors/melange-audio-pipeline", "actors/lobbyview-collector", "actors/sentinel-collectors"],
+      "projects": ["projects/melange-systems"],
+      "why": {
+        "topics/2026-08-incident-refresh-automation-reliability": "the refresh gates are deliberate fail-closed rulings: never weaken the audit or weekly_refresh.py's hard=True to make Sundays green; loosening is Paul's call",
+        "topics/2026-07-feature-audio-and-speech-lane": "the audio lane is off-chain and fail-closed: b5_audio_descriptors_v2.json is ACTIVE_FAIL_CLOSED at 0 accepted clips"
+      }
+    },
+    "live-tree-patch-discipline": {
+      "leaves": ["topics/2026-07-troubleshooting-melange-live-tree-git-drift", "topics/2026-09-feature-staffer-network-surfaces"],
+      "hubs": ["actors/melange-fec-pipeline", "actors/staffer-live-sidecar"],
+      "projects": ["projects/melange-systems"],
+      "why": {
+        "topics/2026-07-troubleshooting-melange-live-tree-git-drift": "the 2026-09-19 EOL census lane landed fec/tools/live_patch.py; changes to a drifted LIVE go in as a patch applied with core.autocrlf=false, never through a checkout that normalises its line endings",
+        "topics/2026-09-feature-staffer-network-surfaces": "the latency lane lands as ONE patch cut with fec/tools/live_patch.py; APPLY and the 8841 restart are Paul's"
+      }
+    },
+    "gold-set-validation": {
+      "leaves": ["topics/2026-07-feature-personality-psychometrics", "topics/2026-06-feature-cu-stance-and-sentiment"],
+      "hubs": ["actors/debate-stance-model", "concepts/two-hop-stance-decomposition", "concepts/single-look-holdout-discipline"],
+      "projects": ["projects/melange-systems"],
+      "why": {
+        "topics/2026-07-feature-personality-psychometrics": "E and A are gold-anchored on both Personality on the Hill Senate panels (association and strict-discriminant gates); O, C and N are one-panel association supported",
+        "topics/2026-06-feature-cu-stance-and-sentiment": "the stance readers are scored on Paul's gold labels (the 400 tweet golds and the 760-row press gold frame); re-enabling the bill-sign override needs an aboutness guard and more gold labels on bill-naming releases"
+      }
+    },
+    "census-before-claims": {
+      "leaves": ["topics/2026-07-working-agreement-verification-and-evidence-standards", "topics/2026-08-incident-workstation-disk-and-backup"],
+      "hubs": ["actors/lg-gram-workstation", "actors/glass-box", "actors/metaloop", "actors/melange-fec-pipeline"],
+      "projects": [],
+      "why": {
+        "topics/2026-07-working-agreement-verification-and-evidence-standards": "rules R1 and R2 of this agreement: never infer completion, and demand a census before repeating a mechanism claim",
+        "topics/2026-08-incident-workstation-disk-and-backup": "the census figures of 2026-09-11 are point-in-time: re-run the census before quoting any number"
+      }
+    },
+    "four-pillar-percentile-blend": {
+      "leaves": ["topics/2026-06-feature-moneyball-excel-model-build", "topics/2026-07-feature-primacy-and-industry-tier-boards", "topics/2026-07-troubleshooting-melange-audits-and-reviews"],
+      "hubs": ["actors/moneyball-workbook", "actors/melange-fec-pipeline", "concepts/influence-vs-alignment-axes"],
+      "projects": ["projects/melange-systems"],
+      "why": {
+        "topics/2026-06-feature-moneyball-excel-model-build": "the June build delivered the Blended workbook with the percentile-rank 4-pillar blend after the 2026-06-25 Presentation audit",
+        "topics/2026-07-feature-primacy-and-industry-tier-boards": "Paul reads the overall primacy board, not ranks_python.json (the four-pillar rank): ask which surface before decomposing a rank",
+        "topics/2026-07-troubleshooting-melange-audits-and-reviews": "pillar weights recur in the audit findings and exist in three sets; never let the newest read as ratified"
+      }
+    },
+    "settled-findings-stay-settled": {
+      "leaves": ["topics/2026-07-working-agreement-verification-and-evidence-standards", "topics/2026-07-troubleshooting-melange-audits-and-reviews"],
+      "hubs": ["actors/mentat-fec-pipeline", "actors/lobbyview-collector"],
+      "projects": ["projects/melange-systems", "projects/mentat"],
+      "why": {
+        "topics/2026-07-working-agreement-verification-and-evidence-standards": "R7 anchors every claim to the recorded state instead of contradicting it; R9 is the counterpart: the Agreeableness validation search that Paul reopened is not bound by the old closures",
+        "topics/2026-07-troubleshooting-melange-audits-and-reviews": "binding refuted lists (do not re-flag) for the 2026-07-08 network/vote/cycle audit and the code-review packet's refuted findings"
+      }
+    },
+    "say-do-gate": {
+      "leaves": ["topics/2026-07-feature-influence-engine-internals"],
+      "hubs": ["concepts/influence-vs-alignment-axes"],
+      "projects": ["projects/melange-systems"],
+      "why": {
+        "topics/2026-07-feature-influence-engine-internals": "the say-do gate (Rule A cap) landed @18ce3b3 on 2026-07-07, the same session as GATE-2"
+      }
+    },
+    "trend-over-significance": {
+      "leaves": ["topics/2026-06-working-agreement-communication-and-presentation-style", "topics/2026-09-feature-sector-growth-study"],
+      "hubs": ["actors/quant-model-evaluation-skill"],
+      "projects": ["projects/forecast-redesign"],
+      "why": {
+        "topics/2026-06-working-agreement-communication-and-presentation-style": "this agreement's rule of 2026-09-26: lead with sign, size and consistency; the p-value and CI follow in one line",
+        "topics/2026-09-feature-sector-growth-study": "the study reports results trend-first (Paul, 2026-09-26), as real R summary(lm()) output"
+      }
+    },
+    "zero-rank-delta-verification": { "projects": ["projects/melange-systems"] },
+    "two-hop-stance-decomposition": { "projects": ["projects/melange-systems"] },
+    "concurrent-service-overlap-edge-rule": { "projects": ["projects/melange-systems"] },
+    "single-look-holdout-discipline": { "projects": ["projects/melange-systems", "projects/forecast-redesign"] },
+    "exclude-on-contradiction-not-ambiguity": { "projects": ["projects/mentat"] }
+  }
+}

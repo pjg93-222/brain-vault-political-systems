@@ -1,0 +1,255 @@
+{
+  "id": "B6",
+  "what": "Batch 5 split of actors/moneyball-workbook (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B6); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/moneyball-workbook",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## Pillar weights and score formula (all sets on record; READ LIVE, do not trust a doc)",
+      "## History",
+      "## Source memory descriptions (verbatim, for traceability)",
+      "## Related Actors",
+      "## Related Topics",
+      "## Related Projects",
+      "## Related Concepts"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "moneyball-workbook-rules-scoring-and-sublayer-surgery",
+      "title": "Standing rules, committee-data scoring and the Sub Layer surgery",
+      "summary": "Standing rules of the Moneyball Blended workbook, the committee-data scoring reference of 2026-07-01 and the Sub Layer off-by-one surgery of 2026-07-16/17 that fixed the ranks",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Committee Data scoring (reference, 2026-07-01; `moneyball-committee-scoring`)",
+        "## Standing rules",
+        "## Sub Layer surgery (2026-07-16/17; `sublayer-surgery-2026-07-17`; THE rank fix)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "moneyball-workbook-lineage-and-june-audit",
+      "title": "Model lineage, files and the June 25 audit",
+      "summary": "The Moneyball model lineage and files from 2026-06-18 to 06-22, and the audit and delivery of the Blended workbook on 2026-06-25",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Model lineage and files (project_moneyball_model, 2026-06-18 to 2026-06-22)",
+        "## Audit and delivery of the Blended workbook (2026-06-25)"
+      ],
+      "keep": [],
+      "pointers": [
+        "> Correction kept in [[moneyball-workbook]] (History, \"Decisions and superseded rules\"): the pillar weight sets (all before 2026-07-07: the four-bucket min-max weights and the 2026-06-25 delivery and final weights), the 1/rank inverse weighting with its $10k cap, the June Excel COM recalc, the 0.35/0.65 influence blend and the Electoral Integrity weight 0.05 recorded here are superseded."
+      ]
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K18",
+      "a": "actors/moneyball-workbook-rules-scoring-and-sublayer-surgery",
+      "b": "topics/2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery",
+      "event": "Sub Layer surgery"
+    },
+    {
+      "id": "K19",
+      "a": "actors/moneyball-workbook-lineage-and-june-audit",
+      "b": "topics/2026-06-feature-moneyball-excel-model-build-scoring-refinements-and-audits",
+      "event": "June 25 Blended audit"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 55,
+      "old": "  - Press source of truth `Draft Systems\\cu_press_stance_tone.csv`; `category_stance.json` and the `Category Stance` sheet; the Ballotpedia 119th CU Influence output `Ballotpedia_119th_CU_Influence_20260618_010531.xlsx`; Wikipedia 119th-Congress committee rosters; roster `legislators-current.csv` (`unitedstates.github.io/congress-legislators/`); `congress_centrality_*.xlsx` (cosponsor network, see [[melange-systems]]); R scrapers (`congress_member_scraper.R`, `ballotpedia_119th_cu_scraper.R`).",
+      "mark": "external",
+      "why": "\"see [[melange-systems]]\" names the project note"
+    },
+    {
+      "line": 62,
+      "old": "- Blended scoring (2026-06-25 audit): raw pillars (Press, Legislative, Committee, Demographic from `Rank & Allocation` C/D/E/F; Efficiency from `Primary Layer`!E; Centrality from `Centrality`!C) -> PERCENTRANK each -> Leg pillar = .7*agenda% + .3*eff% and Influence = .35*committee% + .65*centrality% (each re-PERCENTRANKed) -> Score -> RANK -> fund top 133 proportional from $2.0M. The double-rank on Leg/Influence is intentional (re-uniformizes pillars). Later the influence sub-weights changed to committee-only (see weights).",
+      "mark": "same note",
+      "why": "\"see weights\" is ## Pillar weights and score formula, which the hub keeps; \"Later the influence sub-weights changed\" is time"
+    },
+    {
+      "line": 68,
+      "old": "Commands recorded in the sources (several are historical, see Standing rules and History for what was retired):",
+      "mark": "rewrite",
+      "why": "\"see Standing rules and History\": ## Standing rules moves to -rules-scoring-and-sublayer-surgery, ## History stays in the hub, so only the moved referent gets \"in [[part]]\"",
+      "new": "Commands recorded in the sources (several are historical, see Standing rules in [[moneyball-workbook-rules-scoring-and-sublayer-surgery]] and History for what was retired):",
+      "referent": "moneyball-workbook-rules-scoring-and-sublayer-surgery"
+    },
+    {
+      "line": 71,
+      "old": "# Canonical regen chain (kernel then pipeline), expect 48/48 (06-30 note); later audits 52+ checks",
+      "mark": "not positional",
+      "why": "\"later audits 52+ checks\" is time"
+    },
+    {
+      "line": 99,
+      "old": "- `Topic Weights` sheet is stale/decorative: weights are hardcoded in the formulas, not read from it. Legislative matches EXCEPT CFPB (sheet shows unified 0.3; live model uses split CFPB Restrain +0.5 / CFPB Reach(-) -1.0, see `project_cfpb_directional_split`). Press column (0.02-0.30) did NOT match live press weights at the 2026-06-25 audit (binary: Interchange/Tax/Credit-Card = 1.0, all others = 0.05, in `Press Release - Normalized` row 535); later (2026-07-02) the row-535 weights were re-tiered by user ratification (see Standing rules).",
+      "mark": "rewrite",
+      "why": "\"see `project_cfpb_directional_split`\" names a memory file and \"later (2026-07-02)\" is time; \"(see Standing rules)\" names ## Standing rules, whose row-535 tiering bullet moves to -rules-scoring-and-sublayer-surgery",
+      "new": "- `Topic Weights` sheet is stale/decorative: weights are hardcoded in the formulas, not read from it. Legislative matches EXCEPT CFPB (sheet shows unified 0.3; live model uses split CFPB Restrain +0.5 / CFPB Reach(-) -1.0, see `project_cfpb_directional_split`). Press column (0.02-0.30) did NOT match live press weights at the 2026-06-25 audit (binary: Interchange/Tax/Credit-Card = 1.0, all others = 0.05, in `Press Release - Normalized` row 535); later (2026-07-02) the row-535 weights were re-tiered by user ratification (see Standing rules in [[moneyball-workbook-rules-scoring-and-sublayer-surgery]]).",
+      "referent": "moneyball-workbook-rules-scoring-and-sublayer-surgery"
+    },
+    {
+      "line": 100,
+      "old": "- Credit Card & Consumer-Fee Mandates co-sponsor sub-weight = 0 (`Legislative Score - Normalized`!DG2) vs 0.0714 for all 17 other topics. Possibly intentional: ask before changing (see consult rule).",
+      "mark": "rewrite",
+      "why": "\"(see consult rule)\" names the bullet \"Consult the user before treating apparent model errors as bugs\" of ## Standing rules, which moves to -rules-scoring-and-sublayer-surgery (the plan's S10 fixture: a bullet, so the resolver asks)",
+      "new": "- Credit Card & Consumer-Fee Mandates co-sponsor sub-weight = 0 (`Legislative Score - Normalized`!DG2) vs 0.0714 for all 17 other topics. Possibly intentional: ask before changing (see consult rule in [[moneyball-workbook-rules-scoring-and-sublayer-surgery]]).",
+      "referent": "moneyball-workbook-rules-scoring-and-sublayer-surgery"
+    },
+    {
+      "line": 106,
+      "old": "- `Legislative Score - Normalized` is a FROZEN CURATED snapshot (see 2026-06-25 refresh failure in the network topic): never refresh it from activity.",
+      "mark": "external",
+      "why": "\"see 2026-06-25 refresh failure in the network topic\" names another note (the cosponsor and sector networks topic)"
+    },
+    {
+      "line": 112,
+      "old": "Score weights live in `Blended Model` labels col AA / values col AB (AB2 leg, AB3 press, AB4 influence/committee, AB5 demo; AB12 committee sub-weight = 1, AB13 centrality sub-weight = 0). The weight choice is the user's domain: do NOT relabel a set as \"wrong\" (see `press-classification-user-domain`).",
+      "mark": "external",
+      "why": "\"see `press-classification-user-domain`\" names a memory file"
+    },
+    {
+      "line": 147,
+      "old": "To change chair/ranking weight or a committee's tier: edit the multipliers / the `Seats held` tier text, recompute B/C/D with the scorer, write back, recalc. Validator + scorer: session scratchpad `cmte_validate.py` (2026-06-30). See `moneyball-model-config`. Influence pillar R = E/MAX(E) (committee-fix / CMTEFIX, `fec/apply_committee_fix.py`, applied live 2026-06-30; was PERCENTRANK double-percentile).",
+      "mark": "external",
+      "why": "\"See `moneyball-model-config`\" names a memory file"
+    },
+    {
+      "line": 156,
+      "old": "- **Phase 2 rule (2026-07-02, user sign-off): NO COM anywhere.** The workbook is a self-refreshing VIEW; `ranks_python.json` is the authority (see History). Never kill Excel; `sync_stance_g`'s openpyxl save PermissionErrors harmlessly if Excel is open.",
+      "mark": "rewrite",
+      "why": "\"see History\" names ## History, which the hub keeps while this line moves to -rules-scoring-and-sublayer-surgery",
+      "new": "- **Phase 2 rule (2026-07-02, user sign-off): NO COM anywhere.** The workbook is a self-refreshing VIEW; `ranks_python.json` is the authority (see History in [[moneyball-workbook]]). Never kill Excel; `sync_stance_g`'s openpyxl save PermissionErrors harmlessly if Excel is open.",
+      "referent": "moneyball-workbook"
+    },
+    {
+      "line": 157,
+      "old": "- **Check constants against live code, not the spec** (see Known Issues).",
+      "mark": "rewrite",
+      "why": "\"see Known Issues\" names ## Known Issues, which the hub keeps while this line moves to -rules-scoring-and-sublayer-surgery",
+      "new": "- **Check constants against live code, not the spec** (see Known Issues in [[moneyball-workbook]]).",
+      "referent": "moneyball-workbook"
+    },
+    {
+      "line": 160,
+      "old": "- **Legislative pillar** (2026-06-30 eve): **leg-stance gating is now ON** (`fec/apply_leg_stance.py`): `Blended Model` col D overridden with static stance-signed leg raw = Σ IMP[topic]·activity·stanceMult; opponents go NEGATIVE (verified AOC -2.6, Welch -5.6, Marshall -5.9, bottom-decile Leg%), allies positive (Roger Williams +17). Reads `category_stance.json` (6/26, == Category Stance sheet, user-confirmed 2026-06-30). Previously OFF (activity-only `=R&A!D`, un-gated). The `Legislative Score - Normalized` sheet is a FROZEN curated snapshot.",
+      "mark": "not positional",
+      "why": "\"Previously OFF\" is time"
+    },
+    {
+      "line": 161,
+      "old": "- **Press pillar:** de-duped, bills OUT. Source of truth = `Draft Systems\\cu_press_stance_tone.csv`, **regenerated 2026-06-30 (2388 rows, stance_src debate/human_label; NO `billstatus:` rows; bill cosponsorship already excluded upstream; `apply_press_dedup.py` filter now matches 0 to exclude, which is correct)**; de-dup total ≈ 16.6 / ~1030 nonzero (was ≈15.97/1012 on the Jun-24 3701-row csv). **2026-07-01 FIXED (user-approved):** (1) attribution: press counts ONLY own-domain rows (`*.senate.gov`/`*.house.gov`); dropped 819 third-party, 816 = `americascreditunions.org` (the CU lobby's own site, mis-attributed to the 243 members its articles mention; their pro-CU stance was counted as the member's; e.g. \"Advocacy win: Marshall will not offer amendment\" scored +support FOR Marshall). Own-domain press total ≈ 9.12. (2) Press% percentile-rank to signed `=C3/MAX($C$3:$C$535)` (mirror CMTEFIX). Result: Marshall #193 to #473 (Press% -0.07), Welch #188 to #374, AOC #184 to #344. Leg pillar: raw/max was TRIED on leg (J,P) 2026-07-01 and REVERTED: leg-stance raw is long-tailed (allies +17..+27), so value/MAX squashed the mid-board and floated disengaged skeptics UP (AOC #344 to #191, Welch to #279); back on PERCENTRANK. Leg-stance stays \"muted\" (AOC leg raw -2.58 gives Leg% 0.102 positive) but fine: the press fix already ranks opponents low (final: AOC #344 / Welch #374 / Marshall #473). A winsorized normalizer (÷ 90th-pct magnitude, not max) would make leg bite without compression if ever wanted. Durable code: `apply_press_dedup.py`, `apply_raw_max_norm.py`, `apply_committee_fix.py` (CMTEFIX), `apply_leg_stance.py`. See `cu-signflip-directionality` / `press-classification-user-domain`.",
+      "mark": "external",
+      "why": "\"See `cu-signflip-directionality` / `press-classification-user-domain`\" names memory files"
+    },
+    {
+      "line": 164,
+      "old": "- **Phone-friendly (2026-06-29):** dashboard is responsive: `@media(max-width:640px)` in `make_member_desk.py` + `make_dashboard_html.py`; SNA canvas has touch pan/pinch/tap (was mouse-only); phones default to the member desk (controller `innerWidth<=700`). Mobile SNA is graph-first: `#left` (stats/budget/optimizer) hidden, canvas ~66vh on top, `#right` member details below (auto-scrolls into view on node tap). GOTCHA: `make_combined.scope_sna()` scopes SNA CSS under `#app-network` and is now `@media`-aware; it used to destroy `@media` blocks (split-on-`}`), silently killing the network's mobile CSS in the combined file. To preview: `.claude/launch.json` serves the dir; load `/Moneyball.html`, resize to mobile.",
+      "mark": "not positional",
+      "why": "overrides the resolver's rewrite: \"`#right` member details below\" is the phone layout (the details panel sits under the canvas on screen), not the ## Details section"
+    },
+    {
+      "line": 165,
+      "old": "- **Regen:** `fec/run_pipeline.py [--recalc]` (canonical one-command chain incl. stance, recalc, advisory, exports, audit; expect **48/48**). Workbook edits (June guidance, RETIRED by Phase 2, see History) went through Excel COM (win32com) and required Excel CLOSED (an open workbook locks the file: PermissionError; check before any COM/openpyxl write). See `moneyball-deep-audit-2026-07-02`, `press-classification-user-domain`.",
+      "mark": "rewrite",
+      "why": "\"see History\" names ## History, which the hub keeps while this line moves to -rules-scoring-and-sublayer-surgery; \"See `moneyball-deep-audit-2026-07-02`, ...\" names memory files",
+      "new": "- **Regen:** `fec/run_pipeline.py [--recalc]` (canonical one-command chain incl. stance, recalc, advisory, exports, audit; expect **48/48**). Workbook edits (June guidance, RETIRED by Phase 2, see History in [[moneyball-workbook]]) went through Excel COM (win32com) and required Excel CLOSED (an open workbook locks the file: PermissionError; check before any COM/openpyxl write). See `moneyball-deep-audit-2026-07-02`, `press-classification-user-domain`.",
+      "referent": "moneyball-workbook"
+    },
+    {
+      "line": 171,
+      "old": "| 2026-06-18 | Second-pass repairs of `Moneyball (version 2 - corrected).xlsx` in place (script `Downloads/repair_moneyball.py`); committee/caucus rebuild (`merge_committee_caucus.py`). First pass earlier: 3 bugs fixed, 50/50 legislative/press reweight. |",
+      "mark": "not positional",
+      "why": "\"First pass earlier\" is time"
+    },
+    {
+      "line": 177,
+      "old": "| 2026-07-02 | Press-pillar category weights tiered (user-ratified); PERS_NONE 0.45 ratified; Excel-save/OneDrive collision TRUNCATED the workbook to 2.2MB (recovered from `BACKUP-*.xlsx`). **Phase 2: system of record inverted, NO COM anywhere** (below). |",
+      "mark": "same note",
+      "why": "\"(below)\" is the Phase 2 bullet of ### Decisions and superseded rules (SYSTEM OF RECORD INVERTED, NO COM anywhere), which stays in the hub below this History row"
+    },
+    {
+      "line": 179,
+      "old": "| 2026-07-16/17 | Sub Layer off-by-one discovered and repaired (below); guard batch @a3174bc. |",
+      "mark": "rewrite",
+      "why": "\"(below)\" is ## Sub Layer surgery (2026-07-16/17), which moves to -rules-scoring-and-sublayer-surgery (plan 3.2 B6: History's \"(below)\" pointer becomes an S10 rewrite)",
+      "new": "| 2026-07-16/17 | Sub Layer off-by-one discovered and repaired (in [[moneyball-workbook-rules-scoring-and-sublayer-surgery]]); guard batch @a3174bc. |",
+      "referent": "moneyball-workbook-rules-scoring-and-sublayer-surgery"
+    },
+    {
+      "line": 186,
+      "old": "- ~~Pillar weight sets before 2026-07-07~~ (table above) - superseded 2026-07-07 by 30/25/40/5 (last ratified); that set is itself followed by the LIVE BUT UNRATIFIED 45/10/40/5 since 2026-09-03.",
+      "mark": "same note",
+      "why": "\"(table above)\" is the weights table of ## Pillar weights and score formula, which the hub keeps above History (plan 3.2 B6: no longer crosses notes)"
+    },
+    {
+      "line": 188,
+      "old": "- ~~Score press-gating of the legislative bucket (col D = leg_volume × sign(press_lean))~~ (2026-06-21 first FIXED version) - REMOVED later the same session: the user flagged it as imposed bias (a bias audit: 457/533 members have near-zero press, so gating by press sign was noise; overfit to push Durbin down); replaced with intrinsic topic-direction (interchange −2.0 and credit-card-mandate −3.0 leg weights, those press topics up-weighted to 0.30 each).",
+      "mark": "not positional",
+      "why": "\"REMOVED later the same session\" is time"
+    },
+    {
+      "line": 205,
+      "old": "3. **Demographic Factors off-by-one**: Primary Layer col D referenced Sub Layer row r instead of r+1, so every member got the PREVIOUS member's demographics (first member got weights×weights = constant 0.095). Fixed the formula.",
+      "mark": "not positional",
+      "why": "\"the PREVIOUS member's demographics\" is the previous sheet row, not a place in the note"
+    },
+    {
+      "line": 223,
+      "old": "Key discoveries this pass: (a) the Sub Layer to Legislative reference is **off-by-one for all 533** (Sub has 3 header rows, Legislative has 2, so same row number = next member; Byron read Carlos Gimenez), BUT \"fixing\" it alone made the board WRONG because (b) **legislative co-sponsorship is directionless VOLUME** (rewards prolific members like Durbin regardless of stance) and (c) **press is the only directional signal** (signed -1..+1, enemies negative) yet was wired at ~0.05 vs legislative ~1.0; (d) **committee data was incomplete** (Tim Scott=Banking CHAIR read 0); (e) **1,066 `#REF!`** in Legislative-Raw cols DG/DO = dead **external-workbook links `[1]!Table1`** (data lost, zeroed); (f) **Aaron Bean #1 phantom** = 5 entirely-empty Legislative cols (CDFI×3, Payments-CoSpon, FoM-CoSpon) produced a spurious 1.0 for the first data row via empty-column min-max.",
+      "mark": "not positional",
+      "why": "\"same row number = next member\" is the next sheet row, not a place in the note"
+    },
+    {
+      "line": 224,
+      "old": "The fix = **score restructured into 4 buckets, each min-max normalized then weighted by EDITABLE cells at `Rank & Allocation!S2:S5`: Press 0.40 / Legislative 0.20 / Committee 0.35 / Demographic 0.05** (user first said 40/40/15/5 but 40% legislative floats Durbin, so moved excess to committee). **Legislative is PRESS-GATED** at first (col D = leg_volume × sign(press_lean); anti-CU activity counts negative). Composites are written as VALUES (cols C/D/E/F); normalize/score/RANK/allocation + Coalition Profiles aggregates are LIVE formulas. Allocation now distributes the FULL $2M (score-proportional among top 133, no cap). **Committee data collected fresh from Wikipedia 119th-Congress rosters** (House Financial Services, Senate Banking, House+Senate Small Business; chairs/vice/ranking/subcommittee chairs) to a new **`Committee Data`** sheet; rubric = membership (Banking/FS=3, SmallBiz=1.5) + leadership (Chair+6, RM+4, ViceChair+3, SubChair+2.5, Financial-Institutions sub+4, SubRM+1.5), composite = 0.4·membership+0.6·leadership (later replaced by the reverse-engineered (Membership+Leadership)/2 scoring above). **REFINED (same session, later): press-gating was REMOVED** (see superseded). Bias audit also found: **chamber bias** (Senators avg rank 196 vs House 283, more press/broader committees), **missing-data floor** (51 members with no press AND no committee sink to ~#355 regardless of stance; the very bottom is now no-signal members like Richard Hudson/Roger Wicker, not enemies), mild **Democratic demographic tilt** (demo bucket D 0.52 vs R 0.34, at 5% weight), and committee is the single strongest score driver (corr 0.89, defensible = objective position). NOTE user's correction: **Warren & Waters ARE CU-supportive** (anti-big-bank aligns with CUs); do NOT push them down; their high committee-leader rank is correct. **FINAL board then: Tim Scott #1, French Hill #2, Roger Williams #3, Andy Barr #6, Britt #16, Steil #20, Lummis #27; enemies Durbin #490, Marshall #524, Welch #505, Gooden #523, Lofgren #326. Zero errors, $2M/133.** Remaining SOURCE-DATA (not model) gaps: see Known Issues. COM recalc tip (June guidance): force-killing a headless Excel orphan can trigger autorecover that silently rolls back the openpyxl write; verify the header/values persisted on disk after recalc; prefer try/finally cleanup over `Stop-Process`. **OneDrive race confirmed:** the file lives in OneDrive\\Desktop, so an openpyxl-save immediately followed by a COM Open can race OneDrive sync and the COM crash reverts the file to a pre-write version. FIX that worked: do the openpyxl write, verify it persisted by re-reading with openpyxl (NOT COM), then **recalc on a LOCAL copy outside OneDrive** (`Copy-Item $src $env:TEMP\\mb_work.xlsx; COM recalc temp; Copy-Item temp $src`). Also: independently compute the board in Python (composites to min-max to 0.40/0.20/0.35/0.05 to rank) as the source-of-truth verification rather than relying on COM-cached values.",
+      "mark": "rewrite",
+      "why": "\"the reverse-engineered (Membership+Leadership)/2 scoring above\" is ## Committee Data scoring (Committee score(B) = (C+D)/2), which moves to the sibling -rules-scoring-and-sublayer-surgery (the plan's S10 fixture); \"see Known Issues\" names ## Known Issues, kept by the hub; \"later replaced\" and \"(same session, later)\" are time; batch 7 (S2-01): \"(see superseded)\" names History > Decisions and superseded rules, kept by the hub, so it becomes \"(see superseded in [[moneyball-workbook]])\"",
+      "new": "The fix = **score restructured into 4 buckets, each min-max normalized then weighted by EDITABLE cells at `Rank & Allocation!S2:S5`: Press 0.40 / Legislative 0.20 / Committee 0.35 / Demographic 0.05** (user first said 40/40/15/5 but 40% legislative floats Durbin, so moved excess to committee). **Legislative is PRESS-GATED** at first (col D = leg_volume × sign(press_lean); anti-CU activity counts negative). Composites are written as VALUES (cols C/D/E/F); normalize/score/RANK/allocation + Coalition Profiles aggregates are LIVE formulas. Allocation now distributes the FULL $2M (score-proportional among top 133, no cap). **Committee data collected fresh from Wikipedia 119th-Congress rosters** (House Financial Services, Senate Banking, House+Senate Small Business; chairs/vice/ranking/subcommittee chairs) to a new **`Committee Data`** sheet; rubric = membership (Banking/FS=3, SmallBiz=1.5) + leadership (Chair+6, RM+4, ViceChair+3, SubChair+2.5, Financial-Institutions sub+4, SubRM+1.5), composite = 0.4·membership+0.6·leadership (later replaced by the reverse-engineered (Membership+Leadership)/2 scoring in [[moneyball-workbook-rules-scoring-and-sublayer-surgery]]). **REFINED (same session, later): press-gating was REMOVED** (see superseded in [[moneyball-workbook]]). Bias audit also found: **chamber bias** (Senators avg rank 196 vs House 283, more press/broader committees), **missing-data floor** (51 members with no press AND no committee sink to ~#355 regardless of stance; the very bottom is now no-signal members like Richard Hudson/Roger Wicker, not enemies), mild **Democratic demographic tilt** (demo bucket D 0.52 vs R 0.34, at 5% weight), and committee is the single strongest score driver (corr 0.89, defensible = objective position). NOTE user's correction: **Warren & Waters ARE CU-supportive** (anti-big-bank aligns with CUs); do NOT push them down; their high committee-leader rank is correct. **FINAL board then: Tim Scott #1, French Hill #2, Roger Williams #3, Andy Barr #6, Britt #16, Steil #20, Lummis #27; enemies Durbin #490, Marshall #524, Welch #505, Gooden #523, Lofgren #326. Zero errors, $2M/133.** Remaining SOURCE-DATA (not model) gaps: see Known Issues in [[moneyball-workbook]]. COM recalc tip (June guidance): force-killing a headless Excel orphan can trigger autorecover that silently rolls back the openpyxl write; verify the header/values persisted on disk after recalc; prefer try/finally cleanup over `Stop-Process`. **OneDrive race confirmed:** the file lives in OneDrive\\Desktop, so an openpyxl-save immediately followed by a COM Open can race OneDrive sync and the COM crash reverts the file to a pre-write version. FIX that worked: do the openpyxl write, verify it persisted by re-reading with openpyxl (NOT COM), then **recalc on a LOCAL copy outside OneDrive** (`Copy-Item $src $env:TEMP\\mb_work.xlsx; COM recalc temp; Copy-Item temp $src`). Also: independently compute the board in Python (composites to min-max to 0.40/0.20/0.35/0.05 to rank) as the source-of-truth verification rather than relying on COM-cached values.",
+      "referent": "moneyball-workbook-rules-scoring-and-sublayer-surgery, moneyball-workbook"
+    },
+    {
+      "line": 226,
+      "old": "**AGENDA RE-WEIGHTING (2026-06-22): all 19 topics re-tiered to America's Credit Unions' 2026 advocacy agenda** (Advance/Empower/Protect; sources: americascreditunions.org/news-media 2026 priorities, cutoday, cutimes). Before this, only the 4 bucket weights + interchange/credit-card were intentional; the other ~30 topic weights were legacy salience values and the **CU tax exemption (the #1 existential 2026 priority) was the LOWEST weight in the whole model (press 0.019)**. New tiers: TOP press 0.30 = Tax Status (defend exemption; press-only, defender=positive sign confirmed via French Hill +0.47), Interchange (leg -2.0), Credit-Card Mandates (leg -3.0); HIGH 0.10-0.15 = Charter Modernization, Field of Membership, NCUA, Exam; MEDIUM 0.08 = Tech/AI, Payments, Data Privacy, Mortgage/Housing, Fraud; LOW 0.02-0.05 = CDFI (was 0.75, demoted; data empty), MBL (was 0.75), CFPB (was 0.75), TCPA, Defense CU, CU-Bank, CU Capital. Added a **`Topic Weights` control sheet** (editable press+leg weight + tier per topic), but composites are still computed VALUES so editing needs a Python re-run; user may want them wired fully live next. Also added a **`Ranking Chart` landing sheet** (first sheet): top-30 table (Rank/Member/District/Score/Allocation) + native openpyxl horizontal BarChart of top 30 by score (static snapshot). GOTCHA that bit twice: `openpyxl.load_workbook(F)` (data_only=False) + `.save()` **strips ALL cached formula values** workbook-wide, so after any openpyxl edit you must COM-recalc to restore them (June guidance), and to READ rank/score you must either recalc first or compute from the static composite columns (C/D/E/F survive; formula cols K/L/M don't). **Agenda board: #1 French Hill (HFSC chair + lead tax-exemption defender, rose from #2 once tax counted), #2 Tim Scott, #6 Barr, #16 Britt, #19 Steil, #31 Lummis; Durbin #508, Marshall #513, Gooden #525, Welch #480, Lofgren #268. Zero errors, $2M/133.**",
+      "mark": "not positional",
+      "why": "\"wired fully live next\" is time"
+    },
+    {
+      "line": 234,
+      "old": "- **Blended audit (2026-06-25; `Moneyball Main Version - Blended.xlsx`, 25 sheets, 533 members):** the percentile-rank/4-pillar plan from the Presentation audit is now realized in the **Blended Model** sheet (canonical output). Weights sum to 1; allocation sums exactly to $2M/133; 0 formula errors; perfect row alignment. Findings (all surfaced, none yet fixed at that date): (1) Topic Weights stale; (2) Credit Card sub-weight 0 (`DG2`); (3) legacy R&A K/L/M disagree; (4) centrality gap (see Known Issues).",
+      "mark": "rewrite",
+      "why": "\"(see Known Issues)\" names ## Known Issues, which the hub keeps while this line moves to -lineage-and-june-audit",
+      "new": "- **Blended audit (2026-06-25; `Moneyball Main Version - Blended.xlsx`, 25 sheets, 533 members):** the percentile-rank/4-pillar plan from the Presentation audit is now realized in the **Blended Model** sheet (canonical output). Weights sum to 1; allocation sums exactly to $2M/133; 0 formula errors; perfect row alignment. Findings (all surfaced, none yet fixed at that date): (1) Topic Weights stale; (2) Credit Card sub-weight 0 (`DG2`); (3) legacy R&A K/L/M disagree; (4) centrality gap (see Known Issues in [[moneyball-workbook]]).",
+      "referent": "moneyball-workbook"
+    },
+    {
+      "line": 256,
+      "old": "- `project_moneyball_presentation_audit` (2026-06-25): \"Audit of \"Moneyball Main Version - Presentation.xlsx\" + decision to move final score to percentile-rank, committee 0.20, hierarchical 4-pillar/Primary-Layer blend.\" (The \"committee 0.20\" wording is the memory's own description; the delivered/final weights are the ones in the weights table above.)",
+      "mark": "same note",
+      "why": "\"the weights table above\" is the table of ## Pillar weights and score formula, which the hub keeps above this section"
+    },
+    {
+      "line": 258,
+      "old": "- `sublayer-surgery-2026-07-17` (2026-07-17/18): the \"rank fix\" memory summarized above.",
+      "mark": "rewrite",
+      "why": "\"the 'rank fix' memory summarized above\" is ## Sub Layer surgery (...; THE rank fix), which moves to -rules-scoring-and-sublayer-surgery",
+      "new": "- `sublayer-surgery-2026-07-17` (2026-07-17/18): the \"rank fix\" memory summarized in [[moneyball-workbook-rules-scoring-and-sublayer-surgery]].",
+      "referent": "moneyball-workbook-rules-scoring-and-sublayer-surgery"
+    }
+  ]
+}

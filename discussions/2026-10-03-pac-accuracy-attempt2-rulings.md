@@ -21,15 +21,15 @@ related_topics:
   - "[[2026-09-feature-forecast-giving-redesign]]"
 related_actors: []
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[forecast-redesign]]"
 related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "e86a3ffa346737c317992a3510f25a8d3430b833077ad8b3eb615faa53be2bb8"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/research"]
 ---
 
@@ -41,7 +41,7 @@ tags: ["type/discussion", "domain/research"]
 
 - Attempt 2 root: `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt2-20261003T003312Z`.
 - Coordinator brief = Paul's pasted prompt: stages S0-S7, Opus read-only review, Sonnet builds via `code/launch_stage.ps1`. HOLD stays; scratch only.
-- This is the PAC-accuracy leg of [[2026-09-feature-forecast-giving-redesign]] and part of the program [[forecast-redesign]]; the holdout rules it leans on are in [[single-look-holdout-discipline]]. Rulings are by [[paul-goff]].
+- This is the PAC-accuracy leg of [[2026-09-feature-forecast-giving-redesign]] and part of the program [[forecast-redesign]]; the holdout rules it leans on are in [[single-look-holdout-discipline]]. Rulings are by Paul Goff.
 - Source memory file: `pac-accuracy-attempt2-lane-2026-10-03`, described as "PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history" (modified 2026-10-03T06:11:53Z; session id 13a17b30-2c5b-43ad-a902-b5ad3a1253cf).
 - Related memory names: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
 
@@ -49,7 +49,7 @@ tags: ["type/discussion", "domain/research"]
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Related Projects
 

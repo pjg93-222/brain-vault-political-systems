@@ -1,0 +1,254 @@
+{
+  "id": "A3",
+  "what": "Batch 4 split of actors/mentat-console (plan .bedrock/reorg/plan.md Revision 4, section 3.2 A3); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "actors/mentat-console",
+  "home": "projects/mentat",
+  "hub": {
+    "keep": [
+      "## Details",
+      "## Dependencies",
+      "## Flows",
+      "## Dev Commands",
+      "## Known Issues",
+      "## Architecture and standing facts",
+      "## History",
+      "## Related Actors",
+      "## Related Topics",
+      "## Related Projects",
+      "## Discussions"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "mentat-console-chart-studio-and-system-debug",
+      "title": "Chart Studio and the 2026-09-13 system-debug lane",
+      "summary": "The Chart Studio tab of the Mentat console and the 2026-09-13 system-debug lane: the Tableau-style builder, its patches and redesign, and the read-only test ride",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## Chart Studio (tab) and the 2026-09-13 system-debug lane"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-console-startup-and-polish-lanes",
+      "title": "Startup hang fix and the polish, load-time and graph-quirks lanes (09-18 to 09-25)",
+      "summary": "The Mentat console startup hang fix of 2026-09-18 and reference summaries of the polish, load-time and graph-quirks lanes of 09-19 to 09-25",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## Startup hang fix (2026-09-18, session fba7b847; COMMITTED `0ad366e01` + `aa8a3f884`)",
+        "## Polish lane (2026-09-19), load-time lane (2026-09-24) and Graph quirks lane (2026-09-24/25), reference summary"
+      ],
+      "keep": [
+        "actors/mentat-fec-pipeline"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-console-redesign-boards",
+      "title": "Redesign boards (2026-09-21/22)",
+      "summary": "The Mentat console redesign boards of 2026-09-21/22: the Higgsfield board set, the build-01 shell and its open review items",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## Redesign boards (2026-09-21/22; summary in [[2026-09-feature-ui-redesign-boards]])"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "mentat-console-pac-map-viz-lane",
+      "title": "PAC map and downstream viz lane (09-25 to 09-27)",
+      "summary": "The PAC map and downstream visualisation lane on the Mentat console (2026-09-25 to 09-27): Higgsfield boards, Opus builders, Paul's rulings, fidelity rounds and the money revert",
+      "domain": "domain/frontend",
+      "home": "projects/mentat",
+      "sections": [
+        "## PAC map and downstream viz lane (session b3d2f2, worktree `pac-map-downstream-viz-c2bca4`, 2026-09-25..27)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K5",
+      "a": "actors/mentat-console-chart-studio-and-system-debug",
+      "b": "topics/2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane"
+    },
+    {
+      "id": "K6",
+      "a": "actors/mentat-console-redesign-boards",
+      "b": "topics/2026-09-feature-ui-redesign-boards-mentat-console-boards"
+    },
+    {
+      "id": "K7",
+      "a": "actors/mentat-console-pac-map-viz-lane",
+      "b": "topics/2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "K12",
+      "a": "actors/mentat-console-startup-and-polish-lanes",
+      "b": "topics/2026-09-feature-mentat-console-ui-load-time-and-graph-quirks",
+      "event": "graph-quirks lane, session 6cce0269"
+    },
+    {
+      "id": "K14",
+      "a": "actors/mentat-console-startup-and-polish-lanes",
+      "b": "topics/2026-09-feature-ui-redesign-boards-finalize-reconcile-graph-quirks",
+      "event": "same graph-quirks lane"
+    },
+    {
+      "id": "K15",
+      "a": "actors/mentat-console-chart-studio-and-system-debug",
+      "b": "topics/2026-09-feature-mentat-console-ui-chart-studio",
+      "event": "Chart Studio"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 120,
+      "old": "- See the per-lane sections below for lane-specific open items.",
+      "mark": "rewrite",
+      "why": "\"See the per-lane sections below\": the lane sections (Chart Studio and system-debug, startup hang and polish, redesign boards, PAC map) move to the four parts, so the positional word becomes \"in [[a]], [[b]], [[c]] and [[d]]\"",
+      "new": "- See the per-lane sections in [[mentat-console-chart-studio-and-system-debug]], [[mentat-console-startup-and-polish-lanes]], [[mentat-console-redesign-boards]] and [[mentat-console-pac-map-viz-lane]] for lane-specific open items.",
+      "referent": "mentat-console-chart-studio-and-system-debug, mentat-console-startup-and-polish-lanes, mentat-console-redesign-boards, mentat-console-pac-map-viz-lane"
+    },
+    {
+      "line": 126,
+      "old": "- **Theme.** `acu-theme.css` tokens: paper #fcf7f4, ivory #f7ede4, plum #342649, purple #57447b, gold #eca91c, lilac #d6c8e2, teal #327a7a, line #e4d9d0; sans \"Articulat CF\", serif \"Freight Text Pro\" (not installed: pages render in Arial/Georgia, no 500 weight; D-050 bars web fonts); left navigation rail. Party colours D blue #2f5fa8 / R red #b8322e / gray (Pocket); categorical chart palette of 12 (see the console UI topic).",
+      "mark": "external",
+      "why": "\"see the console UI topic\" names another note"
+    },
+    {
+      "line": 135,
+      "old": "Chart Studio v1 (Tableau-style builder; `chart-studio-core.js`, `chart-studio.js`, `chart-studio.css`, `tests/chart-studio-core.test.js`) was built 2026-09-11 and committed `090879ad8`; P1 fixes and granularity landed in `108e407db` and `b44fcef7a` (Recipient Detail and Contributor Detail worksheets). Full lane history is in [[2026-09-feature-mentat-console-ui]]. Condensed reference: top-N + \"Other (K groups)\" rollup (engine default 60 / Studio default 40, `DEFAULT_GROUP_LIMIT = 60`, `STUDIO_GROUP_LIMIT = 40`, later unified at 60), `params.splitMulti` for \"; \"-joined cells, \"Show identifier fields\" (`localStorage['mentat-chart-studio-show-identifiers']`), `localStorage` key `mentat-chart-studio-v1` keyed by sha256 (two scoped keys per worksheet after the 2026-09-12 fix); Size/Detail/Tooltip pills stored but not drawn (v1 limit); 26 mark types incl. `map` + `filled-map`, ONE marks card per sheet, encodings colour/size/label/detail/tooltip only (as of 2026-09-25); \"Super PAC\" is a value of Recipient Category (do not rebuild); Banking payload 889 MB > 120 MB compact threshold (`build_industry_report.ps1:545-557`); Higgsfield renders f817f5e8 and c27171d4; two scoped renders Plus plan 1,109 credits at the time, gpt_image_2_5 5.5 credits each.",
+      "mark": "not positional",
+      "why": "\"later unified at 60\" is time"
+    },
+    {
+      "line": 146,
+      "old": "- Side findings, unfixed: `corporate_giving` structurally $0 (`inputs/verified_company_affiliations.json` has 12 records, all `connected_pac`, zero `treasury_entity`; exact-string company match at engine `:146`); memo legs without a proven parent retained at full value inside the $72.1M \"Observed original giving\" (19,529 / $8,522,419.98, engine `:445-451`); earmark and transfer legs also retained. No per-cycle breakdown in `report.json` (producer change needed at `run_cross_reference.py:312-313`). Console-side fix options were proposed only (relabel, \"excluded from totals\" caption, cycles next to the money); Paul had not ruled. See also [[2026-09-17-mentat-xref-council-review]] and [[2026-07-bugfix-mentat-collection-and-attribution]].",
+      "mark": "external",
+      "why": "\"See also [[2026-09-17-mentat-xref-council-review]] and [[2026-07-bugfix-mentat-collection-and-attribution]]\" names notes outside this family; \"cycles next to the money\" is a position on the screen"
+    },
+    {
+      "line": 149,
+      "old": "- S2 split view: `server.py:1119` sent `frame-ancestors 'none'` on every response, so same-origin pane iframes (`/?studioPane=B`, built from `new URL(location.href)`) failed with `net::ERR_BLOCKED_BY_RESPONSE` (\"refused to connect\"), and `chart-comparison.js` threw SecurityError reading `contentWindow.MentatStudioPane`; patch scopes `frame-ancestors 'self'` to the pane document only (`tests/test_contribution_http.py:74` still passes). ALSO: Paul's long-running consoles (ports 8802/8803/8804/8808, started 09-11..09-12) 404 `/chart-comparison.js` because server.py's static allow-list is Python frozen at process start and server.py was edited 2026-09-13 01:31 - they need a RESTART to see the split view at all.",
+      "mark": "not positional",
+      "why": "\"to see the split view\" is the verb see"
+    },
+    {
+      "line": 162,
+      "old": "**Test ride (read-only `python server.py --port 8812 --read-only`, fresh process, Banking): 20/20 script steps PASS after the Date-part fix.** Cold load = exactly 1 `POST /api/contributions/query` (the earlier ~160-request storm is gone), no new console errors, pane B renders inside the 2-chart grid (contentDocument readable, no CSP block), aggregation Mean + undo, presets, Treat-as refusal, empty filter, include/exclude/range filters, Analytics dashed mean line (\"Mean of shown marks: $5.5M\") and treemap refusal, Canvas only/Builder, Company overview four cards + picker + Open in builder + undo, worksheet mode (overview disabled with reason; Treat as Dimension promotes a numeric column and persists). Independent verifier: 8/8 checks PASS on the receipt (hashes, scope, patches intact, tests, line endings, markers, HTML/CSS balance, HTTP smoke) plus a re-check after the Date-part fix. Latest hashes: `chart-studio.js` b49c297, `chart-studio-core.js` d296938, tests 7a7df7a, `index.html` e7bb938, `chart-studio.css` 66d2e91, `chart-comparison.js` c32fc19, `chart-studio-contributions.js` d0e5a8e, `chart-math.js` 27af956, `server.py` 5b85087.",
+      "mark": "not positional",
+      "why": "\"the earlier ~160-request storm\" is time"
+    },
+    {
+      "line": 189,
+      "old": "- THREE INTEGRATION DEFECTS the per-lane unit tests could not see: D1 Save view 400 - E-client sends `source` as a STRING (`viewSourceLabel()`, `chart-studio.js:1803/1849`) while E-server demands a dict (`server.py:918-920`), so no view ever reached disk; D2 briefing provenance - `currentChart()` (`chart-studio.js:1739`) sends `source`/`provenance` as strings, `server.py:988-989` replaces non-dicts with `{}`, and `chart-briefing.js:325/:430` then prints \"[object Obje\" as the SHA in every .pptx and HTML bundle (the Graph view … wording: rows 85/86 got a leading \"the Graph view …\"); D5 `POST /api/restart` answers `{\"restarting\":true}` even when the console is current (the launcher correctly reuses it, the page polls 2 min then tells the reader to close the tab). Also D6: the reconciliation strip needs `#graph-run`, which is empty until the Graph view has rendered once (`chart-studio.js:2194`), and D3: `test_publish_pocket.py:239-240` leaks a worker into the next test. Fix lane dispatched ~16:45 (one architect, backups `.bak-20260914-fix1`, own writable console 8824).",
+      "mark": "not positional",
+      "why": "\"could not see\" is the verb see; \"the next test\" is the order of tests in a suite"
+    },
+    {
+      "line": 211,
+      "old": "- curl from the sandbox gets \"Connection was reset\" on the Higgsfield CDN while PowerShell `System.Net.WebClient.DownloadFile` works (later lanes found the reverse; see traps in the PAC-map lane).",
+      "mark": "rewrite",
+      "why": "\"later lanes\" is time; \"see traps in the PAC-map lane\" is ## PAC map and downstream viz lane, which moves to the sibling part -pac-map-viz-lane",
+      "new": "- curl from the sandbox gets \"Connection was reset\" on the Higgsfield CDN while PowerShell `System.Net.WebClient.DownloadFile` works (later lanes found the reverse; see traps in the PAC-map lane in [[mentat-console-pac-map-viz-lane]]).",
+      "referent": "mentat-console-pac-map-viz-lane"
+    },
+    {
+      "line": 214,
+      "old": "- PARALLEL-LANE CONTRACT TRAP (2026-09-14): two architects built the client and server halves of one feature from one written API contract, each side's tests passed against its own reading (string vs dict for `source`/`provenance`), and only a live run of the real page against a writable console exposed the mismatch. Rule: when a feature is split across lanes, the contract must carry example payloads (not prose), one lane owns the shared fixture both suites import, and the lane is not \"done\" until a real-client integration pass on a writable instance has run every write path (save, export, publish), not just reads. See `verify-dont-infer-completion-2026-08-04`.",
+      "mark": "external",
+      "why": "\"See `verify-dont-infer-completion-2026-08-04`\" names a memory file"
+    },
+    {
+      "line": 231,
+      "old": "- **`git update-index --force-remove` is the WRONG index rollback** - it marks the path deleted vs HEAD. Correct: capture HEAD's blob+mode first, roll back with `git update-index --cacheinfo <mode>,<HEAD sha>,<path>`. Also: `... | Select-Object -First 1` on a native command poisons `$LASTEXITCODE` (terminates the pipeline), which aborted a staging script mid-flight. See [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]].",
+      "mark": "external",
+      "why": "\"See [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]]\" names another note"
+    },
+    {
+      "line": 237,
+      "old": "**State (2026-09-21):** 14 boards made (gpt_image_2_5, high, 2k, 16:9; 3 credits each, 42 total; balance left 266.9). Review page https://claude.ai/artifact/FFSK1XiZQ2wBkgjhCQtkXP holds the boards, today's screens and a \"Don't copy\" list per board. Numbers continue after the 09-19 boards 1-9 so a reply cannot collide: B10/B11 Graph (four analyses above the fold / compare by industry, cycle or company), B12/B13 Chart Studio (quiet builder / guided sentence mode), B14/B15 Insights (paired panels / then-and-now), B16/B17 Cross-reference (triage table / inspection queue), B18/B19 PAC evidence (suggested start / picker rail), B20/B21 Loading (steps 1 and 2, compatible), B22/B23 Collection (run card / status grid). Files in that session's scratchpad `mentat_ui_review/` (`mockups/*.png` full size, `page/`, `current/` captures, `capture_views.cjs`). Figma was NOT used: the plugin figma MCP needs authorizing. Nothing in the Mentat tree changes until his go.",
+      "mark": "not positional",
+      "why": "\"four analyses above the fold\" is a position on the screen"
+    },
+    {
+      "line": 249,
+      "old": "**Naming trap:** the \"B\" board prefix collided with the A/B option letters; Paul asked \"What about the ones where I picked A?\" about B12/B16/B20/B22. Next time number boards neutrally (e.g. \"No. 10\") and name options in words.",
+      "mark": "not positional",
+      "why": "\"Next time\" is time"
+    },
+    {
+      "line": 275,
+      "old": "- 01b wrote \"build 02 rewrote graph_data.py at 10:49:27\": an mtime attribution, contradicted by 02's hashes (DE-036). Open item B15: the EVIDENCE nav group sits 3 px high, because M4's gap above it is 2 px wider; match the board (one-to-one), bundled with the `#view-graph` retirement.",
+      "mark": "not positional",
+      "why": "\"M4's gap above it\" is a position on the screen"
+    },
+    {
+      "line": 276,
+      "old": "- After 01b \"polish files cleared\" was sent to 03. The README was updated (sha 9900e3c1 -> 9bc887f4); the reader page was NOT yet republished. Next: review each proof adversarially against its board and the live route, then start 06 once 04 and 05 finish. Paul reviews every proof and commits; he restarts 8806 to see the changes.",
+      "mark": "not positional",
+      "why": "the label \"Next:\" is time; \"to see the changes\" is the verb see"
+    },
+    {
+      "line": 286,
+      "old": "- **Polish lane (HEAD `2b1a62dea` start, packet `audits/mentat_ui_polish_20260919/`, review page https://claude.ai/artifact/FmMzhcCWNjXbWcrGevLYMH):** commits `53efc2c4a` (measured rows), `f6822818c` (true-width panels; root cause: `render()` painted while `#graph-results` was hidden so every panel drew at the 520 fallback, CSS then scaled the wide column 1.46x), `9e0ead6f0` (sort and labels never silently inert), `991b06568` J1 Jinja2 runtime + `8db5cff94` repair, `862a6c46a` P4a geography tools (105 files 14.4 MB, untracked on purpose). Root causes: `graph.js:294` 6.6 px/char budget vs ~8.5 for caps; sparkline at `graph.js:305` vs reserved column `:278`; `.panel-heading label{width:300px}` in `style.css:4`; PAC map opens on Spent (`evidence.js:902`); sort `none` aliased to `desc` at `chart-studio-contributions.js:126`; six truncators, only `contribution-plot.js:58-62` measures pixels. Rulings: rows A, downstream A (drawer), in-app Back only (D-039 ruling C), industry compare B (BOARD 8 two aligned columns), PAC map enlarge + layer control (region, state, congressional district, state legislative district, ZIP), Jinja2 runtime rendering, expressive motion, fully interactive map; binding ruling: \"The UI should appear exactly as how it was depicted on the Higgsfield images, those were amazing, the amounts can vary obviously.\" (boards 1, 3, 5, 6, 7). Installed into launcher Python: jinja2 3.1.6, geopy 2.5.0; Census files in `mentat/.cache/geo`: ZCTA gazetteer, sldu, sldl. 8806 was restarted onto `8db5cff` via its own Restart button. Trap: `*.html` in the root `.gitignore` silently skipped nine partials in `991b06568`; Paul cannot see the Higgsfield gallery widget in the desktop Code tab.",
+      "mark": "not positional",
+      "why": "\"Paul cannot see the Higgsfield gallery widget\" is the verb see"
+    },
+    {
+      "line": 289,
+      "old": "- **Fields and Banking facts:** see the Chart Studio section above and the topic note; Banking rebuild failure of 2026-09-12 (2,070 rows / $20,683,413.29 refused by `fec_assert_receipt_evidence` against `inputs\\fec_receipt_rules.json`) is a pipeline matter for [[mentat-fec-pipeline]].",
+      "mark": "rewrite",
+      "why": "\"see the Chart Studio section above\" names ## Chart Studio (tab) and the 2026-09-13 system-debug lane, which moves to the sibling part -chart-studio-and-system-debug (the plan's own S10 example); \"the topic note\" names another note",
+      "new": "- **Fields and Banking facts:** see the Chart Studio section in [[mentat-console-chart-studio-and-system-debug]] and the topic note; Banking rebuild failure of 2026-09-12 (2,070 rows / $20,683,413.29 refused by `fec_assert_receipt_evidence` against `inputs\\fec_receipt_rules.json`) is a pipeline matter for [[mentat-fec-pipeline]].",
+      "referent": "mentat-console-chart-studio-and-system-debug"
+    },
+    {
+      "line": 295,
+      "old": "**Higgsfield stack = boards first, then Opus builders.** Boards #44-#53 (numbering continues after Melange #24-#43): #44 PAC evidence Flow tab (FAIRSHAKE, real figures from the trace), #45 Graph follow-the-money (industry, attributed estimate), #46 Chart Studio Flow mark (Stages shelf), #47 Chart Studio map layers from 3 sources, #48 PAC map heat + Layers popover, #49 Manhattan tracts + Tableau Layer control + offline street base, #50 Tableau marks card, #51 S1 shelf rows + 14-icon mark strip, #52 one marks card per measure (dual axis), #53 Aggregate-by popover (ZIP/County/District/Hexbin/Density/Points). Review page https://claude.ai/artifact/CwP3BxSuC7HSRLxHRyg5x3 (source: session scratchpad `review\\mentat-flow-maps-marks.html`, images `review\\img\\b*.webp`; full PNGs `hf\\boards\\`). Later boards #54 (authoring) and #55 (viewer) came from the Tableau map-model exploration.",
+      "mark": "not positional",
+      "why": "\"Later boards #54 and #55\" is time"
+    },
+    {
+      "line": 305,
+      "old": "### Later the same day, 2026-09-25 (rulings + state)",
+      "mark": "not positional",
+      "why": "heading: \"Later the same day\" is time"
+    },
+    {
+      "line": 315,
+      "old": "- Later: DONE lane C (F4 disclosure + cash model rule + evidence-geo contract v4 + CULAC refund line; shares now of LOCATED spending), lane D (F3 SLF snapshot-28d0bc70..., F5 FAIRSHAKE snapshot-b26761887...; exact vs FEC; budgets capped 24/8 to avoid party giants), lane F a+b (`/api/flow` + `flow-layout.js` + `flow-chart.js` + `evidence-flow.js` + `graph-flow.js`; FAIRSHAKE 2024 to the cent), lane G (geo v2 in STAGING `mentat/.cache/geo_build/v2`, 866 files; install blocked on `evidence_geo.py:70` scan), lane M (Marks v3, `studio_api` v3; clean-commit sim green; 3 test re-pins for Paul). Paul approved F12 (date-aware walk -> lane B) and \"give Mentat its own venv\" (lane V). Peer found fread doubled-quote crash in v6 records -> lane A porting fix (hold workbook rebuild until landed).",
+      "mark": "not positional",
+      "why": "\"Later: DONE lane C\" is time"
+    },
+    {
+      "line": 328,
+      "old": "  - **Paul's next ask.** \"compare screenshots against the mockups and give accuracy when adjusting the additions made since\". Round 0 scored: mean 54% (checklists in scratchpad `fidelity\\scores_round0.md`). Root causes: type about 1.3x the boards', the Flow collapse bug, the Studio auto-title and KPI strip, map overlays, verbose additions.",
+      "mark": "not positional",
+      "why": "the label \"Paul's next ask\" is time"
+    },
+    {
+      "line": 336,
+      "old": "  - **Fidelity.** 54% -> 88% on the 10-item checklists (round0/round1/round1b in scratchpad `fidelity`). Review page v8 has the table and the gallery.",
+      "mark": "not positional",
+      "why": "\"Review page v8 has the table and the gallery\" is a table on the review page"
+    },
+    {
+      "line": 340,
+      "old": "  - **Money revert.** Paul: \"The mentat money collection system is fucking perfect, don't change it\". Reverted `0ce240d9e` + `504d2cfd1` in `7a31f8ae2`; see `dont-be-jumpy-removing-money-2026-09-26`.",
+      "mark": "external",
+      "why": "\"see `dont-be-jumpy-removing-money-2026-09-26`\" names a memory file"
+    }
+  ]
+}

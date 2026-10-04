@@ -19,19 +19,19 @@ action_items:
   - "Tidy patches P6c and P7b wait for the other lane's commit of report_insights.py (not rebaseable now)."
   - "README still describes the old cross-reference tab (dirty by another lane)."
 related_topics:
-  - "[[2026-07-bugfix-mentat-collection-and-attribution]]"
+  - "[[2026-07-bugfix-mentat-collection-and-attribution-cross-verification]]"
 related_actors:
   - "[[mentat-console]]"
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[mentat]]"
 related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-xref-workbook-review-2026-09-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-xref-workbook-review-2026-09-17.md", sha256: "021da0602e497121689d8c530e023d4254655790849e2db083c21c0a3b6ddf1a"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -45,14 +45,14 @@ Paul (2026-09-17, `/ecc:council` then `/ecc:python-patterns`): "review the cross
 
 - Worktree: `mentat-xref-spreadsheet-review-3f1ff0`; code in `C:\Users\pgoff\Mentat` (codex/mentat-crypto, HEAD `3fdfeae8f`, a peer S3 session committing concurrently).
 - Packet: `C:\Users\pgoff\Mentat\audits\mentat_xref_workbook_review_20260917\` (REVIEW.md, RECEIPT_RULING_TABLE, COMMIT_PLAN, BRAIN_UPDATE_DRAFT, gate_census/, receipts/, tidy_rebase/).
-- Continues `mentat-system-debug-lane-2026-09-13` (the $37.9M versus $12M settlement, see [[2026-07-bugfix-mentat-collection-and-attribution]]) and `mentat-tidy-workbook-lane-2026-09-14`.
-- Project: [[mentat]]; the console that renders the tab: [[mentat-console]]; decision-maker: [[paul-goff]].
+- Continues `mentat-system-debug-lane-2026-09-13` (the $37.9M versus $12M settlement, see [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification|Mentat collection and attribution]]) and `mentat-tidy-workbook-lane-2026-09-14`.
+- Project: [[mentat]]; the console that renders the tab: [[mentat-console]]; decision-maker: Paul Goff.
 
 ## Participants
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Discussed Actors
 
@@ -66,7 +66,7 @@ Paul (2026-09-17, `/ecc:council` then `/ecc:python-patterns`): "review the cross
 
 ## Related Topics
 
-- [[2026-07-bugfix-mentat-collection-and-attribution]] - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
+- [[2026-07-bugfix-mentat-collection-and-attribution-cross-verification|Mentat collection and attribution]] - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
 
 ## Related Concepts
 
@@ -151,8 +151,8 @@ At 11:29 ET the same day, Paul's S3 session recorded the xref-contradictions rul
 
 ## Action Items
 
-- [ ] Restart console 8806 (assets changed). (owner: [[paul-goff]])
-- [ ] Rule on the gate ruling table R1-R17 (drafted in the packet). (owner: [[paul-goff]])
+- [ ] Restart console 8806 (assets changed). (owner: Paul Goff)
+- [ ] Rule on the gate ruling table R1-R17 (drafted in the packet). (owner: Paul Goff)
 - [ ] Land tidy patches P6c and P7b after the other lane commits report_insights.py. (owner: other lane)
 - [ ] Update README, which still describes the old cross-reference tab. (owner: other lane, file dirty there)
 

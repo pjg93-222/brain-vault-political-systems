@@ -23,8 +23,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/lobbyview-integration-2026-07-31.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\lobbyview-integration-2026-07-31.md", sha256: "8db2654b3fc68f058893ecc2d793e462b00f9470fe85c29134fc6c7eefc50283"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -150,10 +150,18 @@ LD-2 filings **never name a member.** `interaction_ledger.csv` (44,496 rows) has
 
 The sector-growth study links LobbyView as lobbying data (see the sector growth x political spending study (`2026-09-feature-sector-growth-study`)): full export (2024-10-25) with `reports.csv` 383 MB, `clients.csv` (NAICS), `issues.csv`, `network.csv`; derived files in `..\lobbyview\derived` (`reports_finance`, `clients_classified`); LobbyView has one `amount` column. Paul's ruling: LobbyView runs its full span for every sector (the 2013-2022 banks/CUs-only limit was reversed).
 
+## Related Concepts
+
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
+- [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
+
 ## Related Topics
 
 - [[2026-06-feature-cosponsor-and-sector-networks]] - Moneyball network layer: co-sponsor plan (Jun), toggles + signed layers (Jul), five NET_CONFIG networks (Aug), relationships model (Sep).
 - [[2026-07-feature-data-collection-lanes]] - Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills
+- [[2026-07-feature-data-collection-lanes-lobbyview-lda-rebuild-and-bridge]] — The LobbyView lane of 2026-07-31 to 08-01: the positions dataset and network table acquired, the LDA rebuild, the FEC-bridge design, and the three FEC by LDA bridge rounds (round 1 void for coverage with its look not consumed, rounds 2 and 3 with their consumed looks).
+- [[2026-07-feature-data-collection-lanes-contact-inference]] — The contact-inference extraction lane of 2026-08-28/29: the bullseye ruling and gold-set examination, blind dev-gold rounds, the look ledger, the constituency campaign, the G3 adjudication with the committee-proxy clarification, and the overnight autonomy run.
+- [[2026-06-feature-cosponsor-and-sector-networks-sector-networks]] — The bank_reg and crypto sector networks of 2026-08-18/19, promoted to full networks the same day, and the finding that the lobbied-member link is circular.
 
 ## Related Projects
 

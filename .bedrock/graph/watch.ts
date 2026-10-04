@@ -1,24 +1,30 @@
 // Live watcher: rebuilds brain-graph.html (beside the vault) whenever notes are added, changed or deleted, including notes
-// written by hand in Obsidian. Started at logon by the shortcut "Brain Graph Watcher.lnk" in the Startup folder.
+// written by hand in Obsidian. It is started by hand and does not survive a logoff or reboot (there is no Startup-folder
+// shortcut or scheduled task): start it with `bun .bedrock/graph/watch.ts` from the vault root (any working directory
+// works). Without it, the capture hook (.bedrock/recall/hook.ts sync) still rebuilds the page whenever it changes the vault.
 //
-// It is READ-ONLY on the vault: it only lists and stats *.md files. It writes just two files in this folder (watch.pid,
-// watch.log) and, through build.ts, brain-graph.html (atomically: a failed build leaves the previous page in place).
+// It never edits notes: it only lists and stats *.md files. It writes two files in this folder (watch.pid, watch.log),
+// brain-graph.html through build.ts (atomically: a failed build leaves the previous page in place), and, through
+// `bun ../recall/hook.ts index`, the derived recall index (.bedrock/recall-index.json) and the generated catalog index.md
+// (rewritten only when its content changes).
 //
 //   - Every 15 s it walks the vault (hidden folders such as .git .obsidian .bedrock .trash are skipped) and builds a
-//     signature from the sorted path + size + mtime of every *.md file.
+//     signature from the sorted path + size + mtime of every *.md note. Root files that are not notes (CLAUDE.md and the
+//     system notes index.md and log.md, see ROOT_NON_NOTES in common.ts) are not part of it.
 //   - When the signature differs from the one the page was last built from, it waits until the vault has been stable for
-//     3 s (an editor autosaving, a git pull or a sync still writing) and then runs `bun build.ts` as a hidden child process.
-//   - It also builds once when it starts, so the page is current after a logon even if notes changed while it was not running.
+//     3 s (an editor autosaving, a git pull or a sync still writing) and then runs `bun build.ts` as a hidden child process,
+//     followed by `bun ../recall/hook.ts index` so recall and index.md follow the same changes.
+//   - It also builds once when it starts, so the page is current even if notes changed while it was not running.
 //   - After a failed build it retries once, 60 s later; after that it waits for the next change.
 //   - One instance only: watch.pid holds the PID, and a second start exits quietly when the first is still alive.
 //   - watch.log gets one line per event (timestamp, what changed, build result and duration), rotated at 1 MB (one .old kept).
 //
-// Stop it:  Stop-Process -Id (Get-Content "<this folder>\watch.pid")     Remove autostart: delete the .lnk in the Startup folder.
+// Stop it:  Stop-Process -Id (Get-Content "<this folder>\watch.pid")
 // Test flags (never needed normally): --vault <dir> --out <file> --state <dir> --poll <ms> --settle <ms>
 import { appendFileSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join, resolve } from "node:path";
-import { GRAPH_DIR, VAULT, argValue, oneLine } from "./common.ts";
+import { GRAPH_DIR, VAULT, ROOT_NON_NOTES, argValue, oneLine } from "./common.ts";
 
 const vaultArg = argValue("--vault");
 const outArg = argValue("--out");
@@ -148,6 +154,7 @@ function walk(abs: string, rel: string, out: Snap) {
     const r = rel ? rel + "/" + e.name : e.name;
     if (e.isDirectory()) walk(join(abs, e.name), r, out);
     else if (e.isFile() && /\.md$/i.test(e.name)) {
+      if (!rel && ROOT_NON_NOTES.has(e.name.toLowerCase())) continue; // CLAUDE.md, index.md, log.md: not notes
       try {
         const st = statSync(join(abs, e.name));
         out.set(r, st.size + ":" + st.mtimeMs);
@@ -230,6 +237,36 @@ async function runBuild(): Promise<Outcome> {
   return { ok: false, reason: `build exited with code ${code} and no result${tail ? ": " + oneLine(tail, 200) : ""}`, where: [] };
 }
 
+/**
+ * `bun ../recall/hook.ts index`, hidden: rebuilds the recall index (.bedrock/recall-index.json) and the generated catalog
+ * index.md so they follow the same vault changes as the page. The hook always exits 0 and prints one summary line
+ * ("index ok ..." or "index FAILED ..."), which is returned for the log. Never throws.
+ */
+const RECALL_INDEX_TIMEOUT_MS = 60_000;
+async function runRecallIndex(): Promise<string> {
+  const args = [process.execPath, join(GRAPH_DIR, "..", "recall", "hook.ts"), "index"];
+  const env: Record<string, string | undefined> = { ...process.env };
+  if (vaultArg) env.BRAIN_VAULT = vault; // a test watcher indexes its test vault, never the real one
+  try {
+    const proc = Bun.spawn(args, { cwd: GRAPH_DIR, env, stdin: "ignore", stdout: "pipe", stderr: "pipe", windowsHide: true });
+    let timedOut = false;
+    const timer = setTimeout(() => {
+      timedOut = true;
+      proc.kill();
+    }, RECALL_INDEX_TIMEOUT_MS);
+    const [stdout, stderr] = await Promise.all([new Response(proc.stdout as ReadableStream).text(), new Response(proc.stderr as ReadableStream).text()]);
+    const code = await proc.exited;
+    clearTimeout(timer);
+    if (timedOut) return `FAILED: timed out after ${RECALL_INDEX_TIMEOUT_MS / 1000}s and was stopped`;
+    const last = stdout.split(/\r?\n/).filter(Boolean).pop() ?? "";
+    if (code === 0 && last) return oneLine(last, 300);
+    const tail = stderr.split(/\r?\n/).filter(Boolean).pop() ?? "";
+    return `FAILED: exit code ${code}${tail ? ": " + oneLine(tail, 200) : ""}`;
+  } catch (e) {
+    return "FAILED: could not start: " + oneLine((e as Error)?.message ?? e);
+  }
+}
+
 let reported = new Set<string>(); // warnings already logged for the page as it stands
 async function rebuild(trigger: string, d: Diff, extra = ""): Promise<boolean> {
   const t0 = performance.now();
@@ -243,6 +280,8 @@ async function rebuild(trigger: string, d: Diff, extra = ""): Promise<boolean> {
   } else {
     log(`${head} result=FAILED duration=${dur}s reason="${r.reason}"${r.where.length ? ` where=[${r.where.join("; ")}]` : ""} (previous page kept)`);
   }
+  // the recall index and index.md follow every rebuild, whatever the page's outcome (they do not depend on it)
+  log(`recall-index ${await runRecallIndex()}`);
   return r.ok;
 }
 

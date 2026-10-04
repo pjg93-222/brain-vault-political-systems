@@ -25,8 +25,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audio-narratives-2026-07-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audio-narratives-2026-07-09.md", sha256: "79e8d71ad2a5aeba6c35fd4d8359c40c9ecede3fbe35ed027ed87f862aa16958"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -134,6 +134,10 @@ yt-dlp --download-sections ... -f 466 -x --audio-format wav --ffmpeg-location <f
 | 2026-08-19/21 | Speech-lane audit, whisper install, rulings, chyron pilot, re-adjudication, commits `4193f0140` + `1b2055b81`. |
 | 2026-08-24/25 | G1 terminal, N look spent/missed 2026-08-25 (route closed), WJ featurizer corrections. |
 | 2026-09-07 | Complementary-layers lane; four false mechanism claims; `C:\melange-data` confirmed to exist. |
+
+## Related Concepts
+
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
 
 ## Related Topics
 

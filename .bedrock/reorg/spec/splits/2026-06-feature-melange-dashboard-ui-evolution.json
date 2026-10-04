@@ -1,0 +1,244 @@
+{
+  "id": "C6",
+  "what": "Batch 6 split of topics/2026-06-feature-melange-dashboard-ui-evolution (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C6); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-06-feature-melange-dashboard-ui-evolution",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "actors/melange-dashboard",
+      "concepts/influence-vs-alignment-axes"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-06-feature-melange-dashboard-ui-evolution-capstone-to-desk-media",
+      "title": "Capstone, member desk, network features and desk media (06-26 to 07-16)",
+      "summary": "Dashboard UI from the June 2026 capstone and member desk through the network features of 07-04/05, the Frank Lucas defend resolution and the desk media footprint of 07-16",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## June 2026 capstone and member desk (2026-06-26 to 06-29)",
+        "## Network features shipped 2026-07-04/05 (overlaps with the cosponsor/sector network topic)",
+        "## Frank Lucas electoral 'defend' resolution (2026-07-10)",
+        "## Desk media footprint (2026-07-16)"
+      ],
+      "keep": [
+        "actors/melange-dashboard"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-melange-dashboard-ui-evolution-august-redesigns",
+      "title": "Industry tab round 2, black/gold retheme, simplification and preview workflow (08)",
+      "summary": "Dashboard UI in August 2026: the industry-tab round 2, the black and gold retheme, the rankings-and-data-only simplification and the preview workflow",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Industry-tab UI round 2 (2026-08-03)",
+        "## Black/gold retheme (2026-08-06)",
+        "## UI simplification, rankings-and-data-only (2026-08-11)",
+        "## Dashboard preview workflow (2026-08-18; reference)"
+      ],
+      "keep": [
+        "actors/melange-dashboard"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-melange-dashboard-ui-evolution-plain-language-and-fixes",
+      "title": "Plain-language pass, staffer surface pointer and fixes verification (08-31 to 09-05)",
+      "summary": "The plain-language pass of 2026-08-31 to 09-01 with Paul's taste correction, the staffer surface pointer and the dashboard-fixes verification lane of 09-05",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Plain-language pass (2026-08-31 / 09-01)",
+        "## Staffer surface lane and canonicalization (2026-09-04, pointer)",
+        "## Dashboard-fixes verification lane (2026-09-05)"
+      ],
+      "keep": [
+        "actors/melange-dashboard"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-06-feature-melange-dashboard-ui-evolution-members-section-lane",
+      "title": "Members Section consistency lane (09-14 to 09-18)",
+      "summary": "The Members Section consistency lane of 2026-09-14 to 09-18: the measured facts, Paul's rulings, the rounds, landing and publication, the committee tiers and the two workbook traps fixed",
+      "domain": "domain/frontend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Members Section consistency lane (2026-09-14 to 2026-09-18; Davis D000230 worked case)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [
+    {
+      "id": "K9",
+      "a": "topics/2026-06-feature-melange-dashboard-ui-evolution-august-redesigns",
+      "b": "topics/2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "K22",
+      "a": "topics/2026-06-feature-melange-dashboard-ui-evolution-capstone-to-desk-media",
+      "b": "actors/melange-dashboard-june-capstone",
+      "event": "June capstone and desk media"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 38,
+      "old": "- Later redesign (09-22 onward, overlay-first v2 on 8841) is covered in the actor [[melange-dashboard]].",
+      "mark": "not positional",
+      "why": "\"Later redesign\" is time; the line names the actor [[melange-dashboard]], another note"
+    },
+    {
+      "line": 82,
+      "old": "| 2026-09-04 | Moneyball.html canonicalized; staffer network added as the 4th surface (`#app-staffer`) (see [[melange-dashboard]]) |",
+      "mark": "external",
+      "why": "\"(see [[melange-dashboard]])\" names another note"
+    },
+    {
+      "line": 94,
+      "old": "- **Overlay-first** (v2 redesign): see [[melange-dashboard]].",
+      "mark": "external",
+      "why": "\"see [[melange-dashboard]]\" names another note"
+    },
+    {
+      "line": 96,
+      "old": "- **Members Section rulings (2026-09-15, 09-17, 09-18):** ladders RECONCILED into one (overall = analytic band; fields = honors recognition with loosened cutoffs); Q4 normalization = within chamber (D-027 stands); Q7 \"The footprint should be the potential\"; Q11 every post scores; committee tiers by jurisdiction over credit unions as institutions (D-042). Detail below.",
+      "mark": "rewrite",
+      "why": "\"Detail below.\" is ## Members Section consistency lane, which moves to -members-section-lane",
+      "new": "- **Members Section rulings (2026-09-15, 09-17, 09-18):** ladders RECONCILED into one (overall = analytic band; fields = honors recognition with loosened cutoffs); Q4 normalization = within chamber (D-027 stands); Q7 \"The footprint should be the potential\"; Q11 every post scores; committee tiers by jurisdiction over credit unions as institutions (D-042). Detail in [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]].",
+      "referent": "2026-06-feature-melange-dashboard-ui-evolution-members-section-lane"
+    },
+    {
+      "line": 103,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 107,
+      "old": "- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see below), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).",
+      "mark": "rewrite",
+      "why": "\"Q6 committee tiers resolved 09-18 (see below)\" is ### Committee tiers ruled and shipped 2026-09-18 in ## Members Section consistency lane, which moves to -members-section-lane",
+      "new": "- [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]]), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).",
+      "referent": "2026-06-feature-melange-dashboard-ui-evolution-members-section-lane"
+    },
+    {
+      "line": 123,
+      "old": "- **Member desk integration (2026-06-29):** ONE deliverable `Melange Systems/Moneyball.html`, dark theme, merged by `make_combined.py`; map of files in `Melange Systems/INDEX.md`. Desk sections: General page (overall rank/stance/legislative radar/pillar bars/invested = FEC/electoral-vuln $), Staff, Bio, Relational, Committee positions (relevance badges), Demographics (PERCENTILE-normalized radar), Psychometrics, Legislative actions (DEDUPED one row per (bill,congress)), Press & social media (graded-sentiment filter, billstatus hidden); Efficiency view = Golovin-Krause optimizer (`optimize.py`, $500 increments, $10k FEC per-member cap); coalition builder; committee-cluster layout toggle (Porter et al. 2005, `crc32` jitter seed). Weights then: `.40/.30/.20/.10` (HISTORICAL; see Context). Full model facts (pillars, WHY committee-weighted, workbook collision) are in [[melange-systems]].",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"see Context\" is ## Context, which the hub keeps, while the line moves to -capstone-to-desk-media",
+      "new": "- **Member desk integration (2026-06-29):** ONE deliverable `Melange Systems/Moneyball.html`, dark theme, merged by `make_combined.py`; map of files in `Melange Systems/INDEX.md`. Desk sections: General page (overall rank/stance/legislative radar/pillar bars/invested = FEC/electoral-vuln $), Staff, Bio, Relational, Committee positions (relevance badges), Demographics (PERCENTILE-normalized radar), Psychometrics, Legislative actions (DEDUPED one row per (bill,congress)), Press & social media (graded-sentiment filter, billstatus hidden); Efficiency view = Golovin-Krause optimizer (`optimize.py`, $500 increments, $10k FEC per-member cap); coalition builder; committee-cluster layout toggle (Porter et al. 2005, `crc32` jitter seed). Weights then: `.40/.30/.20/.10` (HISTORICAL; see Context in [[2026-06-feature-melange-dashboard-ui-evolution]]). Full model facts (pillars, WHY committee-weighted, workbook collision) are in [[melange-systems]].",
+      "referent": "2026-06-feature-melange-dashboard-ui-evolution"
+    },
+    {
+      "line": 131,
+      "old": "Paul authorized the re-run (\"Re-Run\", confirmed via an explicit gate question). `build_electoral_plays.py` produced a BYTE-IDENTICAL artifact (md5 9f240552... unchanged; Lucas already play=none / overall=Highly Persuadable; 5 contest / 41 defend / 487 none): the 47-member reclassification had already landed in an earlier regeneration; the surviving 07-09 flag was mtime-ordering only. Downstream regen skipped (that day's post-merge chain had already built all display artifacts from this exact content). Lesson: an mtime-stale flag is a lead, not proof of content drift. The re-run gate (law 11) stands for future episodes.",
+      "mark": "not positional",
+      "why": "\"an earlier regeneration\" is time"
+    },
+    {
+      "line": 143,
+      "old": "The source memory description at that time read: \"Interviews+hearings+bluesky added to the desk \\\"Press & social media\\\" section (branch dashboard-press-media-expansion), verified in preview, AWAITING Paul's ship decision\" (superseded by the same-evening ship below).",
+      "mark": "same note",
+      "why": "\"the same-evening ship below\" is the **SHIPPED same evening** paragraph later in ## Desk media footprint, which moves whole to -capstone-to-desk-media"
+    },
+    {
+      "line": 154,
+      "old": "- POSITION -> \"Both — ship column now, classify later.\" The column ships wired and empty; running `classify_bill_positions.py` is a SEPARATE gated step he had not authorized then.",
+      "mark": "not positional",
+      "why": "\"classify later\" is time"
+    },
+    {
+      "line": 171,
+      "old": "**THE 2026-08-03 DEPLOY FAILURE: the lesson.** I built both pages into a scratchpad preview dir, verified them there, and told Paul where they were. He opened his own tree and saw nothing: `lobby-network.html` was still the Aug 2 build with **zero outbound links of any kind**. Then the \"rebuild\" command I handed him (`python fec/make_lobby_interactions_html.py`) was a file-not-found, because that file only existed in the worktree. **Building is not delivering. Deploy to the artifact the user actually opens, then verify THERE.** Contributing cause since fixed: the interactions builder defaulted `--out` to a derived staging dir while its sibling defaulted to MB_ROOT (a builder that prints success while the page nobody can see stays stale). Both now default to the live tree.",
+      "mark": "not positional",
+      "why": "\"saw nothing\" is a verb"
+    },
+    {
+      "line": 192,
+      "old": "- Font: no webfont embedded (surfaces self-contained, near a page-size ceiling); stack `\"Century Gothic\",\"Tw Cen MT\",Futura,\"Avenir Next\",\"Segoe UI\"` (both Century Gothic and Tw Cen MT installed on this box); chrome only, `#mname` and dynamic industry/organization/member `h2`s excluded via `:not()`.",
+      "mark": "not positional",
+      "why": "\"Avenir Next\" is a font name"
+    },
+    {
+      "line": 195,
+      "old": "- NOTE: the live tree's branch (`claude/cfpb-sentiment-recorrection` @ e779727) then sat behind main's merge tip 08aa584: harmless (deployed artifacts already match merged code), but a future rebuild FROM THE LIVE TREE'S OWN CHECKOUT would use pre-retheme templates until that branch is fast-forwarded or switched. Index-line update (2026-08-19 compaction): the cfpb branch and main were SYNCHRONIZED at **@3881f1d** (the lane-law series merged 2026-08-09); before that commit the two diverged on templates. See also memory `glassbox-lane-lock-hang-2026-08-06`, `ask-before-substantive-changes`.",
+      "mark": "external",
+      "why": "\"See also memory `glassbox-lane-lock-hang-2026-08-06`, `ask-before-substantive-changes`\" names memory files"
+    },
+    {
+      "line": 232,
+      "old": "**Lane lessons:** Codex issued 5 valid STOP REPORTs across the run: 3 were MY spec defects (memberLink signature, (former) rendering, AC count vs pre-existing occurrence): coordinator spec authoring is still the dominant failure mass. A Codex MCP call that idle-times-out (6044s) can STILL complete on disk later: the C2 \"ghost session\" applied its edits AFTER my post-timeout clean-check; the retry thread caught the drift. Recovery = verify the diff yourself against the contract, close the retry thread, record the receipt with honest provenance. The C3 reply omitted its RECEIPT (caught at gate, corrected on-thread): the ledger's structural receipt validation rejects paraphrased receipt files (verbatim RECEIPT block + INV enumeration required). Sandbox: python execution DENIED in worktrees (not just writes), so per-increment compile converts to Fable-external end-of-run compile (Option-2 batching). The adversarial second review earned its cost: 2 real defects (unresolved-member links, cap-state leak on org-driven sector switch via `openOrganization` line about 3572) found after 243/243 tests were green.",
+      "mark": "not positional",
+      "why": "\"(former) rendering\" is the UI label for former members; \"complete on disk later\" is time"
+    },
+    {
+      "line": 268,
+      "old": "**TWO GATES WERE GREEN AND PROVED NOTHING** (worse than red: nobody looks): `audit_full.py:1402`'s five-axis check passed on a `//` CODE COMMENT after Neuroticism left the display, and its `Openness` pin was separately satisfied by an unrelated table header. It now pins the whole `const B5AX=[...]` literal with a negative control. Same for the canonical-slot check at :1446. **8 MORE audit checks read the BUILT html, not the template** (audit_full :912-940, :1926-1934): green today only because the artifacts predate the rename; they go RED on the next desk rebuild. `test_industry_tier_board_responsiveness_present_and_absent` was defined and NEVER REGISTERED (passes); the registry is now 247/247.",
+      "mark": "not positional",
+      "why": "\"the next desk rebuild\" is time"
+    },
+    {
+      "line": 276,
+      "old": "**MY OWN FAILURE MODES THIS SESSION: read before the next pass:**",
+      "mark": "not positional",
+      "why": "\"before the next pass\" is time"
+    },
+    {
+      "line": 292,
+      "old": "Lane `claude/melange-dashboard-fixes-83c994` (worktree at main `8953e7181`, zero lane commits). Paul pasted a \"Melange Dashboard Fixes — Simple Update\" handoff and said \"Finish those next actions\", later \"publish the snapshot\". Record: `audits/DASHBOARD_FIXES_VERIFICATION_2026-09-05.md` in the worktree.",
+      "mark": "not positional",
+      "why": "\"Finish those next actions\" quotes Paul; \"later\" is time"
+    },
+    {
+      "line": 303,
+      "old": "**Why:** the handoff's \"publish once everything passes\" cannot be finished by a session, because the one missing input is a credential; and the artifacts being published come from a chain whose own gate failed on other lanes' items, which Paul needs to see before publishing.",
+      "mark": "not positional",
+      "why": "\"needs to see\" is a verb"
+    },
+    {
+      "line": 336,
+      "old": "See `audits/members_section_20260914/rulings-round2.md` (398 lines, open rulings R1-R10).",
+      "mark": "external",
+      "why": "\"See `audits/members_section_20260914/rulings-round2.md`\" names a file outside the vault"
+    },
+    {
+      "line": 361,
+      "old": "Tier 1 = Padilla, V. Gonzalez, Waters, Fitzpatrick, Timmons, Fitzgerald, T. Scott, Sherman, Huizenga, Young Kim, Sullivan, Vargas, Meuser. Main commits after 4d0359110: 5d2e8d6f8 (desk integrity audit follows DEMO_POTENTIAL), 7ed016533 (no ranks-hash pins), 4dc148fc1 (board tests structural; grade step after primacy_factors), 6f8e706b7 + de669fcc2 (publication crown guard), 547187724 (snapshot pins retired; audits registered), b3ce9e9f7 (crown reads ONE source: root cause was a second hardcoded `'factor'` default in `build_rank_honors.py:94` and `honors_views.py:250`, so honors seated the old top 13 while tiers used per_area_v1; column G now reads honors top13). Republish sequence that works standalone: `honors_workbook --prepare-model-update` -> `build_rank_honors --publish` -> `audit_rank_honors` -> `sync_stance_g` -> `honors_workbook` -> `build_dashboard_bundle` -> `make_dashboard_html` -> `make_member_desk` -> `make_combined` -> `audit_rank_honors --surfaces` -> `sync_live_dashboard_alias` (PASS, alias sha a310046c...) -> `make_email_package`; then `build_system_manifest` -> `audit_full` -> kernel. Ranks moved 515/533 (FEC refresh + stale-input refresh + score-every-post + committee seats; Davis 337 -> 236 with influence 0 -> 0.15). Paul's standing instruction from 09-17: \"systems examination only\", no per-member sweeps. OPEN for Paul (at 09-17): LEADERSHIP_KINDS bound (votes sign fields, not honors overall opposition); committee tiers [Moderately] (resolved 09-18, below); constitution text 30/25/40/5 vs live 45/10/40/5 (S-5); press as a recognition kind needs an immutable press-evidence artifact; the honors workbook binding refuses ANY workbook edit between publications (fixed 09-18, below); speech step crash (memory); role registry expires 2027-01-03; `outcome_snapshot.py` diagnostic still crowns from tier; CodeScene needs CS_ACCESS_TOKEN; structural simplification of `validate_honors` / `classify_field` / `audit_document` / two footprint functions / `load_press_proportion` deferred; the dead file `fec/stance/api_stance_layer.py` has an IndentationError (no importers).",
+      "mark": "same note",
+      "why": "\"(resolved 09-18, below)\" and \"(fixed 09-18, below)\" are ### Committee tiers ruled and shipped 2026-09-18 and ### Both workbook traps FIXED 2026-09-18, which follow ### Published in ## Members Section consistency lane and move with it to -members-section-lane"
+    },
+    {
+      "line": 365,
+      "old": "Lane = 20 commits on main, 2f11d9490..b983d0976 (final: the three LANE hunks in `audit_full.py` for the footprint and per-area-board checks, plus the `tier_util.py:54` comment correcting where the grade step runs). The packet was committed on the lane branch as e043a1447 (105 files: packet.md, ledger.json, consult.md, rulings-round2.md, evidence 73, phase2 19, scripts 2, gan-harness 7) + 2211d3f20 (STATUS receipt); main cannot hold it: `.gitignore:29 .claude/*` covers the whole worktree path. 31 packet files needed `git add -f` over `*.csv`/`*.json`/`*.log`/`*.txt` globs, and one is load-bearing: `evidence/scripts/v4b_within_chamber.csv` is the PER_AREA_FIXTURE that committed test code reads by that exact path. Final gates: FULL-BODY AUDIT 567 passed / 1 FAILED, KERNEL TESTS 235 passed / 2 FAILED: all three failures pre-existing and other lanes' (personal-texture artifact, missing `backups\\bill_directions.PRE-LEGFIX3.csv`, staffer network HTML verdict). Left uncommitted on purpose: 15 other-lane hunks in `audit_full.py` (infra/money-capacity/optimizer/audio/press/legislation/staffer) and 10 press-lane hunks in `build_media_blend.py`. Stale identifier for a later pass: `build_primacy_surfaces.py:50` names `_seed_per_area_grade`, which does not exist (seeding is inline at :94-99).",
+      "mark": "not positional",
+      "why": "\"a later pass\" is time"
+    },
+    {
+      "line": 374,
+      "old": "2. **The honors workbook binding is scope-aware** (dial `HONORS_WORKBOOK_SCOPE`, default `region`, `legacy` = old whole-file behaviour): it owns `SHEETS = ('Field Recognition','Recognition Detail','Overall Standing')`, hides `LABEL_COLUMNS = (('Rank & Allocation',7),('Legislative Agenda',3))` (TWO columns, G and C, not one) plus two hidden tab states and the workbook-level XML parts. An edit to Committee Data no longer blocks the chain; an edit INSIDE an honors sheet still refuses by name. Four proofs on scratch copies (round-trip identical, Committee Data edit survives, honors-sheet edit refuses, legacy dial reproduces the old refusal byte-for-byte). The agent found and closed a data-loss hole in its own change first: scoping the publish guard alone lets a publish land on unrelated edits and inherit a stale rollback copy that later discards them; closed with a sticky `original_exact` flag the whole-file fast path requires.",
+      "mark": "not positional",
+      "why": "\"later discards them\" is time"
+    }
+  ]
+}

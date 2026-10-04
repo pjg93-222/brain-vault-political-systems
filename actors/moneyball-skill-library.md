@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/skills-library-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\skills-library-2026-07-10.md", sha256: "c0b2ca636cff6d9f41c8574737ca7e3c699a94ccba1742e0eedc57b231eb8b2d"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -43,7 +43,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 
 ## Dependencies
 
-- Parent topic: [[2026-07-feature-agent-tooling-stack]]. Consumed by every Melange session (load the relevant skill before working; change-control before ANY change).
+- Parent topic: Agent tooling stack. Consumed by every Melange session (load the relevant skill before working; change-control before ANY change).
 - Sibling: [[quant-model-evaluation-skill]] (the 20th skill, Paul's c13f3a5d4; used after moneyball-change-control for any model/number/claim evaluation; user-level junction `C:\Users\pgoff\.claude\skills\quant-model-evaluation` -> LIVE copy, so Melange sessions may list it twice).
 - Depends on the LIVE tree and git state of [[melange-systems]] (branch/merge claims, ledgers, audit/kernel baselines are encoded in the skills and go stale).
 - Related memories: `psych-audit-2026-07-09`, `dont-drop-context-anchor-memory`, `ask-before-substantive-changes`, `scout-census-traps-2026-09-13`, `review-in-fable-directive-2026-09-16`.
@@ -125,7 +125,8 @@ By 2026-09-30 the README lists 20 skills (fixed from a mid-lane mismatch "20 row
 
 ## Related Topics
 
-- [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- [[2026-07-feature-agent-tooling-stack-skill-library-lane]] — The Moneyball skill library: how the repo skills were built, merged into git and audited for stale facts.
 
 ## Related Projects
 

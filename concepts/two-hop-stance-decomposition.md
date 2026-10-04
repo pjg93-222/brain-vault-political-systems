@@ -9,8 +9,8 @@ related_to:
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-stance-decomposition.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-stance-decomposition.md", sha256: "7f9b966172345c4606ba4d3e1366846e48edcf9c2580c21e44589b22430e2e1c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/cu-signflip-directionality.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\cu-signflip-directionality.md", sha256: "a3c3dcd8629796ac6042805cd6db7bc5470be899f9524ad8500771730c17b455"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -72,6 +72,8 @@ The 10 support-to-oppose **sign-flips** in `cu_stance_label_set` (pre_label vs h
 
 - [[debate-stance-model]] - Fine-tuned Political DEBATE NLI stance model (CPU) plus Lexicoder LSD tone; replaced the regex scorer in Stage 5 of the CU press pipeline
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
+- [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[2026-06-feature-cu-stance-and-sentiment-stance-stack-design-and-accuracy]] — How the CU stance stack was designed and made accurate: sign-flip directionality fixes, the 2026-07-01 data audit, the two-hop stance stacks of the 07-04 campaign, the lt_priming integrity gates and the Kim position-classification benchmark.
 
 ## Where the hop split shows up in the pipeline
 
@@ -80,3 +82,7 @@ The 10 support-to-oppose **sign-flips** in `cu_stance_label_set` (pre_label vs h
 - Tools: `fec/apply_two_hop_stance.py` (`--eval`, `--uncovered`), `fec/train_tweet_stance.py` (supervised on 399 golds = 0.737 CV, the current free best, `stance_clf_tweets.pkl`).
 - Scratchpad diagnostics from the session: confusion_diag, valence_registry_test, valence_knowledge.
 - Related memory: `cu-signflip-directionality` (predicted this: "sign-flips dominated by CFPB target-valence"), `moneyball-data-audit-2026-07-01` (S1-S5 valence-registry plan, now empirically justified).
+
+## Related Concepts
+
+- [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.

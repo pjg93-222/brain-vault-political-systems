@@ -7,11 +7,11 @@ status: "open"
 people:
   - "[[paul-goff]]"
 actors:
-  - "[[claude-code-harness]]"
+  - "claude-code-harness"
   - "[[codex-executor]]"
-  - "[[glass-box]]"
+  - "glass-box"
   - "[[metaloop]]"
-  - "[[runpod-pod]]"
+  - "runpod-pod"
 objective: "Standing feedback rules on how agents are orchestrated and which models do what: two model-tiering rules with separate scopes (pipeline API calls vs agent coding/orchestration), inline review, pacing, ultracode scope, universal lane laws, GLASS BOX emission, RunPod pod usage, no AI supervision of long jobs, SendMessage hazards, and networked Codex for ambiguous company identities."
 created_at: 2026-07-09
 sources:
@@ -26,8 +26,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/glassbox-everything-rule-2026-07-27.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\glassbox-everything-rule-2026-07-27.md", sha256: "d803cdacd32e6f6d3fbac015ed401fa5898e1bf27a82dafa6d237bad6a85b787"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/codex-web-research-for-company-ambiguity.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\codex-web-research-for-company-ambiguity.md", sha256: "ab3b471b15379353c6b6c8d004188016132018717f196f4a91b196091e559739"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fable-paragraphs-only.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fable-paragraphs-only.md", sha256: "608516924b815a01ab65ca51db3c117932f1ba61d1873c84b605fd038aa58ff4"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreement"]
 ---
 
@@ -39,7 +39,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 
 - Two model-tiering rules coexist because they govern different things. **Scope (a), pipeline API calls** (what the Melange pipeline sends to the Anthropic API): Fable only for the 533 per-member narrative paragraphs, Haiku 4.5 everywhere else by default, escalate to Sonnet 5 (never back to Fable) if Haiku is remarkably worse. Source: `fable-paragraphs-only` (2026-07-09). **Scope (b), agent coding and orchestration** (which model the sessions and subagents run): newest rule governs, and as of 2026-10-01 code is written in Sonnet 5.5 at effort xhigh while Opus only reasons, designs, reviews and verifies; the earlier versions are dated bullets below. Newest wins only inside each scope; (a) is not superseded by (b).
 - Names used in the sources: the "session model" was called Fable in mid-September (Paul: "all reasoning is done in Fable"); by 2026-09-24 the session ran Opus 5.5 ("Reasoning stays in Opus"). The sub-rules below keep the source wording.
-- The rules touch the [[claude-code-harness]] (session settings, workflows, SendMessage, the GateGuard hook), the [[codex-executor]] lane and the [[metaloop]] orchestration (UNIVERSAL LANE LAWS), the [[glass-box]] event stream, and the [[runpod-pod]]. The narrative paragraphs rule originates in the work behind [[2026-07-feature-member-approach-briefs]]; the poll-loop burn relates to [[2026-08-incident-refresh-automation-reliability]]. All rules are Paul's ([[paul-goff]]).
+- The rules touch the Claude Code harness (session settings, workflows, SendMessage, the GateGuard hook), the [[codex-executor]] lane and the [[metaloop]] orchestration (UNIVERSAL LANE LAWS), the GLASS BOX event stream event stream, and the RunPod math pod. The narrative paragraphs rule originates in the work behind Member approach briefs and narratives; the poll-loop burn relates to Refresh automation reliability. All rules are Paul's ([[paul-goff]]).
 - Related memories (not vault entities): `reasoning-in-fable-code-in-opus-2026-09-16`, `pod-for-memory-heavy-tasks-2026-09-30`, `sendmessage-workflow-agent-duplicates-2026-09-24`, `go-faster-directive-2026-09-16`, `review-in-fable-directive-2026-09-16`, `codex-overnight-poll-loop-burn-2026-09-13`, `ultracode-orchestration-standing-2026-08-18`, `universal-lane-laws-2026-08-09`, `glassbox-everything-rule-2026-07-27`, `codex-web-research-for-company-ambiguity`, `fable-paragraphs-only`, `mentat-failings-lane-s4-2026-09-16`, `ui-finalize-after-reboot-2026-09-23`, `luna-stratified-scaling-review-2026-09-29`, `codex-executor-lane-2026-07-18`, `glassbox-lane-lock-hang-2026-08-06`, `moneyball-big5-campaign`, `legfix5-recollection-lane-2026-07-27`, `desk-media-footprint-2026-07-16`, `mentat-roster-and-culling-rules-2026-07-19`, `ask-before-substantive-changes`, `press-classification-user-domain`, `scout-census-traps-2026-09-13`.
 
 ## People Involved
@@ -52,16 +52,16 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 
 | Actor | Relation |
 |---|---|
-| [[claude-code-harness]] | Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH. |
+| Claude Code harness | Harness traps: MEMORY.md loading contract, heredoc mangling, SendMessage duplicates, GateGuard amend block, poppler PATH. |
 | [[codex-executor]] | Codex (ChatGPT/Astra) as Paul's executor: Claude reasons and reviews, Codex writes code; MCP lane dead since 2026-09-17 |
-| [[glass-box]] | Shared GLASS BOX event stream/viewer for all lanes; every process must emit; a hung lane console blocks metaloop starts. |
+| GLASS BOX event stream | Shared GLASS BOX event stream/viewer for all lanes; every process must emit; a hung lane console blocks metaloop starts. |
 | [[metaloop]] | /metaloop (shipped @46b17b9): Fable decomposes/reviews, Codex executes, Gemini perceives, Grok critiques; UNIVERSAL LANE LAWS @86ba6ef. |
-| [[runpod-pod]] | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
+| RunPod math pod | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
 
 ## Related Topics
 
-- [[2026-07-feature-member-approach-briefs]] - Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps.
-- [[2026-08-incident-refresh-automation-reliability]] - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
+- Member approach briefs and narratives - Per-member Suggested-approach briefs (Fable 533 calls; Sonnet lane): Tier 2 style, acoustics in, no percentiles, validator traps.
+- Refresh automation reliability - Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn
 
 ## History
 
@@ -111,7 +111,7 @@ Current rules (newest wins within scope), then superseded versions as dated stru
 
 - **Rule:** HARD cost rule. **Fable (`claude-fable-5`, $50/1M out) is ONLY for the per-member "Suggested approach" narrative paragraphs**, one call per member (~533 total). **Every other LLM step in the pipeline uses Haiku 4.5** (`claude-haiku-4-5`, ~10x cheaper). Mechanical tasks (audio-clip speaker verification from captions, classification, extraction, labeling) are Haiku, NEVER Fable. Paul stated it firmly, all caps, 2026-07-09.
 - **Why:** Paul caught the agent firing a Fable call per audio clip (~3,000 clips, about $120-200) for a mechanical "is X the solo speaker?" classification. That is a fortune for a task Haiku does equally well. Fable's quality only earns its price on the generative narrative task, and even then it is one call per member, never per-item in an inner loop.
-- **How to apply:** before ANY `messages.create`, ask "is this generating the member narrative paragraphs?" If no, use `claude-haiku-4-5`. Never default to Fable for per-item loops. Per-clip / per-row / per-item work is always the cheap model. Context: `moneyball-big5-campaign`; the paragraphs themselves are the member approach briefs ([[2026-07-feature-member-approach-briefs]]).
+- **How to apply:** before ANY `messages.create`, ask "is this generating the member narrative paragraphs?" If no, use `claude-haiku-4-5`. Never default to Fable for per-item loops. Per-clip / per-row / per-item work is always the cheap model. Context: `moneyball-big5-campaign`; the paragraphs themselves are the member approach briefs (Member approach briefs and narratives).
 - **Escalation rule (Paul, 2026-07-09):** if Haiku does *remarkably worse* than Fable on a mechanical task (validate by head-to-head agreement on a sample, adjudicating disagreements against the actual transcript), escalate that task to **Sonnet 5** (`claude-sonnet-5`), NOT back to Fable. Order for mechanical work: Haiku -> Sonnet if needed. Fable stays paragraphs-only regardless.
 
 ### Model tiering scope (b): agent coding and orchestration (`reasoning-in-fable-code-in-opus-2026-09-16`, file created 2026-09-16, last modified 2026-10-01)
@@ -186,7 +186,7 @@ Version history (newest governs):
 - **How to apply:** inject the read-only + escalation contracts into every subagent prompt; emit glasseye pairs around every fan-out/task; load the `metaloop.md` section before orchestrating; md5-sweep skills + commands after any ratified change; RECEIPT-verify before adjudicating Codex output; pin invariants on multi-node runs and quote them via the CLI. The codex-executor fork was healed in @86ba6ef (user-scope 2026-07-25 audit/provenance work + repo 2026-08-05 `fec/members/` paths; 68/68 tests): both scopes verified identical, do not re-diagnose it.
 - Links in the source: `codex-executor-lane-2026-07-18`, `glassbox-everything-rule-2026-07-27`, `glassbox-lane-lock-hang-2026-08-06`.
 
-### Everything runs through the GLASS BOX (`glassbox-everything-rule-2026-07-27`, Paul's STANDING RULE 2026-07-27; see the [[glass-box]] actor)
+### Everything runs through the GLASS BOX (`glassbox-everything-rule-2026-07-27`, Paul's STANDING RULE 2026-07-27; see the GLASS BOX event stream actor)
 
 - Paul's STANDING RULE, given 2026-07-27: **everything runs through the Glass Box.** Any process (collector, restore, audit, pipeline stage, background watcher) must emit progress to the shared stream at `C:\Users\pgoff\.claude\glassbox\events`. A job that runs without emitting there is not acceptable, even if it works.
 - **Why:** he cannot supervise what he cannot see. Two separate failures on 2026-07-27 came from invisible work: the R full-text collector wrote events only to `<out_dir>/events` (so the viewer, which polls the shared directory, showed nothing despite the lane being correctly tagged `lane: codex`), and a OneDrive content restore ran for two hours with no emitter at all, which led the agent to misdiagnose an in-progress sync as permanent data loss.
@@ -198,7 +198,7 @@ Version history (newest governs):
   - Always verify what a viewer instance is actually reading: `Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'open_glassbox_process_matrix' }`.
 - Related: `desk-media-footprint-2026-07-16`, `codex-executor-lane-2026-07-18`.
 
-### RAM/memory-heavy work goes to the pod (`pod-for-memory-heavy-tasks-2026-09-30`, Paul 2026-09-30; the [[runpod-pod]] actor)
+### RAM/memory-heavy work goes to the pod (`pod-for-memory-heavy-tasks-2026-09-30`, Paul 2026-09-30; the RunPod math pod actor)
 
 - Paul, 2026-09-30, verbatim: "For tasks pertaining to Memory and RAM, shift over to the Pod, and go hard on it, meaning memory and Ram on there are not a constraint".
 - The pod then in use: H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume; SSH `root@<first-pod-host> -p <port>` (key location only). It runs any job limited by RAM or memory: model training, grids, large in-memory joins, bootstrap batteries. Do not downsample or cap memory there. Parallelise across fields and cores, and keep data in RAM.
@@ -218,7 +218,7 @@ Version history (newest governs):
 ### Never supervise a long job from an AI turn (`codex-overnight-poll-loop-burn-2026-09-13`, incident 2026-09-12/13)
 
 - **Incident (2026-09-12 23:29 -> 2026-09-13 10:58 local, Codex Desktop thread `01a098ce-d021-7d42-9383-5affc2a0bdfb`).** Paul asked for an end-to-end recurring congress.gov bills -> sponsors -> media -> Excel -> dashboard refresh that "triggers every time I open my laptop", and said explicitly: "No not an AI process, something in my windows, like a Python process." Codex built the right artifact (`fec/legislation/refresh_congress_pipeline.py` + `fec/daily_refresh.py` + two Windows scheduled tasks `MoneyballCongressRefresh` / `MoneyballDailyRefreshRetry`), then stayed in the loop itself: 542 empty `write_stdin({chars:"", yield_time_ms:30000})` polls on its own background shell (03:36Z -> 14:57Z), 280 `wait_agent` blocks, 4 spawned agents each doing the same, and 27 `approvals_reviewer: auto_review` guardian threads that made zero tool calls yet consumed ~59M tokens re-reading context. Session family total: 673,856,790 tokens (674M) across 32 rollout files; it burned the ENTIRE weekly Codex quota and ended with `usage_limit_exceeded`, next window 2026-09-19 23:50. Quota was already at 89% when the thread started. Nothing external re-invoked Codex: no scheduler, no wrapper, no `codex exec` loop; the Python code never calls OpenAI/Codex.
-- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: "that is unacceptable." Related: the brain's DE-018 (a Codex usage-limit error does not mean the subprocess stopped; inspect outputs before re-dispatching). Context for the refresh itself: [[2026-08-incident-refresh-automation-reliability]]; the Codex lane: [[codex-executor]].
+- **Why it matters:** the job was correct and Windows-owned; the waste was 100% supervision. Paul's verdict: "that is unacceptable." Related: the brain's DE-018 (a Codex usage-limit error does not mean the subprocess stopped; inspect outputs before re-dispatching). Context for the refresh itself: Refresh automation reliability; the Codex lane: [[codex-executor]].
 - **How to apply:**
   - A long-running Python job is finished when its receipt/status file says so, not when a model has watched it finish. Launch it detached (Task Scheduler, `Start-Process`), then use ONE Bash `run_in_background` `until` loop or one `Monitor` on the status file. Never a per-turn poll loop, never `wait`/`sleep` turns, never spawn helper agents to "watch".
   - Do not create Codex heartbeat automations as a scheduler. Three PAUSED heartbeats still exist in `C:\Users\pgoff\.codex\automations\` (`finish-collection-integrity-overnight` hourly, `finish-staffer-lda-reconciliation` every MINUTE, `legislation-acceptance-continuation` every 10 min); any of them flipping ACTIVE is a recurring burner. Flag, do not flip.
@@ -240,7 +240,7 @@ Version history (newest governs):
 
 - On 2026-09-24 (session 5ab381bb, r5 fix run), the agent sent SendMessage to two workflow subagents (fix2-men, fix2-mel) by their agent id. Both times the tool said "Resuming agent ...". It started a second copy from the transcript while the workflow's original kept running. The two fix2-mel copies then overwrote each other's apply scripts and logs in the same lane folder, and one LIVE apply was refused. The workflow never saw the wrap-up order, because its own agent ran on unchanged.
 - **Why:** workflow agents are not addressable mailboxes. A send to a live workflow agent id spawns a parallel resume, which doubles the writers on the same files. Paul's LIVE tree nearly got two concurrent applies.
-- **How to apply:** never SendMessage a workflow subagent that is still running. To change a running workflow's course, either stop it (TaskStop), then relaunch or finish with a fresh Agent that carries the new instruction, or wait for it to finish. Put coordination facts (for example a peer session's file list) into the NEXT agent's prompt, not into a message. SendMessage is fine for Agent-tool background agents and for other sessions (and, per `scout-census-traps-2026-09-13`, for resuming an agent killed by a session limit after the reset). Related: `go-faster-directive-2026-09-16`, `ui-finalize-after-reboot-2026-09-23`. Hazard for the [[claude-code-harness]].
+- **How to apply:** never SendMessage a workflow subagent that is still running. To change a running workflow's course, either stop it (TaskStop), then relaunch or finish with a fresh Agent that carries the new instruction, or wait for it to finish. Put coordination facts (for example a peer session's file list) into the NEXT agent's prompt, not into a message. SendMessage is fine for Agent-tool background agents and for other sessions (and, per `scout-census-traps-2026-09-13`, for resuming an agent killed by a session limit after the reset). Related: `go-faster-directive-2026-09-16`, `ui-finalize-after-reboot-2026-09-23`. Hazard for the Claude Code harness.
 
 ### Ambiguous company identity: use networked Codex (`codex-web-research-for-company-ambiguity`, Paul 2026-07-19)
 

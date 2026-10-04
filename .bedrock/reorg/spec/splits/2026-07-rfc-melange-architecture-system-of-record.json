@@ -1,0 +1,268 @@
+{
+  "id": "C9",
+  "what": "Batch 6 split of topics/2026-07-rfc-melange-architecture-system-of-record (plan .bedrock/reorg/plan.md Revision 4, section 3.2 C9); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-rfc-melange-architecture-system-of-record",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## History",
+      "## Decisions",
+      "## Next Steps"
+    ],
+    "links": [
+      "concepts/zero-rank-delta-verification",
+      "actors/melange-fec-pipeline",
+      "actors/moneyball-workbook"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-rfc-melange-architecture-system-of-record-refactor-and-inversion",
+      "title": "July refactor and the system-of-record inversion",
+      "summary": "The July 2026 refactor and the inversion of the system of record: what moved where, the phase-2 inversion, the audit S2 remedies, roadmap item 9 phase 1, the staff directory and desk CRM, and the audit runbook",
+      "domain": "domain/backend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Refactor of 2026-07-02: what moved where",
+        "## Phase 2: system of record inverted (commits 23c48ea + fd9f3d6)",
+        "## Audit S2 remedies (commit bf4a703, 2026-07-02 evening)",
+        "## Roadmap No. 9 Phase 1 (commit 279f5e5)",
+        "## Staff directory + desk CRM (commit eaefc2f)",
+        "## Audit runbook + weekly automation (commit 9adc4c1)"
+      ],
+      "keep": [
+        "concepts/zero-rank-delta-verification"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula",
+      "title": "Final model configuration and the committee-pillar formula",
+      "summary": "The final Moneyball model configuration as of 2026-06-30, pillar by pillar with the allocator, the engine constants, the press category weights and the superseded COM how-to, and the committee-pillar scoring formula of 2026-07-01",
+      "domain": "domain/backend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Final model configuration (as of 2026-06-30 eve, source `moneyball-model-config` dated 2026-07-02)",
+        "## Committee-pillar scoring formula (source `moneyball-committee-scoring`, reference, 2026-07-01)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest",
+      "title": "REORG phases, tripwires and lessons; the system manifest lane (08-04 to 09-06)",
+      "summary": "The REORG phases, tripwires and lessons of 2026-08-04/05, and the system manifest and sentinel lane of 2026-09-06",
+      "domain": "domain/backend",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## REORG: phases, tripwires and lessons (source `reorg-phase0-tripwires-2026-08-04`)",
+        "## System manifest + sentinel lane (2026-09-06, source `system-manifest-sentinel-lane-2026-09-06`; all UNCOMMITTED in the live tree)"
+      ],
+      "keep": [
+        "actors/sentinel-collectors"
+      ],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K23",
+      "a": "topics/2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest",
+      "b": "actors/melange-fec-pipeline-reorganization",
+      "event": "REORG"
+    },
+    {
+      "id": "K24",
+      "a": "topics/2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest",
+      "b": "topics/2026-07-feature-data-collection-lanes-sentinel-lanes",
+      "event": "system-manifest sentinel lane"
+    }
+  ],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 33,
+      "old": "- Architecture review: `ARCHITECTURE_REVIEW_2026-07-02.md`; user \"Proceed down list\". Refactor executed 2026-07-02, VERIFIED behavior-preserving (kernel tests 28/28 + pipeline + audit 50/50 + **zero rank delta** across 533 members); see [[zero-rank-delta-verification]].",
+      "mark": "external",
+      "why": "\"see [[zero-rank-delta-verification]]\" names another note"
+    },
+    {
+      "line": 35,
+      "old": "- Model dials of the pillar stack (weights, committee formula) are recorded below; the two axes the model distinguishes are in [[influence-vs-alignment-axes]]. Owner/decision authority: Paul Goff.",
+      "mark": "rewrite",
+      "why": "\"(weights, committee formula) are recorded below\" is ## Final model configuration (its pillar weights) and ## Committee-pillar scoring formula, which both move to -model-config-and-committee-formula",
+      "new": "- Model dials of the pillar stack (weights, committee formula) are recorded in [[2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula]]; the two axes the model distinguishes are in [[influence-vs-alignment-axes]]. Owner/decision authority: Paul Goff.",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula"
+    },
+    {
+      "line": 36,
+      "old": "- **Superseded guidance (resolution 5):** the June / 2026-07-02 guidance that workbook writes go through Excel COM (win32com, Excel must be closed, `run_pipeline.py [--recalc]` with recalc step) is SUPERSEDED by \"**NO COM anywhere**\" (Phase 2, see Decisions). The older text is kept as a dated struck-through entry because it explains older commits/artifacts (`.PRE-*` / `BACKUP-*` workbook copies, COM-written columns).",
+      "mark": "same note",
+      "why": "automatic mark signed off: \"(Phase 2, see Decisions)\" points at ## Decisions, which the hub keeps (its struck COM entry is the dated struck-through text the line describes)"
+    },
+    {
+      "line": 69,
+      "old": "| 2026-06-29 | Dashboard made phone-friendly (`@media(max-width:640px)` in `make_member_desk.py` + `make_dashboard_html.py`; SNA canvas touch pan/pinch/tap; phones default to the member desk, controller `innerWidth<=700`). Pillar weight sets oscillated all session (see Pillar weights). |",
+      "mark": "rewrite",
+      "why": "\"(see Pillar weights)\" in the 2026-06-29 History row is ### Pillar weights (resolution 3: ALL THREE sets ...) of ## Final model configuration, which moves to -model-config-and-committee-formula (the other candidate, the Decisions label, is a rule, not the weight record)",
+      "new": "| 2026-06-29 | Dashboard made phone-friendly (`@media(max-width:640px)` in `make_member_desk.py` + `make_dashboard_html.py`; SNA canvas touch pan/pinch/tap; phones default to the member desk, controller `innerWidth<=700`). Pillar weight sets oscillated all session (see Pillar weights in [[2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula]]). |",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula"
+    },
+    {
+      "line": 82,
+      "old": "- **`fec/paths.py` is the single path source** (env overrides `MONEYBALL_ROOT` + `MONEYBALL_DRAFT`, the Draft Systems R-pipeline root; see `draft-systems-r-pipeline`). 193 literals across 95 files replaced with `MB_ROOT` / `MB_DRAFT`; every fec script has a one-line bootstrap header (sys.path insert + import). Downloads one-shot refs left literal.",
+      "mark": "external",
+      "why": "\"see `draft-systems-r-pipeline`\" names another note"
+    },
+    {
+      "line": 88,
+      "old": "- **Pillar weights are the user's domain, never relabel as \"wrong\"** (see Pillar weights; also `press-classification-user-domain`).",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"(see Pillar weights; ...)\" names ### Pillar weights (resolution 3 ...), which moves to -model-config-and-committee-formula",
+      "new": "- **Pillar weights are the user's domain, never relabel as \"wrong\"** (see Pillar weights in [[2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula]]; also `press-classification-user-domain`).",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula"
+    },
+    {
+      "line": 95,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 103,
+      "old": "- [ ] Manifest lane: decide whether to lift the D-015 cap on sentinel hashing (see Manifest section); rule on the audit_full self-written pinned sentinels risk; real remedy for the 8 `A2b` failures = exclude chain outputs from sentinel duty; commit the uncommitted `:966` fix.",
+      "mark": "rewrite",
+      "why": "\"(see Manifest section)\" is ## System manifest + sentinel lane, which moves to -reorg-and-manifest",
+      "new": "- [ ] Manifest lane: decide whether to lift the D-015 cap on sentinel hashing (see Manifest section in [[2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest]]); rule on the audit_full self-written pinned sentinels risk; real remedy for the 8 `A2b` failures = exclude chain outputs from sentinel duty; commit the uncommitted `:966` fix.",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest"
+    },
+    {
+      "line": 106,
+      "old": "- [ ] Windows task `MoneyballWeeklyRefresh` (Sat 6:00 AM) next run 2026-08-09 was expected to end Last Result 1 while the crown-law failure stands.",
+      "mark": "not positional",
+      "why": "\"next run 2026-08-09\" is time"
+    },
+    {
+      "line": 115,
+      "old": "- **Verification protocol (canonical):** code change -> `python fec/tests/run_tests.py` (28) -> `python fec/run_pipeline.py` -> rank delta vs last `ranks_*.json` = ZERO (unless the change is SUPPOSED to move ranks) -> audit 50/50. See [[zero-rank-delta-verification]].",
+      "mark": "external",
+      "why": "\"See [[zero-rank-delta-verification]]\" names another note"
+    },
+    {
+      "line": 130,
+      "old": "(Later consequence: the pillar-inputs snapshot staleness is invisible until a recalc; see the 2026-07-16/17 Sub Layer repair in [[zero-rank-delta-verification]] and `pillar_inputs_snapshot` stale-warn >7d / audit FAIL >14d guards.)",
+      "mark": "external",
+      "why": "\"see the 2026-07-16/17 Sub Layer repair in [[zero-rank-delta-verification]]\" names another note; \"Later consequence\" is time"
+    },
+    {
+      "line": 134,
+      "old": "- **S2-01** bipartisanship = COSPONSOR-ONLY again (see Decisions; `BP_SRC=aug` restores).",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"(see Decisions; ...)\" is ## Decisions, which the hub keeps, while this line moves to -refactor-and-inversion",
+      "new": "- **S2-01** bipartisanship = COSPONSOR-ONLY again (see Decisions in [[2026-07-rfc-melange-architecture-system-of-record]]; `BP_SRC=aug` restores).",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record"
+    },
+    {
+      "line": 153,
+      "old": "- **Windows Task Scheduler task `MoneyballWeeklyRefresh`** (Sundays 06:00 at 2026-07-02; `schtasks /Delete /TN MoneyballWeeklyRefresh /F` to remove) runs `fec/weekly_refresh.py`: incremental CREC (14d) / CHRG (60d) -> big5 -> social edges -> network -> blend (Excel-lock tolerant) -> full pipeline + ALL dashboards -> rank-movement line, logging to `weekly_refresh.log`. Proof run 2026-07-02: all steps OK, 9 min total, rank movement 0/533. Manual-only collectors (Quorum exports, X/Truth keys, Bluesky discovery) stay outside unattended scope. `.gitignore` uses `.claude/*` (not `.claude/`) so `commands/` is versioned. (Updated by the REORG note: the task runs Sat 6:00 AM as of 2026-08-05; see below.)",
+      "mark": "rewrite",
+      "why": "\"(Updated by the REORG note: the task runs Sat 6:00 AM as of 2026-08-05; see below.)\" is the WEEKLY REFRESH bullet of ### Post-completion in ## REORG: phases, tripwires and lessons, which moves to -reorg-and-manifest",
+      "new": "- **Windows Task Scheduler task `MoneyballWeeklyRefresh`** (Sundays 06:00 at 2026-07-02; `schtasks /Delete /TN MoneyballWeeklyRefresh /F` to remove) runs `fec/weekly_refresh.py`: incremental CREC (14d) / CHRG (60d) -> big5 -> social edges -> network -> blend (Excel-lock tolerant) -> full pipeline + ALL dashboards -> rank-movement line, logging to `weekly_refresh.log`. Proof run 2026-07-02: all steps OK, 9 min total, rank movement 0/533. Manual-only collectors (Quorum exports, X/Truth keys, Bluesky discovery) stay outside unattended scope. `.gitignore` uses `.claude/*` (not `.claude/`) so `commands/` is versioned. (Updated by the REORG note: the task runs Sat 6:00 AM as of 2026-08-05; see [[2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest]].)",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest"
+    },
+    {
+      "line": 159,
+      "old": "State: the user rewound to the 6/29 10AM version, then rebuilt with the bug fixes below.",
+      "mark": "same note",
+      "why": "\"rebuilt with the bug fixes below\" is the fixes recorded in the ### sections of ## Final model configuration that follow, which move whole to -model-config-and-committee-formula"
+    },
+    {
+      "line": 185,
+      "old": "Leg-stance gating is ON (2026-06-30 eve, `fec/apply_leg_stance.py`): Blended Model col D overridden with static stance-signed leg raw = Sum IMP[topic] x activity x stanceMult; opponents go NEGATIVE (verified AOC -2.6, Welch -5.6, Marshall -5.9 -> bottom-decile Leg%), allies positive (Roger Williams +17). Reads `category_stance.json` (6/26, == Category Stance sheet, user-confirmed 2026-06-30). Was previously OFF (activity-only `=R&A!D`, un-gated). The `Legislative Score - Normalized` sheet is a FROZEN curated snapshot.",
+      "mark": "not positional",
+      "why": "\"Was previously OFF\" is time"
+    },
+    {
+      "line": 198,
+      "old": "**Durable code:** `apply_press_dedup.py` (own-domain attribution filter), `apply_raw_max_norm.py` (press + committee raw/max), `apply_committee_fix.py` (CMTEFIX), `apply_leg_stance.py`. See `2026-06-feature-cu-stance-and-sentiment` for the stance side of the press pillar.",
+      "mark": "external",
+      "why": "\"See `2026-06-feature-cu-stance-and-sentiment`\" names another note"
+    },
+    {
+      "line": 216,
+      "old": "Responsive: `@media(max-width:640px)` in `make_member_desk.py` + `make_dashboard_html.py`; SNA canvas has touch pan / pinch / tap (was mouse-only); phones default to the member desk (controller `innerWidth<=700`). Mobile SNA is graph-first: `#left` (stats / budget / optimizer) hidden, canvas ~66vh on top, `#right` member details below (auto-scrolls into view on node tap). GOTCHA: `make_combined.scope_sna()` scopes SNA CSS under `#app-network` and is now `@media`-aware (it used to destroy `@media` blocks by split-on-`}`, silently killing the network's mobile CSS in the combined file). To preview: `.claude/launch.json` serves the dir; load `/Moneyball.html`, resize to mobile.",
+      "mark": "not positional",
+      "why": "\"`#right` member details below\" is the phone layout (the batch-5 B6 line 164 precedent)"
+    },
+    {
+      "line": 232,
+      "old": "- Reconciliation with the 2026-06-30 multipliers above (inference, not stated in either source): applying the user's x1.5 to Chair and Ranking turns Chair 2 / 5 into 3.0 / 7.5 and Ranking 4/3 / 3 into 2.0 / 4.5 while Vice stays 1 / 2, matching the \"as of 2026-06-30\" list; the x2 / x5 / x4/3 / x3 set is the pre-x1.5 validation base.",
+      "mark": "same note",
+      "why": "\"the 2026-06-30 multipliers above\" are the leadership multipliers of ### Committee pillar (score as of 2026-06-30) in ## Final model configuration, which precedes ## Committee-pillar scoring formula in -model-config-and-committee-formula"
+    },
+    {
+      "line": 234,
+      "old": "**Flows into the model via LIVE formulas** (edit only Committee Data, then recalc): `Committee Data`!B -> `Rank & Allocation`!E (`=IFERROR(INDEX('Committee Data'!$B$2:$B$320,MATCH(name,...)),0)`) -> `Blended Model`!E -> col L Committee% / col Q Influence pillar -> col R Influence% -> Score. So recomputing B auto-propagates to Score / Rank. To change chair / ranking weight or a committee's tier: edit the multipliers / the `Seats held` tier text, recompute B / C / D with the scorer, write back, recalc (under the no-COM regime the recalc happens when the user opens Excel, `fullCalcOnLoad`, and the pillar snapshot refreshes). Validator + scorer: session scratchpad `cmte_validate.py` (2026-06-30). See `moneyball-model-config`.",
+      "mark": "external",
+      "why": "\"See `moneyball-model-config`\" names a memory file"
+    },
+    {
+      "line": 247,
+      "old": "**Legislation / culling lane DONE @5e87439: kernel 92 -> 131 passed / 0 failed, 56 s -> 75.8 s.** 39 of 59 registered. CORRECTION to an earlier claim: the orphans are NOT uniformly non-pytest (of 118 suites: 75 unittest, 25 self-running, **11 pytest**, 5 bare-tests-no-runner). Facts for the remaining ~63 orphans: `run_tests.py` now reads FOUR native verdict shapes (`N passed, M failed`; unittest `Ran N tests` + OK/FAILED; reflective `PASS <name>` lines; `N BILLSTATUS ... tests passed`) from stdout AND stderr; unrecognised verdict = FAILURE by design; **`fec` has NO `__init__.py`** (PEP 420 namespace package; suites using `from fec import ...` only work with the repo root on `sys.path`, 9 suites held on this); **settle vacuity by TRACING, never by AST** (3 fully vacuous + 1 at 6%: `article_cross_reference` defines 74 assertions and runs ZERO); snapshot method (git tag is NOT sufficient since `*.json` / `*.csv` are gitignored: add a manifest of sha256 < 8MB, size + mtime above, over repo root + fec + tests + BOTH `%LOCALAPPDATA%\\Melange\\*\\derived` roots, plus a physical copy of repo-root files < 2MB, ~48MB); all 59 ran with **0 mutations**, re-verified byte-identical twice. This lane is NOT in the chain: 57 of 59 cover non-chain producers (runs manually); coupling is indirect but real, since its artifacts are read by `audit_full.py`, which IS a chain step.",
+      "mark": "not positional",
+      "why": "\"size + mtime above\" is a size threshold; \"CORRECTION to an earlier claim\" is time"
+    },
+    {
+      "line": 259,
+      "old": "- Still open then: `fec\\tests\\test_primacy_tier.py` writes `source.json` into the repo root. Related: `lobbyview-integration-2026-07-31` (the lane this sits in), `verify-dont-infer-completion-2026-08-04` (verification lessons) and see [[2026-07-feature-data-collection-lanes]].",
+      "mark": "external",
+      "why": "\"see [[2026-07-feature-data-collection-lanes]]\" names another note"
+    },
+    {
+      "line": 271,
+      "old": "- Batch E @40cb28c (misc, per-file routing; `.mcp.json` REVERSED to root since Claude Code config is root-discovered). Phase 2 close-out @021bb9f (full chain green: `audit_full` 199/1 after regenerating `behavioral_dispositions.json`, whose `inputs_sha256` KEYS are layout-bound). Phase 3 pilot @0e19f1e: 17 leaf collectors -> `fec/collect/`; 8 excluded (7 static imports + `collect_govinfo_bill_xml_versions` via DYNAMIC `__import__` that static grep cannot see; the kernel gate caught it).",
+      "mark": "not positional",
+      "why": "\"static grep cannot see\" is a verb"
+    },
+    {
+      "line": 272,
+      "old": "- Phase 3 next sittings, in order: audit, district, stance, members, legislation, lobbying (late, most active), surfaces, core (last). Pilot recipe: exclude anything imported by outsiders, bump bootstrap `__file__` depth by one, update invocation sites (ps1 launchers, `weekly_refresh`, acceptance service), gate with kernel + the UNREGISTERED suites of that domain run directly.",
+      "mark": "not positional",
+      "why": "\"Phase 3 next sittings\" is time"
+    },
+    {
+      "line": 295,
+      "old": "- Attic candidates RESOLVED (Paul: \"attic those 3\"): see Decisions.",
+      "mark": "rewrite",
+      "why": "automatic mark signed off: \"see Decisions\" is ## Decisions (its Attic decision bullet), which the hub keeps, while this line moves to -reorg-and-manifest",
+      "new": "- Attic candidates RESOLVED (Paul: \"attic those 3\"): see Decisions in [[2026-07-rfc-melange-architecture-system-of-record]].",
+      "referent": "2026-07-rfc-melange-architecture-system-of-record"
+    },
+    {
+      "line": 298,
+      "old": "- **WEEKLY REFRESH**: Windows task `MoneyballWeeklyRefresh`, Sat 6:00 AM, invokes `fec/weekly_refresh.py` (still valid post-reorg). Last run 2026-08-02: all collectors + layers OK (tweets collected, `social_media.db` updated), ABORTED at the final FULL PIPELINE step on the culling-surface audit check; that cause has since been resolved by the promotion-era regens. The NEXT run (2026-08-09) will still end Last Result 1 while the pre-existing crown-law audit failure stands (`audit_full` 199/1); the refresh treats any `audit_full` failure as HARD FAILURE at its last step. Everything real completes; only the final gate reports red. Fix = resolve the crown-law workbook stance column mismatch (Paul's domain, separately tracked).",
+      "mark": "not positional",
+      "why": "\"The NEXT run (2026-08-09)\" is time"
+    },
+    {
+      "line": 303,
+      "old": "- **The `:966` dedup defect is FIXED.** `fec/audit/build_system_manifest.py:966` appended `newest_file` with no membership test against `top`; because `pick_sentinels` truncates `by_size` to `SENTINEL_COUNT` at `:1073` *before* the `seen` dedup at `:1090`, a file that was both largest and newest ate a slot and evicted the true third-largest. The fix adds `and newest_file[0] not in {t[0] for t in top}` (rows are `(rel, size, mtime)`). Blast radius was **3 stores, not the 2 the brain listed**: `mdata.bicam_zips` 2 -> 3, `mdata.bicam_extracted` 2 -> 3, `repo.data_district` 2 -> 3. **`mdata.residual` was NOT affected** (it has 4 rows; that entry in the old note is stale). The worktree copy of the producer still carries the defect. See [[sentinel-collectors]] for the sentinel-workbook side.",
+      "mark": "external",
+      "why": "\"See [[sentinel-collectors]]\" names another note"
+    },
+    {
+      "line": 306,
+      "old": "- **Live-regen then live-audit is NOT the DE-012 vacuous pass.** `system_manifest_check.py:8-13` refuses any manifest that does not predate the checking process and asserts the producer is absent from `sys.modules`. But 582/0 straight after a regen is over-fit by construction (A2 / A2b cannot fail when the manifest is 78 s old). The meaningful test is the next chain-terminal audit.",
+      "mark": "not positional",
+      "why": "\"the next chain-terminal audit\" is time"
+    }
+  ]
+}

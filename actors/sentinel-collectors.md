@@ -26,8 +26,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sentinel-collectors-lane-2026-09-01.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sentinel-collectors-lane-2026-09-01.md", sha256: "2a3947e9515ff137189392290aee180dfb3877f38aaa8de4d5f4839b0011f3ea"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -49,7 +49,7 @@ tags: ["type/actor", "status/active", "domain/data"]
 ## Dependencies
 
 - **Depends on:** the Melange refresh chain and scheduler [[melange-refresh-scheduler]] (`MoneyballWeeklyRefresh`, Sun 06:00; both schedulers Disabled at the 2026-09-02 production hold, `MoneyballWeeklyRefresh` ENABLED 2026-09-04 after Paul's "Apply, Pass all, enable"); the FEC/legislation pipeline [[melange-fec-pipeline]] (`fec/` tree, `sync_sentinel_bill_ledger.py`, `build_archive_legislative.py`, `compute_pillars`); Congress.gov scrape (6-hour); the Codex runtime cache `~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/` (`@oai/artifact-tool`, Playwright; created 09-03 21:43) pinned via `data/engine/artifact_tool_runtime.json`; the speech lane (`build_descriptive_speech.py`, `canonical_source_lineage_v1.receipt.json`).
-- **Depended on by:** the legislative pillar [[2026-07-feature-legislative-pillar-acu-review]] (contract-gated), the system-of-record architecture [[2026-07-rfc-melange-architecture-system-of-record]], the dashboard publish step (`publish_dashboard.py`), stance cells (`archive_leg` feeds stance, not ranks), hearing antagonism (`hearing_antagonism_build.py`), press stream (`press_stream.py`), the Mentat/Melange project [[melange-systems]].
+- **Depended on by:** the legislative pillar [[2026-07-feature-legislative-pillar-acu-review]] (contract-gated), the system-of-record architecture Melange architecture and system of record, the dashboard publish step (`publish_dashboard.py`), stance cells (`archive_leg` feeds stance, not ranks), hearing antagonism (`hearing_antagonism_build.py`), press stream (`press_stream.py`), the Mentat/Melange project [[melange-systems]].
 - **External:** Codex/ChatGPT app (ChatGPT.exe polls `git status` on the live tree continuously), Codex MCP threads, Windows Task Scheduler.
 - Lane context and full chronicle: [[2026-07-feature-data-collection-lanes]].
 
@@ -132,11 +132,18 @@ diff --strip-trailing-cr <live fec/> <main fec/>              # Codex flipped li
 - [[melange-fec-pipeline]] - Melange Systems fec/ Python pipeline: paths.py, moneyball_core, run_pipeline chain, compute_pillars rank authority, kernel tests, live_patch
 - [[melange-refresh-scheduler]] - Unattended Melange refresh jobs: weekly refresh, congress daily chain, report email; weekly not COMPLETE since 2026-07-19
 
+## Related Concepts
+
+- [[fail-closed-gates]] — When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
+
 ## Related Topics
 
 - [[2026-07-feature-data-collection-lanes]] - Melange data-collection lanes: demographics, FEC precognition, LobbyView/LDA, contact inference, Sentinel press/hearing and bills
 - [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
-- [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
+- Melange architecture and system of record - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
+- [[2026-07-feature-legislative-pillar-acu-review-cosponsor-forecaster]] — The bill-lobbying regression lane of 2026-09-04: Paul's ask to make the cosponsor forecaster self-updating, the finding that it is already a ridge logistic model, and the BILLSTATUS bulk refresh and hash-gated forecaster step applied to the live tree.
+- [[2026-07-feature-data-collection-lanes-sentinel-lanes]] — The September 2026 sentinel lanes: the press and hearing collector repair of 09-01/02, the workbook bill ingestion of 09-04/05 and the system manifest sentinel of 09-06.
+- [[2026-07-rfc-melange-architecture-system-of-record-reorg-and-manifest]] — The REORG phases, tripwires and lessons of 2026-08-04/05, and the system manifest and sentinel lane of 2026-09-06.
 
 ## Related Projects
 

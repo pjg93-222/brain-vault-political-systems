@@ -5,15 +5,15 @@ aliases: ["rank = influence, stance = alignment"]
 description: "Moneyball modeling principle (2026-06-29, cost many rounds): rank measures INFLUENCE while per-category stance measures ALIGNMENT; keep them as separate axes so active opponents can rank on influence while the stance layer and optimizer filter friend/foe, and undervalued underdogs surface in the separate undervaluation/efficiency view."
 related_to:
   - "[[2026-06-feature-melange-dashboard-ui-evolution]]"
-  - "[[2026-07-rfc-melange-architecture-system-of-record]]"
+  - "2026-07-rfc-melange-architecture-system-of-record"
   - "[[melange-dashboard]]"
   - "[[melange-systems]]"
   - "[[moneyball-workbook]]"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-model-config.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-model-config.md", sha256: "c03f7392e0186530056021fc752ad16ceccc0d652f6af1457ed31447e9527056"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_member_desk_integration.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_member_desk_integration.md", sha256: "77b0312aa6bcd56f96361ddcdb9e881aafc90eae83297e75efeadeccfda060e2"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -98,5 +98,11 @@ Weight choice is Paul's domain: do NOT relabel his choices as "wrong" (see `pres
 - [[melange-dashboard]] - Moneyball.html: the single Melange dashboard deliverable (network, member desk, industry boards, staffer network).
 - [[moneyball-workbook]] - Excel CU-influence model: 4-pillar percentile-rank blend over 533 members; now a VIEW of ranks_python.json (the rank authority).
 - [[2026-06-feature-melange-dashboard-ui-evolution]] - Melange dashboard UI history: capstone, member desk, retheme, simplification, plain-language pass, Members Section lane.
-- [[2026-07-rfc-melange-architecture-system-of-record]] - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
+- Melange architecture and system of record - Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified).
+
+## Related Concepts
+
+- [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept.
+- [[say-do-gate]] — A member is shown as Champion or Defender in a category only if the stated stance is backed by a costly signal there: an authored or original-cosponsored bill (Path A, the 2026-07-07 Rule A) or, since 2026-07-08, a recorded CU-aligned final-passage vote (Path V) or a Chair or Ranking seat on a committee of jurisdiction over a gatekeep category (Path J); otherwise the cell displays Ally.

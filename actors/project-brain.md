@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -43,7 +43,7 @@ tags: ["type/actor", "status/active", "domain/platform"]
 
 ## Dependencies
 
-- Serves [[melange-systems]] (the `melange-systems-brain` is seeded and boots via CLAUDE.md) and the parent topic [[2026-07-feature-agent-tooling-stack]].
+- Serves [[melange-systems]] (the `melange-systems-brain` is seeded and boots via CLAUDE.md) and the parent topic Agent tooling stack.
 - Depends on: the framework document `boot-protocol-framework.md` (copy lives in the repo), git, Python, the mirror bare repos at `C:\Users\pgoff\GitMirrors\<name>.git` (outside OneDrive, beside the Melange and glassbox-runtime mirrors), and OneDrive/Carbonite for backup (Carbonite coverage of the four new folders is Paul's to confirm).
 - Codex lane coupling: the Codex receipt-omission class (5-for-the-day on 2026-08-11) led to the receipt-first preamble amendment; related memory `universal-lane-laws-2026-08-09`.
 
@@ -91,9 +91,14 @@ python brainctl.py off <folder>     # remove only the managed block
 | 2026-09-19 | MIRRORED (Paul: "set up the brain mirror", brain D-058): the toolkit and all three brains (`melange-systems-brain`, `folder-brain`, `pilot-brain`) each have remote `mirror` -> `C:\Users\pgoff\GitMirrors\<name>.git` (toolkit = `project-brain.git`), bare, outside OneDrive. Verified: heads equal and fsck clean on all four, and a live brainctl commit moved the mirror's master by itself. |
 | 2026-09-30 / 2026-10-01 | QME lane appends brain entries: D-070 to D-074 / DE-051 to DE-053 (F6 recovery), D-075 to D-081 and DE-054/055 committed as 02de571 (outcomes PENDING). |
 
+## Related Actors
+
+- [[brain-vault-political-systems]] - Separate Obsidian + Bedrock knowledge vault (not the brainctl toolkit); the two "brain" systems are distinct
+
 ## Related Topics
 
-- [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- Agent tooling stack - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
+- [[2026-07-feature-agent-tooling-stack-project-brain-toolkit]] — The Project Brain toolkit: durable per-project memory for disposable AI sessions, where since Paul's 2026-08-12 override (brain D-006) Claude may run brainctl and commit brain entries directly; the draft-only rule is retired.
 
 ## Related Projects
 

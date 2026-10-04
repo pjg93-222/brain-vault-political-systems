@@ -22,15 +22,15 @@ related_topics:
 related_actors:
   - "[[melange-dashboard]]"
 related_people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 related_projects:
   - "[[melange-systems]]"
 related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-coalition-builder-redesign-2026-07-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-coalition-builder-redesign-2026-07-30.md", sha256: "6de9c3e1f37e948cdca7a5c0f740343e3fe9eef844666fac95fec4e666753b26"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -42,13 +42,13 @@ tags: ["type/discussion", "domain/data"]
 
 - Date: 2026-07-30 (source file last modified 2026-08-01). Held in worktree `melange-coalition-builder-design-7babbe`. NOTHING implemented at session time: the `ask-before-substantive-changes` gate was pending. Method: 9-agent ultracode research + 2 critics; per-agent reports in the session scratchpad.
 - Subject: the coalition builder on the dashboard / member desk ([[melange-dashboard]]); the engine layer it reads is part of [[melange-systems]]; the longer engine record is the topic [[2026-07-feature-influence-engine-internals]].
-- Paul ([[paul-goff]]) asked the lead question: where should the graph live (static vs live)?
+- Paul (Paul Goff) asked the lead question: where should the graph live (static vs live)?
 
 ## Participants
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Discussed Actors
 
@@ -63,6 +63,7 @@ tags: ["type/discussion", "domain/data"]
 ## Related Topics
 
 - [[2026-07-feature-influence-engine-internals]] - July 2026 influence-engine layers: salience/SNA, receptivity (PERSONA_W 0.30), GATE-2 and say-do gate, sub-layer fix, coalition builder
+- [[2026-07-feature-influence-engine-internals-coalition-builder]] — The coalition-builder redesign and implementation of 2026-07-30 to 08-01, as recorded for the influence engine.
 
 ## Conclusions
 
@@ -98,7 +99,7 @@ tags: ["type/discussion", "domain/data"]
 
 ## Action Items
 
-- [ ] Paul's APPLY ruling on the design verdicts (gate `ask-before-substantive-changes`) (owner: Paul, [[paul-goff]]) (status at session: pending; implementation began on his go 2026-07-30/31, see below)
+- [ ] Paul's APPLY ruling on the design verdicts (gate `ask-before-substantive-changes`) (owner: Paul, Paul Goff) (status at session: pending; implementation began on his go 2026-07-30/31, see below)
 - [ ] Merge main first, step 0 (owner: coordinator / implementation lane; done on the session branch @2aea383 by 2026-07-31)
 - [ ] Add `primacy_factors.json` read + bundle fields (factor_ranked, qualified-at-build vs `PRIMACY_MIN_CUPRIM`, tier_detail) (owner: implementation lane)
 - [ ] Measure `cu_press_stance_tone.csv` categories fill-rate before the P6 CFPB mute (T7) (owner: implementation lane)

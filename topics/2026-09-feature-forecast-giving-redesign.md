@@ -5,19 +5,19 @@ aliases: ["Forecast audit, giving-view redesign and PAC accuracy"]
 category: "feature"
 status: "in-progress"
 people:
-  - "[[paul-goff]]"
+  - "paul-goff"
 actors:
-  - "[[glass-box]]"
+  - "glass-box"
   - "[[mentat-console]]"
-  - "[[runpod-pod]]"
+  - "runpod-pod"
 objective: "Make the Mentat console forecasts both look better and be right: audit the three forecasts and their regressions, rebuild the giving view as board F2 'Giving by cycle' with projections checked for logical validity against the test results, and refine PAC-to-candidate giving accuracy (attempt 2, HOLD, UT-X sealed)."
 created_at: 2026-09-29
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "e86a3ffa346737c317992a3510f25a8d3430b833077ad8b3eb615faa53be2bb8"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "89d010b300fa8907c87ea70a53067bc75410687e7e5c6cbed1c0e493912232b3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "320afff4a5fabfd67d9f4db59835885458211ec89b63ac75655e91a19b3a0da3"}
-updated_at: 2026-10-03
-updated_by: "import@agent"
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -36,7 +36,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 **Why this is one topic.** The audit established that the model's regressions are sound and the screens mostly genuine; the redesign asked Paul's question "make sure the projections are logically valid and in line with the test results"; the PAC accuracy attempt tries to improve how well PAC-to-candidate giving is predicted, under single-look holdout rules ([[single-look-holdout-discipline]]). Program-level tracking lives in [[forecast-redesign]]; the two 2026-10-03 ruling rounds are in [[2026-10-03-pac-accuracy-attempt2-rulings]].
 
-**Systems touched.** The Mentat console ([[mentat-console]], product project [[mentat]]); heavy compute was moved to the RunPod pod ([[runpod-pod]]) and then brought back out (see History); progress is watched through [[glass-box]]. Work is directed by [[paul-goff]].
+**Systems touched.** The Mentat console ([[mentat-console]], product project Mentat (FEC contributions intelligence)); heavy compute was moved to the RunPod pod (RunPod math pod) and then brought back out (see History); progress is watched through GLASS BOX event stream. Work is directed by Paul Goff.
 
 **Hard constraints that run through the whole topic.**
 - Classifier behavior: writes into untracked Mentat files are blocked ("Irreversible Local Destruction"); commits are blocked ("Modify Shared Resources"). Route = scratch + `copy_back` / commit kits that Paul runs.
@@ -49,20 +49,20 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 
 | Person | Role |
 |---|---|
-| [[paul-goff]] | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 
 | Actor | Relation |
 |---|---|
-| [[glass-box]] | Shared GLASS BOX event stream/viewer for all lanes; every process must emit; a hung lane console blocks metaloop starts. |
+| GLASS BOX event stream | Shared GLASS BOX event stream/viewer for all lanes; every process must emit; a hung lane console blocks metaloop starts. |
 | [[mentat-console]] | Local Python web console for Mentat: Chart Studio, Graph, Insights, PAC evidence and maps; Paul on 8806, read-only 8812. |
-| [[runpod-pod]] | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
+| RunPod math pod | RunPod H200 pod for memory-heavy jobs within Paul-approved data scope; never stop the pod; cleanup is Paul's. |
 
 ## Related Projects
 
 - [[forecast-redesign]] - Mentat forecasting program: 09-29 model audit, F2 'Giving by cycle' redesign with integrity reconciliation, PAC accuracy attempt 2 (HOLD).
-- [[mentat]] - R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
+- Mentat (FEC contributions intelligence) - R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
 
 ## Related Concepts
 
