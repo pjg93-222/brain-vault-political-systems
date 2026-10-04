@@ -24,7 +24,7 @@ const check = (name: string, ok: boolean, detail = "") => {
 // --------------------------------------------------------------------------------------------------------- prompts
 export const ON_TOPIC: [string, string][] = [
   ["Why did the Mentat collector count trade association donations as $0, and how did we fix the attribution?", "topics/2026-07-bugfix-mentat-collection-and-attribution-audit-r12-trade-association.md"],
-  ["The congress R scraper keeps failing on member press release pages; what fallbacks did we set up?", "topics/2026-06-feature-congress-r-scrapers.md"],
+  ["The congress R scraper keeps failing on member press release pages; what fallbacks did we set up?", "topics/2026-06-feature-congress-r-scrapers-cu-press-scraper.md"],
   ["How are the personality psychometrics scores computed for members of Congress?", "topics/2026-07-feature-personality-psychometrics.md"],
   ["What did Paul rule about PAC accuracy in attempt 2?", "discussions/2026-10-03-pac-accuracy-attempt2-rulings.md"],
   ["Is the brain graph watcher running, and how does it rebuild the graph page?", "actors/brain-graph.md"],

@@ -147,6 +147,9 @@ Where the label template lives: the CU press sentiment/stance R pipeline and its
 
 - [[2026-06-feature-congress-r-scrapers]] - June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
+- [[2026-06-feature-congress-r-scrapers-stage5-debate-lsd]] — The Stage 5 overhaul of 2026-06-21 to 06-24 that replaced regex scoring with Political DEBATE stance and Lexicoder LSD tone: design, environment constraints, validation, the fine-tuned base model, the deliverable change and the full-corpus deploy.
+- [[2026-06-feature-cu-stance-and-sentiment-stance-stack-design-and-accuracy]] — How the CU stance stack was designed and made accurate: sign-flip directionality fixes, the 2026-07-01 data audit, the two-hop stance stacks of the 07-04 campaign, the lt_priming integrity gates and the Kim position-classification benchmark.
+- [[2026-06-feature-cu-stance-and-sentiment-june-stage5-template-and-cfpb-split]] — June 2026 stance work: the labeling template and re-run recipe, the CFPB directional split in the workbook, and the Stage 5 overhaul and deploy.
 
 ## Related Projects
 

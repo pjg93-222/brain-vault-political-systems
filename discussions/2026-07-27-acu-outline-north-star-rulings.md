@@ -57,6 +57,7 @@ Rulings given by Paul on 2026-07-27 (evening; source memory last modified 2026-0
 ## Related Topics
 
 - [[2026-07-feature-legislative-pillar-acu-review]] - Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast
+- [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] — legfix5 of 2026-07-27: the six-year full-text collection, the GovInfo official-text lane and culling engine, and the acu-outline rulings carried into it.
 
 ## Conclusions
 

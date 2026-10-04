@@ -1,0 +1,253 @@
+{
+  "id": "B8",
+  "what": "Batch 5 split of topics/2026-07-feature-influence-engine-internals (plan .bedrock/reorg/plan.md Revision 4, section 3.2 B8); read by .bedrock/reorg/split.ts (A.7).",
+  "parent": "topics/2026-07-feature-influence-engine-internals",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Topics",
+      "## Related Discussions",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Weights ledger (pillar weights, three sets with status)",
+      "## Source sessions"
+    ],
+    "links": [
+      "discussions/2026-07-30-coalition-builder-redesign-session",
+      "concepts/say-do-gate",
+      "concepts/single-look-holdout-discipline"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-07-feature-influence-engine-internals-salience-sna-wave",
+      "title": "Six-paper salience and press-SNA wave (07-01)",
+      "summary": "The six-paper salience and press-SNA wave of 2026-07-01 in the influence engine, including the media blend that went live on 2026-07-02",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## 2026-07-01: six-paper salience / SNA wave"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-influence-engine-internals-receptivity-layer",
+      "title": "Receptivity layer (07-02 to 07-08)",
+      "summary": "The receptivity layer of the influence engine (2026-07-02 to 07-08): the original build, the hearing-transcript corpus, social edges, the 07-03 upgrades and campaign, and the N-channel exploration",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Receptivity layer (2026-07-02 to 2026-07-08; source `moneyball-receptivity-layer`, file date 2026-07-10)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-influence-engine-internals-gate2-and-say-do",
+      "title": "GATE-2, C retest, improvement rounds, say-do gate and pillar weights",
+      "summary": "GATE-2 of 2026-07-07/08 in the influence engine, the C retest, the improvement rounds, the say-do gate and the pillar weights set in that session",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## 2026-07-07/08: GATE-2, C retest, improvement rounds, say-do gate, pillar weights (source `moneyball-2026-07-07-gate2-round1`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery",
+      "title": "ChatGPT lane landing and the Sub Layer surgery (07-16/17)",
+      "summary": "The ChatGPT laundry-list lane landing of 2026-07-16 and the Sub Layer off-by-one surgery of 2026-07-16/17, as recorded for the influence engine",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## 2026-07-16: ChatGPT (laundry-list) lane landed (source `chatgpt-lane-landed-2026-07-16`)",
+        "## 2026-07-16/17: Sub Layer off-by-one surgery (source `sublayer-surgery-2026-07-17`)"
+      ],
+      "keep": [
+        "concepts/zero-rank-delta-verification"
+      ],
+      "pointers": []
+    },
+    {
+      "slug": "2026-07-feature-influence-engine-internals-coalition-builder",
+      "title": "Coalition-builder redesign and implementation (07-30 to 08-01)",
+      "summary": "The coalition-builder redesign and implementation of 2026-07-30 to 08-01, as recorded for the influence engine",
+      "domain": "domain/data",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## 2026-07-30 to 2026-08-01: coalition-builder redesign and implementation (source `melange-coalition-builder-redesign-2026-07-30`, file last modified 2026-08-01)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [
+    {
+      "id": "K18",
+      "a": "topics/2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery",
+      "b": "actors/moneyball-workbook-rules-scoring-and-sublayer-surgery",
+      "event": "Sub Layer surgery"
+    }
+  ],
+  "relations": [
+    {
+      "id": "D2",
+      "part": "topics/2026-07-feature-influence-engine-internals-coalition-builder",
+      "with": "discussions/2026-07-30-coalition-builder-redesign-session"
+    }
+  ],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 33,
+      "old": "- **System of record changed in Phase 2** (after the period covered by these July sources): `ranks_python.json` is the authority, the workbook is a view, and there is NO COM anywhere. Every July statement below about Excel COM recalcs (for example `CalculateFullRebuild`, the 2026-07-16 20:10 COM `CalculateFull`, `write_im_sheet.py`-style pushes) is historical and superseded by that rule (approved resolution 5); it is kept because it explains older commits and artifacts.",
+      "mark": "rewrite",
+      "why": "\"Every July statement below about Excel COM recalcs\": the COM statements are the hub's History row of 2026-07-16 (still below in the hub), the MEDIA BLEND record's CalculateFullRebuild recalc (-salience-sna-wave) and the 20:10 COM CalculateFull and 20:12 recalc of the ChatGPT lane and Sub Layer surgery (-chatgpt-lane-and-sublayer-surgery); below stays and both parts are added (S10 \"below and in [[a]]\")",
+      "new": "- **System of record changed in Phase 2** (after the period covered by these July sources): `ranks_python.json` is the authority, the workbook is a view, and there is NO COM anywhere. Every July statement below and in [[2026-07-feature-influence-engine-internals-salience-sna-wave]] and [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] about Excel COM recalcs (for example `CalculateFullRebuild`, the 2026-07-16 20:10 COM `CalculateFull`, `write_im_sheet.py`-style pushes) is historical and superseded by that rule (approved resolution 5); it is kept because it explains older commits and artifacts.",
+      "referent": "2026-07-feature-influence-engine-internals-salience-sna-wave, 2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery"
+    },
+    {
+      "line": 34,
+      "old": "- Two firewalls recur through the whole topic: the **rank-neutral rule** (engine/receptivity/display changes must NOT move ranks; verified each time by the chain, see [[zero-rank-delta-verification]]) and the **one-look pre-registered gate discipline** (each pre-registered test gets exactly one look, never re-run; see [[single-look-holdout-discipline]]).",
+      "mark": "external",
+      "why": "both \"see\" phrases name other notes ([[zero-rank-delta-verification]], [[single-look-holdout-discipline]])"
+    },
+    {
+      "line": 83,
+      "old": "| 2026-07-30 | Coalition-builder redesign session (worktree `melange-coalition-builder-design-7babbe`, nothing implemented): see [[2026-07-30-coalition-builder-redesign-session]] |",
+      "mark": "external",
+      "why": "\"see [[2026-07-30-coalition-builder-redesign-session]]\" names the discussion note"
+    },
+    {
+      "line": 91,
+      "old": "- **Behavioral basis for susceptibility since 2026-07-04**: susc = .40 x coop + .30 x N - .20 x dil - .10 x dom; seed = coop/breadth/visibility; `RECEPT_TRAITS=lexical` reverts; N stays text. ~~susc_z = .40A + .30N - .20C - .10E from lexical Big5~~ (2026-07-02) - superseded 2026-07-04 (lexical Big5 indicted); kept because earlier commits use it.",
+      "mark": "not positional",
+      "why": "\"kept because earlier commits use it\" is time"
+    },
+    {
+      "line": 93,
+      "old": "- **Pillar weights**: see the Weights ledger below (three sets, last ratified = 30/25/40/5 on 2026-07-07; the live set 45/10/40/5 since 2026-09-03 is UNRATIFIED pending code-review S-5).",
+      "mark": "same note",
+      "why": "\"see the Weights ledger below\" names ## Weights ledger, which the hub keeps after Decisions and Next Steps, so it is still below"
+    },
+    {
+      "line": 102,
+      "old": "- **Agent coding/orchestration instruction at the time (2026-07-30/31, Paul): \"reason through fable, work through chatgpt 5.6 sol, extra high fast\"** (Codex executor lane). Scope: agent coding/orchestration; the newest model-tiering rule governs (as of 2026-10-01 code is written in Sonnet 5.5 at effort xhigh, Opus only reasons and reviews); this earlier instruction is kept as a dated bullet. The separate pipeline-API-call tiering rule (Fable only for the 533 paragraphs, Haiku elsewhere by default, escalate to Sonnet) is not touched by this.",
+      "mark": "not positional",
+      "why": "\"this earlier instruction\" is time (the 2026-07-30/31 instruction, older than the 2026-10-01 rule)"
+    },
+    {
+      "line": 107,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading ## Next Steps"
+    },
+    {
+      "line": 114,
+      "old": "- [ ] Paul to populate `fec/retiring_members.txt` (hook; was empty, later 3 entries).",
+      "mark": "not positional",
+      "why": "\"was empty, later 3 entries\" is time"
+    },
+    {
+      "line": 126,
+      "old": "The newest set must never be read as ratified. (June sets: see the June build topic's weights ledger.)",
+      "mark": "external",
+      "why": "\"see the June build topic's weights ledger\" names another note (the June Excel model build topic)"
+    },
+    {
+      "line": 146,
+      "old": "Press date range actually 2022-01..2026-06 (a lexicographic sort earlier misled; 244 NA dates). Open adoption decisions for the user: blend HCoI/engagement layers into the 9 cascade loaders? adjudicate the 307 imputation proposals? Related: `moneyball-data-audit-2026-07-01`, `moneyball-audit-2026-07-01`.",
+      "mark": "not positional",
+      "why": "\"a lexicographic sort earlier misled\" is time"
+    },
+    {
+      "line": 148,
+      "old": "**INTEGRATION WAVE (same day, later):** `build_multilayer_network.py` writes `congress_cosponsor_network_AUG*.xlsx` (matches the loader glob so it is live everywhere, REVERT = delete the file; original untouched). Cosponsor verbatim; engagement w = 6p/(1-p) cap 2.0; HCoI only isolated-incident (0.6 x r x 0.2). +55/+59 edges, 4/41 D4 members reconnected; FULL PIPELINE regenerated on the augmented graph, audit 40/40. Dashboard shows the advisory verdict (`engine.adv`); salience `--intensity auto` reads frame alignment. `stance_template_xval.py`: T1 kappa = 0.529 (70%; implicit-support to neutral n = 78 dominant error); T2xT3 priors consistent; T1xT4 comparison CIRCULAR (95/95 overlap rows are stance_src = human_label; do not cite human == DEBATE 100% as skill); S3 paraphrase set in `stance_template_variants.csv` (user edits). `tweet_collector.py` + `social_media.db`: NO collector existed before (Fink-era API dead); X adapter needs a paid `X_BEARER_TOKEN`; Bluesky keyless WORKS (smoke: 599 posts, 2 members); discover-bluesky auto-accepts only domain-verified handles, pattern hits tagged UNVERIFIED (surname-collision guard after the two-Smiths bug); 515/533 seeded, 502 X handles. Full discovery/fetch runs + unverified-handle confirmation = user's call.",
+      "mark": "not positional",
+      "why": "\"(same day, later)\" is time"
+    },
+    {
+      "line": 151,
+      "old": "- ICCK/TACS paper NOW VERIFIED from the PDF (Khan et al., Roman Urdu, agree/disagree/unrelated, RF 95% best classical, RoBERTa 97%, paired-input, augmentation/balancing); earlier memory claims were accurate.",
+      "mark": "not positional",
+      "why": "\"earlier memory claims\" is time"
+    },
+    {
+      "line": 159,
+      "old": "**QUORUM CORPUS (2026-07-01/02):** the user exported 45 Quorum files (1,000-row export cap; date-sliced). FIRST 16 = WRONG SEARCH (general politics, 0.2% CU terms; always verify hit rate before trusting an export). Corrected query saved in `quorum_query.txt` (comprehensive CU boolean, halves provided). Files 17-45 = corrected (83%+ CU hit rate). `Quorum Master.xlsx` = 43,038 rows (37.6k tweets, 5k FB, 6 Truth Social; Quorum tracks TS!). `fec/process_quorum.py` pipeline (user spec): true-dedup on Source+Content+Date ONLY (729 removed; 12,986 RTs PRESERVED = Fink signal); buckets: member 13.7k rows / 506 members (nickname aliases: Buddy Carter = Earl, Bobby Scott = Robert; accent-fold matching; delegates Plaskett/Radewagen correctly excluded), staffer 6.7k (5.1k principal-attributed, the user's aside asset), former_member 6k, candidate_nonmember 2k, org/committee/exec rest. 9,548 CU-relevant member posts SCORED with `stance_clf_composed.pkl`: 4,847 sup / 3,810 neu / 891 opp. Outputs: `Quorum Processed.xlsx` (4 sheets) + `quorum_member_tweets.csv`. Chronology: continuous 2022-02..2026-07, one zero week (election week 2022). NEXT (user decides): fold social signals into press pillar / stance_dynamics windows / RT-mention influence layer from tweet content / goldset augmentation with tweet-form labels.",
+      "mark": "not positional",
+      "why": "\"NEXT (user decides)\" is time: the open next steps"
+    },
+    {
+      "line": 198,
+      "old": "**2026-07-03 UPGRADE: Empath + fitted SMOreg ACTIVE (user-ratified, commit ac86bca; LIWC purchase skipped):** 8 content categories are now Empath unions (`fec/liwc/empath_categories.dic`, 1,006 terms; regen `build_empath_dic.py`, keep its SEED block in sync with big5_traits.CAT); trait weights now per-trait LinearSVR fitted on the essays corpus (`fit_smoreg_essays.py`; CV 53-58% = Mairesse band; weights `fec/liwc/mairesse_smoreg.json`, force-added past gitignore; `fec/liwc/essays.csv` = uncommitted download cache). Party-sign validation 3/5 to **4/5 OK** (v2 grid-fitted, 07-03 about 04:30: O +0.172 REV-but-shrinking, C +0.108, E -0.167, A -0.060, ES +0.478); v2 = per-trait (C, eps) CV grid + 8 extra Mairesse-space Empath features (money/relig/swear/leisure/body/health/death/sad; swear lowers A, death/money lower ES, which replicate the literature); essays CV up all traits (ES .586, O .584). Verified TWICE: pipeline 16/16, audit 52/52, **ranks 0/533** each migration; engine allocations legitimately shifted (IM top Tim Scott to Todd Young). The original 07-02 build above describes exemplar lists + published correlates (superseded but kept for provenance); `retiring_members.txt` now has 3 entries (no longer empty).",
+      "mark": "same note",
+      "why": "\"The original 07-02 build above\" is ### Original 2026-07-02 build (provenance; superseded in part ...), which moves with this ### to -receptivity-layer and stays above it"
+    },
+    {
+      "line": 214,
+      "old": "**2026-07-03 v6: SETTLED-CORPUS ACCURACY (@53cfa45, the headline number the campaign chased):** after CREC 6-yr backfill + 5-archive interview harvest (median tokens 5.5k to **14.4k**, lowconf 75 to 36, corpus 57k turns), re-ran `fit_smoreg_rkh`, promoted the O + ES refit, kept C/E/A. **Held-out CV vs RKH congressional ground truth: E .510, A .406, C .363, ES .258, O .214, MEAN r 0.350** (was 0.228 at v3). Landed in the projected 0.35-0.45 band; E .51 about acquaintance-level text-personality accuracy (the method-class ceiling). Weights = `mairesse_smoreg.json` (force-tracked past gitignore). Verified: big5 rebuilt, pipeline 0/533. Party-sign proxy now weak/mixed but DELIBERATELY overridden (RKH direct agreement outranks the party proxy; documented since v3). Next lever if pushed further: interviews still thin (192 members), LLM direct-rating ensemble, or per-Congress RKH late-era targets.",
+      "mark": "not positional",
+      "why": "\"Next lever if pushed further\" is time"
+    },
+    {
+      "line": 220,
+      "old": "2. The blind single-rater gold test (agency rho = +0.035, communion -0.245 n.s. at n = 30) sits far below B&L's own measurement floor: their 3 trained coders + codebook + consensus reached only alpha about .72 on an easier ternary task; one untrained rater on 1-9 holistic scales was predictably about zero.",
+      "mark": "not positional",
+      "why": "\"sits far below B&L's own measurement floor\" is a magnitude comparison"
+    },
+    {
+      "line": 223,
+      "old": "**Index-line detail (moved verbatim from MEMORY.md, 2026-07-10 compaction):** \"Receptivity layer 2026-07-02\": since 07-04 **BEHAVIORAL basis** (lexical Big5 indicted; susc = .40 x coop + .30 x N - .20 x dil - .10 x dom, seed = coop/breadth/visibility; `RECEPT_TRAITS=lexical` reverts; N stays text) x F&H incentive x prospect theory x contingency seeding; wired all engines, neutral-fallback; **PERSONA_W = 0.30 USER-RATIFIED KEEP (run-4i, do NOT propose removal): both null tests were scope-mismatched per the source papers (B&L construct = PROJECTED persona, disclaims intrinsic; single-rater gold below B&L's own alpha about .72 trained-multi-coder floor); construct-appropriate validations PASSED (18/18 functional gate, party-signature replication); reopens only on a failed 3+ rater panel to B&L standards**; standing instructions in the body (persona-homophily gate, SMOreg promotion rule).",
+      "mark": "not positional",
+      "why": "\"single-rater gold below B&L's own alpha\" is a magnitude comparison"
+    },
+    {
+      "line": 247,
+      "old": "- **Pillar weights changed by the user 2026-07-07: leg .30 / press .25 / inf .40 / demo .05** (workbook AB2-5 typed cells; backup PRE-WEIGHTS-20260707; 493/533 ranks shifted mildly; top-3 Crapo / Scott / Hill held). This is the **LAST RATIFIED** set (see Weights ledger; later 45/10/40/5 is live but UNRATIFIED). Boss tier notes: Hill to Ally SOLVED by the gate; **Crapo to Champion needs his blank Credit-Card-Mandates cell (evidence/override): OPEN**; **Velazquez CFPB = Opponent + CCM = True-Neutral RATIFIED CORRECT by the user 2026-07-08, label review CLOSED** (she reads rank #8, honest overall = Persuadable; the boss's Highly-Persuadable was never the honest stance; do not re-flag).",
+      "mark": "rewrite",
+      "why": "\"see Weights ledger\" names ## Weights ledger, which the hub keeps while this line moves to -gate2-and-say-do; \"later 45/10/40/5\" is time and stays",
+      "new": "- **Pillar weights changed by the user 2026-07-07: leg .30 / press .25 / inf .40 / demo .05** (workbook AB2-5 typed cells; backup PRE-WEIGHTS-20260707; 493/533 ranks shifted mildly; top-3 Crapo / Scott / Hill held). This is the **LAST RATIFIED** set (see Weights ledger in [[2026-07-feature-influence-engine-internals]]; later 45/10/40/5 is live but UNRATIFIED). Boss tier notes: Hill to Ally SOLVED by the gate; **Crapo to Champion needs his blank Credit-Card-Mandates cell (evidence/override): OPEN**; **Velazquez CFPB = Opponent + CCM = True-Neutral RATIFIED CORRECT by the user 2026-07-08, label review CLOSED** (she reads rank #8, honest overall = Persuadable; the boss's Highly-Persuadable was never the honest stance; do not re-flag).",
+      "referent": "2026-07-feature-influence-engine-internals"
+    },
+    {
+      "line": 264,
+      "old": "- **UPDATE 2026-07-17 morning: main FAST-FORWARDED e3d2923 to 7aa36d1 by Paul; merge debt zero; the live tree stays checked out on the cfpb branch (== main).** Later same-day commits (ebbee29 / 7853b56 / 9aa9677) continued and merged on that lineage; see `legislative-letters-2026-07-17` for the end state (main == live @9aa9677).",
+      "mark": "external",
+      "why": "\"see `legislative-letters-2026-07-17`\" names a memory file; \"Later same-day commits\" is time"
+    },
+    {
+      "line": 269,
+      "old": "- Fix @c6dc6b2 (cfpb branch): `fec/repair_sublayer_references.py` (--plan / --apply; plan = full 9,061-cell audit; apply = backup `PRE-SUBLAYER-REPAIR-20260717_010907.xlsx` + rewrite), then COM recalc, then chain. **PROOF: independent python re-derivation of the whole leg chain matches `compute_pillars` 533/533; rank delta 520/533 LEG-PILLAR-ONLY (press/inf/dem deltas exactly 0.0); audit ALL MODULES CLEAN; tier holds Barr #1 + all 17 placements.** Barr leg .897 to .994, Scott .765 to .914, CCM .778 to .936: Paul's intuition vindicated, the \"stale\" pre-recalc values were computed under the pre-07-15 ALIGNED layout and were closer to truth. (The COM recalc step is historical; superseded by Phase 2 \"NO COM anywhere\".) This fix is a zero-rank-delta-style verification case: see [[zero-rank-delta-verification]].",
+      "mark": "external",
+      "why": "\"see [[zero-rank-delta-verification]]\" names the concept note"
+    },
+    {
+      "line": 284,
+      "old": "**Position outcomes:** P1 static/dynamic AMEND (as above). P2 seeding SUSTAIN: seed-from-issue via gated-matrix PRO letters (client-side); per-issue seeds need `per_topic_coalition.json` added to the bundle; optimizer allocs are FLIP TARGETS, never coalition seeds (semantic inversion; surface as a separate Targets panel); marginal-gain greedy must run through `gate(n,cs)` contingent seeding. P3 sector-affinity (\"who are they doting over\") REJECTED as specced: CU-conditioned corpus makes shares anti-correlated with the bank/crypto attention they are meant to detect; `legislativeSubjects` populated only 8,730/14,854 (staged-only, `scoring_authority:false`); 19-cat review never performed; no crypto FEC bucket; congestion producer retired to attic. SALVAGE ships now: CU-attention profile from `bills[].areas` (fractional attribution, role weights, min-N floor + shrinkage, N on chip) + cu/banks/finserv money-mix chip; B-side prior rides money ONLY. P4 primacy + tiers as primary chips AMEND: yes swap, rank to hover, BUT add an explicit capacity chip (`committee_score` + `formal_role` fields already bundled; rank's AB4 = 0.40 pillar IS committee capacity); \"unqualified\" rendered as an eligibility label, not a low score. P5 issue gate SUSTAIN + AMEND: `lt_priming` law verbatim (BLOCK sets, Lean Skeptic carve-out; dashboard BLOCKOV JS is the port template); HARD gate auto-suggestions, SOFT (greyed-visible + reason) for roster; CRITICAL: desk radar = `CS['scores']` written PRE-say-do-gate, so any radar weighting must mask with the gated matrix/gcap or it silently re-promotes say-do-capped members; overall from `overall_capped`. Bill-anchored mode via `bills[].areas` category mix (26.8% multi-listed; surface the mix; 11.6% vendor-inconsistent caveat). P6 CFPB mute AMEND: pin to the blend accumulation loop (`build_media_blend.py:335-385`, `PRESS_CAT_MUTE` dial, Paul's default); measure `cu_press_stance_tone.csv` categories fill-rate FIRST; declare planes (mutes press pillar/rank, NOT CFPB radar cell, NOT engagement/HCoI edges); volume-scoped symmetric, does NOT revert the 07-15 directional re-adjudication; zero-code alt = w535 CFPB literal. P7 Big5 80/20 CONTESTED: modeling critic rejects (A halo 322/533, N 469/533, so about 40% of the roster degenerates to the -C/-E design-prior dampeners; O contributes nothing under Byrne signs; re-inverts the ratified 2026-07-04 behavioral-basis decision; no external criterion, so a look cannot show \"better\"; three fail-closed mirrors: `receptivity_sensitivity` stage-1 gate, `behavioral_roles_v2_study` sha pin, dashboard JS; `outcome_snapshot` H1/H2 freeze contamination). Counter: the 07-04 indictment targeted LEXICAL `big5_traits`; `big5_blue_validated` is promotion-gated and the only all-533 O/C/E z-source. Proposed to Paul: run as a CHARACTERIZATION diff (not a validity look) behind a `SUSC_B5_W` dial default 0, per-member weight renormalization over available traits + coverage flag + stratified report; the basis decision is his. P8 LQ AMEND: emit TRUE CU LQ (NAICS 522130) via `fetch_cbp_4digit.py` cu_benchmark extension (US denominators already parsed in-memory; ZERO new collection); skip the bank-contaminated 5221 proxy; senators currently have NO path (need state rows); apply ONCE at final suggestion ranking, small dial, never inside edge/seed probs; raw axes only, no tiers/composite (do not reconstitute excluded `demographic_potential`); `pct_finance` is closer to B-side stakes (sign caution); audit workbook col F provenance before claiming no demo double-count.",
+      "mark": "same note",
+      "why": "\"P1 static/dynamic AMEND (as above)\" is the Architecture verdict (static substrate + dynamic set-aware evaluation) higher in the same coalition-builder section, which moves whole to -coalition-builder"
+    },
+    {
+      "line": 294,
+      "old": "**BIG5 AUGMENTATION CONCLUDED (2026-07-31, Paul's triage rule \"worse→remove, could-be-better→investigate, dead-end→remove\"):** COMMITTED d0a2e34 (`hearing_features_candidate.py`: 2-phase answer-uptake + `followup_share` persistence, per-hearing sufficient statistics, MD5 trust gate) + ffbf620 (`fetch_hearings_witness.py` collector) @ session df79d9d. REMOVED as dead ends (hygiene evidence in the d0a2e34 body; NEVER re-propose without new basis): stress-reactivity v2/v3 (SB .27; v3 SB .57 but 140/463 + wrong-signed N), affect volatility (N signal = level/months confound; residualized +.04), bill reintroduction v1 (14/152 coverage) + v2-billstatus (volume +.36, C wrong-signed). FINAL O VERDICT: answer-uptake is RELIABLE (SB .77/.71) but NOT O: null vs breadth/blue-O even neutral-answer-conditioned with ideology partialed (n = 384-393, decisive); it and `followup_share` (SB .77, not C) are novel stable hearing-style dimensions, kept as inert candidates. N stays affective-content; E unchanged; A-coverage-extension = next locked prereg round (multimethod machinery fingerprint-pinned). `hearings_wit.db`: 4,433+ packages, alignment 100% + consumer MD5 gate 4433/4433; sweep tail + retry pass (mismatch/err retryable under strengthened full-kind-sequence checks in ffbf620) outstanding, then final artifact regen. `codex/volatility-persistence` branch abandoned uncommitted by design.",
+      "mark": "not positional",
+      "why": "\"A-coverage-extension = next locked prereg round\" is time"
+    },
+    {
+      "line": 296,
+      "old": "**GO SEQUENCE PHASE 1 SHIPPED (2026-08-01):** coalition builder v2 COMMITTED @3b712bb (set-aware EV builder: one engine-derived directed graph replaces `bundle['adj']` everywhere including the postrefresh planning audit now validating `engine.adj`; CRN keys IDENTICAL to dashboard `spread()`; review caught a SEED*MC offset divergence; `gcap` say-do mask in the radar multiplier; two-probe Python-JS selfcheck banner at 0.15%; gates/panels/chips per contract) + answer-uptake `seed_prob` channel @8b705fa (`SEED_UPTAKE_W` default 0 with explicit skip; W = 0 bit-identity vs live proven 0/533; probe W = 0.10: 437/533 move sd .086, co-equal with the cooperation channel; malformed-candidate inert at default; ratification of a nonzero weight = Paul's). Session branch @49a86c1. ROUND-4 N DATA-GATE NOW OPEN (reactivity_z 270 >= 250) but the criterion is E-contaminated; the successor needs a redesigned criterion. QUEUED NEXT: A-extension prereg (draft, adversarial review, LOCK), T5 doting test + language backup, witness retry pass (sweep about 78%+ at 100% alignment), watcher, CFPB fill-rate, LQ regen (CBP cache re-download), LIVE LANDING (still held on the foreign legislative-workbench surface). Deploy of everything = full protocol on live (chain, zero-rank-delta, audit; ranks must NOT move: receptivity/desk changes are engine/display side).",
+      "mark": "not positional",
+      "why": "\"QUEUED NEXT: A-extension prereg\" is time"
+    }
+  ]
+}

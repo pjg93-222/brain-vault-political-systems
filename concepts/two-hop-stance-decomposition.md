@@ -73,6 +73,7 @@ The 10 support-to-oppose **sign-flips** in `cu_stance_label_set` (pre_label vs h
 - [[debate-stance-model]] - Fine-tuned Political DEBATE NLI stance model (CPU) plus Lexicoder LSD tone; replaced the regex scorer in Stage 5 of the CU press pipeline
 - [[2026-06-feature-cu-stance-and-sentiment]] - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
 - [[melange-systems]] — Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[2026-06-feature-cu-stance-and-sentiment-stance-stack-design-and-accuracy]] — How the CU stance stack was designed and made accurate: sign-flip directionality fixes, the 2026-07-01 data audit, the two-hop stance stacks of the 07-04 campaign, the lt_priming integrity gates and the Kim position-classification benchmark.
 
 ## Where the hop split shows up in the pipeline
 
