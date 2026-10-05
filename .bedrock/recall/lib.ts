@@ -3,7 +3,7 @@
 import { mkdirSync, renameSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
-import { listNotes, type NoteFile } from "../graph/extract.ts";
+import { INCLUDE_ROOT_NOTES, listNotes, type NoteFile } from "../graph/extract.ts";
 import { VAULT } from "./base.ts";
 
 export * from "./base.ts";
@@ -48,7 +48,7 @@ export type NoteStat = NoteFile & { size: number; mtimeMs: number };
  */
 export function statNotes(vault = VAULT): NoteStat[] {
   const out: NoteStat[] = [];
-  for (const f of listNotes(vault)) {
+  for (const f of listNotes(vault, INCLUDE_ROOT_NOTES, true)) { // recall sees ledger/ too
     try {
       const st = statSync(f.abs);
       out.push({ ...f, size: st.size, mtimeMs: st.mtimeMs });
