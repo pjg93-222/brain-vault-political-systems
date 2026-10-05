@@ -7,7 +7,7 @@
 //   content fields and weights: title 3, aliases 2, summary 3, headings 2, tags 1, body 1
 //   per (term, note) the index stores tf~ = sum_f w_f * tf_f / (1 - b_f + b_f * len_f / avglen_f)
 import { readFileSync } from "node:fs";
-import { DIR_TYPE, KNOWN_TYPES, OTHER, splitFrontmatter, dropSources } from "../graph/extract.ts";
+import { DIR_TYPE, KNOWN_TYPES, LEDGER_TOP, OTHER, splitFrontmatter, dropSources } from "../graph/extract.ts";
 import { CATALOG_FILE, INDEX_FILE, VAULT, logLine, oneLine, parseYaml, signature, statNotes, str, strList, writeAtomic, type NoteStat } from "./lib.ts";
 import { clip, plainMarkdown, terms } from "./text.ts";
 
@@ -59,6 +59,7 @@ const TYPE_LABEL: Record<string, string> = {
   topic: "Topics",
   team: "Teams",
   fleeting: "Fleeting",
+  ledger: "Ledger (generated from the Project Brain)",
   [OTHER]: "Other",
 };
 
@@ -98,7 +99,7 @@ function parseNote(n: NoteStat): Parsed {
   const y = parseYaml(dropSources(fm)); // sources (paths + hashes) never reach the index
   const folderType = Object.hasOwn(DIR_TYPE, n.top) ? DIR_TYPE[n.top] : OTHER;
   const ty = str(y.type)?.toLowerCase();
-  const k = ty ? (KNOWN_TYPES.includes(ty) ? ty : OTHER) : folderType;
+  const k = n.top === LEDGER_TOP ? "ledger" : ty ? (KNOWN_TYPES.includes(ty) ? ty : OTHER) : folderType;
   const h1 = body.match(/^#\s+(.+)$/m)?.[1];
   const title = clip(plainMarkdown(str(y.title) ?? str(y.name) ?? h1 ?? n.slug), 120) || n.slug;
   const aliases = strList(y.aliases).map((a) => plainMarkdown(a));
@@ -182,7 +183,7 @@ const CATALOG_HEAD = "# Index\n\n> Generated catalog of every note in this vault
 export function catalogText(idx: RecallIndex): string {
   const slugCount = new Map<string, number>();
   for (const n of idx.notes) slugCount.set(n.slug, (slugCount.get(n.slug) ?? 0) + 1);
-  const order = [...Object.values(DIR_TYPE), OTHER];
+  const order = [...Object.values(DIR_TYPE), OTHER, "ledger"];
   const out: string[] = [
     CATALOG_HEAD + ", grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.",
     "",
@@ -192,6 +193,23 @@ export function catalogText(idx: RecallIndex): string {
     const group = idx.notes.filter((n) => n.k === k).sort((a, b) => (a.p < b.p ? -1 : a.p > b.p ? 1 : 0));
     if (!group.length) continue;
     out.push("", `## ${TYPE_LABEL[k] ?? k} (${group.length})`, "");
+    if (k === "ledger") {
+      // one line per brain (link to its STATE note) instead of one line per generated note
+      const byBrain = new Map<string, typeof group>();
+      for (const n of group) {
+        const parts = n.p.split("/");
+        const key = parts.length >= 3 ? parts[1] : n.p;
+        byBrain.set(key, [...(byBrain.get(key) ?? []), n]);
+      }
+      for (const [key, notes] of byBrain) {
+        if (notes.length === 1 && notes[0].p === key) out.push(`- [[${key.replace(/\.md$/i, "")}]]${notes[0].s ? " — " + notes[0].s.replace(/\[\[|\]\]/g, "") : ""}`);
+        else {
+          const hub = notes.find((n) => n.slug === "STATE") ?? notes[0];
+          out.push(`- [[${hub.p.replace(/\.md$/i, "")}|${key} ledger]] — ${notes.length} generated notes: decisions, dead ends, STATE, CONSTRAINTS`);
+        }
+      }
+      continue;
+    }
     for (const n of group) {
       const target = (slugCount.get(n.slug) ?? 0) > 1 ? n.p.replace(/\.md$/i, "") : n.slug;
       const summary = n.s.replace(/\[\[|\]\]/g, "");

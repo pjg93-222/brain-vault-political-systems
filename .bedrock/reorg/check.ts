@@ -64,7 +64,7 @@
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { ROOT_NON_NOTES, VAULT as THIS_VAULT, argValue, oneLine } from "../graph/common.ts";
-import { DIR_TYPE, buildGraph, dropSources, listNotes, splitFrontmatter, type NoteFile } from "../graph/extract.ts";
+import { DIR_TYPE, LEDGER_TOP, buildGraph, dropSources, listNotes, splitFrontmatter, type NoteFile } from "../graph/extract.ts";
 
 const KB = 1024;
 const LIST_CAP = 200; // longest list the human summary prints (the JSON always has every row)
@@ -376,6 +376,7 @@ export async function analyze(opts: Options) {
   let occurrences = 0;
   let selfMentions = 0;
   let unresolvedMentions = 0;
+  let ledgerMentions = 0;
   let rootMentions = 0;
   for (const n of notes) {
     WIKI.lastIndex = 0;
@@ -385,6 +386,10 @@ export async function analyze(opts: Options) {
       const p = wikiPath(m[1]);
       const target = idByRel.get(p) ?? idBySlug.get(p.split("/").pop()!) ?? null;
       if (target === null) {
+        if (p.split("/")[0].toLowerCase() === LEDGER_TOP) {
+          ledgerMentions++; // a link into the generated ledger/: outside the note set, so not a dangling link (the graph still counts it unresolved)
+          continue;
+        }
         const last = p.split("/").pop()!;
         const key = n.file.rel + "\u0000" + m[1].trim();
         if (rootNonNoteSlugs.has(last.toLowerCase())) {
@@ -432,7 +437,7 @@ export async function analyze(opts: Options) {
   expect("mentions", mentions, sum(graph.links.map((l) => l.weight)));
   expect("directed links", directedLinks, graph.stats.directedPairs);
   expect("wikilink occurrences", occurrences, graph.stats.occurrences);
-  expect("unresolved occurrences (links to index/log/CLAUDE included)", unresolvedMentions + rootMentions, graph.stats.unresolved);
+  expect("unresolved occurrences (links to index/log/CLAUDE included)", unresolvedMentions + rootMentions + ledgerMentions, graph.stats.unresolved);
   expect("self mentions", selfMentions, graph.stats.selfLinks);
   if (notes.some((n, i) => n.id !== graph.nodes[i]?.id)) problems.push("note order or ids differ from buildGraph");
   for (const l of graph.links) if ((undirected.get(ukey(l.source, l.target)) ?? -1) !== l.weight) problems.push(`link weight differs for ${l.source} - ${l.target}`);
