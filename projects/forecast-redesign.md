@@ -209,7 +209,7 @@ Every note of this project by type, one line each; parts follow their parent.
 ### Related Projects
 
 - [[mentat]] - R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
-- [[brainlink]] - links the Project Brain ledger, this vault and Claude memory; its first migration (2026-10-05) corrected stale forecast records. The supersession marks and the generated Brain state block for this note are deferred: the note is near the 50 KB size gate (a split is needed first).
+- [[brainlink]] - links the Project Brain ledger, this vault and Claude memory; its first migration (2026-10-05) corrected stale forecast records. ~~The supersession marks and the generated Brain state block for this note are deferred: the note is near the 50 KB size gate (a split is needed first).~~ (superseded 2026-10-05: applied in batch 3)
 
 ## Timeline
 
