@@ -39,6 +39,14 @@ export const ALL_TYPES: string[] = [...KNOWN_TYPES, OTHER];
  */
 export const INCLUDE_ROOT_NOTES = true;
 
+/**
+ * The top-level folder of notes generated from the Project Brain by `brainlink project` (ledger/<brain>/D-012.md ...).
+ * Like fleeting/ it is outside the curated checks, but it is simpler than that: listNotes() does not return it at all
+ * unless asked (recall's statNotes asks, so recall and index.md still see it). The graph, check.ts a-k, conserve.ts,
+ * relink.ts and verify-plan.ts therefore never see generated notes.
+ */
+export const LEDGER_TOP = "ledger";
+
 export type GNode = {
   id: string; // file name without .md; the vault-relative path (no .md) when several notes share a file name
   dir: string; // vault-relative folder, forward slashes ("" for a note in the vault root)
@@ -161,9 +169,11 @@ function collect(abs: string, rel: string, out: string[]) {
  * vault root last (unless `rootNotes` is false), by name.
  * _template.md is skipped everywhere; hidden folders and hidden files are never entered.
  */
-export function listNotes(vault: string = VAULT, rootNotes: boolean = INCLUDE_ROOT_NOTES): NoteFile[] {
+export function listNotes(vault: string = VAULT, rootNotes: boolean = INCLUDE_ROOT_NOTES, includeLedger = false): NoteFile[] {
   const entries = readdirSync(vault, { withFileTypes: true });
-  const tops = entries.filter((e) => e.isDirectory() && !e.name.startsWith(".")).map((e) => e.name);
+  const tops = entries
+    .filter((e) => e.isDirectory() && !e.name.startsWith(".") && (includeLedger || e.name.toLowerCase() !== LEDGER_TOP))
+    .map((e) => e.name);
   const known = Object.keys(DIR_TYPE).filter((d) => tops.includes(d));
   const extra = tops.filter((d) => !Object.hasOwn(DIR_TYPE, d)).sort(cmp);
   const files: NoteFile[] = [];
