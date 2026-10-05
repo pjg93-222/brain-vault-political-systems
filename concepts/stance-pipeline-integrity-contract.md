@@ -24,7 +24,7 @@ doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\moneyball_core.py"
     sha256: "46b54d266e87bc87562bc680bee76e9f36b4f3972266d0f66e65175d9894b483"
     as_of: "2026-10-01"
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
 ---
@@ -35,7 +35,7 @@ tags: ["type/concept", "domain/research"]
 
 > [!info] Source and status
 > Summary of `STANCE_PIPELINE_INTEGRITY.md` (99 lines) in the Melange repo root, committed in the 2026-07-15 snapshot `e3d2923d0` and unchanged since. The Mentat checkout holds the same text with CRLF line endings. Code read on 2026-10-04 has moved past the contract in four places (curved label domains, the overall crown, the cell gate's fail-closed rule, cross-post scoring); see the dated history.
-> Dated note (2026-10-04): the contract now records its code divergence. Melange commit `97e5133` (2026-10-04, on `main`, mirror-pushed) added a section "Code divergence (2026-10-04)" with six items (Path J provenance, the crown and the aggregate say-do check, the curved label domains, the board crown and displayed labels, the fail-closed cell gate, cross-posts); the text after it is unchanged since `e3d2923d0`. The Mentat copy has the same text, applied but not committed on Mentat's working branch `codex/mentat-crypto`.
+> Dated note (2026-10-04): the contract now records its code divergence. Melange commit `97e5133` (2026-10-04, on `main`, mirror-pushed) added a section "Code divergence (2026-10-04)" with six items (Path J provenance, the crown and the aggregate say-do check, the curved label domains, the board crown and displayed labels, the fail-closed cell gate, cross-posts); the text after it is unchanged since `e3d2923d0`. The Mentat copy has the same text, applied but not committed on Mentat's working branch `codex/mentat-crypto`. The file now has 173 lines.
 
 ## Description
 

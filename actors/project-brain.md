@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
 doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
-    sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
-    as_of: "2026-10-04"
+    sha256: "ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34"
+    as_of: "2026-10-05"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DEADENDS.md"
     sha256: "0ca3fe08fabc97a9bfdbe13abc7770e791e6ae614aba2e1f34e55ad312ec9ebc"
     as_of: "2026-10-04"
@@ -34,8 +34,8 @@ doc_sources:
     as_of: "2026-08-11"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 

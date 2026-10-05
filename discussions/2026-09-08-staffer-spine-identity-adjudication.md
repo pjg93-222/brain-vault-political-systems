@@ -28,10 +28,10 @@ doc_sources:
     sha256: "5558e8b6646e8526b9abf20a99465cd37578399c48c28748bf82c85a3672e3fb"
     as_of: "2026-09-08"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
-    sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
-    as_of: "2026-10-04"
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+    sha256: "ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34"
+    as_of: "2026-10-05"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 

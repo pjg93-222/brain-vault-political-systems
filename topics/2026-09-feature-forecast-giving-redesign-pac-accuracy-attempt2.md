@@ -9,7 +9,7 @@ actors: []
 objective: ""
 created_at: 2026-09-29
 sources: []
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 part_of: "[[2026-09-feature-forecast-giving-redesign]]"
@@ -22,6 +22,7 @@ part_of: "[[2026-09-feature-forecast-giving-redesign]]"
 ## PAC accuracy attempt 2 (2026-10-02 to 2026-10-03)
 
 - Memory file description: "PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history". Audit memory file description: Mentat forecasting audit 09-29 (worktree `forecasting-model-audit-5603f2`): three "forecasts" on the console, regressions re-run in R, code fixes staged but NOT applied (classifier blocked writes; Paul runs copy_back scripts), methodology list A-L awaiting Paul. Redesign memory description: forecast giving view redesign (worktree `mentat-forecast-redesign-0fb0be`): Paul picked board F2 'Giving by cycle' and ordered the projections checked for logical validity against the test results; build = one-to-one to F2, all compute on the pod.
+  - Dated note (2026-10-05): these are the memory files' descriptions as of 09-29/09-30; Paul applied the audit's fix sets on 2026-09-30 (audit lane) and the pod-only rule was lifted late on 2026-09-30 (redesign lane, POD REVERSAL).
 
 - Attempt 2 root: `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt2-20261003T003312Z`. Coordinator brief = Paul's pasted prompt (stages S0-S7, Opus read-only review, Sonnet builds via `code/launch_stage.ps1`). HOLD stays; scratch only.
 - State 2026-10-03 ~04:20 UTC: S2 done (all 12 artifacts). Coordinator gate BLOCKED (`receipts/GATE_S2_COORDINATOR.md`): gate verifier G1-G7 PASS (cent repro, hashes), but MLE reviewer BLOCK; UT-X CERTIFIED_PASS unreachable (1% unparseable-receipt rule counted 2012/2014) and FILED only switched O_avail. S2B pre-score repair launched (`strategy/S2B_PROMPT.md`) with Glass Box watcher `code/glassbox/stage_watch.ps1`. S3 needs Paul's explicit OK (UT-X is single-shot).

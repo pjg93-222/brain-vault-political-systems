@@ -218,6 +218,13 @@
       "old": "**Why (redesign):** Paul wants the forecast to look better AND be right; a chart makes an unconditioned interval visibly impossible (whisker below the observed stack).",
       "mark": "not positional",
       "why": "\"below the observed stack\" describes a chart"
+    },
+    {
+      "line": 258,
+      "old": "  - Dated note (2026-10-04): the four open questions were ruled the same day (all-sector phase rulings E5, E7, E8/E10, E16, below).",
+      "mark": "same note",
+      "referent": "the all-sector phase rulings bullet (E5, E7, E8/E10, E16), the second line below it, same part (six-year lookback lane)",
+      "why": "\"below\" points at the rulings bullet of the same part. A dated sub-bullet added in part 3 of the final batch (review N3); numbered as in the pre-split parent with the two part-3 sub-bullets (N2 in the attempt-2 section, N3 here) inserted, so the Banking bullet it sits under is 256 before them."
     }
   ]
 }

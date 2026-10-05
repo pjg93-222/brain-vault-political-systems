@@ -5,7 +5,7 @@ aliases: ["do not re-flag rule"]
 description: "A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement."
 related_to: []
 sources: []
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "reorg@agent"
 tags: ["type/concept", "domain/agent-ops"]
 ---
@@ -43,7 +43,7 @@ Other notes that use the rule, by title (plain text, so their link budgets are u
 
 - Mentat collection and attribution: the 2026-07-27 coverage audit is SETTLED; the register absence was verified five ways after Paul pushed back (do not re-litigate).
 - Primacy and industry tier boards: purity over volume is standing intent; never re-flag it as a defect.
-- Influence engine internals and Single-look holdout discipline: the Velazquez label review is closed (do not re-flag).
+- Influence engine internals and Case 1: Moneyball session of 2026-07-07 (Single-look holdout discipline): the Velazquez label review is closed (do not re-flag).
 - Legislative pillar and ACU review: the category in the dedup key is design, not a defect; do not re-flag it as a bug.
 - Staffer network data and math: declaration-directed matching is a structural law; do not re-litigate.
 - Agent orchestration and model tiering rules: Paul ruled for ultracode; do not re-litigate it.
