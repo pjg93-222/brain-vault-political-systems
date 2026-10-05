@@ -159,6 +159,7 @@ SORT item.deadline ASC
 | 2026-09-26/27 | Money-rule changes (`0ce240d9e`, `504d2cfd1`) reverted in `7a31f8ae2` after Paul's objection; money collection frozen. |
 | 2026-10-02/03 | GitHub push of the live tree (branch claude/mentat-migration-onto-main, tip 28c27a47). |
 | 2026-10-03 | Melange PR #2 opened and merged into claude/melange-math-eval-skill-18e907 (merge commit 54433266); the migration branch, claude/melange-math-eval-skill-18e907-4d54uu and the partial ref deleted on origin. |
+| 2026-10-05 | PAC-to-candidate giving forecast accuracy, attempt 3 (all sectors, v6) built and scored once in the Mentat accuracy work (scratch tree outside the repo, HOLD); the handoff is `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md`; the program is [[forecast-redesign]]. A Mentat-side fix for the E18 PAC coverage gap is open, and money-collection code stays frozen. |
 
 Detailed per-lane history, numbers and traps: [[2026-07-bugfix-mentat-collection-and-attribution]].
 

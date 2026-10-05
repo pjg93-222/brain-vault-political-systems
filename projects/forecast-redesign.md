@@ -5,7 +5,7 @@ aliases: ["Forecast redesign", "PAC giving accuracy"]
 description: "Mentat forecasting program: the 2026-09-29 audit of three console forecasts (regressions re-run in R), the 2026-09-30 'Giving by cycle' (board F2) forecast-view redesign with projections checked for logical validity against backtests, and the PAC-to-candidate giving accuracy refinement (attempt 2, HOLD, UT-X holdout sealed) rooted at C:/melange-data/forecast-redesign-20261001-review."
 status: "active"
 deadline: ""
-progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards in GPT Image 2.5 pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved."
+progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards in GPT Image 2.5 pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e)."
 blockers:
   - "PAC accuracy attempt 2: UT-X is single-shot and stays SEALED (C1, 2026-10-03); opening it needs a new owner ruling. Resolved part (was: S3 needs Paul's explicit OK plus a fresh gate on the v2 freeze): on 2026-10-03, after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's 'finish'. Resolved 2026-10-04: Paul's all-sector phase ruling E4 is the new owner ruling, P&C/UT-X 'Open for development' (supersedes C1; holdout spent, never certifies)."
   - "Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4); FEC bulk files keep only the latest report version, so FILED is only a disclosed amendment-loss lower bound (C2)."
@@ -17,8 +17,8 @@ action_items:
     status: "todo"
     deadline: ""
     owner: "[[paul-goff]]"
-  - description: "OK or decline FEC pas212/214/216 download for the pace backtest"
-    status: "todo"
+  - description: "OK or decline FEC pas212/214/216 download for the pace backtest. Done 2026-10-05 (superseded): Paul's v5 ruling D8 (2026-10-04) authorised the FEC downloads needed to prepare 2028, extended by E12 (pas226), E20 (webk) and E22 (pas228); the pace backtest itself was pre-registered and run on 2026-10-01 (brain D-099)."
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
   - description: "Restart the console after the 2026-10-01 landing (Paul runs it; never restart consoles 8802-8811 otherwise)"
@@ -57,10 +57,18 @@ action_items:
     status: "todo"
     deadline: ""
     owner: "coordinator agent"
-  - description: "Create Windows scheduled tasks (nightly anchors, refit watcher) AFTER landing; commit sector_growth_study; clean IP/cookie evidence"
+  - description: "Create Windows scheduled tasks (nightly anchors, refit watcher) AFTER landing; commit sector_growth_study; clean IP/cookie evidence. Update 2026-10-05: sector_growth_study is committed (Mentat 04e2391e5, 2026-09-30, 92 tracked files); the other two parts are unchanged."
     status: "todo"
     deadline: ""
     owner: "coordinator agent"
+  - description: "Attempt 3 follow-ups (2026-10-05): the 2027-03-08 scoring job and the seven 2028 jobs (2027-02-08 to 2029-03-08, E24) run on their dates; the app must be open, and a missed run fires on the next launch."
+    status: "todo"
+    deadline: "2027-03-08"
+    owner: "scheduled tasks"
+  - description: "Mentat-side fix for the E18 coverage gap (Charter, Altice, Ford, CNH, Zurich, Kraken, Binance.US, Merchants, First Hawaiian, OceanFirst) and mapped PAC IDs for community banks before 2027-01-31; money-collection code stays frozen until Paul rules."
+    status: "todo"
+    deadline: "2027-01-31"
+    owner: "[[paul-goff]]"
 focal_points:
   - "[[paul-goff]]"
 related_topics:
@@ -87,12 +95,15 @@ tags: ["type/project", "status/active", "domain/data"]
 
 Dated correction (2026-10-04, all-sector phase rulings; source `pac-accuracy-six-year-lookback-directive-2026-10-03`): "UT-X holdout sealed" in this tagline and in the description is attempt 2's state; on 2026-10-04 Paul's E4 opened P&C/UT-X for development, superseding C1 (holdout spent, never certifies).
 
+Dated correction (2026-10-05, records lane; sources: the 2026-10-05 handoff `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md` and the Mentat git log): "(attempt 2, HOLD, UT-X holdout sealed)" is attempt 2's state, and the work has gone on to attempt 3 (all sectors, v6; see Rulings and decisions and the Map). Other statements below that predate 2026-10-05 carry dated notes where they changed: the 2026-10-01 fixes are committed (Mentat `f340dc84e`), the FEC pas212/214/216 question is answered (D8, E12, E20, E22), and the blend is brain D-099, not D-079.
+
 ## Overview
 
 - **Product context:** Mentat ([[mentat]]), its console ([[mentat-console]]), compute on the RunPod pod ([[runpod-pod]], later brought out locally), progress via [[glass-box]]; directed by [[paul-goff]]. The sector growth study ([[2026-09-feature-sector-growth-study]]) shares the SGS R backtest and the S-1..S-6 fixes.
 - **Detail topic:** [[2026-09-feature-forecast-giving-redesign]] holds the dated record (History, Decisions, Next Steps) and, in its four lane parts (listed in the Map), the full text of each lane; the 2026-10-03 rulings are in [[2026-10-03-pac-accuracy-attempt2-rulings]].
 - **Three console forecast surfaces (audit scope, 2026-09-29):** (1) Insights "Forecasts" card, `_forecast` in `mentat/app/analysis_metrics.py` (naive, never shows a number; no complete_cycles ever passed; indexes hold only 2021-22/2023-24/2025-26); (2) Giving Forecast, Codex-built 2026-09-27 from Paul's CHE:673 ask, UNTRACKED (`giving_forecast.py`, `giving-forecast.js`/`.css`, `app/data/giving-models-v1.json`, `tools/build_giving_models.py`), fit on OpenSecrets totals, not Mentat data; (3) Chart Studio "Same-phase forecast" transform (`chart-math.js:991-1022`). Plus the SGS R backtest (`sector_growth_study/code/R/sgs_forecast.R`, untracked).
 - **Root of the PAC accuracy work:** `C:/melange-data/forecast-redesign-20261001-review` (attempt 2 under `accuracy-refinement20261002/attempt2-20261003T003312Z`).
+- **Current state of the PAC accuracy work (2026-10-05):** the handoff `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md` (it supersedes the 2026-10-04 handoff for current state; that file stays the attempt-2 record); attempt 3 root `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004`; report (same artifact link, version 3, sections 12 v5 RESCORE, 13 all sectors v6, 14 schedule) https://claude.ai/artifact/FatsU6m8xyePv2QnTTdyCx; Project Brain D-088, D-099, D-100, D-101 and DE-066 (narrowed by DE-067). Method, results and schedule: [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]]; rulings E1-E24: [[2026-10-04-pac-accuracy-attempt3-rulings]].
 
 ## Status
 
@@ -109,7 +120,7 @@ Dated correction (2026-10-04, all-sector phase rulings; source `pac-accuracy-six
 | Item | Status | Deadline | Owner |
 |---|---|---|---|
 | Decide reconciliation decisions D1-D9 | todo | none | [[paul-goff]] |
-| OK or decline FEC pas212/214/216 download (pace backtest) | todo | none | [[paul-goff]] |
+| OK or decline FEC pas212/214/216 download (pace backtest; done 2026-10-05, superseded: D8, E12, E20 and E22 authorise the downloads, and the pace backtest ran on 2026-10-01) | done | none | [[paul-goff]] |
 | Restart the console after the 2026-10-01 landing | todo | none | [[paul-goff]] |
 | Finish S2C narrow repair, v3 freeze, ONE Opus verifier gate (done 2026-10-03: S2C gate PASS) | done | none | coordinator agent |
 | Launch S3 only with Paul's OK and a fresh gate on the v2 freeze; opening UT-X needs a new owner ruling (done 2026-10-03: S3 dev-only one pass on Paul's "finish"; UT-X sealed, not scored; the UT-X clause stays binding, see Blockers; 2026-10-04: Paul's E4 opened P&C/UT-X for development, superseding C1) | done | none | [[paul-goff]] |
@@ -119,7 +130,9 @@ Dated correction (2026-10-04, all-sector phase rulings; source `pac-accuracy-six
 | F1 test fix (GATE_V5 finding F1: a one-directional category test) before 2027-01-31; a later code change ends the 2028 clean series; 2026-10-04 (E11): folded into the new all-sector freeze before 2027-01-31, the v5 2028 plan unchanged; v6 (E19) includes it | todo | 2027-01-31 | unassigned (capture names none) |
 | Glass Box watcher alongside every stage | todo | none | coordinator agent |
 | Forecast UI v3 from the new boards | todo | none | coordinator agent |
-| Windows scheduled tasks after landing; commit sector_growth_study; clean IP/cookie evidence | todo | none | coordinator agent |
+| Windows scheduled tasks after landing; commit sector_growth_study (committed 2026-09-30, Mentat 04e2391e5); clean IP/cookie evidence | todo | none | coordinator agent |
+| Attempt 3 follow-ups: the 2027-03-08 scoring job and the seven 2028 jobs run on their dates (E24) | todo | 2027-03-08 | scheduled tasks |
+| E18 coverage gap (Mentat-side fix) and mapped PAC IDs for community banks before 2027-01-31 | todo | 2027-01-31 | [[paul-goff]] |
 
 > Action items are defined in the frontmatter (`action_items` field) to enable Dataview queries. The table above is a visualization for readability.
 
@@ -143,7 +156,7 @@ SORT item.deadline ASC
 - ~~PAC accuracy attempt 2: S3 needs Paul's explicit OK and a fresh gate on the v2 freeze; UT-X is single-shot and SEALED (C1).~~ Resolved 2026-10-03 (source `pac-accuracy-attempt2-lane-2026-10-03`, newer version): after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's "finish"; the attempt finished ~08:45 UTC with UT-X still single-shot, SEALED and not scored. Superseded 2026-10-04: Paul's all-sector phase ruling E4 opened P&C/UT-X for development (supersedes C1; holdout spent, never certifies).
 - Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4; P&C cohort = Travelers + legacy Chubb Corp only); FEC bulk files keep only the latest report version so FILED = disclosed amendment-loss lower bound (C2); no-downloads stands (attempt 2; for v5, Paul's ruling D8 of 2026-10-04 authorises the FEC downloads needed to prepare 2028 as the first clean test; for the all-sector phase (2026-10-04): downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22)).
 - Decisions D1-D9 (2026-10-01) and methodology list A-L (2026-09-29) await Paul.
-- Pace backtest waits on Paul's OK to download FEC pas212/214/216. (2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test; source `pac-accuracy-six-year-lookback-directive-2026-10-03`.) (2026-10-04, all-sector phase rulings: downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22).)
+- Pace backtest waits on Paul's OK to download FEC pas212/214/216. (2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test; source `pac-accuracy-six-year-lookback-directive-2026-10-03`.) (2026-10-04, all-sector phase rulings: downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22).) Dated note (2026-10-05): this blocker is superseded; D8, E12, E20 and E22 authorise the downloads, and the pace backtest was pre-registered and run on 2026-10-01 (brain D-099).
 - C: ~5 GB free; Paul offered a cleanup list (review copies); deletion is his.
 - LDA `sector_spend` has only crypto/credit_union/bank/fintech (no auto, no P&C) and two never-combined series (income_total vs expenses_total): open questions for Paul.
 - Classifier blocks agent writes into untracked Mentat files ("Irreversible Local Destruction") and commits ("Modify Shared Resources"); everything routes through scratch + kits Paul runs.
@@ -167,6 +180,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-09-feature-forecast-giving-redesign-redesign-lane]] | part: The giving-view redesign lane of 2026-09-30 to 2026-10-01… |
 | [[2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2]] | part: PAC-to-candidate giving accuracy attempt 2 of 2026-10-02… |
 | [[2026-09-feature-forecast-giving-redesign-six-year-lookback-lane]] | part: Paul's six-year rolling lookback directive of 2026-10-03… |
+| [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]] | part: PAC accuracy attempt 3, all sectors (2026-10-04/05): the v6 method, the gated build and one-pass development scoring, the results by sector and product against the E1 bar, the narrowed ORIGIN dead end and the scheduled jobs. |
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
 
 ### Related Actors
@@ -186,6 +200,7 @@ Every note of this project by type, one line each; parts follow their parent.
 ### Discussions
 
 - [[2026-10-03-pac-accuracy-attempt2-rulings]] - Paul's 2026-10-03 rulings on PAC accuracy attempt 2: B1-B3, then C1 (UT-X sealed) and C2 (FILED = lower bound).
+- [[2026-10-04-pac-accuracy-attempt3-rulings]] - Paul's rulings E1-E24 for the all-sector phase (attempt 3), 2026-10-04 and 2026-10-05: the bar, identity, P&C/UT-X open for development, the blend, v6, the summary-file arm and the 2028 jobs.
 
 ### Related Projects
 
@@ -211,6 +226,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | 2026-10-04 | v5 run: GATE_V5 PASS, V5-R one pass, V5-V ACCEPT_WITH_NOTES; post-hoc RESCORE: the blend drives the gains, v3 stays the record; 2028 method and plan frozen |
 | 2026-10-04 | Banking-accuracy diagnostic, revision 2: the banks figure Paul was told on 2026-10-01 ("about 95%", range 95-98%) was the blend forecast at month 18 from a pace test pre-registered on 10-01 (revision 1 had wrongly called it post hoc); never ORIGIN or m12; four questions open for Paul |
 | 2026-10-04 | Paul's all-sector phase rulings E1-E22 (attempt 3): every sector scored on ORIGIN and every nowcast (sector total A>=90, each phase subgroup A>=75), with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15); P&C/UT-X open for development (supersedes C1); the blend improved, not retired; the banking diagnostic's four open questions ruled; Mentat's 28 non-bank PAC IDs and v6 approved; STRAT3: ORIGIN cannot reach 90 for banks, SchoolsFirst or P&C with any window-range rule |
+| 2026-10-04 / 2026-10-05 | Attempt 3 built and scored once (v6; BUILD6B, GATE6C PASS, SCORE6B one FIRST_LOOK pass, REVIEW6 ACCEPT_WITH_NOTES): only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms (the common 2022 drop); rulings E23 (summary arm report only) and E24 (seven 2028 jobs) added; handoff of 2026-10-05; Project Brain D-100, D-101, DE-066 (narrowed by DE-067) |
 
 ## Rulings and decisions (newest wins; superseded kept struck through)
 
@@ -226,6 +242,8 @@ Every note of this project by type, one line each; parts follow their parent.
 - PAC accuracy attempt 2 (2026-10-03): B1 the 1% rule applies to "cycles the cell reads"; B2 strict own-PAC P&C identity (the all-sector phase takes identity from Mentat's company-to-PAC mapping instead: E3, 2026-10-04); B3 FILED = as-of-issue vintage rebuild; ~~C1 UT-X stays SEALED, S3 dev-only (banks, SchoolsFirst), METHOD_SPEC frozen~~ (superseded 2026-10-04 by Paul's E4: P&C/UT-X "Open for development"; holdout spent, never certifies); C2 FILED = disclosed amendment-loss lower bound, no-downloads stands; S2C -> v3 freeze -> ONE Opus verifier gate (not 3).
 - PAC accuracy after attempt 2 (2026-10-03/04; sources `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`): v4 branch rulings D1 inputs only, D2 v4 live freeze, D3 lean run, and its result (v4 a regression, v3 the record); Paul's six-year ROLLING lookback (each forecast uses only the 3 cycles before its issue date; gains must come from methodology, never from more history); v5 rulings D1 strict cap, D3/D4 fixed-rule primary, D6 a v5 2026 line in the March 2027 job, D8 2028 as the first clean test with the needed FEC downloads authorised. Full text in PAC accuracy attempt 2 (Forecast audit, giving-view redesign and PAC accuracy) for the v4 branch, and in Six-year lookback directive and v5 rulings (Forecast audit, giving-view redesign and PAC accuracy) for the rolling lookback and the v5 rulings.
 - PAC accuracy all-sector phase, attempt 3 (Paul, 2026-10-04; source `pac-accuracy-six-year-lookback-directive-2026-10-03`, newer version): E1 bar sector total A>=90 and each phase subgroup A>=75; E2 score every sector; E3 identity = Mentat's company-to-PAC mapping, not B2's name test; E4 P&C/UT-X "Open for development" (supersedes C1; holdout spent, never certifies); E5 products = ORIGIN and every nowcast; E6 and E9 the banking number builds on the 10-01 blend method, scored with A, time-valid, with the rolling cap and a time-valid model inside the blend; E7 the blend is improved, not retired (new ID >= D-088); E8 and E10 scored elections 2018-2024, 2016 an ungated extra cell (post-hoc label); E11 the F1 fix folds into the new all-sector freeze before 2027-01-31, the v5 2028 plan unchanged; E12 downloads = D8 + pas226 for the March 2027 job, nothing else (extended by E20 and E22); E13 to E15 banks = registry 19 IDs, other sectors = the Mentat report's "Company PAC" list, frozen after a false-positive check Paul approves, and crypto, fintech and community banks unscorable now (in the 2028 prospective track); E16 report at the same artifact link, Project Brain via brainctl, Obsidian as a local commit only; E17 Mentat's 28 non-bank PAC IDs approved as listed (GEICO for Berkshire, Toyota NA for Toyota Credit; Chubb C00348938); E18 missing PACs not added ("Mentat governs"), reported as a coverage gap; E19 v6 approved (ORIGIN B1; nowcast v5 blend + N/(N+1) cross-sector pace shrinkage; F1 fix; arms persistence/v5/v6/context phase; D-065 only between versions on clean 2028+ cells); E20 the FEC PAC summary files (webk) download authorised, plus one predeclared ORIGIN arm using receipts and cash on hand; E21 late-issued 2026 L and m18 lines for all sectors in the March 2027 job; E22 the 2028 track takes all sectors and the L product, with its pas228 download. STRAT3 found that ORIGIN cannot reach 90 for banks, SchoolsFirst or P&C with any window-range rule (2022 common shock). Full text in Six-year lookback directive and v5 rulings (Forecast audit, giving-view redesign and PAC accuracy).
+  - Dated note (2026-10-05, records lane; sources: `receipts/RULINGS_2026-10-04.md`, `receipts/RULINGS_ADDENDUM_2026-10-05.md` and the 2026-10-05 handoff): the full verbatim set is E1-E24 in [[2026-10-04-pac-accuracy-attempt3-rulings]]. E23: the summary-file ORIGIN arm is report only this attempt. E24: the seven one-time 2028 jobs are created. The blend in E7 is brain D-099 (the "D-079 BLEND" label of the 2026-10-04 handoff collides with the brain's D-079, the manifest inventory); the ruling set is brain D-088 (E1-E18) and D-101 (E19-E24), attempt 2 is D-100. DE-049 against v6's pooling of a timing statistic is resolved by E19 (v6 pools no slopes or levels; Paul approved v6 as specified). Results: only telecom meets the E1 bar in every product, and the ORIGIN dead end (brain DE-066) is narrowed by DE-067 to window-range rules and the summary-file arm; see [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]].
+  - Dated note (2026-10-05): the pod-only rule struck through above stays superseded; brain D-089 records that the Giving Forecast lane works locally and the pod is retired for it.
 
 ## Audit findings (2026-09-29 and 2026-10-01)
 
@@ -240,6 +258,7 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Model fix staged 2026-10-01: `modelfix\apply_model.py` (CAS on pre-images 93f6d09b/b069f28c/5a932f27/43e28790, rollback); Python 151/0/3, R 2508/0/1, parity GREEN, fixture 5,674 old leaves unchanged (+616 new).
 - Landed 2026-10-01: Sonnet built in scratch, Opus reviewed (calc needed 1 fix round), applied via hash-checked scripts in `C:\melange-data\forecast-redesign-20260930\apply20261001\` (rollback per script); final check PASS (Python 181/0/4, R 2,542/0/0); NOT committed; console restart = Paul. F2 UI live 10:58:25Z (`apply_f2.py` 829cd9da; rollback `f2build\apply_f2.py --rollback`).
+  - Dated note (2026-10-05, from the Mentat git log): the landed fixes and the Giving by cycle view are committed as `f340dc84e` ("Land the forecast integrity fixes and the Giving by cycle view", 2026-10-01 13:18 -0400, on `codex/mentat-crypto`); "NOT committed" above is the state at landing time. Whether the console was restarted is not recorded here.
 - Earlier: fix sets applied 2026-09-30 (Insights, SGS S-1..S-6, Giving G-1..G-6 + L-1/L-1b pooled/industry labels); Paul committed Mentat `7287dbb50` (13 files; SGS study still untracked then). Scripts: `fix_insights\copy_back.py`, `fix_sgs\copy_back.py`, `fix_giving\no_g1\copy_back.py` (NOT `fix_giving\copy_back.py`, which ships held G-1; G-1 share extrapolation flags HELD, flags 20/48 default cells). Report: Melange worktree `audits/forecast_audit_20260929/REPORT.md`.
 - Build tree `C:\Users\pgoff\Mentat-wt\forecast-build`, branch `claude/forecast-build-20260930` (sparse `mentat/`, from `7287dbb50`); Paul merges each phase. Phase 1 spec `SP\phase1_spec\SPEC.md`; Phase 1 commits `1400e6417` foundation, `f36972eb7` panels; parity GREEN (..`b961be03a`; 83 targets, bundle max dev 1.56e-10); feeds `..df95572b1`; Phase 2 consumer + anchors + contracts DONE (..`299bf69d7`; 136-cell section-F match); Phase 3 `SP\phase3_ui\copy_back.py` (`index.html` + `chart-studio.js` need hunk staging at commit); Phase 4 `SP\phase4_sgs` (Opus review APPLY-WITH-CHANGES; D1 copy_back rollback REQUIRED, D2-D4 wording/README); Phase 3+4 applied by Paul. PAUSED 2026-09-30 ("Pause"): all 5 agents stopped.
 - v2 G6 HOLD diagnosed (no bug): banks House previous-cycle anchor carries banks' presidential premium (+1.35pp, 5/5 pairs); banks lobbying = log refit (2016/2020). F09 21 pages fetched locally 2026-09-30 (pod was Cloudflare-challenged).

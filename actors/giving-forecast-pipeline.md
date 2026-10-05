@@ -23,7 +23,7 @@ doc_sources:
     sha256: "d6fc72d2b730d899cb1d9fbb77f663503e8fa2776458f0c2119af1a6bd13591a"
     as_of: "2026-09-30"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
-    sha256: "ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34"
+    sha256: "03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec"
     as_of: "2026-10-05"
 last_synced_at: ""
 last_synced_sha: ""
@@ -76,6 +76,7 @@ Rscript tests/testthat.R                   # parity suite
 
 - The 2026-09-30 pod refit was held at first because House-share MAE rose for banks (1.053 to 1.550), credit unions (1.522 to 1.836) and auto (1.338 to 1.766); Paul authorized "Waive these three cells and publish", and every other G6 cell keeps the no-degradation rule.
 - G9 warns that the log-lobbying refit does not beat naive (MAE 4.050 against 3.936); G4 warns that auto lobbying is withheld.
+- Dated correction (2026-10-05, records lane; sources: the Project Brain's DECISIONS.md and the Mentat git log): the frontmatter known issue "stay dormant under the owner's pod-only instruction (as of 2026-09-30)" is superseded. Paul lifted the pod-only rule for this lane on 2026-09-30 late, and brain D-089 records that the Giving Forecast lane works locally and the pod is retired for it. The 2026-10-01 fixes (non-giving exclusion, conditioned remainder, two-design G9, waiver display, G8 on Windows, no summed reference) and the Giving by cycle view are committed in Mentat `f340dc84e` (2026-10-01 13:18 -0400, `codex/mentat-crypto`). The brain holds them as D-090 (non-giving receipts excluded) and D-091 (integrity-ledger fixes), with D-092 (every projected quantity except lobbying accounts for cycle phase, trajectory and inflation) and D-099 (the current-cycle roster PAC projection is a BLEND of the model and this cycle's pace). State as of 2026-10-05 per D-099: no BLEND is published, the live pointer is still `refit-20260930-377f7324-c3f221343515`, and the 2026-10-01 rebuild is scratch only. This note's description of what the calculator applies is the published v2 bundle's. Whether the console was restarted or the scheduled tasks registered is not recorded here.
 - Parallel runs are bit-identical to serial runs on one platform; across platforms results agree to about 1e-13, so bundles are compared with tolerances, never byte equality.
 
 ## Related Projects
