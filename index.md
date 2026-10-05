@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-401 notes.
+407 notes.
 
 ## Actors (49)
 
@@ -252,9 +252,9 @@
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 
-## Ledger (generated from the Project Brain) (171)
+## Ledger (generated from the Project Brain) (177)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 164 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 170 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
