@@ -140,3 +140,4 @@ Dated correction (2026-10-05): the notes cited "D-079" and "D-088 or later" for 
 ## Related Projects
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+- [[brainlink]] - the project that links this brain (the ledger) with the vault (the map) and Claude memory; generated `ledger/melange-systems-brain/` notes mirror its entries one way.
