@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-229 notes.
+401 notes.
 
 ## Actors (49)
 
@@ -100,8 +100,9 @@
 
 - [[paul-goff]] — Owner of this vault and the sole decision-maker for the Melange Systems, Mentat, forecast-redesign and CU-geography work.
 
-## Projects (4)
+## Projects (5)
 
+- [[brainlink]] — Brainlink links the three record systems: the Project Brain is the ledger (constraints, decisions, dead ends, state), this vault is the map (people, actors, concepts, topics, discussions, links) and Claude memory holds pointers and...
 - [[cu-geography]] — Codex-run credit-union geography project (outputs dir cu-geography; V3 copy cu-geography-v3): Luna stratified RF/KNN data-completion model (closed 2026-09-30, current export = section 30 GPU model, holdout used twice) and the CU row...
 - [[forecast-redesign]] — Mentat forecasting program: the 2026-09-29 audit of three console forecasts (regressions re-run in R), the 2026-09-30 'Giving by cycle' (board F2) forecast-view redesign with projections checked for logical validity against backtests...
 - [[melange-systems]] — Moneyball / Melange: a credit-union legislative-influence model (Blended workbook -> Python engines -> single Moneyball.html deliverable). Began June 2026 in Draft Systems (alias 'Draft Systems'); canonical home moved 2026-06-26 to...
@@ -250,3 +251,10 @@
 - [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of Mentat (FEC contributions intelligence)) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by Paul Goff, built as 8 Mentat...
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
+
+## Ledger (generated from the Project Brain) (171)
+
+- [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
+- [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 164 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
