@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-221 notes.
+229 notes.
 
 ## Actors (49)
 
@@ -56,7 +56,7 @@
 - [[sentinel-collectors]] — Melange press/hearing collection and sentinel-to-workbook bill ingestion layer (Codex-built, Claude-finished) with system-manifest regeneration and self-falsifying audit sentinels; merged to main 313eaaad1 for the ingestion part, press...
 - [[staffer-live-sidecar]] — The live staffer-network graph surface: fec/surfaces/staffer_live (UI) plus staffer_live_server.py and sibling modules, a people-only staffer graph with automatic duplicate-person consolidation, current-coworker cost-1 routing and a...
 
-## Concepts (21)
+## Concepts (25)
 
 - [[behavior-qualified-recognition]] — Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
 - [[boot-protocol-evaluation-framework]] — The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
@@ -74,6 +74,10 @@
 - [[pac-cash-proportional-attribution]] — Mentat's rule for modeling company-funded PAC spending (2026-09-08): each payment takes the company's share of labeled cash just before it, transfers move balances instead of creating gifts, unverifiable inputs withhold it.
 - [[say-do-gate]] — A Champion or Defender cell in the category-stance matrix stands only if the stated stance is backed by a recorded action there: an authored or original-cosponsored bill (Path A) or a CU-aligned final-passage vote (Path V); otherwise Ally.
 - [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with...
+- [[single-look-holdout-discipline-case-1-moneyball-gate2]] — Case 1 of the single-look discipline, the Moneyball session of 2026-07-07: the interview-C retest whose one look was taken, the improvement rounds that missed, the round-3 campaign and the audit and honesty pass, plus other outcomes.
+- [[single-look-holdout-discipline-cases-2-3-n-slot-and-gold-template]] — Cases 2 and 3 of the single-look discipline: the N-slot re-anchor of 2026-07-11, whose pre-registered gate passed 5/5, and the gold-template Senate panels of 2026-07-16, whose two one-look rounds both missed, with the audio two-check...
+- [[single-look-holdout-discipline-cases-4-5-luna-and-pac]] — Cases 4 and 5 of the single-look discipline: the Luna CU-geography holdout of 2026-09-30, used twice, leaving no untouched labelled data, and PAC accuracy attempt 2 of 2026-10-03, whose UT-X holdout was sealed, then opened for development.
+- [[single-look-holdout-discipline-look-ledger]] — Dated ledger of the looks and holdout uses that the single-look discipline records, one row each with lane and outcome, from the 2026-07-07 Big Five retest to the scheduled 2027-03-08 PAC scoring and the planned 2028 clean test.
 - [[single-look-holdout-discipline]] — Working discipline across the Moneyball/Melange lanes: every confirmatory look (holdout score, pre-registered test, one-shot validator) is spent exactly once against criteria locked before the run, a consumed look is never re-run, and a...
 - [[stance-pipeline-integrity-contract]] — The 2026-07-15 production contract for Melange stance labels: one fixed ten-band scale for every domain, bounded exceptional rounding, General CU allocation, the A/V say-do rule, fail-closed identity joins and regeneration checks.
 - [[trend-over-significance]] — Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar.
@@ -103,7 +107,7 @@
 - [[melange-systems]] — Moneyball / Melange: a credit-union legislative-influence model (Blended workbook -> Python engines -> single Moneyball.html deliverable). Began June 2026 in Draft Systems (alias 'Draft Systems'); canonical home moved 2026-06-26 to...
 - [[mentat]] — Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks...
 
-## Topics (137)
+## Topics (141)
 
 - [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] — The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18.
 - [[2026-06-feature-congress-r-scrapers-cu-press-scraper]] — The CU press-release scraper from its 2026-06-10 start through the June 12 audits, plus the five-step fallback chain, archive and third-party sources, bill-sponsorship coverage, the ACU harvest and the per-member web grind of 2026-06-18.
@@ -217,6 +221,10 @@
 - [[2026-08-incident-workstation-disk-and-backup]] — The LG Gram's one C: drive keeps hitting 0 GB free because every checkout of Melange Systems materialises 17.46 GB of tracked audits/legfix5; four clearances (2026-09-11, 09-13/15, 09-16, 09-18) freed hundreds of GB, and the backup...
 - [[2026-09-feature-cosponsor-first-signature-forecast-experiments]] — The 2026-09-05 research series that forecast which of 377 continuing members would make a first cosponsorship of a financial bill within 30 days: a tree model using all evidence won selection on 2023 and added 47 correct recommendations...
 - [[2026-09-feature-cu-geography-luna-and-row-framework]] — Two linked lanes in the Codex-run credit-union geography project: the Luna stratified RF/KNN data-completion model review (CLOSED 2026-09-30, current export = section 30 GPU model) and the CU row framework that assesses and ranks all...
+- [[2026-09-feature-forecast-giving-redesign-audit-lane]] — The forecasting-model audit lane of 2026-09-29 and its 2026-09-30 record: Paul's verbatim pushback and earlier rulings, the withdrawn methodology list, the fix sets Paul applied and committed, the build tree and phases, and the pod rulings.
+- [[2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2]] — PAC-to-candidate giving accuracy attempt 2 of 2026-10-02 and 2026-10-03: the stage chain and its gates, Paul's rulings B1-B3 and C1-C2, the finished results with UT-X not scored, the 2027-03-08 scoring task and the v4 history branch.
+- [[2026-09-feature-forecast-giving-redesign-redesign-lane]] — The giving-view redesign lane of 2026-09-30 to 2026-10-01: the Higgsfield boards and Paul's pick of F2, board and validity problems, the pod reversal and export, the Opus audit, the reconciliation finding the model intact, the landed fixes.
+- [[2026-09-feature-forecast-giving-redesign-six-year-lookback-lane]] — Paul's six-year rolling lookback directive of 2026-10-03 and what followed in the same memory file: the v5 rulings and run, the banking 95% provenance and the all-sector phase rulings E1-E22 of attempt 3 (2026-10-04).
 - [[2026-09-feature-forecast-giving-redesign]] — Three connected workstreams on the Mentat forecasting stack, 2026-09-27 to 2026-10-03: the 09-29 forecasting-model audit, the 09-30 overhaul of the giving view (board F2 'Giving by cycle') with an integrity reconciliation, and...
 - [[2026-09-feature-mentat-console-ui-chart-studio]] — Chart Studio v1 on the Mentat console (2026-09-11), its review and P1 fixes, and the Chart Studio fields lane of 2026-09-12.
 - [[2026-09-feature-mentat-console-ui-cleanup-and-polish]] — The Mentat console UI clean-up lane UI1 (2026-09-17) and the polish lane (2026-09-19), with its board-driven spec changes, commits and traps.

@@ -5,8 +5,8 @@ aliases: ["4-pillar percentile-rank blend"]
 description: "The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept."
 related_to: []
 sources: []
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/data"]
 ---
 
@@ -48,7 +48,7 @@ Other notes that record the blend or its weight sets, by title (plain text, so t
 
 - Melange architecture and system of record: `compute_pillars.py` reproduces the workbook rank chain at exact parity; pillar weights are the user's domain, never relabelled as wrong.
 - Cosponsor and sector networks, Melange dashboard UI evolution, CU stance and sentiment scoring, Melange data-collection lanes, Sentinel collectors: each records the three sets with dates and status.
-- Influence engine internals and Single-look holdout discipline: the weight change of 2026-07-07, made in the GATE-2 session.
+- Influence engine internals and Case 1: Moneyball session of 2026-07-07 (Single-look holdout discipline): the weight change of 2026-07-07, made in the GATE-2 session.
 - Legislative pillar and ACU review: its Tier-1 legislative/press blend weights are kept apart from the pillar weights.
 - Live tree, git drift and line endings: the live-only pillar policy file that encodes the live set.
 - Brain vault setup and Claude memory import: the import kept the live set labelled unratified.

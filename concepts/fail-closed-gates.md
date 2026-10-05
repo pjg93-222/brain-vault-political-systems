@@ -5,7 +5,7 @@ aliases: ["fail-closed rule"]
 description: "When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call."
 related_to: []
 sources: []
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "preserve@agent"
 tags: ["type/concept", "domain/platform"]
 ---
@@ -47,7 +47,7 @@ Other notes that use the rule, by title (plain text, so their link budgets are u
 - Melange fec/ pipeline and Moneyball Blended workbook: the live-only pillar policy is a fail-closed desk gate.
 - Melange audits and code reviews: a fail-closed date that stops the chain and the desk; fail-closed spend guards for unattended runs.
 - Agent tooling stack: the retry controller's zero-flag gate is fail-closed; the coordination evaluator.
-- Single-look holdout discipline: the audio two-check design is an AND-rule fail-closed check.
+- Cases 2 and 3: N-slot re-anchor and gold-template panels (Single-look holdout discipline): the audio two-check design is an AND-rule fail-closed check.
 - Coalition-builder redesign session and Influence engine internals: three fail-closed mirrors (the `receptivity_sensitivity` stage-1 gate among them) weigh against the Big Five 80/20 position.
 - Cosponsor and sector networks: `NET_CONFIG` is fail-closed.
 - CU stance and sentiment scoring: `dashboard_integrity.postflight` is fail-closed and reconciles every display row to a declared source.
