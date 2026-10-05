@@ -1,0 +1,223 @@
+{
+  "id": "FR1",
+  "what": "Split of topics/2026-09-feature-forecast-giving-redesign in the final batch of 2026-10-04, part 2 (branch vault-final-2026-10-04; ledger .bedrock/reorg/ledger/final-2026-10-04.md): the note was 49,863 bytes and its six-year-lookback memory is still active, so its four lane sections move to parts and the six-year-lookback lane gets its own part. Not from the plan table. s10 line numbers are those of the parent after the part-2 edits of that batch (three dated sub-bullets inserted for S1 before the cut).",
+  "parent": "topics/2026-09-feature-forecast-giving-redesign",
+  "home": "projects/forecast-redesign",
+  "hub": {
+    "keep": [
+      "## Context",
+      "## People Involved",
+      "## Actors Involved",
+      "## Related Projects",
+      "## Related Concepts",
+      "## Related Discussions",
+      "## History",
+      "## Decisions",
+      "## Next Steps",
+      "## Traps and lessons (consolidated)"
+    ],
+    "links": [
+      "discussions/2026-10-03-pac-accuracy-attempt2-rulings",
+      "concepts/single-look-holdout-discipline",
+      "actors/mentat-console"
+    ]
+  },
+  "parts": [
+    {
+      "slug": "2026-09-feature-forecast-giving-redesign-audit-lane",
+      "title": "Audit lane, 2026-09-29",
+      "summary": "The forecasting-model audit lane of 2026-09-29 and its 2026-09-30 record: Paul's verbatim pushback and earlier rulings, the withdrawn methodology list, the fix sets Paul applied and committed, the build tree and phases, and the pod rulings",
+      "domain": "domain/research",
+      "home": "projects/forecast-redesign",
+      "sections": [
+        "## Audit lane, 2026-09-29 (worktree `forecasting-model-audit-5603f2`)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-forecast-giving-redesign-redesign-lane",
+      "title": "Redesign lane, 2026-09-30 to 2026-10-01",
+      "summary": "The giving-view redesign lane of 2026-09-30 to 2026-10-01: the Higgsfield boards and Paul's pick of F2, board and validity problems, the pod reversal and export, the Opus audit, the reconciliation finding the model intact, the landed fixes",
+      "domain": "domain/research",
+      "home": "projects/forecast-redesign",
+      "sections": [
+        "## Redesign lane, 2026-09-30 to 2026-10-01 (worktree `mentat-forecast-redesign-0fb0be`; session 17a121dd-fadd-4a01-933b-7c25f96ebb33; memory modified 2026-10-01T18:03:05.943Z)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2",
+      "title": "PAC accuracy attempt 2",
+      "summary": "PAC-to-candidate giving accuracy attempt 2 of 2026-10-02 and 2026-10-03: the stage chain and its gates, Paul's rulings B1-B3 and C1-C2, the finished results with UT-X not scored, the 2027-03-08 scoring task and the v4 history branch",
+      "domain": "domain/research",
+      "home": "projects/forecast-redesign",
+      "sections": [
+        "## PAC accuracy attempt 2 (2026-10-02 to 2026-10-03)"
+      ],
+      "keep": [],
+      "pointers": []
+    },
+    {
+      "slug": "2026-09-feature-forecast-giving-redesign-six-year-lookback-lane",
+      "title": "Six-year lookback directive and v5 rulings",
+      "summary": "Paul's six-year rolling lookback directive of 2026-10-03 and what followed in the same memory file: the v5 rulings and run, the banking 95% provenance and the all-sector phase rulings E1-E22 of attempt 3 (2026-10-04)",
+      "domain": "domain/research",
+      "home": "projects/forecast-redesign",
+      "sections": [
+        "## Six-year lookback directive and v5 rulings (2026-10-03/04; source `pac-accuracy-six-year-lookback-directive-2026-10-03`)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 42,
+      "old": "**Systems touched.** The Mentat console ([[mentat-console]], product project Mentat (FEC contributions intelligence)); heavy compute was moved to the RunPod pod (RunPod math pod) and then brought back out (see History); progress is watched through GLASS BOX event stream. Work is directed by Paul Goff.",
+      "mark": "same note",
+      "referent": "History (hub)",
+      "why": "\"see History\" names the hub's History section"
+    },
+    {
+      "line": 82,
+      "old": "| 2026-09-27 | Giving Forecast built by Codex from Paul's CHE:673 ask (untracked files); Codex CHE thread rulings: \"we are mainly looking at the ordinary P\" (CHE:537), \"look at the ORDINARY P values\" (CHE:595), \"forecast later giving\" (CHE:673). 63 automated OpenSecrets captures made 09-27, kept permanently as the frozen baseline. |",
+      "mark": "not positional",
+      "why": "\"later\" is inside the quoted ruling \"forecast later giving\""
+    },
+    {
+      "line": 91,
+      "old": "| 2026-10-01 | Forecast UI v3 direction: Paul rejected the 3 Nano Banana boards; next boards in GPT Image 2.5. |",
+      "mark": "not positional",
+      "why": "\"next boards\" is temporal (the following round of boards)"
+    },
+    {
+      "line": 103,
+      "old": "  - Ordinary p-values are primary (\"we are mainly looking at the ordinary P\"; \"Ordinary p-values remain primary\" in the UI is Codex's phrasing of that ruling). \"forecast later giving\" is Paul's own wording (CHE:673).",
+      "mark": "not positional",
+      "why": "\"later\" is inside the quoted ruling \"forecast later giving\""
+    },
+    {
+      "line": 105,
+      "old": "- ~~Tailoring ruled 2026-09-30: PAC = DerSimonian-Laird partial pooling (auto -0.252, banks -0.087, CU -0.096; cut PAC error ~1/3 out of sample); control + lobbying pooled (no rule beat pooled; banks-only tailoring made banks worse). Low in-sample p never predicted out-of-sample gain.~~ Superseded 2026-09-30 by Paul's pick \"Own slopes + auto-pick\" (see next); kept because it explains older artifacts.",
+      "mark": "same note",
+      "referent": "the following Decisions bullet, Own slopes + auto-pick (hub)",
+      "why": "\"(see next)\" points at the next Decisions bullet, which stays in the hub"
+    },
+    {
+      "line": 106,
+      "old": "- Own slopes + auto-pick (2026-09-30): with the ruled previous-cycle PAC anchor, own industry slopes (R1) beat the blend (LOEO 10.8 vs 14.3, naive 12.7; chrono 14.3 vs 21.6, naive 12.3). v2 PAC = own slopes; the refit agent re-tests R0/R1/R2 per term every refit and picks the rule winning BOTH designs, else blend. Lesson: a rule-comparison result is conditional on the anchor; re-run it when the anchor changes. Auto-pick margin RULED 5% (PAC = own, control/lobbying pooled).",
+      "mark": "not positional",
+      "why": "\"previous-cycle\" names the anchor, not a place in the note"
+    },
+    {
+      "line": 125,
+      "old": "## Next Steps",
+      "mark": "not positional",
+      "why": "the heading Next Steps"
+    },
+    {
+      "line": 133,
+      "old": "- [ ] P&C needs from Paul: OpenSecrets F3400 totals 2008-2024 + candidate recipients 2012-2024, IBISWorld 52412 2025+ edition (see Decisions: F3400 has no public page; F09 used)",
+      "mark": "same note",
+      "referent": "Decisions (hub)",
+      "why": "\"see Decisions\" names the hub's Decisions section"
+    },
+    {
+      "line": 135,
+      "old": "- [x] PAC accuracy attempt 2: finish S2C narrow repair -> v3 freeze -> ONE Opus verifier gate; never launch S3 without Paul's OK and a fresh gate on the v2 freeze; Glass Box watcher alongside every stage. Done 2026-10-03: the S2C gate PASSED, S3 ran dev-only (one pass) on Paul's \"finish\", and the attempt finished ~08:45 UTC (see PAC accuracy attempt 2).",
+      "mark": "rewrite",
+      "new": "- [x] PAC accuracy attempt 2: finish S2C narrow repair -> v3 freeze -> ONE Opus verifier gate; never launch S3 without Paul's OK and a fresh gate on the v2 freeze; Glass Box watcher alongside every stage. Done 2026-10-03: the S2C gate PASSED, S3 ran dev-only (one pass) on Paul's \"finish\", and the attempt finished ~08:45 UTC (see PAC accuracy attempt 2 in [[2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2]]).",
+      "referent": "2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2",
+      "why": "see: names heading \"PAC accuracy attempt 2 (2026-10-02 to 2026-10-03)\", now in topics/2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2 (automatic mark, signed off)"
+    },
+    {
+      "line": 141,
+      "old": "- [ ] Phase 1-6 remainder: Phase 3 deliverables rollback-on-partial-write fix, Phase 4 D1 copy_back rollback REQUIRED + D2-D4 wording/README, Phase 2 anchor addendum + feeds spec (state at the 09-30 pause; later phases applied, see History)",
+      "mark": "same note",
+      "referent": "History (hub)",
+      "why": "\"see History\" names the hub's History; \"later phases\" is temporal"
+    },
+    {
+      "line": 147,
+      "old": "**Rulings found (verbatim, Codex CHE thread 09-27):** \"we are mainly looking at the ordinary P\" (CHE:537); \"look at the ORDINARY P values\" (CHE:595); \"forecast later giving\" is Paul's own wording (CHE:673). \"Ordinary p-values remain primary\" in the UI is Codex's phrasing of that ruling.",
+      "mark": "not positional",
+      "why": "\"later\" is inside the quoted ruling \"forecast later giving\""
+    },
+    {
+      "line": 161,
+      "old": "- Paul's Georgetown password was pasted in chat 2026-09-30: never use/store it; told him to change it (\"password: ignore\" was his later answer); IBIS = inbox ingester only, no logins, no unblocking services.",
+      "mark": "not positional",
+      "why": "\"his later answer\" is temporal"
+    },
+    {
+      "line": 163,
+      "old": "- Phase 2 anchor rulings: see Decisions. Phase 3 UI built + tested, apply command given to Paul (`SP\\phase3_ui\\copy_back.py`; `index.html` + `chart-studio.js` need hunk staging at commit). Phase 2 builder launched (anchors + consumer + shared contract fixtures).",
+      "mark": "rewrite",
+      "new": "- Phase 2 anchor rulings: see Decisions in [[2026-09-feature-forecast-giving-redesign]]. Phase 3 UI built + tested, apply command given to Paul (`SP\\phase3_ui\\copy_back.py`; `index.html` + `chart-studio.js` need hunk staging at commit). Phase 2 builder launched (anchors + consumer + shared contract fixtures).",
+      "referent": "hub",
+      "why": "see: names heading \"Decisions\", now in topics/2026-09-feature-forecast-giving-redesign (automatic mark, signed off)"
+    },
+    {
+      "line": 167,
+      "old": "- v2 G6 HOLD diagnosed (no bug): banks House = previous-cycle anchor carries banks' presidential premium (+1.35pp, 5/5 pairs); banks lobbying = log refit (2016/2020). RULED: anchor auto-pick per industry x chamber; keep log lobbying + DROP banks warning; G6 owner waiver list. Phase 2 consumer + anchors + contracts DONE (..`299bf69d7`; 136-cell section-F match). F09 21 pages fetched locally 2026-09-30 (pod was Cloudflare-challenged). Pending: Windows scheduled tasks (nightly anchors, refit watcher) need Paul's OK; landing kit into dirty live tree.",
+      "mark": "not positional",
+      "why": "\"previous-cycle\" names the anchor"
+    },
+    {
+      "line": 174,
+      "old": "**Paul, 2026-09-30 (via /taste-skill:gpt-taste):** \"I don't like the current look of the forecast. You are going to overhaul it and present me with mock-ups using Higgsfield. You will then follow the selected mock-up perfectly.\" Parameters: reason in Opus 5.5, code in Sonnet 5.5. Then: \"I like number 2, but while you are doing this, make sure the projections are logically valid and in line with the test results\". Redesign build = one-to-one to F2, all compute on the pod (later lifted).",
+      "mark": "same note",
+      "referent": "the POD REVERSAL paragraph of the redesign lane (same part)",
+      "why": "\"(later lifted)\" points at the pod reversal recorded in the same section"
+    },
+    {
+      "line": 185,
+      "old": "- PAC full-cycle prediction interval lower bound $3.74M below the $4.67M already observed; remainder PI negative (-$937K).",
+      "mark": "not positional",
+      "why": "\"below\" compares amounts"
+    },
+    {
+      "line": 186,
+      "old": "- Senate roster-PAC projected two-party total $886.99K below the $990.5K observed (budget_inconsistent, not clipped).",
+      "mark": "not positional",
+      "why": "\"below\" compares amounts"
+    },
+    {
+      "line": 195,
+      "old": "- F1: intervals not conditioned on observed (banks PAC 12.1% mass below observed, remainder PI negative).",
+      "mark": "not positional",
+      "why": "\"below observed\" compares amounts"
+    },
+    {
+      "line": 196,
+      "old": "- F2: share remainders by subtraction (7/19 negative, 5/19 totals below observed).",
+      "mark": "not positional",
+      "why": "\"below observed\" compares amounts"
+    },
+    {
+      "line": 197,
+      "old": "- F3: general giving (~99% employee) anchored on presidential 2024: same-phase better 47%/44% in BOTH designs (banks full $27.18M -> $16.86M) = PAUL'S RULING (as recorded; read with \"take F3/F4/F10/F15 + option (c) to Paul\" below, i.e. a question for Paul's ruling). Later reconciliation: OVERSTATED (see below).",
+      "mark": "same note",
+      "referent": "the MY CALLS bullet and the RECONCILIATION DONE bullets of the redesign lane (same part)",
+      "why": "both \"below\" references and \"Later reconciliation ... (see below)\" point inside the same section"
+    },
+    {
+      "line": 220,
+      "old": "**FORECAST UI v3 (2026-10-01):** Paul rejected the 3 Nano Banana boards; next boards in GPT Image 2.5, time-series stacked D/R bars by cycle (PAC, General, Lobbying; House/Senate splits; adjustable expected takeover defaulting to market), emphasis on ease of understanding. \"No fucking headline\": never add a narrative headline/summary sentence to the forecast UI. Projections in boards must come from the corrected model (phase-aware + 2028 chained from 2026), not placeholders.",
+      "mark": "not positional",
+      "why": "\"next boards\" is temporal"
+    },
+    {
+      "line": 222,
+      "old": "**Why (redesign):** Paul wants the forecast to look better AND be right; a chart makes an unconditioned interval visibly impossible (whisker below the observed stack).",
+      "mark": "not positional",
+      "why": "\"below the observed stack\" describes a chart"
+    }
+  ]
+}

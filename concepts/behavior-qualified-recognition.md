@@ -10,8 +10,8 @@ related_to:
 sources: []
 doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\stance\\RANK_HONORS.md"
-    sha256: "c993a5a3477e8d57d7d4e0bc686335d84e1809b0c0bd0b83e5bd6e0101a383cd"
-    as_of: "2026-09-18"
+    sha256: "deb6325299eaa3971aed2af13ca384ab20c5b2a5e741d50892a5597d03da42de"
+    as_of: "2026-10-04"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\stance\\rank_honors_policy.py"
     sha256: "1468fb31bd2c1bf2d3f0c9120ac0711298f1057d7b90b88ad90b901cfcedbfbb"
     as_of: "2026-09-16"
@@ -25,7 +25,7 @@ doc_sources:
     sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
     as_of: "2026-10-04"
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -35,6 +35,7 @@ tags: ["type/concept", "domain/research"]
 
 > [!info] Source and status
 > Summary of `fec/stance/RANK_HONORS.md` (added 2026-09-16 in `296f40e2b`, last changed 2026-09-18 in `11a34e215`). Its award rules predate rule G: commit `e3e5ece7c` (2026-09-16, later the same day) made rule G the default field ladder, and the doc was not updated for it. The rule-G section below comes from the code and brain decision D-031.
+> Dated note (2026-10-04): the doc now records its code divergence. Melange commit `97e5133` (2026-10-04, on `main`, mirror-pushed) added a section "Code divergence (2026-10-04)" on rule G as the default field ladder (`HONORS_LADDER=g` since `e3e5ece7c`, D-031), the rule-G bands and score, and the analytic overall label shown by default; the text after that section is unchanged since `11a34e215` (2026-09-18).
 
 ## Description
 

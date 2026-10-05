@@ -77,7 +77,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "a2f018f3149d98c773c3253a2d406f4f902c542de1c1e7eb6f68ff5799202b43"}
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "reorg@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -163,6 +163,10 @@ Every note of this project by type, one line each; parts follow their parent.
 | Topic | Relation |
 |---|---|
 | [[2026-09-feature-forecast-giving-redesign]] | Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD). |
+| [[2026-09-feature-forecast-giving-redesign-audit-lane]] | part: The forecasting-model audit lane of 2026-09-29 and its… |
+| [[2026-09-feature-forecast-giving-redesign-redesign-lane]] | part: The giving-view redesign lane of 2026-09-30 to 2026-10-01… |
+| [[2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2]] | part: PAC-to-candidate giving accuracy attempt 2 of 2026-10-02… |
+| [[2026-09-feature-forecast-giving-redesign-six-year-lookback-lane]] | part: Paul's six-year rolling lookback directive of 2026-10-03… |
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
 
 ### Related Actors
