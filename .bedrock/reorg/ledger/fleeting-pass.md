@@ -362,3 +362,7 @@ the working tree. All three stay out of this commit and belong to the next pass.
 reports it: 212 memory files, 211 already in the vault, 0 new, 1 changed. The v5 statements in
 `topics/2026-09-feature-forecast-giving-redesign.md`, `projects/forecast-redesign.md` and `concepts/single-look-holdout-discipline.md`
 are therefore one version behind that file.
+
+## Note added by the cleanup batch of 2026-10-04 (review item N5)
+
+R24 and R28 departed from the append-only rule stated in "How the pass applied the vault rules". R28 removed the "Pending newer capture" section of `concepts/live-tree-patch-discipline.md`, a caution that batch 7b had added until a fleeting pass settled the newer capture; R24 replaced the bullet that pointed to it with the two bullets at LT:26-27 instead of keeping it beside a dated note. The caution's rule is now LT:27, which also names the dirty-path advice it replaces. Ledger: `.bedrock/reorg/ledger/cleanup-2026-10-04.md`.

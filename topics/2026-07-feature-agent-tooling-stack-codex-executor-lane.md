@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-07-10
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"]
 part_of: "[[2026-07-feature-agent-tooling-stack]]"
 ---
@@ -90,6 +90,7 @@ part_of: "[[2026-07-feature-agent-tooling-stack]]"
 - Installer `irm | iex` + script download both classifier-blocked, so Paul must run `irm https://antigravity.google/cli/install.ps1 | iex` himself; **agy 1.1.6 INSTALLED + LANE LIVE same day, VERIFIED @f21b0ff/11b33ea**: OAuth via ConPTY driver (preserved at `.claude/skills/gemini-perception/scripts/agy_pty_login.py`; `agy_send.txt` = keystroke channel; auth code paste-back flow; Google one-time account-verification interstitial uses ONE-SHOT links - always the freshest, and first browser visit to gemini.google.com clears new-account gating).
 - Model = `gemini-3.6-flash-high` (Paul's 3.6 call CONFIRMED - `agy models` lists 3.6/3.5-flash tiers + 3.1-pro; the diagram's 3.5 outdated).
 - Invocation: `agy -p "<contract>" --model gemini-3.6-flash-high --add-dir <dir>` from media cwd; `permissions.allow=["read_file(**)"]` in `~/.gemini/settings.json` (BOM-FREE mandatory; superseded 2026-08-09, see below); shell tools stay soft-denied headless = LOAD-BEARING, never `--dangerously-skip-permissions`; the contract MUST explicitly instruct read_file (@-mentions don't attach in print mode; a "no commands" prohibition blocks the read tool - say "no shell or terminal commands").
+  - Dated correction (2026-10-04): the 2026-08-09 supersession is not in this part. It is the Gemini lane repair @038351b, a History row of Agent tooling stack: agy 1.1.11 permissions moved to `~/.gemini/antigravity-cli/settings.json` with `read_file(*)`, and the old `~/.gemini/settings.json` file and the `**` form are dead (Agent orchestration and model tiering rules; metaloop).
 - FIRST LIVE PERCEPTION PASSED: read `rank_authority.png`, corrected a wrong chart premise, verbatim top-5 roster + 12 headers, 4-list compliant, zero fabrication. Consent screen: completed with ToS; interactions-data checkbox final state UNCERTAIN (TUI repaint ambiguity) - adjustable in agy settings, flag to Paul.
 - **MEDIA-DELEGATION PROTOCOL SHIPPED @9d8217d** (main == live == user-scope): gemini-perception skill + `/gemini` command (4-field perception contract, 4-list report OBSERVATIONS / EXTRACTED / UNCERTAIN / NOT OBSERVED; Gemini = capture + comprehend, Codex = compute/splice/mark, Claude = guide + adjudicate + digest; INVOCATION marked PENDING VERIFICATION until the first live agy dispatch); the codex-executor SKILL.md gained the hierarchy + never-Claude-code + Sol second-review round.
 - Machine state 07-24: winget + Python 3.12 + Node 24.18 present; pywinpty installed; PTY driver at scratchpad `gemini_pty_login.py` (reusable for agy auth).

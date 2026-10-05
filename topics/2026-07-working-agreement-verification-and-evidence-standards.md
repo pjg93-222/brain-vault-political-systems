@@ -22,7 +22,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/danish-external-criterion-2026-07-12.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\danish-external-criterion-2026-07-12.md", sha256: "8b29888b5a4e1c8216fe4d84642e157bf41c7b058725f8a86a8b3e53980455c2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/dont-drop-context-anchor-memory.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\dont-drop-context-anchor-memory.md", sha256: "19a63a8ec0ebf3f48eaecd7f010a31adc7cb4cf0f9aa196e6ed7cea6e151b6ad"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreement"]
 ---
 
@@ -85,6 +85,7 @@ Standing rulings and their justifications (the full rule text, with **Why** and 
 - Before editing any spawned-task finding, grep the review branch tip for the fix and run the named test there (2026-09-14).
 - A `file:line` cite inside committed source is verified with `git show HEAD:<path>`, never the working copy (2026-09-18, Paul's ruling).
 - Before any claim about what is validated / decided / measured, re-read the relevant memory and anchor to it (2026-07-09). Never say "5/5" unqualified; never say "no external criterion exists" flatly.
+- Never argue with Paul's recollection of a figure without checking transcripts first (2026-10-04; `pac-accuracy-six-year-lookback-directive-2026-10-03`, diagnostic revision 2). In that memory, revision 1 had called the banks 95% figure post hoc and never told to Paul, and Paul WAS told on 2026-10-01 14:42 ET.
 - The Agreeableness validation search is open until Paul says stop; the kill-ledger "closures" do not bind it (2026-07-12).
 - ~~"ES routes exhausted / no gold-standard N criterion" as a universal statement (`psych-audit-2026-07-09` framing)~~ (2026-07-09) - superseded 2026-07-12 by the Danish correction: "none for US Congress; European self-report exists and transfers at the method level"; kept because it explains older psych-audit text.
 - ~~"A routes exhausted, never propose" (line in `psych-audit-2026-07-09`)~~ (2026-07-09) - superseded 2026-07-12 for THIS search only, under Paul's explicit direction.

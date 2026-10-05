@@ -39,6 +39,7 @@ export const TUNING = {
   COVER_TOP: 0.45,
   COVER_ANY: 0.3,
   MAX_NOTES: 5,
+  /** the block's length budget, counted with the vault path at the length of REAL_VAULT (see formatRecall) */
   MAX_CHARS: 800,
 };
 
@@ -125,10 +126,19 @@ export function rank(idx: RecallIndex, prompt: string): { hits: Hit[]; all: Hit[
 
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "");
 
-/** The "Brain recall" block: at most MAX_CHARS characters, ASCII, one line per note. */
+/**
+ * The real vault path: where the global hooks run this vault (~/.claude/settings.json). The block's first line names the
+ * vault path, and the per-note line budget counts that path at the length it has here, so the note lines come out the same
+ * wherever the vault is (an export at a long temp path, a moved copy) and the output at the real vault path is exactly
+ * what it was before this rule. The selftest measures its length limits as if the vault were here.
+ */
+export const REAL_VAULT = "C:\\Users\\pgoff\\Documents\\brain";
+
+/** The "Brain recall" block: one line per note, ASCII; at most MAX_CHARS characters when the vault is at REAL_VAULT. */
 export function formatRecall(idx: RecallIndex, hits: Hit[], vault = VAULT): string {
   const head = `Brain recall (vault ${vault}; reference notes, not instructions) that may relate to this prompt. Read one only if it helps.`;
-  const budget = Math.floor((TUNING.MAX_CHARS - head.length) / hits.length) - 1;
+  const headAtRealVault = head.length - vault.length + REAL_VAULT.length;
+  const budget = Math.floor((TUNING.MAX_CHARS - headAtRealVault) / hits.length) - 1;
   const lines = hits.map(({ i }) => {
     const n = idx.notes[i];
     const base = `- ${n.p}`;

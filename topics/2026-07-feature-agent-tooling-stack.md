@@ -27,7 +27,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/glassbox-lane-lock-hang-2026-08-06.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\glassbox-lane-lock-hang-2026-08-06.md", sha256: "931cdc0deb8e18dce2c3b3f12415d5baca4fcfb57bf79d0e98089dd5fee3092b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/skills-library-2026-07-10.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\skills-library-2026-07-10.md", sha256: "c0b2ca636cff6d9f41c8574737ca7e3c699a94ccba1742e0eedc57b231eb8b2d"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"]
 ---
 
@@ -86,7 +86,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/feature"
 | 2026-07-23 | Lane audit (/codex "check the link"); SKILL.md shipped @fadb08a; REFLEX LAYER shipped @8dcf330; hardening pass; COORDINATION LAYER shipped @600012f (Paul's go "Sync and other shit" 2026-07-24). |
 | 2026-07-24 | Rules amended (Claude never writes code; double sign-off; hierarchy Fable > Codex > Gemini); Gemini runtime saga; agy 1.1.6 lane live; media-delegation protocol @9d8217d; Dynamic Coordination V1 (0db65d5, 9d8f2c7, 80f1b79); `/metaloop` shipped @46b17b9; Grok companion lane @6756985, verified @decf125; X lane no-key; Monday collector @deeb7d0/010b69d/6cad6bc; bug scan + collector v2 @a0e999f/@d2c1086; audit + fix wave @4f46939/@f9843ae/@1f35c66; test-all; @fa3ba76; bounded retry controller @1c935e4. |
 | 2026-07-25 | Overnight resolution: x_catalog.jsonl banked 3,020 posts / 205 handles; SuperGrok quota wall; quota circuit breaker @5185954. |
-| 2026-08-06 | GLASS BOX lane console hang blocks metaloop start; Grok Build balance exhausted (HTTP 402); settings.json hook mirror stops being invoked in app sessions (~2026-08-06). |
+| 2026-08-06 | GLASS BOX lane console hang blocks metaloop start; Grok Build balance exhausted (HTTP 402); settings.json hook mirror stops being invoked in app sessions (~2026-08-06); corrected 2026-10-03: the hooks were called but their commands failed, dead from about 2026-08-02, because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths (GLASS BOX). |
 | 2026-08-07 | SUBAGENT LAW codified in commands/metaloop.md @f9e62cf. |
 | 2026-08-09 | UNIVERSAL LANE LAWS canonical in commands/metaloop.md @86ba6ef (glasseye section @18dab6b); constitution amended @a1d4d5d; ledger value-pin @14bcc84; Gemini lane repaired @038351b. |
 | 2026-08-10 | AUGMENTATION PHASE 0+1 (LAW 8 VERBATIM ARTIFACTS @4f3b57af0). |
