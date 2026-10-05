@@ -18,7 +18,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/n-slot-reanchor-2026-07-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\n-slot-reanchor-2026-07-11.md", sha256: "e45c60d71c2689672cec1494ff32a691eac421ffc384113239cd1dc6a2b6b0e4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "98d0e7b68148f8d76298dec88c9fadf2afce2020d21e6f391661530ee4e2c06f"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "a2f018f3149d98c773c3253a2d406f4f902c542de1c1e7eb6f68ff5799202b43"}
 updated_at: 2026-10-04
 updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
@@ -27,6 +27,10 @@ tags: ["type/concept", "domain/research"]
 # Single-look holdout discipline
 
 > A holdout or optimization "look" can be spent once: pre-register the gate before the run, never re-run a consumed look, and never spend a single-shot holdout on a known non-certifiable model.
+
+## Parts
+
+- [[single-look-holdout-discipline-look-ledger]] — Dated ledger of the looks and holdout uses that the single-look discipline records, one row each with lane and outcome, from the 2026-07-07 Big Five retest to the scheduled 2027-03-08 PAC scoring and the planned 2028 clean test.
 
 ## Description
 
@@ -38,37 +42,17 @@ tags: ["type/concept", "domain/research"]
   4. **Do not spend a single-shot holdout on a known non-certifiable model.** "UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it." (PAC attempt 2.)
   5. **No look-fragments.** A fresh instrument x criterion pairing computed before the lock (even by a subagent, even from shipped scores) is a look-fragment: VOID, never cite (2026-07-16 taint).
 - Relationship to the model-evaluation tooling: the [[quant-model-evaluation-skill]] encodes confirmatory looks as separate-owner-authorization events (see its "confirmatory looks follow separate owner authorization" scope).
-- Where it applies in the vault: [[2026-07-feature-influence-engine-internals]] (Big Five / receptivity gates), [[2026-07-feature-personality-psychometrics]] (Big Five panels), [[2026-07-feature-audio-and-speech-lane]] (audio identity gates), [[2026-09-feature-cu-geography-luna-and-row-framework]] and [[cu-geography]] (Luna holdout use), [[2026-09-feature-forecast-giving-redesign]] and [[2026-10-03-pac-accuracy-attempt2-rulings]] (UT-X sealed).
+- Where it applies in the vault: [[2026-07-feature-influence-engine-internals]] (Big Five / receptivity gates), [[2026-07-feature-personality-psychometrics]] (Big Five panels), [[2026-07-feature-audio-and-speech-lane]] (audio identity gates), [[2026-09-feature-cu-geography-luna-and-row-framework]] and [[cu-geography]] (Luna holdout use), [[2026-09-feature-forecast-giving-redesign]] and [[2026-10-03-pac-accuracy-attempt2-rulings]] (UT-X sealed). Dated note (2026-10-04, all-sector phase rulings): Paul's E4 opened P&C/UT-X for development, superseding C1; holdout spent, never certifies.
 
 ## Key Characteristics
 
-- A look has an owner-visible state: PRE-REGISTERED -> LOCKED (commit/hash) -> CONSUMED (PASS or MISS) -> terminal for that route. Each consumed look below is marked "never re-run".
+- A look has an owner-visible state: PRE-REGISTERED -> LOCKED (commit/hash) -> CONSUMED (PASS or MISS) -> terminal for that route. Each consumed look below and in [[single-look-holdout-discipline-look-ledger]] is marked "never re-run".
 - A MISS is evidence, not a failure to be retried: the 2026-07-16 MISSes became the evidence FOR the honest one-panel labels; the 2026-07-07 round-1 MISSes left the shipped config standing.
 - Gates are about construct integrity and fresh reliability when no criterion exists (N-slot re-anchor: "No gold-standard N criterion exists (still) so the gate is construct-integrity + fresh reliability, NOT convergence-with-criterion").
 - Estimators must be judged on an external criterion, not a metric the method itself inflates (2026-07-07 H-1: split-half reliability inflated by double shrinkage).
 - Statistical sanity of "one more look": a joint-null false-pass simulation (pass-both-panels about 1.5-2%, plus dual dominance under 1%) showed exactly ONE more look per trait is defensible; more = basis-shopping (2026-07-16).
 - A holdout used twice leaves no untouched labelled data; a further model change cannot then be validated honestly without new labels (Luna, 2026-09-30).
 - Sealing is a ruling: opening a sealed holdout needs a new owner ruling (PAC attempt 2, C1).
-
-## Look ledger (all dates absolute)
-
-| Date | Lane | Look | Outcome |
-|---|---|---|---|
-| 2026-07-07 | Big Five interview-C retest | pre-registered `c_prereg_test`, ONE look | PASSED, look TAKEN; consequence wired @b6968fd |
-| 2026-07-07 | Improvement round 1 (bars @a61820e) | P1, P2, P4, B5 one look each | ALL MISS; shipped config survives |
-| 2026-07-07 | Round 2 blue (prereg @54d0f7c) | composed resid-A/C/O + v2-E | MISS (look TAKEN same day) |
-| 2026-07-07 | Psychology round-3 | 11 pre-registered designs total, one look each | zero bars moved; P6 gated shrinkage PASSED and PROMOTED (claim later retracted, change kept); P5, P7, B6, V3P, CT-CM MISS |
-| 2026-07-11 | N-slot re-anchor (round-7) | pre-registered 5-criterion gate (`fec/affective_n_validate.py`) | PASSED 5/5; RECEPT_N=affective promoted @94dc579 |
-| 2026-07-16 | Personality gold, RESULT-OW (@0aab1f4) | O criterion-weighting look | MISS - terminal |
-| 2026-07-16 | Personality gold, RESULT-NV (@0ab1368) | N variant-parity look | MISS - terminal |
-| 2026-07-16 | Same session | subagent fresh pairing pre-lock | VOID look-fragment, never cite |
-| 2026-09-30 | Luna household model | holdout (split-2 labelled rows outside the 20k test sample) scored ONCE | +1.009 pp, deploy |
-| 2026-09-30 | Luna round 3 (GPU) | same holdout, SECOND use, disclosed | +0.087 pp, deploy; no untouched labelled data remains |
-| 2026-10-03 | PAC accuracy attempt 2 | UT-X single-shot holdout | sealed for the attempt (ruling C1); S3 dev-only; after the S2C gate PASS, S3 ran one dev-only pass and the attempt ended ~08:45 UTC with UT-X SEALED_NOT_SCORED (unspent) |
-| 2026-10-03 | PAC attempt 2, v4 branch | V3 RESCORE on the superseding freeze V4_1, one pass | v4 WORSE for banks nowcasts (m15 92.33 -> 86.38); v3 stays the record; v4 labelled a post-hoc regression (2026-10-03) |
-| 2026-10-04 | PAC v5 run | V5-R one pass; RESCORE labelled post hoc | banks nowcasts up except m21 (97.26 -> 96.85), SchoolsFirst m21 to RESCORE_OBSERVED_PASS, ORIGIN banks unchanged; 3 SchoolsFirst cells flip under leave-one-out; v3 stays the record |
-| 2027-03-08 (scheduled) | PAC live freezes | one-time task `score-pac-live-freeze-2026` (Paul OK'd 2026-10-03; stops without a local pas226 edition dated >= 2027-03-01) | scores v3 and LIVE_FREEZE_V4_1 side by side, plus a v5 2026 line (Paul, 2026-10-04) |
-| 2028 (planned) | PAC v5 | first clean test (Paul, 2026-10-04) | method and plan frozen before 2027-01-31; each forecast frozen within 14 days of its issue date. Update (v5 run, 2026-10-04): method and plan frozen; any code change after 2027-01-31 ends the clean series |
 
 ## Case 1: Moneyball 2026-07-07 (GATE-2 complete, interview-C retest, improvement rounds; `moneyball-2026-07-07-gate2-round1`)
 
@@ -234,7 +218,8 @@ PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's
 - S2C narrow repair -> v3 freeze -> ONE Opus verifier gate (not 3). S2C launched about 06:2x UTC (exact minute not given).
 - **Why:** UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it.
 - **How to apply:** never launch S3 without Paul's OK and a fresh gate on the v2 freeze. The Glass Box watcher must run alongside every stage (S2's first 49 min were unwatched). Related: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
-- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger. Details in Forecast audit, giving-view redesign and PAC accuracy.
+- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger in [[single-look-holdout-discipline-look-ledger]]. Details in Forecast audit, giving-view redesign and PAC accuracy.
+  - Update (2026-10-04, all-sector phase rulings; newer version of `pac-accuracy-six-year-lookback-directive-2026-10-03`): Paul's E4 opened P&C/UT-X for development, superseding C1; the holdout is spent and never certifies.
 
 ## Related Concepts
 

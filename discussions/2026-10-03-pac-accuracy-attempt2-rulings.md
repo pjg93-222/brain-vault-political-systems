@@ -16,7 +16,7 @@ action_items:
   - "Do not launch S3 without Paul's explicit OK and a fresh gate on the v2 freeze (owner: Paul / coordinator). Progress 2026-10-03: after the S2C gate PASSED on the v3 freeze, S3 ran dev-only, one pass, on Paul's 'finish'."
   - "Finish S2C narrow repair, produce the v3 freeze, run ONE Opus verifier gate (owner: coordinator; S2C launched ~06:2x UTC on 2026-10-03). Done 2026-10-03: S2C gate PASS."
   - "Run the Glass Box watcher code/glassbox/stage_watch.ps1 alongside every stage (owner: coordinator)."
-  - "Opening UT-X requires a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished ~08:45 UTC with UT-X SEALED_NOT_SCORED."
+  - "Opening UT-X requires a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished ~08:45 UTC with UT-X SEALED_NOT_SCORED. Progress 2026-10-04 (source `pac-accuracy-six-year-lookback-directive-2026-10-03`, all-sector phase rulings): Paul's E4 opened P&C/UT-X for development, superseding C1; holdout spent, never certifies."
 related_topics:
   - "[[2026-09-feature-forecast-giving-redesign]]"
 related_actors: []
@@ -77,7 +77,7 @@ tags: ["type/discussion", "domain/research"]
 - [x] Never launch S3 without Paul's OK and a fresh gate on the v2 freeze (owner: Paul / coordinator). Progress 2026-10-03 (source `pac-accuracy-attempt2-lane-2026-10-03`, newer version): after the S2C gate PASSED on the v3 freeze, S3 ran dev-only, one pass, on Paul's "finish".
 - [x] Complete S2C narrow repair, v3 freeze, and the single Opus verifier gate (owner: coordinator). Done 2026-10-03: S2C gate PASS.
 - [ ] Run the Glass Box watcher `code/glassbox/stage_watch.ps1` alongside every stage; S2's first 49 min were unwatched (owner: coordinator)
-- [ ] Any opening of UT-X needs a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished with UT-X SEALED_NOT_SCORED, so the single shot is still unspent.
+- [x] Any opening of UT-X needs a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished with UT-X SEALED_NOT_SCORED, so the single shot is still unspent. Done 2026-10-04 (source `pac-accuracy-six-year-lookback-directive-2026-10-03`, all-sector phase rulings): Paul's E4, the new owner ruling, opened P&C/UT-X for development, superseding C1; holdout spent, never certifies.
 
 ## Gate and stage history (2026-10-03, UTC)
 

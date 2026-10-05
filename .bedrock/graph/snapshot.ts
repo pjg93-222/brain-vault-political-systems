@@ -18,7 +18,12 @@
 // was removed); now 221 / 616 / 2207, re-pinned by the vault cleanup of 2026-10-04 (branch vault-cleanup-2026-10-04; ledger
 // .bedrock/reorg/ledger/cleanup-2026-10-04.md) from its own export: no node or link added or removed; the forecast-redesign /
 // paul-goff pair went from 14 to 16 mentions (the owner of a new action item, in the frontmatter and the table); every other edit of
-// that batch is plain text. It proves that a change to the tooling did not change what
+// that batch is plain text; now 222 / 618 / 2214, re-pinned by the final batch of 2026-10-04, part 1 (branch vault-final-2026-10-04;
+// ledger .bedrock/reorg/ledger/final-2026-10-04.md) from its own export: the single-look concept's Look ledger moved to a new part, a
+// concept note, so +1 node (concept 21 -> 22); +2 links, both new pairs with the part: single-look-holdout-discipline <-> the part, 5
+// mentions (the hub's Parts line and its two rewritten positional references, the part's part_of and header line), and melange-systems
+// <-> the part, 2 mentions (the Map row and the part's header line); +7 mentions, all in those 2 pairs; no other pair changed weight
+// (the fleeting check's edits are plain text). It proves that a change to the tooling did not change what
 // the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail, which is
 // the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below (a Phase 2 fix round re-pins it
 // from its own export).
@@ -29,10 +34,10 @@ import { DEFAULT_OUT, argValue } from "./common.ts";
 import { gate, extractData } from "./checks.ts";
 
 const SNAPSHOT = {
-  nodes: 221,
-  links: 616,
-  mentions: 2207,
-  types: { actor: 49, concept: 21, discussion: 9, person: 1, project: 4, topic: 137, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
+  nodes: 222,
+  links: 618,
+  mentions: 2214,
+  types: { actor: 49, concept: 22, discussion: 9, person: 1, project: 4, topic: 137, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
 };
 
 const FILE = argValue("--file") ?? DEFAULT_OUT;

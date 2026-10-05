@@ -1,0 +1,105 @@
+{
+  "id": "SL1",
+  "what": "Split of concepts/single-look-holdout-discipline in the final batch of 2026-10-04 (branch vault-final-2026-10-04; ledger .bedrock/reorg/ledger/final-2026-10-04.md): the Look ledger moved verbatim to a part at the owner request. Not from the plan table (plan 3.3 has a different contingent split for this note, untriggered). The part was written by hand to plan S3-S5 because split.ts --apply writes topic frontmatter for a part whose parent is not an actor; this spec serves split.ts --plan (before the cut) and --verify (after it). Line numbers are those of the parent at main d397421.",
+  "parent": "concepts/single-look-holdout-discipline",
+  "home": "projects/melange-systems",
+  "hub": {
+    "keep": [
+      "## Description",
+      "## Key Characteristics",
+      "## Case 1: Moneyball 2026-07-07 (GATE-2 complete, interview-C retest, improvement rounds; `moneyball-2026-07-07-gate2-round1`)",
+      "## Case 2: N-slot re-anchor, round-7 (2026-07-11, `n-slot-reanchor-2026-07-11`)",
+      "## Case 3: Gold-template Senate panels and audio design (2026-07-16, `gold-template-audio-2026-07-16`)",
+      "## Where it Applies",
+      "## Case 4: Luna CU-geography holdouts (2026-09-29 to 2026-09-30, `luna-stratified-scaling-review-2026-09-29`)",
+      "## Case 5: PAC-to-candidate accuracy attempt 2 (2026-10-03, `pac-accuracy-attempt2-lane-2026-10-03`)",
+      "## Related Concepts"
+    ],
+    "links": null
+  },
+  "parts": [
+    {
+      "slug": "single-look-holdout-discipline-look-ledger",
+      "title": "Look ledger",
+      "summary": "Dated ledger of the looks and holdout uses that the single-look discipline records, one row each with lane and outcome, from the 2026-07-07 Big Five retest to the scheduled 2027-03-08 PAC scoring and the planned 2028 clean test",
+      "domain": "domain/research",
+      "home": "projects/melange-systems",
+      "sections": [
+        "## Look ledger (all dates absolute)"
+      ],
+      "keep": [],
+      "pointers": []
+    }
+  ],
+  "named": [],
+  "candidates": [],
+  "relations": [],
+  "retarget": [],
+  "s10": [
+    {
+      "line": 40,
+      "old": "- Relationship to the model-evaluation tooling: the [[quant-model-evaluation-skill]] encodes confirmatory looks as separate-owner-authorization events (see its \"confirmatory looks follow separate owner authorization\" scope).",
+      "mark": "external",
+      "referent": "the scope statement of quant-model-evaluation-skill (outside the family)",
+      "why": "\"see its ... scope\" points at the skill, not at a section of this note"
+    },
+    {
+      "line": 45,
+      "old": "- A look has an owner-visible state: PRE-REGISTERED -> LOCKED (commit/hash) -> CONSUMED (PASS or MISS) -> terminal for that route. Each consumed look below is marked \"never re-run\".",
+      "mark": "rewrite",
+      "new": "- A look has an owner-visible state: PRE-REGISTERED -> LOCKED (commit/hash) -> CONSUMED (PASS or MISS) -> terminal for that route. Each consumed look below and in [[single-look-holdout-discipline-look-ledger]] is marked \"never re-run\".",
+      "referent": "the consumed looks of the Look ledger (now in the part) and of the case records (still below in the hub)",
+      "why": "\"below\" covered both the ledger and the cases; the cases stay below in the hub, so the word stays (S10: below and in [[a]])"
+    },
+    {
+      "line": 60,
+      "old": "| 2026-07-07 | Psychology round-3 | 11 pre-registered designs total, one look each | zero bars moved; P6 gated shrinkage PASSED and PROMOTED (claim later retracted, change kept); P5, P7, B6, V3P, CT-CM MISS |",
+      "mark": "not positional",
+      "why": "temporal: the P6 claim was retracted later in time (H-1, 2026-07-07); the row labels it in place, so it is self-contained under S1"
+    },
+    {
+      "line": 113,
+      "old": "  - Correction (2026-10-04, document import): Path J left the code with the 2026-07-15 snapshot `e3d2923d0`, so the Finance+JCT route above is not in the 2026-10-01 code; the cell gate has paths A and V only (dated history in Say-do gate). The `if not corr` clause is history too: a missing or invalid workbook has raised since the 2026-07-15 snapshot, and the cell gate has failed closed since 2026-09-16 (`742b68aec`).",
+      "mark": "same note",
+      "referent": "Case 1, the Path J sub-bullet (Finance+JCT chairs), hub"
+    },
+    {
+      "line": 139,
+      "old": "Session 2026-07-16 (worktree `loving-payne`, branch `claude/gallant-gates-982203`; live tree was on `claude/cfpb-sentiment-recorrection` @35b8a09 - analysis read the live tree read-only, NOTHING applied at presentation time; later executed, see below).",
+      "mark": "same note",
+      "referent": "Case 3, the EXECUTED 2026-07-16 bullet, hub"
+    },
+    {
+      "line": 187,
+      "old": "- The stratified-scaling stage (`.local\\stratified-scaling-20260929`) is locked and unchanged; its lock hashes `revised.py` and `train_revised.py`, so never edit them in place. The sign-only A1 rule failed its negative control (donor A1 +0.020 pp); `sign_check.py` shows donor is blocked and dwelling kept; the rule is provisional, based on 2 cases. Next-stage fixes (`.local\\next-stage-fixes-20260929\\fixes.py`): the cached stance read; a `fit_calibration` whose retry is never stricter and which returns its method; `promote_on_development` requiring A1 gain >= 0.001.",
+      "mark": "not positional",
+      "why": "\"Next-stage\" is a stage name and part of a path"
+    },
+    {
+      "line": 202,
+      "old": "- Closed later on 2026-09-29: Paul ruled that volunteer stays unmarked (the handoff records it as item 6). The wording now reads \"less than 0.5 pp above the majority baseline, or below it\"; it was regenerated through the `reword` and `refresh-manifest` modes of `prior_repair.py`; verify re-ran and PASSED, and the manifest carries an amendment note. The stale `sign_check.py` docstrings were fixed too.",
+      "mark": "not positional",
+      "why": "\"later\" is temporal (closed later that day); \"above\"/\"below\" compare with the majority baseline"
+    },
+    {
+      "line": 212,
+      "old": "- Household model Phase B was PUBLISHED as section 29: export `data-completion-household-model-20260930`, 848 columns; 1,107,753 household-model fills in 17 fields. Verified by the stage's independent re-scoring of 51k rows (max diff 8e-8) and by my own recheck (0 mismatches). The global shuffled-household control stays within +/-0.6 pp of legacy. Stage `.local\\household-model-20260930\\household_model.py`. Stale metadata found at section 29 (all RESOLVED by section 30, verified 2026-09-30): children's prior-corrected notes, lift notes on fields without majority-default rows, the handoff \"holdout untouched\" bullet, and the FACTUAL date. The earlier session died mid phase A, and that agent never returned a report.",
+      "mark": "not positional",
+      "why": "\"earlier\" is temporal (the earlier session)"
+    },
+    {
+      "line": 216,
+      "old": "- **Why:** Paul approved each change explicitly in chat. An earlier executor dispatch was blocked by the auto-mode classifier until he did.",
+      "mark": "not positional",
+      "why": "\"earlier\" is temporal (an earlier executor dispatch)"
+    },
+    {
+      "line": 237,
+      "old": "- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger. Details in Forecast audit, giving-view redesign and PAC accuracy.",
+      "mark": "rewrite",
+      "new": "- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger in [[single-look-holdout-discipline-look-ledger]]. Details in Forecast audit, giving-view redesign and PAC accuracy.",
+      "referent": "the Look ledger section, now in the part",
+      "why": "\"see the Look ledger\" names the moved section; \"later\" on the same line is temporal (each later scoring)"
+    }
+  ]
+}
