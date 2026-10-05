@@ -43,6 +43,7 @@ tags: ["type/discussion", "domain/research"]
 - Coordinator brief = Paul's pasted prompt: stages S0-S7, Opus read-only review, Sonnet builds via `code/launch_stage.ps1`. HOLD stays; scratch only.
 - This is the PAC-accuracy leg of [[2026-09-feature-forecast-giving-redesign]] and part of the program [[forecast-redesign]]; the holdout rules it leans on are in [[single-look-holdout-discipline]]. Rulings are by Paul Goff.
 - Source memory file: `pac-accuracy-attempt2-lane-2026-10-03`, described as "PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history" (modified 2026-10-03T06:11:53Z; session id 13a17b30-2c5b-43ad-a902-b5ad3a1253cf). Dated note (2026-10-04): `sources:` holds the newer version of this file, modified 2026-10-03T19:46:53Z, since the fleeting pass of 2026-10-04.
+- Dated note (2026-10-05, records lane): the all-sector phase that followed attempt 2 has its own rulings, E1-E24 (2026-10-04 and 2026-10-05), in [[2026-10-04-pac-accuracy-attempt3-rulings]]. They supersede, for that phase, ruling C1 (UT-X sealed; E4 opened P&C/UT-X for development), the B2 identity scope (E3, Mentat's company-to-PAC mapping), the attempt-2 bar and the 2016-2024 target set (E1, E10), as the receipt of E1-E23 states.
 - Related memory names: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
 
 ## Participants
