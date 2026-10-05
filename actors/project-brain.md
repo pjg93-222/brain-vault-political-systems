@@ -134,4 +134,3 @@ The brain at `C:\Users\pgoff\OneDrive\Desktop\Project Brain\brains\melange-syste
 ## Related Projects
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
-- [[brainlink]] - the project that links this brain (the ledger) with the vault (the map) and Claude memory; generated `ledger/melange-systems-brain/` notes mirror its entries one way.
