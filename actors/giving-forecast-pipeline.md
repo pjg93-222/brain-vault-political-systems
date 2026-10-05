@@ -23,12 +23,12 @@ doc_sources:
     sha256: "d6fc72d2b730d899cb1d9fbb77f663503e8fa2776458f0c2119af1a6bd13591a"
     as_of: "2026-09-30"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
-    sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
-    as_of: "2026-10-04"
+    sha256: "ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34"
+    as_of: "2026-10-05"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 

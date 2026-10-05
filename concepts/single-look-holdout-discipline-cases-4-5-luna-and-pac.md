@@ -5,7 +5,7 @@ aliases: ["Single-look holdout discipline: Cases 4 and 5: Luna holdouts and PAC 
 description: "Cases 4 and 5 of the single-look discipline: the Luna CU-geography holdout of 2026-09-30, used twice, leaving no untouched labelled data, and PAC accuracy attempt 2 of 2026-10-03, whose UT-X holdout was sealed, then opened for development."
 related_to: []
 sources: []
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "reorg@agent"
 tags: ["type/concept", "domain/research"]
 part_of: "[[single-look-holdout-discipline]]"
@@ -75,5 +75,5 @@ PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's
 - S2C narrow repair -> v3 freeze -> ONE Opus verifier gate (not 3). S2C launched about 06:2x UTC (exact minute not given).
 - **Why:** UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it.
 - **How to apply:** never launch S3 without Paul's OK and a fresh gate on the v2 freeze. The Glass Box watcher must run alongside every stage (S2's first 49 min were unwatched). Related: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
-- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger in [[single-look-holdout-discipline-look-ledger]]. Details in Forecast audit, giving-view redesign and PAC accuracy.
+- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger in [[single-look-holdout-discipline-look-ledger]]. Details in PAC accuracy attempt 2 (Forecast audit, giving-view redesign and PAC accuracy) and Six-year lookback directive and v5 rulings (Forecast audit, giving-view redesign and PAC accuracy).
   - Update (2026-10-04, all-sector phase rulings; newer version of `pac-accuracy-six-year-lookback-directive-2026-10-03`): Paul's E4 opened P&C/UT-X for development, superseding C1; the holdout is spent and never certifies.

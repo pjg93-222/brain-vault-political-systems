@@ -28,7 +28,7 @@ related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/research"]
 ---
@@ -89,7 +89,7 @@ tags: ["type/discussion", "domain/research"]
 | ~05:46 | S2B done, v2 freeze; gate HELD (`receipts/GATE_S2B_COORDINATOR.md`): certification structurally unreachable (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4), P&C cohort = Travelers + legacy Chubb Corp only, FEC bulk files keep only the latest report version so FILED cannot be truly as-of-issue. |
 | after the S2B gate | Second round of rulings C1-C2. |
 | ~06:2x | S2C narrow repair launched -> v3 freeze -> ONE Opus verifier gate (not 3). |
-| ~08:45 | FINISHED (Paul: "finish"): S2C gate PASS -> S3 dev-only one pass -> S4 ACCEPT_WITH_REPAIRS -> S5 disclosure repairs -> S6 ACCEPT_WITH_NOTES -> S7 delivery. Goal NOT met, HOLD unchanged, UT-X SEALED_NOT_SCORED; results and the later v4 branch are in Forecast audit, giving-view redesign and PAC accuracy. |
+| ~08:45 | FINISHED (Paul: "finish"): S2C gate PASS -> S3 dev-only one pass -> S4 ACCEPT_WITH_REPAIRS -> S5 disclosure repairs -> S6 ACCEPT_WITH_NOTES -> S7 delivery. Goal NOT met, HOLD unchanged, UT-X SEALED_NOT_SCORED; results and the later v4 branch are in PAC accuracy attempt 2 (Forecast audit, giving-view redesign and PAC accuracy). |
 
 ## Rulings, verbatim wording as recorded
 
