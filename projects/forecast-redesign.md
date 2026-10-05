@@ -75,7 +75,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "89d010b300fa8907c87ea70a53067bc75410687e7e5c6cbed1c0e493912232b3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "320afff4a5fabfd67d9f4db59835885458211ec89b63ac75655e91a19b3a0da3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "0c82cc3b8d7834971e122d6428bdd49962e8f4976378729dc60af7453690130a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "98d0e7b68148f8d76298dec88c9fadf2afce2020d21e6f391661530ee4e2c06f"}
 updated_at: 2026-10-04
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
@@ -203,7 +203,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | 2026-10-03 | v4 branch (pas208/pas210 as history): one V3 RESCORE, v4 worse for banks nowcasts, v3 stays the record; Paul's six-year rolling lookback directive |
 | 2026-10-04 | Paul's v5 rulings on `strategy/V5_AMENDMENT.md` (strict 3-cycle cap, fixed-rule primary, v5 2026 line in the March 2027 job, 2028 first clean test with the needed FEC downloads authorised) |
 | 2026-10-04 | v5 run: GATE_V5 PASS, V5-R one pass, V5-V ACCEPT_WITH_NOTES; post-hoc RESCORE: the blend drives the gains, v3 stays the record; 2028 method and plan frozen |
-| 2026-10-04 | Banking-accuracy diagnostic: the 95-97% banks figure was a post-hoc nowcast result (m18/m21, pace backtest rescored in attempt 1), never ORIGIN or m12; four questions open for Paul |
+| 2026-10-04 | Banking-accuracy diagnostic, revision 2: the banks figure Paul was told on 2026-10-01 ("about 95%", range 95-98%) was the blend forecast at month 18 from a pace test pre-registered on 10-01 (revision 1 had wrongly called it post hoc); never ORIGIN or m12; four questions open for Paul |
 
 ## Rulings and decisions (newest wins; superseded kept struck through)
 
