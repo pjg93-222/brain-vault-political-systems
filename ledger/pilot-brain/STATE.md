@@ -1,7 +1,6 @@
 ---
 type: "ledger"
 brain: "pilot-brain"
-brain_status: "retired"
 id: "STATE"
 kind: "state"
 title: "pilot-brain STATE"
@@ -11,11 +10,10 @@ superseded_by: ""
 brain_commit: "1ce734715ea9722c7e1cf17a867e51028d73061a"
 entry_sha256: "1f118b567450609839b8739e0dfe1d57bdcd9b61c7e69537854430da36a62324"
 generated: true
-generated_sha256: "3739f7bb281d287ef0950a45a307ba7541b9536af122d67f5ffa586e08dc851a"
+generated_sha256: "cdff83129c2114634efe632116fe13db4b68e3f4df13036c3c06026d70d37ed9"
 aliases: ["pilot STATE"]
 ---
 > Generated from pilot-brain/STATE.md at 1ce7347; do not edit — change the brain via brainctl.
-> This brain is retired; see melange-systems-brain decision recording its retirement
 
 # STATE — Pilot
 > Last verified: 2026-08-11 00:00
