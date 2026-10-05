@@ -112,7 +112,7 @@ The working repo's `.git` lives under OneDrive. Files-on-demand dehydration make
 - Check `git ls-remote --heads mirror` before claiming anything is unmirrored (the old "only main is backed up" assumption is dead).
 - A future cloud remote (GitHub) is IMPOSSIBLE without history surgery; tracked blobs up to 2.6 GB (audits/legfix5 packets) vs the 100 MB limit, so never suggest a plain `git push` to GitHub as a quick option. `gh` CLI is not installed.
 - At lane close-out check `git ls-remote --heads mirror main` against local main, and check `.git\mirror-push-failures.log`.
-- Refresh with `git push mirror --all` + `--tags` at close-out (no force): the hooks push only the branch just committed or merged, so worktree branches created without a commit drift. Never use `--mirror`, which would prune mirror-only refs such as `backup/melange-math-eval-skill-18e907-4d54uu`, the only copy of 4 QME commits (2026-10-03).
+- Refresh with `git push mirror --all` + `--tags` at close-out (no force; the source's rule names `--all`, and the full refreshes of 2026-09-19 and 2026-10-03 also pushed `--tags`): the hooks push only the branch just committed or merged, so worktree branches created without a commit drift. Never use `--mirror`, which would prune mirror-only refs such as `backup/melange-math-eval-skill-18e907-4d54uu`, the only copy of 4 QME commits (2026-10-03).
 
 ## History
 

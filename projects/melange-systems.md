@@ -8,7 +8,7 @@ deadline: ""
 progress: "Pre-flight, scenario tooling and audits done 2026-06-26 (audit_full 31/31, canonical home Melange Systems); model, desk and dashboard pipeline established by 2026-06-29. Later work (stance, psychometrics, boards, networks, audio, collection lanes, refresh automation, UI redesign) is tracked in the linked topics."
 blockers:
   - "Pillar weights: 45/10/40/5 is LIVE in ranks_python.json but UNRATIFIED (code-review S-5 awaits Paul's ruling); the last ratified set is 30/25/40/5 (2026-07-07)"
-  - "Workbook write collisions: a parallel 'other session' writing the same workbook once reverted a committee-fix COM write; workbook edits must be sequenced with other sessions"
+  - "Workbook write collisions: a parallel 'other session' writing the same workbook once reverted a committee-fix COM write; workbook edits must be sequenced with other sessions (COM-era rule, as the Blockers section notes: the COM write path was retired on 2026-07-02/03 by Phase 2's NO COM anywhere; whether non-COM workbook writes still need sequencing is not recorded)"
   - "Open modeling knobs M1-M5 and L4 from the 2026-06-26 adversarial audit are the user's call (see Open items from audits)"
 action_items:
   - description: "Rule on code-review S-5: ratify or reject the live pillar weights 45/10/40/5 (last ratified 30/25/40/5, 2026-07-07)"
@@ -87,7 +87,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 

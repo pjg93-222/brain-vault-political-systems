@@ -7,12 +7,21 @@
 //
 // Exit code 0 when every check passes. Run it after changing recall.ts, text.ts or indexer.ts (thresholds were tuned on
 // the prompts below: each on-topic prompt must list its note in the top 3, each off-topic prompt must print nothing).
+// The length limits (session-start <= 400, recall <= 800) hold at the real vault path (REAL_VAULT in recall.ts) and are
+// measured there, so a copy of the vault at any other path, however long, passes or fails exactly as the real vault does.
 import { join } from "node:path";
-import { RECALL_DIR } from "./lib.ts";
-import { freshIndex, isTrivial, rank, TUNING } from "./recall.ts";
+import { RECALL_DIR, VAULT } from "./lib.ts";
+import { formatRecall, freshIndex, isTrivial, rank, REAL_VAULT, TUNING } from "./recall.ts";
 import { terms } from "./text.ts";
+import { sessionContext } from "./hook.ts";
 
 const HOOK = join(RECALL_DIR, "hook.ts");
+/** Hook output as it reads with the vault at REAL_VAULT: the length limits are measured on this. */
+const atRealVault = (s: string, vault = VAULT) => s.split(vault).join(REAL_VAULT);
+const lengthDetail = (s: string, vault = VAULT) => {
+  const real = atRealVault(s, vault).length;
+  return `${real} chars at the real vault path${real === s.length ? "" : ` (${s.length} at this ${vault.length}-char path)`}`;
+};
 const verbose = process.argv.includes("--verbose");
 const timing = process.argv.includes("--timing");
 let failures = 0;
@@ -107,14 +116,15 @@ console.log("== 1. payloads piped to every subcommand ==");
 {
   const r = runHook(["session-start"], JSON.stringify(payload.sessionStart));
   const ctx = json(r.out)?.hookSpecificOutput?.additionalContext ?? "";
-  check("session-start: exit 0, SessionStart additionalContext <= 400 chars", r.code === 0 && json(r.out)?.hookSpecificOutput?.hookEventName === "SessionStart" && ctx.length > 0 && ctx.length <= 400, `${ctx.length} chars`);
-  for (const must of ["/bedrock:ask", "/bedrock:preserve", "fleeting/", "index.md", "Brain recall"]) check(`session-start mentions ${must}`, ctx.includes(must));
+  check("session-start: exit 0, SessionStart additionalContext <= 400 chars at the real vault path", r.code === 0 && json(r.out)?.hookSpecificOutput?.hookEventName === "SessionStart" && ctx.length > 0 && atRealVault(ctx).length <= 400, lengthDetail(ctx));
+  for (const must of [VAULT, "/bedrock:ask", "/bedrock:preserve", "fleeting/", "index.md", "Brain recall"]) check(`session-start mentions ${must === VAULT ? "this vault's path" : must}`, ctx.includes(must));
 }
 {
   const [p, want] = ON_TOPIC[0];
   const r = runHook(["recall"], JSON.stringify(payload.prompt(p)));
   const o = json(r.out)?.hookSpecificOutput;
-  check("recall (on-topic): exit 0, UserPromptSubmit additionalContext <= 800 chars, lists its note", r.code === 0 && o?.hookEventName === "UserPromptSubmit" && o.additionalContext.length <= 800 && o.additionalContext.includes(want), `${o?.additionalContext?.length ?? 0} chars`);
+  const ctx: string = o?.additionalContext ?? "";
+  check("recall (on-topic): exit 0, UserPromptSubmit additionalContext <= 800 chars at the real vault path, lists its note", r.code === 0 && o?.hookEventName === "UserPromptSubmit" && atRealVault(ctx).length <= 800 && ctx.includes(want), lengthDetail(ctx));
   if (verbose && o) console.log(o.additionalContext.replace(/^/gm, "      "));
 }
 for (const [label, stdin] of [
@@ -183,6 +193,32 @@ for (const [p, want] of ON_TOPIC.slice(0, 6)) if ((json(runHook(["recall"], JSON
 for (const p of OFF_TOPIC.slice(0, 6)) if (runHook(["recall"], JSON.stringify(payload.prompt(p))).out.trim() === "") e2e++;
 check("end to end through the hook process (6 on-topic + 6 off-topic)", e2e === 12, `${e2e}/12`);
 
+// ------------------------------------------------------------------ 3. length limits do not depend on the vault path
+// The formatting only prints the vault path (it never opens it), so synthetic paths stand in for real copies: the real
+// vault path, a short one and one of 255 characters (a deep temp export). Apart from the path, the session-start context
+// and every on-topic recall block must be the same at all three, and the limits must hold at the real vault path.
+console.log("\n== 3. length limits do not depend on the vault path ==");
+{
+  const paths = [REAL_VAULT, "D:\\v", "C:\\" + "deep-export-folder\\".repeat(13) + "vault"];
+  const ss = paths.map((v) => sessionContext(v));
+  check("session-start: the same context at every vault path apart from the path", ss.every((s, k) => atRealVault(s, paths[k]) === ss[0]), paths.map((v, k) => `${v.length}-char path ${ss[k].length} chars`).join(", "));
+  check("session-start: <= 400 chars at the real vault path", ss[0].length <= 400, `${ss[0].length} chars`);
+  let n = 0, same = 0, listed = 0, within = 0, longest = 0;
+  for (const [p, want] of ON_TOPIC) {
+    const hits = isTrivial(p) ? [] : rank(idx, p).hits;
+    if (!hits.some((h) => idx.notes[h.i].p === want)) continue; // a recall-quality failure, reported in section 2
+    n++;
+    const blocks = paths.map((v) => formatRecall(idx, hits, v));
+    if (blocks.every((b, k) => atRealVault(b, paths[k]) === blocks[0])) same++;
+    if (blocks.every((b) => b.includes(want))) listed++;
+    if (blocks[0].length <= TUNING.MAX_CHARS) within++;
+    longest = Math.max(longest, blocks[0].length);
+  }
+  check("recall: the same note lines at every vault path apart from the path", n > 0 && same === n, `${same}/${n} on-topic blocks`);
+  check("recall: the expected note is listed at every vault path", listed === n, `${listed}/${n}`);
+  check(`recall: <= ${TUNING.MAX_CHARS} chars at the real vault path`, within === n, `${within}/${n}, longest ${longest} chars`);
+}
+
 if (verbose) {
   for (const p of [...ON_TOPIC.map(([p]) => p), ...OFF_TOPIC]) {
     if (isTrivial(p)) continue;
@@ -196,9 +232,9 @@ if (verbose) {
   }
 }
 
-// --------------------------------------------------------------------------------------------------------- 3. timing
+// --------------------------------------------------------------------------------------------------------- 4. timing
 if (timing) {
-  console.log("\n== 3. timing (wall clock of the whole hook process, median of 5) ==");
+  console.log("\n== 4. timing (wall clock of the whole hook process, median of 5) ==");
   const rec: number[] = [];
   for (let k = 0; k < 5; k++) rec.push(runHook(["recall"], JSON.stringify(payload.prompt(ON_TOPIC[k][0]))).ms);
   check("recall median under 300 ms", median(rec) < 300, `median ${Math.round(median(rec))} ms; runs ${rec.map(Math.round).join(", ")}`);

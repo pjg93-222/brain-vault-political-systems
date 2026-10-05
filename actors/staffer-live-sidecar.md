@@ -14,7 +14,7 @@ known_issues:
   - "Dies on reboot / hard reboot; its only autostart, the watchdog scheduled task MelangeStafferLiveSidecar (logon +2 min and every 30 min), stays disabled (brain D-080, as of 2026-10-03), so a restart is the server.json PID stop plus start_staffer_live.ps1"
   - "Default office route is memory-unsafe: pair_cache grew the sidecar from 7.0 to 17.5 GB and host available RAM fell to 0.22 GB (2026-10-02 measurement); the latency lane landed four patches on 2026-10-03/04 and closed on 2026-10-04 with open items, and no post-landing memory figure is recorded"
   - "Route snapshots labelled A* are Dijkstra: every route path runs with heuristic 0 (staffer_routing.py:381)"
-  - "Typeahead slow: people p95 8.4 s, office search max 41 s (2026-10-02, before the landings); directory-mode searches are still not prewarmed (the first one took 8.4 s on 2026-10-04)"
+  - "Typeahead slow: people p95 8.4 s, office search max 41 s (2026-10-02, before the landings); directory-mode searches are still not prewarmed (the first one took 8.4 s on 2026-10-04); the landing_v4 panel of 2026-10-04 recorded cold searches about 3x faster and the first route after a restart at 2.8 s (was 40 s)"
   - "Idle CPU about 19% at the 2026-10-04 lane close (one thread, kernel > user; suspected identity loop, D-084); open"
   - "v4.1 LOW-1 (a publish can skip the post-swap gc in a narrow window; needs a restart) and LOW-2 (a doc overstatement) deferred to the next restart"
   - "Sidecar grows to 7-8 GB within hours of start (2026-09-25/26 restart) and starved a Mentat export"
@@ -29,7 +29,7 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/backend"]
 ---
 
@@ -101,7 +101,7 @@ python fec/tools/live_patch.py    # cuts ONE patch; APPLY and the 8841 restart a
 - Dies on reboot / hard reboot (2026-09-04 19:57 hard reboot, Kernel-Power 41, killed the sidecar silently; restarted 21:17). Autostart exists only via the watchdog task (below). As of 2026-10-03 that task stays disabled (brain D-080; source `people-network-route-latency-lane-2026-10-02`), so nothing restarts the sidecar after a reboot.
 - Default office route memory blow-up: `pair_cache` keeps a full evidence dict for every checked pair (about 1 KB per check); one default office route grew the sidecar from 7.0 to 17.5 GB and dropped host available RAM to 0.22 GB. Never fire a default office route at the live sidecar without a memory guard (that was the agent's own measurement request on 2026-10-02).
 - If no staffer has an office anchor, the search scans the whole component before giving up.
-- Typeahead slow: people p95 8.4 s; office search max 41 s. Page load is not the problem (11 requests, 110-300 ms). These are the 2026-10-02 figures, before the landings; after them, directory-mode searches are still not prewarmed (the first one took 8.4 s on 2026-10-04).
+- Typeahead slow: people p95 8.4 s; office search max 41 s. Page load is not the problem (11 requests, 110-300 ms). These are the 2026-10-02 figures, before the landings; after them, directory-mode searches are still not prewarmed (the first one took 8.4 s on 2026-10-04), and the `landing_v4` panel of 2026-10-04 recorded cold searches about 3x faster and the first route after a restart at 2.8 s (was 40 s).
 - Idle CPU about 19% at the 2026-10-04 lane close (one thread, kernel > user; suspected identity loop, D-084); 18% was already seen shortly after the 03:22 restart; cause unconfirmed (OPEN).
 - v4.1 LOW-1 (a publish can skip the post-swap gc in a narrow window; needs a restart) and LOW-2 (a doc overstatement) are deferred to the next restart (OPEN).
 - Sidecar PID 23992 grew to 7-8 GB within ~5 h of its 2026-09-25 19:25 watchdog start and starved the Mentat 2020 export (restarted 2026-09-26 00:40).
@@ -136,6 +136,8 @@ The "graph consolidation / identity" feature Paul described on 2026-09-04: peopl
 - **Restarts in the route-latency landings (2026-10-03/04; source `people-network-route-latency-lane-2026-10-02`):** the order ruled for `landing_v2` was: stop the `server.json` PID, apply, then run `start_staffer_live.ps1` with the scheduled task left disabled (brain D-080); `landing_v4` followed the same stop, apply, start order. `landing_v2`: PID 10876 stopped 2026-10-03 14:58:58, PID 35320 started, Ready/PASS 15:02:36 (the payroll pin was unchanged since 2026-09-08, so no identity self-apply). `landing_v4`: PID 36412, Ready 2026-10-04 03:22:06. `landing_v4_1`: PID 66688 (landed 2026-10-04 14:33). Details in the route latency lane section.
 
 ## Route latency lane (2026-10-02/03; source `people-network-route-latency-lane-2026-10-02`, last modified 2026-10-03)
+
+Source version (dated note 2026-10-04): this section was first written from the version of `people-network-route-latency-lane-2026-10-02` modified 2026-10-03; the fleeting pass of 2026-10-04 added the landings from the version modified 2026-10-04T19:40:09Z, which `sources:` now holds.
 
 Paul opened the lane on 2026-10-02: the people network was "almost not useable"; he proposed Bidirectional A* for office searches, with everyone currently in the office searching back toward the requester.
 

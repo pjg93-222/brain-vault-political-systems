@@ -19,7 +19,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-salience-sna-2026-07-01.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-salience-sna-2026-07-01.md", sha256: "760abadd0aed0a857fa458c3acba8c0b5a36735658edf5756a69180dca3ef555"}
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -39,6 +39,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 - Engine = the `fec/` layer (flip, coalition, electoral, route, priming, money-response, scenario, optimizer, dashboard bundle) that reads the ranks plus the stance/psychology layers. This topic covers the July 2026 additions to it. The June build that created it is in `2026-06-feature-moneyball-excel-model-build`; the pipeline code root for the engine is Melange fec/ pipeline; the product/project umbrella is [[melange-systems]]; the ranked workbook that engine outputs are verified against is Moneyball Blended workbook.
 - **System of record changed in Phase 2** (after the period covered by these July sources): `ranks_python.json` is the authority, the workbook is a view, and there is NO COM anywhere. Every July statement below and in [[2026-07-feature-influence-engine-internals-salience-sna-wave]] and [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] about Excel COM recalcs (for example `CalculateFullRebuild`, the 2026-07-16 20:10 COM `CalculateFull`, `write_im_sheet.py`-style pushes) is historical and superseded by that rule (approved resolution 5); it is kept because it explains older commits and artifacts.
+  - Dated correction (2026-10-04): no `write_im_sheet.py` push is recorded in this note or its parts. The push on record is the 2026-06-26 IM-sheet push (via COM, backup `PRE-IM-20260626.xlsx`), in Scenario-tool pre-flight, engine build and empirical calibration (06-26/27) (Moneyball Excel model build) and Melange model audits of 2026-06-26, with the IM sheet wiring in the June co-sponsor network plan and the action item in the Melange systems project.
 - Two firewalls recur through the whole topic: the **rank-neutral rule** (engine/receptivity/display changes must NOT move ranks; verified each time by the chain, see Zero-rank-delta verification) and the **one-look pre-registered gate discipline** (each pre-registered test gets exactly one look, never re-run; see [[single-look-holdout-discipline]]).
 - Governing authority: every dial default, weight and stance label is Paul's (Paul Goff) per the change-control working agreement; the sources record many "user's domain" boundaries (stance labels, press classification, CFPB classification, tier placements).
 - Related primacy/tier work: Primacy and industry tier boards. The coalition-builder design session of 2026-07-30 has its own page: [[2026-07-30-coalition-builder-redesign-session]].
@@ -64,7 +65,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
 - Zero-rank-delta verification - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
-- [[say-do-gate]] — the say-do gate (Rule A cap) landed @18ce3b3 on 2026-07-07, the same session as GATE-2
+- [[say-do-gate]] — the say-do gate (Rule A cap) landed @18ce3b3 on 2026-07-07, the same session as GATE-2, and was generalized to the A/V/J costly-signal paths on 2026-07-08 (@2636444); Path J left the code with the 2026-07-15 snapshot `e3d2923d0`, and the cell gate has failed closed since 2026-09-16 (`742b68aec`)
 
 ## Related Topics
 

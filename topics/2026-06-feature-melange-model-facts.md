@@ -10,7 +10,7 @@ objective: ""
 created_at: 2026-10-04
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/completed", "category/feature", "domain/data"]
 part_of: "[[melange-systems]]"
 ---
@@ -26,6 +26,7 @@ part_of: "[[melange-systems]]"
 Source of truth = `Moneyball Main Version - Blended.xlsx`. Regenerate after any workbook change, IN ORDER: `build_dashboard_bundle.py` -> `make_dashboard_html.py` + `make_member_desk.py` -> `make_combined.py`.
 
 - **Workbook writes go through Excel COM (win32com)** so formulas/tables recalc (openpyxl drops cached values). Excel must be CLOSED. Every model edit backs up to `backups/*.PRE-*.xlsx` first; restore + regenerate to revert. (Later superseded: the newest standing rule is "NO COM anywhere"; this COM-write rule is the older version, kept because it explains the 2026-06 backups and scripts. See Change control and Paul's decision authority for the working agreements.)
+  - Dated correction (2026-10-04): the supersession dates from the Phase 2 inversion of 2026-07-02/03 (Paul's sign-off 2026-07-02), which made `ranks_python.json` the rank authority and the workbook a self-refreshing view; the rule is recorded in Melange architecture and system of record (Superseded guidance, resolution 5; Decisions) and in the Decisions of the Melange fec/ pipeline actor.
 - `congress_cosponsor_network_*.xlsx` is **globbed (latest by mtime)** by `build_dashboard_bundle.py` and flip_model: DON'T move it.
 - Generators write HTML with `const DATA=__DATA__` / `__BUNDLE__`; the combined file wraps each app's JS in its own IIFE, so in the preview `DATA` isn't global: drive controls via the DOM.
 - Preview browser has a 0x0 viewport (network-canvas screenshots fail): verify with `preview_eval`, not screenshots. NFC-normalize accented names for joins.
@@ -55,6 +56,7 @@ Order of the 4 numbers in the two newer sets follows `AB2:AB5` (Legislative, Pre
 - **Committee/Influence pillar:** `Blended Model!R` (col18, Influence%) = **committee_raw / MAX(committee_raw)** (`apply_committee_fix.py`), NOT the old double-percentile: percentile flattened a backbencher (score 2.5) to the 90th %ile next to chairs, so prolific juniors (Byron Donalds) ranked top-10. The normalized raw score distinguishes leadership: Crapo No. 1 (Banking+Finance+JCT), Tim Scott No. 2; Donalds No. 8 -> No. 14. Source = `Committee Data` relevance-tiered seats (Highly/Moderately/Slightly -> score; Small Business unified to Moderately).
 - **Press DISPLAY corrections:** the DEBATE sentiment model (see Political DEBATE stance model) mislabels articles (reads "prohibit"/"disapproval" as anti-CU). `press_stance_overrides.json` (match by url/title_contains, stance=support|oppose|neutral) -> `make_member_desk` applies it to the DISPLAY (`_press_corr`). Pillar/rank correction needs the upstream press_value re-flowed.
 - **WORKBOOK COLLISION (warning):** a parallel "other session" writes the same workbook and reverted a committee-fix COM write once (re-saved an older copy). Workbook edits (weights/pillars via COM) must be SEQUENCED with the other session, or they get clobbered. Generator-side changes (overrides, the .py edits) are safe from this.
+  - Dated correction (2026-10-04): the COM write path named here was retired by the same Phase 2 inversion of 2026-07-02/03 (NO COM anywhere; the workbook became a self-refreshing view). Pipeline runs take a lock (`fec/pipeline_lock.py`), but the vault does not record whether non-COM workbook writes from a parallel session still need sequencing.
 - **Stance:** per-category Champion -> Opponent 10-tier ladder + **Defender** (champion on a defensive flagship); overall = importance-weighted aggregate of the per-category tiers (`category_stance.json` matrix). Scoring detail: CU stance and sentiment scoring.
 
 ### Member desk + SNA features

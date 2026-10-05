@@ -56,7 +56,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -123,7 +123,7 @@ SORT item.deadline ASC
 
 - On 2026-10-02/03 the live Mentat tree (`C:\Users\pgoff\Mentat\mentat`, plus `.claude/launch.mentat.json` and a vendored snapshot of `~/.claude/plugins` at `.claude/vendored-plugins`) was pushed to `github.com/pjg93-222/Melange` (private) on branch **`claude/mentat-migration-onto-main`**, tip `28c27a47`. It is 19 plumbing-built commits on origin's main `ce213058`. `mentat/state` is included. Files over 50 MB and `.cache` stay local, listed in `mentat/EXCLUDED_FROM_GIT.md`. Verification passed (file lists identical, blob spot-checks match, remote equals tip).
 - **PENDING, Paul said "we can do it later":**
-  - Open the PR (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. The body was drafted in the session scratchpad as `pr-body.md`, which may be gone; regenerate it from the commit messages if needed. Done 2026-10-03 (next bullet).
+  - Open the PR (base `claude/melange-math-eval-skill-18e907`). `gh` is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome. The body was drafted in the session scratchpad as `pr-body.md`, which may be gone; regenerate it from the commit messages if needed. Done 2026-10-03 (see the **Update 2026-10-03** bullet).
   - Delete or keep the partial ref `claude/mentat-github-migration-b06195` on origin (`6f76c3415`, 548 commits). Done 2026-10-03: deleted on origin.
   - Publishing full local history: origin main shares NO history with the local repo, and the local history has 28 blobs over 100 MB under `audits/legfix5`. Publishing would need filter-repo or LFS, and a history rewrite is Paul's decision.
 - **Update 2026-10-03** (newer version of the source memory): the PR was opened from the built-in browser after Paul signed in to GitHub there (Melange PR #2) and merged at his request (merge commit `54433266`, the 19 commits kept). The head branch was then deleted on origin; at Paul's request so were `claude/melange-math-eval-skill-18e907-4d54uu` (backed up first to remote `mirror` as `backup/melange-math-eval-skill-18e907-4d54uu`, now its only copy) and the partial ref `claude/mentat-github-migration-b06195`. Still pending: publishing the full local history (Paul's decision). Details in the repo-state topic.

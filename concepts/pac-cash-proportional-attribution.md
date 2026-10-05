@@ -12,8 +12,11 @@ doc_sources:
   - path: "C:\\Users\\pgoff\\Mentat\\audits\\mentat_20260908\\PAC_CASH_APPROXIMATION.md"
     sha256: "e2903b87ec1f5b4e804263d2e6718b465c0b32b7753f93dbb48862fda001274f"
     as_of: "2026-09-08"
+  - path: "C:\\Users\\pgoff\\Mentat\\mentat\\METHODOLOGY.md"
+    sha256: "2ff4500c357050f8cdc90bd04f1526aef327d9efa9ca4dde7da3492696276dba"
+    as_of: "2026-09-27"
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/data"]
 ---
 
@@ -36,7 +39,7 @@ tags: ["type/concept", "domain/data"]
 - Operating costs, identified refunds, unspent cash and money leaving the selected network stay distinct from candidate spending; transfer sums are never added to terminal spending, and no hop-weight or influence multiplier is applied.
 - Conservation is checked on unrounded Decimal balances, and each committee needs a closing-cash check within one cent.
 - **Withhold rather than guess:** unresolved opening ownership, refunds the adapter cannot place, noncash gifts and asset sales, negative adjustments, unknown roles, missing payment dates, ambiguous transfer pairs and cash gaps all withhold the estimate. A withheld estimate has an empty allocation and issue codes, never a fabricated zero, a coverage percentage or a confidence interval.
-- The generated `cash-estimates.json` sidecar is bound by SHA-256 to its snapshot and evidence files and to the estimator code hash; the server serves it only when those hashes match.
+- The generated `cash-estimates.json` sidecar is bound by SHA-256 to its snapshot and evidence files and records the estimator code hash; the server serves it only when its evidence hashes match. By 2026-09-27 the evidence endpoint also rejects saved estimates whose model-code hash is stale (Mentat FEC accounting methodology).
 
 **First application (2026-09-08).** The three-PAC Fairshake snapshot did not pass the cash-attribution gate (8 outstanding check categories for 2024, 12 for 2026), so the console showed recorded spending beside "Awaiting reconciliation" for the company-funded estimate. Existing Crypto and consolidated workbooks kept their audited figures and were not rebuilt as cash-attribution workbooks.
 
