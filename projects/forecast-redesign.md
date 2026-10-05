@@ -4,25 +4,26 @@ name: "Forecast redesign (Mentat giving forecasts)"
 aliases: ["Forecast redesign", "PAC giving accuracy"]
 description: "Mentat forecasting program: the 2026-09-29 audit of three console forecasts (regressions re-run in R), the 2026-09-30 'Giving by cycle' (board F2) forecast-view redesign with projections checked for logical validity against backtests, and the PAC-to-candidate giving accuracy refinement (attempt 2, HOLD, UT-X holdout sealed) rooted at C:/melange-data/forecast-redesign-20261001-review."
 status: "active"
+brain: "melange-systems-brain"
 deadline: ""
-progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards in GPT Image 2.5 pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e)."
+progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards ~~in GPT Image 2.5~~ pending (2026-10-05: GPT Image 2.5 and 2 fail on Higgsfield; 3 Nano Banana Pro fallback boards in boards3/ not yet reviewed, EOD:61); PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e)."
 blockers:
   - "PAC accuracy attempt 2: UT-X is single-shot and stays SEALED (C1, 2026-10-03); opening it needs a new owner ruling. Resolved part (was: S3 needs Paul's explicit OK plus a fresh gate on the v2 freeze): on 2026-10-03, after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's 'finish'. Resolved 2026-10-04: Paul's all-sector phase ruling E4 is the new owner ruling, P&C/UT-X 'Open for development' (supersedes C1; holdout spent, never certifies)."
   - "Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4); FEC bulk files keep only the latest report version, so FILED is only a disclosed amendment-loss lower bound (C2)."
-  - "Decisions D1-D9 from the 2026-10-01 reconciliation await Paul; methodology list A-L from the 2026-09-29 audit awaited Paul."
-  - "Pace backtest waits on Paul's OK to download FEC pas212/214/216 (no-downloads stands). 2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test. 2026-10-04, all-sector phase rulings: downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22)."
+  - "~~Decisions D1-D9 from the 2026-10-01 reconciliation await Paul~~ — superseded 2026-10-05: ruled 2026-10-01 04:29:43Z ('D4, B' / 'Apply rest'; TX L2751; EOD:33); methodology list A-L from the 2026-09-29 audit awaited Paul."
+  - "~~Pace backtest waits on Paul's OK to download FEC pas212/214/216~~ — superseded 2026-10-05: approved 2026-10-01T13:52:50Z ('2. Yes'), fetched 13:58Z, backtest ran (PT/DOWNLOADS.md:3,15; PT/RESULTS.md:9-11); D-093 (S99) (no-downloads stands: scope is open question 8 in the brain STATE). 2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test. 2026-10-04, all-sector phase rulings: downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22)."
   - "Windows scheduled tasks, landing kit into the dirty live tree and console restart are Paul-gated; C: has only ~5 GB free (deletion is Paul's)."
 action_items:
-  - description: "Decide reconciliation decisions D1-D9 (brain drafts in BRAIN_DRAFTS_2026-10-01.md)"
-    status: "todo"
+  - description: "~~Decide reconciliation decisions D1-D9 (brain drafts in BRAIN_DRAFTS_2026-10-01.md)~~ — superseded 2026-10-05: ruled 2026-10-01 04:29:43Z ('D4, B' / 'Apply rest'; TX L2751; EOD:33); drafts applied as D-089..D-093, DE-058..DE-064"
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
   - description: "OK or decline FEC pas212/214/216 download for the pace backtest. Done 2026-10-05 (superseded): Paul's v5 ruling D8 (2026-10-04) authorised the FEC downloads needed to prepare 2028, extended by E12 (pas226), E20 (webk) and E22 (pas228); the pace backtest itself was pre-registered and run on 2026-10-01 (brain D-099)."
     status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
-  - description: "Restart the console after the 2026-10-01 landing (Paul runs it; never restart consoles 8802-8811 otherwise)"
-    status: "todo"
+  - description: "~~Restart the console after the 2026-10-01 landing (Paul runs it; never restart consoles 8802-8811 otherwise)~~ — superseded 2026-10-05: restarted by the session at Paul's order, about 13:55Z (TX; EOD:27)"
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
   - description: "Finish S2C narrow repair, v3 freeze, then ONE Opus verifier gate (not 3). Done 2026-10-03: S2C gate PASS."
@@ -37,7 +38,7 @@ action_items:
     status: "todo"
     deadline: ""
     owner: "[[paul-goff]]"
-  - description: "Rule on the banking diagnostic's open questions (2026-10-04): retire D-079 BLEND? keep the 2016 target? goal scope (ORIGIN/m12 in the bar?); and the brain sync of the 2026-10-01 forecast decisions, which never reached the Project Brain. Done 2026-10-04 (all-sector phase rulings): E7 the blend is improved, not retired (the brain's D-079 is a different entry; the blend needs a new ID >= D-088); E8/E10 2016 optional, scored elections 2018-2024 with 2016 an ungated extra cell (post-hoc label); E5 products = ORIGIN and every nowcast (m12/15/18/21/L), with E1's bar (sector total A>=90, each phase subgroup A>=75); E16 Project Brain commits via brainctl, Obsidian after the vault-cleanup branch is committed, local commit only."
+  - description: "Rule on the banking diagnostic's open questions (2026-10-04): retire D-079 BLEND? keep the 2016 target? goal scope (ORIGIN/m12 in the bar?); and ~~the brain sync of the 2026-10-01 forecast decisions, which never reached the Project Brain~~ — superseded 2026-10-05: applied as D-089..D-093, DE-058..DE-064. Done 2026-10-04 (all-sector phase rulings): E7 the blend is improved, not retired (the brain's D-079 is a different entry; the blend needs a new ID >= D-088); E8/E10 2016 optional, scored elections 2018-2024 with 2016 an ungated extra cell (post-hoc label); E5 products = ORIGIN and every nowcast (m12/15/18/21/L), with E1's bar (sector total A>=90, each phase subgroup A>=75); E16 Project Brain commits via brainctl, Obsidian after the vault-cleanup branch is committed, local commit only."
     status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
@@ -84,8 +85,9 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "320afff4a5fabfd67d9f4db59835885458211ec89b63ac75655e91a19b3a0da3"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "a2f018f3149d98c773c3253a2d406f4f902c542de1c1e7eb6f68ff5799202b43"}
+  - {type: "project-brain", synced_at: "2026-10-05", path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md", sha256: "03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec", commit: "3f70fde89aca2f4ecb90b4b60213bda6a631f529"}
 updated_at: 2026-10-05
-updated_by: "reorg@agent"
+updated_by: "brainlink-migration@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -96,6 +98,8 @@ tags: ["type/project", "status/active", "domain/data"]
 Dated correction (2026-10-04, all-sector phase rulings; source `pac-accuracy-six-year-lookback-directive-2026-10-03`): "UT-X holdout sealed" in this tagline and in the description is attempt 2's state; on 2026-10-04 Paul's E4 opened P&C/UT-X for development, superseding C1 (holdout spent, never certifies).
 
 Dated correction (2026-10-05, records lane; sources: the 2026-10-05 handoff `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md` and the Mentat git log): "(attempt 2, HOLD, UT-X holdout sealed)" is attempt 2's state, and the work has gone on to attempt 3 (all sectors, v6; see Rulings and decisions and the Map). Other statements below that predate 2026-10-05 carry dated notes where they changed: the 2026-10-01 fixes are committed (Mentat `f340dc84e`), the FEC pas212/214/216 question is answered (D8, E12, E20, E22), and the blend is brain D-099, not D-079.
+
+Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-01 forecast drafts reached the Project Brain only now, as [[ledger/melange-systems-brain/D-089|D-089]] (lane works locally), [[ledger/melange-systems-brain/D-090|D-090]] (non-giving excluded), [[ledger/melange-systems-brain/D-091|D-091]] (integrity fixes), [[ledger/melange-systems-brain/D-092|D-092]] (phase, trajectory, inflation), [[ledger/melange-systems-brain/D-093|D-093]] (BLEND, stands: Paul 2026-10-05, R1; S99) and DE-058..DE-064. Nothing from the 2026-10-01 rebuild was published (R3): the live pointer is still refit-20260930-377f7324-c3f221343515. Struck-through lines are superseded, not deleted. Source keys: TX = Claude transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (worktree silly-einstein-57ef31); EOD = C:/melange-data/forecast-redesign-20260930/HANDOFF_FORECAST_2026-10-01_EOD.md; PT = pace_test/ in the same folder; S99 = D-093 superseded by [[ledger/melange-systems-brain/D-099|D-099]] (source fix: the 2026-10-05 confirmation is Paul's 'Still stands', not 'R1'; decision unchanged).
 
 ## Overview
 
@@ -119,9 +123,9 @@ Dated correction (2026-10-05, records lane; sources: the 2026-10-05 handoff `C:\
 
 | Item | Status | Deadline | Owner |
 |---|---|---|---|
-| Decide reconciliation decisions D1-D9 | todo | none | [[paul-goff]] |
+| ~~Decide reconciliation decisions D1-D9~~ — superseded 2026-10-05: ruled 2026-10-01 04:29:43Z ('D4, B' / 'Apply rest'; TX L2751; EOD:33) | done | none | [[paul-goff]] |
 | OK or decline FEC pas212/214/216 download (pace backtest; done 2026-10-05, superseded: D8, E12, E20 and E22 authorise the downloads, and the pace backtest ran on 2026-10-01) | done | none | [[paul-goff]] |
-| Restart the console after the 2026-10-01 landing | todo | none | [[paul-goff]] |
+| ~~Restart the console after the 2026-10-01 landing~~ — superseded 2026-10-05: restarted by the session at Paul's order, about 13:55Z (TX; EOD:27) | done | none | [[paul-goff]] |
 | Finish S2C narrow repair, v3 freeze, ONE Opus verifier gate (done 2026-10-03: S2C gate PASS) | done | none | coordinator agent |
 | Launch S3 only with Paul's OK and a fresh gate on the v2 freeze; opening UT-X needs a new owner ruling (done 2026-10-03: S3 dev-only one pass on Paul's "finish"; UT-X sealed, not scored; the UT-X clause stays binding, see Blockers; 2026-10-04: Paul's E4 opened P&C/UT-X for development, superseding C1) | done | none | [[paul-goff]] |
 | Rule on S6 MAJOR-2 of attempt 2 (FILED UNAVAILABLE cells still publish per-target predictions) | todo | none | [[paul-goff]] |
@@ -155,7 +159,7 @@ SORT item.deadline ASC
 
 - ~~PAC accuracy attempt 2: S3 needs Paul's explicit OK and a fresh gate on the v2 freeze; UT-X is single-shot and SEALED (C1).~~ Resolved 2026-10-03 (source `pac-accuracy-attempt2-lane-2026-10-03`, newer version): after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's "finish"; the attempt finished ~08:45 UTC with UT-X still single-shot, SEALED and not scored. Superseded 2026-10-04: Paul's all-sector phase ruling E4 opened P&C/UT-X for development (supersedes C1; holdout spent, never certifies).
 - Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4; P&C cohort = Travelers + legacy Chubb Corp only); FEC bulk files keep only the latest report version so FILED = disclosed amendment-loss lower bound (C2); no-downloads stands (attempt 2; for v5, Paul's ruling D8 of 2026-10-04 authorises the FEC downloads needed to prepare 2028 as the first clean test; for the all-sector phase (2026-10-04): downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22)).
-- Decisions D1-D9 (2026-10-01) and methodology list A-L (2026-09-29) await Paul.
+- ~~Decisions D1-D9 (2026-10-01)~~ — superseded 2026-10-05: ruled 2026-10-01 04:29:43Z ('D4, B' / 'Apply rest'; TX L2751; EOD:33); and methodology list A-L (2026-09-29) await Paul (open question 5, brain STATE).
 - Pace backtest waits on Paul's OK to download FEC pas212/214/216. (2026-10-04: Paul's v5 ruling D8 authorises the FEC downloads needed to prepare 2028 as the first clean test; source `pac-accuracy-six-year-lookback-directive-2026-10-03`.) (2026-10-04, all-sector phase rulings: downloads = D8 + pas226 for the March 2027 job (E12), then also the FEC PAC summary files (webk) (E20) and pas228 for the 2028 track (E22).) Dated note (2026-10-05): this blocker is superseded; D8, E12, E20 and E22 authorise the downloads, and the pace backtest was pre-registered and run on 2026-10-01 (brain D-099).
 - C: ~5 GB free; Paul offered a cleanup list (review copies); deletion is his.
 - LDA `sector_spend` has only crypto/credit_union/bank/fintech (no auto, no P&C) and two never-combined series (income_total vs expenses_total): open questions for Paul.
@@ -258,7 +262,7 @@ Every note of this project by type, one line each; parts follow their parent.
 ## Model and landing state
 
 - Model fix staged 2026-10-01: `modelfix\apply_model.py` (CAS on pre-images 93f6d09b/b069f28c/5a932f27/43e28790, rollback); Python 151/0/3, R 2508/0/1, parity GREEN, fixture 5,674 old leaves unchanged (+616 new).
-- Landed 2026-10-01: Sonnet built in scratch, Opus reviewed (calc needed 1 fix round), applied via hash-checked scripts in `C:\melange-data\forecast-redesign-20260930\apply20261001\` (rollback per script); final check PASS (Python 181/0/4, R 2,542/0/0); NOT committed; console restart = Paul. F2 UI live 10:58:25Z (`apply_f2.py` 829cd9da; rollback `f2build\apply_f2.py --rollback`).
+- Landed 2026-10-01: Sonnet built in scratch, Opus reviewed (calc needed 1 fix round), applied via hash-checked scripts in `C:\melange-data\forecast-redesign-20260930\apply20261001\` (rollback per script); final check PASS (Python 181/0/4, R 2,542/0/0); NOT committed; ~~console restart = Paul~~ — superseded 2026-10-05: restarted by the session at Paul's order, about 13:55Z (TX; EOD:27). F2 UI live 10:58:25Z (`apply_f2.py` 829cd9da; rollback `f2build\apply_f2.py --rollback`).
   - Dated note (2026-10-05, from the Mentat git log): the landed fixes and the Giving by cycle view are committed as `f340dc84e` ("Land the forecast integrity fixes and the Giving by cycle view", 2026-10-01 13:18 -0400, on `codex/mentat-crypto`); "NOT committed" above is the state at landing time. Whether the console was restarted is not recorded here.
 - Earlier: fix sets applied 2026-09-30 (Insights, SGS S-1..S-6, Giving G-1..G-6 + L-1/L-1b pooled/industry labels); Paul committed Mentat `7287dbb50` (13 files; SGS study still untracked then). Scripts: `fix_insights\copy_back.py`, `fix_sgs\copy_back.py`, `fix_giving\no_g1\copy_back.py` (NOT `fix_giving\copy_back.py`, which ships held G-1; G-1 share extrapolation flags HELD, flags 20/48 default cells). Report: Melange worktree `audits/forecast_audit_20260929/REPORT.md`.
 - Build tree `C:\Users\pgoff\Mentat-wt\forecast-build`, branch `claude/forecast-build-20260930` (sparse `mentat/`, from `7287dbb50`); Paul merges each phase. Phase 1 spec `SP\phase1_spec\SPEC.md`; Phase 1 commits `1400e6417` foundation, `f36972eb7` panels; parity GREEN (..`b961be03a`; 83 targets, bundle max dev 1.56e-10); feeds `..df95572b1`; Phase 2 consumer + anchors + contracts DONE (..`299bf69d7`; 136-cell section-F match); Phase 3 `SP\phase3_ui\copy_back.py` (`index.html` + `chart-studio.js` need hunk staging at commit); Phase 4 `SP\phase4_sgs` (Opus review APPLY-WITH-CHANGES; D1 copy_back rollback REQUIRED, D2-D4 wording/README); Phase 3+4 applied by Paul. PAUSED 2026-09-30 ("Pause"): all 5 agents stopped.
@@ -270,7 +274,7 @@ Every note of this project by type, one line each; parts follow their parent.
 ## Additional reference details
 
 - "the Forecasting model" in the audit = the three console surfaces above plus the SGS R backtest. Audit memory description: three "forecasts" on the console, regressions re-run in R, code fixes staged but NOT applied (classifier blocked writes; Paul runs copy_back scripts), methodology list A-L awaiting Paul.
-- Reconciliation also restarted the F2 build in `C:\melange-data\...\f2build\` (scratch only, `apply_f2.py` for Paul; partial build earlier in `...\f2build-partial\`; partial reconcile outputs in `...\reconcile\`; brain drafts `BRAIN_DRAFTS_2026-10-01.md`).
+- Reconciliation also restarted the F2 build in `C:\melange-data\...\f2build\` (scratch only, `apply_f2.py` for Paul; partial build earlier in `...\f2build-partial\`; partial reconcile outputs in `...\reconcile\`; brain drafts `BRAIN_DRAFTS_2026-10-01.md`, now D-089..D-093 and DE-058..DE-064).
 - Export step: stopped only the local 8808 tunnel (PID 30448); the published model was activated locally (model files were already byte-identical locally); reports matched the local originals.
 - P&C needs from Paul: OpenSecrets F3400 totals 2008-2024 + candidate recipients 2012-2024, IBISWorld 52412 2025+ edition.
 - Paul's wrap-up answer on brain entries was "Apply" (executor applying); the 2020 failure question was "Why? ... Mentat Failure?" (diagnosis running, then stopped by Paul).
@@ -285,3 +289,20 @@ Every note of this project by type, one line each; parts follow their parent.
 - Pod /dev/shm (~36 GB, other lanes) NOT pulled; C: had 34 GB free at export, ~5 GB after.
 - PAC attempt 2: S2's first 49 min were unwatched; Glass Box watcher `code/glassbox/stage_watch.ps1` must run with every stage; UT-X can be scored once (2026-10-04: Paul's E4 opened P&C/UT-X for development; holdout spent, never certifies).
 - Related memory names: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `pac-accuracy-attempt2-lane-2026-10-03`, `sector-growth-study-lane-2026-09-25`, `dont-be-jumpy-removing-money-2026-09-26`, `supplied-data-closes-the-item-2026-09-25`, `higgsfield-connector-account-trap-2026-09-17`, `mentat-redesign-boards-2026-09-21`, `ask-before-substantive-changes`.
+
+<!-- brainlink:state:begin -->
+## Brain state (generated)
+
+> Generated by brainlink from melange-systems-brain. Edit the brain with brainctl, not this block; hand-written text outside the markers is never touched.
+
+- Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
+- STATE last verified: 2026-10-05 10:18
+- Open questions in STATE: 17; active decisions: 100; dead ends: 67
+
+### Recent decisions
+- [[ledger/melange-systems-brain/D-103|D-103]] — pilot-brain is retired
+- [[ledger/melange-systems-brain/D-102|D-102]] — folder-brain is retired
+- [[ledger/melange-systems-brain/D-101|D-101]] — PAC giving forecast accuracy: v6 all-sector method and development results (2026
+- [[ledger/melange-systems-brain/D-100|D-100]] — PAC giving forecast accuracy attempt 2: v3 record, v4 regression, v5 rescore, ru
+- [[ledger/melange-systems-brain/D-099|D-099]] — The current-cycle roster PAC projection blends the model with this cycle's pace
+<!-- brainlink:state:end -->
