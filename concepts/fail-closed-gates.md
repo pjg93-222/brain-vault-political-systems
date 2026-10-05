@@ -6,7 +6,7 @@ description: "When a check cannot be satisfied, the system blocks or emits nothi
 related_to: []
 sources: []
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/platform"]
 ---
 
@@ -34,7 +34,7 @@ The rule is about missing or unverifiable evidence, not only wrong answers: a co
 - [[2026-07-feature-audio-and-speech-lane]] — the audio lane is off-chain and fail-closed at 0 accepted clips
 - [[codex-executor]] — the bounded Fable-to-Sol retry controller has FAIL-CLOSED review handling: a flag stops the loop for review
 - [[metaloop]] — the dynamic-coordination evaluator is fail-closed on missing or self-generated evidence
-- [[melange-refresh-scheduler]] — the congress daily-refresh chain is scheduler-owned Python, fail-closed, zero AI; Paul decides every gate
+- [[melange-refresh-scheduler]] — the congress daily-refresh chain is scheduler-owned Python and fail-closed, with zero AI in its collection steps (its sentinel admissions step, whose freshness deadline can block a full chain pass, is a paid claude-cli step); Paul decides every gate
 - [[melange-audio-pipeline]] — off-chain and fail-closed; its vacuously passing production guard is the known gap
 - [[lobbyview-collector]] — fail-closed guards, all fixture-proven (exit 2, zero artifacts)
 - [[sentinel-collectors]] — the 2026-09-01 press and hearing repair made the hearing display fail-closed

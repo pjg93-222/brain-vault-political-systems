@@ -26,13 +26,15 @@ sources:
 last_synced_at: ""
 last_synced_sha: ""
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
 
 # Melange refresh jobs
 
 > Unattended refresh automation of [[melange-systems]]: `fec/weekly_refresh.py` via Windows task `MoneyballWeeklyRefresh` (has not completed since 2026-07-19), the congress daily-refresh chain (scheduler-owned Python, fail-closed, zero AI), and `refresh_email.py` (never sent: the credentials file is a Paul-only step). Narrative, rulings and history: [[2026-08-incident-refresh-automation-reliability]].
+
+Dated correction (2026-10-04): "zero AI" holds for the daily chain's collection steps. Its sentinel admissions step is a paid claude-cli step (N19; transport `claude-cli`, 24 `claude.exe` calls per admissions pass), which the `--smoke` runs skip with `--no-llm`, and its freshness deadline can block a full chain pass; the weekly refresh's reference layer also spawns `claude.exe` (Known Issues, item 12).
 
 ## Details
 
@@ -99,6 +101,7 @@ python -c "import refresh_email; ..."   # then send_report (module is import-saf
 
 # Merge/deploy of the crash-visibility fix (done 2026-08-09)
 git -C live merge --ff-only main
+# 2026-10-03: never merge or check out a branch into LIVE (D-060 as restated in the route-latency lane's commit ruling; Live-tree patch discipline); the merge above is history
 
 # Kernel tests: only from the LIVE root (DE-039)
 ```

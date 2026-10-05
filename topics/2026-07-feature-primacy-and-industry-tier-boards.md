@@ -8,7 +8,7 @@ people:
   - "paul-goff"
 actors:
   - "[[melange-dashboard]]"
-objective: "Keep the Moneyball primacy tier board (Tier 1/2/3 = 13/24/48) and the per-industry (bank/crypto/fintech/CU) desk-method tier boards correct, ratified and explainable: factor-only purity scoring, drift diagnosis, the 2026-09-19 methodology diagnosis (diagnosis only, nothing applied), valence and tensor machinery, industry-tab interactions and the champion crown supremacy law."
+objective: "Keep the Moneyball primacy tier board (Tier 1/2/3 = 13/24/48) and the per-industry (bank/crypto/fintech/CU) desk-method tier boards correct, ratified and explainable: factor-only purity scoring (2026-07-29; `per_area_v1` from 2026-09-17 and the ratified diagnostic method from 2026-09-20), drift diagnosis, the 2026-09-19 methodology diagnosis (diagnosis only, nothing applied at the time; its diagnostic arm was ratified and committed on 2026-09-20), valence and tensor machinery, industry-tab interactions and the champion crown supremacy law."
 created_at: 2026-07-16
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/primacy-methodology-lane-2026-09-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\primacy-methodology-lane-2026-09-19.md", sha256: "32373ef9a9526120c4c9e86be3a658df659e24e45cae39ad4c04836e119988b1"}
@@ -19,13 +19,15 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/primacy-board-factor-only-2026-07-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\primacy-board-factor-only-2026-07-29.md", sha256: "376b4f95d32a311d495d82c654dee25562da85a42614e936cdafa26d8d2be1fb"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/chatgpt-lane-landed-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\chatgpt-lane-landed-2026-07-16.md", sha256: "a2f66fb2d176812011d8d527d20ea640bceae00eb80a8447a8c21a23f7b82a65"}
 updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
 # Primacy and industry tier boards
 
-> The Moneyball primacy tier board scores members on the beneficiary (purity) factor alone, per-industry tier boards reuse the same desk methodology with valence and tensor cells, and a Tier-1 crown can never sit on a threat board; the 2026-09-19 methodology lane is still diagnosis-only with nothing applied.
+> The Moneyball primacy tier board uses the primacy method Paul ratified on 2026-09-20, the diagnostic arm CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating (before it, the beneficiary (purity) factor alone from 2026-07-29 and `per_area_v1` from 2026-09-17); per-industry tier boards reuse the same desk methodology with valence and tensor cells, and a Tier-1 crown can never sit on a threat board.
+
+Dated correction (2026-10-04): until this date the tagline said the board "scores members on the beneficiary (purity) factor alone" and that "the 2026-09-19 methodology lane is still diagnosis-only with nothing applied". The 2026-09-17 15:37 publish moved the board to `per_area_v1` (D-027 + D-032), and on 2026-09-20 Paul ratified the lane's diagnostic arm, committed with the promotion in `fd740c4a0` (`PRIMACY_METHOD=diagnostic_v1`, rollback `legacy`); the record is in Primacy-board methodology lane (2026-09-19/20) and Primacy diagnostic adopted (2026-09-20).
 
 ## Parts
 
@@ -84,10 +86,11 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 | 2026-09-13 to 2026-09-17 | The "bad window" Paul pinned himself ("I think we may have overshoot on some measures"). 09-13 00:26 -> 09-17 04:43 step 1 (ladder -> rule G, vote weight 1 -> 0.4, accepted actions 22,034 -> 26,901; D-031 + D-033); 09-17 15:37 step 2 (`factor` -> `per_area_v1`, D-032). |
 | 2026-09-19 | Primacy-methodology lane (worktree `ecc-benchmark-methodology-c4f259`): six disputed members, three redesigns rejected, step-back, experiments, amended reruns, Paul's "augment the live board" baseline. Read-only; nothing applied. |
 | 2026-09-20 early | Pattern search and live-board augmentation parts 1-3 done; part 4 dispatched (source last modified 2026-09-20). |
+| 2026-09-20 | Paul ratified the diagnostic arm CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating as the live primacy method (`PRIMACY_METHOD=diagnostic_v1`, rollback `legacy`), committed with the promotion in `fd740c4a0` (row added 2026-10-04 from Primacy diagnostic adopted (2026-09-20)). |
 
 ## Decisions
 
-- **Board scores on the factor alone (2026-07-29, @89b6219)**: Paul overrode three flags and two recommendations against factor-only; purity over volume is intent, never re-flag. Revert dial `PRIMACY_BOARD=legxfactor`.
+- **Board scores on the factor alone (2026-07-29, @89b6219)**: Paul overrode three flags and two recommendations against factor-only; purity over volume is intent, never re-flag. Revert dial `PRIMACY_BOARD=legxfactor`. Dated note (2026-10-04): superseded on 2026-09-17 15:37 by `per_area_v1` (D-032) and on 2026-09-20 by the ratified diagnostic arm CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating (`PRIMACY_METHOD=diagnostic_v1`, rollback `legacy`).
 - **Evidence floor (2026-07-29, @cae6c58)**: "purity ranks, evidence qualifies" - Paul: "Lets go with this, conduct as you most see optimal". `PRIMACY_MIN_CUPRIM=0.75`.
 - **Uncertainty penalty (2026-07-29, @99739ec)**: Paul's own insight; K=0.25 not higher because "Vargas needs to be in".
 - **Amendments weigh 0.5 (@68f1fbe)**: one definition in `legislation_measure_key.display_measure_weight`.
@@ -100,6 +103,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - **Responsiveness surface (2026-08-11)**: CU pilot, desk + board chips, dual-spec linear headline, DISPLAY-ONLY indefinitely (ACU rankings not shareable, so NO criterion claims ever).
 - **Five crypto acts priced as tensor cells instead of the floor (2026-08-12)**: "Price those five acts as tensor cells instead of the floor"; no special-casing, no extension to S.1582 ("No I think those are just how the numbers shake out, audit"); CLARITY/STABLE/GENIUS = shared leaning toward crypto = 0.3.
 - **Methodology lane 2026-09-19**: keep within-chamber seating ("we will keep within chamber seating", D-027) -> later "One cross-chamber sort is the way to go" -> later rejected all redesigns and made the base the LIVE board ("I like the live board I just think it can be further augmented"). See the methodology section in [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] for the full ledger of rulings and their order.
+- **Outcome of the methodology lane (2026-09-20; dated note 2026-10-04):** Paul ratified the diagnostic arm CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating as the live primacy method (`PRIMACY_METHOD=diagnostic_v1`, rollback `legacy`; decision record `fec/docs/primacy_diagnostic_20260920.md`, committed with the promotion in `fd740c4a0`); the record is Primacy diagnostic adopted (2026-09-20).
 - ~~Primacy board = Legislative% x factor (`PRIMACY_BOARD=legxfactor`)~~ (until 2026-07-29) - superseded 2026-07-29 by factor-only; kept because the dial restores the entire pre-directive board exactly (Waters 101, Nunn 45, Barr 38, Kim 11).
 - ~~Valence caveat: "No valence adjudication exists" for non-CU boards~~ (until 2026-08-10) - superseded 2026-08-10 by option A (ledger @77a5293); the old hardcoded sentence is gone, the note renders `receipts.oppose_handling`.
 - ~~Primary+anti evidence floor on non-CU boards~~ - tried and REJECTED 2026-08-10 (it seated Warren in tier 2 at rank 21 with a negative score); floor stays mix[primary] ONLY.

@@ -42,7 +42,7 @@ tags: ["type/discussion", "domain/research"]
 - Attempt 2 root: `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt2-20261003T003312Z`.
 - Coordinator brief = Paul's pasted prompt: stages S0-S7, Opus read-only review, Sonnet builds via `code/launch_stage.ps1`. HOLD stays; scratch only.
 - This is the PAC-accuracy leg of [[2026-09-feature-forecast-giving-redesign]] and part of the program [[forecast-redesign]]; the holdout rules it leans on are in [[single-look-holdout-discipline]]. Rulings are by Paul Goff.
-- Source memory file: `pac-accuracy-attempt2-lane-2026-10-03`, described as "PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history" (modified 2026-10-03T06:11:53Z; session id 13a17b30-2c5b-43ad-a902-b5ad3a1253cf).
+- Source memory file: `pac-accuracy-attempt2-lane-2026-10-03`, described as "PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history" (modified 2026-10-03T06:11:53Z; session id 13a17b30-2c5b-43ad-a902-b5ad3a1253cf). Dated note (2026-10-04): `sources:` holds the newer version of this file, modified 2026-10-03T19:46:53Z, since the fleeting pass of 2026-10-04.
 - Related memory names: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
 
 ## Participants
