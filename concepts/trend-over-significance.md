@@ -5,7 +5,7 @@ aliases: ["trend-first reporting"]
 description: "Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar."
 related_to: []
 sources: []
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "reorg@agent"
 tags: ["type/concept", "domain/research"]
 ---
@@ -39,5 +39,5 @@ Honesty about noise stays in one short clause (a weak trend's sign can flip with
 
 Other notes that use the rule, by title (plain text, so their link budgets are unchanged):
 
-- Forecast audit, giving-view redesign and PAC accuracy: re-run the regressions and lead with sign/size/fold consistency.
-- Single-look holdout discipline, CU-geography Luna model and row framework, Agent tooling stack: each lists `trend-over-significance-2026-09-26` among its related memory notes.
+- Audit lane, 2026-09-29 (Forecast audit, giving-view redesign and PAC accuracy): re-run the regressions and lead with sign/size/fold consistency.
+- Cases 4 and 5: Luna holdouts and PAC accuracy attempt 2 (Single-look holdout discipline), CU-geography Luna model and row framework, Agent tooling stack: each lists `trend-over-significance-2026-09-26` among its related memory notes.

@@ -10,11 +10,11 @@ related_to:
 sources: []
 doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\STANCE_PIPELINE_INTEGRITY.md"
-    sha256: "d629241f000c78564fb95984aa029c3c92c0b9be3a643f7e0f07c9ceb3e4e2c0"
-    as_of: "2026-07-15"
+    sha256: "cee5858866bbd42c237e56d45404d66105a3ba285ef9d30e737a33cdc747fa20"
+    as_of: "2026-10-04"
   - path: "C:\\Users\\pgoff\\Mentat\\STANCE_PIPELINE_INTEGRITY.md"
-    sha256: "e3c2864e8f3da33d88564f0af0c2c13d0a64763ec85ea2dbf1b2d085f7aa9ae3"
-    as_of: "2026-07-15"
+    sha256: "cf50b7414cb75d1ee3bd3482095fd8d0d06930efb1df52d439d74b62ede93732"
+    as_of: "2026-10-04"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\stance\\stance_rules.py"
     sha256: "09e9e01b04d0dc16a463669f61fcb12bfca59eb2f03a646e18be002946ac576c"
     as_of: "2026-08-05"
@@ -24,8 +24,8 @@ doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\moneyball_core.py"
     sha256: "46b54d266e87bc87562bc680bee76e9f36b4f3972266d0f66e65175d9894b483"
     as_of: "2026-10-01"
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -35,6 +35,7 @@ tags: ["type/concept", "domain/research"]
 
 > [!info] Source and status
 > Summary of `STANCE_PIPELINE_INTEGRITY.md` (99 lines) in the Melange repo root, committed in the 2026-07-15 snapshot `e3d2923d0` and unchanged since. The Mentat checkout holds the same text with CRLF line endings. Code read on 2026-10-04 has moved past the contract in four places (curved label domains, the overall crown, the cell gate's fail-closed rule, cross-post scoring); see the dated history.
+> Dated note (2026-10-04): the contract now records its code divergence. Melange commit `97e5133` (2026-10-04, on `main`, mirror-pushed) added a section "Code divergence (2026-10-04)" with six items (Path J provenance, the crown and the aggregate say-do check, the curved label domains, the board crown and displayed labels, the fail-closed cell gate, cross-posts); the text after it is unchanged since `e3d2923d0`. The Mentat copy has the same text, applied but not committed on Mentat's working branch `codex/mentat-crypto`. The file now has 173 lines.
 
 ## Description
 

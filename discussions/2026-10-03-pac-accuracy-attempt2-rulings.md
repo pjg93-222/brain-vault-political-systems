@@ -16,7 +16,7 @@ action_items:
   - "Do not launch S3 without Paul's explicit OK and a fresh gate on the v2 freeze (owner: Paul / coordinator). Progress 2026-10-03: after the S2C gate PASSED on the v3 freeze, S3 ran dev-only, one pass, on Paul's 'finish'."
   - "Finish S2C narrow repair, produce the v3 freeze, run ONE Opus verifier gate (owner: coordinator; S2C launched ~06:2x UTC on 2026-10-03). Done 2026-10-03: S2C gate PASS."
   - "Run the Glass Box watcher code/glassbox/stage_watch.ps1 alongside every stage (owner: coordinator)."
-  - "Opening UT-X requires a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished ~08:45 UTC with UT-X SEALED_NOT_SCORED."
+  - "Opening UT-X requires a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished ~08:45 UTC with UT-X SEALED_NOT_SCORED. Progress 2026-10-04 (source `pac-accuracy-six-year-lookback-directive-2026-10-03`, all-sector phase rulings): Paul's E4 opened P&C/UT-X for development, superseding C1; holdout spent, never certifies."
 related_topics:
   - "[[2026-09-feature-forecast-giving-redesign]]"
 related_actors: []
@@ -28,7 +28,7 @@ related_teams: []
 source: "session"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
-updated_at: 2026-10-04
+updated_at: 2026-10-05
 updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/research"]
 ---
@@ -77,7 +77,7 @@ tags: ["type/discussion", "domain/research"]
 - [x] Never launch S3 without Paul's OK and a fresh gate on the v2 freeze (owner: Paul / coordinator). Progress 2026-10-03 (source `pac-accuracy-attempt2-lane-2026-10-03`, newer version): after the S2C gate PASSED on the v3 freeze, S3 ran dev-only, one pass, on Paul's "finish".
 - [x] Complete S2C narrow repair, v3 freeze, and the single Opus verifier gate (owner: coordinator). Done 2026-10-03: S2C gate PASS.
 - [ ] Run the Glass Box watcher `code/glassbox/stage_watch.ps1` alongside every stage; S2's first 49 min were unwatched (owner: coordinator)
-- [ ] Any opening of UT-X needs a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished with UT-X SEALED_NOT_SCORED, so the single shot is still unspent.
+- [x] Any opening of UT-X needs a new owner ruling (owner: Paul). Progress 2026-10-03: the attempt finished with UT-X SEALED_NOT_SCORED, so the single shot is still unspent. Done 2026-10-04 (source `pac-accuracy-six-year-lookback-directive-2026-10-03`, all-sector phase rulings): Paul's E4, the new owner ruling, opened P&C/UT-X for development, superseding C1; holdout spent, never certifies.
 
 ## Gate and stage history (2026-10-03, UTC)
 
@@ -89,7 +89,7 @@ tags: ["type/discussion", "domain/research"]
 | ~05:46 | S2B done, v2 freeze; gate HELD (`receipts/GATE_S2B_COORDINATOR.md`): certification structurally unreachable (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4), P&C cohort = Travelers + legacy Chubb Corp only, FEC bulk files keep only the latest report version so FILED cannot be truly as-of-issue. |
 | after the S2B gate | Second round of rulings C1-C2. |
 | ~06:2x | S2C narrow repair launched -> v3 freeze -> ONE Opus verifier gate (not 3). |
-| ~08:45 | FINISHED (Paul: "finish"): S2C gate PASS -> S3 dev-only one pass -> S4 ACCEPT_WITH_REPAIRS -> S5 disclosure repairs -> S6 ACCEPT_WITH_NOTES -> S7 delivery. Goal NOT met, HOLD unchanged, UT-X SEALED_NOT_SCORED; results and the later v4 branch are in Forecast audit, giving-view redesign and PAC accuracy. |
+| ~08:45 | FINISHED (Paul: "finish"): S2C gate PASS -> S3 dev-only one pass -> S4 ACCEPT_WITH_REPAIRS -> S5 disclosure repairs -> S6 ACCEPT_WITH_NOTES -> S7 delivery. Goal NOT met, HOLD unchanged, UT-X SEALED_NOT_SCORED; results and the later v4 branch are in PAC accuracy attempt 2 (Forecast audit, giving-view redesign and PAC accuracy). |
 
 ## Rulings, verbatim wording as recorded
 

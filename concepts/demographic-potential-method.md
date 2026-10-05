@@ -10,16 +10,16 @@ related_to:
 sources: []
 doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\DEMOGRAPHIC_POTENTIAL_METHOD.md"
-    sha256: "8a6459991ced3b6b3b3f0d51be9fe2473d8c260b871501763c0b90ce092790cc"
-    as_of: "2026-07-25"
+    sha256: "00e26f86d8f5b6f9d1bdd58dd0d2d3306f60327d8efcac056e68aa4c2b9d6959"
+    as_of: "2026-10-04"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Melange Systems\\fec\\district\\demographic_potential.py"
     sha256: "c58ffaf1b9edb6af4dee094dbc3ecaee4cf5dbb1ae2413ee55acdcdd78f0bbf9"
     as_of: "2026-09-16"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
-    sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
-    as_of: "2026-10-04"
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+    sha256: "ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34"
+    as_of: "2026-10-05"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/data"]
 ---
 
@@ -29,6 +29,7 @@ tags: ["type/concept", "domain/data"]
 
 > [!info] Source and status
 > Version 2.1 is summarized from `DEMOGRAPHIC_POTENTIAL_METHOD.md` (Melange repo root, last committed 2026-07-25). That file was not updated for version 3.0, which is taken from `fec/district/demographic_potential.py` (commit `73ebf18e6`, 2026-09-16) and brain decision D-035. The doc now describes the non-default mode.
+> Dated note (2026-10-04): the doc now records its code divergence. Melange commit `97e5133` (2026-10-04, on `main`, mirror-pushed) added a section "Code divergence (2026-10-04)" saying that version 2.1 is no longer the default and recording version 3.0 (the `footprint` default since `73ebf18e6`, D-035), its four components and qualification rule, and which sections apply only to version 2.1; the text after that section is unchanged since 2026-07-25 (`ba25d8803`), so the doc's main text still describes version 2.1.
 
 ## Description
 

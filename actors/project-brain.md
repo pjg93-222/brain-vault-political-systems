@@ -21,8 +21,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
 doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
-    sha256: "a2a92dbf985cf4a1e430f00c77e21b7f6635039be55ee77bf4bd5c6888fa9aec"
-    as_of: "2026-10-04"
+    sha256: "ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34"
+    as_of: "2026-10-05"
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DEADENDS.md"
     sha256: "0ca3fe08fabc97a9bfdbe13abc7770e791e6ae614aba2e1f34e55ad312ec9ebc"
     as_of: "2026-10-04"
@@ -34,8 +34,8 @@ doc_sources:
     as_of: "2026-08-11"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
 
@@ -86,19 +86,19 @@ python brainctl.py off <folder>     # remove only the managed block
 - The evaluation pilot (5-10 scorecarded sessions, audits, pre-committed kill criteria) is defined in EVALUATION.md but not started.
 - Whether Carbonite covers the four new folders is Paul's to confirm (green badge).
 
-## The melange-systems brain's decision log (pointer; counts as of 2026-10-04)
+## The melange-systems brain's decision log (pointer; counts as of 2026-10-05)
 
-The brain at `C:\Users\pgoff\OneDrive\Desktop\Project Brain\brains\melange-systems-brain\` is its own git repository (218 commits, tip `81f6c99` of 2026-10-04 15:37, mirrored to `C:\Users\pgoff\GitMirrors`). Three of its files are the decision record this vault cites as D-### and DE-###; their entries are not copied here.
+The brain at `C:\Users\pgoff\OneDrive\Desktop\Project Brain\brains\melange-systems-brain\` is its own git repository (as of 2026-10-05: 220 commits, tip `27f3b4c` of 2026-10-04 22:56; on 2026-10-04 at 15:37: 218 commits, tip `81f6c99`; mirrored to `C:\Users\pgoff\GitMirrors`). Three of its files are the decision record this vault cites as D-### and DE-###; their entries are not copied here.
 
 | File | Size and count | Entry format |
 |---|---|---|
-| `DECISIONS.md` | 744 lines; 86 entries D-001 to D-087 (D-044 absent), 85 ACTIVE and 1 SUPERSEDED, dated 2026-08-11 to 2026-10-03 | `## D-### — Title`, then Date, Status, Decision, Context, Rationale, Reversal condition; append-only, and a reversal only flips Status |
+| `DECISIONS.md` | As of 2026-10-05: 752 lines; 87 entries D-001 to D-088 (D-044 absent), 86 ACTIVE and 1 SUPERSEDED, dated 2026-08-11 to 2026-10-04 (at tip `81f6c99`: 744 lines; 86 entries D-001 to D-087, 85 ACTIVE and 1 SUPERSEDED, dated to 2026-10-03) | `## D-### — Title`, then Date, Status, Decision, Context, Rationale, Reversal condition; append-only, and a reversal only flips Status |
 | `DEADENDS.md` | 501 lines; 57 entries DE-001 to DE-057 (DE-028 and DE-029 have colon headings and no Date line), dated 2026-08-12 to 2026-10-03 | `## DE-### — Title`, then Date, Approach, Failure mode, Root cause, Would reconsider if |
 | `CONSTRAINTS.md` | 199 lines; sourced invariants in six groups: Data, Definitions, Tooling, Audience, Claims, Never do | one constraint per bullet, each ending with its source |
 
 **How to query it.** brainctl has no search command. `python brainctl.py boot <brain>` prints the whole boot bundle (BOOT, STATE, CONSTRAINTS, DECISIONS, DEADENDS and the skills index) to stdout, and `python brainctl.py status <brain>` reports the `Last verified` age (warning after 7 days), each core file's line count (warning above 500 lines) and uncommitted changes. To read one entry, search its heading in the brain folder, for example `rg -n -A8 "^## D-042 " DECISIONS.md` or `rg -n -A6 "^## DE-021 " DEADENDS.md`. `decide` and `deadend` append new entries.
 
-**Entries no vault note cites (checked 2026-10-04, before the document import of that date).** 51 of 143: decisions D-001, D-002, D-003, D-004, D-008, D-009, D-011, D-012, D-014, D-016, D-017, D-020, D-021, D-024, D-035, D-045, D-046, D-053, D-054, D-055, D-056, D-066, D-067, D-068, D-069, D-071, D-072, D-073, D-077, D-078, D-079 (31), and dead ends DE-002, DE-003, DE-005, DE-006, DE-007, DE-008, DE-009, DE-010, DE-013, DE-014, DE-017, DE-019, DE-025, DE-027, DE-031, DE-037, DE-038, DE-049, DE-050, DE-052 (20). Some are covered by paraphrase without the ID (for example the forecast decisions D-066 to D-069 in the forecast-redesign project). The other notes added by the 2026-10-04 import cite D-020, D-024, D-035 and D-068; the remaining 47 appear in this vault only in this list.
+**Entries no vault note cites (checked 2026-10-04, before the document import of that date).** 51 of 143: decisions D-001, D-002, D-003, D-004, D-008, D-009, D-011, D-012, D-014, D-016, D-017, D-020, D-021, D-024, D-035, D-045, D-046, D-053, D-054, D-055, D-056, D-066, D-067, D-068, D-069, D-071, D-072, D-073, D-077, D-078, D-079 (31), and dead ends DE-002, DE-003, DE-005, DE-006, DE-007, DE-008, DE-009, DE-010, DE-013, DE-014, DE-017, DE-019, DE-025, DE-027, DE-031, DE-037, DE-038, DE-049, DE-050, DE-052 (20). Some are covered by paraphrase without the ID (for example the forecast decisions D-066 to D-069 in the forecast-redesign project). The other notes added by the 2026-10-04 import cite D-020, D-024, D-035 and D-068; the remaining 47 appear in this vault only in this list. Recount 2026-10-05 (same method: explicit IDs in the notes other than this one; the brain now has D-001 to D-088 without D-044 and DE-001 to DE-057, 144 entries): 46 are cited by no other note, 26 decisions and the same 20 dead ends. D-079 is now cited (by the forecast-redesign project, the forecast topic and its six-year-lookback part), so the decisions above lose D-020, D-024, D-035, D-068 and D-079; D-088 counts as cited, because those three notes name it as the lowest new ID.
 
 ## Standing rules and decisions
 
