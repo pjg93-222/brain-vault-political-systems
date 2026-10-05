@@ -1,6 +1,7 @@
 ---
 type: "ledger"
 brain: "folder-brain"
+brain_status: "retired"
 id: "CONSTRAINTS"
 kind: "constraints"
 title: "folder-brain CONSTRAINTS"
@@ -10,10 +11,11 @@ superseded_by: ""
 brain_commit: "ffc1d04133f381c48232d705ac92ab6708d1b282"
 entry_sha256: "317263f5601200ca8babf715bdaadfec70972f98a8a1e7fa904a7f9ebecf5e27"
 generated: true
-generated_sha256: "a685d31f5c619e3fe3e5b3f81e53eb87a147bc2790f85349a2bb1a8e45b679e0"
+generated_sha256: "4b59ce9ed17e5dfa5e58b191a9fd024b214547f62445d702e6401915bebfa31c"
 aliases: ["folder CONSTRAINTS"]
 ---
 > Generated from folder-brain/CONSTRAINTS.md at ffc1d04; do not edit — change the brain via brainctl.
+> This brain is retired; see melange-systems-brain decision recording its retirement
 
 # CONSTRAINTS — folder
 
