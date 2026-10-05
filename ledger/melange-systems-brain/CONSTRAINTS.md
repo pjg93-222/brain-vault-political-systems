@@ -7,13 +7,13 @@ title: "melange-systems-brain CONSTRAINTS"
 date: ""
 status: ""
 superseded_by: ""
-brain_commit: "5d486d31d241bad3e9e24ee497456b48666d0e78"
-entry_sha256: "fa2a650a12a02a8a22e056dc1fea7f0a7eeec5d06992902104090b29cfb70de5"
+brain_commit: "0c985f0cfdedca03bb31a73627a82a945efd680a"
+entry_sha256: "279530af86bb05e198ed10b79276fdd8cb954e0a8da098541d7ab935c2de449c"
 generated: true
-generated_sha256: "5a99d1df0181e5bd6e28e6dab9ec29135e70da7be4f0bb844dcdcae2b4db0765"
+generated_sha256: "40a0ba5a1563e5da65ede47d97a72bdd0723f986380fb48e8bad2dc2c1cdaf88"
 aliases: ["melange-systems CONSTRAINTS"]
 ---
-> Generated from melange-systems-brain/CONSTRAINTS.md at 5d486d3; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/CONSTRAINTS.md at 0c985f0; do not edit — change the brain via brainctl.
 
 # CONSTRAINTS — Melange Systems
 
@@ -49,6 +49,21 @@ Group them so a cold reader can scan fast:
 - Mentat's receipt system does not capture industry PACs' own giving to candidates; the FEC pas2
   files under mentat\.cache\repair-20260908-inputs\fec_beneficiary hold it (2022 and 2026 editions
   2026-09-06, 2024 edition 2026-03-08). (source: forecast Phase 2 addendum section F, 2026-09-30)
+- Mentat workbook Analysis Amounts include receipts that the FEC filings record as other receipts (interest),
+  refunds, loans and insurance claims; Mentat's accounting engine buckets them non_giving
+  (mentat/tools/cross_reference_engine.py:344-350). Examples: SchoolsFirst FCU to Katie Porter's committees,
+  $110,478.54 (2021-22) and $159,041.47 (2023-24), Form 3 line 15, memo INTEREST; U.S. Bank to the 2024
+  convention host committee, $190,706 (2024), Form 4 line 19A; Progressive to Fetterman for PA, $65,679,
+  "COVERED LOSS CLAIM". Any consumer that sums included receipts without a funding-source filter counts them
+  as giving (Graph totals; Chart Studio's included-receipts basis; enrich_downstream funding cohorts; the
+  sector-growth-study panel, which keeps every funding source by Paul's "Keep those receipts",
+  sector_growth_study/code/R/sgs_panel.R:635). Amended per [[ledger/melange-systems-brain/D-090|D-090]]: the forecast anchors no longer count them;
+  they leave out every funding source named in mentat/forecast/anchors/mentat_sources.py
+  FORECAST_EXCLUDED_FUNDING_SOURCES (frozenset({'non_giving'}), line 23) and report the excluded amounts beside
+  the results. (source: forecast integrity reconciliation,
+  C:\melange-data\forecast-redesign-20260930\reconcile\PART_CALC.md D.1-D.3 and 10.1-10.2, 2026-10-01; code
+  lines re-read at Mentat f340dc84e on 2026-10-05; drafted 2026-10-01 in BRAIN_DRAFTS_2026-10-01.md section 4;
+  applied 2026-10-05 on Paul's approval, anchors clause amended per [[ledger/melange-systems-brain/D-090|D-090]])
 
 ## Definitions
 - CENTERING TEST (Paul, 2026-08-12): "Is the bill centered around an industry, where we have provisions —
