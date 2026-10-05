@@ -1,0 +1,79 @@
+---
+type: concept
+name: "Cases 4 and 5: Luna holdouts and PAC accuracy attempt 2 (Single-look holdout discipline)"
+aliases: ["Single-look holdout discipline: Cases 4 and 5: Luna holdouts and PAC accuracy attempt 2"]
+description: "Cases 4 and 5 of the single-look discipline: the Luna CU-geography holdout of 2026-09-30, used twice, leaving no untouched labelled data, and PAC accuracy attempt 2 of 2026-10-03, whose UT-X holdout was sealed, then opened for development."
+related_to: []
+sources: []
+updated_at: 2026-10-04
+updated_by: "reorg@agent"
+tags: ["type/concept", "domain/research"]
+part_of: "[[single-look-holdout-discipline]]"
+---
+
+# Cases 4 and 5: Luna holdouts and PAC accuracy attempt 2 (Single-look holdout discipline)
+
+> Cases 4 and 5 of the single-look discipline: the Luna CU-geography holdout of 2026-09-30, used twice, leaving no untouched labelled data, and PAC accuracy attempt 2 of 2026-10-03, whose UT-X holdout was sealed, then opened for development. Part of [[single-look-holdout-discipline]] (project [[melange-systems]]).
+
+## Case 4: Luna CU-geography holdouts (2026-09-29 to 2026-09-30, `luna-stratified-scaling-review-2026-09-29`)
+
+Luna CU-geography RF/KNN lane (Codex outputs dir; only DE-047 is in the Melange brain). CLOSED 2026-09-30: current export = section 30 GPU model; every export note is current or marked historical (independently verified). Open = Paul's Runpod pod/volume cleanup; optional `credit_card_user` ruling. Luna root: `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography`. Not covered by the Melange brain. The handoff `LUNA_HANDOFF.md` has a "Review findings and follow-up" section. Git Bash runs need `PYTHONPATH` = `<ROOT>\.local\model-study\.venv\Lib\site-packages;<ROOT-parent>\work\.venv\Lib\site-packages` for sklearn 1.9.1 with the codex runtime `python.exe`. PowerShell runs worked without it.
+
+### Holdout-use ledger (the part that matters for this concept)
+
+- **The holdout has been used twice and no untouched labelled data remains**, so a further model change cannot be validated honestly without new labels.
+- Household model Phase A (Paul option 2 + true household ID + untouched holdout, 2026-09-30): holdout = split-2 labeled rows outside the 20k test sample, frozen with a receipt and scored ONCE. The "dry run" used the reused test sample, not the holdout. Leakage audit passed; the shuffled-household control stays at legacy level. 17 fields chosen on A1/A2. Holdout: new lineup 86.673% vs current 85.664% (+1.009 pp, 95% +0.959..+1.060); legacy 80.935%. Reused checks: B +0.98, test +1.02, stress +1.14 pp. Blank-gain estimate: +0.88 pp reweighted (+1.01 unweighted). The deployment current at the time scored 85.66% on the holdout vs 85.70% on test, so the reused checks were not optimistic.
+- Round 3 (GPU, 2026-09-30): "Holdout (2nd use): +0.087 pp (95% +0.073..+0.100). B, test and stress all about +0.08. Reweighted blank estimate +0.098. Deploy = yes." The split-2 holdout has now been used twice; the second use was disclosed in the design ("Design: selection on A1/A2 with a lock; the holdout's SECOND use is disclosed; same deploy gate as before"). Holdout 86.673 -> 86.760%.
+- Returns are diminishing: household information gave about +3 pp; bigger models about +0.1 pp (the ceiling is information in the data, not model capacity). A DE-048 brain entry ("model capacity is not the bottleneck") was offered, not drafted.
+- The stratified-scaling stage (`.local\stratified-scaling-20260929`) is locked and unchanged; its lock hashes `revised.py` and `train_revised.py`, so never edit them in place. The sign-only A1 rule failed its negative control (donor A1 +0.020 pp); `sign_check.py` shows donor is blocked and dwelling kept; the rule is provisional, based on 2 cases. Next-stage fixes (`.local\next-stage-fixes-20260929\fixes.py`): the cached stance read; a `fit_calibration` whose retry is never stricter and which returns its method; `promote_on_development` requiring A1 gain >= 0.001.
+- ROUND 3 lock: "The lock held, and 8 fields were chosen (cpi_auto, cpi_donor, cpi_liberal, credit_card_user, partyaff_democrat, adults, owner_renter, dwelling)."
+
+### Close-out 2026-09-30 and state at the end of 2026-09-29
+
+- Current export: `data-completion-gpu-model-20260930` (section 30, 851 columns), written by `.local\gpu-publish-20260930\gpu_publish.py`. Status mix: household-model 875,850 fills (13 fields); GPU model 449,343 (8 fields); household copy 0. Majority-default 238,653 fills, 79,551 in each of `sci_cpi_insurance_auto_index`, `sci_cpi_insurance_index` and `sci_cpi_online_pay_index`.
+- Accuracy on the reused test check: 80.975 to 81.001 (rare-code repair) to 85.698 (household copy) to 86.713 (household model) to 86.797% (GPU). Holdout: 86.673 to 86.760%.
+- Metadata: two `historical-notes` passes of `gpu_publish.py`. Backups `*.pre-historical-notes.json` and `*.pre-historical-notes-2.json` are in `.local\gpu-publish-20260930\backup`. Pristine to final = 28 dictionary paths (`current_completion_source` 8, `household_model_note` 4, `household_copy_note` 15, `calibration_coverage_note` 1) plus 1 registry path (`sii_dwelling_type` `calibration_coverage_note`). The manifest carries 2 amendments and its 21 entries match disk. Verify PASS; a rerun writes nothing.
+- My independent check (scratchpad `check_notes.py`, stdlib only) confirmed: all 15 `household_copy_note` entries are prefixed "Historical (section 28): " exactly once; the 10 lift notes on fields with 0 majority-default rows end with "Since sections 29-30 this field is filled by a household-aware model and has no majority-default rows"; the 3 live majority-default fields' notes do not; FACTUAL "Updated 2026-09-29" at line 901 is section 22's own date line, not a stale header; the registry's `household_copy.rule` (15) and `household_model.selection.current_decision` (13) stay unmarked by design, because they sit inside their own stage blocks as records.
+- Open, Paul's action: confirm in the Runpod console that the pod is terminated, and delete the `/workspace` network volume. The volume bills until deleted. It holds the de-identified upload plus about 707 MB of non-chosen models. The runpod plugin MCP was never signed in. The same pod hosted the lane in `runpod-claude-sessions-2026-09-30`.
+- Open, optional: `credit_card_user` GPU fills pass the gate but have a -0.14 pp blank-mix estimate (disclosed; I recommended keeping them); a 1.1 GB rehearsal folder sits in the session scratchpad (never delete scratchpads unasked); a DE-048 brain entry was offered, not drafted; the caveman-init rule files are untracked in the Melange worktree `codex-websocket-error-468fa9`.
+- State at the end of the 2026-09-29 session (all verified by the stage's own verify and by an independent check script): current export at the time `data-completion-prior-corrected-20260929`, from stage `.local\prior-corrected-repair-20260929` (`prior_repair.py`), report `PRIOR_CORRECTED_REPAIR.md`.
+  - Prior-corrected repair, Paul decision 1: the legacy balanced-weight RF mass for children D and dwelling G is multiplied by training prevalence before it is restored. Fills equal the accuracy-correction export (1,154 fills reverted). Deployed accuracy 80.941 / 81.001 / 81.075% on B / test / stress. The rare-code probability is exactly 0 on about 90% of children and 83% of dwelling blank rows.
+  - Majority-default marking, Paul "option one": 13 fields with lift < 0.5 pp on all three checks. 832,771 majority-code fills got status `estimated_majority_default`. `sci_ct_volunteer_chtyorg` is split (+0.69 / +0.335 / +0.14 pp) and is NOT marked.
+  - Metadata fixes, decision 2: `technical-repairs.json` corrected and added to the stratified manifest. Backups are in `.local\stratified-scaling-20260929\review\backup`; the review evidence scripts and receipts are in `review\`.
+- Closed later on 2026-09-29: Paul ruled that volunteer stays unmarked (the handoff records it as item 6). The wording now reads "less than 0.5 pp above the majority baseline, or below it"; it was regenerated through the `reword` and `refresh-manifest` modes of `prior_repair.py`; verify re-ran and PASSED, and the manifest carries an amendment note. The stale `sign_check.py` docstrings were fixed too.
+- Brain: Paul chose the Melange brain. The entry was logged as DE-047 via `brainctl deadend`, which auto-committed it (commit 7e17617).
+
+### Round 3, Runpod and household stages (2026-09-30)
+
+- ROUND 3 RESULT: ran on the pod with a 69 MB de-identified upload (fields aliased `field_00..25` because "phone" in iphone hit the identifier check). PUBLISHED as section 30 (`data-completion-gpu-model-20260930`, 851 columns; `GPU_MODEL_COMPLETION.md`; handoff item 9): 449,343 GPU fills; pod re-scoring of 24k rows was exact, and my own recheck found 0 mismatches; historical-notes amendments done.
+- 2026-09-30: Paul said "drop the pod". The pod was already unreachable over SSH (timeout), so I could not terminate it myself. Everything needed is saved locally: results, the 8 chosen models, predictions, pod-raw, the upload pack and the published export. Lost if the volume is gone: only the non-chosen candidate models (about 707 MB). If `/workspace` was a network volume, the de-identified data may still sit in Runpod storage.
+- Setup: the `runpod@runpod` plugin is installed, but its MCP still needs Paul's OAuth sign-in (needs_auth). An SSH key was generated on the workstation (path and fingerprint in the private notes). Pod: H200 141 GB, 192 cores, about 2 TB RAM, `/workspace` volume. Direct SSH: root@<first-pod-host> -p <port>; the `ssh.runpod.io` proxy is interactive only.
+- Paul said "Yes" to a DE-IDENTIFIED upload (model inputs, labels, splits, household features; no names, emails, addresses or IDs) and "All of it, get it done" to the round. The raw source CSV stays local. **Never stop or terminate the pod without Paul.**
+- Round 3 (full training pool, RF 500 trees, GPU XGBoost; stage `.local\gpu-round-20260930`, remote `/workspace/luna-round3`) was dispatched to a Sonnet executor. The executor stopped before local export; publish waited for household-model phase B plus my review.
+- Household model Phase B was PUBLISHED as section 29: export `data-completion-household-model-20260930`, 848 columns; 1,107,753 household-model fills in 17 fields. Verified by the stage's independent re-scoring of 51k rows (max diff 8e-8) and by my own recheck (0 mismatches). The global shuffled-household control stays within +/-0.6 pp of legacy. Stage `.local\household-model-20260930\household_model.py`. Stale metadata found at section 29 (all RESOLVED by section 30, verified 2026-09-30): children's prior-corrected notes, lift notes on fields without majority-default rows, the handoff "holdout untouched" bullet, and the FACTUAL date. The earlier session died mid phase A, and that agent never returned a report.
+- HOUSEHOLD COPY PUBLISHED 2026-09-30 (Paul's "option 1"; superseded by sections 29-30, no copies remain): stage `.local\household-copy-20260929`; export `data-completion-household-copy-20260929`; report `HOUSEHOLD_COPY_COMPLETION.md`; FACTUAL section 28. 15 fields chosen on A1/A2 with the promotion gate. 498,794 copies with status `estimated_household_copy`; 92,667 changed a fill. Reused-check accuracy 85.589 / 85.698 / 85.660%, up from 80.941 / 81.001 / 81.075.
+  - Expected gain on actual blanks was only about +2.1 pp, because blanks are less covered and sit in huge address groups (20.9% are in groups of 200+). Two methods agree: household-pattern reweighting +2.138 and calibration cross-check +2.058. Always quote both figures, never the +4.7 alone.
+  - `__estimate_probability` for copies = training-partition leave-one-out copy accuracy by group-size bucket (2, 3, 4, 5-9, 10-49, 50-199, 200+). In groups of 200+, copying was worse than the model for 8/13 fields; a size cap would have added < 0.1 pp.
+- **Why:** Paul approved each change explicitly in chat. An earlier executor dispatch was blocked by the auto-mode classifier until he did.
+- **How to apply:** any follow-up is a code change in the stage script (`gpu_publish.py` for the current export) followed by a regeneration. The publish modes refuse to re-add a section, so a follow-up needs a new section or an amend mode; never hand-edit published docs. Rerun scratchpad-style independent checks after every publish.
+- Related memory notes: `ask-before-substantive-changes`, `trend-over-significance-2026-09-26`, `verify-dont-infer-completion-2026-08-04`, `pod-for-memory-heavy-tasks-2026-09-30`.
+
+## Case 5: PAC-to-candidate accuracy attempt 2 (2026-10-03, `pac-accuracy-attempt2-lane-2026-10-03`)
+
+PAC-to-candidate giving accuracy attempt 2 (scratch, HOLD) - stage state, Paul's B1-B3 rulings, gate history.
+
+- Attempt 2 root: `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt2-20261003T003312Z`. Coordinator brief = Paul's pasted prompt (stages S0-S7, Opus read-only review, Sonnet builds via `code/launch_stage.ps1`). HOLD stays; scratch only.
+- State 2026-10-03 about 04:20 UTC: S2 done (all 12 artifacts). Coordinator gate BLOCKED (`receipts/GATE_S2_COORDINATOR.md`): gate verifier G1-G7 PASS (cent repro, hashes), but MLE reviewer BLOCK - UT-X CERTIFIED_PASS unreachable (1% unparseable-receipt rule counted 2012/2014) and FILED only switched O_avail. S2B pre-score repair launched (`strategy/S2B_PROMPT.md`) with Glass Box watcher `code/glassbox/stage_watch.ps1`. S3 needs Paul's explicit OK (UT-X is single-shot).
+- Paul's rulings 2026-10-03 (binding amendments):
+  - **B1**: 1% rule applies to "cycles the cell reads"; threshold unchanged.
+  - **B2**: P&C identity strict own-PAC (drops GEICO PAC for Berkshire, SAFECO-PAC for Liberty Mutual; no judgment matches).
+  - **B3**: FILED = as-of-issue vintage rebuild, all inputs cut.
+- S2B done about 05:46 UTC, v2 freeze; gate HELD (`receipts/GATE_S2B_COORDINATOR.md`): certification structurally unreachable (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4), P&C cohort = Travelers + legacy Chubb Corp only, FEC bulk files keep only latest report version so FILED cannot be truly as-of-issue.
+- Paul's rulings 2026-10-03 (second round):
+  - **C1**: UT-X stays SEALED this attempt; S3 dev-only (banks, SchoolsFirst), METHOD_SPEC still frozen; opening UT-X needs new owner ruling.
+  - **C2**: FILED = disclosed amendment-loss lower bound; no-downloads stands.
+- S2C narrow repair -> v3 freeze -> ONE Opus verifier gate (not 3). S2C launched about 06:2x UTC (exact minute not given).
+- **Why:** UT-X holdout can be scored once; spending it on a known non-certifiable freeze wastes it.
+- **How to apply:** never launch S3 without Paul's OK and a fresh gate on the v2 freeze. The Glass Box watcher must run alongside every stage (S2's first 49 min were unwatched). Related: `forecast-audit-lane-2026-09-29`, `mentat-forecast-redesign-lane-2026-09-30`, `glassbox-everything-rule-2026-07-27`.
+- **Outcome (2026-10-03/04; newer versions of `pac-accuracy-attempt2-lane-2026-10-03` and `pac-accuracy-six-year-lookback-directive-2026-10-03`):** the attempt finished ~08:45 UTC with the goal not met and UT-X SEALED_NOT_SCORED, so the single shot is still unspent; each later scoring ran one pass (the v4 branch's V3 RESCORE, and on 2026-10-04 the v5 run's V5-R, with a RESCORE labelled post hoc) or was pre-registered with a date (the 2027-03-08 scoring task, the 2028 clean test); see the Look ledger in [[single-look-holdout-discipline-look-ledger]]. Details in Forecast audit, giving-view redesign and PAC accuracy.
+  - Update (2026-10-04, all-sector phase rulings; newer version of `pac-accuracy-six-year-lookback-directive-2026-10-03`): Paul's E4 opened P&C/UT-X for development, superseding C1; the holdout is spent and never certifies.

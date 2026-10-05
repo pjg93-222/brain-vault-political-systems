@@ -23,7 +23,13 @@
 // concept note, so +1 node (concept 21 -> 22); +2 links, both new pairs with the part: single-look-holdout-discipline <-> the part, 5
 // mentions (the hub's Parts line and its two rewritten positional references, the part's part_of and header line), and melange-systems
 // <-> the part, 2 mentions (the Map row and the part's header line); +7 mentions, all in those 2 pairs; no other pair changed weight
-// (the fleeting check's edits are plain text). It proves that a change to the tooling did not change what
+// (the fleeting check's edits are plain text); now 229 / 633 / 2255, re-pinned by the final batch of 2026-10-04, part 2 (branch
+// vault-final-2026-10-04, second commit; same ledger) from its own export: the single-look concept's five cases moved to three concept
+// parts and the forecast topic's four lane sections to four topic parts, so +7 nodes (concept 22 -> 25, topic 137 -> 141); +15 links,
+// every one a new pair with a new part (each part with its parent and its home project, plus the sibling pair of the Luna-and-PAC
+// cases part and the look-ledger part); the pair single-look-holdout-discipline <-> its look-ledger part went from 5 to 4 mentions,
+// because Case 5's link to the look ledger moved with Case 5; +41 mentions in all; the doc_sources and Path J edits are plain text.
+// It proves that a change to the tooling did not change what
 // the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail, which is
 // the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below (a Phase 2 fix round re-pins it
 // from its own export).
@@ -34,10 +40,10 @@ import { DEFAULT_OUT, argValue } from "./common.ts";
 import { gate, extractData } from "./checks.ts";
 
 const SNAPSHOT = {
-  nodes: 222,
-  links: 618,
-  mentions: 2214,
-  types: { actor: 49, concept: 22, discussion: 9, person: 1, project: 4, topic: 137, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
+  nodes: 229,
+  links: 633,
+  mentions: 2255,
+  types: { actor: 49, concept: 25, discussion: 9, person: 1, project: 4, topic: 141, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
 };
 
 const FILE = argValue("--file") ?? DEFAULT_OUT;

@@ -87,7 +87,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 updated_at: 2026-10-04
-updated_by: "preserve@agent"
+updated_by: "reorg@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -361,6 +361,9 @@ Every note of this project by type, one line each; parts follow their parent.
 - [[concurrent-service-overlap-edge-rule]] - Staffer social-network edge rule: a person-person edge needs real concurrent service in one container; sequence is trajectory, not an edge.
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
 - [[single-look-holdout-discipline-look-ledger]] - part: Dated ledger of the looks and holdout uses that the…
+- [[single-look-holdout-discipline-case-1-moneyball-gate2]] - part: Case 1 of the single-look discipline, the Moneyball…
+- [[single-look-holdout-discipline-cases-2-3-n-slot-and-gold-template]] - part: Cases 2 and 3 of the single-look discipline: the N-slot…
+- [[single-look-holdout-discipline-cases-4-5-luna-and-pac]] - part: Cases 4 and 5 of the single-look discipline: the Luna…
 - [[stance-pipeline-integrity-contract]] - The 2026-07-15 production contract for Melange stance labels: one fixed ten-band scale for every domain, bounded exceptional rounding, General CU allocation, the A/V say-do rule, fail-closed identity joins and regeneration checks.
 - [[demographic-potential-method]] - The district and state market score behind the desk's Demographic Potential label: v2.1 growth room (2026-07-25 doc, eight judgmental weights), replaced as default on 2026-09-16 by v3.0 credit-union footprint.
 - [[behavior-qualified-recognition]] - Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
