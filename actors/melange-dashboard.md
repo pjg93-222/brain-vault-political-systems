@@ -122,6 +122,7 @@ Also recorded: the finalize workflow was launched as `Workflow({scriptPath: "SP\
 ## Known Issues
 
 Listed in the header and expanded in the sections in [[melange-dashboard-preview-and-desk-rules]] and [[melange-dashboard-v2-redesign-overlay]] (publish blocker, untracked chain modules, broken publication path, redesign server backlog, stale mtime flags, audit checks that read built HTML).
+Dated correction (2026-10-04): two of these six, the untracked chain modules and the audit checks that read the built HTML, are expanded neither in this note's body nor in its parts, only in its frontmatter `known_issues`; both are detailed in Plain-language pass, staffer surface pointer and fixes verification (08-31 to 09-05) (Melange dashboard UI evolution), and the committed-vs-live drift of untracked chain producers, reconciled 2026-09-19, is in the Known Issues of Melange fec/ pipeline.
 
 ## Standing design laws and Paul's rulings
 

@@ -23,7 +23,7 @@ doc_sources:
     sha256: "53328006614aac7d57220abbd185c69e59a8559af4ce6fb0251c4283dfad08ac"
     as_of: "2026-08-28"
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/open", "domain/data", "category/feature"]
 part_of: "[[2026-07-feature-data-collection-lanes]]"
 ---
@@ -56,4 +56,4 @@ part_of: "[[2026-07-feature-data-collection-lanes]]"
 
 ## Related
 
-- [[gold-set-validation]] — the evaluation is a frozen-gold-set, one-look test; the disclosed-target gold set is its ground truth.
+- [[gold-set-validation]] — the evaluation is a frozen-gold-set, one-look test; the plan's ground truth is the disclosed-target gold set, which Paul's 2026-08-28 ruling widened to LDA-disclosed named targets plus media clippings correlated chronologically with LDA filings.

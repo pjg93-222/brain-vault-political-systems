@@ -109,6 +109,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 - ~~"Item 1 (bands/crown) of the 2026-07-16 laundry-list handoff"~~ (2026-07-16) - superseded by brain D-031; the handoff's statement "NOTHING has been applied" is false at HEAD (lane landed the same night as `391a4a8b5`, merged `e58a807da`).
 - ~~Five-lane review "NOTHING APPLIED (ask-first)" / "All patches UNAPPLIED; worktree clean throughout"~~ (2026-09-13) - STALE, superseded 2026-09-19 (verified by hunk match): 90/90 patches were applied to LIVE on 2026-09-14T05:58Z; kept because it explains the original packet wording.
 - ~~DE-040 "in-repo stopped matching LF-only hunks, outside-repo clean"~~ - not reproduced (see the laundry-list section in [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]], lessons on `git apply`).
+  - Dated correction (2026-10-04): that laundry-list record holds no lesson on `git apply`. The finding that DE-040 was not reproduced, with the `git apply` line-ending facts, is in Committed vs live drift, the 09-19 reconcile and the line-ending census (Live tree, git drift and line endings) and in Live tree vs committed drift and the line-ending census (09-13 to 09-19) (Melange fec/ pipeline).
 
 ## Next Steps
 

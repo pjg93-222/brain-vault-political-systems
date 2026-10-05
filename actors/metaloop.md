@@ -176,6 +176,7 @@ Canonical text: `.claude/commands/metaloop.md` section UNIVERSAL LANE LAWS @86ba
 ### GLASSEYE and lane-lock facts (from the GLASS BOX lock-hang record, 2026-08-06/09)
 
 - Hook mirror (`mirror.ps1`) stopped being invoked in app sessions about 2026-08-06; permanent metaloop.md section @18dab6b requires coordinator emission via `emit.ps1` (`-Source coordinator`; `-RunId` only inside a Meta LOOP run; emit.ps1 does NOT auto-attach runs by cwd).
+  - Correction 2026-10-03 (source `windows-hook-shell-git-bash`; noted here 2026-10-04): the harness did call the hooks; their commands failed, because hook commands run through Git Bash, which stripped the backslashes of their unquoted Windows paths, so the 16 `mirror.ps1` hooks were dead from about 2026-08-02 until 2026-10-03 (GLASS BOX).
 - A hung `console.ps1 -Lane <x>` holds `state\lane-<x>.runtime.lock` with `FileShare::None`, so new consoles die instantly and `metaloop.ps1 -Action start` fails with "GLASS BOX launch incomplete: 4/5 views healthy"; `launch.ps1` only kills incompatible views (`Stop-GlassboxOwnedProcess` when `-not $health.compatible`). Remedy needs Paul's approval (classifier blocks Stop-Process); killing a console is safe (viewer).
 - A long `codex-reply` aborted with "sent no response or progress"; edits partially landed - never infer outcome; `git status` + byte-diff audit; set per-server `timeout` or `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT`. Codex escalated four genuine contradictions in Claude-authored specs in that run - never treat a Codex stop as obstruction.
 

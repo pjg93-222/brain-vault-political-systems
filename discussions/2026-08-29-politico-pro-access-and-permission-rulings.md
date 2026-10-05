@@ -30,7 +30,7 @@ doc_sources:
     sha256: "715196f5881bf1760ce043f9216707e27152a1d7b6ee4c71ef9c5f985802c300"
     as_of: "2026-09-19"
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/data"]
 ---
 
@@ -63,6 +63,7 @@ The records evaluate automated extraction from the Politico Pro staff directory 
 
 - Early September (raw folder dated 2026-09-03): the vault records a later Politico profile crawl (`politico_profile_crawl_playwright.py`) at about 47% (8,784 of 18,618) on 2026-09-05 01:30Z and 17,683 of 18,618 at 06:14Z (see [[staffer-live-sidecar]]).
 - 2026-09-08: the staffer successor design confirmed Politico Pro as the preferred source for role, title and office when it disagrees with Quorum ([[2026-09-feature-staffer-network-data-and-math-successor-design-and-release-gates]]).
+- 2026-09-08: the staffer spine identity adjudication records that the staffer graph's Politico bridge was bound to the v6 spine, so its rebuild uses the direct v6-to-v8 map, and that 7,712 native Politico IDs were checked with none missing (Staffer spine identity adjudication (2026-09-08)).
 - When, or whether, the canonical enablement switch changed after 2026-08-29 is not recorded in these sources.
 
 ## Action Items

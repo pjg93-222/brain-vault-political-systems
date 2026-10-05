@@ -17,7 +17,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audio-narratives-2026-07-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audio-narratives-2026-07-09.md", sha256: "79e8d71ad2a5aeba6c35fd4d8359c40c9ecede3fbe35ed027ed87f862aa16958"}
 updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
 
@@ -105,7 +105,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - [ ] Register `test_cspan_identity.py` (13 tests) and `test_big5_gold_audio_tdd.py` (13 tests) in `_LANE_MODULES` (`fec/tests/run_tests.py:304-306`).
 - [ ] Run a 10-member pilot of the long-form promotion chain before committing days of compute.
 - [ ] Re-run the Gemini OFF condition (7/30 blind arm, zero verification arms) before quoting any OFF rate; quota resets about 2026-08-27 (individual tier account-level).
-- [ ] Paul-gated: successor N prereg on the certified static timing/energy channels (locking is Paul's gate); venue amendment for Sunday audio (CERTIFY -> AMEND -> LOOK); MFCC voice-C fallback prereg; C-SPAN TollBit licensing decision; 150-clip human-annotation packet coding; fetching ~513 attributed WJ programs (~20 GB, Paul-gated sweep); Paul D1-D12 decisions for the audio identity layer.
+- [ ] Paul-gated: successor N prereg on the certified static timing/energy channels (locking is Paul's gate); venue amendment for Sunday audio (CERTIFY -> AMEND -> LOOK); MFCC voice-C fallback prereg; C-SPAN TollBit licensing decision; 150-clip human-annotation packet coding; fetching ~513 attributed WJ programs (~20 GB, Paul-gated sweep); Paul D1-D12 decisions for the audio identity layer. Dated correction (2026-10-04): the successor N prereg on the timing/energy channels (pause + volume_dyn) was locked and its one look SPENT and MISSED on 2026-08-25 (route CLOSED; any successor needs materially different measures), and the Sunday-audio venue amendment was an amendment to that prereg, procedurally clean only while its look was unspent; the other items here stand.
 - [ ] Post-merge regeneration of the empty v2 artifact to pick up the new contract text (branch `claude/melange-speech-recognition-cfa049` merge is Paul's).
 
 ## State at a glance (audit 2026-08-19/20, extended 2026-08-20, landed 2026-08-21)
