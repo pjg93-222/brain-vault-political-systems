@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-231 notes.
+431 notes.
 
 ## Actors (49)
 
@@ -84,7 +84,7 @@
 - [[two-hop-stance-decomposition]] — Decomposition of CU-alignment scoring into a stance hop (member toward a target) and a valence hop (target good/bad for credit unions); the valence hop (0.689 vs stance 0.915) is the accuracy bottleneck and is fixed with a curated...
 - [[zero-rank-delta-verification]] — Verification protocol for Melange refactors and reorgs: kernel tests -> full pipeline -> rank delta vs the last ranks file must be ZERO (unless the change is meant to move ranks) -> audit clean; proven by ranks staying byte-identical...
 
-## Discussions (10)
+## Discussions (11)
 
 - [[2026-07-27-acu-outline-north-star-rulings]] — On 2026-07-27 (evening) Paul ruled that the Moneyball ACU Search Outline docx is the north star and adjudication contract for the legfix5 19-category review (TITLE, then SUMMARY, then BILL TEXT precedence), that the Quorum 44-row xlsx...
 - [[2026-07-30-coalition-builder-redesign-session]] — Design session (worktree melange-coalition-builder-design-7babbe, 9-agent ultracode research + 2 critics) on the dashboard coalition builder: static weekly-baked substrate plus client-side set-aware evaluation, eight positions P1-P8...
@@ -96,20 +96,24 @@
 - [[2026-09-20-primacy-diagnostic-adoption]] — Paul ratified the primacy diagnostic CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating on 2026-09-20: a beneficiary-weighted legislative grade and CU-weighted press from a fixed 7,413-item ledger; PRIMACY_METHOD=legacy rolls it back.
 - [[2026-10-03-pac-accuracy-attempt2-rulings]] — Two ruling rounds on 2026-10-03 governing the PAC-to-candidate giving accuracy attempt 2 (HOLD, scratch only): B1 the 1% rule applies to cycles the cell reads, B2 strict own-PAC P&C identity, B3 FILED = as-of-issue vintage rebuild...
 - [[2026-10-04-pac-accuracy-attempt3-rulings]] — Paul's rulings E1-E24 for the all-sector phase (attempt 3) of the PAC-to-candidate giving accuracy work, 2026-10-04 and 2026-10-05: the bar (sector A >= 90, each phase subgroup A >= 75), every sector scored on ORIGIN and every nowcast...
+- [[2026-10-06-terrier-rulings]] — Paul's rulings of 2026-10-06 for the Terrier multi-district lane (OR-05 and CT-01 added to Colorado CD-05): the system must be FLEXIBLE with config and toggles over hard-coding, the Terrier brain exists only as vault notes...
 
 ## People (1)
 
 - [[paul-goff]] — Owner of this vault and the sole decision-maker for the Melange Systems, Mentat, forecast-redesign and CU-geography work.
 
-## Projects (4)
+## Projects (6)
 
+- [[brainlink]] — Brainlink links the three record systems: the Project Brain is the ledger (constraints, decisions, dead ends, state), this vault is the map (people, actors, concepts, topics, discussions, links) and Claude memory holds pointers and...
 - [[cu-geography]] — Codex-run credit-union geography project (outputs dir cu-geography; V3 copy cu-geography-v3): Luna stratified RF/KNN data-completion model (closed 2026-09-30, current export = section 30 GPU model, holdout used twice) and the CU row...
 - [[forecast-redesign]] — Mentat forecasting program: the 2026-09-29 audit of three console forecasts (regressions re-run in R), the 2026-09-30 'Giving by cycle' (board F2) forecast-view redesign with projections checked for logical validity against backtests...
 - [[melange-systems]] — Moneyball / Melange: a credit-union legislative-influence model (Blended workbook -> Python engines -> single Moneyball.html deliverable). Began June 2026 in Draft Systems (alias 'Draft Systems'); canonical home moved 2026-06-26 to...
 - [[mentat]] — Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks...
+- [[terrier]] — Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root outputs\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people, 343,000 households)...
 
-## Topics (142)
+## Topics (143)
 
+- [[2026-10-06-terrier-blueprint]] — The written plan for adding Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier app: its phases, what the 2026-10-06 review corrected, Paul's 2026-10-07 answers, how far the build has got and where every input lives.
 - [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] — The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18.
 - [[2026-06-feature-congress-r-scrapers-cu-press-scraper]] — The CU press-release scraper from its 2026-06-10 start through the June 12 audits, plus the five-step fallback chain, archive and third-party sources, bill-sponsorship coverage, the ACU harvest and the per-member web grind of 2026-06-18.
 - [[2026-06-feature-congress-r-scrapers-graded-scoring-and-audits]] — Graded press scoring of 2026-06-14 to 06-21: the graded scale, lean-aware hidden coalitions, the audit passes on tail compression, crypto orientation, matching breadth, big-bank and anti-CU detection, the date-parse bug and the graded...
@@ -252,3 +256,26 @@
 - [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of Mentat (FEC contributions intelligence)) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by Paul Goff, built as 8 Mentat...
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
+
+## Fleeting (13)
+
+- [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
+- [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
+- [[melange-systems--bedrock-recall-silent-failures-2026-10-07]] — Why Bedrock "Brain recall" blocks go missing - hook timeouts (2-10 s vs old 5 s limit) and harness text diluting the 0.45 coverage gate; fixes applied 2026-10-07
+- [[melange-systems--brain-updates-apply-automatically-2026-10-07]] — Paul 2026-10-07 - brain (melange-systems-brain) updates are always applied by Claude via brainctl and committed; never leave them as drafts for Paul
+- [[melange-systems--brainlink-knowledge-system-2026-10-05]] — Brainlink (approved 2026-10-05): the Project Brain is the ledger, the vault is the map, memory holds pointers; ownership table, where the tool lives, rulings-written-at-once rule, the forecast/PAC migration's new brain IDs...
+- [[melange-systems--claude-obsidian-plugin-2026-10-07]] — claude-obsidian plugin installed alongside Bedrock; read-only on Windows; its hooks stay ON by Paul's choice; Bedrock owns vault writes
+- [[melange-systems--claude-obsidian-readonly-install-2026-10-06]] — claude-obsidian 2.2.0 installed read-only beside Bedrock (Paul's option 1); its hooks still run (no per-plugin disable) but are silent; Bedrock owns vault writes
+- [[melange-systems--competitiveness-multiplier-lane-2026-10-05]] — Cook PVI election-competitiveness multiplier c for the engine money curves; Paul's 2026-10-05 rulings and plan status
+- [[melange-systems--forecast-audit-lane-2026-09-29]] — Mentat forecasting audit 09-29 (worktree forecasting-model-audit-5603f2): three "forecasts" on the console, regressions re-run in R, code fixes staged but NOT applied (classifier blocked writes; Paul runs copy_back scripts), methodology...
+- [[melange-systems--mentat-forecast-redesign-lane-2026-09-30]] — Forecast giving view redesign (worktree mentat-forecast-redesign-0fb0be): Paul picked board F2 'Giving by cycle' and ordered the projections checked for logical validity against the test results; build = one-to-one to F2, all compute on...
+- [[melange-systems--pac-accuracy-attempt3-lane-2026-10-05]] — PAC giving forecast accuracy attempt 3 (all sectors, v6) - scored once 2026-10-05; telecom meets bar everywhere, ORIGIN fails banks/SF/P&C/credit arms; 2028 jobs scheduled; code freeze 2027-01-31
+- [[melange-systems--pac-accuracy-six-year-lookback-directive-2026-10-03]] — Paul 2026-10-03 - PAC giving forecast accuracy work may look back only 6 years; gains must come from methodology, not more history; v4 (2008/2010 history) = regression
+- [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 + CT-01; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
+
+## Ledger (generated from the Project Brain) (183)
+
+- [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
+- [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 176 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
