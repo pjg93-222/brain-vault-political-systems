@@ -81,12 +81,12 @@ related_actors:
   - "[[runpod-pod]]"
 related_teams: []
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "89d010b300fa8907c87ea70a53067bc75410687e7e5c6cbed1c0e493912232b3"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "320afff4a5fabfd67d9f4db59835885458211ec89b63ac75655e91a19b3a0da3"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "e2d2a6c45123d429cbbf456f809dee77e5eea0d1d985c0fc7d47f75f9fc92714"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-audit-lane-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-audit-lane-2026-09-29.md", sha256: "12fd36890e6cfb08b93c50f84da51a7a495754974d258516887acee97daa2f4b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "a2f018f3149d98c773c3253a2d406f4f902c542de1c1e7eb6f68ff5799202b43"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "df58a8d72c36127f4bfe1b204c69a5d1c67bc64fa8a4b935439291ceec49ce9b"}
   - {type: "project-brain", synced_at: "2026-10-05", path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md", sha256: "03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec", commit: "3f70fde89aca2f4ecb90b4b60213bda6a631f529"}
-updated_at: 2026-10-05
+updated_at: 2026-10-07
 updated_by: "brainlink-migration@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
@@ -263,12 +263,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Model fix staged 2026-10-01: `modelfix\apply_model.py` (CAS on pre-images 93f6d09b/b069f28c/5a932f27/43e28790, rollback); Python 151/0/3, R 2508/0/1, parity GREEN, fixture 5,674 old leaves unchanged (+616 new).
 - Landed 2026-10-01: Sonnet built in scratch, Opus reviewed (calc needed 1 fix round), applied via hash-checked scripts in `C:\melange-data\forecast-redesign-20260930\apply20261001\` (rollback per script); final check PASS (Python 181/0/4, R 2,542/0/0); NOT committed; ~~console restart = Paul~~ — superseded 2026-10-05: restarted by the session at Paul's order, about 13:55Z (TX; EOD:27). F2 UI live 10:58:25Z (`apply_f2.py` 829cd9da; rollback `f2build\apply_f2.py --rollback`).
-  - Dated note (2026-10-05, from the Mentat git log): the landed fixes and the Giving by cycle view are committed as `f340dc84e` ("Land the forecast integrity fixes and the Giving by cycle view", 2026-10-01 13:18 -0400, on `codex/mentat-crypto`); "NOT committed" above is the state at landing time. Whether the console was restarted is not recorded here.
-- Earlier: fix sets applied 2026-09-30 (Insights, SGS S-1..S-6, Giving G-1..G-6 + L-1/L-1b pooled/industry labels); Paul committed Mentat `7287dbb50` (13 files; SGS study still untracked then). Scripts: `fix_insights\copy_back.py`, `fix_sgs\copy_back.py`, `fix_giving\no_g1\copy_back.py` (NOT `fix_giving\copy_back.py`, which ships held G-1; G-1 share extrapolation flags HELD, flags 20/48 default cells). Report: Melange worktree `audits/forecast_audit_20260929/REPORT.md`.
+  - Dated note (2026-10-05, from the Mentat git log): the landed fixes and the Giving by cycle view are committed as `f340dc84e` ("Land the forecast integrity fixes and the Giving by cycle view", 2026-10-01 13:18 -0400, on `codex/mentat-crypto`); "NOT committed" above is the state at landing time. The console restart is recorded above (struck text).
+- Earlier: fix sets applied 2026-09-30 (Insights, SGS S-1..S-6, Giving G-1..G-6 + L-1/L-1b pooled/industry labels); Paul committed Mentat `7287dbb50` (13 files; SGS study still untracked then; since committed as `04e2391e5`, with the console clean-up `56519c628`, 2026-09-30). Scripts: `fix_insights\copy_back.py`, `fix_sgs\copy_back.py`, `fix_giving\no_g1\copy_back.py` (NOT `fix_giving\copy_back.py`, which ships held G-1; G-1 share extrapolation flags HELD, flags 20/48 default cells). Report: Melange worktree `audits/forecast_audit_20260929/REPORT.md`.
 - Build tree `C:\Users\pgoff\Mentat-wt\forecast-build`, branch `claude/forecast-build-20260930` (sparse `mentat/`, from `7287dbb50`); Paul merges each phase. Phase 1 spec `SP\phase1_spec\SPEC.md`; Phase 1 commits `1400e6417` foundation, `f36972eb7` panels; parity GREEN (..`b961be03a`; 83 targets, bundle max dev 1.56e-10); feeds `..df95572b1`; Phase 2 consumer + anchors + contracts DONE (..`299bf69d7`; 136-cell section-F match); Phase 3 `SP\phase3_ui\copy_back.py` (`index.html` + `chart-studio.js` need hunk staging at commit); Phase 4 `SP\phase4_sgs` (Opus review APPLY-WITH-CHANGES; D1 copy_back rollback REQUIRED, D2-D4 wording/README); Phase 3+4 applied by Paul. PAUSED 2026-09-30 ("Pause"): all 5 agents stopped.
 - v2 G6 HOLD diagnosed (no bug): banks House previous-cycle anchor carries banks' presidential premium (+1.35pp, 5/5 pairs); banks lobbying = log refit (2016/2020). F09 21 pages fetched locally 2026-09-30 (pod was Cloudflare-challenged).
 - Export 2026-10-01 ~00:07Z: mirror `C:\melange-data\pod-export-20260930\forecast-audit-5603f2\` (10,601/10,601 sha256 match, .venv excluded with pip freeze), git bundle (614 commits already local), `parity\` (370/371 exact, 1 at 1.5e-16), `source-diff\` (20 diffs = other lanes' uncommitted work: NEVER apply), `...\urgent\` tar.gz streams; handoff doc `C:\melange-data\forecast-redesign-20260930\CONTINUATION_FORECAST_INTEGRITY_2026-10-01.md`.
-- Paul's wrap-up answers 2026-09-30: pod "Don't need that right now"; IBISWorld "get that yourself via the webscraper" (declined); scheduled tasks OK (create AFTER landing); landing kit + console restart "Run after other tasks are complete"; brain entries "Apply"; 2020 failure "Why? ... Mentat Failure?" (diagnosis agent stopped; do not relaunch unless he asks); commit sector_growth_study; clean IP/cookie evidence; AGENTS.md fine; IBIS = inbox ingester only.
+- Paul's wrap-up answers 2026-09-30: pod "Don't need that right now"; IBISWorld "get that yourself via the webscraper" (declined); scheduled tasks OK (create AFTER landing); landing kit + console restart "Run after other tasks are complete"; brain entries "Apply"; 2020 failure "Why? ... Mentat Failure?" (diagnosis agent stopped; do not relaunch unless he asks); ~~commit sector_growth_study~~ (done: `04e2391e5`); clean IP/cookie evidence; AGENTS.md fine; IBIS = inbox ingester only.
 - OpenSecrets 2026-09-30: fetcher enabled on Paul's instruction (terms-of-service details are in the private notes); the 63 captures of 09-27 kept permanently. Pod `root@<first-pod-host> -p <port>` was the heavy-compute target (Paul: "go as fast as you can").
 
 ## Additional reference details
@@ -296,13 +296,13 @@ Every note of this project by type, one line each; parts follow their parent.
 > Generated by brainlink from melange-systems-brain. Edit the brain with brainctl, not this block; hand-written text outside the markers is never touched.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
-- STATE last verified: 2026-10-05 10:18
-- Open questions in STATE: 17; active decisions: 100; dead ends: 67
+- STATE last verified: 2026-10-06 21:33
+- Open questions in STATE: 20; active decisions: 101; dead ends: 67
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-105|D-105]] — Cook PVI competitiveness multiplier c: D-104 restated with corrected provenance
+- [[ledger/melange-systems-brain/D-104|D-104]] — Cook PVI competitiveness multiplier c on the money curves, default ON (2026-10-0
 - [[ledger/melange-systems-brain/D-103|D-103]] — pilot-brain is retired
 - [[ledger/melange-systems-brain/D-102|D-102]] — folder-brain is retired
 - [[ledger/melange-systems-brain/D-101|D-101]] — PAC giving forecast accuracy: v6 all-sector method and development results (2026
-- [[ledger/melange-systems-brain/D-100|D-100]] — PAC giving forecast accuracy attempt 2: v3 record, v4 regression, v5 rescore, ru
-- [[ledger/melange-systems-brain/D-099|D-099]] — The current-cycle roster PAC projection blends the model with this cycle's pace
 <!-- brainlink:state:end -->
