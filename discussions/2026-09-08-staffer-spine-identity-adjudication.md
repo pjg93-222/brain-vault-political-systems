@@ -73,3 +73,8 @@ Paul asked for the two 2026-09-08 spine documents (an identity decision and an a
 
 - [[2026-09-feature-staffer-network-data-and-math-stale-imports-and-v7-spine]] — the v7 spine that this ruling replaced with v8.
 - [[2026-09-feature-staffer-network-data-and-math-duration-ranking-and-v8-cutover]] — the ranking math rebuilt on the v8 spine and cut over the same day.
+
+
+## Source provenance comparison (2026-10-05)
+
+Source-hash comparison, 2026-10-05: the current `DECISIONS.md` hashes to `03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec`, which differs from the recorded snapshot hash `ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34`. The historical hash is retained. This comparison does not claim that this note's substantive claims have been revalidated against the newer file.

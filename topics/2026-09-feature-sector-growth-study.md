@@ -18,8 +18,8 @@ doc_sources:
   - path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-26\\loo\\outputs\\original_study_reconciliation\\ORIGINAL_MODEL_CONTRACT.md"
     sha256: "997c2853a31907eed3c20c728f4e32345eb4e161122319e06e5e144892fd3029"
     as_of: "2026-09-27"
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 ---
 
@@ -133,7 +133,9 @@ Framing and presentation (feedback rules, also recorded in Communication and pre
 - **Trend over significance** (Paul 2026-09-26) - see the Presentation rules section.
 - Open for Paul: 538 for every year (replacing IEM), or only 2023+?
 
-## Next Steps
+## Historical next steps — current status unverified
+
+Status note, 2026-10-05: this checklist preserves the September 25–26 session state. Some later sections report work subsequently completed. Reconcile each item against its completion receipts and Paul's unresolved choices before treating it as pending or authorizing another run. No fetch, rerun, agent dispatch or production change is authorized by this checklist.
 
 - [ ] When the 2020 chain v3 (pid 4020) ends: link 2020 into 04/08 (data rule D), then rerun the R pipeline; this fills C1-C3, the SHIFT main window, and the contribution backtest.
 - [ ] Show Paul the regressions as R `summary(lm())` blocks ("show me the regressions when it's done"): seniority drop in H5-within (near-collinear, R2 >= 0.9999 rule); ASYM (`g_pos`/`g_neg`) + deceleration; big vs community bank split (04 + 01 community_banks rows being added); combined telecom growth; SLOPES (a growth x sector row per sector); H4 headline inference for `exp_dem`/`cur_dem`; coverage table: every Mentat book IN/OUT with reason.

@@ -5,8 +5,8 @@ aliases: ["Single-look holdout discipline: Look ledger"]
 description: "Dated ledger of the looks and holdout uses that the single-look discipline records, one row each with lane and outcome, from the 2026-07-07 Big Five retest to the scheduled 2027-03-08 PAC scoring and the planned 2028 clean test."
 related_to: []
 sources: []
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-05
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
 part_of: "[[single-look-holdout-discipline]]"
 ---
@@ -32,6 +32,7 @@ part_of: "[[single-look-holdout-discipline]]"
 | 2026-10-03 | PAC accuracy attempt 2 | UT-X single-shot holdout | sealed for the attempt (ruling C1); S3 dev-only; after the S2C gate PASS, S3 ran one dev-only pass and the attempt ended ~08:45 UTC with UT-X SEALED_NOT_SCORED (unspent). Update (all-sector phase rulings, Paul's E4, 2026-10-04): P&C/UT-X opened for development, superseding C1; holdout spent, never certifies |
 | 2026-10-03 | PAC attempt 2, v4 branch | V3 RESCORE on the superseding freeze V4_1, one pass | v4 WORSE for banks nowcasts (m15 92.33 -> 86.38); v3 stays the record; v4 labelled a post-hoc regression (2026-10-03) |
 | 2026-10-04 | PAC v5 run | V5-R one pass; RESCORE labelled post hoc | banks nowcasts up except m21 (97.26 -> 96.85), SchoolsFirst m21 to RESCORE_OBSERVED_PASS, ORIGIN banks unchanged; 3 SchoolsFirst cells flip under leave-one-out; v3 stays the record |
+| 2026-10-05 | PAC attempt 3, v6 | SCORE6B one FIRST_LOOK pass at 06:13:58 UTC; FIRST_LOOK_PASS_1.lock engaged; later passes are RESCORE | Banks and SchoolsFirst are RESCORE; P&C, credit arms and telecom are FIRST_LOOK_DEV. REVIEW6 ACCEPT_WITH_NOTES. Only telecom meets the bar in every product; nothing certifies; HOLD unchanged. See [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]]. |
 | 2027-03-08 (scheduled) | PAC live freezes | one-time task `score-pac-live-freeze-2026` (Paul OK'd 2026-10-03; stops without a local pas226 edition dated >= 2027-03-01) | scores v3 and LIVE_FREEZE_V4_1 side by side, plus a v5 2026 line (Paul, 2026-10-04). Update (all-sector phase rulings, 2026-10-04): the pas226 download for this job is authorised (E12), and late-issued 2026 L and m18 lines for all sectors go into it (E21) |
 | 2028 (planned) | PAC v5 | first clean test (Paul, 2026-10-04) | method and plan frozen before 2027-01-31; each forecast frozen within 14 days of its issue date. Update (v5 run, 2026-10-04): method and plan frozen; any code change after 2027-01-31 ends the clean series. Update (all-sector phase rulings, 2026-10-04): the F1 fix is folded into the new all-sector freeze before 2027-01-31 and the v5 2028 plan is unchanged (E11); crypto, fintech and community banks, unscorable now (no PAC giving before 2022), are included in the 2028 prospective track (E15); v6 is approved, with D-065 only between versions on clean 2028+ cells (E19), and the 2028 track takes all sectors and the L product, with its pas228 download (E22) |
 
