@@ -6,11 +6,12 @@ date: 2026-10-06
 summary: "Paul's rulings of 2026-10-06 for the Terrier multi-district lane (OR-05 and CT-01 added to Colorado CD-05): the system must be FLEXIBLE with config and toggles over hard-coding, the Terrier brain exists only as vault notes, race mode is a per-district primary/general toggle, plus his answers O-1 to O-13 on support model, vote codes, imputation, preset names, personal-data handling, party codes, scoring layers, industries and source extraction."
 conclusions:
   - "Ruling 1 (2026-10-06): the system is FLEXIBLE. Districts, industries, candidate per district, layer combinations and ROI weights are configuration, not code. The printed walk list gets an optional scores toggle defaulting to raw. Luna is copied into a versioned per-district stage; the locked original is untouched."
-  - "Ruling 2 (2026-10-06): the Terrier brain exists only as notes in this vault (projects/terrier plus this discussion), subordinate to and subsumed by the vault, not a separate Project Brain."
+  - "Ruling 2 (2026-10-06): the Terrier brain exists only as notes in this vault (terrier/terrier plus this discussion; moved with the other Terrier notes into the top-level terrier/ folder on 2026-10-07), subordinate to and subsumed by the vault, not a separate Project Brain."
   - "Ruling 3 (2026-10-06): primary versus general race mode is a per-district toggle ('on flex'); the CT-01 candidate's race status is never hard-coded."
   - "O-9 (2026-10-06): never strip personal data; all data always shown; run locally on the full data; no de-identified pod run."
   - "O-5, O-7 and O-10 (2026-10-06): Paul confirmed the agent readings recorded below."
   - "O-11 and O-12 (2026-10-06): numeric partisan and support layers stay in the overall score; there is no second industry (only CUA)."
+  - "Answers of 2026-10-07: weights approved (with a candidate industry 30 / candidate support 25 / participation 25 / sphere 20; Colorado without a candidate 40 / 35 / 25 unchanged); street-plan formulas approved with the voting-chance factor added to 'Mixed-support streets'; Census TIGER 2025 block file plus district boundary files from census.gov only; Colorado's GPU fill step skipped for Oregon and Connecticut; parallel build lanes use Claude Code's built-in background agents; Python environment rebuild approved."
 action_items:
   - "Terrier build lane: build to these rulings, config-first, with Colorado CD-05 outputs byte-identical by default (owner: Terrier build lane)."
   - "Define any further industries beyond CUA when wanted; the config supports them (owner: Paul)."
@@ -23,8 +24,8 @@ related_projects:
 related_teams: []
 source: "session"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "9b1e08dfc4f878aea497548c35073cfa84c10e7c05555659691103445070e52d"}
-updated_at: 2026-10-06
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "59ebfc9ab3bd48c50a789638955e4d831b840440ebb6b871bb9ad3fbbe158a9d"}
+updated_at: 2026-10-07
 updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/data"]
 ---
@@ -35,7 +36,7 @@ tags: ["type/discussion", "domain/data"]
 
 ## Context
 
-- The lane adds Oregon OR-05 (562,563 rows) and Connecticut CT-01 (458,372 rows) to the live Colorado CD-05 app; both files use the same 622-column vendor schema as Colorado, and about 9-15% of their rows have blank `sci_*` values from unmatched consumer-file records, as in Colorado. Project note: [[terrier]].
+- The lane adds Oregon OR-05 (562,563 rows) and Connecticut CT-01 (458,372 rows) to the live Colorado CD-05 app; both files use the same 622-column vendor schema as Colorado, and some of their `sci_*` values are blank from unmatched consumer-file records, as in Colorado. The blanks are per field, not whole rows: the median blank rate across the `sci_*` fields is 14.8% in OR-05, 13.0% in CT-01 and 16.2% in Colorado, and no row is blank on every `sci_*` field (10 `sci_*` fields are empty in all three files). Project note: [[terrier]].
 - The open-decision list O-1..O-13 lived only in an earlier chat (no document on disk). The answers below are Paul's, as recorded in the coordinator's memory file of 2026-10-06; the readings marked "agent reading" are the agent's interpretation, and Paul confirmed O-5, O-7 and O-10 the same day. Paul rejected jargon-heavy open items (O-7, O-10, O-12), so open items are explained in plain words.
 - These rulings are Paul Goff's. They do not change the locked Colorado Luna code, the Colorado outputs (byte-identical by default) or the Melange brain.
 
@@ -50,7 +51,7 @@ tags: ["type/discussion", "domain/data"]
 ### The three rulings
 
 1. **FLEXIBLE, config-first.** The system must be flexible: configuration and toggles over hard-coding. Districts, industries, the candidate per district, layer combinations and ROI weights are all configurable. The printed walk list gets an optional scores toggle that defaults to raw (this keeps the earlier "raw data only" decision as the default). The Luna model is copied into a versioned per-district stage; the locked original is untouched.
-2. **The brain is vault-only.** The Terrier brain exists only as a subordinate of, and subsumed by, this Obsidian vault: vault-native project notes (`projects/terrier`, this discussion), not a separate Project Brain. Nothing for Terrier is created under the Project Brain folder and brainlink configuration is not touched.
+2. **The brain is vault-only.** The Terrier brain exists only as a subordinate of, and subsumed by, this Obsidian vault: vault-native notes (`terrier/terrier`, this discussion), not a separate Project Brain. Nothing for Terrier is created under the Project Brain folder and brainlink configuration is not touched.
 3. **Race mode is a per-district toggle.** Primary versus general mode is a toggle per district ("on flex"); never hard-code the CT-01 candidate's race status.
 
 ### The O-1..O-13 answers
@@ -73,6 +74,18 @@ tags: ["type/discussion", "domain/data"]
 ### Dead ends
 
 None are named in the Terrier sources, so no dead-end note was written. (The Luna lane's one brain dead end, DE-047, is recorded in the Melange brain and summarized on the cu-geography project note.)
+
+## Answers of 2026-10-07
+
+Paul's answers to the three items the blueprint review sent him, plus two build decisions, given in the coordinator session of 2026-10-07 (recorded in the blueprint as "Answered by Paul 2026-10-07"; the plan and build status are in [[2026-10-06-terrier-blueprint]]).
+
+- **Overall weights approved.** In a district with a candidate: industry 30, candidate support 25, participation 25, sphere of influence 20. In a district without a candidate (Colorado): 40 / 35 / 25 unchanged.
+- **Street-plan formulas approved.** (s = a person's support chance, p = their voting chance.) "Mixed-support streets" = sum over people of (1 - |2s - 1|) x p. "Supporter turnout" = sum over people of s x (1 - p). "Voter identification" = count of people with no clear support signal. The voting-chance factor p in "Mixed-support streets" is Paul's change to the proposal; the other two are as proposed.
+- **Census approved.** The TIGER 2025 edition of the block file plus the district boundary files, census.gov only. Finding: the 2025 block file still uses Connecticut's old county codes (09001-09015), while the voter file and the road files use the planning-region codes (09110-09190). Blocks are re-coded by location during the build.
+- **Colorado's GPU fill step is skipped** for Oregon and Connecticut.
+- **Parallel build lanes** use Claude Code's built-in background agents (the agent-manager skill and DevFleet are not used).
+- **Python environment rebuild approved.**
+- **Folder.** Paul asked for a separate top-level `terrier/` folder, apart from the Mentat and Melange notes and inside this vault, holding all Terrier notes; this note, [[terrier]] and the blueprint note were moved or created there on 2026-10-07.
 
 ## Action Items
 
