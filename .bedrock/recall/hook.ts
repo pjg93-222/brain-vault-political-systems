@@ -6,6 +6,7 @@
 //   bun .bedrock/recall/hook.ts stale [--dry-run]  list curated notes that cite a changed or missing memory file; unless
 //                                                  --dry-run, write fleeting/YYYY-MM-DD-stale-memory-sources.md
 //   bun .bedrock/recall/hook.ts index              rebuild .bedrock/recall-index.json and index.md
+//   bun .bedrock/recall/hook.ts graph              rebuild the graph page (sync starts this as a detached worker)
 //
 // Hook input is the JSON Claude Code writes to stdin (read only when stdin is not a terminal). Hook output is JSON on
 // stdout: hookSpecificOutput.additionalContext for session-start and recall, systemMessage for sync warnings.
@@ -13,13 +14,14 @@
 // .bedrock/recall/hook.log; on error recall prints nothing and sync prints a one-line warning. Only base.ts (node:
 // built-ins only) is imported statically; everything else loads inside the try, so even a broken edit elsewhere exits 0.
 // A watchdog ends the process before Claude Code's hook timeout would (recall 4 s of 5 s, sync 25 s of 30 s), and the
-// slow parts are budgeted (recall's index rebuild) or bounded by child-process timeouts (the graph build).
+// slow parts are budgeted (recall's index rebuild) or moved out of the hook (the graph build runs in a detached worker).
 // Without a hook payload (manual runs) sync prints a readable report instead of JSON.
 import { VAULT, errText, logLine, oneLine } from "./base.ts";
 
 const sub = process.argv[2] ?? "";
 const flags = new Set(process.argv.slice(3));
-const WATCHDOG_MS: Record<string, number> = { "session-start": 4_000, recall: 4_000, sync: 25_000, stale: 25_000, index: 120_000 };
+// graph: at most 4 builds of 120 s plus one 60 s retry pause (sync.ts graphWorker)
+const WATCHDOG_MS: Record<string, number> = { "session-start": 4_000, recall: 4_000, sync: 25_000, stale: 25_000, index: 120_000, graph: 600_000 };
 /** stdin that stays open without sending anything (no hook payload is coming) is abandoned after this long */
 const STDIN_FIRST_BYTE_MS = 1_500;
 /** session-start skips the stale scan when the process is already this old (ms): it takes ~0.2-0.7 s and cannot be interrupted */
@@ -164,8 +166,12 @@ async function main(): Promise<never> {
       const r = rebuildIndex();
       return finish(`index ok: ${r.notes} notes, ${r.terms} terms, index.md ${r.catalog}${r.skipped ? `, ${r.skipped} unreadable note(s) skipped` : ""} (${r.ms} ms)`);
     }
+    case "graph": {
+      const r = (await import("./sync.ts")).graphWorker();
+      return finish(r.skipped ? "graph page: skipped (test vault without BRAIN_GRAPH_OUT)" : r.ok ? `graph page rebuilt: ${r.notes} notes, ${r.links} links (${r.ms} ms)` : `graph page NOT rebuilt: ${r.reason}`);
+    }
     default:
-      process.stderr.write("usage: bun .bedrock/recall/hook.ts <session-start|recall|sync [--dry-run]|stale [--dry-run]|index>\n");
+      process.stderr.write("usage: bun .bedrock/recall/hook.ts <session-start|recall|sync [--dry-run]|stale [--dry-run]|index|graph>\n");
       return finish();
   }
 }
