@@ -5,7 +5,7 @@ aliases: ["Terrier", "Terrier app", "cu-geography-v3", "Terrier voter canvass ap
 description: "Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root outputs\\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people, 343,000 households); 2026-10-06 lane adds Oregon OR-05 and Connecticut CT-01 under Paul's FLEXIBLE config-first ruling, with every data field shown and runs local. The Terrier brain exists only as vault notes (this note and its rulings discussion), not as a separate Project Brain."
 status: "active"
 deadline: ""
-progress: "As of 2026-10-06: CO CD-05 live on 8767 (8 tabs including Walk list; live server restarted 2026-10-04 16:38). Multi-district lane started 2026-10-06: OR-05 (562,563 rows) and CT-01 (458,372 rows) source zips supplied, same 622-column vendor schema as Colorado; Paul answered the open-decision list O-1..O-13 and made three rulings (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle). Design is config-first with Colorado outputs byte-identical by default; build of the OR-05 and CT-01 stages is not recorded as done."
+progress: "As of 2026-10-06: CO CD-05 live on 8767 (8 tabs including Walk list; live server restarted 2026-10-04 16:38). Multi-district lane started 2026-10-06: OR-05 (562,563 rows) and CT-01 (458,372 rows) source zips supplied, same 622-column vendor schema as Colorado; Paul answered the open-decision list O-1..O-13 and made three rulings (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle). Design is config-first with Colorado outputs byte-identical by default; build of the OR-05 and CT-01 stages is not recorded as done. Blueprint reviewed 2026-10-06 (before construction): 5 wrong facts corrected, 2 claims unverifiable as stated, the plan gained a Colorado baseline phase and a per-district row-framework phase; three items wait for Paul (weights and street-plan formulas, Census file edition and boundary files, skipping the GPU fill step)."
 blockers: []
 action_items:
   - description: "Extract the OR-05 and CT-01 zips to Downloads\\terrier-sources\\ (O-13, Paul said yes)"
@@ -91,7 +91,7 @@ From `CONVERSATION_REQUESTS.md` R006-R019 and later rulings (full scoring and gr
 
 ## Imputation and the Luna model
 
-"Imputation" here means filling the missing measured values, the blank `sci_*` fields on consumer-file rows that did not match (about 9-15% of rows in each district, as in Colorado), with the Luna stratified RF/KNN model. It has nothing to do with other industries (O-4). The Colorado Luna code under `outputs\cu-geography\.local` is **locked** (its stage lock hashes the code): it is copied into a versioned per-district stage that takes per-district values instead of Colorado's exact row count and file hash (O-7, Paul confirmed this reading). The locked original is never edited. Applying the model is not a 12-hour job; a run that long means something is wrong (O-8). Geo-audit gaps are imputed by the same model, with no "Not audited" label (O-5, confirmed). Model history, accuracy and exports: [[cu-geography]].
+"Imputation" here means filling the missing measured values, the blank `sci_*` fields (blank per field, median 13-16% in each district; no row is blank on every field), with the Luna stratified RF/KNN model. It has nothing to do with other industries (O-4). The Colorado Luna code under `outputs\cu-geography\.local` is **locked** (its stage lock hashes the code): it is copied into a versioned per-district stage that takes per-district values instead of Colorado's exact row count and file hash (O-7, Paul confirmed this reading). The locked original is never edited. Applying the model is not a 12-hour job; a run that long means something is wrong (O-8). Geo-audit gaps are imputed by the same model, with no "Not audited" label (O-5, confirmed). Model history, accuracy and exports: [[cu-geography]].
 
 ## Status
 
@@ -99,7 +99,16 @@ From `CONVERSATION_REQUESTS.md` R006-R019 and later rulings (full scoring and gr
 |---|---|
 | Status | active |
 | Deadline | none set |
-| Progress | CO CD-05 live; OR-05 and CT-01 sources supplied and answered into a config-first design (2026-10-06); build stages not recorded as done |
+| Progress | CO CD-05 live; OR-05 and CT-01 sources supplied and answered into a config-first design (2026-10-06); blueprint reviewed 2026-10-06, construction not started |
+
+### Blueprint review 2026-10-06 (aggregates only)
+
+The build blueprint (`cu-geography-v3\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md`) was checked against the Terrier code (HEAD `8c7a817`), the Luna stages and the two source files before construction. No code was edited and nothing was run.
+
+- **Corrected facts.** Two hard-code line numbers were wrong (the district-label check is `bundles.py:213`, the snapshot pattern `bundle_v4.py:24`), and about 25 more Colorado-specific code sites were listed. Colorado's current filled data is the section 30 export (household model, then a GPU step, then majority default; 86.8% on the reused test check), not the superseded household-copy stage. Blank `sci_*` values are per field, not whole rows: median blank rate 14.8% in OR-05, 13.0% in CT-01 and 16.2% in CO; no row is blank on every `sci_*` column, and 10 `sci_*` columns are empty in all three files. No 12-hour Luna run is recorded; the grid search took about 2.2 hours.
+- **Verified.** Row counts (562,563 and 458,372), the identical 622-column header, the store names, the 311 Django and 151 frontend test counts, the 26 locked models and selections, and the TIGER origin of Colorado's street network.
+- **Gaps closed in the plan.** The selection files do not hold the feature list, encoder, forest settings or partitions, so the per-district copy must rebuild the feature inputs; the overall score is computed in the row framework, which needs its own per-district copy; Connecticut block ids use the newer planning-region county codes; the walk network is projected in Colorado's map zone and needs a per-district zone; Oregon votes are coded as ordinary ballots rather than mail, so the mail rule must be per state; a Colorado baseline of API responses and store contents is captured before any change and gates every phase.
+- **Open for Paul.** Approve the proposed weights and street-plan formulas; allow the 2025 edition of the Census block file plus district boundary files; agree to skip the GPU fill step for the new districts.
 
 > **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.
 
@@ -165,6 +174,7 @@ SORT item.deadline ASC
 | 2026-10-02 | Walk list tab built (rush deliverable for Colorado streets) |
 | 2026-10-04 | Live server restarted at 16:38 with deterministic, faster routing and refused-mark persistence |
 | 2026-10-06 | Multi-district lane: OR-05 and CT-01 sources supplied; Paul answered O-1..O-13 and made three rulings; Terrier brain set as vault notes only |
+| 2026-10-06 | Build blueprint reviewed before construction: facts corrected, plan gaps closed, three items sent to Paul |
 
 ## Focal Points
 
