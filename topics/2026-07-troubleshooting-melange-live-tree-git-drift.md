@@ -14,10 +14,10 @@ created_at: 2026-07-14
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/live-tree-eol-census-2026-09-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\live-tree-eol-census-2026-09-19.md", sha256: "8d1bd8b910e194fd59a3663aed40a3c0dca3626eccc843e2a0fc49fef2ca19c7"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-live-tree-reconcile-2026-09-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-live-tree-reconcile-2026-09-19.md", sha256: "466edb2a5c5a32457c4af1ef3b484372f128200f061a8751d654f8a6f5f286b2"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "d344e91e5b143e36a8846cbd15ea7bc1b0d65cd3f448a0b623bbeddf921803d1"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "7cfbd6eb35a782151a209c74bb3499efeeb44b9462dfcc4606da4eff5dd9ad09"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/committed-vs-live-drift-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\committed-vs-live-drift-2026-09-13.md", sha256: "656f0a2e07d94186aa64d8bdf71bf498d76cd84759b30d6f5caae27543483dff"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/live-tree-branch-state-2026-07-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\live-tree-branch-state-2026-07-14.md", sha256: "0e48531d5dfbc92496fa4ea2e3cd48c25b2e2536236a96c6d0db35a557fa4d66"}
-updated_at: 2026-10-04
+updated_at: 2026-10-07
 updated_by: "reorg@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubleshooting"]
 ---
@@ -78,6 +78,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 | 2026-09-13 | Committed-vs-live drift census (main `2f11d9490`): four live-only files back committed callers; 53 files differ in content. |
 | 2026-09-15 | Mentat addendum verified (second checkout `C:\Users\pgoff\Mentat`, branch `codex/mentat-crypto`). |
 | 2026-09-19 | Reconcile: 35 whole-file commits `d97e775ae`..`a19c796d2` (first `109249aaa` baseline); EOL census; `fec/tools/live_patch.py` landed `423820d76`; test timeout fixes `99caafa95`, `624e593eb`; mirror pushed twice (main `a19c796d2`, then `423820d76`); brain post-commit/post-merge hook for melange (D-059). |
+| 2026-10-03 | Full mirror again (Paul: "refresh the mirror with all branches"): `git push mirror --all` + `--tags`, no force, never `--mirror` (it would prune mirror-only refs, incl. `backup/melange-math-eval-skill-18e907-4d54uu`, the only copy of 4 QME commits); 27 new branches pushed, 0 rejected; 339 of 339 local branches present and current, tags 3/3, main `3248a6a02` both sides. |
 
 ## Decisions
 
@@ -85,14 +86,14 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 - Line-wise patch contract (brain D-060): majority terminator, ONE shared helper `fec/tools/live_patch.py`, no `.gitattributes`, files never normalised; census extended to untracked files; brain drafts applied. Paul answered "Reconcile those loose ends and apply" (2026-09-19) - read as a go-ahead for the leaned recommendation on each ruling; it does not generalise to other lanes.
 - Reconcile direction decided by CONTENT, never by commit date vs mtime (DE-028); the mtime cluster is not lane evidence (DE-036).
 - "Do whatever is most optical, there should be no caps" (Paul 2026-09-19) authorised the reconcile plan; also answered R5: `DESK_MEDIA_CAP=0` means no cap ("default 50, 0=all") and live already had it. Does NOT generalise to other lanes.
-- Mirror policy: push after every merge gate; Paul ordered "push the mirror" then "Everything" (2026-08-18), "push the mirror" (2026-09-19), "set up the brain mirror", "add the hook to melange too" (D-059).
+- Mirror policy: push after every merge gate; Paul ordered "push the mirror" then "Everything" (2026-08-18), "push the mirror" (2026-09-19), "refresh the mirror with all branches" (2026-10-03), "set up the brain mirror", "add the hook to melange too" (D-059).
 - GitHub as remote is IMPOSSIBLE without history surgery (tracked blobs up to 2.6 GB vs 100 MB limit); `gh` CLI not installed.
 - Worktrees: move, don't delete (2026-08-14: 9 trees held uncommitted source edits, 6 held untracked design docs). Never remove a junction with `Remove-Item -Recurse` (use `cmd /c rmdir <link>` or `[System.IO.Directory]::Delete($p,$false)`).
 - Paul's directive 2026-07-15: "whatever ChatGPT did, that is the version you should use, don't mess up."; "merge trees so everything is synced" -> canonical sync.
 - ~~"Part of the modified count is CRLF-only" (close-out packet)~~ - false: 0 of 149 (reconcile 2026-09-19); then corrected the same day: `git status` CAN show a pure-EOL change as ` M` (it flags on size, without comparing content), though the 0/149 result stands.
 - ~~"Code-review five lanes: nothing applied"~~ (`code-review-five-lanes-2026-09-13`) - stale: the review session applied 90/90 patches to LIVE on 2026-09-14T05:58Z.
 - ~~"ROOT resolves to the live tree for DATA regardless of which worktree's CODE you run"~~ (2026-07-14) - corrected 2026-07-15: only true when `MONEYBALL_ROOT` is exported to the live tree.
-- ~~"Mirror only has main and one working branch"~~ (2026-08-11) - superseded 2026-08-18 (all 174 branches) and 2026-09-19 (292/292).
+- ~~"Mirror only has main and one working branch"~~ (2026-08-11) - superseded 2026-08-18 (all 174 branches), 2026-09-19 (292/292) and 2026-10-03 (339/339).
 
 ## Next Steps
 
@@ -101,6 +102,6 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 - [ ] Commit-pass of the rest of the live tree (11 HELD modified files; the highest-value action Paul can take).
 - [ ] Apply the unapplied scipy-freeze risk reduction if wanted: lazy-import scipy in `member_context.py`, `OPENBLAS_NUM_THREADS=1` (unproven; never reproduced).
 - [ ] Register `fec/tests/infra/test_process_liveness.py` in a runner (found, not touched).
-- [ ] Check `git ls-remote --heads mirror main` against local main at every close-out; read `.git\mirror-push-failures.log`.
+- [ ] Check `git ls-remote --heads mirror main` against local main at every close-out; read `.git\mirror-push-failures.log`. The hook pushes only the branch just committed, so branches created without a commit (worktree branches) still drift: refresh with `--all` + `--tags` at close-out, never `--mirror`; mirror-only refs left alone: `claude/loving-hugle-6ebcb4`, `claude/holistic-normalized`, `backup/melange-math-eval-skill-18e907-4d54uu`.
 - [ ] Re-create the mirror hooks after any re-clone (unversioned).
 - [ ] Residual shells: delete the 4 deregistered shells under `.claude/worktrees` after settle/reboot.
