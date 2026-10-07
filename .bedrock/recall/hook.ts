@@ -3,6 +3,8 @@
 //   bun .bedrock/recall/hook.ts session-start      SessionStart: short context about the vault (<= ~400 chars)
 //   bun .bedrock/recall/hook.ts recall             UserPromptSubmit: "Brain recall" block for the prompt, or nothing
 //   bun .bedrock/recall/hook.ts sync [--dry-run]   Stop / SessionEnd: capture new or changed memory files into fleeting/
+//                                                  (as a hook: starts sync-worker and returns; manual runs sync inline)
+//   bun .bedrock/recall/hook.ts sync-worker        the full sync, detached from the hook (sync.ts syncWorker)
 //   bun .bedrock/recall/hook.ts stale [--dry-run]  list curated notes that cite a changed or missing memory file; unless
 //                                                  --dry-run, write fleeting/YYYY-MM-DD-stale-memory-sources.md
 //   bun .bedrock/recall/hook.ts index              rebuild .bedrock/recall-index.json and index.md
@@ -13,15 +15,19 @@
 // Contract: it ALWAYS exits 0 and never blocks or alters a prompt. Every error is caught and written to
 // .bedrock/recall/hook.log; on error recall prints nothing and sync prints a one-line warning. Only base.ts (node:
 // built-ins only) is imported statically; everything else loads inside the try, so even a broken edit elsewhere exits 0.
-// A watchdog ends the process before Claude Code's hook timeout would (recall 4 s of 5 s, sync 25 s of 30 s), and the
-// slow parts are budgeted (recall's index rebuild) or moved out of the hook (the graph build runs in a detached worker).
-// Without a hook payload (manual runs) sync prints a readable report instead of JSON.
-import { VAULT, errText, logLine, oneLine } from "./base.ts";
+// A watchdog ends the process before Claude Code's hook timeout would (recall 4 s of 5 s, sync 25 s of 30 s), but it is a
+// timer: it cannot interrupt synchronous work. So the slow parts are budgeted (recall's index rebuild) or kept out of the
+// hook: the sync hook only starts a detached sync worker (which starts the graph page worker) and shows the previous
+// worker's warning, if any. Run inline, a sync took 33-36 s on a busy machine and was killed mid-way.
+// Without a hook payload (manual runs) sync runs inline and prints a readable report instead of JSON.
+import { mkdirSync, writeFileSync } from "node:fs";
+import { SYNC_DIR, SYNC_WARN_FILE, VAULT, errText, logLine, oneLine, startWorker, takeSyncWarning } from "./base.ts";
 
 const sub = process.argv[2] ?? "";
 const flags = new Set(process.argv.slice(3));
 // graph: at most 4 builds of 120 s plus one 60 s retry pause (sync.ts graphWorker)
-const WATCHDOG_MS: Record<string, number> = { "session-start": 4_000, recall: 4_000, sync: 25_000, stale: 25_000, index: 120_000, graph: 600_000 };
+// sync-worker: up to 4 min waiting for another sync (sync.ts WORKER_WAIT_MS), then the sync itself
+const WATCHDOG_MS: Record<string, number> = { "session-start": 4_000, recall: 4_000, sync: 25_000, "sync-worker": 300_000, stale: 25_000, index: 120_000, graph: 600_000 };
 /** stdin that stays open without sending anything (no hook payload is coming) is abandoned after this long */
 const STDIN_FIRST_BYTE_MS = 1_500;
 /** session-start skips the stale scan when the process is already this old (ms): it takes ~0.2-0.7 s and cannot be interrupted */
@@ -47,13 +53,22 @@ function finish(text?: string): Promise<never> {
 /** On any failure: log it; sync alone tells the user (one line), everything else stays silent. */
 async function fail(e: unknown): Promise<never> {
   logLine("error", `${sub || "(none)"}: ${errText(e)}`);
-  if (sub === "sync") {
+  if (sub === "sync" || sub === "sync-worker") {
     try {
       (await import("./sync.ts")).releaseLock();
     } catch {
       /* the module itself failed to load */
     }
     const msg = `Brain sync failed: ${oneLine((e as Error)?.message ?? e, 200)} (details: ${HOOK_LOG_HINT})`;
+    if (sub === "sync-worker") {
+      try {
+        mkdirSync(SYNC_DIR, { recursive: true });
+        writeFileSync(SYNC_WARN_FILE, msg, "utf8"); // the next sync hook shows it
+      } catch {
+        /* hook.log has it */
+      }
+      return finish();
+    }
     return finish(hookMode ? JSON.stringify({ systemMessage: msg }) : msg);
   }
   if (sub === "index") return finish(`index FAILED: ${oneLine((e as Error)?.message ?? e, 300)}`);
@@ -135,9 +150,10 @@ export async function staleClause(vault?: string): Promise<string> {
 }
 
 async function main(): Promise<never> {
-  // session-start and index never need the payload; reading it would only risk waiting on a silent pipe
-  const payload = sub === "recall" || sub === "sync" ? await readPayload() : {};
-  hookMode ||= typeof payload.hook_event_name === "string";
+  // session-start and index never need the payload; reading it would only risk waiting on a silent pipe. `sync --hook`
+  // says it is a hook outright: on a machine at 100% CPU reading the payload took seconds.
+  const payload = sub === "recall" || (sub === "sync" && !flags.has("--hook")) ? await readPayload() : {};
+  hookMode ||= flags.has("--hook") || typeof payload.hook_event_name === "string";
   switch (sub) {
     case "session-start":
       return finish(JSON.stringify({ hookSpecificOutput: { hookEventName: "SessionStart", additionalContext: sessionContext() + (await staleClause()) } }));
@@ -147,11 +163,20 @@ async function main(): Promise<never> {
       return finish(ctx ? JSON.stringify({ hookSpecificOutput: { hookEventName: "UserPromptSubmit", additionalContext: ctx } }) : undefined);
     }
     case "sync": {
+      if (hookMode && !flags.has("--dry-run")) {
+        const pending = takeSyncWarning();
+        startWorker("sync-worker");
+        return finish(pending ? JSON.stringify({ systemMessage: pending }) : undefined);
+      }
       const s = await import("./sync.ts");
       const r = s.sync({ dryRun: flags.has("--dry-run") });
       if (!hookMode) return finish(s.syncText(r));
       const warning = s.syncWarning(r);
       return finish(warning ? JSON.stringify({ systemMessage: warning }) : undefined);
+    }
+    case "sync-worker": {
+      const r = await (await import("./sync.ts")).syncWorker();
+      return finish(r.locked ? "sync worker: gave up waiting for the lock" : `sync worker: wrote ${r.written.length} note(s) (${r.ms} ms)`);
     }
     case "stale": {
       const st = await import("./stale.ts");
@@ -171,7 +196,7 @@ async function main(): Promise<never> {
       return finish(r.skipped ? "graph page: skipped (test vault without BRAIN_GRAPH_OUT)" : r.ok ? `graph page rebuilt: ${r.notes} notes, ${r.links} links (${r.ms} ms)` : `graph page NOT rebuilt: ${r.reason}`);
     }
     default:
-      process.stderr.write("usage: bun .bedrock/recall/hook.ts <session-start|recall|sync [--dry-run]|stale [--dry-run]|index|graph>\n");
+      process.stderr.write("usage: bun .bedrock/recall/hook.ts <session-start|recall|sync [--dry-run]|sync-worker|stale [--dry-run]|index|graph>\n");
       return finish();
   }
 }

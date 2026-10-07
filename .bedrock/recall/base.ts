@@ -6,7 +6,7 @@
 //   BRAIN_VAULT         vault root                      (default: two levels up from this folder)
 //   BRAIN_PROJECTS_DIR  Claude Code projects folder      (default: ~/.claude/projects)
 //   BRAIN_GRAPH_OUT     graph page for a BRAIN_VAULT test (with BRAIN_VAULT set and this unset, no page is built)
-import { appendFileSync, mkdirSync, renameSync, statSync, unlinkSync } from "node:fs";
+import { appendFileSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync } from "node:fs";
 import { homedir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 
@@ -22,6 +22,8 @@ export const HOOK_LOG = join(BEDROCK_DIR, "recall", "hook.log");
 export const SYNC_DIR = join(BEDROCK_DIR, "sync");
 export const STATE_FILE = join(SYNC_DIR, "state.json");
 export const LOCK_FILE = join(SYNC_DIR, "sync.lock");
+/** the last sync worker's warning or failure; the next sync hook shows it once */
+export const SYNC_WARN_FILE = join(SYNC_DIR, "sync-warning.txt");
 export const CATALOG_FILE = join(VAULT, "index.md");
 export const LOG_MD = join(VAULT, "log.md");
 export const PROJECTS_DIR = resolve(process.env.BRAIN_PROJECTS_DIR || join(homedir(), ".claude", "projects"));
@@ -76,4 +78,36 @@ export function logLine(kind: string, msg: string) {
 
 export function errText(e: unknown): string {
   return oneLine((e as Error)?.stack ?? (e as Error)?.message ?? e, 1200);
+}
+
+/**
+ * `hook.ts <sub>` as a detached process: no inherited pipes (a hook runner waiting for EOF is not held up), its own
+ * process group, and a cwd inside the vault (never the session's folder, which a worktree cleanup may want to delete).
+ * Here, not in sync.ts, so the sync hook starts its worker without loading the sync, index and graph modules: on a
+ * machine at 100% CPU that import alone took up to 7 s.
+ */
+export function startWorker(sub: string, cwd: string = RECALL_DIR) {
+  const args = [process.execPath, join(RECALL_DIR, "hook.ts"), sub];
+  Bun.spawn(args, { cwd, detached: true, stdin: "ignore", stdout: "ignore", stderr: "ignore", windowsHide: true }).unref();
+}
+
+/** The last sync worker's warning, claimed (renamed away first) so that two hooks at once show it only once; or null. */
+export function takeSyncWarning(): string | null {
+  const claimed = `${SYNC_WARN_FILE}.shown-${process.pid}`;
+  try {
+    renameSync(SYNC_WARN_FILE, claimed);
+  } catch {
+    return null; // nothing pending
+  }
+  try {
+    return oneLine(readFileSync(claimed, "utf8"), 900) || null;
+  } catch {
+    return null;
+  } finally {
+    try {
+      unlinkSync(claimed);
+    } catch {
+      /* already gone */
+    }
+  }
 }

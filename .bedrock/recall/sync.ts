@@ -17,8 +17,12 @@
 // anything else) it refreshes the recall index and index.md, and starts the graph page build in a detached worker
 // (`hook.ts graph`: watch.ts's command and output path; a failed build is retried once, then left until the vault changes
 // again; outcomes go to hook.log). It never commits or pushes.
+// The Stop / SessionEnd hook runs none of this itself and does not even load this module: it starts `hook.ts sync-worker`
+// (syncWorker) detached and returns, so the vault-wide work (the recall index rebuild above all) never counts against the
+// hook's 30 s timeout.
 // Caches (sha256 per memory file, sources per note, keyed by mtime + size) live in .bedrock/sync/state.json;
-// .bedrock/sync/sync.lock keeps two sessions from syncing at once (stale after 60 s).
+// .bedrock/sync/sync.lock keeps two syncs from running at once: a worker that finds it taken waits its turn. The lock is
+// stale once its owner's pid is gone (or after LOCK_MAX_MS whatever the pid says).
 import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { userInfo } from "node:os";
@@ -34,6 +38,7 @@ import {
   PROJECTS_DIR,
   STATE_FILE,
   SYNC_DIR,
+  SYNC_WARN_FILE,
   VAULT,
   VAULT_IS_OVERRIDE,
   localDate,
@@ -43,6 +48,7 @@ import {
   parseYaml,
   sha256,
   signature,
+  startWorker,
   statNotes,
   str,
   writeAtomic,
@@ -51,7 +57,12 @@ import { scanSecrets } from "./secrets.ts";
 import { firstSentence, rebuildIndex } from "./indexer.ts";
 import { loadIndex, rank } from "./recall.ts";
 
+/** a lock whose owner cannot be read (being written, or foreign) is stale after this */
 const LOCK_STALE_MS = 60_000;
+/** a lock is stale after this even when its pid looks alive (a reused pid, a wedged worker): twice the worker's limit */
+const LOCK_MAX_MS = 10 * 60_000;
+/** how long the sync worker waits for another sync to finish (hook.ts gives the worker 5 min in all) */
+const WORKER_WAIT_MS = 4 * 60_000;
 /** Page build limits, the watcher's (watch.ts). The build needs < 0.5 s of CPU and 1-7 s on a quiet machine, but took
  *  29 s with the CPU at 100% (2026-10-07). */
 const GRAPH_TIMEOUT_MS = 120_000;
@@ -126,7 +137,8 @@ function acquireLock(): boolean {
       if (e?.code === "ENOENT") continue;
       return false;
     }
-    if (Date.now() - seen <= LOCK_STALE_MS) return false; // another session is syncing
+    const why = staleReason(Date.now() - seen);
+    if (!why) return false; // another sync is running
     // stale (its owner died): move it aside, which only one process can do, and make sure it was the stale one
     const aside = `${LOCK_FILE}.stale-${process.pid}`;
     try {
@@ -148,9 +160,33 @@ function acquireLock(): boolean {
     } catch {
       /* already gone */
     }
-    logLine("sync", "removed a stale sync.lock (older than 60 s)");
+    logLine("sync", `removed a stale sync.lock (${why})`);
   }
   return false;
+}
+
+/** process.kill(pid, 0): ESRCH means no such process; EPERM (someone else's process) still means alive. */
+function pidAlive(pid: number): boolean {
+  try {
+    process.kill(pid, 0);
+    return true;
+  } catch (e: any) {
+    return e?.code !== "ESRCH";
+  }
+}
+
+/** Why the current lock is stale, or null while its owner may still be syncing. */
+function staleReason(ageMs: number): string | null {
+  let pid: unknown;
+  try {
+    pid = JSON.parse(readFileSync(LOCK_FILE, "utf8"))?.pid;
+  } catch {
+    /* being written, or not a lock this code wrote: judged by age alone */
+  }
+  if (typeof pid !== "number" || !(pid > 0)) return ageMs > LOCK_STALE_MS ? `owner unknown, older than ${LOCK_STALE_MS / 1000} s` : null;
+  // our own pid on a lock we do not hold can only be a dead owner's pid reused
+  if (pid === process.pid || !pidAlive(pid)) return `its owner, pid ${pid}, is gone`;
+  return ageMs > LOCK_MAX_MS ? `older than ${LOCK_MAX_MS / 60_000} min` : null;
 }
 
 export function releaseLock() {
@@ -431,9 +467,48 @@ export type GraphResult = { ok: boolean; skipped?: boolean; started?: boolean; n
  */
 export function startGraphBuild(): GraphResult {
   if (VAULT_IS_OVERRIDE && !process.env.BRAIN_GRAPH_OUT) return { ok: true, skipped: true, ms: 0 };
-  const args = [process.execPath, join(import.meta.dir, "hook.ts"), "graph"];
-  Bun.spawn(args, { cwd: GRAPH_DIR, detached: true, stdin: "ignore", stdout: "ignore", stderr: "ignore", windowsHide: true }).unref();
+  startWorker("graph", GRAPH_DIR);
   return { ok: true, started: true, ms: 0 };
+}
+
+// ------------------------------------------------------------------------------------------------------- sync worker
+/**
+ * The detached sync (`hook.ts sync-worker`, started by the Stop / SessionEnd hook through base.ts startWorker). Waits up
+ * to WORKER_WAIT_MS for a running sync to finish (two sessions ending at once sync one after the other, and the later one
+ * still sees the earlier one's captures), runs the full sync, logs the outcome to hook.log and leaves any warning in
+ * SYNC_WARN_FILE for the next hook (a clean run clears it).
+ */
+export async function syncWorker(): Promise<SyncReport> {
+  const t0 = Date.now();
+  let r = sync();
+  while (r.locked && Date.now() - t0 < WORKER_WAIT_MS) {
+    await Bun.sleep(500);
+    r = sync();
+  }
+  const waited = Math.round((Date.now() - t0 - r.ms) / 1000);
+  if (r.locked) {
+    const msg = `Brain sync skipped: another sync held .bedrock/sync/sync.lock for over ${WORKER_WAIT_MS / 60_000} min; the next stop retries`;
+    logLine("sync", msg);
+    setWarning(msg);
+    return r;
+  }
+  const warning = syncWarning(r);
+  logLine(
+    "sync",
+    `worker done in ${r.ms} ms${waited ? ` after waiting ${waited} s for the lock` : ""}: ${r.scanned} memory files, wrote ${r.written.length}, blocked ${r.blocked.length}, failed ${r.failed.length}` +
+      `${r.index ? `, index ${r.index.rebuilt ? "rebuilt" : "current"}` : ""}${r.graph?.started ? ", graph page build started" : ""}${warning ? "; warning left for the next stop" : ""}`,
+  );
+  setWarning(warning);
+  return r;
+}
+
+function setWarning(text: string | null) {
+  try {
+    if (text) writeAtomic(SYNC_WARN_FILE, text);
+    else unlinkSync(SYNC_WARN_FILE);
+  } catch (e: any) {
+    if (text || e?.code !== "ENOENT") logLine("error", `sync warning file: ${oneLine(e?.message ?? e, 200)}`);
+  }
 }
 
 /**
@@ -713,7 +788,7 @@ export function sync(opts: { dryRun?: boolean } = {}): SyncReport {
       notes = statNotes(VAULT);
       const sig = signature(notes);
       if (writtenNow.length || sig !== state.lastVaultSig) {
-        const cur = loadIndex();
+        const cur = idx; // loaded in step 4; captures do not touch it (a second 2 MB parse cost up to 0.2 s)
         if (!cur || cur.sig !== sig) {
           const r = rebuildIndex(notes);
           report.index = { rebuilt: true, catalog: r.catalog, notes: r.notes };
