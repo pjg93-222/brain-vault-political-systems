@@ -1,6 +1,7 @@
 ---
 type: "ledger"
 brain: "folder-brain"
+brain_status: "retired"
 id: "STATE"
 kind: "state"
 title: "folder-brain STATE"
@@ -10,10 +11,11 @@ superseded_by: ""
 brain_commit: "ffc1d04133f381c48232d705ac92ab6708d1b282"
 entry_sha256: "81bed7b0bd73a78075cb2768be253b02d7aa8db2ba70f134d5c80e57d192b503"
 generated: true
-generated_sha256: "9e08ccb43ea780feda3cb4e1223cf7e983962997fea28d5ea5c075d570827d35"
+generated_sha256: "e57dc79449828ec3324986bea3011b8549f846017ec902442a789cd38b74c34f"
 aliases: ["folder STATE"]
 ---
 > Generated from folder-brain/STATE.md at ffc1d04; do not edit — change the brain via brainctl.
+> This brain is retired; see melange-systems-brain decision recording its retirement
 
 # STATE — folder
 > Last verified: 2026-08-11 00:00
