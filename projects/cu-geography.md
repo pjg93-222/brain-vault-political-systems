@@ -51,8 +51,8 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/cu-row-framework-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\cu-row-framework-2026-09-30.md", sha256: "d7f07745e795faa8dadec2fef7f0f193f6ad03914bd6a65b82c2bd6c28fd2e79"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/luna-stratified-scaling-review-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\luna-stratified-scaling-review-2026-09-29.md", sha256: "fa047e83455b71681045d3bcee783f50bb00e230f3fc0b1e0ebc5d5b44dc0d7d"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-06
+updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -70,6 +70,7 @@ tags: ["type/project", "status/active", "domain/data"]
   2. CU row framework: Paul's four groups (in `ROOT\CONVERSATION_REQUESTS.md`: Credit Union Alignment R013/R015/R017; Participation Index = 10 `sai_*` scores R018; Sphere of Influence R018/R019; Partisan Alignment = 11 fields R018). P0 = aggregate-only build (DONE 2026-10-01); P1 = per-row sidecar `row_scores` parquet keyed by `model_source_row` (Paul: "Go, populate", 2026-10-01; parquet DONE); app wiring W1-W6 waits for Paul's review (D8).
 - Paul's request (2026-09-30, verbatim in part): "develop the framework used to assess and rank all of the rows within the dataset", then "once I have given you the go-ahead ... populate the dataset using the model we have developed", then "once I have given it a review, we will integrate the framework with the dataset within the Credit Union Geography app".
 - Per-person scoring: requested in R004 and R026, authorised in R021 ("Proceed", after an assistant refusal). Never relitigate it. R016: Paul hates excluding his fields on theory.
+- Renamed Terrier (2026-10-01): the app, its multi-district expansion (OR-05, CT-01) and the 2026-10-06 rulings are on [[terrier]].
 
 ## Status
 
@@ -185,3 +186,7 @@ Every note of this project by type, one line each; parts follow their parent.
 ### Related Concepts
 
 - [[single-look-holdout-discipline]] - A holdout or optimization look is spent once: pre-register the gate, never re-run a consumed look, never burn a holdout on a dead model
+
+### Related Projects
+
+- [[terrier]] - the app this project feeds, renamed Terrier: Colorado CD-05 live, OR-05 and CT-01 being added under the 2026-10-06 FLEXIBLE ruling
