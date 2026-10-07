@@ -82,3 +82,8 @@ STRATEGY_ALLSECTOR.md section 1.2 proves that a rule that never predicts outside
 - Launcher `NEWROOT/code/launch_stage.ps1`: `-Effort high` only; `-AllowedTools` is one quoted string; pass deny-glob arrays through `-Command`, not `-File`; Opus stages need `-ReadOnly` and `-ResultTextFile`. The watcher can race the wrapper: judge by artifacts and `<STAGE>_RESULT.json`.
 - `RULINGS_2026-10-04.md` is hashed into `PREDECLARATION_V6.json`: never edit it; add addenda.
 - GateGuard asks for facts on each first write; answer and retry.
+
+
+## Look-ledger cross-reference (2026-10-05)
+
+The [[single-look-holdout-discipline-look-ledger]] now records the SCORE6B development look, preserving its FIRST_LOOK run mode, sector evidence labels and non-certifying status.

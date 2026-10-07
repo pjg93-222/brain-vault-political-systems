@@ -61,3 +61,8 @@ Two policies govern the labels: `field_rank_honors_v1` for each policy field and
 - [[melange-systems]] — the dashboard `honors` and `overall_honors` records, the member desk and the three recognition sheets of the workbook.
 - [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]] — the lane that ruled one coherent ladder (2026-09-15), landed rule G and fixed the honors workbook binding (2026-09-18).
 - [[2026-07-feature-primacy-and-industry-tier-boards-primacy-factor-drift-crown]] — the 2026-08-09 champion crown law (a crowned overall Champion is never shown as a threat); this policy now decides who holds the crown: the active board's top 13 with qualifying action.
+
+
+## Source provenance comparison (2026-10-05)
+
+Source-hash comparison, 2026-10-05: the current `DECISIONS.md` hashes to `03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec`, which differs from the recorded snapshot hash `ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34`. The historical hash is retained. This comparison does not claim that this note's substantive claims have been revalidated against the newer file.

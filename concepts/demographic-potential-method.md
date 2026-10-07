@@ -64,3 +64,8 @@ The score ranks congressional markets by economic and financial evidence of cred
 ## Related Concepts
 
 - [[four-pillar-percentile-blend]] — the rank blend; its `Demo%` input is a formula-backed, hand-edited workbook column that the `DEMO_POTENTIAL` dial alone does not move (D-035).
+
+
+## Source provenance comparison (2026-10-05)
+
+Source-hash comparison, 2026-10-05: the current `DECISIONS.md` hashes to `03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec`, which differs from the recorded snapshot hash `ae67fa84e2d8fb05364ce264b4c9e5a3c31bec5c1c9f6620229ddf08c7f21f34`. The historical hash is retained. This comparison does not claim that this note's substantive claims have been revalidated against the newer file.

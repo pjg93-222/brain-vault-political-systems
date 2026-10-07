@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-431 notes.
+432 notes.
 
 ## Actors (49)
 
@@ -257,12 +257,13 @@
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 
-## Fleeting (13)
+## Fleeting (14)
 
 - [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
 - [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
 - [[melange-systems--bedrock-recall-silent-failures-2026-10-07]] — Why Bedrock "Brain recall" blocks go missing - hook timeouts (2-10 s vs old 5 s limit) and harness text diluting the 0.45 coverage gate; fixes applied 2026-10-07
 - [[melange-systems--brain-updates-apply-automatically-2026-10-07]] — Paul 2026-10-07 - brain (melange-systems-brain) updates are always applied by Claude via brainctl and committed; never leave them as drafts for Paul
+- [[melange-systems--brain-vault-sync-mechanism-2026-10-07]] — How the Obsidian/Bedrock brain vault actually syncs - nothing auto-commits; sessions commit + push via PR flow to private GitHub; not under OneDrive
 - [[melange-systems--brainlink-knowledge-system-2026-10-05]] — Brainlink (approved 2026-10-05): the Project Brain is the ledger, the vault is the map, memory holds pointers; ownership table, where the tool lives, rulings-written-at-once rule, the forecast/PAC migration's new brain IDs...
 - [[melange-systems--claude-obsidian-plugin-2026-10-07]] — claude-obsidian plugin installed alongside Bedrock; read-only on Windows; its hooks stay ON by Paul's choice; Bedrock owns vault writes
 - [[melange-systems--claude-obsidian-readonly-install-2026-10-06]] — claude-obsidian 2.2.0 installed read-only beside Bedrock (Paul's option 1); its hooks still run (no per-plugin disable) but are silent; Bedrock owns vault writes
