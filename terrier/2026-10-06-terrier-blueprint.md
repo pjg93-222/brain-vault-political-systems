@@ -11,7 +11,7 @@ objective: "Add Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier
 created_at: 2026-10-06
 sources:
   - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography-v3/TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", type: "markdown", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography-v3\\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", sha256: "c76fe5e7a9d5d4c1e89696daf9f5905b809f6fbce9bed4a09b7d0c3eed94d48f"}
-  - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/work/geography/DOWNLOADS_2026-10-07.json", type: "json", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\work\\geography\\DOWNLOADS_2026-10-07.json", sha256: "14e766324409b16191db74be79e4184e8629820eed95279d7ae124d8c0519666"}
+  - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/work/geography/DOWNLOADS_2026-10-07.json", type: "json", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\work\\geography\\DOWNLOADS_2026-10-07.json", sha256: "0b902c237c8394bffd0f72aa3ce55cb30c6af6db0f44388f58be6714c5168a7d"}
 updated_at: 2026-10-07
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
@@ -67,14 +67,30 @@ Full wording on [[2026-10-06-terrier-rulings]]; the plan's marks "PROPOSED" are 
 - Parallel lanes use Claude Code's built-in background agents (agent-manager and DevFleet not used).
 - Python environment rebuild approved.
 
+Paul's later rulings of the same day (one server process per district on ports 8767, 8775 and 8777; walk-list Abs wording; extra census.gov downloads; the per-district model rule; no stress tests on the laptop; overnight blanket permission) and the lead's Phase 3b rulings are on [[2026-10-06-terrier-rulings]].
+
 ## Current build status (2026-10-07)
 
-- **Phase 0 (Colorado baseline):** running.
-- **Phase 1 (sources census):** running.
-- **Census TIGER 2025 downloads: done.** 14 files, 255,206,750 bytes, census.gov only: for Oregon the block file, the district boundary file and six county road files; for Connecticut the block file, the district boundary file and four planning-region road files. Manifest: `work\geography\DOWNLOADS_2026-10-07.json` (path below).
-- **Python environment rebuild:** approved and running.
+Aggregates only. Commit hashes are in the Terrier repo (branch `claude/walk-list`); counts are from the built stores and reports.
+
+| Phase | State | Result |
+|---|---|---|
+| 0, Colorado baseline | done | Gate committed `609385d` (`tools\co_baseline.py`): 6 stores, 7,190,676 rows, 43 API answers. Passed again after the Phase 2 builds (stores and answers identical). |
+| 1, sources census | last recorded as running | Phases 2 and 3 were built from the same two source files; no separate completion is recorded. |
+| 2, multi-district foundation | done, merged on `claude/walk-list` | `f4ebbe9` config, `5684315` party check, `5ee9234` walk builder, `b9df41d` server, `866b724` geography tools, `3eddcae` header district menu. Test-server check 15 of 15 per district. |
+| 3, fill per district | done | `bbebf92` (log `f59290e`). Scored once on frozen holdouts. |
+| 3b, row framework per district | next | Per-district score stores and area layers; Oregon and Connecticut are already in the header menu. |
+| 4, features | not started | Industries, candidate support with the primary/general toggle (Paul approves the primary-mode spec first), density, overlays, street ROI planner, walk-list fields. |
+| 5 and 6, verify and land | not started | |
+
+- **Phase 2 stores.** OR-05: 562,563 voters, 386,030 mapped households, 245 precincts, 68 cities; every recorded vote is counted as a mail ballot. CT-01: 458,372 voters, 287,033 households, 134 precincts, 27 towns; the 2024 mail share is 7.8%.
+- **Phase 3 results.** OR-05 filled 86.64% right against 77.89% for always guessing the most common answer (+8.75 points; 82.85% expected on the real blanks; AUC 0.57 to 0.94 across fields). CT-01 87.39% against 77.91% (+9.48 points; 83.14% expected; AUC 0.57 to 0.95). Colorado before its GPU step: 86.67%. Six fields show no real lift and are labelled as the file default, as in Colorado. No Colorado-trained model is used. Reports: `.local\<district>\luna-v1\REPORT.md` in the Terrier root.
+- **Incidents.** A Python 3.12 crash with exit code 0xC000070A (a Windows WMI query timing out under load; worked around). The laptop went to sleep with the lid closed and froze a step; step timeouts now count awake time only.
+- **Census TIGER 2025 downloads: done.** First 14 files (255,206,750 bytes), census.gov only: for Oregon the block file, the district boundary file and six county road files; for Connecticut the block file, the district boundary file and four planning-region road files. Paul then approved state legislative district boundaries (lower and upper chambers) and ZIP-code areas for both states: 6 more files, 20 in all (280,939,810 bytes). Manifest: `work\geography\DOWNLOADS_2026-10-07.json` (path below).
+- **Python environment:** rebuild approved; its outcome is not recorded here.
 - **Source files:** both extracted to `Downloads\terrier-sources\`.
-- **Not started or not recorded as done:** per-district code, the Luna copies, the row-framework copies and every Phase 4 lane.
+- **Change record:** every overnight change is logged in `OVERNIGHT_CHANGES_2026-10-07.md` in the Terrier root.
+- **Not started:** the row-framework copies (Phase 3b) and every Phase 4 lane.
 
 ## Sources and inputs
 
@@ -84,7 +100,7 @@ All paths are on Paul's workstation. `<outputs>` is `C:\Users\pgoff\Documents\Co
 - **Handoff files** (Terrier root `<outputs>\cu-geography-v3\`): `WALK_LIST_HANDOFF_2026-10-02.md`, `TERRIER_HANDOFF_2026-10-01.md`, `ACTUAL_DATA_HANDOFF_2026-10-01.md`, `DATA_AUDIT_2026-10-01.md`. Paul's request log with every definition: `<outputs>\cu-geography\CONVERSATION_REQUESTS.md`.
 - **Source files as supplied:** Colorado `C:\Users\pgoff\Downloads\<CO-05 vendor file>.csv` (491,308 rows); Oregon `C:\Users\pgoff\Downloads\<OR-05 source zip>.zip`; Connecticut `C:\Users\pgoff\Downloads\<CT-01 source zip>.zip`.
 - **Extracted source files:** `C:\Users\pgoff\Downloads\terrier-sources\<OR-05 vendor file>.csv` (562,563 rows, 1,074,173,461 bytes) and `C:\Users\pgoff\Downloads\terrier-sources\<CT-01 vendor file>.csv` (458,372 rows, 831,664,503 bytes). Same 622-column schema as Colorado.
-- **Census manifest:** `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\work\geography\DOWNLOADS_2026-10-07.json` (14 entries: file, source URL, size in bytes, download time). The downloaded files are under `work\geography\or-05\` and `work\geography\ct-01\` (`blocks.zip`, `districts.zip`, `roads\`).
+- **Census manifest:** `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\work\geography\DOWNLOADS_2026-10-07.json` (20 entries: file, source URL, size in bytes, download time; the first 14 are the block, boundary and road files, the last 6 the state legislative and ZIP-code area files). The downloaded files are under `work\geography\or-05\` and `work\geography\ct-01\` (`blocks.zip`, `districts.zip`, `roads\`).
 
 ## People Involved
 
