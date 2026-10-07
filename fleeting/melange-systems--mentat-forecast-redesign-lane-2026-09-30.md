@@ -1,0 +1,139 @@
+---
+type: fleeting
+title: "Mentat forecast redesign lane (2026-09-30)"
+aliases: ["mentat-forecast-redesign-lane-2026-09-30"]
+source: "session"
+captured_at: 2026-10-05
+created_at: 2026-10-05
+status: "raw"
+promoted_to: ""
+project: "melange-systems"
+memory_type: "project"
+updates:
+  - "[[forecast-redesign]]"
+  - "[[2026-09-feature-forecast-giving-redesign]]"
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-redesign-lane-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-05", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-redesign-lane-2026-09-30.md", sha256: "e2d2a6c45123d429cbbf456f809dee77e5eea0d1d985c0fc7d47f75f9fc92714"}
+updated_at: 2026-10-05
+updated_by: "brain-sync@hook"
+tags: ["type/fleeting", "status/raw"]
+---
+
+# Mentat forecast redesign lane (2026-09-30)
+
+> Forecast giving view redesign (worktree mentat-forecast-redesign-0fb0be): Paul picked board F2 'Giving by cycle' and ordered the projections checked for logical validity against the test results; build = one-to-one to F2, all compute on the pod
+
+## Content
+
+Paul, 2026-09-30 (via /taste-skill:gpt-taste): "I don't like the current look of the forecast.
+You are going to overhaul it and present me with mock-ups using Higgsfield. You will then follow
+the selected mock-up perfectly." Parameters: reason in Opus 5.5, code in Sonnet 5.5. Then:
+"I like number 2, but while you are doing this, make sure the projections are logically valid
+and in line with the test results".
+
+**Boards (nano_banana_pro, 2k, style ref = approved I1 Insights board):** F1 Scenario desk,
+F2 Giving by cycle (PICKED), F3 Ledger. Files: session scratchpad `boards\` (PNG 2752x1536)
+and `review\img\` (JPEG). Numbers on the boards come from the live console's labelled
+historical example for Commercial banks; bar proportions are drawn approximately.
+
+**F2 don't-copy list (known board defects):** 2023-2024 bar drawn at $26.11M nominal while the
+projection is in 2025 USD ($27.18M), so a 0% scenario reads as growth; Export scenario drawn as a
+second plum primary (keep secondary); sliders cannot express the required blank/unknown state;
+the lobbying card draws a faint line with no data.
+
+**Validity problems seen live (to be confirmed by the audit):** PAC full-cycle prediction
+interval lower bound $3.74M below the $4.67M already observed, remainder PI negative
+(-$937K); Senate roster-PAC projected two-party total $886.99K below the $990.5K observed
+(budget_inconsistent, not clipped); the "historical example" claims the projection equals the
+Mentat level but shares move -1.63 pp (House) and +6.06 pp (Senate) with political-input
+change 0; out-of-range flags on the anchor cycle's own inputs.
+
+**POD REVERSAL, 2026-09-30 late (Paul, verbatim, in order):** "Go onto the pod to work", then
+"Move out of the pod", then "Bring everything out with it". The continuation doc's pod-only rule
+(all compute, console backend and git construction on the pod) is LIFTED for this lane. Both
+pod agents were stopped; one Opus agent is exporting W=/workspace/forecast-audit-5603f2 (minus
+.venv) to C:\melange-data\pod-export-20260930\ with sha256 verification, activating the published
+model locally, disabling %LOCALAPPDATA%\Mentat\remote-console.json (renamed, not deleted) and
+stopping only the local 8808 tunnel. The pod itself and its console are left running.
+
+**EXPORT DONE 2026-10-01 ~00:07Z:** mirror C:\melange-data\pod-export-20260930\forecast-audit-5603f2\
+(10,601/10,601 sha256 match, .venv excluded with pip freeze; reports matched the local originals),
+git bundle (all 614 commits already local), parity\ (local vs pod projection 370/371 exact, 1 at
+1.5e-16), source-diff\ (20 diffs = local uncommitted work by other lanes: NEVER apply). Model files
+were already byte-identical locally. My own urgent tar.gz streams are in ...\urgent\ (incl. other
+lanes' small /workspace dirs). TRAP: the remote launcher profile lived in the Codex app sandbox
+(%LOCALAPPDATA%\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\Mentat\), renamed
+.disabled-20260930; an Explorer-launched MENTAT never saw it. Tunnel PID 30448 stopped. MENTAT now
+launches locally on 8802-8811. Pod /dev/shm (~36 GB, other lanes) NOT pulled; C: had 34 GB free.
+
+**AUDIT DONE 2026-10-01 (Opus, read-only; files in session scratchpad audit\):** F1 intervals not
+conditioned on observed (banks PAC 12.1% mass below observed, remainder PI negative); F2 share
+remainders by subtraction (7/19 negative, 5/19 totals below observed); F3 general giving (~99%
+employee) anchored on presidential 2024: same-phase better 47%/44% in BOTH designs (banks full
+$27.18M -> $16.86M) = PAUL'S RULING; F4 interval width from industry PAC totals (CU own step 7.7 sd);
+F5 example label false for shares (prior growth blank -> server uses 48.9% not -5.30%); F9 G9 checks
+only LOEO, chronologically all three paths lose to naive; F10 Senate chrono coverage 8/12; F12
+waivers invisible (G6 compared against already-waived bundle); F16 combined_reference sums
+accounts in export; F17 F09 = all insurance. Rules/anchors match D-065 and 88/88 p-values match.
+MY CALLS: apply P1 (conditional remainder, additive), P3 (G9 both designs, warning), P4 (live
+coverage, packet only) + display fixes inside F2; take F3/F4/F10/F15 + option (c) to Paul.
+
+**MODEL FIX STAGED 2026-10-01:** scratchpad modelfix\apply_model.py (self-contained post-images,
+CAS on pre-images 93f6d09b/b069f28c/5a932f27/43e28790, rollback, NOT yet run). Python 151/0/3, R
+2508/0/1, parity GREEN, fixture 5,674 old leaves unchanged (+616 new). Legacy response fields KEEP
+the negative/budget_inconsistent values: the UI must read remaining_allocation + *_given_observed_*.
+TRAP: something purges files older than 7 days from %TEMP% scratch copies mid-run (robocopy keeps
+source mtimes) - after copying, set LastWriteTime to now; keep deliverables out of Temp.
+
+**HANDOFF 2026-10-01:** Paul, angry at relayed unverified audit claims ("are you hallucinating? ...
+MAIN QUESTION -> We need to reconcile, overall integrity of this model"), ordered a fresh session.
+Handoff doc: C:\melange-data\forecast-redesign-20260930\CONTINUATION_FORECAST_INTEGRITY_2026-10-01.md
+(copy in Downloads). First action there = independent reconciliation ledger (partial outputs in
+...\reconcile\), then F2 (partial build in ...\f2build-partial\). LESSON: never relay an agent's NEW
+analysis (e.g. F3 anchor backtest, F4 sigma test) as settled; label it unverified or verify first.
+
+**RECONCILIATION DONE 2026-10-01 (session silly-einstein-57ef31, two independent Opus agents):**
+C:\melange-data\forecast-redesign-20260930\reconcile\INTEGRITY_LEDGER.md. Model INTACT (rebuild 5,082
+leaves within 3.3e-12, regressions within 3e-14, 104 displayed p = bundle, D-065 choices reproduce).
+Screen numbers genuine (hand-recomputed to the cent). Real defects: subtraction remainder (P1 fixes,
+independently graded: banks PAC remainder $1.43M [$112K-$4.91M], 0 of 34,170 old numbers change);
+example message false for party mixes; non_giving receipts (FEC interest/refunds/claims) inside
+forecast anchors (CU 20.4%: SchoolsFirst interest on Porter's accounts); CU bands narrow; waivers not
+shown; G8 cannot pass on Windows; combined_reference in JSON. OVERSTATED to Paul: F3 (44-47% only
+under pooled slope; own slope = -29.5% chrono; $16.86M mixed the two), F12, "7/19" (double count).
+F9 chrono loss is real but sits in the 2018 fold; latest fold >= naive. ~~Decisions D1-D9 await Paul;~~ — superseded 2026-10-05: Paul ruled D1-D9 on 2026-10-01 at 04:29:43Z ("D4, B" / "Apply rest"; see the LANDED paragraph below and brain D-090, D-091) (source: transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (C:\Users\pgoff\.claude\projects\C--Users-pgoff-OneDrive-Desktop-Melange-Systems--claude-worktrees-silly-einstein-57ef31) line 2751; C:\melange-data\forecast-redesign-20260930\HANDOFF_FORECAST_2026-10-01_EOD.md:33 'Paul's rulings on D1-D9 all applied');
+brain drafts in BRAIN_DRAFTS_2026-10-01.md. [Applied to the brain 2026-10-05 on Paul's approval under new IDs: drafts D-075..D-079 are now D-089, D-090, D-091, D-092, D-093 (BLEND = D-099; D-093, superseded by D-099 for source correction) and DE-054..DE-060 are now DE-058..DE-064; see brain DECISIONS.md/DEADENDS.md and `brainlink-knowledge-system-2026-10-05`.] F2 build restarted in C:\melange-data\...\f2build\
+(scratch only, apply_f2.py for Paul).
+
+**LANDED 2026-10-01 (Paul: "D4, B. Apply rest"):** anchors exclude non_giving (06:19Z + follow-up
+07:25:09Z), calc P1/P3/P4/waivers/no combined_reference/G8-Windows (07:25:48Z). Sonnet built in scratch,
+Opus reviewed (calc needed 1 fix round), applied via hash-checked scripts in
+C:\melange-data\forecast-redesign-20260930\apply20261001\ (rollback per script). Final check PASS
+(Python 181/0/4, R 2,542/0/0). ~~NOT committed~~ — superseded 2026-10-05: committed as f340dc84e 'Land the forecast integrity fixes and the Giving by cycle view' (2026-10-01 13:18:09 -04:00, branch codex/mentat-crypto; Paul: "Yeah commit") (source: git -C C:\Users\pgoff\Mentat log -1 f340dc84e; transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (C:\Users\pgoff\.claude\projects\C--Users-pgoff-OneDrive-Desktop-Melange-Systems--claude-worktrees-silly-einstein-57ef31) line 14959); ~~console restart = Paul~~ — superseded 2026-10-05: the session restarted MENTAT on 8806 at Paul's order (about 2026-10-01T13:55Z) and verified the new view in the browser (source: transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (C:\Users\pgoff\.claude\projects\C--Users-pgoff-OneDrive-Desktop-Melange-Systems--claude-worktrees-silly-einstein-57ef31) around 2026-10-01T13:55Z and 14:01Z; C:\melange-data\forecast-redesign-20260930\HANDOFF_FORECAST_2026-10-01_EOD.md:27). ~~Pace backtest waits on Paul's OK
+to download FEC pas212/214/216.~~ — superseded 2026-10-05: Paul answered "2. Yes" to the FEC download question at 2026-10-01T13:52:50Z; the fetch ran 13:58:08-13:58:19Z (source: transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (C:\Users\pgoff\.claude\projects\C--Users-pgoff-OneDrive-Desktop-Melange-Systems--claude-worktrees-silly-einstein-57ef31) at 2026-10-01T13:52:50Z; C:\melange-data\forecast-redesign-20260930\pace_test\DOWNLOADS.md:3,15) and the pre-registered pace backtest ran the same day: month-18 MAE for the banks roster PACs, leave-one-out BASE 16.20 / PACE 4.66 / BLEND 5.47, chronological 26.46 / 4.24 / 2.28 (source: C:\melange-data\forecast-redesign-20260930\pace_test\RESULTS.md:9-11,57-58). Paul then said "Lets use Blend" (2026-10-01T18:39:28Z); brain D-099 (D-093, superseded by D-099 for source correction). F2 UI LIVE 10:58:25Z (apply_f2.py 829cd9da; 3 review rounds; rollback
+f2build\apply_f2.py --rollback). Coordinator ruling: saved 2026 outlook stays pre-filled but labelled +
+clearable. C: ~5 GB free: Paul offered a cleanup list (review copies), deletion is his.
+
+**FORECAST UI v3 (2026-10-01):** Paul rejected the 3 Nano Banana boards; ~~next boards in GPT Image 2.5,~~ — superseded 2026-10-05: GPT Image 2.5 and GPT Image 2 both failed on Higgsfield; fallback Nano Banana Pro boards V4a/V4b/V4c were made (C:\melange-data\forecast-redesign-20260930\boards3\) but have not been reviewed or shown to Paul (source: C:\melange-data\forecast-redesign-20260930\HANDOFF_FORECAST_2026-10-01_EOD.md:61; transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (C:\Users\pgoff\.claude\projects\C--Users-pgoff-OneDrive-Desktop-Melange-Systems--claude-worktrees-silly-einstein-57ef31)); intended design, unchanged:
+time-series stacked D/R bars by cycle (PAC, General, Lobbying; House/Senate splits; adjustable expected
+takeover defaulting to market), emphasis on ease of understanding. "No fucking headline": never add a
+narrative headline/summary sentence to the forecast UI. Projections in boards must come from the corrected
+model (phase-aware + 2028 chained from 2026), not placeholders.
+
+**Why:** Paul wants the forecast to look better AND be right; a chart makes an unconditioned
+interval visibly impossible (whisker below the observed stack).
+
+**How to apply:** model-semantics fixes go to Paul as options and wait for his ruling
+(`ask-before-substantive-changes`); display fixes follow the board. Work is LOCAL now (pod
+retired for this lane, 09-30 late); never restart Paul's consoles 8802-8811. Never relay an agent's
+new analysis as settled: reproduce by a second path first. Related: `forecast-audit-lane-2026-09-29`, `higgsfield-connector-account-trap-2026-09-17`,
+`mentat-redesign-boards-2026-09-21`.
+
+## Possible Connections
+
+- [[forecast-redesign]] — holds an earlier version of this memory file; this note carries the newer text
+- [[2026-09-feature-forecast-giving-redesign]] — holds an earlier version of this memory file; this note carries the newer text
+
+## Capture Context
+
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-05 from the Claude Code memory file `mentat-forecast-redesign-lane-2026-09-30.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. Changed source: an earlier version of this file was imported into [[forecast-redesign]], [[2026-09-feature-forecast-giving-redesign]], and those notes were not modified. To promote, fold what is new into them with `/bedrock:preserve`, then set `status: promoted` and `promoted_to` here.
