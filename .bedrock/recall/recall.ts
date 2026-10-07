@@ -256,8 +256,25 @@ export function freshIndex(notes: NoteStat[] = statNotes(VAULT), budgetMs = Infi
 /** Prompts longer than this are scored on their first and last half of it (a pasted log must not stall the hook). */
 const MAX_PROMPT_CHARS = 20_000;
 
+/** Longer prompts are not stripped: many unclosed tags make the lazy block regex quadratic, and they are truncated to MAX_PROMPT_CHARS below anyway. */
+const MAX_STRIP_CHARS = 50_000;
+
+/**
+ * Text the harness adds to a prompt is not the user's words: <system-reminder> blocks (on a worktree session's first prompt
+ * the desktop app prepends "You are operating in a git worktree ... Worktree name: silly-einstein-57ef31") and the
+ * attributes of <cross-session-message ...> / <agent-message ...> tags (pipe names, session IDs). Their tokens are words
+ * no note uses, which count at the maximum idf in coverage and can push a real match under COVER_TOP.
+ */
+export function stripHarness(prompt: string): string {
+  if (prompt.length > MAX_STRIP_CHARS) return prompt;
+  return prompt
+    .replace(/<system-reminder>[\s\S]*?<\/system-reminder>/g, " ")
+    .replace(/<\/?(?:cross-session-message|agent-message)\b[^>]*>/g, " ");
+}
+
 /** additionalContext for a prompt, or null when nothing should be shown. */
-export function recallContext(fullPrompt: string): string | null {
+export function recallContext(rawPrompt: string): string | null {
+  const fullPrompt = stripHarness(rawPrompt);
   const half = MAX_PROMPT_CHARS / 2;
   const prompt = fullPrompt.length > MAX_PROMPT_CHARS ? fullPrompt.slice(0, half) + "\n" + fullPrompt.slice(-half) : fullPrompt;
   if (isTrivial(prompt)) return null;
