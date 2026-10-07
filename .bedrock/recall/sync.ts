@@ -14,8 +14,9 @@
 // memory file changes.
 // Before any text is copied it is scanned for secrets (secrets.ts); a hit skips the file and warns on every sync until it
 // is fixed. Only when notes were written does the sync append to log.md; whenever the note set changed (by this sync or by
-// anything else) it refreshes the recall index, index.md and the graph page (watch.ts's command and output path; a
-// failed page build is retried once, then left until the vault changes again). It never commits or pushes.
+// anything else) it refreshes the recall index and index.md, and starts the graph page build in a detached worker
+// (`hook.ts graph`: watch.ts's command and output path; a failed build is retried once, then left until the vault changes
+// again; outcomes go to hook.log). It never commits or pushes.
 // Caches (sha256 per memory file, sources per note, keyed by mtime + size) live in .bedrock/sync/state.json;
 // .bedrock/sync/sync.lock keeps two sessions from syncing at once (stale after 60 s).
 import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, statSync, unlinkSync, writeFileSync } from "node:fs";
@@ -27,6 +28,7 @@ import { LEAK_GUARDS } from "../graph/checks.ts";
 import {
   GRAPH_DIR,
   HOOK_ID,
+  HOOK_LOG,
   LOCK_FILE,
   LOG_MD,
   PROJECTS_DIR,
@@ -50,7 +52,12 @@ import { firstSentence, rebuildIndex } from "./indexer.ts";
 import { loadIndex, rank } from "./recall.ts";
 
 const LOCK_STALE_MS = 60_000;
-const GRAPH_TIMEOUT_MS = 20_000;
+/** Page build limits, the watcher's (watch.ts). The build needs < 0.5 s of CPU and 1-7 s on a quiet machine, but took
+ *  29 s with the CPU at 100% (2026-10-07). */
+const GRAPH_TIMEOUT_MS = 120_000;
+const GRAPH_RETRY_MS = 60_000;
+/** The detached page worker's last failure; the next sync shows it once. */
+const GRAPH_FAIL_FILE = join(SYNC_DIR, "graph-fail.txt");
 /** Memory files are a few KB; anything this large is not a memory note and is reported instead of copied. */
 const MAX_MEMORY_BYTES = 1024 * 1024;
 
@@ -73,10 +80,8 @@ type State = {
   written: Record<string, Written>;
   /** memory file key -> sha256 of the version whose fleeting note was deleted (not captured again) */
   dismissed: Record<string, string>;
-  /** note-set signature the graph page and index were last refreshed for */
+  /** note-set signature the index was last refreshed and the graph page worker last started for */
   lastVaultSig?: string;
-  /** a page build that failed for this signature (retried once) */
-  graphFail?: { sig: string };
 };
 
 let stateText = ""; // state.json as loaded or last saved: rewritten only when the state differs
@@ -417,7 +422,51 @@ function composeNote(c: Compose): string {
 }
 
 // -------------------------------------------------------------------------------------------------------- graph page
-export type GraphResult = { ok: boolean; skipped?: boolean; notes?: number; links?: number; reason?: string; ms: number };
+export type GraphResult = { ok: boolean; skipped?: boolean; started?: boolean; notes?: number; links?: number; reason?: string; ms: number };
+
+/**
+ * Start the page build in a detached worker (`hook.ts graph`) and return at once. Run inside the hook, the build had a
+ * 20 s limit (to fit the hook's 30 s) and died with the hook process; on 2026-10-07 a busy machine made it time out twice
+ * ("build exited with code null"). Detached, it outlives the hook, session end included.
+ */
+export function startGraphBuild(): GraphResult {
+  if (VAULT_IS_OVERRIDE && !process.env.BRAIN_GRAPH_OUT) return { ok: true, skipped: true, ms: 0 };
+  const args = [process.execPath, join(import.meta.dir, "hook.ts"), "graph"];
+  Bun.spawn(args, { cwd: GRAPH_DIR, detached: true, stdin: "ignore", stdout: "ignore", stderr: "ignore", windowsHide: true }).unref();
+  return { ok: true, started: true, ms: 0 };
+}
+
+/**
+ * The detached worker. Workers can overlap (the last rename wins), so a build that raced a vault change is redone and no
+ * page is left on an older note set. A failed build is retried once, GRAPH_RETRY_MS later. Every outcome goes to
+ * hook.log; a final failure also goes to GRAPH_FAIL_FILE for the next sync to show.
+ */
+export function graphWorker(): GraphResult {
+  let r: GraphResult = { ok: false, reason: "not built", ms: 0 };
+  for (let round = 0, fails = 0; round < 4; round++) {
+    const before = signature(statNotes(VAULT));
+    r = buildGraphPage();
+    if (r.skipped || (r.ok && signature(statNotes(VAULT)) === before)) break;
+    if (r.ok) continue; // the vault changed during the build
+    if (++fails === 2) break;
+    logLine("graph", `page not rebuilt (retrying in ${GRAPH_RETRY_MS / 1000} s): ${r.reason}`);
+    Bun.sleepSync(GRAPH_RETRY_MS);
+  }
+  if (r.skipped) return r;
+  if (r.ok) {
+    try {
+      unlinkSync(GRAPH_FAIL_FILE);
+    } catch {
+      /* no earlier failure */
+    }
+    logLine("graph", `page rebuilt: ${r.notes} notes, ${r.links} links (${r.ms} ms)`);
+  } else {
+    logLine("graph", `page not rebuilt again (giving up until the vault changes): ${r.reason}`);
+    mkdirSync(SYNC_DIR, { recursive: true });
+    writeFileSync(GRAPH_FAIL_FILE, r.reason ?? "build failed", "utf8");
+  }
+  return r;
+}
 
 /** `bun build.ts` in .bedrock/graph: the watcher's command, so the page lands at its usual place beside the vault. */
 export function buildGraphPage(): GraphResult {
@@ -655,6 +704,12 @@ export function sync(opts: { dryRun?: boolean } = {}): SyncReport {
         );
         logLine("sync", `wrote ${writtenNow.join(", ")}`);
       }
+      try {
+        report.problems.push(`graph page not rebuilt: ${oneLine(readFileSync(GRAPH_FAIL_FILE, "utf8"), 300)}`);
+        unlinkSync(GRAPH_FAIL_FILE); // shown once, as the in-hook build's first failure was
+      } catch {
+        /* no worker failure to report */
+      }
       notes = statNotes(VAULT);
       const sig = signature(notes);
       if (writtenNow.length || sig !== state.lastVaultSig) {
@@ -663,18 +718,8 @@ export function sync(opts: { dryRun?: boolean } = {}): SyncReport {
           const r = rebuildIndex(notes);
           report.index = { rebuilt: true, catalog: r.catalog, notes: r.notes };
         } else report.index = { rebuilt: false, catalog: "unchanged", notes: cur.notes.length };
-        report.graph = buildGraphPage();
-        if (report.graph.ok) {
-          state.lastVaultSig = sig;
-          delete state.graphFail;
-        } else if (state.graphFail?.sig === sig) {
-          state.lastVaultSig = sig; // failed twice for this vault state: wait for the next change
-          logLine("graph", `page not rebuilt again (giving up until the vault changes): ${report.graph.reason}`);
-        } else {
-          state.graphFail = { sig };
-          report.problems.push(`graph page not rebuilt: ${report.graph.reason}`);
-          logLine("graph", `page not rebuilt (retried at the next sync): ${report.graph.reason}`);
-        }
+        report.graph = startGraphBuild();
+        state.lastVaultSig = sig; // the worker owns the page from here; if it could not start, the next sync tries again
       }
     } catch (e) {
       report.problems.push(oneLine((e as Error)?.message ?? e, 200));
@@ -716,6 +761,6 @@ export function syncText(r: SyncReport): string {
   for (const f of r.failed) lines.push(`  FAILED  ${f.source}: ${f.error}`);
   for (const p of r.problems) lines.push(`  PROBLEM ${p}`);
   if (r.index) lines.push(`  index: ${r.index.rebuilt ? "rebuilt" : "current"} (${r.index.notes} notes), index.md ${r.index.catalog}`);
-  if (r.graph) lines.push(`  graph page: ${r.graph.skipped ? "skipped (test vault without BRAIN_GRAPH_OUT)" : r.graph.ok ? `rebuilt, ${r.graph.notes} notes, ${r.graph.links} links (${r.graph.ms} ms)` : `NOT rebuilt: ${r.graph.reason}`}`);
+  if (r.graph) lines.push(`  graph page: ${r.graph.skipped ? "skipped (test vault without BRAIN_GRAPH_OUT)" : `rebuild started in the background (outcome in ${HOOK_LOG})`}`);
   return lines.join("\n");
 }
