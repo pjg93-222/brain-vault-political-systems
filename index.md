@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-441 notes.
+457 notes.
 
 ## Actors (49)
 
@@ -111,7 +111,7 @@
 - [[mentat]] — Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks...
 - [[terrier]] — Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root outputs\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people, 343,000 households)...
 
-## Topics (143)
+## Topics (144)
 
 - [[2026-10-06-terrier-blueprint]] — The written plan for adding Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier app: its phases, what the 2026-10-06 review corrected, Paul's 2026-10-07 answers, how far the build has got and where every input lives.
 - [[2026-06-feature-congress-r-scrapers-census-and-ballotpedia]] — The Census congressional-district scraper of 2026-06-16 and the Ballotpedia 119th-Congress CU-influence scraper of 2026-06-17/18: their metrics, the Ballotpedia locked design and its status after the live double-check of 2026-06-17/18.
@@ -256,6 +256,7 @@
 - [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of Mentat (FEC contributions intelligence)) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by Paul Goff, built as 8 Mentat...
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
+- [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
 ## Fleeting (22)
 
@@ -282,13 +283,9 @@
 - [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 Bynum + CT-01 Bronin; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
 - [[melange-systems--work-in-parallel-no-waiting-2026-10-08]] — Paul wants lanes and data runs to proceed in parallel; never gate merges on a running job or on other lanes
 
-## Other (1)
-
-- [[entity-name]]
-
-## Ledger (generated from the Project Brain) (183)
+## Ledger (generated from the Project Brain) (199)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 176 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 192 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS

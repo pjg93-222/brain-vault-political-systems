@@ -31,8 +31,8 @@ doc_sources:
     as_of: "2026-09-20"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
-updated_by: "teach@agent"
+updated_at: 2026-10-08
+updated_by: "records-repair@agent"
 tags: ["type/actor", "status/active", "domain/frontend"]
 ---
 
@@ -168,6 +168,8 @@ Confirmed by Paul during the Impeccable initialization on 2026-09-20 as the prod
 | 2026-09-25 | PAC map downstream lane: GeoPandas + Census layers installed, audit, reboot 19:23 |
 | 2026-09-26 | All build lanes done, six-commit kit `814667ee8`..`fadd2c751`, afternoon rulings H1-H3/S1-S2, commits C7-C9 |
 | 2026-09-27 | Fidelity 54% -> 88%, money revert `7a31f8ae2`, load-time fix `6225e6756`, UI fixes `762eea6ce` + `533b4033e` |
+| 2026-10-07 | Giving by cycle view: Board A layout built (no Calculate button, IBIS growth defaults); the cycle-aware 50/50 model published and applied (pointer switched 17:38:26Z); 8806 restarted with the console's own Restart button at 14:10 (pid 32372) and 15:19 (pid 58720, page fix and the `growth_basis` stale-page guard). Uncommitted (see [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]]) |
+| 2026-10-08 | Company PACs on the PAC panel's nowcast (D-116) and credit-union company PACs on the panel's 16 PACs (D-117); 8806 restarted at 11:46 (pid 65296) and 12:36 (pid 27944, the current listener). Uncommitted |
 
 ## Related Actors
 
@@ -179,6 +181,7 @@ Confirmed by Paul during the Impeccable initialization on 2026-09-20 as the prod
 
 - Mentat collection and attribution - Mentat collection and attribution history, Jul-Sep 2026: audits, key outage, review bucket, xref rule, frozen money code.
 - [[2026-09-feature-forecast-giving-redesign]] - Forecast audit (09-29), F2 'Giving by cycle' redesign with validity checks, integrity reconciliation, and PAC accuracy attempt 2 (HOLD).
+- [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] - The Giving by cycle view as it runs on 8806 after 2026-10-07/08: Board A, the cycle-aware 50/50, the panel nowcast for company PACs, the blind results.
 - [[2026-09-feature-mentat-console-ui]] - Mentat console UI lanes 2026-09-11..25: Chart Studio, clean-up, polish, load-time/FEC links, Graph and pie quirks.
 - [[2026-09-feature-mentat-failings-pac-evidence]] - Mentat failings lanes S2-S8 (street columns, PAC evidence, industry addressing, URL scope, panes, categories, map) + PAC map audit.
 - [[2026-09-feature-ui-redesign-boards]] - Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks.
