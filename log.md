@@ -125,3 +125,6 @@
 - 2026-10-08 13:22 -04:00 | preserve | Giving Forecast pipeline: live bundle d516dba6 (cycle model), the five 2026-10-07 waivers and the G9 warning, 'no BLEND published' struck and superseded (D-116 override) | [[giving-forecast-pipeline]]
 - 2026-10-08 13:22 -04:00 | preserve | Mentat console: History rows for the 2026-10-07/08 Giving by cycle changes and the four 8806 restarts; part listed | [[mentat-console]]
 - 2026-10-08 13:22 -04:00 | preserve | Brainlink: batch 2 and 3 marked merged (5d61224, e2d6e4d), drift question 3 closed by D-113, D-099 amended by D-116, progress, action items and timeline updated | [[brainlink]]
+- 2026-10-08 13:27 -04:00 | brainlink-project | projected 1 ledger note(s) and 2 state block(s) from melange-systems-brain, folder-brain, pilot-brain; 193 unchanged | [[ledger/melange-systems-brain/STATE]], [[projects/brainlink]], [[projects/forecast-redesign]]
+- 2026-10-08 13:28 -04:00 | preserve | Giving by cycle live model: D-118 uplift corrected from 'being built' to stopped at step 1 (CHANGES entry 14: real-dollar ratio 0.9812, nothing applied, size awaits Paul); entries 1-14 | [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]]
+- 2026-10-08 13:28 -04:00 | preserve | Forecast topic: 2026-10-08 History row corrected the same way (D-118 build stopped at step 1) | [[2026-09-feature-forecast-giving-redesign]]
