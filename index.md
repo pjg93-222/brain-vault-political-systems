@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-452 notes.
+446 notes.
 
 ## Actors (49)
 
@@ -258,7 +258,7 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
-## Fleeting (20)
+## Fleeting (14)
 
 - [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
 - [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
@@ -270,15 +270,9 @@
 - [[melange-systems--claude-obsidian-readonly-install-2026-10-06]] — claude-obsidian 2.2.0 installed read-only beside Bedrock (Paul's option 1); its hooks still run (no per-plugin disable) but are silent; Bedrock owns vault writes
 - [[melange-systems--competitiveness-multiplier-lane-2026-10-05]] — Cook PVI election-competitiveness multiplier c for the engine money curves; Paul's 2026-10-05 rulings and plan status
 - [[melange-systems--forecast-audit-lane-2026-09-29]] — Mentat forecasting audit 09-29 (worktree forecasting-model-audit-5603f2): three "forecasts" on the console, regressions re-run in R, code fixes staged but NOT applied (classifier blocked writes; Paul runs copy_back scripts), methodology...
-- [[melange-systems--mentat-forecast-overnight-2026-10-07]] — Giving by cycle forecast 2026-10-07: Board A layout + cycle-aware 50/50 model LIVE on 8806 (bundle d516dba6); change log + backups + rollback in Desktop\Mentat Complete Files\FORECAST_OVERNIGHT_2026-10-07; brain D-113..D-115; open items
 - [[melange-systems--mentat-forecast-redesign-lane-2026-09-30]] — Forecast giving view redesign (worktree mentat-forecast-redesign-0fb0be): Paul picked board F2 'Giving by cycle' and ordered the projections checked for logical validity against the test results; build = one-to-one to F2, all compute on...
-- [[melange-systems--never-stress-test-the-machine-2026-10-07]] — Paul forbids CPU/launch stress tests or load experiments on his laptop; diagnose crashes from logs only
 - [[melange-systems--pac-accuracy-attempt3-lane-2026-10-05]] — PAC giving forecast accuracy attempt 3 (all sectors, v6) - scored once 2026-10-05; telecom meets bar everywhere, ORIGIN fails banks/SF/P&C/credit arms; 2028 jobs scheduled; code freeze 2027-01-31
 - [[melange-systems--pac-accuracy-six-year-lookback-directive-2026-10-03]] — Paul 2026-10-03 - PAC giving forecast accuracy work may look back only 6 years; gains must come from methodology, not more history; v4 (2008/2010 history) = regression
-- [[melange-systems--python312-wmi-crash-0xc000070a-2026-10-07]] — Python 3.12 processes importing pandas or scipy crash with 0xC000070A (exit 3221227274) under heavy load - platform/_wmi timeout + stray handle; not claude-obsidian
-- [[melange-systems--reasoning-in-fable-code-in-opus-2026-09-16]] — Paul 2026-09-16 at the start of S5 - "design the route of implementation with Fable and all reasoning is done in Fable, code should always be in Opus or Fable"; model tiering rule for lanes
-- [[melange-systems--search-rulings-before-asking-2026-10-07]] — Before putting ANY model/design question to Paul, search memory + brain D-files/STATE + lane receipts + transcripts for an existing ruling; he answered the forecast rebuild (a)-(d) angrily as already decided
-- [[melange-systems--telecom-industry-lane-2026-10-07]] — Telecom vs credit-union lobbying comparison and the build that adds telecom as a full Melange industry mirroring fintech (brain D-110); state, files and open rulings
 - [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 + CT-01; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
 
 ## Ledger (generated from the Project Brain) (196)
