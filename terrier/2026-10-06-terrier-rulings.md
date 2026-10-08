@@ -12,8 +12,11 @@ conclusions:
   - "O-5, O-7 and O-10 (2026-10-06): Paul confirmed the agent readings recorded below."
   - "O-11 and O-12 (2026-10-06): numeric partisan and support layers stay in the overall score; there is no second industry (only CUA)."
   - "Answers of 2026-10-07: weights approved (with a candidate industry 30 / candidate support 25 / participation 25 / sphere 20; Colorado without a candidate 40 / 35 / 25 unchanged); street-plan formulas approved with the voting-chance factor added to 'Mixed-support streets'; Census TIGER 2025 block file plus district boundary files from census.gov only; Colorado's GPU fill step skipped for Oregon and Connecticut; parallel build lanes use Claude Code's built-in background agents; Python environment rebuild approved."
+  - "Later rulings of 2026-10-07 (Paul): one server process per district (CO 8767, OR 8775, CT 8777); walk-list Abs wording per state (Oregon: mail ballots, every recorded vote counts; Connecticut: absentee or mail ballots, A or M); extra census.gov downloads (state legislative districts and ZIP-code areas); the same RF/KNN model types and frozen settings trained on each district's own voters, never Colorado-fitted models; no stress tests on the laptop; overnight blanket permission with the change record in the Terrier repo's OVERNIGHT_CHANGES_2026-10-07.md."
+  - "Lead's Phase 3b rulings (2026-10-07, the coordinating session's, not Paul's): the interim overall score is published and labelled; voters without registration geography get a residence block marked as estimated; party W gets a neutral lean like other minor parties."
 action_items:
   - "Terrier build lane: build to these rulings, config-first, with Colorado CD-05 outputs byte-identical by default (owner: Terrier build lane)."
+  - "Approve the primary-mode specification for candidate support before it is built (owner: Paul)."
   - "Define any further industries beyond CUA when wanted; the config supports them (owner: Paul)."
   - "Answer O-4b (uncertainty ranges on imputed values) if wanted; default stays off (owner: Paul)."
 related_topics: []
@@ -24,7 +27,7 @@ related_projects:
 related_teams: []
 source: "session"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "59ebfc9ab3bd48c50a789638955e4d831b840440ebb6b871bb9ad3fbbe158a9d"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "00ffe9920478cec27bfc89990e21ca1652efb94157eb39a7db808f820057116f"}
 updated_at: 2026-10-07
 updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/data"]
@@ -87,9 +90,28 @@ Paul's answers to the three items the blueprint review sent him, plus two build 
 - **Python environment rebuild approved.**
 - **Folder.** Paul asked for a separate top-level `terrier/` folder, apart from the Mentat and Melange notes and inside this vault, holding all Terrier notes; this note, [[terrier]] and the blueprint note were moved or created there on 2026-10-07.
 
+## Later rulings of 2026-10-07
+
+Paul's rulings given after the answers above, while the build was running (Phases 0, 2 and 3 are now done; progress is on [[terrier]]). Quotation marks below are the wording he approved.
+
+- **One server process per district.** Colorado stays on port 8767, Oregon OR-05 gets 8775 and Connecticut CT-01 gets 8777. A district menu in the app header jumps between them.
+- **Walk-list "Abs" wording.** The walk list has an "Abs" label whose meaning is stated per state. Oregon: "Abs = mail ballots (Oregon votes by mail; every recorded vote counts)". Connecticut: "Abs = absentee or mail ballots (A or M)", where A and M are the vendor's vote-method letters.
+- **Extra census.gov downloads approved.** On top of the 2025 block, boundary and road files: state legislative district boundaries (lower and upper chambers) for Oregon and Connecticut, and ZIP-code areas (ZCTA) for both. census.gov only. The download manifest grew from 14 to 20 files (280,939,810 bytes).
+- **Model ruling.** The Oregon and Connecticut blank values are filled by the same RF/KNN model types with the same frozen settings, trained on each district's own voters. Colorado-fitted models are never used for them.
+- **No stress tests on the laptop.** No load experiments or launch stress tests on Paul's laptop; crashes are diagnosed from logs only.
+- **Overnight blanket permission.** While Paul is away, the build may proceed on any task in this lane that would otherwise need his guidance, as long as every change is recorded in plain English. The change record is `OVERNIGHT_CHANGES_2026-10-07.md` in the Terrier repo root (`C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography-v3`).
+### Lead's Phase 3b rulings (2026-10-07)
+
+These are the lead's (the coordinating session's) rulings on build details, not Paul's; Paul can overturn any of them.
+
+- **Interim overall.** An interim overall score is published and labelled as interim.
+- **Residence block.** Voters who have no registration geography get a residence block (the Census block where they live), and it is marked as estimated.
+- **Party W.** Working Families (W) voters get a neutral party lean, the same as the other minor parties.
+
 ## Action Items
 
 - [ ] Build config-first to these rulings; Colorado CD-05 outputs stay byte-identical by default — owner: Terrier build lane
+- [ ] Approve the primary-mode specification for candidate support (Phase 4) — owner: Paul Goff
 - [ ] Define any further industries beyond CUA when wanted — owner: Paul Goff
 - [ ] Decide whether imputed values need uncertainty ranges (O-4b, default off) — owner: Paul Goff
 
