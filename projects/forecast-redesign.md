@@ -6,7 +6,7 @@ description: "Mentat forecasting program: the 2026-09-29 audit of three console 
 status: "active"
 brain: "melange-systems-brain"
 deadline: ""
-progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards ~~in GPT Image 2.5~~ pending (2026-10-05: GPT Image 2.5 and 2 fail on Higgsfield; 3 Nano Banana Pro fallback boards in boards3/ not yet reviewed, EOD:61); PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e)."
+progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards ~~in GPT Image 2.5~~ pending (2026-10-05: GPT Image 2.5 and 2 fail on Higgsfield; 3 Nano Banana Pro fallback boards in boards3/ not yet reviewed, EOD:61); PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e). Update 2026-10-08: Board A (D-114) supersedes the v3 boards; the cycle-aware Giving by cycle model is live and uncommitted (D-113 to D-118); see [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]]."
 blockers:
   - "PAC accuracy attempt 2: UT-X is single-shot and stays SEALED (C1, 2026-10-03); opening it needs a new owner ruling. Resolved part (was: S3 needs Paul's explicit OK plus a fresh gate on the v2 freeze): on 2026-10-03, after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's 'finish'. Resolved 2026-10-04: Paul's all-sector phase ruling E4 is the new owner ruling, P&C/UT-X 'Open for development' (supersedes C1; holdout spent, never certifies)."
   - "Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4); FEC bulk files keep only the latest report version, so FILED is only a disclosed amendment-loss lower bound (C2)."
@@ -54,8 +54,8 @@ action_items:
     status: "todo"
     deadline: ""
     owner: "coordinator agent"
-  - description: "Build forecast UI v3 from the new boards (GPT Image 2.5, stacked D/R bars by cycle), projections from the corrected model"
-    status: "todo"
+  - description: "~~Build forecast UI v3 from the new boards (GPT Image 2.5, stacked D/R bars by cycle), projections from the corrected model~~ — superseded 2026-10-08: Board A was built and is live (D-114)"
+    status: "done"
     deadline: ""
     owner: "coordinator agent"
   - description: "Create Windows scheduled tasks (nightly anchors, refit watcher) AFTER landing; commit sector_growth_study; clean IP/cookie evidence. Update 2026-10-05: sector_growth_study is committed (Mentat 04e2391e5, 2026-09-30, 92 tracked files); the other two parts are unchanged."
@@ -86,8 +86,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-attempt2-lane-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-attempt2-lane-2026-10-03.md", sha256: "10cf0f215277dcb435746964245dfd6291be8f676bf9c981cdeed7015ac02cd4"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "df58a8d72c36127f4bfe1b204c69a5d1c67bc64fa8a4b935439291ceec49ce9b"}
   - {type: "project-brain", synced_at: "2026-10-05", path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md", sha256: "03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec", commit: "3f70fde89aca2f4ecb90b4b60213bda6a631f529"}
-updated_at: 2026-10-07
-updated_by: "brainlink-migration@agent"
+updated_at: 2026-10-08
+updated_by: "records-repair@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -99,7 +99,7 @@ Dated correction (2026-10-04, all-sector phase rulings; source `pac-accuracy-six
 
 Dated correction (2026-10-05, records lane; sources: the 2026-10-05 handoff `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md` and the Mentat git log): "(attempt 2, HOLD, UT-X holdout sealed)" is attempt 2's state, and the work has gone on to attempt 3 (all sectors, v6; see Rulings and decisions and the Map). Other statements below that predate 2026-10-05 carry dated notes where they changed: the 2026-10-01 fixes are committed (Mentat `f340dc84e`), the FEC pas212/214/216 question is answered (D8, E12, E20, E22), and the blend is brain D-099, not D-079.
 
-Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-01 forecast drafts reached the Project Brain only now, as [[ledger/melange-systems-brain/D-089|D-089]] (lane works locally), [[ledger/melange-systems-brain/D-090|D-090]] (non-giving excluded), [[ledger/melange-systems-brain/D-091|D-091]] (integrity fixes), [[ledger/melange-systems-brain/D-092|D-092]] (phase, trajectory, inflation), [[ledger/melange-systems-brain/D-093|D-093]] (BLEND, stands: Paul 2026-10-05, R1; S99) and DE-058..DE-064. Nothing from the 2026-10-01 rebuild was published (R3): the live pointer is still refit-20260930-377f7324-c3f221343515. Struck-through lines are superseded, not deleted. Source keys: TX = Claude transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (worktree silly-einstein-57ef31); EOD = C:/melange-data/forecast-redesign-20260930/HANDOFF_FORECAST_2026-10-01_EOD.md; PT = pace_test/ in the same folder; S99 = D-093 superseded by [[ledger/melange-systems-brain/D-099|D-099]] (source fix: the 2026-10-05 confirmation is Paul's 'Still stands', not 'R1'; decision unchanged).
+Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-01 forecast drafts reached the Project Brain only now, as [[ledger/melange-systems-brain/D-089|D-089]] (lane works locally), [[ledger/melange-systems-brain/D-090|D-090]] (non-giving excluded), [[ledger/melange-systems-brain/D-091|D-091]] (integrity fixes), [[ledger/melange-systems-brain/D-092|D-092]] (phase, trajectory, inflation), [[ledger/melange-systems-brain/D-093|D-093]] (BLEND, stands: Paul 2026-10-05, R1; S99) and DE-058..DE-064. ~~Nothing from the 2026-10-01 rebuild was published (R3): the live pointer is still refit-20260930-377f7324-c3f221343515.~~ (Superseded 2026-10-08: the cycle-aware rebuild was published 2026-10-07T17:38:26Z; the pointer is now refit-20261007-d861bf29-79211caa154e, D-113.) Struck-through lines are superseded, not deleted. Source keys: TX = Claude transcript 710de3dd-b15e-45e8-99c3-a35dcb0d4739.jsonl (worktree silly-einstein-57ef31); EOD = C:/melange-data/forecast-redesign-20260930/HANDOFF_FORECAST_2026-10-01_EOD.md; PT = pace_test/ in the same folder; S99 = D-093 superseded by [[ledger/melange-systems-brain/D-099|D-099]] (source fix: the 2026-10-05 confirmation is Paul's 'Still stands', not 'R1'; decision unchanged).
 
 ## Overview
 
@@ -107,7 +107,7 @@ Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-0
 - **Detail topic:** [[2026-09-feature-forecast-giving-redesign]] holds the dated record (History, Decisions, Next Steps) and, in its four lane parts (listed in the Map), the full text of each lane; the 2026-10-03 rulings are in [[2026-10-03-pac-accuracy-attempt2-rulings]].
 - **Three console forecast surfaces (audit scope, 2026-09-29):** (1) Insights "Forecasts" card, `_forecast` in `mentat/app/analysis_metrics.py` (naive, never shows a number; no complete_cycles ever passed; indexes hold only 2021-22/2023-24/2025-26); (2) Giving Forecast, Codex-built 2026-09-27 from Paul's CHE:673 ask, UNTRACKED (`giving_forecast.py`, `giving-forecast.js`/`.css`, `app/data/giving-models-v1.json`, `tools/build_giving_models.py`), fit on OpenSecrets totals, not Mentat data; (3) Chart Studio "Same-phase forecast" transform (`chart-math.js:991-1022`). Plus the SGS R backtest (`sector_growth_study/code/R/sgs_forecast.R`, untracked).
 - **Root of the PAC accuracy work:** `C:/melange-data/forecast-redesign-20261001-review` (attempt 2 under `accuracy-refinement20261002/attempt2-20261003T003312Z`).
-- **Current state of the PAC accuracy work (2026-10-05):** the handoff `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md` (it supersedes the 2026-10-04 handoff for current state; that file stays the attempt-2 record); attempt 3 root `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004`; report (same artifact link, version 3, sections 12 v5 RESCORE, 13 all sectors v6, 14 schedule) https://claude.ai/artifact/FatsU6m8xyePv2QnTTdyCx; Project Brain D-088, D-099, D-100, D-101 and DE-066 (narrowed by DE-067). Method, results and schedule: [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]]; rulings E1-E24: [[2026-10-04-pac-accuracy-attempt3-rulings]].
+- **Current state of the PAC accuracy work (2026-10-05):** the handoff `C:\Users\pgoff\OneDrive\Desktop\Mentat Complete Files\HANDOFF_PAC_ACCURACY_2026-10-05.md` (it supersedes the 2026-10-04 handoff for current state; that file stays the attempt-2 record); attempt 3 root `C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004`; report (same artifact link, version 3, sections 12 v5 RESCORE, 13 all sectors v6, 14 schedule) https://claude.ai/artifact/FatsU6m8xyePv2QnTTdyCx; Project Brain D-088, D-099, D-100, D-101 and DE-066 (narrowed by DE-067). Method, results and schedule: [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]]; rulings E1-E24: [[2026-10-04-pac-accuracy-attempt3-rulings]]. Update 2026-10-08: attempt 4 (R9-R13) is deployed as the PAC panel `pac-r12-origin-half-r8-nowcast-v1` (D-115); the Giving by cycle view reads its nowcast for company PACs (D-116, D-117); blind results and the live state: [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]].
 
 ## Status
 
@@ -115,7 +115,7 @@ Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-0
 |---|---|
 | Status | active |
 | Deadline | none recorded |
-| Progress | Model audited and reconciled INTACT (2026-10-01); fixes landed (not committed); F2 UI live 2026-10-01 10:58:25Z; v3 UI boards pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 the record, v4 a regression); six-year rolling lookback directive and v5 rulings (2026-10-03/04); v5 run 2026-10-04 (post-hoc RESCORE, v3 still the record, 2028 method and plan frozen); all-sector phase rulings 2026-10-04 (attempt 3: every sector scored, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development, C1 superseded, v6 approved) |
+| Progress | Model audited and reconciled INTACT (2026-10-01); fixes landed (not committed); F2 UI live 2026-10-01 10:58:25Z; v3 UI boards pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 the record, v4 a regression); six-year rolling lookback directive and v5 rulings (2026-10-03/04); v5 run 2026-10-04 (post-hoc RESCORE, v3 still the record, 2028 method and plan frozen); all-sector phase rulings 2026-10-04 (attempt 3: every sector scored, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development, C1 superseded, v6 approved); update 2026-10-08: Board A built, the cycle-aware model live and uncommitted (D-113 to D-118) |
 
 > **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.
 
@@ -133,7 +133,7 @@ Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-0
 | v5: freeze the method and plan for 2028, the first clean test, before 2027-01-31 (done 2026-10-04, v5 run: method and plan frozen) | done | 2027-01-31 | unassigned (capture names none) |
 | F1 test fix (GATE_V5 finding F1: a one-directional category test) before 2027-01-31; a later code change ends the 2028 clean series; 2026-10-04 (E11): folded into the new all-sector freeze before 2027-01-31, the v5 2028 plan unchanged; v6 (E19) includes it | todo | 2027-01-31 | unassigned (capture names none) |
 | Glass Box watcher alongside every stage | todo | none | coordinator agent |
-| Forecast UI v3 from the new boards | todo | none | coordinator agent |
+| ~~Forecast UI v3 from the new boards~~ — superseded 2026-10-08: Board A built and live (D-114) | done | none | coordinator agent |
 | Windows scheduled tasks after landing; commit sector_growth_study (committed 2026-09-30, Mentat 04e2391e5); clean IP/cookie evidence | todo | none | coordinator agent |
 | Attempt 3 follow-ups: the 2027-03-08 scoring job and the seven 2028 jobs run on their dates (E24) | todo | 2027-03-08 | scheduled tasks |
 | E18 coverage gap (Mentat-side fix) and mapped PAC IDs for community banks before 2027-01-31 | todo | 2027-01-31 | [[paul-goff]] |
@@ -185,6 +185,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2]] | part: PAC-to-candidate giving accuracy attempt 2 of 2026-10-02… |
 | [[2026-09-feature-forecast-giving-redesign-six-year-lookback-lane]] | part: Paul's six-year rolling lookback directive of 2026-10-03… |
 | [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]] | part: PAC accuracy attempt 3, all sectors (2026-10-04/05): the v6 method, the gated build and one-pass development scoring, the results by sector and product against the E1 bar, the narrowed ORIGIN dead end and the scheduled jobs. |
+| [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] | part: The Giving by cycle live model of 2026-10-07/08: Board A, the cycle-aware 50/50, the panel nowcast for company PACs, blind results, D-113 to D-118. |
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
 
 ### Related Actors
@@ -296,13 +297,13 @@ Every note of this project by type, one line each; parts follow their parent.
 > Generated by brainlink from melange-systems-brain. Edit the brain with brainctl, not this block; hand-written text outside the markers is never touched.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
-- STATE last verified: 2026-10-06 23:58
-- Open questions in STATE: 20; active decisions: 102; dead ends: 67
+- STATE last verified: 2026-10-08 13:05
+- Open questions in STATE: 21; active decisions: 111; dead ends: 69
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-108|D-108]] — c is not applied to bystander activation or the lt_priming net_lean term (2026-1
-- [[ledger/melange-systems-brain/D-107|D-107]] — COMPET_MULT rulings R1-R7 refined (2026-10-07): ballot overrides for Calvert and
-- [[ledger/melange-systems-brain/D-106|D-106]] — COMPET_MULT open questions: Paul's 2026-10-07 rulings R1-R7 (replace the Fouirna
-- [[ledger/melange-systems-brain/D-105|D-105]] — Cook PVI competitiveness multiplier c: D-104 restated with corrected provenance
-- [[ledger/melange-systems-brain/D-104|D-104]] — Cook PVI competitiveness multiplier c on the money curves, default ON (2026-10-0
+- [[ledger/melange-systems-brain/D-118|D-118]] — Presidential-cycle uplift is a rule (company PACs included)
+- [[ledger/melange-systems-brain/D-117|D-117]] — Giving by cycle: credit-union company PACs = panel's 16 PACs
+- [[ledger/melange-systems-brain/D-116|D-116]] — Giving by cycle: company PACs on the panel nowcast, no 50/50
+- [[ledger/melange-systems-brain/D-115|D-115]] — PAC panel: one-year IBIS lag, IBIS for ORIGIN only, 50/50, deploy
+- [[ledger/melange-systems-brain/D-114|D-114]] — Giving by cycle: IBIS defaults, auto-recalc, Board A
 <!-- brainlink:state:end -->
