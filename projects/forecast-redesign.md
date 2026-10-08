@@ -6,7 +6,7 @@ description: "Mentat forecasting program: the 2026-09-29 audit of three console 
 status: "active"
 brain: "melange-systems-brain"
 deadline: ""
-progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards ~~in GPT Image 2.5~~ pending (2026-10-05: GPT Image 2.5 and 2 fail on Higgsfield; 3 Nano Banana Pro fallback boards in boards3/ not yet reviewed, EOD:61); PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e). Update 2026-10-08: Board A (D-114) supersedes the v3 boards; the cycle-aware Giving by cycle model is live and uncommitted (D-113 to D-118); see [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]]."
+progress: "As of 2026-10-04: model audited and reconciled INTACT (2026-10-01); fixes landed in the live tree (not committed); F2 UI live 2026-10-01 10:58:25Z; forecast UI v3 boards ~~in GPT Image 2.5~~ pending (2026-10-05: GPT Image 2.5 and 2 fail on Higgsfield; 3 Nano Banana Pro fallback boards in boards3/ not yet reviewed, EOD:61); PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 is the record, the v4 history branch a regression); Paul's six-year rolling lookback directive (2026-10-03) and v5 rulings (2026-10-04), then the v5 run (2026-10-04): its post-hoc RESCORE gains come from the blend, v3 stays the record, and the 2028 method and plan are frozen. Then Paul's all-sector phase rulings (attempt 3, 2026-10-04): every sector scored on ORIGIN and every nowcast, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development (C1 superseded), the blend improved rather than retired, and v6 approved. Update 2026-10-05: attempt 3 (all sectors, v6) was built, gated and scored in one pass (only telecom meets the E1 bar in every product; ORIGIN misses for banks, P&C and credit arms), rulings E23 and E24 added, the seven 2028 jobs created; the 2026-10-01 fixes and the Giving by cycle view are committed (Mentat f340dc84e). Update 2026-10-08: Board A (D-114) supersedes the v3 boards; the cycle-aware Giving by cycle model is live and uncommitted (D-113 to D-119); see [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]]."
 blockers:
   - "PAC accuracy attempt 2: UT-X is single-shot and stays SEALED (C1, 2026-10-03); opening it needs a new owner ruling. Resolved part (was: S3 needs Paul's explicit OK plus a fresh gate on the v2 freeze): on 2026-10-03, after the S2C gate PASS, S3 ran dev-only, one pass, on Paul's 'finish'. Resolved 2026-10-04: Paul's all-sector phase ruling E4 is the new owner ruling, P&C/UT-X 'Open for development' (supersedes C1; holdout spent, never certifies)."
   - "Certification structurally unreachable on the v2 freeze (inner fold s=2016 reads 2012/2014 paper-era receipts; min n>=4); FEC bulk files keep only the latest report version, so FILED is only a disclosed amendment-loss lower bound (C2)."
@@ -115,7 +115,7 @@ Dated correction (2026-10-05, brainlink migration, [[brainlink]]): the 2026-10-0
 |---|---|
 | Status | active |
 | Deadline | none recorded |
-| Progress | Model audited and reconciled INTACT (2026-10-01); fixes landed (not committed); F2 UI live 2026-10-01 10:58:25Z; v3 UI boards pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 the record, v4 a regression); six-year rolling lookback directive and v5 rulings (2026-10-03/04); v5 run 2026-10-04 (post-hoc RESCORE, v3 still the record, 2028 method and plan frozen); all-sector phase rulings 2026-10-04 (attempt 3: every sector scored, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development, C1 superseded, v6 approved); update 2026-10-08: Board A built, the cycle-aware model live and uncommitted (D-113 to D-118) |
+| Progress | Model audited and reconciled INTACT (2026-10-01); fixes landed (not committed); F2 UI live 2026-10-01 10:58:25Z; v3 UI boards pending; PAC accuracy attempt 2 finished 2026-10-03 (goal not met, HOLD unchanged, UT-X sealed and not scored; v3 the record, v4 a regression); six-year rolling lookback directive and v5 rulings (2026-10-03/04); v5 run 2026-10-04 (post-hoc RESCORE, v3 still the record, 2028 method and plan frozen); all-sector phase rulings 2026-10-04 (attempt 3: every sector scored, with crypto, fintech and community banks unscorable now and in the 2028 prospective track (E15), P&C/UT-X open for development, C1 superseded, v6 approved); update 2026-10-08: Board A built, the cycle-aware model live and uncommitted (D-113 to D-119) |
 
 > **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.
 
@@ -185,7 +185,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-09-feature-forecast-giving-redesign-pac-accuracy-attempt2]] | part: PAC-to-candidate giving accuracy attempt 2 of 2026-10-02… |
 | [[2026-09-feature-forecast-giving-redesign-six-year-lookback-lane]] | part: Paul's six-year rolling lookback directive of 2026-10-03… |
 | [[2026-09-feature-forecast-giving-redesign-attempt3-all-sector-v6]] | part: PAC accuracy attempt 3, all sectors (2026-10-04/05): the v6 method, the gated build and one-pass development scoring, the results by sector and product against the E1 bar, the narrowed ORIGIN dead end and the scheduled jobs. |
-| [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] | part: The Giving by cycle live model of 2026-10-07/08: Board A, the cycle-aware 50/50, the panel nowcast for company PACs, blind results, D-113 to D-118. |
+| [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] | part: The Giving by cycle live model of 2026-10-07/08: Board A, the cycle-aware 50/50, the panel nowcast for company PACs, blind results, D-113 to D-119. |
 | [[2026-09-feature-sector-growth-study]] | Sector growth vs political spending regression study on Mentat data: Paul's 25 Sep rulings, R pipeline, trend-first reporting |
 
 ### Related Actors
@@ -297,13 +297,13 @@ Every note of this project by type, one line each; parts follow their parent.
 > Generated by brainlink from melange-systems-brain. Edit the brain with brainctl, not this block; hand-written text outside the markers is never touched.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
-- STATE last verified: 2026-10-08 13:26
-- Open questions in STATE: 22; active decisions: 111; dead ends: 69
+- STATE last verified: 2026-10-08 13:32
+- Open questions in STATE: 22; active decisions: 112; dead ends: 69
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-119|D-119]] — Company-PAC presidential uplift = +9%
 - [[ledger/melange-systems-brain/D-118|D-118]] — Presidential-cycle uplift is a rule (company PACs included)
 - [[ledger/melange-systems-brain/D-117|D-117]] — Giving by cycle: credit-union company PACs = panel's 16 PACs
 - [[ledger/melange-systems-brain/D-116|D-116]] — Giving by cycle: company PACs on the panel nowcast, no 50/50
 - [[ledger/melange-systems-brain/D-115|D-115]] — PAC panel: one-year IBIS lag, IBIS for ORIGIN only, 50/50, deploy
-- [[ledger/melange-systems-brain/D-114|D-114]] — Giving by cycle: IBIS defaults, auto-recalc, Board A
 <!-- brainlink:state:end -->
