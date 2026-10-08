@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-451 notes.
+452 notes.
 
 ## Actors (49)
 
@@ -281,9 +281,9 @@
 - [[melange-systems--telecom-industry-lane-2026-10-07]] — Telecom vs credit-union lobbying comparison and the build that adds telecom as a full Melange industry mirroring fintech (brain D-110); state, files and open rulings
 - [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 Bynum + CT-01 Bronin; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
 
-## Ledger (generated from the Project Brain) (195)
+## Ledger (generated from the Project Brain) (196)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 188 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 189 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
