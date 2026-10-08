@@ -14,6 +14,7 @@ known_issues:
   - "Three House-share G6 cells (banks, credit unions, auto) published under Paul's explicit waiver of 2026-09-30, plus a pre-existing quiet banks-lobbying waiver"
   - "G9 warns that the log-lobbying refit (MAE 4.050) does not beat the naive baseline (3.936)"
   - "Local console restart and Windows scheduled-task registration stay dormant under the owner's pod-only instruction (as of 2026-09-30)"
+  - "Dated addition 2026-10-08: the cycle-aware bundle published 2026-10-07 carries five owner waivers (the auto PAC cell, \"1. Yes\", and control_Senate in banks, credit unions, P&C and auto, \"2. Keep senate in\"; the Senate presidential term worsens the Senate backtest error by 1.32-1.76x) and a G9 warning that the House and Senate party-mix models lose to a naive forecast in the chronological backtest"
 sources: []
 doc_sources:
   - path: "C:\\Users\\pgoff\\Mentat\\mentat\\forecast\\contracts\\README.md"
@@ -27,8 +28,8 @@ doc_sources:
     as_of: "2026-10-05"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-05
-updated_by: "preserve@agent"
+updated_at: 2026-10-08
+updated_by: "records-repair@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -45,7 +46,7 @@ tags: ["type/actor", "status/active", "domain/data"]
 |---|---|
 | Repository | Mentat repo: `mentat/forecast/refit` (R), `mentat/forecast/contracts`, `mentat/forecast/anchors` |
 | Stack | R 4.6.0 with a vendored package library; Python consumer `mentat/app/giving_forecast.py` |
-| Status | active; v2 bundle published on the RunPod pod on 2026-09-30 after explicit waivers |
+| Status | active; v2 bundle published on the RunPod pod on 2026-09-30 after explicit waivers. Dated correction (2026-10-08): the live bundle is now the cycle-aware `refit-20261007-d861bf29-79211caa154e` (sha256 `d516dba6...`, pointer switched 2026-10-07T17:38:26Z, published locally with five waivers); the 2026-09-30 bundle `7bc7bcf1...` is kept for rollback |
 | Team | none |
 
 ## Dependencies
@@ -57,6 +58,7 @@ tags: ["type/actor", "status/active", "domain/data"]
 
 - **Two contracts, one schema each.** The model bundle v2 (producer `rf_bundle.R`) and the anchor snapshot v1 (producer `build_giving_anchors.py`, read-only over Mentat) each have one JSON Schema, one example and 16 shared negative controls that must fail; the R and Python validators implement the same keyword subset, and cross-field rules live in code (`check_model_invariants`, `check_anchor_invariants`). The convention follows brain dead end DE-021; see [[contract-fixture-discipline]].
 - **What the calculator applies.** PAC: a relative (log) change on Mentat's previous-cycle level, shown twice (the roster PACs' own giving to candidates, and general giving). Partisan share: a percentage-point change on Mentat's previous-cycle R share, on employee and PAC bases. Lobbying: `lobby_model.log_refit` as a relative change on the latest complete year's Melange LDA level, with outside-firm income and in-house expenses kept side by side, never summed. Seats are evidence only (`calculator: false`).
+- **Dated correction (2026-10-08): the live bundle adds a cycle model.** The description above is the 2026-09-30 bundle's (schema-2) path, which stays in the code as the rollback. The live bundle `d516dba6...` carries a `cycle_model` (source: FORECAST_OVERNIGHT_2026-10-07\CHANGES.md entries 3, 12, 13): each measure is a phase-and-drift log model (presidential versus midterm, trajectory and inflation, brain D-092) with growth entering through the 50/50 rule (half the prior cycle, half the IBISWorld industry budget, one-year lag; D-113); the open cycle is conditioned on giving already observed (P1) for general giving; 2027-28 chains from 2025-26. For company PACs the bundle still names the D-099 BLEND layer, but the console overrides it with the PAC panel's R8 nowcast and no 50/50 (D-116), and for credit unions it reads the panel's 16-PAC cohort (D-117). A page without the `growth_basis` marker gets HTTP 400.
 - **Slope and anchor rules.** Each industry's applied slope comes from an automatic choice among pooled (R0), own (R1) and partially pooled DerSimonian-Laird (R2) slopes; the share anchor is chosen per industry and chamber, and same-phase replaces the default previous-cycle anchor only when it wins by at least 5% in both backtest designs (brain D-065). Owner rulings of 2026-09-30 deviate from SPEC 3.12 in five named ways, including Polymarket Jan-Jun 2026 as the primary control input.
 - **Anchors exclude non-giving.** Since the owner ruling of 2026-10-01, anchor levels leave out receipts the accounting engine buckets as non-giving (interest, refunds, insurance claims, loans), while the full funding split is kept; the console refuses an anchor whose workbook hash differs from the published workbook.
 - **Refit run.** Gates G0 environment, G1 inputs, G2 parity, G3 panels, G4 sample adequacy (warn), G5 stability (hold), G6 hard backtest gate (no existing industry's leave-one-election-out MAE may exceed the published calculator's), G7 bundle schema (fail), G8 consumer smoke (hold if no calculator), G9 beats naive (warn). Decision: any FAIL, else any HOLD, else PUBLISH. Publishing writes immutable `versions/<sha256>/` files and switches `giving-models-current.json` atomically; v1 stays for rollback, and the publisher makes no git commit.
@@ -76,9 +78,13 @@ Rscript tests/testthat.R                   # parity suite
 
 - The 2026-09-30 pod refit was held at first because House-share MAE rose for banks (1.053 to 1.550), credit unions (1.522 to 1.836) and auto (1.338 to 1.766); Paul authorized "Waive these three cells and publish", and every other G6 cell keeps the no-degradation rule.
 - G9 warns that the log-lobbying refit does not beat naive (MAE 4.050 against 3.936); G4 warns that auto lobbying is withheld.
-- Dated correction (2026-10-05, records lane; sources: the Project Brain's DECISIONS.md and the Mentat git log): the frontmatter known issue "stay dormant under the owner's pod-only instruction (as of 2026-09-30)" is superseded. Paul lifted the pod-only rule for this lane on 2026-09-30 late, and brain D-089 records that the Giving Forecast lane works locally and the pod is retired for it. The 2026-10-01 fixes (non-giving exclusion, conditioned remainder, two-design G9, waiver display, G8 on Windows, no summed reference) and the Giving by cycle view are committed in Mentat `f340dc84e` (2026-10-01 13:18 -0400, `codex/mentat-crypto`). The brain holds them as D-090 (non-giving receipts excluded) and D-091 (integrity-ledger fixes), with D-092 (every projected quantity except lobbying accounts for cycle phase, trajectory and inflation) and D-099 (the current-cycle roster PAC projection is a BLEND of the model and this cycle's pace). State as of 2026-10-05 per D-099: no BLEND is published, the live pointer is still `refit-20260930-377f7324-c3f221343515`, and the 2026-10-01 rebuild is scratch only. This note's description of what the calculator applies is the published v2 bundle's. Whether the console was restarted or the scheduled tasks registered is not recorded here.
+- Dated correction (2026-10-05, records lane; sources: the Project Brain's DECISIONS.md and the Mentat git log): the frontmatter known issue "stay dormant under the owner's pod-only instruction (as of 2026-09-30)" is superseded. Paul lifted the pod-only rule for this lane on 2026-09-30 late, and brain D-089 records that the Giving Forecast lane works locally and the pod is retired for it. The 2026-10-01 fixes (non-giving exclusion, conditioned remainder, two-design G9, waiver display, G8 on Windows, no summed reference) and the Giving by cycle view are committed in Mentat `f340dc84e` (2026-10-01 13:18 -0400, `codex/mentat-crypto`). The brain holds them as D-090 (non-giving receipts excluded) and D-091 (integrity-ledger fixes), with D-092 (every projected quantity except lobbying accounts for cycle phase, trajectory and inflation) and D-099 (the current-cycle roster PAC projection is a BLEND of the model and this cycle's pace). ~~State as of 2026-10-05 per D-099: no BLEND is published, the live pointer is still `refit-20260930-377f7324-c3f221343515`, and the 2026-10-01 rebuild is scratch only.~~ — superseded 2026-10-08: the cycle-aware rebuild was published 2026-10-07T17:38:26Z (pointer to bundle `d516dba6...`, `refit-20261007-d861bf29-79211caa154e`, brain D-113); the published bundle names BLEND for company PACs, and the console overrides it with the panel nowcast R8 (D-116; D-099 partially amended). This note's description of what the calculator applies is the published v2 bundle's. Whether the console was restarted or the scheduled tasks registered is not recorded here.
 - Parallel runs are bit-identical to serial runs on one platform; across platforms results agree to about 1e-13, so bundles are compared with tolerances, never byte equality.
 
 ## Related Projects
 
 - [[forecast-redesign]] — the project that owns the rulings, waivers and model state this pipeline implements.
+
+## Related Topics
+
+- [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — the 2026-10-07/08 publish of the cycle-aware bundle, the waivers, the panel nowcast for company PACs and the blind results.
