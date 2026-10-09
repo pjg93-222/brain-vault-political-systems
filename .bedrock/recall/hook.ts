@@ -189,7 +189,7 @@ async function main(): Promise<never> {
     case "index": {
       const { rebuildIndex } = await import("./indexer.ts");
       const r = rebuildIndex();
-      return finish(`index ok: ${r.notes} notes, ${r.terms} terms, index.md ${r.catalog}${r.skipped ? `, ${r.skipped} unreadable note(s) skipped` : ""} (${r.ms} ms)`);
+      return finish(`index ok: ${r.notes} notes (${r.parsed} parsed, the rest cached), ${r.terms} terms, index.md ${r.catalog}${r.skipped ? `, ${r.skipped} unreadable note(s) skipped` : ""} (${r.ms} ms)`);
     }
     case "graph": {
       const r = (await import("./sync.ts")).graphWorker();

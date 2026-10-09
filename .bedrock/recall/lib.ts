@@ -38,8 +38,8 @@ export function writeAtomic(path: string, content: string) {
 
 export const sha256 = (data: string | Uint8Array) => createHash("sha256").update(data).digest("hex");
 
-/** A note plus the stat values that make up the vault signature. */
-export type NoteStat = NoteFile & { size: number; mtimeMs: number };
+/** A note plus the stat values that make up the vault signature (size, mtime) and the parse-cache key (all three). */
+export type NoteStat = NoteFile & { size: number; mtimeMs: number; ctimeMs: number };
 
 /**
  * Every note the graph sees (extract.ts listNotes: the entity folders, other top-level folders and root notes; hidden
@@ -51,7 +51,7 @@ export function statNotes(vault = VAULT): NoteStat[] {
   for (const f of listNotes(vault, INCLUDE_ROOT_NOTES, true)) { // recall sees ledger/ too
     try {
       const st = statSync(f.abs);
-      out.push({ ...f, size: st.size, mtimeMs: st.mtimeMs });
+      out.push({ ...f, size: st.size, mtimeMs: st.mtimeMs, ctimeMs: st.ctimeMs });
     } catch (e: any) {
       if (e?.code !== "ENOENT") throw e;
     }
