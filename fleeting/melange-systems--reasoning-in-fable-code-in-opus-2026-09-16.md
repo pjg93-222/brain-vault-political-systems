@@ -12,8 +12,8 @@ memory_type: "feedback"
 updates:
   - "[[2026-07-working-agreement-agent-orchestration-rules]]"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/reasoning-in-fable-code-in-opus-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\reasoning-in-fable-code-in-opus-2026-09-16.md", sha256: "82e606a23830ce03fb4fa5fac2cb9de9a1f328d2ec14b5393c1aa44fa00ba8d1"}
-updated_at: 2026-10-07
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/reasoning-in-fable-code-in-opus-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-09", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\reasoning-in-fable-code-in-opus-2026-09-16.md", sha256: "2826150922f0e2b944603f19a90369600c54d94502249457ee9e1106fa0d3ef3"}
+updated_at: 2026-10-09
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -64,6 +64,7 @@ Paul, verbatim: "Model Usage: 1. Reasoning: Opus 5.5 2. Code Building: Sonnet 5.
 - Code building (any script, module, edit, test, analysis code): Sonnet 5.5 agents (model 'sonnet').
 - Classification (tagging entities and rows), document creation (briefs, rosters, extraction documents) and data extraction (pulling or aggregating data from existing files): Haiku agents (model 'haiku'). There is no Haiku 5.5; the newest Haiku is 4.5, and model 'haiku' resolves to it. I told Paul this on 2026-10-07 and he still asked for "Haiku 5.5, Extra", so use 'haiku'.
 - This lifts the old "never Haiku" bar for extraction and document work only. Code still goes to Sonnet. Verify Haiku output before reporting it (`scout-census-traps-2026-09-13`): on 2026-10-07 a Haiku extraction run computed an outside-firm-income column wrongly.
+**UPDATE 2026-10-09 (forecasting-section session):** Paul reaffirmed it: "Code in Sonnet, extract in Haiku, reason in Opus". ~~There is no Haiku 5.5~~ — superseded 2026-10-09: the environment now lists Haiku 5.5 (claude-haiku-5-5), and model 'haiku' is the extraction tier.
 Related: `review-in-fable-directive-2026-09-16`, `go-faster-directive-2026-09-16`,
 `mentat-failings-lane-s4-2026-09-16`.
 
@@ -73,4 +74,4 @@ Related: `review-in-fable-directive-2026-09-16`, `go-faster-directive-2026-09-16
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-07 from the Claude Code memory file `reasoning-in-fable-code-in-opus-2026-09-16.md` of project `melange-systems` (memory type: feedback). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. Changed source: an earlier version of this file was imported into [[2026-07-working-agreement-agent-orchestration-rules]], and those notes were not modified. To promote, fold what is new into them with `/bedrock:preserve`, then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-09 from the Claude Code memory file `reasoning-in-fable-code-in-opus-2026-09-16.md` of project `melange-systems` (memory type: feedback). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. Changed source: an earlier version of this file was imported into [[2026-07-working-agreement-agent-orchestration-rules]], and those notes were not modified. To promote, fold what is new into them with `/bedrock:preserve`, then set `status: promoted` and `promoted_to` here.

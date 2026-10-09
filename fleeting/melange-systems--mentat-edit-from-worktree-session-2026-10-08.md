@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "feedback"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-edit-from-worktree-session-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-08", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-edit-from-worktree-session-2026-10-08.md", sha256: "4010de13ba1b64d5af81453e60a7f6b8ada27ac902f9f1728e2d95a23d9664a6"}
-updated_at: 2026-10-08
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-edit-from-worktree-session-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-09", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-edit-from-worktree-session-2026-10-08.md", sha256: "3548fbf1e7e11fe66d09b3e9dad2c5881e6bdf45b1613574201e096fd065f9a1"}
+updated_at: 2026-10-09
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -34,14 +34,17 @@ C:\Users\pgoff\Mentat is the live console tree: branch codex/mentat-crypto, serv
 5. Commit only your own paths with `git commit -F msg -- <paths>`, because other sessions commit in the same tree.
 6. Push with `git push origin HEAD:refs/heads/codex/mentat-crypto` (no upstream is set).
 
+**2026-10-09 update (LDA deadline rule, commit cb0d4fb48):**
+- The live tree's branch was then claude/mentat-data-presentation-fixes-20261009, not codex/mentat-crypto, so check `git branch --show-current` before you push.
+- `git -c core.autocrlf=false apply` kept both the CRLF and the LF files byte-exact. `cmp` against the tested scratch copies confirmed it, so step 4's restore was not needed.
+- Before applying, check that the live files are byte-equal to the patch base (`cmp`) and clean (`git status --short -- <paths>`).
+
 Related: `mentat-studio-members-and-figure-strip-2026-10-08`, `ask-before-substantive-changes`.
 
 ## Possible Connections
 
-- [[mentat-console]] — keyword match from recall, unverified
-- [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] — keyword match from recall, unverified
-- [[mentat-console-chart-studio-and-system-debug]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-08 from the Claude Code memory file `mentat-edit-from-worktree-session-2026-10-08.md` of project `melange-systems` (memory type: feedback). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-09 from the Claude Code memory file `mentat-edit-from-worktree-session-2026-10-08.md` of project `melange-systems` (memory type: feedback). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pdf-export-and-worksheet-cache-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-08", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pdf-export-and-worksheet-cache-2026-10-08.md", sha256: "a24be0fe6e7d6dcee6b6f612504870acd077340304c3630d0d6eab9e37401fe5"}
-updated_at: 2026-10-08
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pdf-export-and-worksheet-cache-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-09", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pdf-export-and-worksheet-cache-2026-10-08.md", sha256: "e15296e09b9f319075ca6816fca7c3371c39f8af6a748e71e923b6e3148aafa7"}
+updated_at: 2026-10-09
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -35,6 +35,8 @@ Paul (2026-10-08): "screenshot any visualization and save it as a pdf" (PAC Evid
 
 **Later 2026-10-08 (all committed + pushed, live on 8806 pid 73124 / 8807 pid 69696, cwd "Mentat Complete Files"):** PDF title-once fix 5efd65bb7; Paul: "saved as images" -> export is now 2x PNG via Edge --screenshot (b814fb317; route still /api/export/pdf). Lobbying projection replaced by LDA quarterly NOWCAST (7f13e9247), Paul's rulings "1 yes, 2 remaining, 3 up-to-3, 4 yes, 5 b": pred = O + (1-s)B, s = geo-mean same-quarter share over up to 3 prior years; 80% band = pooled blind errors (bank/CU/telecom/fintech, n=32; log half-widths Q1 .132 Q2 .099 Q3 .041); "~95%" = largest blind miss, labelled n=32; 2027-28 chained with LobbyView persistence in quadrature. Telecom offered LOBBYING-ONLY (giving withheld: no OpenSecrets scope / IBIS path — option (a) B08/B09 proxy + wireless+cable IBIS = Paul's ruling, open). Explicit `lobbying_only` bundle flag gates the cycle-model check skip. Live bundle refit-20261008-d861bf29-1cda1631d7d7 (bundles gitignored). Paul's standing ask: every industry with data should be added to the forecast. Paul was told plainly: cycle-ahead general giving blind A = 66.1 for banks (biased high); the 97.8 is the in-cycle PAC nowcast — never conflate them.
 
+**2026-10-09 Telecom full giving LIVE:** Paul ruled "use B09 and wireless+cable for Telecom giving" (IBIS revenue-weighted ~79/21) and "keep Telecom scored-only" (RULING: Telecom NOT in the pooled estimation; its step variance = pooled residual variance on its own B09 history, so banks/CU/P&C stay unchanged; to pool later flip registry estimation flag + add B09 recipient captures — only on Paul's say). Refit published by session f8a7389d at midnight: refit-20261009-e1ba2513-74f0e0a24143, commits 6acedee5d + 20d6e532f. Telecom giving 2026 $8.39M (PI 3.12-22.57), 2028 $15.78M. LESSON: refit built_on is UTC date, console compares local date -> any refit after 8 pm Eastern HOLDs G8 until local midnight (Paul chose wait, not fix).
+
 Related: `mentat-chart-studio-2026-09`, `ask-before-substantive-changes`, `mentat-forecast-overnight-2026-10-07`.
 
 ## Possible Connections
@@ -43,4 +45,4 @@ Related: `mentat-chart-studio-2026-09`, `ask-before-substantive-changes`, `menta
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-08 from the Claude Code memory file `mentat-pdf-export-and-worksheet-cache-2026-10-08.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-09 from the Claude Code memory file `mentat-pdf-export-and-worksheet-cache-2026-10-08.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
