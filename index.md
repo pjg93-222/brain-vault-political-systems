@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-458 notes.
+460 notes.
 
 ## Actors (49)
 
@@ -258,7 +258,7 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
-## Fleeting (22)
+## Fleeting (24)
 
 - [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
 - [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
@@ -270,9 +270,11 @@
 - [[melange-systems--claude-obsidian-readonly-install-2026-10-06]] — claude-obsidian 2.2.0 installed read-only beside Bedrock (Paul's option 1); its hooks still run (no per-plugin disable) but are silent; Bedrock owns vault writes
 - [[melange-systems--competitiveness-multiplier-lane-2026-10-05]] — Cook PVI election-competitiveness multiplier c for the engine money curves; Paul's 2026-10-05 rulings and plan status
 - [[melange-systems--forecast-audit-lane-2026-09-29]] — Mentat forecasting audit 09-29 (worktree forecasting-model-audit-5603f2): three "forecasts" on the console, regressions re-run in R, code fixes staged but NOT applied (classifier blocked writes; Paul runs copy_back scripts), methodology...
+- [[melange-systems--mentat-edit-from-worktree-session-2026-10-08]] — A session tied to a Melange claude\worktrees\ checkout cannot Edit Mentat (harness worktree guard); Paul approves a git-apply route per change
 - [[melange-systems--mentat-forecast-overnight-2026-10-07]] — Giving by cycle forecast 2026-10-07/08: Board A + cycle-aware 50/50 ~~LIVE on 8806~~ (superseded 2026-10-08: LIVE on 8807, COMMITTED+PUSHED) (bundle d516dba6); company PACs on the panel nowcast R8 (D-116), credit unions on 16 PACs...
 - [[melange-systems--mentat-forecast-redesign-lane-2026-09-30]] — Forecast giving view redesign (worktree mentat-forecast-redesign-0fb0be): Paul picked board F2 'Giving by cycle' and ordered the projections checked for logical validity against the test results; build = one-to-one to F2, all compute on...
 - [[melange-systems--mentat-pdf-export-and-worksheet-cache-2026-10-08]] — Mentat 2026-10-08: one-click figure PDF (headless Edge) + /api/report-data response cache (F1), one scan per request (F3), worksheets prewarm; LIVE on 8806 pid 34612, UNCOMMITTED; 8807 console still stale
+- [[melange-systems--mentat-studio-members-and-figure-strip-2026-10-08]] — Mentat 2026-10-08: Chart Studio members() 500-cap removed (fd6c2d520, left bundled per Paul) + figure export button strip (38fca2b65, 60e1f8a5b, pushed); verified live 8806 on every host
 - [[melange-systems--never-stress-test-the-machine-2026-10-07]] — Paul forbids CPU/launch stress tests or load experiments on his laptop; diagnose crashes from logs only
 - [[melange-systems--pac-accuracy-attempt3-lane-2026-10-05]] — PAC giving forecast accuracy attempt 3 (all sectors, v6) - scored once 2026-10-05; telecom meets bar everywhere, ORIGIN fails banks/SF/P&C/credit arms; 2028 jobs scheduled; code freeze 2027-01-31
 - [[melange-systems--pac-accuracy-six-year-lookback-directive-2026-10-03]] — Paul 2026-10-03 - PAC giving forecast accuracy work may look back only 6 years; gains must come from methodology, not more history; v4 (2008/2010 history) = regression
