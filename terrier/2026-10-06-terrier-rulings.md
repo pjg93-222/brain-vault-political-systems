@@ -16,12 +16,14 @@ conclusions:
   - "Lead's Phase 3b rulings (2026-10-07, the coordinating session's, not Paul's): the interim overall score is published and labelled; voters without registration geography get a residence block marked as estimated; party W gets a neutral lean like other minor parties."
   - "Rulings of 2026-10-08 (Paul): nothing is ever withheld in any district, Colorado included; canvass the people who need a reminder or push, not the sure voters who are sure to vote our way; the registration mix shows every party code as itself; the Terrier repo is the private GitHub repo pjg93-222/Geo; lanes work in parallel with no waiting; never stress-test the laptop."
   - "Untapped map and one-click walk plan (Paul's rulings R1-R4 of 2026-10-08, spec approved by Paul 2026-10-09): R1 map first, highlighting the most untapped areas (total untapped people); R2 doors already worked in saved walk lists are excluded; R3 walk-list size is adjustable; R4 shading is by total untapped potential alone. The potential formula (persuade, remind, influence) replaces the earlier 'Needs a push' definition everywhere. The weights 0.5 / 0.5 / 0.5, the 60-door target and the 400 m fallback are agent defaults, not Paul's rulings."
+  - "Untapped live and lead rulings 2026-10-09 (agent defaults, Paul may overrule): the map and one-click walk plan went live on OR-05 (8775) and CT-01 (8777). The lead set i = soi_pct/100; t from the spec's five turnout scores; Not home and Moved count as knocked; the mixed and turnout presets kept, now using t; the people list, profile and print use the default weights; State House and Senate shaded on the map; Colorado gets a one-line note; the API keys are named undecided and supporter. Open for Paul: (a) calibrate t per district against people's own record; (b) trim the one-click turf to the door count."
 action_items:
   - "Terrier build lane: build to these rulings, config-first, with Colorado CD-05 outputs byte-identical by default (owner: Terrier build lane)."
   - "Approve the primary-mode specification for candidate support before it is built (owner: Paul)."
   - "Define any further industries beyond CUA when wanted; the config supports them (owner: Paul)."
   - "Answer O-4b (uncertainty ranges on imputed values) if wanted; default stays off (owner: Paul)."
-  - "Build the Untapped map layer and the one-click 'Plan walk list' to R1-R4 and the potential formula, then tell Paul in plain words where to click (owner: Terrier build lane)."
+  - "Built and live 2026-10-09 on OR-05 and CT-01 (Terrier commit 6f56299): the Untapped map layer and the one-click 'Plan walk list' to R1-R4 and the potential formula; where to click is on the terrier note (owner: Terrier build lane)."
+  - "Answer two Untapped questions: (a) calibrate t per district against people's own general-election record, ranking unchanged; (b) trim the one-click turf to the door count (owner: Paul)."
 related_topics: []
 related_actors: []
 related_people: []
@@ -124,7 +126,7 @@ Paul's rulings and standing orders from the Terrier build of 2026-10-08, recorde
 
 ## Rulings of 2026-10-08/09: Untapped map and one-click walk plan
 
-Paul's rulings R1 to R4, relayed by his "Model decisions and configuration questions" session on 2026-10-08, and the build spec that follows from them, which Paul approved on 2026-10-09 ("Approve"). Status on 2026-10-09: in build; the live Colorado API check stays byte-identical because Colorado has no candidate.
+Paul's rulings R1 to R4, relayed by his "Model decisions and configuration questions" session on 2026-10-08, and the build spec that follows from them, which Paul approved on 2026-10-09 ("Approve"). Status on 2026-10-09: built and live on OR-05 (port 8775) and CT-01 (port 8777); the Colorado server (8767) was not restarted and its output is byte-identical because Colorado has no candidate. Commits and live checks are on [[terrier]].
 
 ### Paul's rulings
 
@@ -172,9 +174,30 @@ Agent defaults, not Paul's rulings (Paul can change them; the app labels them as
 
 Opus designs and reviews; Sonnet 5.5 builds. The live Colorado API check stays byte-identical. Nothing is tested against the live Colorado server on 8767. No stress, load or many-process tests. Each verified lane is committed and pushed to the private GitHub repo, then made live, and Paul is told in plain words where to click.
 
+### Lead rulings 2026-10-09 (agent defaults, Paul may overrule)
+
+Decisions the lead (the coordinating session) made while building the Untapped layer. They are the lead's, not Paul's, and Paul can overturn any of them.
+
+- **i, influence standing.** `soi_pct / 100`, the existing sphere-of-influence standing on the 0 to 1 scale.
+- **t, chance of voting.** Taken from the spec's five turnout scores (their mean divided by 100), as in the formula above.
+- **Knocked.** Not home and Moved results count as knocked, like the other recorded results, so those doors are excluded under R2.
+- **Presets.** The "Mixed-support streets" and "Supporter turnout" presets are kept, now using t as the voting chance.
+- **People list, profile and print.** They use the default weights (wP = wR = 0.5, wI = 0.5).
+- **State House and Senate.** Both are shaded on the map, alongside precincts.
+- **Colorado.** It gets the one-line note "Untapped needs a candidate" instead of a layer.
+- **API keys.** The keys are named `undecided` and `supporter`.
+
+### Open for Paul
+
+Both came out of the live check on 2026-10-09 (counts only, no voter rows).
+
+- **(a) t is not a calibrated chance of voting.** The district mean t is 0.55 in OR against 0.84 from people's own general-election record, and people with t between 0.2 and 0.4 voted in 74% of the general elections they were eligible for. The agent proposed calibrating t per district against people's own record; the ranking would not change.
+- **(b) The one-click turf is often a single large block.** It is 144 to 200 doors, because blocks are indivisible. The agent can offer trimming to the door count.
+
 ## Action Items
 
-- [ ] Build the Untapped map layer and the one-click "Plan walk list" to R1-R4 and the potential formula, then tell Paul in plain words where to click — owner: Terrier build lane
+- [x] Build the Untapped map layer and the one-click "Plan walk list" to R1-R4 and the potential formula — owner: Terrier build lane (live 2026-10-09 on OR-05 and CT-01, commit `6f56299`; where to click is on [[terrier]])
+- [ ] Answer the two Untapped questions above: calibrate t per district against people's own record (ranking unchanged), and trim the one-click turf to the door count — owner: Paul Goff
 - [ ] Build config-first to these rulings; Colorado CD-05 outputs stay byte-identical by default — owner: Terrier build lane
 - [ ] Approve the primary-mode specification for candidate support (Phase 4) — owner: Paul Goff
 - [ ] Define any further industries beyond CUA when wanted — owner: Paul Goff
