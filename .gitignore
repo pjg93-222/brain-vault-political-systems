@@ -14,6 +14,7 @@ Thumbs.db
 
 # Capture and recall (.bedrock/recall): derived recall index, sync cache and lock, hook log, import provenance copies
 .bedrock/recall-index.json
+.bedrock/recall-cache.json
 .bedrock/recall/hook.log*
 .bedrock/recall/index-slow.json
 .bedrock/sync/
