@@ -5,7 +5,7 @@ aliases: ["Terrier", "Terrier app", "cu-geography-v3", "Terrier voter canvass ap
 description: "Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root outputs\\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people, 343,000 households); 2026-10-06 lane adds Oregon OR-05 (Bynum) and Connecticut CT-01 (Bronin) under Paul's FLEXIBLE config-first ruling, with every data field shown and runs local. The Terrier brain exists only as vault notes (this note and its rulings discussion), not as a separate Project Brain."
 status: "active"
 deadline: ""
-progress: "As of 2026-10-07: CO CD-05 live on 8767 (8 tabs including Walk list; live server restarted 2026-10-04 16:38). Multi-district lane started 2026-10-06: OR-05 (562,563 rows) and CT-01 (458,372 rows) source zips supplied and extracted, same 622-column statara schema as Colorado; Paul answered the open-decision list O-1..O-13 and made three rulings (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle), then approved the weights, street-plan formulas, 2025 Census files and skipping the GPU fill step on 2026-10-07. Build so far: Phase 0 (Colorado baseline gate, committed 609385d) DONE; Phase 2 (multi-district foundation: config, walk builder, one server process per district, geography tools, header district menu) DONE and merged on claude/walk-list, with the Colorado gate still passing after the builds; Phase 3 (filling the blank sci_* values per district with models trained on each district's own voters) DONE, committed bbebf92, scored once on frozen holdouts (OR-05 86.64% right against 77.89% for always guessing the most common answer; CT-01 87.39% against 77.91%). Next: Phase 3b (per-district score stores and area layers), then the Phase 4 features. Paul also ruled later on 2026-10-07 (one server per district, walk-list Abs wording, extra census.gov downloads, the model ruling, no stress tests on the laptop, overnight blanket permission); the lead made three Phase 3b rulings. As of 2026-10-08: Paul ruled that nothing is ever withheld (the under-20-people/10-households area suppression is gone in every district, Colorado included) and set \"Needs a push\" as the default street plan; Phase 3b is built for OR-05 and CT-01 (30/25/25/20 frameworks, every area shown, candidate support, density, street plan) and both passed their local smoke checks; the nothing-withheld Colorado data is staged beside the live files and passed its gate, waiting for Paul to swap it onto 8767; code is pushed to the private GitHub repo pjg93-222/Geo (head d95f9f4)."
+progress: "As of 2026-10-07: CO CD-05 live on 8767 (8 tabs including Walk list; live server restarted 2026-10-04 16:38). Multi-district lane started 2026-10-06: OR-05 (562,563 rows) and CT-01 (458,372 rows) source zips supplied and extracted, same 622-column statara schema as Colorado; Paul answered the open-decision list O-1..O-13 and made three rulings (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle), then approved the weights, street-plan formulas, 2025 Census files and skipping the GPU fill step on 2026-10-07. Build so far: Phase 0 (Colorado baseline gate, committed 609385d) DONE; Phase 2 (multi-district foundation: config, walk builder, one server process per district, geography tools, header district menu) DONE and merged on claude/walk-list, with the Colorado gate still passing after the builds; Phase 3 (filling the blank sci_* values per district with models trained on each district's own voters) DONE, committed bbebf92, scored once on frozen holdouts (OR-05 86.64% right against 77.89% for always guessing the most common answer; CT-01 87.39% against 77.91%). Next: Phase 3b (per-district score stores and area layers), then the Phase 4 features. Paul also ruled later on 2026-10-07 (one server per district, walk-list Abs wording, extra census.gov downloads, the model ruling, no stress tests on the laptop, overnight blanket permission); the lead made three Phase 3b rulings. As of 2026-10-08: Paul ruled that nothing is ever withheld (the under-20-people/10-households area suppression is gone in every district, Colorado included) and set \"Needs a push\" as the default street plan; Phase 3b is built for OR-05 and CT-01 (30/25/25/20 frameworks, every area shown, candidate support, density, street plan) and both passed their local smoke checks; the nothing-withheld Colorado data was staged beside the live files and passed its gate. As of 2026-10-08 evening: Paul swapped the nothing-withheld Colorado data live at 19:16 and the build was complete at 19:30, with all three servers running (CO 8767, OR-05 8775, CT-01 8777; OR-05 and CT-01 with the 30/25/25/20 weights, candidate support and \"Needs a push\" as the default street plan); the street planner with Print scores is built and live for candidate districts; the map side panel's Registration mix shows every party code (O-10); the Connecticut density gap is fixed (12 blocks still have no density: 5 have no land and 7 hold 15 people the file cannot place); the server crash (exit code 0xC000070A) is fixed by a WMI patch in manage.py; the latest Terrier commit is 8f50713, on claude/walk-list and main in the private GitHub repo pjg93-222/Geo. As of 2026-10-09: Paul approved the spec for the Untapped map layer and the one-click Plan walk list (rulings R1-R4), which replaces the \"Needs a push\" definition with one potential formula; it is in build. Open for Paul: the primary-mode choice (Default, A, B or C) and how to treat unaffiliated voters per state."
 blockers: []
 action_items:
   - description: "Extract the OR-05 and CT-01 zips to Downloads\\terrier-sources\\ (O-13, Paul said yes)"
@@ -28,27 +28,31 @@ action_items:
     status: "todo"
     deadline: ""
     owner: "Terrier build lane (Opus designs, Sonnet builds)"
-  - description: "Add an optional scores toggle on the printed walk list, defaulting to raw (Phase 4 walk-list fields)"
-    status: "todo"
+  - description: "Add an optional scores toggle on the printed walk list, defaulting to raw (built as the Print scores box, off by default, commit 2419afc; Colorado prints overall and participation only)"
+    status: "done"
     deadline: ""
     owner: "Terrier build lane (Opus designs, Sonnet builds)"
-  - description: "Show every party code as itself instead of lumping Working Families (W) into other (O-10), and impute the missing geo-audit values with the model instead of a Not audited label (O-5); the lead's Phase 3b ruling gives party W a neutral lean like other minor parties"
-    status: "todo"
+  - description: "Show every party code as itself instead of lumping Working Families (W) into other (O-10): done for the walk overview (11e3fd5) and the map side panel's Registration mix (85b5656) in every district; still to confirm: imputing the missing geo-audit values with the model instead of a Not audited label (O-5), and the lead's Phase 3b ruling that party W gets a neutral lean like other minor parties"
+    status: "in-progress"
     deadline: ""
     owner: "Terrier build lane (Opus designs, Sonnet builds)"
   - description: "Phase 3b: per-district score stores and area layers (Oregon and Connecticut are ready in the header district menu; built and smoke-checked 2026-10-08)"
     status: "done"
     deadline: ""
     owner: "Terrier build lane (Opus designs, Sonnet builds)"
-  - description: "Swap the staged nothing-withheld Colorado data onto the live server on 8767 with _build\\swap_co_live.ps1 (dry run first; rollback command in _build\\FINISH.md), then start the Oregon (8775) and Connecticut (8777) servers"
-    status: "todo"
+  - description: "Swap the staged nothing-withheld Colorado data onto the live server on 8767 with _build\\swap_co_live.ps1, then start the Oregon (8775) and Connecticut (8777) servers (Paul swapped Colorado at 19:16 on 2026-10-08; all three servers running at 19:30; backup and rollback exist)"
+    status: "done"
     deadline: ""
     owner: "Paul Goff"
-  - description: "Phase 4 features: industries as configuration, candidate support with the primary/general toggle, density, map overlays, the street ROI planner and the walk-list fields"
-    status: "todo"
+  - description: "Phase 4 features: candidate support, density, map overlay modes and the street planner with Print scores are built (2026-10-07 and 2026-10-08, live for OR-05 and CT-01); industries as configuration and the primary/general toggle remain"
+    status: "in-progress"
     deadline: ""
     owner: "Terrier build lane (Opus designs, Sonnet builds)"
-  - description: "Approve the primary-mode specification for candidate support before it is built"
+  - description: "Build the Untapped map layer and the one-click Plan walk list (Paul's rulings R1-R4 of 2026-10-08, spec approved 2026-10-09; wording on the rulings note), then tell Paul in plain words where to click"
+    status: "in-progress"
+    deadline: ""
+    owner: "Terrier build lane (Opus designs, Sonnet builds)"
+  - description: "Approve the primary-mode specification for candidate support before it is built (the choice of Default, A, B or C, and how to treat unaffiliated voters per state)"
     status: "todo"
     deadline: ""
     owner: "Paul Goff"
@@ -66,13 +70,13 @@ related_topics: []
 related_actors: []
 related_teams: []
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-08", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "311acb3dc0bbbf20e7613715dc5b363d9ce7f22e3494cdc125ce987984870f8b"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-09", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "638b644a4b45dca278697fa7248c1cbcf1a118ab19afa1af55cd5737b0cfaecc"}
   - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography-v3/WALK_LIST_HANDOFF_2026-10-02.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography-v3\\WALK_LIST_HANDOFF_2026-10-02.md", sha256: "b2831d1f72a975c0ea469fbcd319589ad82d4bfb38a43d5ef66b2f8e3194852b"}
   - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography-v3/TERRIER_HANDOFF_2026-10-01.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography-v3\\TERRIER_HANDOFF_2026-10-01.md", sha256: "f74239bcca2e2c5c494f0320878cdbe19249e3e84cceb7f8ab0909dbf92a40b3"}
   - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography-v3/ACTUAL_DATA_HANDOFF_2026-10-01.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography-v3\\ACTUAL_DATA_HANDOFF_2026-10-01.md", sha256: "a7eb4f4c12755a767f1f7e5346f85cd585f81a6a550cc527acdf92c078099383"}
   - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography-v3/DATA_AUDIT_2026-10-01.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography-v3\\DATA_AUDIT_2026-10-01.md", sha256: "277a8f024691122e8f52eafd4df7e7ac0ca8b3115ad748b13a7a8c75334d3872"}
   - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography/CONVERSATION_REQUESTS.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography\\CONVERSATION_REQUESTS.md", sha256: "e0ff37ee922a7456073e514bf21495b0fb9bf1b43b1c63e58b22d79bce1d4f4b"}
-updated_at: 2026-10-08
+updated_at: 2026-10-09
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
@@ -85,14 +89,14 @@ tags: ["type/project", "status/active", "domain/data"]
 
 - **What it is.** The project formerly called CU Geography ([[cu-geography]]; the old names "CU Geography" and "cu-geography" stay on that note, and search for them lands there first) was renamed **Terrier** (the app, desktop shortcut and window title). It is a Codex project, not part of Melange. The Luna RF/KNN data-completion model and the CU row framework that feed it are documented on [[cu-geography]]; this note owns the app, the multi-district expansion and the 2026-10-06 rulings.
 - **Paths.**
-  - Terrier root (git, branch `claude/walk-list`, `main` fast-forwarded to it; remote = the private GitHub repo `pjg93-222/Geo`, both branches pushed, head `d95f9f4` on 2026-10-08): `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography-v3`.
+  - Terrier root (git, branch `claude/walk-list`, `main` fast-forwarded to it; remote = the private GitHub repo `pjg93-222/Geo`, both branches pushed and identical at `8f50713` on the evening of 2026-10-08): `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography-v3`.
   - Sibling Luna root, holding the locked Colorado RF/KNN code under `.local`: `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography`. Paul's request log with every definition below: `outputs\cu-geography\CONVERSATION_REQUESTS.md` (R001 onward).
   - Colorado source file: `C:\Users\pgoff\Downloads\statara_co_cd005_20260904.csv` (dated 2026-09-04, SHA256 `4c48800b8c21870e6e2b6242810bbbe917d8169e529b440efb662f71c464239f`).
   - Desktop shortcut: `C:\Users\pgoff\OneDrive\Desktop\Terrier.lnk`; launchers `Start-Terrier.ps1`, `Stop-TerrierServer.ps1`, `Install-TerrierDesktop.ps1` in the Terrier root.
 - **Stack.** Django served by Waitress on loopback port 8767 (`CU_DEMO=0`, health at `/_terrier/health`, mode `recorded`), supervised by `Watch-TerrierServer.ps1` (1 MB log cap); React + TypeScript + Vite frontend with MapLibre; SQLite stores under `.local` (`scores`, `contacts`, `street`, `roads`, `walk`, `accounts`); the Walk list tab uses its own Dijkstra routing over a noded TIGER street network, jsPDF for printing. Higgsfield supplied the logo and loading animation (Mentat palette: plum, ivory, gold, teal). The older apps on 8765 (live CU Geography) and 8766 (V3 preview) are separate and untouched; browser checks never run against 8767.
 - **One server process per district (Paul, 2026-10-07).** Colorado stays on 8767, Oregon OR-05 runs on 8775 and Connecticut CT-01 on 8777; a district menu in the header jumps between them.
 - **Eight tabs.** Map, People, Contact sheet, Criteria audit, Data & sources, Team & snapshots, Method and Walk list. The Walk list builds door-to-door lists from picked streets or an uploaded street CSV, orders doors by shortest walking path, prints a PDF in the owner's reference layout with a CSV twin, and saves results (Supporter, Undecided, Opposed, Not home, Moved) locally.
-- **Data scale for Colorado CD-05** (aggregates only): 491,308 people and 343,000 scored households; contact records 359,486 email, 146,938 phone, 349,132 wireless and 65,987 with no channel; street coverage 436,057 registration people at 299,800 validated household locations; the walk store has 207,198 stops with 0 of 491,308 voters unplaced. The live Colorado map still withholds areas below 20 people or 10 households; that ends when Paul swaps in the staged data (Paul's 2026-10-08 ruling: nothing is withheld, a small area carries a note instead). The release validates the faithful display of stored data, not the vendor's accuracy or the models' predictive accuracy.
+- **Data scale for Colorado CD-05** (aggregates only): 491,308 people and 343,000 scored households; contact records 359,486 email, 146,938 phone, 349,132 wireless and 65,987 with no channel; street coverage 436,057 registration people at 299,800 validated household locations; the walk store has 207,198 stops with 0 of 491,308 voters unplaced. Until Paul's swap at 19:16 on 2026-10-08 the live Colorado map withheld areas below 20 people or 10 households; since then nothing is withheld in any district and a small area carries a "Small area: N people" note instead (Paul's 2026-10-08 ruling). The release validates the faithful display of stored data, not the vendor's accuracy or the models' predictive accuracy.
 - **Privacy rule for this vault.** Notes here hold aggregates and paths only: no voter rows, names, addresses, voter IDs or other row-level personal data. The app itself shows all data (O-9) and runs locally.
 
 ## Paul's definitions
@@ -103,6 +107,7 @@ From `CONVERSATION_REQUESTS.md` R006-R019 and later rulings (full scoring and gr
 - **Participation Index** = the ten `sai_*` scores (activist, digital reachability, EVAV, EVAV timing, local voter, midterm general, non-presidential primary, off-year general, presidential general, presidential primary turnout).
 - **Overall standing with a candidate** (approved 2026-10-07; applies to OR-05 and CT-01): Credit Union Alignment (industry) 30 / candidate support 25 / participation 25 / sphere of influence 20. A district without a candidate (Colorado) keeps 40 / 35 / 25 unchanged, so Colorado stays byte-identical. The weights live in a versioned per-district copy of the row framework, not in the Terrier app.
 - **Street-plan presets** (names O-6, formulas approved 2026-10-07; s = a person's support chance, p = their voting chance; each preset ranks streets by value per 100 m walked): "Mixed-support streets" = sum over people of (1 - |2s - 1|) x p; "Supporter turnout" = sum over people of s x (1 - p); "Voter identification" = count of people with no clear support signal.
+- **Untapped potential** (Paul's rulings R1-R4 of 2026-10-08, spec approved 2026-10-09, in build; full wording and the reasons on [[2026-10-06-terrier-rulings]]). For each person not already knocked: persuade = (1 - |2s - 1|) x t, remind = s x (1 - t), potential = (wP x persuade + wR x remind) x (1 + wI x i), where s is candidate support on the absolute 0 to 1 scale (undecided 0.5), t is the chance of voting (mean of the five turnout-only participation scores / 100, not a percentile) and i is sphere-of-influence standing (0 to 1). Agent defaults, labelled as defaults in the app: wP = wR = 0.5, wI = 0.5, door target 60, 400 m fallback. It replaces the earlier "Needs a push" definition (which used the support and participation percentiles), so the street-plan preset, the People column, the profile and the printed column all use this one formula.
 - **Sphere of Influence** = 45% giving, 45% volunteering, 10% household (ratified 2026-10-01).
 - **Credit Union Alignment (CUA)** is inferred from exposure to the issues America's Credit Unions advocates on; partisan alignment is observed, not inferred. "Industries" means per-industry alignment like CUA (Paul confirmed 2026-10-06); only CUA exists today (O-12).
 - **Political fields** stay categorical: registration, affiliation and outlook are shown separately, and conflicting or missing answers show as Multiple responses or Unknown, never as a middle position.
@@ -118,7 +123,7 @@ From `CONVERSATION_REQUESTS.md` R006-R019 and later rulings (full scoring and gr
 |---|---|
 | Status | active |
 | Deadline | none set |
-| Progress | CO CD-05 live; OR-05 and CT-01 sources supplied and answered into a config-first design (2026-10-06); blueprint reviewed 2026-10-06 and its three open items approved 2026-10-07; Phase 0 (Colorado baseline gate), Phase 2 (multi-district foundation) and Phase 3 (per-district fill of the blank values) done 2026-10-07; Phase 3b (per-district score stores and area layers) built and smoke-checked for OR-05 and CT-01 on 2026-10-08, with nothing withheld in any district; the nothing-withheld Colorado data is staged and passed its gate, waiting for Paul's swap on 8767 |
+| Progress | CO CD-05 live; OR-05 and CT-01 sources supplied and answered into a config-first design (2026-10-06); blueprint reviewed 2026-10-06 and its three open items approved 2026-10-07; Phase 0 (Colorado baseline gate), Phase 2 (multi-district foundation) and Phase 3 (per-district fill of the blank values) done 2026-10-07; Phase 3b (per-district score stores and area layers) built and smoke-checked for OR-05 and CT-01 on 2026-10-08, with nothing withheld in any district; Paul swapped the nothing-withheld Colorado data live at 19:16 on 2026-10-08 and all three servers (8767, 8775, 8777) were running by 19:30; the Untapped map and one-click walk plan were approved by Paul on 2026-10-09 and are in build |
 
 ### Blueprint review 2026-10-06 (aggregates only)
 
@@ -172,20 +177,33 @@ All paths are in the Terrier root. Change record: `OVERNIGHT_CHANGES_2026-10-07.
 
 - **Two rulings (Paul, 2026-10-08).** (1) "Nothing should ever be withheld": the under-20-people / 10-households area suppression (hatch, empty density, withheld flags) is removed in every district, Colorado included; an area under those lines shows its values with a small-area note, and an area with no registered people is a plain pale fill. (2) Canvass "the people who need a reminder or push": the street-plan preset "Needs a push" is the default for candidate districts (the overall score is unchanged).
 - **Final frameworks pinned.** OR-05 and CT-01 use the 30 / 25 / 25 / 20 overall weights (industry, candidate support, participation, sphere of influence) with no interim note; their freeze hashes are pinned in `tools/area_layers.py` and the pin check passes for both.
-- **Colorado staged, not live.** The nothing-withheld Colorado score store, density file and map bundle were built beside the live files and passed the Colorado gate on a copy: 3,172 areas newly shown, 89 areas with no registered people, 54,045 standings moved in shown areas, 6 summary rows shown; everything else matches the baseline. The earlier gate failure was only SQLite's own planner-statistics table (`sqlite_stat1`), which the gate now accepts. The live files were unchanged by the run. Paul runs the swap (about 10 minutes down; a dry run and a rollback exist).
+- **Colorado staged, not live (superseded the same evening: Paul swapped it live at 19:16, see the next section).** The nothing-withheld Colorado score store, density file and map bundle were built beside the live files and passed the Colorado gate on a copy: 3,172 areas newly shown, 89 areas with no registered people, 54,045 standings moved in shown areas, 6 summary rows shown; everything else matches the baseline. The earlier gate failure was only SQLite's own planner-statistics table (`sqlite_stat1`), which the gate now accepts. The live files were unchanged by the run. Paul runs the swap (about 10 minutes down; a dry run and a rollback exist).
 - **OR-05 and CT-01 built in place** and smoke-checked on a spare port (not the live ports): every area shown (OR-05: 12,070 blocks, 24 empty; CT-01: 8,056 blocks, 16 empty), small blocks carry values (5,013 and 2,213), candidate support layer, density join rates 99.999% and 99.5%, street plan and walk overview working, no summary row suppressed.
 - **Commits.** `d95f9f4` (pins, gate fix, change record) on `claude/walk-list` and `main`, pushed to the private GitHub repo `pjg93-222/Geo`. Tests at that commit: Django 430, tools 88, Colorado gate unit tests 47, all passing.
-- **Left for Paul.** Run the Colorado swap, then start Oregon on 8775 and Connecticut on 8777.
+- **Left for Paul (done the same evening, see the next section).** Run the Colorado swap, then start Oregon on 8775 and Connecticut on 8777.
+
+### Build progress 2026-10-08 evening and 2026-10-09 (aggregates only)
+
+All paths are in the Terrier root. Newest wins over the 2026-10-08 section above.
+
+- **Live in all three districts.** Paul swapped the nothing-withheld Colorado data in at 19:16 on 2026-10-08 (backup under `.local\backups\pre-unmask-20261008T191642`; rollback `_build\swap_co_live.ps1 -Rollback`); the build was complete at 19:30 with Colorado on 8767, OR-05 on 8775 and CT-01 on 8777 all running. OR-05 and CT-01 use the 30 / 25 / 25 / 20 weights with candidate support, "Needs a push" as the default street plan, and every area shown. The Colorado baseline was re-recorded after the swap (`c452df2`) and again after the registration-mix change (`b10a6ab`).
+- **Registration mix by code (`85b5656`, Paul's O-10).** The map side panel lists every party code as itself in every district: D, R and U first, then each other code present, most people first ("W Working Families", "Code T" for an unnamed code, "No code" for blank). Display only: scores, the People filter and the Registration map layer are unchanged.
+- **Connecticut density gap fixed (`09d49be`).** 2,084 people in 344 blocks registered outside the district matched no block, which left 348 blocks, 100 tracts and 3 ZIP codes with people but no density. The old-to-new county-code re-coding is now built from the state block file itself: the join rate went from 0.9955 to 0.99997 and the blocks with people but no density from 348 to 12. Those 12 are 5 blocks with no land (water) and 7 blocks holding 15 people the Connecticut file cannot place (Virginia ids and two region-code mismatches). Oregon and Colorado rebuild byte-identical.
+- **Server crash fixed (`8f50713`).** The Python 3.12 crash with exit code 0xC000070A (the Windows system-information, WMI, query timing out under load) is stopped at the source: `manage.py` switches that query off as its first statement, before Django, pandas and numpy load, so it covers all three servers, the tests and the management commands. A new test fails if the switch-off is lost.
+- **Street planner shipped.** Built in `847f04e` (server) and `2419afc` (screen), commit dates 2026-10-07, and live for OR-05 and CT-01 from 2026-10-08. A Street plan panel ranks an area's road blocks (at least 5 doors, length floored at 50 m) by the value per 100 m walked of a preset ("Mixed-support streets", "Supporter turnout", "Voter identification", later "Needs a push" as the default), with optional density weights; ticked blocks go into the walk list as `spans=` (up to 200 blocks, kept in saved lists); a Print scores box (off by default) adds overall, candidate support and participation to the printed PDF and CSV (Colorado: overall and participation only). Candidate districts only; Colorado answers that no candidate is set. A read-only evaluation found scattered turfs and a percentile standing in for a voting chance, which the Untapped work fixes.
+- **Untapped map and one-click walk plan, in build (2026-10-09).** Paul's rulings R1-R4 of 2026-10-08 (map first, only unworked doors, adjustable list size, shading by potential alone) and the spec built from them were approved by Paul on 2026-10-09. One potential formula replaces "Needs a push" on every surface; the existing Street plan stays, collapsed as "Adjust plan". Colorado has no candidate and gets no layer. Wording, formula and defaults: [[2026-10-06-terrier-rulings]].
+- **Latest commit.** `8f50713` on `claude/walk-list` and `main`, pushed to the private GitHub repo `pjg93-222/Geo`.
+- **Open for Paul.** The primary-mode choice (Default, A, B or C) and how to treat unaffiliated voters per state.
 
 ### Districts
 
 | District | Candidate | Source | Rows | State |
 |---|---|---|---|---|
-| CO CD-05 | (existing Colorado config) | `statara_co_cd005_20260904.csv` | 491,308 | live on 8767 |
-| OR-05 | Janelle Bynum | `Downloads\Janelle Bynum (OR-05).zip` | 562,563 | stores built (386,030 mapped households, 245 precincts, 68 cities) and blanks filled; score store, area layers and density built 2026-10-08 and smoke-checked; server port 8775 assigned, not started; Oregon is all vote-by-mail |
-| CT-01 | Luke Bronin | `Downloads\Luke Bronin (CT-01).zip` | 458,372 | stores built (287,033 households, 134 precincts, 27 towns) and blanks filled; score store, area layers and density built 2026-10-08 and smoke-checked; server port 8777 assigned, not started; primary/general mode is a per-district toggle, never hard-coded |
+| CO CD-05 | (existing Colorado config) | `statara_co_cd005_20260904.csv` | 491,308 | live on 8767; nothing withheld since the swap at 19:16 on 2026-10-08 |
+| OR-05 | Janelle Bynum | `Downloads\Janelle Bynum (OR-05).zip` | 562,563 | stores built (386,030 mapped households, 245 precincts, 68 cities) and blanks filled; score store, area layers and density built 2026-10-08 and smoke-checked; live on 8775 since the evening of 2026-10-08; Oregon is all vote-by-mail |
+| CT-01 | Luke Bronin | `Downloads\Luke Bronin (CT-01).zip` | 458,372 | stores built (287,033 households, 134 precincts, 27 towns) and blanks filled; score store, area layers and density built 2026-10-08 and smoke-checked; live on 8777 since the evening of 2026-10-08 (density gap fixed, `09d49be`); primary/general mode is a per-district toggle, never hard-coded |
 
-Both new files use the same 622-column statara schema as Colorado. Extracted copies are in `Downloads\terrier-sources\` (`statara_or_cd005_20260904.csv`, `statara_ct_cd001_20260904.csv`). Phase 3b (score stores and area layers) is built for both; the remaining Phase 4 features are listed in the action items.
+Both new files use the same 622-column statara schema as Colorado. Extracted copies are in `Downloads\terrier-sources\` (`statara_or_cd005_20260904.csv`, `statara_ct_cd001_20260904.csv`). Phase 3b (score stores and area layers) is built for both and both servers are live; the remaining Phase 4 features are listed in the action items.
 
 ## Action Items
 
@@ -196,12 +214,13 @@ Both new files use the same 622-column statara schema as Colorado. Extracted cop
 | Versioned per-district copy of the Luna model; fill blank sci_* values (Phase 3, bbebf92) | done | | Terrier build lane |
 | Real Oregon and Connecticut mail-ballot and absentee vote codes (O-3) | done | | Terrier build lane |
 | Per-district primary/general race-mode toggle (Phase 4) | todo | | Terrier build lane |
-| Optional scores toggle on the printed walk list, default raw (Phase 4) | todo | | Terrier build lane |
-| Show every party code as itself; impute missing geo-audit values (O-10, O-5) | todo | | Terrier build lane |
+| Optional scores toggle on the printed walk list, default raw (the Print scores box, `2419afc`) | done | | Terrier build lane |
+| Show every party code as itself (done: walk overview `11e3fd5`, side panel Registration mix `85b5656`); impute missing geo-audit values (O-5) and party W neutral lean (still to confirm) | in-progress | | Terrier build lane |
 | Phase 3b: per-district score stores and area layers (built and smoke-checked 2026-10-08) | done | | Terrier build lane |
-| Swap the staged nothing-withheld Colorado data live on 8767, then start the Oregon and Connecticut servers (steps in `_build\FINISH.md`) | todo | | Paul Goff |
-| Phase 4 features: industries, candidate support, density, overlays, street ROI planner, walk-list fields | todo | | Terrier build lane |
-| Approve the primary-mode specification for candidate support | todo | | Paul Goff |
+| Swap the staged nothing-withheld Colorado data live on 8767, then start the Oregon and Connecticut servers (done by Paul at 19:16 on 2026-10-08; all three running by 19:30) | done | | Paul Goff |
+| Phase 4 features: candidate support, density, overlay modes and the street planner with Print scores are built and live for OR-05 and CT-01; industries as configuration remain | in-progress | | Terrier build lane |
+| Untapped map layer and one-click Plan walk list (Paul's rulings R1-R4, spec approved 2026-10-09); tell Paul where to click when live | in-progress | | Terrier build lane |
+| Approve the primary-mode specification for candidate support (choice of Default, A, B or C; unaffiliated voters per state) | todo | | Paul Goff |
 | Define further industries beyond CUA (O-12) | todo | | Paul Goff |
 | Uncertainty ranges on imputed values (O-4b, unanswered, default off) | todo | | Paul Goff |
 
@@ -233,6 +252,7 @@ SORT item.deadline ASC
 - **Where the Terrier brain lives.** Paul ruled on 2026-10-06 that the Terrier brain is subordinate to and subsumed by this vault: vault-native notes (this project note plus the rulings discussion), not a separate Project Brain, and no brainlink configuration for it. Terrier is outside the Melange brain, which holds only the Luna dead end DE-047. On 2026-10-07 Paul asked for the Terrier notes to sit in their own top-level `terrier/` folder, separate from Mentat and Melange and still inside this one vault; the folder holds this note, the rulings and the blueprint note.
 - **Data policy.** O-9: never strip personal data; all data always shown; run on the full data locally; no de-identified Runpod run for this lane. This supersedes, for this lane, the earlier "pod only, de-identified" rule (see the runpod-pod note).
 - **Paul's later rulings of 2026-10-07** (full wording on [[2026-10-06-terrier-rulings]]): one server process per district (CO 8767, OR 8775, CT 8777); walk-list "Abs" wording per state (Oregon: mail ballots, every recorded vote counts; Connecticut: absentee or mail ballots, codes A or M); extra census.gov downloads (state legislative district boundaries and ZIP-code areas for Oregon and Connecticut); the same model types and frozen settings trained on each district's own voters, never Colorado-fitted models; no stress tests on the laptop; blanket permission to keep going overnight, with the changes recorded in `OVERNIGHT_CHANGES_2026-10-07.md` in the Terrier root.
+- **Paul's rulings of 2026-10-08/09** (full wording on [[2026-10-06-terrier-rulings]]): nothing is ever withheld in any district; canvass the people who need a reminder or push, which the Untapped potential formula now defines; the registration mix shows every party code; the repo is the private GitHub repo `pjg93-222/Geo`; lanes work in parallel without waiting; never stress-test the laptop; and the Untapped map and one-click walk plan (R1-R4).
 - **Colorado history.** Synthetic preview (109,150 dummy people) replaced by actual data on 2026-10-01 (branch `codex/terrier-actual-data`); the walk-list feature, refused-mark persistence, deterministic and faster routing and the supervised live server followed through 2026-10-04. Test counts at the last recorded run (2026-10-04, `0c484fb`): 151 frontend unit tests, 311 Django tests, 121 walk tests, all passing.
 
 ## Timeline
@@ -251,7 +271,9 @@ SORT item.deadline ASC
 | 2026-10-07 | Phase 2 done and merged on `claude/walk-list`: OR-05 and CT-01 stores built, header district menu, Colorado gate passed |
 | 2026-10-07 | Phase 3 done (`bbebf92`): blank values filled per district, OR-05 86.64% and CT-01 87.39% right on frozen holdouts; lead's Phase 3b rulings recorded |
 | 2026-10-08 | Paul ruled nothing is ever withheld (all districts, Colorado included) and set "Needs a push" as the default street plan; code pushed to the private GitHub repo `pjg93-222/Geo` |
-| 2026-10-08 | Phase 3b built for OR-05 and CT-01 and smoke-checked; nothing-withheld Colorado data staged and gate passed (`d95f9f4`); the live Colorado swap waits for Paul |
+| 2026-10-08 | Phase 3b built for OR-05 and CT-01 and smoke-checked; nothing-withheld Colorado data staged and gate passed (`d95f9f4`) |
+| 2026-10-08 | Evening: Paul swapped the nothing-withheld Colorado data live (19:16); build complete at 19:30 with Colorado 8767, OR-05 8775 and CT-01 8777 running; registration mix by party code (`85b5656`), Connecticut density gap fixed (`09d49be`), server crash fix (`8f50713`) |
+| 2026-10-09 | Paul approved the spec for the Untapped map layer and one-click Plan walk list (rulings R1-R4); it replaces "Needs a push" with one potential formula and is in build |
 
 ## Focal Points
 
@@ -273,7 +295,7 @@ Every note of this project by type, one line each. All of them sit in the `terri
 
 | Discussion | Relation |
 |---|---|
-| [[2026-10-06-terrier-rulings]] | Paul's three rulings of 2026-10-06 (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle) and his O-1..O-13 answers. |
+| [[2026-10-06-terrier-rulings]] | Paul's three rulings of 2026-10-06 (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle), his O-1..O-13 answers, and his rulings of 2026-10-08/09 (nothing withheld, Needs a push, the Untapped map and one-click walk plan). |
 
 ### Related Projects
 
