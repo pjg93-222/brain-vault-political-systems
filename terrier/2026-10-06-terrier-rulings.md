@@ -1,7 +1,7 @@
 ---
 type: discussion
 title: "Terrier rulings 2026-10-06"
-aliases: ["Terrier rulings 2026-10-06", "Terrier O-1..O-13 answers", "Terrier FLEXIBLE ruling", "Terrier Untapped map rulings R1-R4", "Terrier one-click walk plan", "Terrier Needs a push replaced"]
+aliases: ["Terrier rulings 2026-10-06", "Terrier O-1..O-13 answers", "Terrier FLEXIBLE ruling", "Terrier Untapped map rulings R1-R4", "Terrier one-click walk plan", "Terrier Needs a push replaced", "Terrier chance of voting calibration", "Terrier trimmed one-click list"]
 date: 2026-10-06
 summary: "Paul's rulings of 2026-10-06 for the Terrier multi-district lane (OR-05 Bynum and CT-01 Bronin added to Colorado CD-05): the system must be FLEXIBLE with config and toggles over hard-coding, the Terrier brain exists only as vault notes, race mode is a per-district primary/general toggle, plus his answers O-1 to O-13 on support model, vote codes, imputation, preset names, personal-data handling, party codes, scoring layers, industries and source extraction."
 conclusions:
@@ -16,14 +16,15 @@ conclusions:
   - "Lead's Phase 3b rulings (2026-10-07, the coordinating session's, not Paul's): the interim overall score is published and labelled; voters without registration geography get a residence block marked as estimated; party W gets a neutral lean like other minor parties."
   - "Rulings of 2026-10-08 (Paul): nothing is ever withheld in any district, Colorado included; canvass the people who need a reminder or push, not the sure voters who are sure to vote our way; the registration mix shows every party code as itself; the Terrier repo is the private GitHub repo pjg93-222/Geo; lanes work in parallel with no waiting; never stress-test the laptop."
   - "Untapped map and one-click walk plan (Paul's rulings R1-R4 of 2026-10-08, spec approved by Paul 2026-10-09): R1 map first, highlighting the most untapped areas (total untapped people); R2 doors already worked in saved walk lists are excluded; R3 walk-list size is adjustable; R4 shading is by total untapped potential alone. The potential formula (persuade, remind, influence) replaces the earlier 'Needs a push' definition everywhere. The weights 0.5 / 0.5 / 0.5, the 60-door target and the 400 m fallback are agent defaults, not Paul's rulings."
-  - "Untapped live and lead rulings 2026-10-09 (agent defaults, Paul may overrule): the map and one-click walk plan went live on OR-05 (8775) and CT-01 (8777). The lead set i = soi_pct/100; t from the spec's five turnout scores; Not home and Moved count as knocked; the mixed and turnout presets kept, now using t; the people list, profile and print use the default weights; State House and Senate shaded on the map; Colorado gets a one-line note; the API keys are named undecided and supporter. Open for Paul: (a) calibrate t per district against people's own record; (b) trim the one-click turf to the door count."
+  - "Untapped live and lead rulings 2026-10-09 (agent defaults, Paul may overrule): the map and one-click walk plan went live on OR-05 (8775) and CT-01 (8777). The lead set i = soi_pct/100; t from the spec's five turnout scores; Not home and Moved count as knocked; the mixed and turnout presets kept, now using t; the people list, profile and print use the default weights; State House and Senate shaded on the map; Colorado gets a one-line note; the API keys are named undecided and supporter. Its two open questions were answered yes by Paul on 2026-10-09 (next conclusion)."
+  - "Paul's answers and the calibration ruling, afternoon of 2026-10-09: Paul answered '1. Yes 2. Yes' to the two Untapped questions. (a) Calibrate the chance of voting against people's own general-election record, per district, keeping the ranking. (b) Trim the one-click list to the door count, keeping the doors with the most untapped people from the last block. Lead ruling (agent default, Paul may overrule): the calibration method is a monotone curve (weighted pool-adjacent-violators on the vote rate by distinct turnout-score value, linearly interpolated), which replaced a logistic fit that missed the lowest deciles by up to 0.12 (Oregon) and 0.075 (Connecticut). Live on OR-05 and CT-01 (Terrier commit 0f89362); results table in the body."
 action_items:
   - "Terrier build lane: build to these rulings, config-first, with Colorado CD-05 outputs byte-identical by default (owner: Terrier build lane)."
   - "Approve the primary-mode specification for candidate support before it is built (owner: Paul)."
   - "Define any further industries beyond CUA when wanted; the config supports them (owner: Paul)."
   - "Answer O-4b (uncertainty ranges on imputed values) if wanted; default stays off (owner: Paul)."
   - "Built and live 2026-10-09 on OR-05 and CT-01 (Terrier commit 6f56299): the Untapped map layer and the one-click 'Plan walk list' to R1-R4 and the potential formula; where to click is on the terrier note (owner: Terrier build lane)."
-  - "Answer two Untapped questions: (a) calibrate t per district against people's own general-election record, ranking unchanged; (b) trim the one-click turf to the door count (owner: Paul)."
+  - "Done: Paul answered yes to both Untapped questions on 2026-10-09 ('1. Yes 2. Yes'): (a) calibrate t per district against people's own general-election record, ranking unchanged; (b) trim the one-click list to the door count; built and live the same afternoon, Terrier commit 0f89362 (owner: Paul)."
 related_topics: []
 related_actors: []
 related_people: []
@@ -140,7 +141,7 @@ Paul's rulings R1 to R4, relayed by his "Model decisions and configuration quest
 One formula on every surface (map, list, people, profile, print, street plan). For each person not already knocked (R2):
 
 - **s**, candidate support on the absolute 0 to 1 scale, not the district percentile; undecided counts as 0.5.
-- **t**, chance of voting: the mean of the five turnout-only participation (`sai_*`) scores divided by 100, not a percentile. When those are missing it falls back to the person's own general-election record (the share of eligible general elections voted).
+- **t**, chance of voting: the mean of the five turnout-only participation (`sai_*`) scores divided by 100, not a percentile. When those are missing it falls back to the person's own general-election record (the share of eligible general elections voted). From the afternoon of 2026-10-09 it is calibrated per district against that record, ranking unchanged (see "Open for Paul", resolved).
 - **i**, sphere-of-influence standing from 0 to 1 (the existing measure: 45% giving, 45% volunteering, 10% household).
 - **persuade** = (1 - |2s - 1|) x t. Highest for people near the middle who will vote.
 - **remind** = s x (1 - t). Highest for likely supporters who may not vote.
@@ -179,7 +180,7 @@ Opus designs and reviews; Sonnet 5.5 builds. The live Colorado API check stays b
 Decisions the lead (the coordinating session) made while building the Untapped layer. They are the lead's, not Paul's, and Paul can overturn any of them.
 
 - **i, influence standing.** `soi_pct / 100`, the existing sphere-of-influence standing on the 0 to 1 scale.
-- **t, chance of voting.** Taken from the spec's five turnout scores (their mean divided by 100), as in the formula above.
+- **t, chance of voting.** Taken from the spec's five turnout scores (their mean divided by 100), as in the formula above; calibrated per district later the same day (see "Lead ruling 2026-10-09 afternoon").
 - **Knocked.** Not home and Moved results count as knocked, like the other recorded results, so those doors are excluded under R2.
 - **Presets.** The "Mixed-support streets" and "Supporter turnout" presets are kept, now using t as the voting chance.
 - **People list, profile and print.** They use the default weights (wP = wR = 0.5, wI = 0.5).
@@ -187,17 +188,32 @@ Decisions the lead (the coordinating session) made while building the Untapped l
 - **Colorado.** It gets the one-line note "Untapped needs a candidate" instead of a layer.
 - **API keys.** The keys are named `undecided` and `supporter`.
 
-### Open for Paul
+### Open for Paul (both resolved 2026-10-09)
 
-Both came out of the live check on 2026-10-09 (counts only, no voter rows).
+Both came out of the live check on 2026-10-09 (counts only, no voter rows). Paul, 2026-10-09: "1. Yes 2. Yes". Both were built and went live that afternoon on OR-05 and CT-01 (Terrier commit `0f89362`; commits and live checks on [[terrier]]).
 
-- **(a) t is not a calibrated chance of voting.** The district mean t is 0.55 in OR against 0.84 from people's own general-election record, and people with t between 0.2 and 0.4 voted in 74% of the general elections they were eligible for. The agent proposed calibrating t per district against people's own record; the ranking would not change.
-- **(b) The one-click turf is often a single large block.** It is 144 to 200 doors, because blocks are indivisible. The agent can offer trimming to the door count.
+- **(a) t is not a calibrated chance of voting. Resolved: yes, calibrate.** The district mean t is 0.55 in OR against 0.84 from people's own general-election record, and people with t between 0.2 and 0.4 voted in 74% of the general elections they were eligible for. The agent proposed calibrating t per district against people's own record; the ranking would not change. Paul: calibrate the chance of voting against people's own general-election record, per district, keeping the ranking.
+- **(b) The one-click turf is often a single large block. Resolved: yes, trim.** It is 144 to 200 doors, because blocks are indivisible. The agent offered trimming to the door count. Paul: trim the one-click list to the door count, keeping the doors with the most untapped people from the last block. Example: OR precinct 41005-421 has a 429-door block, and 60 doors are kept.
+
+### Lead ruling 2026-10-09 afternoon: how t is calibrated (agent default, Paul may overrule)
+
+The lead chose the calibration method. It is a monotone curve: weighted pool-adjacent-violators on the vote rate by distinct turnout-score value, linearly interpolated between the points. It replaced a logistic fit that missed the lowest deciles by up to 0.12 (Oregon) and 0.075 (Connecticut). Results, counts and rates only ("worst decile miss" is the largest gap between the calibrated chance and the actual vote rate in any decile):
+
+| | Oregon | Connecticut |
+|---|---|---|
+| fit people | 522,171 | 441,359 |
+| points | 142 | 156 |
+| mean chance of voting | 0.58 → 0.83 | 0.48 → 0.74 |
+| record (people's own general-election record) | 0.89 | 0.78 |
+| worst decile miss | 0.016 | 0.012 |
+| split-half worst miss | 0.016 | 0.008 |
+
+The ranking is unchanged, with no decreasing pair. Ties occur only in the flat ends, which hold 0.01% (OR) and 0.07% (CT) of people.
 
 ## Action Items
 
 - [x] Build the Untapped map layer and the one-click "Plan walk list" to R1-R4 and the potential formula — owner: Terrier build lane (live 2026-10-09 on OR-05 and CT-01, commit `6f56299`; where to click is on [[terrier]])
-- [ ] Answer the two Untapped questions above: calibrate t per district against people's own record (ranking unchanged), and trim the one-click turf to the door count — owner: Paul Goff
+- [x] Answer the two Untapped questions: calibrate t per district against people's own record (ranking unchanged), and trim the one-click list to the door count — owner: Paul Goff (answered "1. Yes 2. Yes" on 2026-10-09; built and live that afternoon, commit `0f89362`)
 - [ ] Build config-first to these rulings; Colorado CD-05 outputs stay byte-identical by default — owner: Terrier build lane
 - [ ] Approve the primary-mode specification for candidate support (Phase 4) — owner: Paul Goff
 - [ ] Define any further industries beyond CUA when wanted — owner: Paul Goff
