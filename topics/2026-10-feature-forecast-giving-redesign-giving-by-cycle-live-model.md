@@ -9,8 +9,8 @@ actors: []
 objective: ""
 created_at: 2026-10-08
 sources: []
-updated_at: 2026-10-08
-updated_by: "records-repair@agent"
+updated_at: 2026-10-09
+updated_by: "records-sync@agent"
 tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"]
 part_of: "[[2026-09-feature-forecast-giving-redesign]]"
 ---
@@ -50,7 +50,13 @@ The 2026-10-05/06 Codex-lane rulings never reached the brain until 2026-10-07. T
 ## Open items
 
 - ~~The D-118 uplift size or basis: the data show no real-dollar uplift (u = 0.9812; break-even 1.0853); Paul must rule a size, a nominal basis or another population.~~ Ruled 2026-10-08: +9% (D-119). The build (CHANGES.md entry 15) and the 8806 restart are pending.
-- Real versus nominal dollars: D-092 says projections are shown in nominal dollars by default; the page shows real 2025 dollars; Paul never answered (open question in the brain STATE).
+- ~~Real versus nominal dollars: D-092 says projections are shown in nominal dollars by default; the page shows real 2025 dollars; Paul never answered (open question in the brain STATE).~~ — superseded 2026-10-09: nominal dollars by default, with a 2025-dollars toggle (D-127; Paul, 2026-10-09: "4. Align").
 - Nothing is committed. `giving_forecast.py` now imports the untracked `pac_giving_forecast` module, so that module and the PAC bundle files must be committed with the change.
 - Banks general giving may be low (see the pace remark above); the model refuses as-of dates from 2027-01-01 until the anchors are rebuilt.
 - Full rollback of the 2026-10-07 publish: `apply3\APPLY.ps1 -Rollback`, restore the page from `backups\3\js\`, press Restart in the console (CHANGES.md, "Full rollback").
+
+## History
+
+| Date | Event |
+|---|---|
+| 2026-10-09 | **Telecom live:** general giving and company PACs forecast (Mentat `6acedee5d`, `20d6e532f`; company PACs on the 8-PAC Telecom cohort, D-126); pointer `refit-20261009-e1ba2513-74f0e0a24143`; party split on the pooled share models (`6d03e4b4d`, D-125). **Nominal default:** Giving by cycle charts show nominal dollars with a 2025-dollars toggle (`1855e6511`, D-127); the open dollar-basis question is closed. **Lobbying card:** the forecast lobbying chart is Melange's stacked LDA card (`b54728386`, wording fix `cde5eb4c0`). Calendar fix `d28db1234` (D-128). Console 8806 restarted 02:56 (pid 63180). Brain STATE commit `8911c02fd`; D-125 to D-128 recorded. |
