@@ -16,6 +16,8 @@ export const VAULT = resolve(process.env.BRAIN_VAULT || join(RECALL_DIR, "..", "
 export const VAULT_IS_OVERRIDE = Boolean(process.env.BRAIN_VAULT);
 export const BEDROCK_DIR = join(VAULT, ".bedrock");
 export const INDEX_FILE = join(BEDROCK_DIR, "recall-index.json");
+/** per-note parse cache behind the index, so a rebuild re-parses only changed notes (indexer.ts); derived, gitignored */
+export const INDEX_CACHE_FILE = join(BEDROCK_DIR, "recall-cache.json");
 /** marker of a recall-path rebuild that ran out of time: {sig, at}; recall then serves the old index for a while */
 export const INDEX_SLOW_FILE = join(BEDROCK_DIR, "recall", "index-slow.json");
 export const HOOK_LOG = join(BEDROCK_DIR, "recall", "hook.log");
