@@ -12,7 +12,7 @@ memory_type: "feedback"
 updates:
   - "[[2026-07-working-agreement-agent-orchestration-rules]]"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/reasoning-in-fable-code-in-opus-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-09", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\reasoning-in-fable-code-in-opus-2026-09-16.md", sha256: "2826150922f0e2b944603f19a90369600c54d94502249457ee9e1106fa0d3ef3"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/reasoning-in-fable-code-in-opus-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-09", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\reasoning-in-fable-code-in-opus-2026-09-16.md", sha256: "6c9b10f5ad8186c055f428afec788c227e42a5760704dcb101c4e649a9b77a00"}
 updated_at: 2026-10-09
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -65,6 +65,7 @@ Paul, verbatim: "Model Usage: 1. Reasoning: Opus 5.5 2. Code Building: Sonnet 5.
 - Classification (tagging entities and rows), document creation (briefs, rosters, extraction documents) and data extraction (pulling or aggregating data from existing files): Haiku agents (model 'haiku'). There is no Haiku 5.5; the newest Haiku is 4.5, and model 'haiku' resolves to it. I told Paul this on 2026-10-07 and he still asked for "Haiku 5.5, Extra", so use 'haiku'.
 - This lifts the old "never Haiku" bar for extraction and document work only. Code still goes to Sonnet. Verify Haiku output before reporting it (`scout-census-traps-2026-09-13`): on 2026-10-07 a Haiku extraction run computed an outside-firm-income column wrongly.
 **UPDATE 2026-10-09 (forecasting-section session):** Paul reaffirmed it: "Code in Sonnet, extract in Haiku, reason in Opus". ~~There is no Haiku 5.5~~ — superseded 2026-10-09: the environment now lists Haiku 5.5 (claude-haiku-5-5), and model 'haiku' is the extraction tier.
+**UPDATE 2026-10-09 evening (research-vault session) — VERIFICATION moves to Haiku:** mid-run Paul asked "Why are these being verified in opus? they should be verified in haiku 5.5 which is faster, don't kill those ones let them finish on the one they are currently on, the rest should be haiku". So adversarial verify passes (re-check a claim against source text and code) run on model 'haiku'; Opus keeps reasoning/relating/synthesis. Changing tiers mid-run: never kill in-flight agents; drain them, then route the remainder. He also wants maximum parallelism ("as fast as this computer can handle") — see `research-vault-lane-2026-10-09` for the sharding mechanics.
 Related: `review-in-fable-directive-2026-09-16`, `go-faster-directive-2026-09-16`,
 `mentat-failings-lane-s4-2026-09-16`.
 

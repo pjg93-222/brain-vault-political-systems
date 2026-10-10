@@ -10,9 +10,9 @@ actors: []
 objective: "Add Oregon OR-05 (Bynum) and Connecticut CT-01 (Bronin) to the Colorado CD-05 Terrier app as a config-first multi-district system, with Colorado outputs unchanged by default"
 created_at: 2026-10-06
 sources:
-  - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/outputs/cu-geography-v3/TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", type: "markdown", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\outputs\\cu-geography-v3\\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", sha256: "c76fe5e7a9d5d4c1e89696daf9f5905b809f6fbce9bed4a09b7d0c3eed94d48f"}
-  - {url: "file:///C:/Users/pgoff/Documents/Codex/2026-09-27/we-are-going-to-have-an/work/geography/DOWNLOADS_2026-10-07.json", type: "json", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Codex\\2026-09-27\\we-are-going-to-have-an\\work\\geography\\DOWNLOADS_2026-10-07.json", sha256: "0b902c237c8394bffd0f72aa3ce55cb30c6af6db0f44388f58be6714c5168a7d"}
-updated_at: 2026-10-07
+  - {url: "file:///C:/Users/pgoff/Documents/Terrier/outputs/cu-geography-v3/TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", type: "markdown", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Terrier\\outputs\\cu-geography-v3\\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", sha256: "c76fe5e7a9d5d4c1e89696daf9f5905b809f6fbce9bed4a09b7d0c3eed94d48f"}
+  - {url: "file:///C:/Users/pgoff/Documents/Terrier/work/geography/DOWNLOADS_2026-10-07.json", type: "json", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Terrier\\work\\geography\\DOWNLOADS_2026-10-07.json", sha256: "0b902c237c8394bffd0f72aa3ce55cb30c6af6db0f44388f58be6714c5168a7d"}
+updated_at: 2026-10-09
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
@@ -24,8 +24,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Context
 
 - **What the blueprint is.** A build prompt and plan written 2026-10-06 for a fresh coding session, reviewed the same day against the Terrier code (commit `8c7a817`), the Luna model stages and the two source files before any construction. It holds the verified context, Paul's binding rulings, phases 0 to 6, a "Review 2026-10-06" fact-check table with the changes it caused, and, at the bottom, "Answered by Paul 2026-10-07" and "Open for Paul".
-- **Where it lives.** `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography-v3\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md`, in the Terrier root, next to the handoff files. It was edited in place by the review session, so the file, not this note, is the plan of record.
-- **How it relates to the other notes.** Paul's rulings and his O-1..O-13 answers are on [[2026-10-06-terrier-rulings]]; the app, its definitions and the status are on [[terrier]]. This note records the plan and the build status only.
+- **Where it lives.** `C:\Users\pgoff\Documents\Terrier\outputs\cu-geography-v3\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md`, in the Terrier root, next to the handoff files. It was edited in place by the review session, so the file, not this note, is the plan of record.
+- **How it relates to the other notes.** Paul's rulings and his O-1..O-13 answers are on [[2026-10-06-terrier-rulings]]; the app, its definitions and the status are on [[terrier]]. This note records the plan and the build status only. The dated, later build record is on [[2026-10-06-terrier-build-progress]].
 - **Privacy.** This note holds aggregates and paths only: no voter rows, names, addresses or voter IDs. The plan itself keeps all data shown in the app and run locally (O-9).
 
 ## Phases
@@ -88,19 +88,19 @@ Aggregates only. Commit hashes are in the Terrier repo (branch `claude/walk-list
 - **Incidents.** A Python 3.12 crash with exit code 0xC000070A (a Windows WMI query timing out under load; worked around). The laptop went to sleep with the lid closed and froze a step; step timeouts now count awake time only.
 - **Census TIGER 2025 downloads: done.** First 14 files (255,206,750 bytes), census.gov only: for Oregon the block file, the district boundary file and six county road files; for Connecticut the block file, the district boundary file and four planning-region road files. Paul then approved state legislative district boundaries (lower and upper chambers) and ZIP-code areas for both states: 6 more files, 20 in all (280,939,810 bytes). Manifest: `work\geography\DOWNLOADS_2026-10-07.json` (path below).
 - **Python environment:** rebuild approved; its outcome is not recorded here.
-- **Source files:** both extracted to `Downloads\terrier-sources\`.
+- **Source files:** both extracted to `Downloads\terrier-sources\` (now under `Documents\Terrier\sources\`; the Downloads path is a junction to it).
 - **Change record:** every overnight change is logged in `OVERNIGHT_CHANGES_2026-10-07.md` in the Terrier root.
 - **Not started:** the row-framework copies (Phase 3b) and every Phase 4 lane.
 
 ## Sources and inputs
 
-All paths are on Paul's workstation. `<outputs>` is `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs`.
+All paths are on Paul's workstation. `<outputs>` is `C:\Users\pgoff\Documents\Terrier\outputs` (the project folder moved there from `Documents\Codex\2026-09-27\we-are-going-to-have-an` on 2026-10-09; that old path is now a junction to it).
 
 - **Blueprint:** `<outputs>\cu-geography-v3\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md`.
 - **Handoff files** (Terrier root `<outputs>\cu-geography-v3\`): `WALK_LIST_HANDOFF_2026-10-02.md`, `TERRIER_HANDOFF_2026-10-01.md`, `ACTUAL_DATA_HANDOFF_2026-10-01.md`, `DATA_AUDIT_2026-10-01.md`. Paul's request log with every definition: `<outputs>\cu-geography\CONVERSATION_REQUESTS.md`.
 - **Source files as supplied:** Colorado `C:\Users\pgoff\Downloads\statara_co_cd005_20260904.csv` (491,308 rows); Oregon `C:\Users\pgoff\Downloads\Janelle Bynum (OR-05).zip`; Connecticut `C:\Users\pgoff\Downloads\Luke Bronin (CT-01).zip`.
-- **Extracted source files:** `C:\Users\pgoff\Downloads\terrier-sources\statara_or_cd005_20260904.csv` (562,563 rows, 1,074,173,461 bytes) and `C:\Users\pgoff\Downloads\terrier-sources\statara_ct_cd001_20260904.csv` (458,372 rows, 831,664,503 bytes). Same 622-column schema as Colorado.
-- **Census manifest:** `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\work\geography\DOWNLOADS_2026-10-07.json` (20 entries: file, source URL, size in bytes, download time; the first 14 are the block, boundary and road files, the last 6 the state legislative and ZIP-code area files). The downloaded files are under `work\geography\or-05\` and `work\geography\ct-01\` (`blocks.zip`, `districts.zip`, `roads\`).
+- **Extracted source files:** `C:\Users\pgoff\Documents\Terrier\sources\statara_or_cd005_20260904.csv` (562,563 rows, 1,074,173,461 bytes) and `C:\Users\pgoff\Documents\Terrier\sources\statara_ct_cd001_20260904.csv` (458,372 rows, 831,664,503 bytes). Same 622-column schema as Colorado.
+- **Census manifest:** `C:\Users\pgoff\Documents\Terrier\work\geography\DOWNLOADS_2026-10-07.json` (20 entries: file, source URL, size in bytes, download time; the first 14 are the block, boundary and road files, the last 6 the state legislative and ZIP-code area files). The downloaded files are under `work\geography\or-05\` and `work\geography\ct-01\` (`blocks.zip`, `districts.zip`, `roads\`).
 
 ## People Involved
 
