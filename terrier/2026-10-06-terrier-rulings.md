@@ -1,7 +1,7 @@
 ---
 type: discussion
 title: "Terrier rulings 2026-10-06"
-aliases: ["Terrier rulings 2026-10-06", "Terrier O-1..O-13 answers", "Terrier FLEXIBLE ruling", "Terrier Untapped map rulings R1-R4", "Terrier one-click walk plan", "Terrier Needs a push replaced", "Terrier chance of voting calibration", "Terrier trimmed one-click list"]
+aliases: ["Terrier rulings 2026-10-06", "Terrier O-1..O-13 answers", "Terrier FLEXIBLE ruling", "Terrier Untapped map rulings R1-R4", "Terrier one-click walk plan", "Terrier Needs a push replaced", "Terrier chance of voting calibration", "Terrier trimmed one-click list", "Terrier one-click 1,000 door cap", "Terrier folder Documents\\Terrier"]
 date: 2026-10-06
 summary: "Paul's rulings of 2026-10-06 for the Terrier multi-district lane (OR-05 and CT-01 added to Colorado CD-05): the system must be FLEXIBLE with config and toggles over hard-coding, the Terrier brain exists only as vault notes, race mode is a per-district primary/general toggle, plus his answers O-1 to O-13 on support model, vote codes, imputation, preset names, personal-data handling, party codes, scoring layers, industries and source extraction."
 conclusions:
@@ -18,13 +18,17 @@ conclusions:
   - "Untapped map and one-click walk plan (Paul's rulings R1-R4 of 2026-10-08, spec approved by Paul 2026-10-09): R1 map first, highlighting the most untapped areas (total untapped people); R2 doors already worked in saved walk lists are excluded; R3 walk-list size is adjustable; R4 shading is by total untapped potential alone. The potential formula (persuade, remind, influence) replaces the earlier 'Needs a push' definition everywhere. The weights 0.5 / 0.5 / 0.5, the 60-door target and the 400 m fallback are agent defaults, not Paul's rulings."
   - "Untapped live and lead rulings 2026-10-09 (agent defaults, Paul may overrule): the map and one-click walk plan went live on OR-05 (8775) and CT-01 (8777). The lead set i = soi_pct/100; t from the spec's five turnout scores; Not home and Moved count as knocked; the mixed and turnout presets kept, now using t; the people list, profile and print use the default weights; State House and Senate shaded on the map; Colorado gets a one-line note; the API keys are named undecided and supporter. Its two open questions were answered yes by Paul on 2026-10-09 (next conclusion)."
   - "Paul's answers and the calibration ruling, afternoon of 2026-10-09: Paul answered '1. Yes 2. Yes' to the two Untapped questions. (a) Calibrate the chance of voting against people's own general-election record, per district, keeping the ranking. (b) Trim the one-click list to the door count, keeping the doors with the most untapped people from the last block. Lead ruling (agent default, Paul may overrule): the calibration method is a monotone curve (weighted pool-adjacent-violators on the vote rate by distinct turnout-score value, linearly interpolated), which replaced a logistic fit that missed the lowest deciles by up to 0.12 (Oregon) and 0.075 (Connecticut). Live on OR-05 and CT-01 (Terrier commit 0f89362); results table in the body."
+  - "Paul's rulings of the evening of 2026-10-09: (1) one-click walk lists are capped at about 1,000 houses, for one-click lists only (the door ask is now 1 to 1,000; whole-precinct and street-pick lists keep a separate 10,000-voter size ceiling, set by the lead as an agent default); (2) the Terrier project lives in the folder Documents\\Terrier (moved from the old Codex path, which stays as a junction). Earlier that day Paul also said yes to windowless Oregon and Connecticut servers (14:01) and to watchdogs for both (15:40). Details in the body."
+  - "Paul's rulings of the late evening of 2026-10-09: (1) the People Political outlook column collapses neighbouring vendor flags: set vendor flags forming one contiguous run on the five-point scale that does not extend to both sides of middle collapse to the run's most extreme flag (very plus somewhat conservative shows as very conservative; somewhat conservative plus middle as somewhat conservative; middle plus somewhat liberal plus very liberal as very liberal); runs spanning both sides of middle, or with gaps, stay Multiple responses; no flags stays Unknown (computed at serve time by scoresdb.collapse_outlook, commit 40fa052, no store change); (2) the slow first Colorado whole-precinct list after a restart (about 6 s, cold score lookups) is accepted as fine, with no work planned."
 action_items:
   - "Terrier build lane: build to these rulings, config-first, with Colorado CD-05 outputs byte-identical by default (owner: Terrier build lane)."
   - "Approve the primary-mode specification for candidate support before it is built (owner: Paul)."
   - "Define any further industries beyond CUA when wanted; the config supports them (owner: Paul)."
   - "Answer O-4b (uncertainty ranges on imputed values) if wanted; default stays off (owner: Paul)."
   - "Built and live 2026-10-09 on OR-05 and CT-01 (Terrier commit 6f56299): the Untapped map layer and the one-click 'Plan walk list' to R1-R4 and the potential formula; where to click is on the terrier note (owner: Terrier build lane)."
+  - "Done 2026-10-09 evening: the one-click door ask now runs 1 to 1,000 doors (Paul's cap of about 1,000 houses) and the project folder is Documents\\Terrier; commits and the rest of the evening work are on the terrier note (owner: Terrier build lane)."
   - "Done: Paul answered yes to both Untapped questions on 2026-10-09 ('1. Yes 2. Yes'): (a) calibrate t per district against people's own general-election record, ranking unchanged; (b) trim the one-click list to the door count; built and live the same afternoon, Terrier commit 0f89362 (owner: Paul)."
+  - "Done 2026-10-09 late evening: Paul ruled that the People Political outlook column collapses neighbouring vendor flags (commit 40fa052); the slow first Colorado list after a restart is accepted (owner: Paul)."
 related_topics: []
 related_actors: []
 related_people: []
@@ -78,7 +82,7 @@ tags: ["type/discussion", "domain/data"]
 - **O-10.** Lumping party W (Working Families) into "other" "makes no sense": show every party code as itself (agent reading, confirmed by Paul 2026-10-06).
 - **O-11.** The numeric partisan and support layers are kept in the overall score.
 - **O-12.** There is no second industry; the question is dropped. Only Credit Union Alignment (CUA) exists; the config supports more when Paul defines them.
-- **O-13.** Yes: extract the two source zips to `Downloads\terrier-sources\`.
+- **O-13.** Yes: extract the two source zips to `Downloads\terrier-sources\` (on 2026-10-09 the extracted CSVs moved to `Documents\Terrier\sources\`, and `Downloads\terrier-sources` is now a junction to it).
 
 ### Dead ends
 
@@ -105,7 +109,7 @@ Paul's rulings given after the answers above, while the build was running (Phase
 - **Extra census.gov downloads approved.** On top of the 2025 block, boundary and road files: state legislative district boundaries (lower and upper chambers) for Oregon and Connecticut, and ZIP-code areas (ZCTA) for both. census.gov only. The download manifest grew from 14 to 20 files (280,939,810 bytes).
 - **Model ruling.** The Oregon and Connecticut blank values are filled by the same RF/KNN model types with the same frozen settings, trained on each district's own voters. Colorado-fitted models are never used for them.
 - **No stress tests on the laptop.** No load experiments or launch stress tests on Paul's laptop; crashes are diagnosed from logs only.
-- **Overnight blanket permission.** While Paul is away, the build may proceed on any task in this lane that would otherwise need his guidance, as long as every change is recorded in plain English. The change record is `OVERNIGHT_CHANGES_2026-10-07.md` in the Terrier repo root (`C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography-v3`).
+- **Overnight blanket permission.** While Paul is away, the build may proceed on any task in this lane that would otherwise need his guidance, as long as every change is recorded in plain English. The change record is `OVERNIGHT_CHANGES_2026-10-07.md` in the Terrier repo root (`C:\Users\pgoff\Documents\Terrier\outputs\cu-geography-v3`, its path since the 2026-10-09 folder move).
 ### Lead's Phase 3b rulings (2026-10-07)
 
 These are the lead's (the coordinating session's) rulings on build details, not Paul's; Paul can overturn any of them.
@@ -210,10 +214,39 @@ The lead chose the calibration method. It is a monotone curve: weighted pool-adj
 
 The ranking is unchanged, with no decreasing pair. Ties occur only in the flat ends, which hold 0.01% (OR) and 0.07% (CT) of people.
 
+## Rulings of 2026-10-09 evening: walk-list cap and folder
+
+Paul's requests in a Claude session on the evening of 2026-10-09, with the two afternoon approvals that led into them. Aggregates only; the build record and commits are on [[terrier]].
+
+- **One-click walk lists are capped at about 1,000 houses.** Paul: cap about 1,000 houses, one-click lists only. The one-click door ask is now 1 to 1,000 doors (it was 10-500). Why it came up: a separate 1,500-voter limit refused 183 of 326 Colorado precincts, 128 of 245 Oregon and 122 of 134 Connecticut, which is the main reason the walk-list generator "didn't work". The limit is now only a 10,000-voter size ceiling on whole-precinct and street-pick lists (agent default, Paul may overrule); the scores lookup batch stays at 1,500 ids and the routing guards are unchanged.
+- **The Terrier folder is `C:\Users\pgoff\Documents\Terrier`.** The project moved there from the old Codex path, which now points to it as a directory junction so old paths, worktree links and Codex threads still resolve. The voter CSVs and the walk-list outputs moved with it (`sources\` and `walk-lists\`), and the old Downloads folder for the sources is a junction too, because the build tools hardcode that path.
+- **Windowless servers and watchdogs (approvals earlier on 2026-10-09).** At 14:01 Paul said yes to starting the Oregon and Connecticut servers with no console window, after closing the Windows Terminal that hosted them had stopped both; at 15:40 he said yes to watchdogs for both. Standing operating rule: restart Colorado only with `Stop-TerrierServer.ps1` then `Start-Terrier.ps1 -NoBrowser`, never with the district scripts (the cookie prefix and the watchdog would race); Oregon and Connecticut use `Start-`, `Watch-` and `Stop-DistrictServer.ps1` with `-District or-05|ct-01 -Port 8775|8777`, which refuse Colorado.
+- **Open.** No canvass results are recorded yet (0 rows in all three districts). The outlook question that stood open here was ruled later that night (next section).
+
+## Rulings of 2026-10-09 late evening: Political outlook and the slow first list
+
+Paul's answers in a Claude session late on 2026-10-09, closing two items left open by the evening. Aggregates only; the build record is on [[2026-10-06-terrier-build-progress]].
+
+- **The People "Political outlook" column collapses neighbouring vendor flags.** Rule: set vendor flags forming one contiguous run on the five-point scale that does not extend to both sides of middle collapse to the run's most extreme flag (very plus somewhat conservative shows as very conservative; somewhat conservative plus middle as somewhat conservative; middle plus somewhat liberal plus very liberal as very liberal); runs spanning both sides of middle, or with gaps, stay Multiple responses; no flags stays Unknown. Why: the column skewed "Somewhat conservative" and most of its "Multiple responses" people carried neighbouring flags (74,822 down to 2,522 in CO-05). The remaining skew toward "Somewhat conservative" is in the vendor data, not the app. It is computed at serve time by `scoresdb.collapse_outlook`, cached per server process, with no change to any store (commit `40fa052`, pushed and live on all three servers). This settles the open question above, which had held the column unchanged.
+
+| CO-05 outlook | Before | After |
+|---|---|---|
+| Very conservative | 6,958 | 41,853 |
+| Somewhat conservative | 77,948 | 87,341 |
+| Middle | 48,354 | 48,354 |
+| Somewhat liberal | 21,584 | 23,937 |
+| Very liberal | 16,242 | 41,901 |
+| Multiple responses | 74,822 | 2,522 |
+| Unknown | 245,400 | 245,400 |
+
+- **The slow first Colorado list is accepted.** The first whole-precinct walk list after a restart takes about 6 s (cold score lookups); Paul said that is fine, so no work is planned.
+
 ## Action Items
 
 - [x] Build the Untapped map layer and the one-click "Plan walk list" to R1-R4 and the potential formula — owner: Terrier build lane (live 2026-10-09 on OR-05 and CT-01, commit `6f56299`; where to click is on [[terrier]])
 - [x] Answer the two Untapped questions: calibrate t per district against people's own record (ranking unchanged), and trim the one-click list to the door count — owner: Paul Goff (answered "1. Yes 2. Yes" on 2026-10-09; built and live that afternoon, commit `0f89362`)
+- [x] Raise the walk-list limits and move the project folder to Documents\Terrier — owner: Terrier build lane (done 2026-10-09 evening, Terrier commit `aa21b52`)
+- [x] Decide the People Political outlook column — owner: Paul Goff (ruled 2026-10-09 late evening: collapse neighbouring vendor flags, commit `40fa052`)
 - [ ] Build config-first to these rulings; Colorado CD-05 outputs stay byte-identical by default — owner: Terrier build lane
 - [ ] Approve the primary-mode specification for candidate support (Phase 4) — owner: Paul Goff
 - [ ] Define any further industries beyond CUA when wanted — owner: Paul Goff
@@ -222,3 +255,4 @@ The ranking is unchanged, with no decreasing pair. Ties occur only in the flat e
 ## Related Projects
 
 - [[terrier]]
+- [[2026-10-06-terrier-build-progress]] — the dated build record that carries these rulings into the Terrier app.
