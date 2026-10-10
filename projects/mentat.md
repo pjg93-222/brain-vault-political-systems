@@ -240,3 +240,7 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - [[forecast-redesign]] - Mentat forecasting program: 09-29 model audit, F2 'Giving by cycle' redesign with integrity reconciliation, PAC accuracy attempt 2 (HOLD).
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
+
+## Research evidence
+
+The literature behind this system lives in the research vault: [[research-vault]]. Evidence hubs: [mentat-fec-attribution](obsidian://open?vault=research&file=systems%2Fmentat-fec-attribution) · [mentat-giving-forecast](obsidian://open?vault=research&file=systems%2Fmentat-giving-forecast) · [mentat-sector-growth-study](obsidian://open?vault=research&file=systems%2Fmentat-sector-growth-study).
