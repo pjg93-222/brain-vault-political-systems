@@ -315,3 +315,7 @@ Every note of this project by type, one line each. All of them sit in the `terri
 ### Related Projects
 
 - [[cu-geography]] — the project Terrier was renamed from: the Luna RF/KNN completion model (closed 2026-09-30) and the CU row framework that feed the app.
+
+## Research evidence
+
+The literature behind this system lives in the research vault: [[research-vault]]. Evidence hubs: [terrier-row-scoring](obsidian://open?vault=research&file=systems%2Fterrier-row-scoring) · [terrier-imputation](obsidian://open?vault=research&file=systems%2Fterrier-imputation) · [terrier-canvass](obsidian://open?vault=research&file=systems%2Fterrier-canvass).
