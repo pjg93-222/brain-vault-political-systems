@@ -382,3 +382,7 @@ Every note of this project by type, one line each; parts follow their parent.
 ### Related Projects
 
 - [[mentat]] - R+API pipeline plus local Python console collecting FEC contributions for Paul's company roster into workbooks.
+
+## Research evidence
+
+The literature behind this system lives in the research vault: [[research-vault]]. Evidence hubs: [moneyball-rank-pillars](obsidian://open?vault=research&file=systems%2Fmoneyball-rank-pillars) · [melange-influence-engine](obsidian://open?vault=research&file=systems%2Fmelange-influence-engine) · [melange-pathfinding](obsidian://open?vault=research&file=systems%2Fmelange-pathfinding) · [melange-sna](obsidian://open?vault=research&file=systems%2Fmelange-sna) · [melange-allocation](obsidian://open?vault=research&file=systems%2Fmelange-allocation) · [melange-stance](obsidian://open?vault=research&file=systems%2Fmelange-stance) · [melange-psychometrics](obsidian://open?vault=research&file=systems%2Fmelange-psychometrics) · [melange-lobbying](obsidian://open?vault=research&file=systems%2Fmelange-lobbying).

@@ -1,0 +1,49 @@
+---
+type: project
+name: "Research vault (empirical backbone)"
+aliases: ["Research vault", "research-vault"]
+description: "Separate Obsidian vault at C:/Users/pgoff/Documents/research (Bedrock name 'research') holding Paul's annotated bibliographies verbatim, his research notes and the academic literature on his computer, each paper related to the system components it supports or contradicts. This brain vault is the map of the systems; the research vault is the evidence behind them."
+status: "active"
+brain: "melange-systems-brain"
+deadline: ""
+progress: "Built 2026-10-09/10: 167 paper notes, 4 research notes (sector-growth study), 20 system hubs (127 components, one section each with an evidence table), 14 theme syntheses, framework.md. Bearing status VERIFIED / VERIFIED-SOFTENED / UNVERIFIED per DE-062. Local git only (latest 419854b); PDFs, extracted text and pipeline state are git-ignored."
+blockers: []
+action_items: []
+tags: [project, research]
+---
+
+# Research vault
+
+The research vault is a second Obsidian vault beside this one. Open it: [research vault index](obsidian://open?vault=research&file=index). It links back here through `obsidian://open?vault=brain` URIs in every system hub.
+
+- [Paul's research framework](obsidian://open?vault=research&file=framework): how the literature underwrites each system, revised against the evidence.
+- [Missing works](obsidian://open?vault=research&file=missing) and [excluded files](obsidian://open?vault=research&file=excluded).
+- Vault contract for future sessions: `C:/Users/pgoff/Documents/research/CLAUDE.md`.
+
+## System evidence hubs
+
+Melange and Moneyball ([[melange-systems]]):
+- [Rank pillars](obsidian://open?vault=research&file=systems%2Fmoneyball-rank-pillars)
+- [Stance and alignment](obsidian://open?vault=research&file=systems%2Fmelange-stance)
+- [Labels and tiers](obsidian://open?vault=research&file=systems%2Fmelange-labels-and-tiers)
+- [Influence engine](obsidian://open?vault=research&file=systems%2Fmelange-influence-engine)
+- [Allocation](obsidian://open?vault=research&file=systems%2Fmelange-allocation)
+- [Path-finding](obsidian://open?vault=research&file=systems%2Fmelange-pathfinding)
+- [Social-network analysis](obsidian://open?vault=research&file=systems%2Fmelange-sna)
+- [Staffer network](obsidian://open?vault=research&file=systems%2Fmelange-staffer-network)
+- [Psychometrics](obsidian://open?vault=research&file=systems%2Fmelange-psychometrics)
+- [Audio and speech](obsidian://open?vault=research&file=systems%2Fmelange-audio-speech)
+- [Legislative data](obsidian://open?vault=research&file=systems%2Fmelange-legislative-data)
+- [Lobbying](obsidian://open?vault=research&file=systems%2Fmelange-lobbying)
+- [Demographic potential](obsidian://open?vault=research&file=systems%2Fmelange-demographic-potential)
+- [Validation protocol](obsidian://open?vault=research&file=systems%2Fmelange-validation)
+
+Mentat ([[mentat]]):
+- [FEC attribution](obsidian://open?vault=research&file=systems%2Fmentat-fec-attribution)
+- [Giving forecast](obsidian://open?vault=research&file=systems%2Fmentat-giving-forecast)
+- [Sector-growth study](obsidian://open?vault=research&file=systems%2Fmentat-sector-growth-study)
+
+Terrier ([[terrier]]):
+- [Row scoring](obsidian://open?vault=research&file=systems%2Fterrier-row-scoring)
+- [Imputation](obsidian://open?vault=research&file=systems%2Fterrier-imputation)
+- [Canvass](obsidian://open?vault=research&file=systems%2Fterrier-canvass)
