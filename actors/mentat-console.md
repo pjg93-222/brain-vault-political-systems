@@ -25,14 +25,16 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-system-debug-lane-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-system-debug-lane-2026-09-13.md", sha256: "e7118cf1a8941e3e3c3ba7bdbc7b658fb29d27a2ebd23994606aa2370858b990"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-chart-studio-2026-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-chart-studio-2026-09.md", sha256: "9a490f3f4b6f52f21581ea4df39b58ea59cc6035c9aa0186f3a65ab7e940695d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-forecast-overnight-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-forecast-overnight-2026-10-07.md", sha256: "4c3528dd1b1ce0c6fbd7d34f2725488a37b08c2579b38811b962e58cd6b9abd7"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/data-presentation-fixes-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\data-presentation-fixes-2026-10-09.md", sha256: "7eead6e6d9bb735454e3f7e594d690ff3205a807b8938cf9be2c08fd7520733d"}
 doc_sources:
   - path: "C:\\Users\\pgoff\\Mentat\\PRODUCT.md"
     sha256: "586e0f53c31a5beb168521db257fdbbb1e0c08bc67513e7ec75316b56f67efc3"
     as_of: "2026-09-20"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-08
-updated_by: "records-repair@agent"
+updated_at: 2026-10-10
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/frontend"]
 ---
 
@@ -151,6 +153,22 @@ Confirmed by Paul during the Impeccable initialization on 2026-09-20 as the prod
 - **Console is local-only** (no internet map tiles) by design; NOT D-050 (D-050 = the report-build network-fallback decision; corrected 2026-09-24).
 - **Other-lane ownership (2026-09-24 peer split):** the Melange UI peer owned `graph.js`, `graph.css`, `graph_data.py`, `scope.js`, `comparison.js`, `chart-studio*.js/.css`, `contribution-*.js`, `chart-math.js`, `grouped-chart.js`, `charts.js`, polish/theme CSS, `page_shell`/`page_head`, `cross-reference.*`, `evidence.js/.css`, `evidence-map.js`, `graph-explorer.js`, `insights.js/.css`, `app.js`, `coverage-view.js`, templates, `index.html` (r5 = `20f3805e8`); the load-time lane owned the cache/prewarm/server files.
 
+## Data-presentation fixes (2026-10-09; memory `data-presentation-fixes-2026-10-09`; added 2026-10-10)
+
+Paul's brief: "Fix data-presentation bugs in two local repos", FIX 1-7. State at close (the Melange side, whose LIVE tree now sits on `claude/lda-series-fixes-20261009`, is in the Melange live-tree branch-state part):
+- **Mentat:** PR https://github.com/pjg93-222/Melange/pull/4 MERGED into `codex/mentat-crypto` as `111c417e7` (`a11e8b186` fixes, `cb0d4fb48` the parallel session's LD-2 quarter rule, `9a13f5057` Conduit in R/builder plus leftovers). The Mentat checkout is back on `codex/mentat-crypto`. Consoles restarted by hand on this code: 8806 pid 32616, 8807 pid 38192 (base Python312, not venv, as before).
+- **Rulings (Paul, 2026-10-09):** ActBlue C00401224 / WinRed C00694323 = "Conduit" category (the console relabels at read time; future workbooks get their own Conduit row/channel: "Add a Conduit row"). "Leave the books as they are": six served books built before 2026-09-08 (Telecom, Credit Arms, Credit Union, Crypto, Fintech, P&C) still say Super PAC in their Excel cells. "keep the dark slate colour" = #1f242b. LDA `through_quarter` counts a quarter only once its LD-2 deadline has passed by the producer's sweep date (`fullscope_receipts.json`).
+- **Acceptance confirmed on screen:** Telecom 2025 $102.4M in-house / $37.0M outside-firm fees, "2025: 24 organizations · 532 named lobbyists"; Conduit/ACTBLUE $1,594,803.86, Super PAC $50,202.51, total $7,256,093.45; Comcast 2025-26 "77% of FEC-reported records"; downstream title + direct amounts (Hagerty $349,744 reached · $100 direct once FIX 6 traces transfers); transfer note "first 10,000 of 230,075 rows"; Telecom own ratio ×1.44.
+- **Why the books stay:** the served Telecom book is the 2026-07-29 build made before `4f6a6f564` moved conduits to Carey; rebuilding would move totals under newer rules and stop the forecast (anchor_stale), so Paul kept the books.
+- **How to apply:**
+  - Editing `app/contribution_semantics.py` makes running consoles refuse queries ("Field definitions changed") until restart. Editing `contribution_data.py` changes the facts-store token and rebuilds every industry's store: avoid it.
+  - Static JS/CSS ETags are latched until restart (browsers get 304s), so restart after asset edits.
+  - Audited transfer paths feed the Graph only (`report_transfers(audited=True)`); Flow is unchanged by design.
+  - `fec/deploy_lobby_pages.ps1` is restored; `-SkipLedger` now forces the ledger rebuild off.
+  - `tools/verify_repaired_reports.py` now expects Conduit, so books built before this ruling fail it by design.
+  - Republishing any book stops its forecast until the console index and the anchors are rebuilt.
+- Related memories: `mentat-lda-deadline-rule-2026-10-09` (the LD-2 rule, in the Giving Forecast pipeline actor), `bug-report-regressions-six-fixed-2026-10-09`, `mentat-pdf-export-and-worksheet-cache-2026-10-08`, `dont-be-jumpy-removing-money-2026-09-26`, `live-tree-branch-state-2026-07-14`.
+
 ## History
 
 | Date | Event |
@@ -169,7 +187,7 @@ Confirmed by Paul during the Impeccable initialization on 2026-09-20 as the prod
 | 2026-09-26 | All build lanes done, six-commit kit `814667ee8`..`fadd2c751`, afternoon rulings H1-H3/S1-S2, commits C7-C9 |
 | 2026-09-27 | Fidelity 54% -> 88%, money revert `7a31f8ae2`, load-time fix `6225e6756`, UI fixes `762eea6ce` + `533b4033e` |
 | 2026-10-07 | Giving by cycle view: Board A layout built (no Calculate button, IBIS growth defaults); the cycle-aware 50/50 model published and applied (pointer switched 17:38:26Z); 8806 restarted with the console's own Restart button at 14:10 (pid 32372) and 15:19 (pid 58720, page fix and the `growth_basis` stale-page guard). Uncommitted (see [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]]) |
-| 2026-10-08 | Company PACs on the PAC panel's nowcast (D-116) and credit-union company PACs on the panel's 16 PACs (D-117); 8806 restarted at 11:46 (pid 65296) and 12:36 (pid 27944, the current listener). Uncommitted |
+| 2026-10-08 | Company PACs on the PAC panel's nowcast (D-116) and credit-union company PACs on the panel's 16 PACs (D-117); 8806 restarted at 11:46 (pid 65296) and 12:36 (pid 27944, the current listener). Uncommitted. Superseded (added 2026-10-10, memory `mentat-forecast-overnight-2026-10-07`): committed and pushed on `codex/mentat-crypto` later on 2026-10-08; as of 2026-10-09 ~15:05 the calculator is live on 8806 (restarted 2026-10-09 02:56, pid 63180). |
 
 ## Related Actors
 

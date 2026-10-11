@@ -196,6 +196,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-09-feature-mentat-console-ui-chart-studio]] | part: Chart Studio v1 on the Mentat console (2026-09-11), its… |
 | [[2026-09-feature-mentat-console-ui-cleanup-and-polish]] | part: The Mentat console UI clean-up lane UI1 (2026-09-17) and… |
 | [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] | part: The Mentat console load-time and FEC-link lane and the… |
+| [[2026-09-feature-mentat-console-ui-figure-export-and-worksheet-cache]] | part: The Mentat console lane of 2026-10-08: one-click figure… |
 | [[2026-09-feature-mentat-failings-pac-evidence]] | Mentat failings lanes S2-S8 (street columns, PAC evidence, industry addressing, URL scope, panes, categories, map) + PAC map audit. |
 | [[2026-09-feature-mentat-failings-pac-evidence-street-columns-addressing-navigation]] | part: Mentat failings lanes S2, S4 and S5 of 2026-09-16/17… |
 | [[2026-09-feature-mentat-failings-pac-evidence-pac-evidence-ingestion]] | part: Mentat failings lane S3 of 2026-09-16/17: ingesting PAC… |
