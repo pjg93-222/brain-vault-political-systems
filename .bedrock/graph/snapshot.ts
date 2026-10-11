@@ -28,7 +28,16 @@
 // parts and the forecast topic's four lane sections to four topic parts, so +7 nodes (concept 22 -> 25, topic 137 -> 141); +15 links,
 // every one a new pair with a new part (each part with its parent and its home project, plus the sibling pair of the Luna-and-PAC
 // cases part and the look-ledger part); the pair single-look-holdout-discipline <-> its look-ledger part went from 5 to 4 mentions,
-// because Case 5's link to the look ledger moved with Case 5; +41 mentions in all; the doc_sources and Path J edits are plain text.
+// because Case 5's link to the look ledger moved with Case 5; +41 mentions in all; the doc_sources and Path J edits are plain text;
+// now 243 / 666 / 2399, re-pinned by the fleeting pass of 2026-10-10 (branch fleeting-pass-2026-10-10; ledger
+// .bedrock/reorg/ledger/fleeting-2026-10-10.md) from its own export. The pins had not been moved by the merges between 2026-10-05
+// and 2026-10-10 (brainlink, Terrier, research vault): the HEAD export (993b85b) already failed 7 assertions, with 238 curated notes
+// (discussion 11, project 7, topic 145), 655 links and 2368 mentions among them, plus 30 tracked fleeting notes (31 links, 52
+// mentions). This pass deleted the 30 fleeting notes (-30 nodes, -31 links, -52 mentions) and added 5 topic parts (the orchestration
+// rules split and four new parts): +5 nodes (topic 145 -> 150), +11 links, all new pairs with a new part (each part with its hub and
+// its home project; the orchestration part with its hub, codex-executor and metaloop), +34 mentions; three pairs changed weight:
+// orchestration rules <-> codex-executor 8 -> 5 and <-> metaloop 6 -> 5 (their mentions moved to the part with the lane laws), and
+// terrier-build-progress <-> terrier 11 -> 12 (its new details section links the terrier hub once).
 // It proves that a change to the tooling did not change what
 // the page shows. It is deliberately NOT run by the watcher: adding, removing or re-linking a note makes it fail, which is
 // the point of a snapshot. When the vault has legitimately grown, update SNAPSHOT below (a Phase 2 fix round re-pins it
@@ -40,10 +49,10 @@ import { DEFAULT_OUT, argValue } from "./common.ts";
 import { gate, extractData } from "./checks.ts";
 
 const SNAPSHOT = {
-  nodes: 229,
-  links: 633,
-  mentions: 2255,
-  types: { actor: 49, concept: 25, discussion: 9, person: 1, project: 4, topic: 141, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
+  nodes: 243,
+  links: 666,
+  mentions: 2399,
+  types: { actor: 49, concept: 25, discussion: 11, person: 1, project: 7, topic: 150, team: 0, fleeting: 0, other: 0 } as Record<string, number>,
 };
 
 const FILE = argValue("--file") ?? DEFAULT_OUT;

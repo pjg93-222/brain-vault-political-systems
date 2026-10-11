@@ -16,7 +16,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-uncommitted-reconcile-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-uncommitted-reconcile-2026-09-18.md", sha256: "a35561613ba5e4bd3ee27565ed8e97717aa311f7d0c0d9ac708dd549b1a3cf3b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-console-startup-hang-2026-09-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-console-startup-hang-2026-09-18.md", sha256: "64f937877616a1ec94000d791831999bba8f53fab41a80e28b8a26a2dce04a9d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-tidy-workbook-lane-2026-09-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-tidy-workbook-lane-2026-09-14.md", sha256: "677e56dbeec24480b98de0f8d6e355e198c46cbc0c12604b717e6c5ded4b5a5f"}
-updated_at: 2026-10-04
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-edit-from-worktree-session-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-edit-from-worktree-session-2026-10-08.md", sha256: "3548fbf1e7e11fe66d09b3e9dad2c5881e6bdf45b1613574201e096fd065f9a1"}
+updated_at: 2026-10-10
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 ---
@@ -62,6 +63,7 @@ Dated correction (2026-10-04, fleeting pass; source `mentat-github-migration-202
 | 2026-09-19 | Second pass (8 commits `193337707`..`a6c3129d8`), then close-out ("Finish the still-open items and push to the mirror"): final HEAD `59a87a70b`, 38 commits; mirror sha-identical for `codex/mentat-crypto` and `main`. |
 | 2026-10-02/03 | Live Mentat tree pushed to github.com/pjg93-222/Melange (private) on `claude/mentat-migration-onto-main`, tip `28c27a47` (19 plumbing-built commits on origin main `ce213058`); PR to main still unopened ("we can do it later"); superseded by the next row. |
 | 2026-10-03 | PR opened from the built-in browser after Paul signed in to GitHub there himself: `https://github.com/pjg93-222/Melange/pull/2` (base `claude/melange-math-eval-skill-18e907`, head `claude/mentat-migration-onto-main`); MERGED the same day at Paul's request (merge commit `54433266`, the 19 commits kept); the head branch was then deleted on origin, and at Paul's request so were `claude/melange-math-eval-skill-18e907-4d54uu` and the partial ref `claude/mentat-github-migration-b06195`. |
+| 2026-10-08/09 | (Added 2026-10-10.) Editing the live tree from a worktree session: Paul chose "Shell git apply" for the figure-strip fix (2026-10-08); on 2026-10-09 the LDA deadline rule (`cb0d4fb48`) was applied the same way with `git -c core.autocrlf=false apply` (see the editing-route section below). |
 
 ## Decisions
 
@@ -206,6 +208,23 @@ Paul (2026-09-14, `/ecc:design-system`): the published `Credit Union Industry Sp
 - **CLEANUP (Paul, 2026-09-15 evening):** the 13 lane backups (`*.bak-20260914-tidy`, `*.bak-20260915-fix1`) and the dry-run scratch folder (516 MB) are DELETED; the 117 other lanes' `.bak` files untouched. Rollback for the four deferred uncommitted files is now `git apply -R <P2|P5|P6c|P7b>` from the packet (`audits\mentat_tidy_workbook_20260914\patches`), no `.bak` route.
 - **Open for Paul (proposal section 7):** cache-hit rerun policy; 6th arg vs env var; Data book in the picker; `funding_cohorts` +2 fields; `recipient_locations` grain; `Transfer Paths` cap; console follow-ups (% of total, `keys?` regex, verified source on the Data book); bridge flag punctuation.
 - Related: `mentat-chart-studio-2026-09`, `mentat-system-debug-lane-2026-09-13`, `mentat-pipeline-2026-07-18`, `ask-before-substantive-changes`, `verify-dont-infer-completion-2026-08-04`.
+
+## Editing the live tree from a worktree session (2026-10-08/09; source `mentat-edit-from-worktree-session-2026-10-08`, modified 2026-10-09; added 2026-10-10)
+
+- `C:\Users\pgoff\Mentat` is the live console tree: branch `codex/mentat-crypto`, serving 8806, and a linked worktree of the Melange Systems repo. When a session runs in a `.claude\worktrees\...` checkout, a PreToolUse guard refuses Edit/Write there. `request_directory` does not lift it, and `change_directory` is refused. Earlier in the same session edits did go through, so the guard can appear mid-session after a restart.
+- **Why:** on 2026-10-08 Paul chose "Shell git apply" for the figure-strip fix. A later follow-up write without fresh approval was blocked by the auto-mode classifier, and Paul then approved it explicitly ("go ahead, apply it, commit and push").
+- **How to apply:**
+  1. Ask Paul before each such change; approval is per change, not standing.
+  2. Build the patch from scratch copies with `git diff --no-index` and fix the headers to `a/mentat/...`.
+  3. Run `git apply --check`, then `git -C C:\Users\pgoff\Mentat apply`.
+  4. Under `core.autocrlf=true`, git apply rewrites LF working files as CRLF. Restore each file's original line endings with a byte-exact node script, not MSYS grep, which hides CR.
+  5. Commit only your own paths with `git commit -F msg -- <paths>`, because other sessions commit in the same tree.
+  6. Push with `git push origin HEAD:refs/heads/codex/mentat-crypto` (no upstream is set).
+- **2026-10-09 update (LDA deadline rule, commit `cb0d4fb48`):**
+  - The live tree's branch was then `claude/mentat-data-presentation-fixes-20261009`, not `codex/mentat-crypto`, so check `git branch --show-current` before you push.
+  - `git -c core.autocrlf=false apply` kept both the CRLF and the LF files byte-exact. `cmp` against the tested scratch copies confirmed it, so step 4's restore was not needed.
+  - Before applying, check that the live files are byte-equal to the patch base (`cmp`) and clean (`git status --short -- <paths>`).
+- Related memories: `mentat-studio-members-and-figure-strip-2026-10-08` (recorded in the console UI part on figure export and the worksheet cache), `ask-before-substantive-changes`.
 
 ## Contradictions noted and how they were resolved
 

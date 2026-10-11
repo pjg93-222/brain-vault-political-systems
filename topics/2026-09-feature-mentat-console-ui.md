@@ -17,8 +17,10 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-ui-polish-lane-2026-09-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-ui-polish-lane-2026-09-19.md", sha256: "4ab047cb8beff6649e358757945e1b2c878bad97d0dbbb7e569a0b231dab46f2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-ui-cleanup-lane-2026-09-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-ui-cleanup-lane-2026-09-17.md", sha256: "d1f1a2be93d4d7e2dccd65dd3a218ecc59886eda0c1703ce063196c7071a5a23"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-chart-studio-2026-09.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-chart-studio-2026-09.md", sha256: "9a490f3f4b6f52f21581ea4df39b58ea59cc6035c9aa0186f3a65ab7e940695d"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pdf-export-and-worksheet-cache-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pdf-export-and-worksheet-cache-2026-10-08.md", sha256: "e15296e09b9f319075ca6816fca7c3371c39f8af6a748e71e923b6e3148aafa7"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-studio-members-and-figure-strip-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-studio-members-and-figure-strip-2026-10-08.md", sha256: "e9b8bbe651456e15b71ef4439315da6cf8ab376797f6b7e0e656ea5e9987ce0f"}
+updated_at: 2026-10-10
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 ---
 
@@ -31,6 +33,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 - [[2026-09-feature-mentat-console-ui-chart-studio]] — Chart Studio v1 on the Mentat console (2026-09-11), its review and P1 fixes, and the Chart Studio fields lane of 2026-09-12.
 - [[2026-09-feature-mentat-console-ui-cleanup-and-polish]] — The Mentat console UI clean-up lane UI1 (2026-09-17) and the polish lane (2026-09-19), with its board-driven spec changes, commits and traps.
 - [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] — The Mentat console load-time and FEC-link lane and the Graph UI quirks and colouring lane, both of 2026-09-24.
+- [[2026-09-feature-mentat-console-ui-figure-export-and-worksheet-cache]] — The Mentat console lane of 2026-10-08: one-click figure export (first PDF, then PNG), the worksheet response cache and single-scan fixes for Chart Studio latency, the uncapped Chart Studio members() list and the figure export button strip.
 
 ## Context
 

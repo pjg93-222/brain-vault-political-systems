@@ -8,8 +8,9 @@ people: []
 actors: []
 objective: ""
 created_at: 2026-10-07
-sources: []
-updated_at: 2026-10-09
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-multidistrict-lane-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-multidistrict-lane-2026-10-06.md", sha256: "bebd31824eaf01aaa7aa52d0657acc6354f575065238162e9755f0f9ee94847b"}
+updated_at: 2026-10-10
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "category/feature", "domain/data"]
 part_of: "[[terrier]]"
@@ -119,3 +120,10 @@ Paul's answers in a Claude session late on 2026-10-09; the rulings are on [[2026
 - **Worktrees disposed.** The `cu-geography-v3-csv-guard` worktree and the locked agent worktree were removed together with their branches (both fully merged and clean). Only the main checkout remains. The older branches `claude/contacts-csv-guard`, `claude/criteria-csv-guard`, `claude/summaries-csv-guard` and `codex/terrier*` are untouched.
 - **Live.** All three servers (CO 8767, OR-05 8775, CT-01 8777) were restarted on `40fa052` and the frontend dist was rebuilt from it. The live Colorado CD-05 People API outlook totals match the counts above exactly (very conservative 41,853; somewhat conservative 87,341; middle 48,354; somewhat liberal 23,937; very liberal 41,901; and 247,922 in its Unknown bucket, which equals Unknown 245,400 plus Multiple responses 2,522).
 - **Open.** Paul's primary-mode choice (Default, A, B or C) and how to treat unaffiliated voters per state.
+
+### Details from the lane memory not recorded above (added 2026-10-10; memory `terrier-multidistrict-lane-2026-10-06`, aggregates only)
+
+- **Phase 3 refit speed.** The per-district refit was sped up with RF `n_jobs=4`, proven to give identical trees.
+- **First GitHub push.** `claude/walk-list` was first pushed to the private repo on 2026-10-08 at `1ab8d2c`, after a full-history privacy scan (clean). At that time the remote `main` was a one-commit "# Geo" placeholder, not force-pushed (ask Paul); it was later fast-forwarded with `claude/walk-list` (Pushes, above).
+- **Street plan evaluation (2026-10-08, read-only).** Before the Untapped build, the existing Street plan (`847f04e`/`2419afc`, a hidden collapsed panel on OR 8775 and CT 8777) was evaluated: its arithmetic was exact, but turfs were scattered and its old p was a percentile, not a chance of voting (KILLED by a second reader). The build then went to the construction (fork) session.
+- **Windowless start.** The first hidden-window launcher, `start_district.ps1`, used `Win32_Process.Create` with ShowWindow=0, because CREATE_NO_WINDOW is rejected by WMI (return 21); it refused port 8767. It was renamed to `.old` once the watchdog scripts replaced it. Never restart Colorado through the Oregon and Connecticut scripts (cookie prefix and watchdog race); Colorado's restart rule is under Paths on [[terrier]].

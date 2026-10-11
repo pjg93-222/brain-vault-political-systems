@@ -260,6 +260,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-feature-influence-engine-internals-gate2-and-say-do]] | part: GATE-2 of 2026-07-07/08 in the influence engine, the C… |
 | [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] | part: The ChatGPT laundry-list lane landing of 2026-07-16 and… |
 | [[2026-07-feature-influence-engine-internals-coalition-builder]] | part: The coalition-builder redesign and implementation of… |
+| [[2026-07-feature-influence-engine-internals-competitiveness-multiplier]] | part: The competitiveness multiplier lane of 2026-10-05 to 10-07:… |
 | [[2026-07-feature-legislative-pillar-acu-review]] | Legislative pillar of Melange: legfix history, legfix5 19-category ACU review, effectiveness shadow lane, lobbying forecast |
 | [[2026-07-feature-legislative-pillar-acu-review-letters-and-legfix-1-4]] | part: The legislative pillar from 2026-07-17 to 07-25… |
 | [[2026-07-feature-legislative-pillar-acu-review-legfix5-full-text-and-culling]] | part: legfix5 of 2026-07-27: the six-year full-text collection… |
@@ -277,6 +278,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build]] | part: Industry-tab interactions of 2026-08-03 and the… |
 | [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor]] | part: The per-industry boards tensor work of 2026-08-10/11: the… |
 | [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] | part: The primacy-board methodology lane of 2026-09-19/20: the… |
+| [[2026-07-feature-primacy-and-industry-tier-boards-telecom-industry]] | part: The telecom lane of 2026-10-07: a telecom vs credit-union… |
 | [[2026-07-rfc-melange-architecture-system-of-record]] | Melange refactor, Phase 2 inversion (ranks_python.json authority, NO COM), REORG @a05a8e4, config, manifest mechanics |
 | [[2026-07-rfc-melange-architecture-system-of-record-refactor-and-inversion]] | part: The July 2026 refactor and the inversion of the system of… |
 | [[2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula]] | part: The final Moneyball model configuration as of 2026-06-30… |
@@ -287,6 +289,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity]] | part: The Melange audit runs of 2026-07-04 to 07-10: run 4, runs… |
 | [[2026-07-troubleshooting-melange-audits-and-reviews-data-integrity-and-provenance]] | part: The data-integrity audit of 2026-07-01 on the bills… |
 | [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] | part: Melange reviews of August and September 2026: the… |
+| [[2026-07-troubleshooting-melange-audits-and-reviews-security-baseline]] | part: The read-only security audit of the Melange and Mentat… |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift]] | Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift-branch-state-and-mirror]] | part: The off-box git mirror of the Melange repository and the… |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift-drift-reconcile-eol]] | part: Committed versus live drift of 2026-09-13, the reconcile… |

@@ -204,4 +204,5 @@ Canonical text: `.claude/commands/metaloop.md` section UNIVERSAL LANE LAWS @86ba
 
 - [[2026-07-feature-agent-tooling-stack]] - Codex executor lane, Gemini/Grok lanes, skill library, QME skill, Project Brain, RunPod sessions, GLASS BOX lock hang, Higgsfield trap.
 - [[2026-07-working-agreement-agent-orchestration-rules]] - Orchestration rules: model tiering by scope, inline review, lane laws, GLASS BOX for everything, pod for RAM work, no poll-supervision.
+- [[2026-07-working-agreement-agent-orchestration-rules-lane-laws-and-long-jobs]] - Part of the orchestration rules: ultracode, the universal lane laws, GLASS BOX emission, long jobs, SendMessage and ambiguous company identity.
 - [[2026-07-feature-agent-tooling-stack-codex-executor-lane]] — The Codex executor lane record: how Claude and Codex were wired, the injected-preamble finding, the Gemini and Grok lanes, Paul's amended rules and the integration history.

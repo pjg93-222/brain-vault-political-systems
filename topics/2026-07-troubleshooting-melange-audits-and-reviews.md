@@ -19,7 +19,9 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-audit-run-guardrails.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-audit-run-guardrails.md", sha256: "fc314b1421f29d9b94eda9773284183ca5cefb0951cb6703f08410d424b9e0c0"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-data-audit-2026-07-01.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-data-audit-2026-07-01.md", sha256: "8ab886856dfc515964eb3a3e83ca2a67f3b2673dcd45d46ab061aaaed02e770b"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
-updated_at: 2026-10-04
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/bug-report-regressions-six-fixed-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\bug-report-regressions-six-fixed-2026-10-09.md", sha256: "5340f4c291157dcbdc6733c12d9e2963b935ee0534a98156795d2ff85b93064d"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/security-baseline-lane-2026-10-10.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\security-baseline-lane-2026-10-10.md", sha256: "8dd9ab87391d2cea00a64fb7d185cb4ad64ca88cc45e5add55e26b64d653bdf5"}
+updated_at: 2026-10-10
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 ---
@@ -35,6 +37,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 - [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity]] — The Melange audit runs of 2026-07-04 to 07-10: run 4, runs 5a and 5b, the data-integrity audit, the network, vote and new-cycle audit, and the extensive audit with a true run-through.
 - [[2026-07-troubleshooting-melange-audits-and-reviews-data-integrity-and-provenance]] — The data-integrity audit of 2026-07-01 on the bills archive, the cosponsor network and the stance-stack plan, and the data-rules provenance census of 2026-07-10.
 - [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] — Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19.
+- [[2026-07-troubleshooting-melange-audits-and-reviews-security-baseline]] — The read-only security audit of the Melange and Mentat servers on 2026-10-10, Paul's approval of fixes P1-P9, what landed in each repo, the adversarial campaign and its gap fixes, and the items left for Paul.
 
 ## Context
 
