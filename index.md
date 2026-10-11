@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-486 notes.
+485 notes.
 
 ## Actors (49)
 
@@ -260,7 +260,7 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
-## Fleeting (31)
+## Fleeting (30)
 
 - [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
 - [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
@@ -288,7 +288,6 @@
 - [[melange-systems--reasoning-in-fable-code-in-opus-2026-09-16]] — Paul 2026-09-16 at the start of S5 - "design the route of implementation with Fable and all reasoning is done in Fable, code should always be in Opus or Fable"; model tiering rule for lanes
 - [[melange-systems--research-vault-lane-2026-10-09]] — Research vault (empirical backbone) built 2026-10-09 at C:\Users\pgoff\Documents\research, Bedrock name "research"; how it was built and the workflow lessons (resume cache, 6-agent cap, Haiku JSON)
 - [[melange-systems--search-rulings-before-asking-2026-10-07]] — Before putting ANY model/design question to Paul, search memory + brain D-files/STATE + lane receipts + transcripts for an existing ruling; he answered the forecast rebuild (a)-(d) angrily as already decided
-- [[melange-systems--security-baseline-lane-2026-10-10]] — 2026-10-10 security audit + approved P1-P9 fixes LANDED (Melange 6de7ed180 on main, Mentat ff to 23d33bfe8); open D-items are Paul's
 - [[melange-systems--telecom-industry-lane-2026-10-07]] — Telecom vs credit-union lobbying comparison and the build that adds telecom as a full Melange industry mirroring fintech (brain D-110); state, files and open rulings
 - [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 Bynum + CT-01 Bronin; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
 - [[melange-systems--work-in-parallel-no-waiting-2026-10-08]] — Paul wants lanes and data runs to proceed in parallel; never gate merges on a running job or on other lanes
