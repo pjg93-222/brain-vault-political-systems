@@ -15,7 +15,9 @@ known_issues:
   - "G9 warns that the log-lobbying refit (MAE 4.050) does not beat the naive baseline (3.936)"
   - "Local console restart and Windows scheduled-task registration stay dormant under the owner's pod-only instruction (as of 2026-09-30)"
   - "Dated addition 2026-10-08: the cycle-aware bundle published 2026-10-07 carries five owner waivers (the auto PAC cell, \"1. Yes\", and control_Senate in banks, credit unions, P&C and auto, \"2. Keep senate in\"; the Senate presidential term worsens the Senate backtest error by 1.32-1.76x) and a G9 warning that the House and Senate party-mix models lose to a naive forecast in the chronological backtest"
-sources: []
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-lda-deadline-rule-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-lda-deadline-rule-2026-10-09.md", sha256: "4864a24765314d5cbcc93bf30d11ccee3c3cf9e6df134e270d347cdb29dd1cd8"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/data-presentation-fixes-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\data-presentation-fixes-2026-10-09.md", sha256: "7eead6e6d9bb735454e3f7e594d690ff3205a807b8938cf9be2c08fd7520733d"}
 doc_sources:
   - path: "C:\\Users\\pgoff\\Mentat\\mentat\\forecast\\contracts\\README.md"
     sha256: "b8729f09aa93f3be8575d6458e80630a56358efa120dffcaa1691f40af928210"
@@ -28,8 +30,8 @@ doc_sources:
     as_of: "2026-10-05"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-08
-updated_by: "records-repair@agent"
+updated_at: 2026-10-10
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -80,6 +82,16 @@ Rscript tests/testthat.R                   # parity suite
 - G9 warns that the log-lobbying refit does not beat naive (MAE 4.050 against 3.936); G4 warns that auto lobbying is withheld.
 - Dated correction (2026-10-05, records lane; sources: the Project Brain's DECISIONS.md and the Mentat git log): the frontmatter known issue "stay dormant under the owner's pod-only instruction (as of 2026-09-30)" is superseded. Paul lifted the pod-only rule for this lane on 2026-09-30 late, and brain D-089 records that the Giving Forecast lane works locally and the pod is retired for it. The 2026-10-01 fixes (non-giving exclusion, conditioned remainder, two-design G9, waiver display, G8 on Windows, no summed reference) and the Giving by cycle view are committed in Mentat `f340dc84e` (2026-10-01 13:18 -0400, `codex/mentat-crypto`). The brain holds them as D-090 (non-giving receipts excluded) and D-091 (integrity-ledger fixes), with D-092 (every projected quantity except lobbying accounts for cycle phase, trajectory and inflation) and D-099 (the current-cycle roster PAC projection is a BLEND of the model and this cycle's pace). ~~State as of 2026-10-05 per D-099: no BLEND is published, the live pointer is still `refit-20260930-377f7324-c3f221343515`, and the 2026-10-01 rebuild is scratch only.~~ — superseded 2026-10-08: the cycle-aware rebuild was published 2026-10-07T17:38:26Z (pointer to bundle `d516dba6...`, `refit-20261007-d861bf29-79211caa154e`, brain D-113); the published bundle names BLEND for company PACs, and the console overrides it with the panel nowcast R8 (D-116; D-099 partially amended). This note's description of what the calculator applies is the published v2 bundle's. Whether the console was restarted or the scheduled tasks registered is not recorded here.
 - Parallel runs are bit-identical to serial runs on one platform; across platforms results agree to about 1e-13, so bundles are compared with tolerances, never byte equality.
+- Nothing schedules anchor builds (memory `mentat-lda-deadline-rule-2026-10-09`, checked 2026-10-09): no task or endpoint was found, although the contracts README claims they run "nightly". See the LDA deadline rule section below.
+
+## LDA deadline rule in the anchor snapshot (2026-10-09; memory `mentat-lda-deadline-rule-2026-10-09`; added 2026-10-10)
+
+- **Ruling and rule:** brain D-130 (Paul, 2026-10-09, "go ahead, apply it and commit"); the memory does not restate it, read D-130. Per the data-presentation lane's ruling list, LDA `through_quarter` counts a quarter only once its LD-2 deadline has passed by the producer's sweep date (`fullscope_receipts.json`).
+- **State (2026-10-09):** Mentat commit `cb0d4fb48` on branch `claude/mentat-data-presentation-fixes-20261009` (`C:\Users\pgoff\Mentat`). It is on GitHub: origin's branch head `9a13f5057` (a later commit by another session) contains it, checked 2026-10-09 with ls-remote and merge-base. It touches 5 files: `lda.py`, `build_giving_anchors.py`, the anchors README, `test_giving_anchors.py`, `test_giving_lda_history.py`. 267 tests OK in the live tree. No console restart was needed, because the console never imports `lda.py`. At 14:04 another session switched the live tree to `codex/mentat-crypto` (`111c417e7`); that branch contains `cb0d4fb48`.
+- **Anchor rebuild:** on Paul's ask ("rebuild the anchors"), the anchors were rebuilt at 2026-10-09T18:10:32Z: one full build, exit 0, 265.65 s against 56.55 s for the previous build. The slowdown came from an orphaned grep competing for disk while the laptop ran on battery (Workstation stability incidents, Incident 6). Versus the 04:17Z snapshot only three things changed: `built_at_utc`, `builder.code_sha256` and `credit_unions.mentat.index_token` (the credit-union index file was rewritten at 13:35 -0400 with identical values). The LDA blocks and `lda_nowcast_errors` are identical, all through Q2. The receipt now records `fullscope_receipts.json` as an input (role `lda_receipts`). `--check` reports all fresh. 8806 and 8807 both serve the new snapshot with no restart. The pre-rebuild snapshot and receipt are backed up in session 36662ddb's `scratchpad\anchors-rebuild\before`.
+- **Watch:** Q3's LD-2 deadline is 2026-10-20. Once Melange re-sweeps past that date (`scope_sweeps.2026.sweep_through_dt_posted >= 2026-10-20`), the next anchor build moves every sector to Q3, together with the Q3 nowcast cut and bands.
+- **Why:** an early $0 crypto Q3 filing made the old filings>0 rule report "through Q3" and nowcast with Q3 observed as $0.
+- **How to apply:** if someone asks why a sector shows Q2 while it has Q3 filings, check the sweep date against the deadline first. If `fullscope_receipts.json` is missing, the LDA block is unavailable by design (fail closed). Scratch evidence (patch, `impact.txt`): session 36662ddb's `scratchpad\lda-deadline`. Related memories: `mentat-pdf-export-and-worksheet-cache-2026-10-08` (nowcast rulings), `mentat-edit-from-worktree-session-2026-10-08`, `brainlink-knowledge-system-2026-10-05`.
 
 ## Related Projects
 
