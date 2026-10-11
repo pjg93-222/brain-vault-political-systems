@@ -8,9 +8,10 @@ people: []
 actors: []
 objective: ""
 created_at: 2026-07-14
-sources: []
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/data-presentation-fixes-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\data-presentation-fixes-2026-10-09.md", sha256: "7eead6e6d9bb735454e3f7e594d690ff3205a807b8938cf9be2c08fd7520733d"}
+updated_at: 2026-10-10
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubleshooting"]
 part_of: "[[2026-07-troubleshooting-melange-live-tree-git-drift]]"
 ---
@@ -29,6 +30,12 @@ part_of: "[[2026-07-troubleshooting-melange-live-tree-git-drift]]"
 - How to apply: push mirror main at every merge gate (it is not automatic); a future cloud remote (GitHub) is IMPOSSIBLE without history surgery - tracked blobs up to 2.6 GB (`audits/legfix5` packets) vs the 100 MB limit - so never suggest a plain `git push` to GitHub as a quick option. `gh` CLI is not installed. Mirror path is on the same physical C: drive as the working repo (no protection on its own; Carbonite carries it, see Workstation disk and backup). Links: `universal-lane-laws-2026-08-09`, `live-tree-branch-state-2026-07-14`.
 
 ## Live tree branch state (file `live-tree-branch-state-2026-07-14`, newest entries first)
+
+### 2026-10-09: the LIVE tree is on `claude/lda-series-fixes-20261009`, not main (memory `data-presentation-fixes-2026-10-09`; added 2026-10-10)
+
+- After the 2026-10-09 data-presentation lane the Melange LIVE tree is ON branch `claude/lda-series-fixes-20261009` (`914623152` LDA fix; `8ce0de303` + `d2954e8cf` from the parallel regression-test session; `34710299f` deploy script + filings-page quarter), not main, so other sessions' commits land on it. Local + local mirror only.
+- GitHub can't take it: origin has no main, so a push carries 638 commits / 2.94 GiB with `audits/legfix5` files up to 2.76 GB (over GitHub's 100 MB limit). Paul: "Keep it local". (The live history cannot go to GitHub; the regression-test fixes were rebuilt byte-identical on GitHub's default branch with plumbing instead, then deleted at Paul's word; see the 2026-10-09 regression-test record in the later-reviews part of Melange audits and reviews.)
+- Check the live tree's branch before committing or "shipping" (the 2026-07-14 rule below).
 
 ### 2026-08-14 (later, CPU-pegged incident): worktrees now live OUTSIDE OneDrive at `C:\melange-worktrees\<name>`
 

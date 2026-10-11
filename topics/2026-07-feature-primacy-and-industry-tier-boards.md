@@ -18,7 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/industry-tab-interactions-2026-08-03.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\industry-tab-interactions-2026-08-03.md", sha256: "99b865588083f581d96e89108922f08d1c55ea939c790aa8e288c0f4794a8c62"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/primacy-board-factor-only-2026-07-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\primacy-board-factor-only-2026-07-29.md", sha256: "376b4f95d32a311d495d82c654dee25562da85a42614e936cdafa26d8d2be1fb"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/chatgpt-lane-landed-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\chatgpt-lane-landed-2026-07-16.md", sha256: "a2f66fb2d176812011d8d527d20ea640bceae00eb80a8447a8c21a23f7b82a65"}
-updated_at: 2026-10-04
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/telecom-industry-lane-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\telecom-industry-lane-2026-10-07.md", sha256: "f1866b3d81567206a0f5d8b9c56ff888f5c864bc4f21b5d351ab09454e28ae39"}
+updated_at: 2026-10-10
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
@@ -35,6 +36,7 @@ Dated correction (2026-10-04): until this date the tagline said the board "score
 - [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-build]] — Industry-tab interactions of 2026-08-03 and the per-industry tier boards build of 2026-08-09/10, from the deploy and the valence fix to the BNPL, bank, CU-axis and association-anchor work and Paul's uniformity ruling.
 - [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor]] — The per-industry boards tensor work of 2026-08-10/11: the phase-3 recon and pilot, the positions sweeps, the phase-4 machinery and signed cells, the scope receipt, the rhetoric transfiguration, the backfire and Barr case studies and the responsiveness surface.
 - [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] — The primacy-board methodology lane of 2026-09-19/20: the main point and drafts, Paul's rulings, the dry runs, the council review, METHOD V1 and V1.1, the rejected redesign, the experiments and the live-board augmentation, with its newest-wins contradictions.
+- [[2026-07-feature-primacy-and-industry-tier-boards-telecom-industry]] — The telecom lane of 2026-10-07: a telecom vs credit-union lobbying and political-money comparison, Paul's ruling to integrate Telecom into the Industry tab exactly like fintech (brain D-110, superseding D-109), the landing, the Haiku position labelling and the known risks.
 
 ## Context
 

@@ -18,7 +18,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-receptivity-layer.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-receptivity-layer.md", sha256: "23c09724dffc61151615277b6b40e53a92b5f7a0acad9e6a08993bedaf74bce1"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-salience-sna-2026-07-01.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-salience-sna-2026-07-01.md", sha256: "760abadd0aed0a857fa458c3acba8c0b5a36735658edf5756a69180dca3ef555"}
-updated_at: 2026-10-04
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/competitiveness-multiplier-lane-2026-10-05.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\competitiveness-multiplier-lane-2026-10-05.md", sha256: "3ce429bcd2ab0ec5d8b4600fc321ea02b07250cc3ea72f91226c1719c0f174e3"}
+updated_at: 2026-10-10
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ---
@@ -34,6 +35,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - [[2026-07-feature-influence-engine-internals-gate2-and-say-do]] — GATE-2 of 2026-07-07/08 in the influence engine, the C retest, the improvement rounds, the say-do gate and the pillar weights set in that session.
 - [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] — The ChatGPT laundry-list lane landing of 2026-07-16 and the Sub Layer off-by-one surgery of 2026-07-16/17, as recorded for the influence engine.
 - [[2026-07-feature-influence-engine-internals-coalition-builder]] — The coalition-builder redesign and implementation of 2026-07-30 to 08-01, as recorded for the influence engine.
+- [[2026-07-feature-influence-engine-internals-competitiveness-multiplier]] — The competitiveness multiplier lane of 2026-10-05 to 10-07: Paul's rulings on a PVI-based multiplier c that makes money to members in competitive races count more inside the money curves, its build and go-live behind the COMPET_MULT dial, the QME audit and Paul's follow-up rulings (brain D-104 to D-106).
 
 ## Context
 

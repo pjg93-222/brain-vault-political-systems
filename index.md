@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-485 notes.
+460 notes.
 
 ## Actors (49)
 
@@ -112,7 +112,7 @@
 - [[research-vault]] — Separate Obsidian vault at C:/Users/pgoff/Documents/research (Bedrock name 'research') holding Paul's annotated bibliographies verbatim, his research notes and the academic literature on his computer, each paper related to the system...
 - [[terrier]] — Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root Documents\Terrier\outputs\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people...
 
-## Topics (145)
+## Topics (150)
 
 - [[2026-10-06-terrier-blueprint]] — The written plan for adding Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier app: its phases, what the 2026-10-06 review corrected, Paul's 2026-10-07 answers, how far the build has got and where every input lives.
 - [[2026-10-06-terrier-build-progress]] — The dated build record of the Terrier multi-district lane from 2026-10-07 to the evening of 2026-10-09: phases 0, 2 and 3, the nothing-withheld Colorado swap, the registration mix by party code, the Untapped map and one-click walk plan...
@@ -182,6 +182,7 @@
 - [[2026-07-feature-data-collection-lanes]] — Umbrella topic for the Melange data-collection lanes recorded 2026-07-10 to 2026-09-06: what each lane collects, what shipped, what is still gated on Paul, and the rulings, receipts and traps that must not be re-derived.
 - [[2026-07-feature-influence-engine-internals-chatgpt-lane-and-sublayer-surgery]] — The ChatGPT laundry-list lane landing of 2026-07-16 and the Sub Layer off-by-one surgery of 2026-07-16/17, as recorded for the influence engine.
 - [[2026-07-feature-influence-engine-internals-coalition-builder]] — The coalition-builder redesign and implementation of 2026-07-30 to 08-01, as recorded for the influence engine.
+- [[2026-07-feature-influence-engine-internals-competitiveness-multiplier]] — The competitiveness multiplier lane of 2026-10-05 to 10-07: Paul's rulings on a PVI-based multiplier c that makes money to members in competitive races count more inside the money curves, its build and go-live behind the COMPET_MULT...
 - [[2026-07-feature-influence-engine-internals-gate2-and-say-do]] — GATE-2 of 2026-07-07/08 in the influence engine, the C retest, the improvement rounds, the say-do gate and the pillar weights set in that session.
 - [[2026-07-feature-influence-engine-internals-receptivity-layer]] — The receptivity layer of the influence engine (2026-07-02 to 07-08): the original build, the hearing-transcript corpus, social edges, the 07-03 upgrades and campaign, and the N-channel exploration.
 - [[2026-07-feature-influence-engine-internals-salience-sna-wave]] — The six-paper salience and press-SNA wave of 2026-07-01 in the influence engine, including the media blend that went live on 2026-07-02.
@@ -202,6 +203,7 @@
 - [[2026-07-feature-primacy-and-industry-tier-boards-industry-boards-tensor]] — The per-industry boards tensor work of 2026-08-10/11: the phase-3 recon and pilot, the positions sweeps, the phase-4 machinery and signed cells, the scope receipt, the rhetoric transfiguration, the backfire and Barr case studies and the...
 - [[2026-07-feature-primacy-and-industry-tier-boards-methodology-lane]] — The primacy-board methodology lane of 2026-09-19/20: the main point and drafts, Paul's rulings, the dry runs, the council review, METHOD V1 and V1.1, the rejected redesign, the experiments and the live-board augmentation, with its...
 - [[2026-07-feature-primacy-and-industry-tier-boards-primacy-factor-drift-crown]] — The factor-only primacy board ruled on 2026-07-29 with its consequences and layers, the primacy tier drift trace of 2026-08-11 with the tensor-cell fix, and the champion crown law of 2026-08-09.
+- [[2026-07-feature-primacy-and-industry-tier-boards-telecom-industry]] — The telecom lane of 2026-10-07: a telecom vs credit-union lobbying and political-money comparison, Paul's ruling to integrate Telecom into the Industry tab exactly like fintech (brain D-110, superseding D-109), the landing, the Haiku...
 - [[2026-07-feature-primacy-and-industry-tier-boards]] — The Moneyball primacy tier board uses the primacy method Paul ratified on 2026-09-20, the diagnostic arm CLASS_DOCK_PRESS_GRADE_ALL with within-chamber seating (before it, the beneficiary (purity) factor alone from 2026-07-29 and...
 - [[2026-07-incident-workstation-stability]] — Four incidents on the LG Gram workstation, July to September 2026: the Intel NPU driver BSOD loop, the AppXSvc commit leak from the Python Install Manager update-on-launch loop, the ChatGPT/Codex MSIX servicing wedge (really an...
 - [[2026-07-rfc-melange-architecture-system-of-record-model-config-and-committee-formula]] — The final Moneyball model configuration as of 2026-06-30, pillar by pillar with the allocator, the engine constants, the press category weights and the superseded COM how-to, and the committee-pillar scoring formula of 2026-07-01.
@@ -213,10 +215,12 @@
 - [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3]] — The Melange audit runs of 2026-07-01 to 07-03: run 1, run 2, the deep audit of 07-02 and run 3.
 - [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-4-5-and-integrity]] — The Melange audit runs of 2026-07-04 to 07-10: run 4, runs 5a and 5b, the data-integrity audit, the network, vote and new-cycle audit, and the extensive audit with a true run-through.
 - [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] — Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19.
+- [[2026-07-troubleshooting-melange-audits-and-reviews-security-baseline]] — The read-only security audit of the Melange and Mentat servers on 2026-10-10, Paul's approval of fixes P1-P9, what landed in each repo, the adversarial campaign and its gap fixes, and the items left for Paul.
 - [[2026-07-troubleshooting-melange-audits-and-reviews]] — Chronicle and standing-rule record for the Melange (Moneyball CU-influence model) audit series: July 2026 audit runs and their guardrails, the 2026-07-01 data-integrity audit, the 2026-07-08 data-integrity and network/vote/cycle audits...
 - [[2026-07-troubleshooting-melange-live-tree-git-drift-branch-state-and-mirror]] — The off-box git mirror of the Melange repository and the dated live tree branch state entries from 2026-07-14 to 08-14.
 - [[2026-07-troubleshooting-melange-live-tree-git-drift-drift-reconcile-eol]] — Committed versus live drift of 2026-09-13, the reconcile of 09-19 with the findings that overturn recorded beliefs, and the line-ending census with the shared patch cutter.
 - [[2026-07-troubleshooting-melange-live-tree-git-drift]] — The canonical live tree (C:\Users\pgoff\OneDrive\Desktop\Melange Systems) can sit on another session's branch; committed HEAD is not runnable alone (live-only files); the 2026-09-19 reconcile committed 35 whole-file commits (rulings...
+- [[2026-07-working-agreement-agent-orchestration-rules-lane-laws-and-long-jobs]] — Standing orchestration rules other than model tiering, review, pace and the pod: ultracode for orchestration only, the universal lane laws, GLASS BOX emission, never supervising a long job from an AI turn, never messaging a running...
 - [[2026-07-working-agreement-agent-orchestration-rules]] — Working agreement (feedback rules from Paul, 2026-07-09 to 2026-10-01): which model does what, how lanes are orchestrated, what must emit to the GLASS BOX, when RAM-heavy work moves to the pod, and which orchestration moves waste money...
 - [[2026-07-working-agreement-verification-and-evidence-standards]] — Working agreement (feedback rules from Paul, 2026-07-09 to 2026-09-18, mostly after agents were measured wrong): never infer completion, demand a census before repeating a mechanism claim, search the whole repo before saying something...
 - [[2026-08-incident-refresh-automation-reliability-codex-poll-loop-burn]] — The Codex overnight poll-loop burn of 2026-09-12/13 as recorded in the refresh incident: the 30 s poll loop, the quota loss and the repair lane.
@@ -236,6 +240,7 @@
 - [[2026-09-feature-forecast-giving-redesign]] — Three connected workstreams on the Mentat forecasting stack, 2026-09-27 to 2026-10-03: the 09-29 forecasting-model audit, the 09-30 overhaul of the giving view (board F2 'Giving by cycle') with an integrity reconciliation, and...
 - [[2026-09-feature-mentat-console-ui-chart-studio]] — Chart Studio v1 on the Mentat console (2026-09-11), its review and P1 fixes, and the Chart Studio fields lane of 2026-09-12.
 - [[2026-09-feature-mentat-console-ui-cleanup-and-polish]] — The Mentat console UI clean-up lane UI1 (2026-09-17) and the polish lane (2026-09-19), with its board-driven spec changes, commits and traps.
+- [[2026-09-feature-mentat-console-ui-figure-export-and-worksheet-cache]] — The Mentat console lane of 2026-10-08: one-click figure export (first PDF, then PNG), the worksheet response cache and single-scan fixes for Chart Studio latency, the uncapped Chart Studio members() list and the figure export button strip.
 - [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] — The Mentat console load-time and FEC-link lane and the Graph UI quirks and colouring lane, both of 2026-09-24.
 - [[2026-09-feature-mentat-console-ui]] — Rolling record of the UI, performance and Chart Studio lanes on the mentat-console (part of the mentat project), from Paul's first Tableau-style Chart Studio brief on 2026-09-11 to the Graph/pie quirks lane of 2026-09-24/25.
 - [[2026-09-feature-mentat-failings-pac-evidence-pac-evidence-ingestion]] — Mentat failings lane S3 of 2026-09-16/17: ingesting PAC evidence from FEC filings into the Mentat console, with its money rules and caps.
@@ -259,39 +264,6 @@
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
-
-## Fleeting (30)
-
-- [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
-- [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
-- [[melange-systems--bedrock-recall-silent-failures-2026-10-07]] — Why Bedrock "Brain recall" blocks go missing - hook timeouts (2-10 s vs old 5 s limit) and harness text diluting the 0.45 coverage gate; fixes applied 2026-10-07
-- [[melange-systems--brain-updates-apply-automatically-2026-10-07]] — Paul 2026-10-07 - brain (melange-systems-brain) updates are always applied by Claude via brainctl and committed; never leave them as drafts for Paul
-- [[melange-systems--brain-vault-sync-mechanism-2026-10-07]] — How the Obsidian/Bedrock brain vault actually syncs - nothing auto-commits; sessions commit + push via PR flow to private GitHub; not under OneDrive
-- [[melange-systems--brainlink-knowledge-system-2026-10-05]] — Brainlink (approved 2026-10-05): the Project Brain is the ledger, the vault is the map, memory holds pointers; ownership table, where the tool lives, rulings-written-at-once rule, the forecast/PAC migration's new brain IDs...
-- [[melange-systems--bug-report-regressions-six-fixed-2026-10-09]] — Six long-red checks in fec/tests/infra/test_bug_report_regressions.py fixed 2026-10-09 on Paul's go (brain D-129); applied UNCOMMITTED in the live tree; the module is not in the kernel runner, so its reds go unseen
-- [[melange-systems--claude-obsidian-plugin-2026-10-07]] — claude-obsidian plugin installed alongside Bedrock; read-only on Windows; its hooks stay ON by Paul's choice; Bedrock owns vault writes
-- [[melange-systems--claude-obsidian-readonly-install-2026-10-06]] — claude-obsidian 2.2.0 installed read-only beside Bedrock (Paul's option 1); its hooks still run (no per-plugin disable) but are silent; Bedrock owns vault writes
-- [[melange-systems--competitiveness-multiplier-lane-2026-10-05]] — Cook PVI election-competitiveness multiplier c for the engine money curves; Paul's 2026-10-05 rulings and plan status
-- [[melange-systems--data-presentation-fixes-2026-10-09]] — Seven data-presentation fixes (LDA never summed, roster year, Conduit, coverage gaps, downstream labels, transfer paths, own ratio); Mentat PR #4 merged (111c417e7); Melange local-only; published books left stale by ruling
-- [[melange-systems--forecast-audit-lane-2026-09-29]] — Mentat forecasting audit 09-29 (worktree forecasting-model-audit-5603f2): three "forecasts" on the console, regressions re-run in R, code fixes staged but NOT applied (classifier blocked writes; Paul runs copy_back scripts), methodology...
-- [[melange-systems--mentat-edit-from-worktree-session-2026-10-08]] — A session tied to a Melange claude\worktrees\ checkout cannot Edit Mentat (harness worktree guard); Paul approves a git-apply route per change
-- [[melange-systems--mentat-forecast-overnight-2026-10-07]] — Giving by cycle forecast 2026-10-07/08: Board A + cycle-aware 50/50 ~~LIVE on 8806~~ (superseded 2026-10-08: LIVE on 8807, COMMITTED+PUSHED; superseded 2026-10-09: LIVE on 8806 again, restarted 02:56, with Telecom general giving and...
-- [[melange-systems--mentat-forecast-redesign-lane-2026-09-30]] — Forecast giving view redesign (worktree mentat-forecast-redesign-0fb0be): Paul picked board F2 'Giving by cycle' and ordered the projections checked for logical validity against the test results; build = one-to-one to F2, all compute on...
-- [[melange-systems--mentat-lda-deadline-rule-2026-10-09]] — Mentat LDA anchors count a quarter only after its LD-2 deadline by Melange's sweep date (brain D-130); commit cb0d4fb48, on origin; anchors rebuilt 2026-10-09T18:10Z under the rule (LDA blocks unchanged)
-- [[melange-systems--mentat-pdf-export-and-worksheet-cache-2026-10-08]] — Mentat 2026-10-08: one-click figure PDF (headless Edge) + /api/report-data response cache (F1), one scan per request (F3), worksheets prewarm; LIVE on 8806 pid 34612, UNCOMMITTED; 8807 console still stale
-- [[melange-systems--mentat-studio-members-and-figure-strip-2026-10-08]] — Mentat 2026-10-08: Chart Studio members() 500-cap removed (fd6c2d520, left bundled per Paul) + figure export button strip (38fca2b65, 60e1f8a5b, pushed); verified live 8806 on every host
-- [[melange-systems--never-stress-test-the-machine-2026-10-07]] — Paul forbids CPU/launch stress tests or load experiments on his laptop; diagnose crashes from logs only
-- [[melange-systems--orphaned-grep-slowdown-2026-10-09]] — A grep -r left behind by a session (parent gone) ran 3h17m, read 225 GB and slowed the Mentat anchor build 57 s -> 266 s; killed on Paul's OK.
-- [[melange-systems--pac-accuracy-attempt3-lane-2026-10-05]] — PAC giving forecast accuracy attempt 3 (all sectors, v6) - scored once 2026-10-05; telecom meets bar everywhere, ORIGIN fails banks/SF/P&C/credit arms; 2028 jobs scheduled; code freeze 2027-01-31
-- [[melange-systems--pac-accuracy-six-year-lookback-directive-2026-10-03]] — Paul 2026-10-03 - PAC giving forecast accuracy work may look back only 6 years; gains must come from methodology, not more history; v4 (2008/2010 history) = regression
-- [[melange-systems--python312-wmi-crash-0xc000070a-2026-10-07]] — Python 3.12 processes importing pandas or scipy crash with 0xC000070A (exit 3221227274) under heavy load - platform/_wmi timeout + stray handle; not claude-obsidian
-- [[melange-systems--reasoning-in-fable-code-in-opus-2026-09-16]] — Paul 2026-09-16 at the start of S5 - "design the route of implementation with Fable and all reasoning is done in Fable, code should always be in Opus or Fable"; model tiering rule for lanes
-- [[melange-systems--research-vault-lane-2026-10-09]] — Research vault (empirical backbone) built 2026-10-09 at C:\Users\pgoff\Documents\research, Bedrock name "research"; how it was built and the workflow lessons (resume cache, 6-agent cap, Haiku JSON)
-- [[melange-systems--search-rulings-before-asking-2026-10-07]] — Before putting ANY model/design question to Paul, search memory + brain D-files/STATE + lane receipts + transcripts for an existing ruling; he answered the forecast rebuild (a)-(d) angrily as already decided
-- [[melange-systems--telecom-industry-lane-2026-10-07]] — Telecom vs credit-union lobbying comparison and the build that adds telecom as a full Melange industry mirroring fintech (brain D-110); state, files and open rulings
-- [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 Bynum + CT-01 Bronin; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
-- [[melange-systems--work-in-parallel-no-waiting-2026-10-08]] — Paul wants lanes and data runs to proceed in parallel; never gate merges on a running job or on other lanes
-- [[scratch-2026-10-09-e85ae3--model-tiering-code-read-reason]] — User's model routing rule for subagents - code in Sonnet, read/extract in Haiku, reasoning in Opus (all "fast")
 
 ## Ledger (generated from the Project Brain) (217)
 

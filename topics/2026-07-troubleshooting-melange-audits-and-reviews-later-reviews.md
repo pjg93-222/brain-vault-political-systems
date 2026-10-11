@@ -10,7 +10,8 @@ objective: ""
 created_at: 2026-07-01
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
-updated_at: 2026-10-04
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/bug-report-regressions-six-fixed-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\bug-report-regressions-six-fixed-2026-10-09.md", sha256: "5340f4c291157dcbdc6733c12d9e2963b935ee0534a98156795d2ff85b93064d"}
+updated_at: 2026-10-10
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 part_of: "[[2026-07-troubleshooting-melange-audits-and-reviews]]"
@@ -98,3 +99,12 @@ Close-out of `HANDOFF_LAUNDRY_LIST_2026-07-16.md`: six fixes landed, interview t
 - Start a verification chain at the EARLIEST step the change touches, not step 1, or fresh intake pollutes the rank delta.
 - The published dashboard can be censused directly: launch config `moneyball-ui-audit` serves the live root read-only on 8802; `javascript_tool` can call the page's own functions for all 533 seeds. The pane is hidden (rAF frozen), so this proves handler LOGIC only (`dashboard-preview-workflow`).
 - Check the memory index for a "landed" entry BEFORE treating an old handoff as open work (`spawned-task-premise-may-be-stale-2026-09-14`).
+
+## Bug-report regression tests fixed, 2026-10-09 (`bug-report-regressions-six-fixed-2026-10-09`; added 2026-10-10)
+
+- On 2026-10-09 Paul approved fixes for the six failing tests in `fec/tests/infra/test_bug_report_regressions.py` ("Go with your proposal, option (a), plus the README fix"); the ruling is brain D-129 (brain commit `ada6529`). The suite went from 60/66 to 66/66 in the live tree, re-run independently.
+- **State:** COMMITTED on Paul's word ("Commit the four files and fix the manifest cites") in the LIVE tree on branch `claude/lda-series-fixes-20261009`: `8ce0de303` (the test file, `fec/collect/fetch_hearings_antag.py`, `fec/surfaces/templates/make_member_desk_00.tpl`, `README.md`; cut with `fec/tools/live_patch.py`, EOL classes unchanged) and `d2954e8cf` (the five social_media.db producer cites in `fec/audit/build_system_manifest.py`, four of which had already drifted). Both reached the mirror through the post-commit hook. After "push it", the same two diffs were rebuilt byte-identical on the GitHub default branch with plumbing (the live history cannot go to GitHub) and pushed as `claude/bug-report-regressions-20261009` (`5f27cdb07`, also on the mirror). There is NO PR: the in-app browser was signed out, and Paul said "Its fine, just commit it locally". On his "delete the GitHub branch" the GitHub copy was deleted the same day (lease-checked at `5f27cdb07`); the local branch was deleted too on his word, so only the mirror copy (`5f27cdb07`) remains.
+- **Why the reds lasted months:** `fec/tests/run_tests.py` does not run this module, so the kernel gate never saw them, and agents kept labelling them "pre-existing".
+- **Lesson, merge-resolution losses:** default `git log -S` does not diff merges. The antag regression (merge `290b4b930` resolved a conflict to the lane side and silently dropped `02bc13ffd`'s X-Api-Key header) only showed by comparing `<merge>^1:<path>` with `<merge>:<path>`. Check merges explicitly when a pickaxe finds an add but no remove.
+- **Left open:** `data/system/system_manifest.json` still carries the old cites. It is generated (never hand-edit) and its working copy is another session's uncommitted 2026-10-08 rebuild, so it picks the fixed cites up at its next rebuild (a rebuild re-baselines the A2/A2b drift checks, brain D-079). The desk template change reaches the built HTML at the next chain run, and it only renders in legacy rollback mode (no visible change while HONORS is on).
+- Related memories: `ask-before-substantive-changes`, `live-tree-eol-census-2026-09-19`, `search-rulings-before-asking-2026-10-07`, `brainlink-knowledge-system-2026-10-05`.

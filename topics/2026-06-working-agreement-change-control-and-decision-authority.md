@@ -23,8 +23,10 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/feedback_consult_multipliers_thresholds.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\feedback_consult_multipliers_thresholds.md", sha256: "584df5a0aba3f5bc78caf3ea059c654c1456fbcc10e93b2bb8d0153e9235e9ca"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/feedback_run_everything.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\feedback_run_everything.md", sha256: "acccd2c405eae750bc2effad560e016fd6f781b6153e604c5c47bbebd5aef00d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/feedback_spreadsheet_consult_on_errors.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\feedback_spreadsheet_consult_on_errors.md", sha256: "e50698ba4021471028863e377112b4ee713300a959508e674f0bfa093cfd07a5"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/brain-updates-apply-automatically-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\brain-updates-apply-automatically-2026-10-07.md", sha256: "c94de519ef9ef853a07b4fc3cdcab9900a87a95930f9650adec41619f4b437a7"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/search-rulings-before-asking-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\search-rulings-before-asking-2026-10-07.md", sha256: "6535bd194aeda92e3cd73e95795ff0c93e92e58106ada08c61930e4e4ff43d58"}
+updated_at: 2026-10-10
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreement"]
 ---
 
@@ -79,6 +81,7 @@ tags: ["type/topic", "status/open", "domain/agent-ops", "category/working-agreem
 | 2026-09-06 | Git ban LIFTED for the staffer sorting lane only (Paul answered "Commit"). |
 | 2026-09-25 | `supplied-data-closes-the-item-2026-09-25`: Paul, sector-growth lane: "I literally gave you a fucking spreadsheet." |
 | 2026-09-26/27 | Mentat money-code episode: 09-26 Paul rejected removal proposals H1-H3 ("very jumpy"); the agent changed receipt counting (commits `0ce240d9e`, `504d2cfd1`); 09-27 Paul: "The mentat money collection system is fucking perfect, don't change it."; both commits reverted in `7a31f8ae2`. |
+| 2026-10-07 | `brain-updates-apply-automatically-2026-10-07`: asked whether to apply a drafted brain correction (D-105), Paul: "It always should apply automatically." Same day, `search-rulings-before-asking-2026-10-07`: four forecast-rebuild questions he had effectively ruled on drew "Come on we already had this all decided, look through memory". |
 
 ## Decisions
 
@@ -96,6 +99,8 @@ Current standing rules first (newest wins), then superseded versions as dated st
 - **Mentat money code (2026-09-27):** never change money-collection or receipt-counting code without Paul's explicit per-change approval; a No to a removal is the whole instruction.
 - **API-key exposure (2026-07-21):** stop reporting it; reporting only, not authorization to weaken a control.
 - **Supplied data (2026-09-25):** close the item on every surface in the same turn.
+- **Brain bookkeeping applies automatically (2026-10-07, added 2026-10-10):** apply brain updates directly (Paul: "It always should apply automatically"), overriding the project CLAUDE.md line "draft brain updates for Paul to apply and commit"; owner rulings still come only from Paul, and code, data and model changes still follow the apply gate. Rule 13.
+- **Search the records before asking (2026-10-07, added 2026-10-10):** run a records sweep before any decision list goes to Paul and ask only what the records leave silent or contradictory. Rule 14.
 
 ## Next Steps
 
@@ -212,6 +217,19 @@ Two directives Paul gave during the member-narratives semantic-repair close-out 
   - Verification of what he supplied is fine, but frame it as checking his file. Never frame it as the item still being open, and never ask him to go collect what he just gave.
   - Keep new questions few; only raise the ones that genuinely block the next step.
 - Related: `ask-before-substantive-changes`, `dont-drop-context-anchor-memory`, `sector-growth-study-lane-2026-09-25`.
+
+### 13. Brain updates apply automatically (`brain-updates-apply-automatically-2026-10-07`, Paul 2026-10-07; added 2026-10-10)
+
+- Paul, 2026-10-07, asked whether to apply a drafted brain correction (D-105): "It always should apply automatically."
+- Overrides the project CLAUDE.md line "draft brain updates for Paul to apply and commit". Apply brain updates directly: `brainctl decide ... --supersedes` for decisions (it commits), `brainctl deadend` for dead ends, STATE.md edits then `brainctl flush -m`. Still draft the text in an audit file first for provenance.
+- **Why:** Paul doesn't want brain drafts piling up waiting on him; drafts left unapplied go stale and the brain then contradicts reality.
+- **How to apply:** only the brain bookkeeping is automatic. Owner RULINGS still come from Paul: never record an agent default as a Paul ruling (the D-104 to D-105 correction was exactly that error). Code, data, and model changes still follow `ask-before-substantive-changes` (rule 1). Related: `brainlink-knowledge-system-2026-10-05`, `competitiveness-multiplier-lane-2026-10-05`.
+
+### 14. Search the records before asking Paul (`search-rulings-before-asking-2026-10-07`, Paul 2026-10-07; added 2026-10-10)
+
+- Paul, 2026-10-07, after the agent put four forecast-rebuild questions to him (publish cycle-aware candidate, Senate presidential term, growth term, PAC spec): answered "1. Yes 2. Keep senate in 3. We use the 50/50 4. Yes" and "Come on we already had this all decided, look through memory".
+- **Why:** the brain STATE kept those four as an OPEN question (migrated from drift notes) even though Paul had effectively ruled on phase (D-092 "The cyclical disparity should always be accounted for except for lobbying"), pace (D-099 BLEND) and the 50/50 ORIGIN rule. An open-question entry in STATE is not proof the question is open. Re-asking settled questions burns his patience and makes the system look like it forgets.
+- **How to apply:** before any decision list goes to Paul, run a records sweep first (brain D-*.md + DEADENDS + STATE, lane RULINGS/AUTHORIZATION files, memory, and his own user lines in recent transcripts). Present only questions the records leave genuinely silent or contradictory, and cite the ruling that covers each settled point instead of asking. Related: `supplied-data-closes-the-item-2026-09-25` (rule 12), `ask-before-substantive-changes` (rule 1), `dont-drop-context-anchor-memory`.
 
 ## Contradictions noted and how they were resolved
 

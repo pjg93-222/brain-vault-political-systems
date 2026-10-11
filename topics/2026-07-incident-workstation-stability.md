@@ -16,8 +16,11 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/lg-gram-npu-crash-2026-08-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\lg-gram-npu-crash-2026-08-17.md", sha256: "7fd81bd13a2149ed7c969a68369732a091625ab2c93d642e847b5c96fc014ae7"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/chatgpt-msix-repair-2026-07-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\chatgpt-msix-repair-2026-07-25.md", sha256: "3d31cc7adeb6be1cf8c6944c478219a33329e000a379fdd5b8154233f044ca1d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/poppler-pdf-rendering-2026-08-14.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\poppler-pdf-rendering-2026-08-14.md", sha256: "923256f4944de593fb9cddb76f585f1194e0d4bbcd2ba561d09c14bf461cf3b4"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/python312-wmi-crash-0xc000070a-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\python312-wmi-crash-0xc000070a-2026-10-07.md", sha256: "2181a0939624530c90a21c7c0ec673d32a8905b523fe800e98a9fa20c05d3c91"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/never-stress-test-the-machine-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\never-stress-test-the-machine-2026-10-07.md", sha256: "606ca425d6bfae731a657f2925646be27844dff01a0c67e8a6640b76b2e40bfb"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/orphaned-grep-slowdown-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\orphaned-grep-slowdown-2026-10-09.md", sha256: "ce1da5ceb0c351258265b0125f2cd4697e3321c9a6579eea4502c0d5e0876bb3"}
+updated_at: 2026-10-10
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/completed", "domain/infra", "category/incident"]
 ---
 
@@ -66,6 +69,8 @@ tags: ["type/topic", "status/completed", "domain/infra", "category/incident"]
 | 2026-09-13 | AppXSvc commit at 67.6 GB (`MemoryError` in a smoke run). |
 | 2026-09-19 | NPU-fix follow-up forensics: shutdowns are a different class now (see below); AppXSvc at 50 GB again three days after a reboot. |
 | 2026-09-23 01:5x | AppXSvc 48 GB; root cause found and fixed (Python Install Manager auto-update removed). |
+| 2026-09-12 to 2026-10-07 | Python 3.12 0xC000070A deaths (Incident 5): first seen 09-12; 166 in the 14 days before 10-06 (90 on 10-01); 52 on the night of 10-06/07. 2026-10-07: diagnosed (WMI query timeout, about 70%), FIX A (sitecustomize in both 3.12 bases) applied on Paul's approval, and Paul banned stress tests. |
+| 2026-10-09 | An orphaned recursive grep (pid 32840, 225 GB read) slowed the 14:06 Mentat anchor build to 266 s while the laptop ran on battery; killed about 15:05 on Paul's word, with four idle orphaned grep filters (Incident 6). |
 
 ## Decisions
 
@@ -78,6 +83,8 @@ tags: ["type/topic", "status/completed", "domain/infra", "category/incident"]
 - ~~"Threshold ~37 MB (one bad file)"~~ (2026-07-26 13:47) - refined 2026-07-26 19:23: it is SIZE, threshold about 16 MB (healthy sessions well under ~10 MB).
 - ~~"The NPU fix ended the unexpected shutdowns"~~ (2026-08-17) - superseded 2026-09-19: 12 Kernel-Power 41 events since 2026-09-01 are a different class.
 - Pagefile: leave system-managed. Never loop-restart AppXSvc.
+- Python 3.12 0xC000070A (2026-10-07, Paul approved): FIX A, `Lib\sitecustomize.py` disabling `platform._wmi_query` in both 3.12 bases; re-apply after a Codex runtime update. Never stress test the machine (Paul, 2026-10-07): diagnose crashes from logs and code only.
+- Orphaned processes (2026-10-09): ask Paul before killing a process that is not yours; he approved killing the orphaned grep processes of 2026-10-09.
 
 ## Next Steps
 
@@ -203,3 +210,43 @@ poppler 25.07.0 is installed on this box (2026-08-14, spawned-task session): `wi
 - "Syntax Error: No display font for 'Symbol'/'ArialUnicode'" on stderr is a cosmetic glyph warning, common on Windows; the page still renders.
 - Upgrade: `winget upgrade oschwartz10612.Poppler`. Full revert (files + PATH entry): `winget uninstall oschwartz10612.Poppler`. Winget's pin (25.07.0-0, Aug 2025) may trail the GitHub releases page.
 - Related: `live-tree-branch-state-2026-07-14` (this box's multi-lane environment), `project-brain-toolkit-2026-08-11`.
+
+## Incident 5: Python 3.12 dies with 0xC000070A (first seen 2026-09-12; file `python312-wmi-crash-0xc000070a-2026-10-07`; added 2026-10-10)
+
+- **Symptom:** Python 3.12 processes (`C:\Users\pgoff\AppData\Local\Programs\Python\Python312` 3.12.10, and Codex's bundled 3.12.14, which is Terrier's `work\.venv` base) die with 0xC000070A, STATUS_THREADPOOL_HANDLE_EXCEPTION, in ntdll at offset 0xc87a4. That is exit code 3221227274, and stderr is empty. First seen 2026-09-12; 166 in the 14 days before 10-06 (90 on 10-01); 52 on the night of 10-06/07.
+- **Diagnosis (about 70%, investigated 2026-10-07):** `import pandas` and `import scipy.stats` call `platform.machine()`, which on 3.12 runs a WMI query in a `_wmi.pyd` helper thread. Under heavy CPU load the query times out (the WMI log shows 0x80041032 cancelled); the abandoned helper later SetEvent/CloseHandle's through a stale pointer (CPython `PC/_wmimodule.cpp`). The process then dies in `random.seed`/`os.urandom` (bcrypt). The exact closed handle is unproven. The 9/9 Windows update may have enabled it. Ruled out: claude-obsidian (Python 3.14, zero crashes), AppXSvc, scheduled tasks. McAfee's DLL is present in all crashes but not in the stacks (low).
+- **Victims:** Melange chain steps (`build_media_blend.py`, `build_vote_category.py`; the chain exits 1 with empty stderr), `test_lda_rebuild.py`, and Terrier `run_phase3.py` and its pandas probes.
+- **FIX A APPLIED 2026-10-07 (Paul approved):** `Lib\sitecustomize.py` in BOTH 3.12 bases (Python312, and the Codex runtime `...\codex-runtimes\codex-primary-runtime\dependencies\python`), sha256 80b4b9c6...; it covers every venv built on them (Melange `.venv-politico`, Terrier `work\.venv`, `.venv-20261007`, model-study). It sets `platform._wmi_query` to raise OSError, so `platform` falls back to `sys.getwindowsversion()` and `cmd /c ver`; platform values were identical before and after. Only `python -S` skips it (no launcher uses -S). A Codex update can replace its runtime: re-apply by copying the same file to `<new base>\Lib\sitecustomize.py`, then check that `python -c "import platform; print(platform._wmi_query.__name__)"` prints `_wmi_disabled`. Roll back by deleting both files and the .pyc. Evidence: under load, 0/90 crashes patched vs 19/30 bypassed (that stress run happened before Paul banned stress tests; never repeat it). Patch body:
+
+```python
+try:
+    import platform as _platform
+    if hasattr(_platform, "_wmi_query"):
+        def _wmi_disabled(*args, **kwargs):
+            raise OSError("WMI query disabled by sitecustomize (0xC000070A workaround)")
+        _platform._wmi_query = _wmi_disabled
+    del _platform
+except Exception:
+    pass
+```
+
+- Not covered: other WMI users (one fastprox.dll 0xc0000409 crash was seen).
+- **Why it matters:** a pipeline step that dies with an empty stderr and exit 3221227274 looks like a code bug but isn't.
+- **How to apply:** on exit 3221227274, rerun once and reduce concurrent pandas-heavy jobs; don't debug the step's code. A per-process workaround is to set `platform._wmi_query` to raise OSError before importing pandas. A machine-wide fix (sitecustomize in the 3.12 installs) is Paul's call (FIX A above is that fix; Paul approved it on 2026-10-07). Side note: claude-obsidian's python3 hooks take 2.3-6.7 s against a 5 s limit (54 Stop hooks cancelled): harmless noise.
+- Related memories: `claude-obsidian-readonly-install-2026-10-06`, `appxsvc-leak-pythonmanager-2026-09-23`, `terrier-multidistrict-lane-2026-10-06`.
+
+### Standing rule from this incident: never stress test the machine (file `never-stress-test-the-machine-2026-10-07`, Paul 2026-10-07)
+
+- Never run stress tests, load tests, launch-loop crash reproductions or any deliberate CPU/RAM load on Paul's machine. Paul, 2026-10-07: "Do not fucking stress test, that was just my computer dying." This came after a session ran `stress.py` (hundreds of back-to-back python launches) to reproduce the 0xC000070A crash while builds were running.
+- **Why:** the laptop is already memory- and CPU-starved (often under 4 GB free; see Incident 5 and Incident 1). Extra load makes it die and stalls real work.
+- **How to apply:** diagnose crashes from existing logs, crash records (`tools\Get-PythonCrashStats.ps1`, Event Log) and code reading only. When a job crashes, rerun it once; never loop launches to measure crash rates. Don't tell agents to run N-launch crash tests either.
+
+## Incident 6: orphaned recursive grep slows a Mentat anchor build (2026-10-09; file `orphaned-grep-slowdown-2026-10-09`; added 2026-10-10)
+
+- On 2026-10-09 `"C:\Program Files\Git\usr\bin\grep.exe" -rn deploy_lobby_pages --include=* -I .` ran from 11:46 local, as pid 32840. Its parent process was already gone, so it was orphaned, most likely by a session's shell tool call that timed out. By 15:03 it had read 225 GB, used 4,527 CPU-seconds and held 2.7 GB of RAM.
+- It overlapped the Mentat anchor build of 14:06. That build took 266 s against the usual 36-73 s. Two stages took 226 s of it: mentat:commercial_banks (127 s) and mentat:telecom (99 s). Each runs SQL over about 1.5 GB of SQLite (a contribution-analytics index plus mentat.db), so it competed with grep for disk and file cache.
+- The laptop was also on battery at roughly 20-25% charge. Kernel-Power 105 shows it unplugged at 12:32 and plugged back in at 14:23.
+- Paul said "yes, kill it" and the process was killed at about 15:05; it was verified gone. Four other orphaned `grep --line-buffered` pipe filters, started 10-08 13:16, 13:17 and 21:44 and 10-09 02:47, were idle: 0 GB read and 1 MB of RAM each. They were killed on Paul's "kill those four too" and verified gone. Four `tail -f` processes that follow other sessions' task-output files were not touched.
+- **Why:** a recursive search started from a broad working directory has no end, and the Bash tool's timeout does not kill the child process. It keeps evicting the file cache and draining the battery for hours.
+- **How to apply:** when a build, console or test is unexpectedly slow, first list long-running grep.exe and rg.exe processes. The command is `Get-CimInstance Win32_Process -Filter "Name='grep.exe'"` with CommandLine, ReadTransferCount and the parent. Check Kernel-Power 105 for battery as well. Ask Paul before killing a process that is not yours. Never start `grep -r` or `rg` from a broad folder such as the home directory or `.`, when its location is unknown; give it an explicit path and a timeout. Glass Box events rotate at 5000 entries, so per-stage timings of an older run may already be gone.
+- Related memories: `never-stress-test-the-machine-2026-10-07`, `mentat-lda-deadline-rule-2026-10-09` (the anchor build is recorded with the Giving Forecast pipeline).
