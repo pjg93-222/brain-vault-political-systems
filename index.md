@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-483 notes.
+486 notes.
 
 ## Actors (49)
 
@@ -102,13 +102,14 @@
 
 - [[paul-goff]] — Owner of this vault and the sole decision-maker for the Melange Systems, Mentat, forecast-redesign and CU-geography work.
 
-## Projects (6)
+## Projects (7)
 
 - [[brainlink]] — Brainlink links the three record systems: the Project Brain is the ledger (constraints, decisions, dead ends, state), this vault is the map (people, actors, concepts, topics, discussions, links) and Claude memory holds pointers and...
 - [[cu-geography]] — Codex-run credit-union geography project (outputs dir cu-geography; V3 copy cu-geography-v3): Luna stratified RF/KNN data-completion model (closed 2026-09-30, current export = section 30 GPU model, holdout used twice) and the CU row...
 - [[forecast-redesign]] — Mentat forecasting program: the 2026-09-29 audit of three console forecasts (regressions re-run in R), the 2026-09-30 'Giving by cycle' (board F2) forecast-view redesign with projections checked for logical validity against backtests...
 - [[melange-systems]] — Moneyball / Melange: a credit-union legislative-influence model (Blended workbook -> Python engines -> single Moneyball.html deliverable). Began June 2026 in Draft Systems (alias 'Draft Systems'); canonical home moved 2026-06-26 to...
 - [[mentat]] — Mentat: R+API pipeline collecting FEC contributions for a Paul-defined company roster across industries (Banking, Crypto, Fintech, P&C, Farmers, Telecom, Credit Union, Community Banks, Credit Arms, trade associations) into workbooks...
+- [[research-vault]] — Separate Obsidian vault at C:/Users/pgoff/Documents/research (Bedrock name 'research') holding Paul's annotated bibliographies verbatim, his research notes and the academic literature on his computer, each paper related to the system...
 - [[terrier]] — Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root Documents\Terrier\outputs\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people...
 
 ## Topics (145)
@@ -259,7 +260,7 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
-## Fleeting (30)
+## Fleeting (31)
 
 - [[attempt3-allsector-20261004--attempt3-build6-state]] — State of stage BUILD6 (v6 built, tested, frozen, no scoring) in NEWROOT attempt3-allsector-20261004 as of 2026-10-05
 - [[attempt3-allsector-20261004--env-bash-write-quirks]] — Harness quirks that block Bash/Write in the attempt3 forecast build sessions (long heredocs, the word sealed, GateGuard on new files)
@@ -287,14 +288,15 @@
 - [[melange-systems--reasoning-in-fable-code-in-opus-2026-09-16]] — Paul 2026-09-16 at the start of S5 - "design the route of implementation with Fable and all reasoning is done in Fable, code should always be in Opus or Fable"; model tiering rule for lanes
 - [[melange-systems--research-vault-lane-2026-10-09]] — Research vault (empirical backbone) built 2026-10-09 at C:\Users\pgoff\Documents\research, Bedrock name "research"; how it was built and the workflow lessons (resume cache, 6-agent cap, Haiku JSON)
 - [[melange-systems--search-rulings-before-asking-2026-10-07]] — Before putting ANY model/design question to Paul, search memory + brain D-files/STATE + lane receipts + transcripts for an existing ruling; he answered the forecast rebuild (a)-(d) angrily as already decided
+- [[melange-systems--security-baseline-lane-2026-10-10]] — 2026-10-10 security audit + approved P1-P9 fixes LANDED (Melange 6de7ed180 on main, Mentat ff to 23d33bfe8); open D-items are Paul's
 - [[melange-systems--telecom-industry-lane-2026-10-07]] — Telecom vs credit-union lobbying comparison and the build that adds telecom as a full Melange industry mirroring fintech (brain D-110); state, files and open rulings
 - [[melange-systems--terrier-multidistrict-lane-2026-10-06]] — Terrier (renamed cu-geography voter canvass app) expansion to OR-05 Bynum + CT-01 Bronin; paths, Paul's rulings (FLEXIBLE, vault-only brain, race toggle)
 - [[melange-systems--work-in-parallel-no-waiting-2026-10-08]] — Paul wants lanes and data runs to proceed in parallel; never gate merges on a running job or on other lanes
 - [[scratch-2026-10-09-e85ae3--model-tiering-code-read-reason]] — User's model routing rule for subagents - code in Sonnet, read/extract in Haiku, reasoning in Opus (all "fast")
 
-## Ledger (generated from the Project Brain) (216)
+## Ledger (generated from the Project Brain) (217)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 209 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 210 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
