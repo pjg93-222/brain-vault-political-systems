@@ -7,13 +7,13 @@ title: "melange-systems-brain CONSTRAINTS"
 date: ""
 status: ""
 superseded_by: ""
-brain_commit: "0c985f0cfdedca03bb31a73627a82a945efd680a"
-entry_sha256: "279530af86bb05e198ed10b79276fdd8cb954e0a8da098541d7ab935c2de449c"
+brain_commit: "768ae2579f50bbc5e466839c9e910d067942218b"
+entry_sha256: "c303f1e9ce12f05a6760e0dd3ecebb6a06c0d862b9893aa265ed7dd3a1ed5f3f"
 generated: true
-generated_sha256: "40a0ba5a1563e5da65ede47d97a72bdd0723f986380fb48e8bad2dc2c1cdaf88"
+generated_sha256: "1b3e7587e78a617d3dc6f0c4a89e6f3620600f8f7fcfa620e7bf563e52ff4b08"
 aliases: ["melange-systems CONSTRAINTS"]
 ---
-> Generated from melange-systems-brain/CONSTRAINTS.md at 0c985f0; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/CONSTRAINTS.md at 768ae25; do not edit — change the brain via brainctl.
 
 # CONSTRAINTS — Melange Systems
 
@@ -166,6 +166,12 @@ Group them so a cold reader can scan fast:
   chain runs permanently in degraded snapshot mode, printing "view cache dead", at roughly 3x runtime.
   That is a design decision to take deliberately, not a defect to discover mid-build.
   (source: measured 2026-08-27 Layer 2 census; corroborates the existing 522-rank guard note)
+  2026-10-12: decided by [[ledger/melange-systems-brain/D-174|D-174]] (LibreOffice); a 2026-10-12 design trace found Excel is no longer on
+  the rank path since 2026-09-08 (live_legislative_pillar=true; compute_pillars recomputes in Python
+  from typed cells), so the 'degraded snapshot mode ~3x' clause no longer describes the chain — see
+  scratchpad design COMPUTE_CONTAINERS_DESIGN.md (to be committed under audits/deploy_20261011/).
+  (source: [[ledger/melange-systems-brain/D-174|D-174]]; the design trace is from the orchestrator's brief, not re-run here; only the
+  compute_pillars.py:74 branch on live_legislative_pillar was re-read at record time.)
 - THE PIPELINE CHAIN IS NETWORK-FREE. All 48 CHAIN steps plus the 5 hidden sub-steps of
   `build_primacy_surfaces.py` classify as 41 ENGINE / 6 SURFACE / 1 hybrid and ZERO COLLECTOR: none of
   the 29 modules importing `requests`/`httpx`/`urllib.request` is a chain step. `weekly_refresh.py`
