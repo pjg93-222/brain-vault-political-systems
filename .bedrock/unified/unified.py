@@ -17,6 +17,7 @@ import re
 import shutil
 import subprocess
 import sys
+import threading
 import time
 
 HERE = Path(__file__).resolve().parent
@@ -220,9 +221,31 @@ def recall(prompt, index):
     scored.sort(key=lambda v:(-v[0],v[1]['rel']))
     return [n for _,n in scored[:3]]
 
+def read_payload(timeout=.75):
+    """Accept complete JSON immediately even when a hook runner leaves stdin open."""
+    result=[]; ready=threading.Event()
+    def reader():
+        data=b''
+        try:
+            while len(data)<1024*1024:
+                chunk=os.read(sys.stdin.fileno(),65536)
+                if not chunk: break
+                data+=chunk
+                try:
+                    value=json.loads(data.decode('utf-8'))
+                except (ValueError,UnicodeDecodeError):
+                    continue
+                if isinstance(value,dict): result.append(value)
+                break
+        except (OSError,ValueError):
+            pass
+        finally: ready.set()
+    threading.Thread(target=reader,daemon=True).start()
+    ready.wait(timeout)
+    return result[0] if result else {}
+
 def hook(action,config):
-    try: payload=json.load(sys.stdin)
-    except (ValueError,OSError): payload={}
+    payload=read_payload() if action=='recall' else {}
     if action=='session-start':
         message=f"Unified Obsidian workspace: {config['linked']}. Start at Home.md; brain/ holds engineering memory, research/ holds evidence. Existing Bedrock capture continues in brain/fleeting/."
         failure=config['brain']/'.bedrock/unified/cache/last-error.txt'
@@ -274,7 +297,7 @@ def main():
             with log.open('a',encoding='utf-8') as stream:
                 stream.write('\n'+dt.datetime.now(dt.timezone.utc).isoformat()+' sync start\n'); stream.flush()
                 try:
-                    p=subprocess.run([sys.executable,str(config['vaultlink']/'vault_sync.py')],timeout=540,
+                    p=subprocess.run([sys.executable,str(config['vaultlink']/'vault_sync.py')],timeout=720,
                                      stdout=stream,stderr=stream,creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
                     code=p.returncode
                 except subprocess.TimeoutExpired:

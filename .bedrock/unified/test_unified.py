@@ -2,6 +2,9 @@ import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+import json
+import subprocess
+import sys
 
 spec=importlib.util.spec_from_file_location('unified',Path(__file__).with_name('unified.py'))
 unified=importlib.util.module_from_spec(spec)
@@ -42,5 +45,21 @@ class UnifiedTests(unittest.TestCase):
         config={'linked':Path('missing')}
         pages={'Home.md':'[[Library#Methods]] [[Absent]]','Library.md':'# Methods'}
         self.assertEqual(unified.validate(pages,config),[['Home.md','Absent']])
+
+    def test_hook_returns_before_stdin_eof(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); cache=root/'.bedrock/unified/cache'; cache.mkdir(parents=True)
+            index={'notes':[{'rel':'systems/allocation.md','title':'Allocation validation','terms':['allocation','validation','models']}]}
+            (cache/'research-index.json').write_text(json.dumps(index))
+            config=root/'config.json'; config.write_text(json.dumps({'brain':str(root),'research':str(root)}))
+            proc=subprocess.Popen([sys.executable,str(Path(__file__).with_name('unified.py')),'hook','recall','--config',str(config)],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+            try:
+                proc.stdin.write(b'{"prompt":"allocation validation models"}'); proc.stdin.flush()
+                proc.wait(timeout=5)
+                self.assertEqual(proc.returncode,0)
+                self.assertIn('Research recall',proc.stdout.read().decode())
+            finally:
+                if proc.poll() is None: proc.kill(); proc.wait()
+                proc.stdin.close(); proc.stdout.close(); proc.stderr.close()
 
 if __name__=='__main__': unittest.main()
