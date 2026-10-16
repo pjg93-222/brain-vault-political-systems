@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-567 notes.
+570 notes.
 
 ## Actors (49)
 
@@ -265,7 +265,7 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
-## Fleeting (21)
+## Fleeting (22)
 
 - [[melange-systems--brains-on-every-session-2026-10-13]] — STANDING: at the start of EVERY session, boot the project brain (brainctl boot per CLAUDE.md) and confirm the Obsidian vault (C:\Users\pgoff\Documents\brain) recall and brainlink are live - before any work
 - [[melange-systems--canterra-attrition-deck-2026-10-12]] — NOT Melange - Paul's MBA Team Project 3 (Canterra employee attrition) 8-min Zoom deck; delivered Downloads\Canterra_Attrition_Presentation.pptx; report errors + Q4 ruling recorded
@@ -284,14 +284,15 @@
 - [[melange-systems--mentat-sankey-zoom-lane-2026-10-15]] — Mentat flow sankey focus zoom / unfold / pin + bug fixes LANDED on codex/mentat-crypto (abdbd5524, 6dc3dac91); not pushed; 8806 restart is Paul's
 - [[melange-systems--moneyball-2026-07-07-gate2-round1]] — GATE-2 complete + C retest PASSED (consequence wired) + improvement round 1 ALL MISS (one looks TAKEN - never re-run) + say-do gate landed (Hill→Ally) + pillar weights 30/25/40/5 (superseded 2026-09-03 by 45/10/40/5; S-5 closed...
 - [[melange-systems--press-backlog-media-status-are-bugs-2026-10-15]] — Paul ruled 2026-10-15 - press backlog never draining and daily media top-level PASS despite partial press are BUGS, not design
+- [[melange-systems--public-github-releases-ruling-2026-10-15]] — Paul 2026-10-15 chose public GitHub Releases + making the repo public for Mentat app updates; supersedes private-repo stance of D-139/D-148 for that purpose
 - [[melange-systems--queue-clearout-delegated-rulings-2026-10-11]] — 2026-10-11 Paul delegated ALL open rulings to Claude for the queue clear-out; decide from brain/vault/research, record in audits/decisions_20261011/
 - [[melange-systems--queue-clearout-results-2026-10-12]] — 10-10..10-12 queue clear-out CLOSED - records in audits/decisions_20261011 (DECISIONS.md + FINAL_REPORT.md); tail jobs still running; Paul-only list
 - [[melange-systems--simplify-means-translate-not-delete-2026-10-12]] — Paul 2026-10-12: 'no jargon' / 'simplify' = roughly a 30% cut that TRANSLATES technical terms (plain label + real term + precise number), never a 70% cut that deletes the analysis
 - [[melange-systems--storage-sense-wipes-temp-2026-10-14]] — Windows Storage Sense deletes %TEMP% (incl.
 
-## Ledger (generated from the Project Brain) (303)
+## Ledger (generated from the Project Brain) (305)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 296 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 298 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
