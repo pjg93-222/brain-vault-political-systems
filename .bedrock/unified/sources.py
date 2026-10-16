@@ -35,6 +35,9 @@ def digest(data): return hashlib.sha256(data if isinstance(data,bytes) else data
 def slug(text): return re.sub(r'[^a-z0-9]+','-',unicodedata.normalize('NFKD',text).encode('ascii','ignore').decode().lower()).strip('-')[:85] or 'source'
 def normalize(text): return re.sub(r'\s+',' ',text).strip()
 def title_key(text): return re.sub(r'[^a-z0-9]','',unicodedata.normalize('NFKD',text).encode('ascii','ignore').decode().lower())
+def vault_link(target):
+    # Canonical external targets omit .md; private relative file paths retain it.
+    return target if target.startswith(('brain/','research/')) and not target.endswith('.md') else 'knowledge/'+Path(target).with_suffix('').as_posix()
 def stamp(): return dt.datetime.now(dt.timezone.utc).isoformat()
 def note_fingerprint(text): return digest(re.sub(r'^generated_sha256:.*\n','',text,flags=re.M))
 def inside(root,target):
@@ -454,7 +457,7 @@ def run(cfg,publish_changes=False):
                     previous=inside(root,own_target)
                     if previous.is_file() and old.get('generated_sha') and digest(previous.read_text(encoding='utf-8'))==old['generated_sha']:
                         preserved=cache/'superseded'/own_target; preserved.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(previous,preserved)
-                        link=duplicate if duplicate.startswith(('brain/','research/')) else 'knowledge/'+Path(duplicate).with_suffix('').as_posix()
+                        link=vault_link(duplicate)
                         redirect='---\ntype: redirect\ngenerated_navigation: true\ntags: [type/redirect]\n---\n# Canonical source\n\n[['+link+']]\n\nOriginal input remains at '+record.source+'\n'
                         if atomic(previous,redirect): changed.append(own_target)
                 manifest['sources'][record.id]={'sha':record.version,'target':duplicate,'duplicate_of':duplicate,'content_sha':content_sha,'kind':record.kind,'guard_sha':scan_hashes[record.id]}
@@ -491,7 +494,7 @@ def run(cfg,publish_changes=False):
         if aliases:
             sources+=['## Existing canonical notes','']
             for target in aliases:
-                link=target if target.startswith(('brain/','research/')) else 'knowledge/'+Path(target).with_suffix('').as_posix()
+                link=vault_link(target)
                 sources.append('- [['+link+']]')
             sources+=['']
         review=['---','type: index','generated_navigation: true','tags: [type/index]','---','# Sources requiring attention','',
