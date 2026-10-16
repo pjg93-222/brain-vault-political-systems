@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/vault-integration-lane-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\vault-integration-lane-2026-10-15.md", sha256: "bf69b9d1a46fff31503b0f9cf7ae2242e8a6d9c93d95f5ac042850dafde8809a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/vault-integration-lane-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\vault-integration-lane-2026-10-15.md", sha256: "f8e1aadedf4349088642ad890583ec090052cc8b29cebad39ebe93704601bf34"}
 updated_at: 2026-10-15
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -41,11 +41,11 @@ Still open:
 
 Related: `brainlink-knowledge-system-2026-10-05`, `brain-vault-sync-mechanism-2026-10-07`, `research-vault-lane-2026-10-09`, `skill-library-stale-facts-lane-2026-09-30`.
 
+2026-10-15: fix 5 (brain auto-upload) is implemented at C:\Users\pgoff\.claude\hooks\brain-upload\vaultlink\brain_upload.py (source: Project Brain vaultlink/brain_upload.py on master), hooks Stop and SessionStart; D-224 generated files only, secret scan fail-closed.
+
 ## Possible Connections
 
-- [[research-vault]] — keyword match from recall, unverified
-- [[brainlink]] — keyword match from recall, unverified
-- [[brain-vault-political-systems]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
