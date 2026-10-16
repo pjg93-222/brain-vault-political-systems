@@ -11,6 +11,43 @@ spec=importlib.util.spec_from_file_location('sources',Path(__file__).with_name('
 sources=importlib.util.module_from_spec(spec); sys.modules['sources']=sources; spec.loader.exec_module(sources)
 
 class SourceTests(unittest.TestCase):
+    def test_visual_review_requires_matching_original_transcript_and_full_coverage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); original=root/'original.pdf'; original.write_bytes(b'immutable original')
+            transcript=root/'transcriptions/reviewed.txt'; transcript.parent.mkdir(); transcript.write_bytes(b'Checked source words.\n')
+            sha=sources.digest(original.read_bytes())
+            review={'source_sha256':sha,'transcript':'transcriptions/reviewed.txt','transcript_sha256':sources.digest(transcript.read_bytes()),
+                    'status':'complete','units_checked':2,'source_units':2,'reviewed_at':'2026-10-16','unresolved':[]}
+            result=lambda: sources.reviewed_extraction(root,sha,original,{sha:review})
+            self.assertEqual(result()['status'],'ocr-reviewed')
+            original.write_bytes(b'changed original'); self.assertEqual(result()['status'],'ocr-review-needs-attention')
+            original.write_bytes(b'immutable original'); transcript.write_bytes(b'changed transcript')
+            self.assertEqual(result()['status'],'ocr-review-needs-attention')
+            transcript.write_bytes(b'Checked source words.\n');review['units_checked']=1
+            self.assertEqual(result()['status'],'ocr-review-needs-attention')
+            review['units_checked']=2;review['transcript']='../outside.txt'
+            self.assertEqual(result()['status'],'ocr-review-needs-attention')
+
+    def test_partial_review_is_not_a_verified_claim_or_clearable_extraction(self):
+        record=sources.Record('r','document','Handwritten source','One term remains [unclear].','original.pdf','v1','coursework',
+                              metadata={'extraction':'ocr-reviewed-partial','ocr_review_unresolved':['image 2 exponent']})
+        issue=sources.extraction_issue(record,'coursework/record.md')
+        self.assertIn('image 2 exponent',issue['reason'])
+        self.assertIn('evidence_status: UNVERIFIED',sources.render_record(record))
+        record.metadata['extraction']='ocr-reviewed'
+        self.assertIsNone(sources.extraction_issue(record,'coursework/record.md'))
+
+    def test_duplicate_documents_retain_each_pending_review(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            records=[sources.Record(i,'document',i,'Identical handwritten source text.','file.pdf','v1','research',
+                                    metadata={'extraction':'ocr-reviewed-partial','ocr_review_unresolved':['image 4 exponent']}) for i in ['a','b']]
+            with patch.object(sources,'existing_bindings',return_value=({},{})),patch.object(sources,'research_records',return_value=records),patch.object(sources,'claude_records',return_value=[]),patch.object(sources,'codex_records',return_value=[]),patch.object(sources,'documentation_records',return_value=[]),patch.object(sources,'scan_records',return_value={'a':[],'b':[]}):
+                result=sources.run({'knowledge':tmp})
+            self.assertEqual(result['stats']['review_items'],2)
+            queue=(Path(tmp)/'Review queue.md').read_text(encoding='utf-8')
+            self.assertEqual(queue.count('image 4 exponent'),2)
+            self.assertNotIn('[[research/general',queue)
+
     def test_private_research_folder_is_not_external_vault_namespace(self):
         self.assertEqual(sources.vault_link('research/general/import.md'),'knowledge/research/general/import')
         self.assertEqual(sources.vault_link('research/papers/theme/paper'),'research/papers/theme/paper')
@@ -38,7 +75,7 @@ class SourceTests(unittest.TestCase):
                 self.assertEqual(manifest['sources']['b']['duplicate_of'],manifest['sources']['a']['target'])
                 sources.run(cfg); self.assertEqual(target.read_bytes(),original)
                 target.write_text(target.read_text()+'\nHuman correction retained.\n')
-                first.text='A newer source version with different content.'; first.version='v2'
+                first.text='A corrected transcript with different content but the same original-file version.'
                 sources.run(cfg)
                 self.assertIn('Human correction retained.',target.read_text())
                 self.assertIn('source changed; curated/edited note preserved',(Path(tmp)/'Review queue.md').read_text())
