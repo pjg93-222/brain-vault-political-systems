@@ -213,15 +213,58 @@ def source_heading(text,fallback):
         if len(line.split())>=4: return line
     return fallback
 
+def reviewed_extraction(root,sha,source,reviews):
+    """Use durable visual corrections only while both original and transcript hashes match."""
+    review=reviews.get(sha)
+    if review is None: return None
+    try:
+        if review['source_sha256']!=sha or digest(source.read_bytes())!=sha:
+            raise ValueError('original file changed since visual review')
+        transcript=inside(root,review['transcript'])
+        if not transcript.is_file() or digest(transcript.read_bytes())!=review['transcript_sha256']:
+            raise ValueError('reviewed transcript is missing or changed')
+        text=transcript.read_text(encoding='utf-8')
+        if review['status'] not in ['complete','partial']: raise ValueError('unknown visual review status')
+        count=review['units_checked'];total=review['source_units']
+        if not isinstance(count,int) or not isinstance(total,int) or total<1 or count<0 or count>total:
+            raise ValueError('invalid visual review coverage')
+        if review['status']=='complete' and (count!=total or review.get('unresolved') or
+                re.search(r'\[[^\]\n]*(?:unclear|illegible|uncertain|unreadable)[^\]\n]*\]',text,re.I)):
+            raise ValueError('complete review still has unchecked or uncertain content')
+        return {'text':text,'status':'ocr-reviewed' if review['status']=='complete' else 'ocr-reviewed-partial',
+                'review_metadata':{'ocr_reviewed_at':review['reviewed_at'],'ocr_review_method':'visual comparison with original',
+                                   'ocr_review_units_checked':count,'ocr_review_source_units':total,
+                                   'ocr_review_notes':review.get('notes',''),'ocr_review_unresolved':review.get('unresolved',[]),
+                                   'ocr_review_transcript':str(transcript),'ocr_review_transcript_sha256':review['transcript_sha256']}}
+    except (OSError,KeyError,ValueError,RuntimeError) as exc:
+        return {'text':'','status':'ocr-review-needs-attention','review_metadata':{'ocr_review_notes':str(exc)}}
+
+
+def extraction_issue(record,target):
+    status=record.metadata.get('extraction')
+    if record.kind!='document' or status in ['text-extracted','ocr-reviewed']: return None
+    reason=status or 'unknown extraction status'
+    unresolved=record.metadata.get('ocr_review_unresolved',[])
+    if unresolved: reason+=': '+'; '.join(unresolved)
+    elif status=='ocr-review-needs-attention': reason+=': '+record.metadata.get('ocr_review_notes','')
+    label=record.title
+    if record.metadata.get('original_name'): label+=' ('+Path(record.source).name+')'
+    return {'id':record.id,'reason':label+' — '+reason,'target':target}
+
+
 def research_records(cfg,stats):
     root=Path(cfg['research']); cache=Path(cfg['knowledge'])/'.integration/extracted'; cache.mkdir(parents=True,exist_ok=True)
+    reviews_path=Path(cfg['knowledge'])/'OCR reviews.json'
+    reviews=json.loads(reviews_path.read_text(encoding='utf-8')).get('sources',{}) if reviews_path.is_file() else {}
     for stub in sorted((root/'inbox').glob('*.md')):
         meta=fm(stub.read_text(encoding='utf-8-sig')); copy=meta.get('copy'); sha=str(meta.get('sha256',''))
         if not copy or not sha: continue
         source=(root/copy).resolve()
         if not source.is_relative_to(root.resolve()): raise RuntimeError('Research copy escaped source vault')
         cached=cache/(sha+'.json')
-        if cached.is_file():
+        reviewed=reviewed_extraction(Path(cfg['knowledge']),sha,source,reviews)
+        if reviewed is not None: result=reviewed
+        elif cached.is_file():
             result=json.loads(cached.read_text(encoding='utf-8'))
             if (result['status']=='ocr-in-progress' or (result['status'] in ['needs-ocr','needs-text-review'] and not result.get('ocr_attempted'))) and (cache.parent/'tessdata/eng.traineddata').is_file() and source.is_file():
                 try: text,status=extract(source,cache.parent/'tessdata')
@@ -235,7 +278,8 @@ def research_records(cfg,stats):
         text=result['text']; title=str(meta.get('title',stub.stem)); category=classify(title,text)
         stats['research_extraction_'+result['status']]+=1
         yield Record('research:'+sha,'document',source_heading(text,title),text,str(source),sha,category,
-                     raw_sha=sha,metadata={'stub':str(stub),'extraction':result['status'],'original_name':title})
+                     raw_sha=sha,metadata={'stub':str(stub),'extraction':result['status'],'original_name':title,
+                                          **result.get('review_metadata',{})})
 
 def existing_bindings(cfg):
     bindings={}; raw={}
@@ -384,6 +428,11 @@ def render_record(record):
           '## Summary / extracted content','',summary or 'No reliable text was extracted. Original is retained; review or OCR is needed.','',
           '## Provenance','', '- Source: '+record.source, '- Version: `'+record.version+'`',
           '- Kind: '+record.kind,'','[[knowledge/Sources|Source collections]]','']
+    if record.metadata.get('ocr_review_transcript'):
+        body+=['## OCR comparison with original','',record.metadata.get('ocr_review_notes',''),'',
+               'Transcription review does not validate the document’s claims, answers, or current operational state.','',
+               '[Full reviewed transcript]('+Path(record.metadata['ocr_review_transcript']).as_uri()+')','',
+               '[[knowledge/OCR review|Review record and remaining uncertainties]]','']
     base='---\n'+yaml.safe_dump(front,sort_keys=False,allow_unicode=True).strip()+'\n---\n\n'+'\n'.join(body)
     return base.replace('\n---\n\n','\ngenerated_sha256: '+digest(base)+'\n---\n\n',1)
 
@@ -461,6 +510,8 @@ def run(cfg,publish_changes=False):
                         redirect='---\ntype: redirect\ngenerated_navigation: true\ntags: [type/redirect]\n---\n# Canonical source\n\n[['+link+']]\n\nOriginal input remains at '+record.source+'\n'
                         if atomic(previous,redirect): changed.append(own_target)
                 manifest['sources'][record.id]={'sha':record.version,'target':duplicate,'duplicate_of':duplicate,'content_sha':content_sha,'kind':record.kind,'guard_sha':scan_hashes[record.id]}
+                issue=extraction_issue(record,duplicate)
+                if issue: pending.append(issue)
                 stats['duplicate_sources_linked']+=1; continue
             if not re.fullmatch(r'[a-z][a-z0-9-]*',record.category) or not re.fullmatch(r'[a-z][a-z0-9-]*',record.project):
                 raise RuntimeError('Invalid collection category/project')
@@ -470,14 +521,16 @@ def run(cfg,publish_changes=False):
                        (fm(existing).get('source_id')==record.id and fm(existing).get('generated_sha256')==note_fingerprint(existing))))
             if existing is not None and not owned:
                 stats['hand_edited_notes_preserved']+=1
-                if old.get('sha')!=record.version: pending.append({'id':record.id,'reason':'source changed; curated/edited note preserved','target':target})
+                if old.get('sha')!=record.version or old.get('content_sha')!=content_sha: pending.append({'id':record.id,'reason':'source changed; curated/edited note preserved','target':target})
+                issue=extraction_issue(record,target)
+                if issue: pending.append(issue)
                 groups.setdefault(record.category,[]).append(target); continue
             if atomic(path,text): changed.append(target); stats['written']+=1
             else: stats['unchanged']+=1
             manifest['sources'][record.id]={'sha':record.version,'target':target,'content_sha':content_sha,'generated_sha':digest(text),'kind':record.kind,'guard_sha':scan_hashes[record.id]}
             content_targets[content_sha]=target; groups.setdefault(record.category,[]).append(target)
-            if record.metadata.get('extraction')!='text-extracted' and record.kind=='document':
-                pending.append({'id':record.id,'reason':record.metadata.get('extraction'),'target':target})
+            issue=extraction_issue(record,target)
+            if issue: pending.append(issue)
         for curated in sorted((root/'curation').glob('*.md')):
             meta=fm(curated.read_text(encoding='utf-8'))
             for source in meta.get('sources',[]) or []:
@@ -499,7 +552,7 @@ def run(cfg,publish_changes=False):
             sources+=['']
         review=['---','type: index','generated_navigation: true','tags: [type/index]','---','# Sources requiring attention','',
                 'Only extraction problems, withheld content, or a changed source behind a hand-edited note need attention.','']
-        review += ['- '+p['reason']+(' — [[knowledge/'+Path(p['target']).with_suffix('').as_posix()+']]' if p.get('target') else ' — source '+digest(p['id'])[:12]) for p in pending]
+        review += ['- '+p['reason']+(' — [['+vault_link(p['target'])+']]' if p.get('target') else ' — source '+digest(p['id'])[:12]) for p in pending]
         for name,text in [('Sources.md','\n'.join(sources)+'\n'),('Review queue.md','\n'.join(review)+'\n')]:
             if atomic(root/name,text): changed.append(name)
         manifest['scanner_signature']=scanner_signature

@@ -51,3 +51,9 @@ Windows task `vault-knowledge-sources` calls `pythonw sources.py run --publish -
 Codex's global AGENTS managed block points to the same workspace and `sources.py recall --query "terms"`. Claude's existing recall hook combines research and private indexes, returning at most three paths/titles. Neither system treats historical saved instructions as fresh user authorization. There is no unsupported Codex hook or native memory database modification; scheduled polling captures completed outcomes.
 
 Dependencies: Python 3.12+, PyYAML, PyMuPDF (pypdf fallback), Bun, Git, GitHub CLI authentication; optional `eng.traineddata` for local OCR. This integration is specific to the Windows workstation's local schemas and configured source roots.
+
+### Durable OCR comparison
+
+Private `OCR reviews.json` maps original SHA-256 values to reviewed text under `transcriptions/`, recording transcript hashes, complete/partial status, checked/source page-or-image counts, review date, and unresolved locations. Both are tracked in the private collection. `research_records` verifies the current original bytes and transcript hash before applying a correction; a missing, changed, escaped, or incomplete review cannot clear an item. Complete review becomes `ocr-reviewed`; partial review remains queued with precise unresolved locations. Duplicate originals still retain their own pending review entries, even when their corrected text shares one canonical card.
+
+Review validates extraction fidelity only. Source claims and coursework answers remain `UNVERIFIED`; no facts, answers, or deployment status are certified by comparing a transcript. Source cards link the full transcript and the private review record. Original uncorrected OCR remains in the ignored extraction cache; clearing that cache does not discard tracked corrections. A changed transcript also flags a hand-edited card even when the original-file version has not changed.
