@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/vault-integration-lane-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\vault-integration-lane-2026-10-15.md", sha256: "f8e1aadedf4349088642ad890583ec090052cc8b29cebad39ebe93704601bf34"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/vault-integration-lane-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\vault-integration-lane-2026-10-15.md", sha256: "9edc5910a5c8ceb657084d96f188b6508436fee679f27c3c3e39fa524e397cf8"}
 updated_at: 2026-10-15
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -32,7 +32,7 @@ Done 2026-10-15:
 
 Still open:
 - **Fix 4+6:** the research inbox, the vault_sync runner and the `vaultlink-sync` scheduled task. Paul approved the task (D-226/D-227), but the work was interrupted by a session restart.
-- **Fix 5 (not built):** auto-commit only brainlink's `written_notes`, run pull --ff-only first, and skip header-only changes.
+- **Fix 5: DONE 2026-10-15.** vaultlink/brain_upload.py (Project Brain master 200ff94; exported to ~\.claude\hooks\brain-upload\) runs on the Stop and SessionStart hooks. GitHub confirmed 5825c1a (7 pending files) and 138f194 (new capture). Ineligible: .obsidian/graph.json, projects/_template.md, Untitled*.
 - **Skill line-ref pass:** applied only in worktree claude/skill-lineref-pass. Group 2 is done; groups 1 and 3 were interrupted. Committing needs Paul's word.
 - **.obsidian/graph.json:** whether it stays tracked is Paul's call.
 
