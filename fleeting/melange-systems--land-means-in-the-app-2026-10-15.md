@@ -5,15 +5,16 @@ aliases: ["land-means-in-the-app-2026-10-15"]
 source: "session"
 captured_at: 2026-10-15
 created_at: 2026-10-15
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fdelivery-and-release-evidence"
 project: "melange-systems"
 memory_type: "feedback"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/land-means-in-the-app-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\land-means-in-the-app-2026-10-15.md", sha256: "c607b4bdc518128ca5b31b2116db0b99b1d6c32fa46f2f568de79edd29b83fe7"}
 updated_at: 2026-10-15
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Land means in the app (2026-10-15)

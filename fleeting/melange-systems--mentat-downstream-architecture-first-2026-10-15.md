@@ -5,15 +5,16 @@ aliases: ["mentat-downstream-architecture-first-2026-10-15"]
 source: "session"
 captured_at: 2026-10-15
 created_at: 2026-10-15
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Ffec-collector-planning-and-performance"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-downstream-architecture-first-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-downstream-architecture-first-2026-10-15.md", sha256: "a12079d1125dd9131baf28042201904415fc74ea786d079807c1e4b6733a3759"}
 updated_at: 2026-10-15
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Mentat downstream architecture first (2026-10-15)

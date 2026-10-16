@@ -5,15 +5,16 @@ aliases: ["fast-startup-restart-check-2026-10-12"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fworkstation-data-preservation"
 project: "melange-systems"
 memory_type: "reference"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fast-startup-restart-check-2026-10-12.md", type: "claude-memory", synced_at: "2026-10-13", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fast-startup-restart-check-2026-10-12.md", sha256: "312a0799608e1027f0bf5366c49e9a0f157918eedf999b387a1816fd2ef0bd5d"}
 updated_at: 2026-10-13
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Fast startup restart check (2026-10-12)

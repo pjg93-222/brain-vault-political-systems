@@ -5,15 +5,16 @@ aliases: ["fec-folder-debug-sweep-2026-10-13"]
 source: "session"
 captured_at: 2026-10-13
 created_at: 2026-10-13
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fknowledge-and-agent-workflow"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fec-folder-debug-sweep-2026-10-13.md", type: "claude-memory", synced_at: "2026-10-13", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fec-folder-debug-sweep-2026-10-13.md", sha256: "6e68c37943aecbe0773480af6ccc416afa2ab0e06f2715b31722817945c5043b"}
 updated_at: 2026-10-13
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Fec folder debug sweep (2026-10-13)

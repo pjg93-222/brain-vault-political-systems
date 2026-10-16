@@ -5,15 +5,16 @@ aliases: ["public-github-releases-ruling-2026-10-15"]
 source: "session"
 captured_at: 2026-10-15
 created_at: 2026-10-15
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fdelivery-and-release-evidence"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/public-github-releases-ruling-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\public-github-releases-ruling-2026-10-15.md", sha256: "29f777102c3a67d5a0ecb08cb87b9d3638977cf2b431a60e08f8bccf911bab56"}
 updated_at: 2026-10-15
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Public github releases ruling (2026-10-15)

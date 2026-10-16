@@ -5,15 +5,16 @@ aliases: ["press-backlog-media-status-are-bugs-2026-10-15"]
 source: "session"
 captured_at: 2026-10-15
 created_at: 2026-10-15
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Frefresh-and-data-integrity"
 project: "melange-systems"
 memory_type: "feedback"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/press-backlog-media-status-are-bugs-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\press-backlog-media-status-are-bugs-2026-10-15.md", sha256: "f28e3554ca35dea5cc5b89a0014c2e0909a98376f6636c9b4230eadb4d91ca20"}
 updated_at: 2026-10-15
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Press backlog media status are bugs (2026-10-15)

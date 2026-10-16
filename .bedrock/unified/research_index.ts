@@ -21,6 +21,8 @@ function walk(dir: string) {
     const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
     let fm: any = {};
     try { fm = match ? Bun.YAML.parse(match[1]) || {} : {}; } catch { /* use heading */ }
+    if (fm.generated_navigation || fm.type === 'redirect') continue;
+    if (/^(inbox|fleeting)\//.test(rel) && ['promoted', 'curated', 'linked-existing'].includes(String(fm.status))) continue;
     const body = text.slice(match?.[0].length || 0);
     const title = String(fm.title || fm.name || body.match(/^#\s+(.+)$/m)?.[1] || entry.name.slice(0, -3)).replace(/[\r\n]/g, ' ');
     // Index locally; hook returns only title and absolute path, never research excerpts.

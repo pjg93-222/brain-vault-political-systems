@@ -5,15 +5,16 @@ aliases: ["queue-clearout-delegated-rulings-2026-10-11"]
 source: "session"
 captured_at: 2026-10-11
 created_at: 2026-10-11
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fknowledge-and-agent-workflow"
 project: "melange-systems"
 memory_type: "feedback"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/queue-clearout-delegated-rulings-2026-10-11.md", type: "claude-memory", synced_at: "2026-10-11", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\queue-clearout-delegated-rulings-2026-10-11.md", sha256: "cdb58019dee23a0fd3c574a27bd0b450896932f7856620014c4c02d9eb520765"}
 updated_at: 2026-10-11
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Queue clearout delegated rulings (2026-10-11)

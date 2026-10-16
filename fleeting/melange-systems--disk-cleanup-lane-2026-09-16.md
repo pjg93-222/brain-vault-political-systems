@@ -5,8 +5,8 @@ aliases: ["disk-cleanup-lane-2026-09-16"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fworkstation-data-preservation"
 project: "melange-systems"
 memory_type: "project"
 updates:
@@ -14,8 +14,9 @@ updates:
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-cleanup-lane-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-13", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-cleanup-lane-2026-09-16.md", sha256: "77a2388fec4251b593cb4b0af9948ec9819a1bb8bdc0b2b7a3918d3891dc9bde"}
 updated_at: 2026-10-13
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Disk cleanup lane (2026-09-16)

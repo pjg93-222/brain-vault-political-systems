@@ -5,15 +5,16 @@ aliases: ["brains-on-every-session-2026-10-13"]
 source: "session"
 captured_at: 2026-10-13
 created_at: 2026-10-13
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fknowledge-and-agent-workflow"
 project: "melange-systems"
 memory_type: "feedback"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/brains-on-every-session-2026-10-13.md", type: "claude-memory", synced_at: "2026-10-13", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\brains-on-every-session-2026-10-13.md", sha256: "4252b6a61408f01bb1fd15e9a57853bfdf9fc29bbda6bd7502a674422b40f8db"}
 updated_at: 2026-10-13
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Brains on every session (2026-10-13)

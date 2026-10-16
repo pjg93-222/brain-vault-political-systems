@@ -5,15 +5,16 @@ aliases: ["forecast-lit-and-lobby-yearly-lane-2026-10-13"]
 source: "session"
 captured_at: 2026-10-13
 created_at: 2026-10-13
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fevaluation-and-forecast-research"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/forecast-lit-and-lobby-yearly-lane-2026-10-13.md", type: "claude-memory", synced_at: "2026-10-13", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\forecast-lit-and-lobby-yearly-lane-2026-10-13.md", sha256: "3d9dc29c13e934f10276c228a5e9accc9fbbaf081d3503e9f2ed0ed4cd5d1816"}
 updated_at: 2026-10-13
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Forecast lit and lobby yearly lane (2026-10-13)

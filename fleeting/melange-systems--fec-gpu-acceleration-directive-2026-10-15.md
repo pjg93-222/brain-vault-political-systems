@@ -5,15 +5,16 @@ aliases: ["fec-gpu-acceleration-directive-2026-10-15"]
 source: "session"
 captured_at: 2026-10-15
 created_at: 2026-10-15
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Ffec-collector-planning-and-performance"
 project: "melange-systems"
 memory_type: "user"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fec-gpu-acceleration-directive-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-15", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fec-gpu-acceleration-directive-2026-10-15.md", sha256: "23bd98629ffce713dd2db39861173e1aa195a925454ee1831b97fdbece26707b"}
 updated_at: 2026-10-15
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Fec gpu acceleration directive (2026-10-15)
