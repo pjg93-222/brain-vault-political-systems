@@ -29,5 +29,11 @@ walk(root);
 mkdirSync(resolve(output, '..'), { recursive: true });
 const tmp = output + '.tmp-' + process.pid;
 writeFileSync(tmp, JSON.stringify({version: 1, built: Date.now(), root, notes, withheld}), 'utf8');
-renameSync(tmp, output);
+for (let attempt = 0; ; attempt++) {
+  try { renameSync(tmp, output); break; }
+  catch (error: any) {
+    if (attempt >= 19 || !['EPERM', 'EACCES', 'EBUSY'].includes(error?.code)) throw error;
+    Bun.sleepSync(100); // Windows readers and virus scanners can hold the destination briefly.
+  }
+}
 console.log(JSON.stringify({indexed: notes.length, withheld: withheld.length}));
