@@ -46,7 +46,10 @@ def atomic(path, content):
 def scan(root, namespace):
     result = []
     for folder, dirs, files in os.walk(root, followlinks=False):
-        dirs[:] = sorted(d for d in dirs if not d.startswith(('.', '_')) and not os.path.isjunction(Path(folder)/d))
+        papers_folder = namespace == 'research' and Path(folder) == root/'papers'
+        dirs[:] = sorted(d for d in dirs
+                         if (not d.startswith(('.', '_')) or (papers_folder and d == '_non-articles'))
+                         and not os.path.isjunction(Path(folder)/d))
         for name in sorted(files):
             if not name.endswith('.md') or name.startswith('_') or name in {'CLAUDE.md','index.md','log.md'}:
                 continue
