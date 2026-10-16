@@ -5,15 +5,16 @@ aliases: ["canterra-attrition-deck-2026-10-12"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fanalytics-presentations"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/canterra-attrition-deck-2026-10-12.md", type: "claude-memory", synced_at: "2026-10-12", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\canterra-attrition-deck-2026-10-12.md", sha256: "e751d4a4667441c13c90fb534fa1a71c6f17f032bcba03679f1ac669f50b55d1"}
 updated_at: 2026-10-12
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Canterra attrition deck (2026-10-12)

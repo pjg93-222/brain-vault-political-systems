@@ -5,15 +5,16 @@ aliases: ["literal-graphs-only-in-decks-2026-10-12"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fanalytics-presentations"
 project: "melange-systems"
 memory_type: "feedback"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/literal-graphs-only-in-decks-2026-10-12.md", type: "claude-memory", synced_at: "2026-10-12", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\literal-graphs-only-in-decks-2026-10-12.md", sha256: "6d018e0f57a0ef56c6c9cd636187436c55d70ac1bbb1a15e9e640b6bf3c92427"}
 updated_at: 2026-10-12
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Literal graphs only in decks (2026-10-12)

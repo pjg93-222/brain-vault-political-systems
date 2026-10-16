@@ -5,8 +5,8 @@ aliases: ["code-review-five-lanes-2026-09-13"]
 source: "session"
 captured_at: 2026-10-11
 created_at: 2026-10-11
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fknowledge-and-agent-workflow"
 project: "melange-systems"
 memory_type: "project"
 updates:
@@ -14,8 +14,9 @@ updates:
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/code-review-five-lanes-2026-09-13.md", type: "claude-memory", synced_at: "2026-10-11", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\code-review-five-lanes-2026-09-13.md", sha256: "d49fe0f63db712db14de11391e47efd3e357488a38c61f57825f90a96380e824"}
 updated_at: 2026-10-11
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Code review five lanes (2026-09-13)

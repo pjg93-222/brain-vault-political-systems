@@ -5,15 +5,16 @@ aliases: ["deployment-lane-2026-10-11"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fdelivery-and-release-evidence"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/deployment-lane-2026-10-11.md", type: "claude-memory", synced_at: "2026-10-12", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\deployment-lane-2026-10-11.md", sha256: "7b10ebd8a1dc6a9fefa199d47532ec21d8cc3b909f4494d5a15dae8cf5e83fe9"}
 updated_at: 2026-10-12
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Deployment lane (2026-10-11)

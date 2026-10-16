@@ -5,15 +5,16 @@ aliases: ["queue-clearout-results-2026-10-12"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Frefresh-and-data-integrity"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/queue-clearout-results-2026-10-12.md", type: "claude-memory", synced_at: "2026-10-12", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\queue-clearout-results-2026-10-12.md", sha256: "56443eb2b4d37c70b649f02e3b2ea4777496867bbcb659cd50352ccad6f8d67e"}
 updated_at: 2026-10-12
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Queue clearout results (2026-10-12)

@@ -5,15 +5,16 @@ aliases: ["storage-sense-wipes-temp-2026-10-14"]
 source: "session"
 captured_at: 2026-10-14
 created_at: 2026-10-14
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fworkstation-data-preservation"
 project: "melange-systems"
 memory_type: "project"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/storage-sense-wipes-temp-2026-10-14.md", type: "claude-memory", synced_at: "2026-10-14", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\storage-sense-wipes-temp-2026-10-14.md", sha256: "491a92e8612c9b70c901090783ea07d1e9b58a14113973f79d30c7bd91f3797b"}
 updated_at: 2026-10-14
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Storage sense wipes temp (2026-10-14)

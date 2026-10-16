@@ -5,15 +5,16 @@ aliases: ["simplify-means-translate-not-delete-2026-10-12"]
 source: "session"
 captured_at: 2026-10-12
 created_at: 2026-10-12
-status: "raw"
-promoted_to: ""
+status: "promoted"
+promoted_to: "obsidian://open?vault=linked&file=knowledge%2Fcuration%2Fanalytics-presentations"
 project: "melange-systems"
 memory_type: "feedback"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/simplify-means-translate-not-delete-2026-10-12.md", type: "claude-memory", synced_at: "2026-10-12", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\simplify-means-translate-not-delete-2026-10-12.md", sha256: "18d1c5d6173fe2979d76fb9631a25d42b352b56be040d6072efaa9f9de77e3c2"}
 updated_at: 2026-10-12
-updated_by: "brain-sync@hook"
+updated_by: "codex/intake-curation"
 tags: ["type/fleeting", "status/raw"]
+curated_at: "2026-10-16"
 ---
 
 # Simplify means translate not delete (2026-10-12)
