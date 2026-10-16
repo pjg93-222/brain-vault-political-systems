@@ -26,7 +26,7 @@ Install additional command hooks in the user's existing settings, preserving eve
 
 The refresh hook launches a hidden detached worker, throttled to once per minute and protected by an exclusive lock. It performs no inbox intake or Git operations. Errors are saved to `cache/last-error.txt` and the next SessionStart points to that file.
 
-Windows scheduled task `vaultlink-sync` should call `pythonw unified.py sync` at logon and every 30 minutes, with an interactive least-privilege principal, one instance, and a 15-minute limit. This wraps the existing inbox importer rather than introducing a second competing intake.
+Windows scheduled task `vaultlink-sync` should call `pythonw unified.py sync` at logon and every 30 minutes, with an interactive least-privilege principal, normal process priority (Task Scheduler priority 5), one instance, and a 15-minute limit. The default below-normal priority can starve on a busy workstation and cause Git timeouts. This wraps the existing inbox importer rather than introducing a second competing intake.
 
 ## Git boundaries
 
