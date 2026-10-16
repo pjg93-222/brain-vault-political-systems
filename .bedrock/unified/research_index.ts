@@ -9,7 +9,9 @@ const notes: any[] = [];
 const withheld: string[] = [];
 function walk(dir: string) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
-    if (entry.name.startsWith('.') || entry.name.startsWith('_')) continue;
+    const isReferenceFolder = entry.isDirectory() && entry.name === '_non-articles'
+      && relative(root, dir).replaceAll('\\', '/') === 'papers';
+    if (entry.name.startsWith('.') || (entry.name.startsWith('_') && !isReferenceFolder)) continue;
     const abs = join(dir, entry.name);
     if (entry.isDirectory()) { walk(abs); continue; }
     if (!entry.name.endsWith('.md') || ['CLAUDE.md', 'log.md'].includes(entry.name)) continue;

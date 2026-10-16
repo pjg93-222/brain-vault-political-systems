@@ -5,12 +5,25 @@ import unittest
 import json
 import subprocess
 import sys
+import shutil
 
 spec=importlib.util.spec_from_file_location('unified',Path(__file__).with_name('unified.py'))
 unified=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(unified)
 
 class UnifiedTests(unittest.TestCase):
+    def test_curated_references_included_but_processing_folders_stay_excluded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            for rel in ['papers/_non-articles/reference.md','_sources/hidden.md','annotations/_versions/old.md','papers/_other/hidden.md']:
+                path=root/rel; path.parent.mkdir(parents=True,exist_ok=True); path.write_text('# Reference\nReference content.\n')
+            self.assertEqual([n['rel'] for n in unified.scan(root,'research')],['papers/_non-articles/reference.md'])
+            self.assertEqual(unified.scan(root,'brain'),[])
+            if shutil.which('bun'):
+                output=root/'index.json'
+                subprocess.run(['bun',str(Path(__file__).with_name('research_index.ts')),str(root),str(output)],capture_output=True,check=True)
+                self.assertEqual([n['rel'] for n in json.loads(output.read_text())['notes']],['papers/_non-articles/reference.md'])
+
     def test_duplicate_content_collapses_without_changing_sources(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
