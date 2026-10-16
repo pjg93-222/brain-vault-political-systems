@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-570 notes.
+572 notes.
 
 ## Actors (49)
 
@@ -265,7 +265,7 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 
-## Fleeting (22)
+## Fleeting (23)
 
 - [[melange-systems--brains-on-every-session-2026-10-13]] — STANDING: at the start of EVERY session, boot the project brain (brainctl boot per CLAUDE.md) and confirm the Obsidian vault (C:\Users\pgoff\Documents\brain) recall and brainlink are live - before any work
 - [[melange-systems--canterra-attrition-deck-2026-10-12]] — NOT Melange - Paul's MBA Team Project 3 (Canterra employee attrition) 8-min Zoom deck; delivered Downloads\Canterra_Attrition_Presentation.pptx; report errors + Q4 ruling recorded
@@ -289,10 +289,11 @@
 - [[melange-systems--queue-clearout-results-2026-10-12]] — 10-10..10-12 queue clear-out CLOSED - records in audits/decisions_20261011 (DECISIONS.md + FINAL_REPORT.md); tail jobs still running; Paul-only list
 - [[melange-systems--simplify-means-translate-not-delete-2026-10-12]] — Paul 2026-10-12: 'no jargon' / 'simplify' = roughly a 30% cut that TRANSLATES technical terms (plain label + real term + precise number), never a 70% cut that deletes the analysis
 - [[melange-systems--storage-sense-wipes-temp-2026-10-14]] — Windows Storage Sense deletes %TEMP% (incl.
+- [[melange-systems--vault-integration-lane-2026-10-15]] — 2026-10-15 vault integration (D-223/D-224) + skill line-ref pass (D-225..D-227): brain PR #27 merged, research vault on GitHub, vaultlink bridge builder; open items
 
-## Ledger (generated from the Project Brain) (305)
+## Ledger (generated from the Project Brain) (306)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 298 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 299 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS

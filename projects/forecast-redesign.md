@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-15 15:58
-- Open questions in STATE: 38; active decisions: 214; dead ends: 70
+- Open questions in STATE: 38; active decisions: 215; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-228|D-228]] — FEC bulk operating expenditures (oppexp) are a separate, labeled coverage class
 - [[ledger/melange-systems-brain/D-227|D-227]] — Skill line-ref pass approved with recommended calls; vaultlink-sync task approve
 - [[ledger/melange-systems-brain/D-226|D-226]] — Skill line-ref pass approved with recommended calls; vaultlink-sync task approve
 - [[ledger/melange-systems-brain/D-225|D-225]] — Say-do Path J is retired; delegated 2026-10-11 rulings may be called ratified in
 - [[ledger/melange-systems-brain/D-224|D-224]] — Brain vault: generated and captured files auto-commit and auto-push to main; cur
-- [[ledger/melange-systems-brain/D-223|D-223]] — Vault integration: apply fixes 1-3 now, then 4-6; all three vaults must stay rea
 <!-- brainlink:state:end -->
