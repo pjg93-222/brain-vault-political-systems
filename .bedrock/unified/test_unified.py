@@ -12,6 +12,18 @@ unified=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(unified)
 
 class UnifiedTests(unittest.TestCase):
+    def test_processed_intake_hidden_from_catalog_and_recall(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp); (root/'inbox').mkdir(); (root/'papers').mkdir()
+            (root/'inbox/raw.md').write_text('---\ntitle: Raw\nstatus: raw\n---\n# Raw')
+            (root/'inbox/curated.md').write_text('---\ntitle: Curated intake\nstatus: curated\n---\n# Curated intake')
+            (root/'papers/paper.md').write_text('---\ntitle: Paper\nstatus: curated\n---\n# Paper')
+            self.assertEqual(len(unified.scan(root,'research')),2)
+            if shutil.which('bun'):
+                output=root/'index.json'
+                subprocess.run(['bun',str(Path(__file__).with_name('research_index.ts')),str(root),str(output)],capture_output=True,check=True)
+                self.assertEqual({n['rel'] for n in json.loads(output.read_text())['notes']},{'inbox/raw.md','papers/paper.md'})
+
     def test_curated_references_included_but_processing_folders_stay_excluded(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp)
