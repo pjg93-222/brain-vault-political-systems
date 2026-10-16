@@ -11,6 +11,11 @@ spec=importlib.util.spec_from_file_location('sources',Path(__file__).with_name('
 sources=importlib.util.module_from_spec(spec); sys.modules['sources']=sources; spec.loader.exec_module(sources)
 
 class SourceTests(unittest.TestCase):
+    def test_private_research_folder_is_not_external_vault_namespace(self):
+        self.assertEqual(sources.vault_link('research/general/import.md'),'knowledge/research/general/import')
+        self.assertEqual(sources.vault_link('research/papers/theme/paper'),'research/papers/theme/paper')
+        self.assertEqual(sources.vault_link('coursework/general/notes.md'),'knowledge/coursework/general/notes')
+
     def test_frontmatter_inline_delimiter_and_self_fingerprint(self):
         record=sources.Record('safe','document','An arrow <--- No!','A body with preserved source evidence.','file.pdf','v1','reference')
         note=sources.render_record(record)
