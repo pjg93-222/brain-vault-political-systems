@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-572 notes.
+573 notes.
 
 ## Actors (49)
 
@@ -112,7 +112,7 @@
 - [[research-vault]] — Separate Obsidian vault at C:/Users/pgoff/Documents/research (Bedrock name 'research') holding Paul's annotated bibliographies verbatim, his research notes and the academic literature on his computer, each paper related to the system...
 - [[terrier]] — Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root Documents\Terrier\outputs\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people...
 
-## Topics (150)
+## Topics (151)
 
 - [[2026-10-06-terrier-blueprint]] — The written plan for adding Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier app: its phases, what the 2026-10-06 review corrected, Paul's 2026-10-07 answers, how far the build has got and where every input lives.
 - [[2026-10-06-terrier-build-progress]] — The dated build record of the Terrier multi-district lane from 2026-10-07 to the evening of 2026-10-09: phases 0, 2 and 3, the nothing-withheld Colorado swap, the registration mix by party code, the Untapped map and one-click walk plan...
@@ -264,6 +264,7 @@
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
+- [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
 
 ## Fleeting (23)
 

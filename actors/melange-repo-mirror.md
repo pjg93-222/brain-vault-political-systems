@@ -25,7 +25,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "7cfbd6eb35a782151a209c74bb3499efeeb44b9462dfcc4606da4eff5dd9ad09"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
+updated_at: 2026-10-17
 updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
@@ -151,6 +151,7 @@ The working repo's `.git` lives under OneDrive. Files-on-demand dehydration make
 ## Related Topics
 
 - [[2026-07-troubleshooting-melange-live-tree-git-drift]] - Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror
+- [[2026-10-troubleshooting-melange-main-reconcile]] - Melange main reconcile 2026-10-16/17: default branch back to main, 49 published-lineage commits ported, live tree moved with backups, main and mirror in step
 - [[2026-08-incident-workstation-disk-and-backup]] - C: filled by repo worktrees, cleared repeatedly (185.9 GB free on 2026-09-18); OneDrive stalled since 08-11; backup gaps
 - [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] — The workstation backup coverage gap measured on 2026-09-07 and the point-in-time disk census of 2026-09-11.
 - [[melange-fec-pipeline-live-tree-drift-and-eol]] — Live tree versus committed tree drift of the fec/ pipeline: the 2026-09-13 census, the 09-19 reconcile, and the line-ending census with the shared line-wise patch cutter and its kernel results.
