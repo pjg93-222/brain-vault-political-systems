@@ -59,6 +59,7 @@ related_topics:
   - "[[2026-07-rfc-melange-architecture-system-of-record]]"
   - "[[2026-07-troubleshooting-melange-audits-and-reviews]]"
   - "[[2026-07-troubleshooting-melange-live-tree-git-drift]]"
+  - "[[2026-10-troubleshooting-melange-main-reconcile]]"
   - "[[2026-08-incident-refresh-automation-reliability]]"
   - "[[2026-08-incident-workstation-disk-and-backup]]"
   - "[[2026-09-feature-staffer-network-data-and-math]]"
@@ -86,8 +87,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_member_desk_integration.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_member_desk_integration.md", sha256: "77b0312aa6bcd56f96361ddcdb9e881aafc90eae83297e75efeadeccfda060e2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-17
+updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
@@ -293,6 +294,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-07-troubleshooting-melange-live-tree-git-drift]] | Melange live tree vs git: branch drift, live-only files, 35-commit reconcile, EOL census, live_patch.py cutter, off-box mirror |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift-branch-state-and-mirror]] | part: The off-box git mirror of the Melange repository and the… |
 | [[2026-07-troubleshooting-melange-live-tree-git-drift-drift-reconcile-eol]] | part: Committed versus live drift of 2026-09-13, the reconcile… |
+| [[2026-10-troubleshooting-melange-main-reconcile]] | Melange main reconcile 2026-10-16/17: default branch back to main, 49 published-lineage commits ported, live tree moved with backups, main and mirror in step |
 | [[2026-08-incident-refresh-automation-reliability]] | Weekly Melange refresh has not completed since 2026-07-19; audit, rulings, tick-runner redesign, daily-chain blockers, Codex poll-loop burn |
 | [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]] | part: The weekly Melange refresh as of 2026-09-19: measured… |
 | [[2026-08-incident-refresh-automation-reliability-daily-refresh-closeout-and-flakes]] | part: The daily congress refresh close-out of 2026-09-19 and the… |
