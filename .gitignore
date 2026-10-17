@@ -21,3 +21,7 @@ Thumbs.db
 .bedrock/import/
 # hidden temporary files of atomic writes (".<name>.tmp-<pid>"), anywhere in the vault
 .*.tmp-*
+
+# Obsidian blank stubs created by accidental "new canvas/base" clicks
+Untitled*.canvas
+Untitled*.base
