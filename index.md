@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-573 notes.
+581 notes.
 
 ## Actors (49)
 
@@ -292,9 +292,9 @@
 - [[melange-systems--storage-sense-wipes-temp-2026-10-14]] — Windows Storage Sense deletes %TEMP% (incl.
 - [[melange-systems--vault-integration-lane-2026-10-15]] — 2026-10-15 vault integration (D-223/D-224) + skill line-ref pass (D-225..D-227): brain PR #27 merged, research vault on GitHub, vaultlink bridge builder; open items
 
-## Ledger (generated from the Project Brain) (306)
+## Ledger (generated from the Project Brain) (314)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 299 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 307 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
