@@ -46,6 +46,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 - Standing "binding refuted lists" exist for the 2026-07-08 network/vote/cycle audit (do not re-flag) and for the code-review packet (17 refuted or partly refuted findings in `FINDINGS_INDEX.md`).
 - Three core operating rules emerged and are binding on any audit run: (1) NEVER hand-extend a generated JSON - extend the producer (the `category_stance.json` 18-category trap, 2026-07-02); (2) use port 8802 (launch config `moneyball-ui-audit`), never 8801 (Paul's long-running live-tree static server); (3) prove output deltas benign by the byte-match input-purity method (engine to `FRONTIER_OUT` temp must byte-match the chain's artifact).
 - Pillar weights appear in several audit findings and exist in THREE sets (see "Pillar weights, three sets" below): `.40/.30/.20/.10` (2026-06-29, historical), `30/25/40/5` (ratified 2026-07-07: LAST RATIFIED), `45/10/40/5` (live in `ranks_python.json` since 2026-09-03: LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). The newest set must never be read as ratified.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 - Related memory notes (not vault entities): `moneyball-model-config` (config baseline; its IMP/BUDGET/defection notes are superseded by the 2026-07-01 audit), `moneyball-deep-audit-2026-07-02`, `moneyball-audit-run2-2026-07-02`, `moneyball-audit-run3-2026-07-03`, `moneyball-audit-run4-2026-07-04`, `moneyball-audit-run-guardrails`, `moneyball-receptivity-layer`, `moneyball-big5-campaign`, `moneyball-lt-priming-gates`, `press-classification-user-domain`, `psych-audit-2026-07-09`, `hearing-antagonism-2026-07-10`, `skills-library-2026-07-10`, `dashboard-preview-workflow`, `universal-lane-laws-2026-08-09`, `examination-lane-lessons-2026-08-14`, `verify-dont-infer-completion-2026-08-04`, `ask-before-substantive-changes`, `scout-census-traps-2026-09-13`, `committed-vs-live-drift-2026-09-13`, `live-tree-eol-census-2026-09-19`, `melange-live-tree-reconcile-2026-09-19`, `chatgpt-lane-landed-2026-07-16`, `spawned-task-premise-may-be-stale-2026-09-14`, `backup-coverage-gap-2026-09-07`, `live-tree-branch-state-2026-07-14`. Cross-topic: stance and sentiment redesign lives in CU stance and sentiment scoring.
 
 ## People Involved
@@ -97,6 +98,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 | 2026-09-18/19 | Laundry-list handoff close-out: six fixes landed, N12 interview turn-bleed repair v2 applied + landed (`ce0dc5b21`), membership file refreshed (checked_at 2026-09-19T19:46:30Z). |
 | 2026-09-19 | Five-lane note updated ("UNAPPLIED" statements stale, verified by hunk match, see `melange-live-tree-reconcile-2026-09-19`). |
 
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+
 ## Decisions
 
 - **NEVER hand-extend a generated JSON; extend the producer.** Why: `category_stance.json` had been extended by hand to 18 categories (CU Tax Status) but the producer `per_category_stance.py` had a hard-coded 17-category list, so the next regeneration would silently drop the weight-3.0 flagship category (2026-07-02). The audit_full check `len(adv)>=18` caught it. Fix: `('CU Tax Status',16)` added to the producer (Normalized col 16).
@@ -117,8 +120,11 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 ## Next Steps
 
 - [ ] Paul: rule on S-5 (pillar-weight discrepancy: law 14 `30/25/40/5` vs live `45/10/40/5`) and on a commit pass of the live tree (partly done 2026-09-19 by the reconcile).
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded in part. S-5 is closed: D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date. The other items on this line are not covered by this correction.
 - [ ] Paul: rule on the three systemic findings S-1, S-3 (cumulative membership source for the desk is his architecture call), S-4; delete `%TEMP%\inspect.py`, fix the 3 stale assertions (S-2); apply class A with `.live.patch` variants where HEAD patches fail; rule on class B; design items (SCRAPEB-1 first).
+  - Correction 2026-10-18 (evidence: ledger D-146 and D-157, 2026-10-11): superseded in part. S-3 is closed by D-146 (cumulative desk membership ratified). D-157 closes S-1 (untracked chain producers 4 to 0) and ratifies S-4's applied hunks, and it rules S-2: a census guard against new unregistered suites, then one directory registered per session. D-143 ratifies the class B/E hunks; the absent class-A remainder is not authorised. The design items are not covered by this correction.
 - [ ] Paul rulings pending from the laundry-list sheet: R2, R3, R4, N3, N6 (PERS parity drift), N7, A6, R8, R9, D6, N13, N14, N17, N18, N19, N20.
+  - Correction 2026-10-18 (evidence: ledger D-142, 2026-10-11): superseded in part. N6 (PERS parity) is closed: PERS_NONE's default is now 0.40, equal to PERS[Ally]. The other items on this list are not covered by this correction.
 - [ ] NEXT FAIL-CLOSED DATE 2026-09-21T03:41:10Z: clear `data/legislation/sentinel_admissions.json` (paid claude-cli step; Paul's spend + model ruling, N19) or the chain and desk stop.
 - [ ] Membership file expires 2026-09-27T19:46:30Z (refresh unit in the laundry-list section).
 - [ ] Score the receptivity outcome test around September 2026: `python fec/outcome_snapshot.py --score outcome_snapshot_2026-07-04.json` (scorer refuses under 60 days or under 150 movers).
@@ -133,6 +139,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshoot
 | `30/25/40/5` | ratified 2026-07-07 | LAST RATIFIED (code-review S-5: "law 14 says 30/25/40/5"). Numerically the same as the audit baseline noted 2026-07-01: Leg 0.25 / Press 0.30 / Influence 0.40 / Demo 0.05 |
 | `45/10/40/5` | live in `ranks_python.json` since 2026-09-03 | LIVE BUT UNRATIFIED; live-only `fec/engine/pillar_policy.py` (a fail-closed desk gate) encodes 45/10/40/5; byte-identical to the Codex f149 blob `d68ddcda6`; code-review S-5 awaits Paul's ruling |
 
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+
 - Also seen in audits: the desk once displayed pillar weights `0.40/0.20/0.35/0.05` from the stale workbook Blended Model sheet versus live `0.25/0.30/0.40/0.05` (run-5h, 2026-07-06, fixed to read `ranks_python.json`); media = 30% not 40% was "verified exact" in the 2026-07-02 Audit II (pillar weights 0.25/0.30/0.40/0.05).
 - Per-cell press-weight row 535 for Interchange/CU Tax Status/CCM (W1) is a different thing: category weights inside the press pillar, see the 2026-07-02 deep audit in [[2026-07-troubleshooting-melange-audits-and-reviews-july-runs-1-3]].
 
@@ -143,6 +151,7 @@ Source files of the merged record (memory file names): `audit-history-2026-07.md
 ## Open questions and unresolved items (for Paul)
 
 - Which pillar-weight set governs (S-5), see the three-set table.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 - Whether to retrain the stance classifier (composed-tuned vs DEBATE retrain with attribution + valence + unrelated).
 - Defender in PRO camps in `assemble_viz`; CU Tax Status DEFENSIVE vs OFFENSIVE scoring.
 - Dead `interaction_features.agree` feature; workbook durable-fix choice; press date sentinels (#31-36).

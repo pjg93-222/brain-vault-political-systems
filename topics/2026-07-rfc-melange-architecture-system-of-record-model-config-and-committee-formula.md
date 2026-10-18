@@ -35,6 +35,8 @@ Score weights live in the Blended Model (labels col AA / values col AB; the "Inf
 | `30/25/40/5` | ratified 2026-07-07 | LAST RATIFIED. Matches the live reading in this source (2026-06-30 eve): Press 0.30 / Committee-Influence 0.40 / Legislative 0.25 / Demo 0.05 (sum 1). |
 | `45/10/40/5` | live in `ranks_python.json` config since 2026-09-03 | LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling. Never read this newest set as ratified. |
 
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+
 (The mapping of the brief's compact notation to pillar order is taken from the 06-30 source reading: Press / Legislative / Influence / Demo for `30/25/40/5`; verify against the live config before quoting.)
 
 ### Committee pillar (score as of 2026-06-30)
@@ -71,6 +73,8 @@ Blended Model col U: as of **2026-06-30 eve the live file is UNCAPPED: top-133 f
 ### Calibrated engine constants (verify in the live `fec/*.py`, NOT the spec)
 
 WM 0.35 / WP 0.65, MAXSHIFT 18, DTHRESH **11.25** (rescaled 2026-07-01), BSCALE 400k, edge half-sat +6, LELEV 0.8, optimize INC $500 / PMAX $10k, `cpf` = source-alignment (co-partisan 1.7 / out-partisan 0.5), receipts = 0 imputed to MEDIAN (not floored), PERS_NONE **0.45** (user-ratified 2026-07-02, Ally parity), IMPUTE_IND0 median imputation now in ALL of flip / frontier / salience.
+
+Correction 2026-10-18 (evidence: ledger D-142, 2026-10-11): superseded. PERS_NONE's default moved from 0.45 to 0.40, equal to PERS[Ally], and the kernel pins PERS[—] <= PERS[Ally] (Melange 751f002f5); N6 is closed.
 
 ### Press-pillar CATEGORY weights (row 535 of Press Release - Normalized): TIERED as of 2026-07-02 (user-ratified)
 

@@ -19,7 +19,7 @@ known_issues:
   - "The 8 A2b sentinels-unchanged audit failures return on every chain run (pattern-tolerated); audit_full pinned-sentinel risk unruled"
   - "Legislative pillar refresh is contract-gated (DOWNSTREAM_RECOMPUTATION_CONTRACT.md); never wire recompute_legislative_workbook.py into the weekly chain"
   - "Sunday weekly_refresh can HARD_ABORT before publish_dashboard.py if non-gated audit failures exist"
-  - "Live ranks_python.json ab_weights = 45/10/40/5 UNRATIFIED (S-5 awaits Paul); last ratified 30/25/40/5"
+  - "Live ranks_python.json ab_weights = 45/10/40/5, Paul's 2026-09-03 directive (D-141 closed S-5 on 2026-10-11); the previous set is 30/25/40/5"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/system-manifest-sentinel-lane-2026-09-06.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\system-manifest-sentinel-lane-2026-09-06.md", sha256: "b7c76107f8d14d2ec5f378df463bc8a2a967cd5dcb4b0d2797c74d6b0ba5b788"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sentinel-workbook-ingestion-lane-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sentinel-workbook-ingestion-lane-2026-09-04.md", sha256: "23bfc15111a25b587229f9ef053b41927b1f61ee9593d994622fc99e9c23c58b"}
@@ -84,6 +84,7 @@ diff --strip-trailing-cr <live fec/> <main fec/>              # Codex flipped li
 - Sunday caveat: non-gated audit failures make `weekly_refresh` HARD_ABORT before `publish_dashboard.py` (after the 2026-09-05 gate ratification Sunday should publish; the runner's 800-char audit tail truncates long failure lists and the gate then fails closed by design).
 - The 8 `A2b … sentinels unchanged` failures return on every chain run; `audit_full` writes its own pinned sentinels (unruled risk).
 - Pillar weights (flag): `.40/.30/.20/.10` (2026-06-29, historical); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED); `45/10/40/5` (live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). The ingestion lane treated 45/10/40/5 as ratified on 2026-09-05 pending reversal; Paul has not ratified it in the vault record.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 
 ## Press/hearing repair lane (2026-09-01 / 2026-09-02)
 

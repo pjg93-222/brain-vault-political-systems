@@ -7,12 +7,12 @@ status: "active"
 deadline: ""
 progress: "Pre-flight, scenario tooling and audits done 2026-06-26 (audit_full 31/31, canonical home Melange Systems); model, desk and dashboard pipeline established by 2026-06-29. Later work (stance, psychometrics, boards, networks, audio, collection lanes, refresh automation, UI redesign) is tracked in the linked topics."
 blockers:
-  - "Pillar weights: 45/10/40/5 is LIVE in ranks_python.json but UNRATIFIED (code-review S-5 awaits Paul's ruling); the last ratified set is 30/25/40/5 (2026-07-07)"
+  - "Pillar weights (resolved 2026-10-11): 45/10/40/5, live in ranks_python.json, is Paul's own directive of 2026-09-03 per D-141, which closed code-review S-5; the previous set is 30/25/40/5 (2026-07-07)"
   - "Workbook write collisions: a parallel 'other session' writing the same workbook once reverted a committee-fix COM write; workbook edits must be sequenced with other sessions (COM-era rule, as the Blockers section notes: the COM write path was retired on 2026-07-02/03 by Phase 2's NO COM anywhere; whether non-COM workbook writes still need sequencing is not recorded)"
   - "Open modeling knobs M1-M5 and L4 from the 2026-06-26 adversarial audit are the user's call (see Open items from audits)"
 action_items:
-  - description: "Rule on code-review S-5: ratify or reject the live pillar weights 45/10/40/5 (last ratified 30/25/40/5, 2026-07-07)"
-    status: "todo"
+  - description: "Rule on code-review S-5: ratify or reject the live pillar weights 45/10/40/5 (last ratified 30/25/40/5, 2026-07-07); done 2026-10-11 by D-141"
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
   - description: "Decide on open modeling knob M1 (defection over-sensitive; tune DTHRESH/MAXSHIFT)"
@@ -98,7 +98,7 @@ tags: ["type/project", "status/active", "domain/data"]
 
 ## Parts
 
-- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified).
+- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (previous) and 2026-09-03 (current: Paul's directive, D-141).
 - [[2026-06-feature-melange-scenario-model-build]] — The Melange scenario model build of 2026-06-26: the source timeline, the pre-flight pass, the budget what-if tool, the electoral model, money response and pathfinding, the step-3 finish with the reorg, the scenario runner, flip channels and the diminishing-returns reconciliation.
 - [[2026-06-troubleshooting-melange-model-audits]] — The Melange model audits of 2026-06-26: the brutal internal audit, two independent adversarial audits with their fixes, and the FEC data-quality assessment with the HIGH-3 reversal.
 
@@ -128,7 +128,7 @@ Run everything myself (scripts, rebuilds, recalcs): the user sets metrics/thresh
 
 | Item | Status | Deadline | Owner |
 |---|---|---|---|
-| Rule on code-review S-5: ratify or reject live weights 45/10/40/5 | todo | none | [[paul-goff]] |
+| Rule on code-review S-5: ratify or reject live weights 45/10/40/5 | done (2026-10-11, D-141) | none | [[paul-goff]] |
 | Decide open knob M1 (defection over-sensitive; DTHRESH/MAXSHIFT) | todo | none | [[paul-goff]] |
 | Sensitivity-test M5 (PERS=0.55 default drives 59.8% of cells) | todo | none | Claude |
 | Decide M3 (CFPB-Reach block 145) and L4 (diffusion kernel docs/unify) | todo | none | [[paul-goff]] |
@@ -156,6 +156,7 @@ SORT item.deadline ASC
 ## Blockers
 
 - Pillar weights 45/10/40/5 are LIVE in `ranks_python.json` since 2026-09-03 but UNRATIFIED; code-review S-5 awaits Paul's ruling. The last ratified set is 30/25/40/5 (2026-07-07). The historical set is `.40/.30/.20/.10` (2026-06-29).
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 - Workbook COM-write collisions with a parallel session (older rule; the newest rule is "NO COM anywhere").
 - Open model knobs listed in "Open items from audits" in the second half of this page.
 
@@ -358,7 +359,7 @@ Every note of this project by type, one line each; parts follow their parent.
 - [[fail-closed-gates]] - When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
 - [[live-tree-patch-discipline]] - Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
 - [[gold-set-validation]] - A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
-- [[four-pillar-percentile-blend]] - The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept.
+- [[four-pillar-percentile-blend]] - The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, previous, and current: Paul's 2026-09-03 directive per D-141), only Paul ratifies one, and the live set is read where it is kept.
 - [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
 - [[say-do-gate]] - A Champion or Defender cell in the category-stance matrix stands only if the stated stance is backed by a recorded action there: an authored or original-cosponsored bill (Path A) or a CU-aligned final-passage vote (Path V); otherwise Ally.
 - [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean

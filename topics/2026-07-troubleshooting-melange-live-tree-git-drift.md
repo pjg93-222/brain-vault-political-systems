@@ -99,6 +99,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 ## Next Steps
 
 - [ ] Paul: rulings R1 (class-B/E code-review hunks), R2 (2026-09-08 engine imputation rule), R3 (644-acts re-pin) - output-affecting, recorded as live, NOT ratified; also the weights ruling (S-5 of `code-review-five-lanes-2026-09-13`) first.
+  - Correction 2026-10-18 (evidence: ledger D-141, D-143 and D-144, 2026-10-11): superseded in part. S-5 is closed by D-141, R1 is ratified by D-143 and R3 by D-144. No clear-out entry names R2, so it stays open.
 - [ ] Paul: R6 untrack the runtime/generated tracked files; R7 the regenerated manifest JSON (not committed: generated); R10 the 10 MB congress-legislators YAML (data-plane input); R11 ignore rules for `outputs/`, `tmp/`, evidence stores; R12 `fec/stance/api_stance_layer.py` (IndentationError, pre-existing).
 - [ ] Commit-pass of the rest of the live tree (11 HELD modified files; the highest-value action Paul can take).
 - [ ] Apply the unapplied scipy-freeze risk reduction if wanted: lazy-import scipy in `member_context.py`, `OPENBLAS_NUM_THREADS=1` (unproven; never reproduced).

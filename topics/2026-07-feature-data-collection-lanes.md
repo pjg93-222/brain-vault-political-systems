@@ -62,6 +62,8 @@ Standing law across lanes (recorded in the source memories): Paul's ask-first di
 
 Pillar weights, recorded wherever they appear (all three sets, never let the newest read as ratified): `.40/.30/.20/.10` (2026-06-29, historical); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED); `45/10/40/5` (live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). See the Sentinel workbook ingestion section in [[2026-07-feature-data-collection-lanes-sentinel-lanes]] for the 2026-09-04 out-of-lane flag and the 2026-09-05 lane-local treatment.
 
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+
 ## People Involved
 
 | Person | Role |
@@ -122,6 +124,7 @@ Pillar weights, recorded wherever they appear (all three sets, never let the new
 - Blind pipeline ("bullseye") ruling (Paul 2026-08-28): the inference pipeline runs blind to gold labels.
 - Git directive history: ~~"stop using git" (2026-09-01)~~ stands as the baseline; it beat "commit on a branch before merging" in the Sentinel ingestion lane; lifted ONCE on 2026-09-05 for "finish the remaining items and commit" (a one-time lift, not a revocation); later git ban lifted per lane 2026-09-06 (see working-agreement topics).
 - Pillar weights: see the Context section for all three sets with status labels. The 2026-09-05 lane-local statement "weights 45/10/40/5 treated as ratified (reversal: Paul says otherwise)" is recorded as a working assumption of that lane only; for the vault the live set is UNRATIFIED pending S-5.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 - Sentinel: D3 = history stays append-only; withdrawals mark rows non-scoring when they exist; teardown crash after hash-verified export stays PASS (closed 2026-09-05).
 
 ## Next Steps
@@ -134,6 +137,7 @@ Pillar weights, recorded wherever they appear (all three sets, never let the new
 - [ ] Paul: contact-inference merge gate (live-tree kernel gate must run at merge: registration adds 2 suites, expect 162 to 164), E1 ruling, eval-doc amendments, G1-G6, sponsor-boundary ruling, title-channel amendment, fresh gold, finance reserve look, FIRST_EQUIV shared-resolver widening.
 - [ ] Paul: Sentinel Collectors promotion, fold, pipeline, dashboard and scheduler re-enable; PRESS_BASELINE_FOLD and `DASHBOARD_PASSWORD_FILE`; quiet-window merge of `sentinel-collectors-progress-f7de7d`.
 - [ ] Paul: rule on weights 45/10/40/5 (S-5), D3-style policies, and the system-manifest items (exclude chain outputs from sentinel duty, unruled `audit_full` pinned-sentinel risk, lifting the D-015 cap).
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded in part. S-5 is closed: D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date. The other items on this line are not covered by this correction.
 - [ ] Rerun `fec/fetch_hmda_district.py` from the live tree when the CFPB WAF allows (spawn-chip task_66fb9896 queued).
 
 ## FEC-as-precognition lane (2026-07-31)

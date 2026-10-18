@@ -17,7 +17,9 @@ part_of: "[[melange-systems]]"
 
 # Melange model facts: pipeline, Blended Model, pillar weights, member desk
 
-> Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified). Part of [[melange-systems]].
+> Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (previous) and 2026-09-03 (current: Paul's directive, D-141). Part of [[melange-systems]].
+
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): the summary above was corrected in place (R63-R64). It said the 2026-09-03 set was "live but unratified" and the 2026-07-07 set "last ratified"; D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, which closes S-5 and supersedes that wording.
 
 ## Overview
 
@@ -43,6 +45,8 @@ Score = weighted blend of 4 pillar PERCENTILES (`AB2:AB5` weights). Pillars: **P
 | `.40/.30/.20/.10` (Committee/Influence 0.40, Legislative 0.30, Press 0.20, Demo 0.10) | 2026-06-29 | HISTORICAL | Set by `apply_weights.py`; this is what `project_member_desk_integration` called "CURRENT weights = committee-weighted" |
 | `30/25/40/5` | ratified 2026-07-07 | LAST RATIFIED | Constitution text and brain record still say this |
 | `45/10/40/5` | live in `ranks_python.json` (`ab_weights`, `pillar_policy.py:11-16`) since 2026-09-03 | LIVE BUT UNRATIFIED | Code-review S-5 awaits Paul's ruling; moved 520/533 ranks vs the 08-26 baseline |
+
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 
 Order of the 4 numbers in the two newer sets follows `AB2:AB5` (Legislative, Press, Committee/Influence, Demo): 45/10/40/5 = Leg 45, Press 10, Committee 40, Demo 5 (45/10 is about 81.8/18.2 of the leg+press share). Details of the later weight history are in Influence engine internals and Melange audits and code reviews.
 

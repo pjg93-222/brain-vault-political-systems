@@ -143,6 +143,8 @@ Order of the four June buckets as recorded: Press / Legislative / Committee (Inf
 | `30/25/40/5` (leg .30 / press .25 / inf .40 / demo .05, user-changed 2026-07-07, backup PRE-WEIGHTS-20260707) | **LAST RATIFIED** (ratified 2026-07-07) | see the influence engine internals topic (`2026-07-feature-influence-engine-internals`) |
 | `45/10/40/5` (live in `ranks_python.json` since 2026-09-03) | **LIVE BUT UNRATIFIED**; code-review S-5 awaits Paul's ruling | later phases |
 
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+
 Never read the newest set as ratified.
 
 ## Superseded guidance: Excel COM as the write path

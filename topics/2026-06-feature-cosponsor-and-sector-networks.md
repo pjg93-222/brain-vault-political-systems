@@ -45,6 +45,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - **Circularity finding (2026-08-19):** Paul asked on 2026-08-19, believing a significant lobbying-cosponsorship relationship had been found; the lobbied-member variable is manufactured from the cosponsor roster, so the number cannot carry that meaning (see the dedicated section in [[2026-06-feature-cosponsor-and-sector-networks-sector-networks]]).
 - **Member personal relationships model (2026-09-10 to 2026-09-12):** friendship/friction between members, from original cosponsorship, personality, network and statements; Paul's spec = degrees of friendship AND friction vs ordinary chamber behaviour, estimate/evidence/confidence kept separate, original cosponsorship required.
 - Related to the pillar weights recorded in this topic: three weight sets exist across the model's history; see "Pillar weights as they appear in these sources" below for the dated, status-labelled list (`.40/.30/.20/.10` 2026-06-29 historical; `30/25/40/5` ratified 2026-07-07, LAST RATIFIED; `45/10/40/5` live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED, code-review S-5 awaits Paul's ruling).
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 
 ## People Involved
 
@@ -132,6 +133,8 @@ The sources here quote pillar weights only for the June 2026 workbook; the full 
 | `.40/.30/.20/.10` | 2026-06-29 | historical |
 | `30/25/40/5` | ratified 2026-07-07 | LAST RATIFIED |
 | `45/10/40/5` | live in `ranks_python.json` since 2026-09-03 | LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling |
+
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 
 Weight sets quoted in this topic's source (June 2026, earlier than all three above and all superseded):
 

@@ -18,7 +18,7 @@ known_issues:
   - "Kernel baseline reds: test_bill_collision_guards and test_make_staffer_network_html (246 passed / 2 FAILED as of 624e593eb)"
   - "fec/weekly_refresh.py has its own unbounded launcher (:312 proc.wait() after kill; whole-chain bound 7200 s at :464 below the 261.6 min the chain once took)"
   - "scipy import can freeze on Windows under load (BLAS thread-pool start-up), not reproduced"
-  - "R1 (class B/E code-review hunks), R2 (engine imputation rule), R3 (644-acts re-pin) committed 2026-09-19 as live state but NOT ratified (Paul's rulings open)"
+  - "R1 (class B/E code-review hunks), R2 (engine imputation rule), R3 (644-acts re-pin) committed 2026-09-19 as live state but NOT ratified (Paul's rulings open). Correction 2026-10-18 (ledger D-143, D-144, 2026-10-11): R1 and R3 are ratified; R2 stays open"
   - "api_stance_layer.py has a pre-existing IndentationError; fec/tests/infra/test_process_liveness.py is registered in no runner"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/live-tree-eol-census-2026-09-19.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\live-tree-eol-census-2026-09-19.md", sha256: "8d1bd8b910e194fd59a3663aed40a3c0dca3626eccc843e2a0fc49fef2ca19c7"}
@@ -177,6 +177,7 @@ git status --porcelain=v1 -- <paths...>
 ## Next Steps
 
 - [ ] Paul: rulings R1, R2, R3, R6, R7, R10, R11, R12 from the reconcile; weights ruling S-5.
+  - Correction 2026-10-18 (evidence: ledger D-141, D-143 and D-144, 2026-10-11): superseded in part. The weights ruling S-5 is closed by D-141 (45/10/40/5 is Paul's 2026-09-03 directive), R1 is ratified by D-143 and R3 by D-144. R2, R6, R7, R10, R11 and R12 are not named by those entries and stay open here.
 - [ ] Optional risk reduction for the scipy freeze: lazy `import scipy` in `member_context.py` / `OPENBLAS_NUM_THREADS=1` (proposed, not applied).
 - [ ] Bound the `fec/weekly_refresh.py` launcher (`:279`, `:312`, `:464`) and audit per-producer atomicity under a kill.
 - [ ] Register `fec/tests/infra/test_process_liveness.py`; fix `fec/tests/test_primacy_tier.py` writing `source.json` into repo root; resolve flake `test_legislation_base_network`.
@@ -200,7 +201,7 @@ git status --porcelain=v1 -- <paths...>
 - [[2026-10-troubleshooting-melange-main-reconcile]] - Melange main reconcile 2026-10-16/17: default branch back to main, 49 published-lineage commits ported, live tree moved with backups, main and mirror in step
 - [[2026-07-troubleshooting-melange-audits-and-reviews-guardrails]] — Guardrails for any autonomous Melange audit or review run, from the run-guardrails memory of 2026-07-02 as updated through 07-10.
 - [[2026-07-troubleshooting-melange-audits-and-reviews-later-reviews]] — Melange reviews of August and September 2026: the findings-examination (hallucination) framework lane of 08-13/14, the five-lane code review of 09-13 and the laundry-list close-out of 09-18/19.
-- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (last ratified) and 2026-09-03 (live but unratified).
+- [[2026-06-feature-melange-model-facts]] — Melange model facts: the regeneration pipeline, the Blended Model and its pillar decisions, and the member desk and SNA features as recorded in June 2026, with the three pillar-weight sets of 2026-06-29 (historical), 2026-07-07 (previous) and 2026-09-03 (current: Paul's directive, D-141).
 - [[2026-06-troubleshooting-melange-model-audits]] — The Melange model audits of 2026-06-26: the brutal internal audit, two independent adversarial audits with their fixes, and the FEC data-quality assessment with the HIGH-3 reversal.
 
 ## Related Projects
@@ -212,4 +213,4 @@ git status --porcelain=v1 -- <paths...>
 - [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
 - [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
 - [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
-- [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, last ratified, live but unratified), only Paul ratifies one, and the live set is read where it is kept.
+- [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, previous, and current: Paul's 2026-09-03 directive per D-141), only Paul ratifies one, and the live set is read where it is kept.

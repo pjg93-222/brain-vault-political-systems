@@ -29,6 +29,8 @@ part_of: "[[melange-systems]]"
 | 2026-07-07 | Pillar weights 30/25/40/5 ratified (LAST RATIFIED) |
 | 2026-09-03 | Pillar weights 45/10/40/5 live in `ranks_python.json` (LIVE BUT UNRATIFIED; S-5 awaits Paul) |
 
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+
 ## Pre-flight pass before scenario tools (2026-06-26)
 
 Pre-flight pass before implementing scenario tools (budget/dial what-ifs + defection/money shocks). All in `fec/`. 22/22 integrity throughout.
