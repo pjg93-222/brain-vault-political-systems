@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-18 13:17
-- Open questions in STATE: 38; active decisions: 236; dead ends: 70
+- Open questions in STATE: 38; active decisions: 237; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-250|D-250]] — Public Melange repo history: containment declined (reaffirms D-236); filtered-PR
 - [[ledger/melange-systems-brain/D-249|D-249]] — Refit-parity R version text in the receipt's G0 detail and review/gates.json als
 - [[ledger/melange-systems-brain/D-248|D-248]] — Live Melange main may fast-forward to claude/docker-coverage after the weekly re
 - [[ledger/melange-systems-brain/D-247|D-247]] — Terrier OR-05 and CT-01 store-build parity: single Windows run plus a volatile-f
 - [[ledger/melange-systems-brain/D-246|D-246]] — Mentat refit-parity: environment differences accepted as explained, 15 PPM packa
-- [[ledger/melange-systems-brain/D-245|D-245]] — Mentat parity streak: commit freeze, and three repeat runs count for the pinned-
 <!-- brainlink:state:end -->
