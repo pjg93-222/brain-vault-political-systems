@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-15 15:58
-- Open questions in STATE: 38; active decisions: 223; dead ends: 70
+- Open questions in STATE: 38; active decisions: 227; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-240|D-240]] — App images on GHCR become public only after the no-data image check
+- [[ledger/melange-systems-brain/D-239|D-239]] — Admin console extends the native admin dashboard, with a desktop launcher
+- [[ledger/melange-systems-brain/D-238|D-238]] — Installer zips wrap the signed Electron installers; Docker kits come later
+- [[ledger/melange-systems-brain/D-237|D-237]] — Public GitHub Releases and a public repo for app updates (Paul, 2026-10-15)
 - [[ledger/melange-systems-brain/D-236|D-236]] — Public-repo history handling under D-167: decision recorded privately
-- [[ledger/melange-systems-brain/D-235|D-235]] — Publish tooling: export filter maps export.gitattributes; workflows stay inert;
-- [[ledger/melange-systems-brain/D-234|D-234]] — Mirror: stale integration branch deleted and recreated from local, one-time exce
-- [[ledger/melange-systems-brain/D-233|D-233]] — Commit live-tree work in progress and data on main, retrained stance model inclu
-- [[ledger/melange-systems-brain/D-232|D-232]] — Resolutions of the seven real conflicts approved, with four behaviour changes
 <!-- brainlink:state:end -->
