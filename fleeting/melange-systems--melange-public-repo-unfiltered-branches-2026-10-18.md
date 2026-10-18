@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-public-repo-unfiltered-branches-2026-10-18.md", type: "claude-memory", synced_at: "2026-10-18", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-public-repo-unfiltered-branches-2026-10-18.md", sha256: "2f222876a8f845063616550017157cb4d705706646c926bdf20702c2ab4248b2"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-public-repo-unfiltered-branches-2026-10-18.md", type: "claude-memory", synced_at: "2026-10-18", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-public-repo-unfiltered-branches-2026-10-18.md", sha256: "639024f95ea2e4b7926a3c8176e2c8a383518d865f463fcd9ed6484490ff3a6c"}
 updated_at: 2026-10-18
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -30,16 +30,14 @@ The same day I pushed Mentat ed6885645 to origin codex/mentat-crypto with Paul's
 
 **How to apply:**
 - Never `git push origin <branch>` from the Melange repo or any of its worktrees, C:\Users\pgoff\Mentat included, even when a branch tracks origin and has been pushed before.
-- Publish only through C:\Users\pgoff\ReleasePublish (filter_export.py, then one fast-forward commit, then manual gitleaks, then Paul's yes). Melange goes to pjg93-222/Melange main and release/melange; Mentat goes to pjg93-222/Mentat main.
-- Removing or cleaning up the exposed branches and PRs is Paul's decision. Do not delete them without his explicit yes.
+- Publish only through C:\Users\pgoff\ReleasePublish: filter_export.py, then one fast-forward commit, then manual gitleaks, then Paul's yes. Since 2026-10-18 Paul's route is to push that filtered commit to a new branch and open a PR into main (Melange PR #10, Mentat PR #1). main and release/melange are not pushed directly.
+- Containment is CLOSED. On 2026-10-18 a containment plan was put to Paul, offering to make the repo private and rebuild it, or to delete the branches and ask GitHub Support. He declined: "I don't care about the privacy". That reaffirms his 2026-10-16 leave-as-is decision (D-236). Do not re-propose cleanup, visibility changes, branch deletion or Support requests unless Paul raises it. Don't delete anything there without his explicit yes either. The plan is in side-session-notes/local_1d8997a6-84fe-45d7-8116-797cb2633f40/melange-public-exposure-containment-plan-2026-10-18.md.
 
 Related: `public-github-releases-ruling-2026-10-15`, `d-230-never-push-local-main`.
 
 ## Possible Connections
 
-- [[2026-10-troubleshooting-melange-main-reconcile]] — keyword match from recall, unverified
-- [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — keyword match from recall, unverified
-- [[2026-07-troubleshooting-melange-live-tree-git-drift-branch-state-and-mirror]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
