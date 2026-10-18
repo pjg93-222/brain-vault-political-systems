@@ -3,7 +3,7 @@ type: actor
 name: "RunPod math pod"
 aliases: ["Runpod pod"]
 category: "infra"
-description: "RunPod H200 pod (first pod 192 CPU / ~2 TB RAM; current math pod root@<math-pod-host>:<port>) used for memory/RAM-heavy tasks and Claude sessions; current math pod has full-data authorization; never stop the pod; ask Paul before using any pod for the CU-geography lane."
+description: "RunPod H200 pod (first pod 192 CPU / ~2 TB RAM; current math pod endpoint in the private notes) used for memory/RAM-heavy tasks and Claude sessions; current math pod has full-data authorization; never stop the pod; ask Paul before using any pod for the CU-geography lane."
 repository: ""
 stack: "RunPod pod (Ubuntu 24.04, H200 141 GB, 192 CPU, ~2 TB RAM), /workspace network volume, tmux, git archive snapshot, Python venv, SSH"
 status: "active"
@@ -107,7 +107,7 @@ git ... --separate-git-dir=/root/melange.git
 ## Pod inventory
 
 ### Current math pod (superseding checkpoint 2026-09-30)
-- SSH: `root@<math-pod-host>` port <port>; tree `/dev/shm/melange`; Python `/workspace/melange-venv/bin/python`.
+- SSH: `root@<math-pod-host>` (host and port in the private notes); tree `/dev/shm/melange`; Python `/workspace/melange-venv/bin/python`.
 - Shared with another session (`/workspace/forecast`); container capped at ~48 CPUs, ~468 GiB RAM and 30 GB disk (as of the 2026-09-30 evening note).
 - F5 criterion-only refresh completed at `/workspace/f5-check`, with all 468 frozen bills and independent source replay.
 
