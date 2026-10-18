@@ -149,6 +149,8 @@ SORT item.deadline ASC
 | 2026-10-08 | Records repair: D-116..D-118 recorded, supersession marks on the brain STATE and DECISIONS (brain commit `19d7960`), the hand-written forecast notes corrected, the generated parts re-projected; branch `brain-sync-2026-10-08-forecast` replaces PR #10 |
 | 2026-10-08 | Vault PR #12 (`brain-sync-2026-10-08-forecast`) merged at 23:35:20Z, merge commit `10d3fc4` (`gh pr view 12`; recorded 2026-10-10) |
 
+Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed without merging on 2026-10-08.
+
 ## Open items (recorded as questions, not facts)
 
 - Drift questions ~~3,~~ 4, 5, 7 and 8 of the design (section 6) are open; their wording and sources are in the brain STATE Open questions. Dated note (2026-10-08): question 3 is closed: Paul answered its four parts on 2026-10-07 (brain D-113).

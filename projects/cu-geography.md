@@ -63,6 +63,7 @@ tags: ["type/project", "status/active", "domain/data"]
 ## Overview
 
 - Location: Luna root / ROOT = `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography` (not covered by the Melange brain; only dead end DE-047 is in the brain). Isolated V3 copy: `outputs\cu-geography-v3` (own `.local`, previewed on 8766). Aliases: "CU geography", "Luna RF/KNN".
+  - Correction 2026-10-18 (checked on disk 2026-10-18): the Luna root moved on 2026-10-09 with the Terrier project and is now `C:\Users\pgoff\Documents\Terrier\outputs\cu-geography`. The old `Documents\Codex\2026-09-27\we-are-going-to-have-an` path is a directory junction to `Documents\Terrier`, so this path still resolves.
 - The app is ROOT itself: Django + React/MapLibre on port 8765, launched by `Start.ps1`. It does not read model exports, and its bundle validator rejects modelled fields. Paul's live app on 8765 is never touched by the V3 build.
 - Full lane detail, history, numbers and rulings: [[2026-09-feature-cu-geography-luna-and-row-framework]]. Evaluation method: [[quant-model-evaluation-skill]] (row framework run through `/quant-model-evaluation`, 2026-09-30). Holdout discipline: [[single-look-holdout-discipline]]. Heavy rounds ran on the [[runpod-pod]]; decision maker [[paul-goff]].
 - Two sub-lanes:
@@ -93,6 +94,8 @@ tags: ["type/project", "status/active", "domain/data"]
 | Optional ruling on `credit_card_user` GPU fills (-0.14 pp blank-mix estimate; recommended: keep) | todo | | [[paul-goff]] |
 | Pre-register the 3 Nov 2026 turnout check (council default) | todo | 2026-11-03 | Codex lane |
 | P1 populate (`rowfw_build.py --phase P1`) once C: has >= 5 GB free, verify, docs addendum | done | | Codex lane |
+
+Correction 2026-10-18 (evidence: ledger D-148 OP-1, 2026-10-11): the deletion of the old RunPod network volume was ruled on 2026-10-11 (terminate stopped pods, delete the volume). Carrying it out is Paul's action and still open; the status stays todo.
 
 > Action items are defined in the frontmatter (`action_items` field) to enable Dataview queries. The table above is a visualization for readability.
 

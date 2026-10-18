@@ -33,8 +33,11 @@ part_of: "[[2026-07-troubleshooting-melange-live-tree-git-drift]]"
 
 ### 2026-10-09: the LIVE tree is on `claude/lda-series-fixes-20261009`, not main (memory `data-presentation-fixes-2026-10-09`; added 2026-10-10)
 
+- Correction 2026-10-18 (evidence: the Melange main reconcile topic; `git branch --show-current` on 2026-10-18): superseded. Since 2026-10-17 the LIVE tree is on `main` (at `5e7731f1c` on 2026-10-18), after a fast-forward Paul approved.
+
 - After the 2026-10-09 data-presentation lane the Melange LIVE tree is ON branch `claude/lda-series-fixes-20261009` (`914623152` LDA fix; `8ce0de303` + `d2954e8cf` from the parallel regression-test session; `34710299f` deploy script + filings-page quarter), not main, so other sessions' commits land on it. Local + local mirror only.
 - GitHub can't take it: origin has no main, so a push carries 638 commits / 2.94 GiB with `audits/legfix5` files up to 2.76 GB (over GitHub's 100 MB limit). Paul: "Keep it local". (The live history cannot go to GitHub; the regression-test fixes were rebuilt byte-identical on GitHub's default branch with plumbing instead, then deleted at Paul's word; see the 2026-10-09 regression-test record in the later-reviews part of Melange audits and reviews.)
+  - Correction 2026-10-18 (evidence: the Melange main reconcile topic; `git ls-remote --symref origin HEAD` on 2026-10-18): superseded. `origin/main` exists: it is the curated publish lineage (`5a5d69d8c` on 2026-10-18), and GitHub's default branch has been `main` again since 2026-10-16. Local history is still never pushed (D-167, D-230).
 - Check the live tree's branch before committing or "shipping" (the 2026-07-14 rule below).
 
 ### 2026-08-14 (later, CPU-pegged incident): worktrees now live OUTSIDE OneDrive at `C:\melange-worktrees\<name>`

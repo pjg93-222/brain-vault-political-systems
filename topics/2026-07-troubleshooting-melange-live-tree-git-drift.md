@@ -25,7 +25,9 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 # Live tree, git drift and line endings
 
-> The canonical live tree (`C:\Users\pgoff\OneDrive\Desktop\Melange Systems`) can sit on another session's branch; committed HEAD is not runnable alone (live-only files); the 2026-09-19 reconcile committed 35 whole-file commits (rulings R1/R2/R3 still open); the EOL census produced the line-wise cutter `fec/tools/live_patch.py` (apply with `-c core.autocrlf=false`, never normalise LIVE); an off-box git mirror carries every branch.
+> The canonical live tree (`C:\Users\pgoff\OneDrive\Desktop\Melange Systems`) can sit on another session's branch; committed HEAD is not runnable alone (live-only files); the 2026-09-19 reconcile committed 35 whole-file commits (rulings R1/R2/R3 still open); the EOL census produced the line-wise cutter `fec/tools/live_patch.py` (apply with `-c core.autocrlf=false`, never normalise LIVE, except the CRLF-only differences D-233 normalised on 2026-10-17); an off-box git mirror carries every branch.
+
+Correction 2026-10-18 (evidence: ledger D-233, 2026-10-17): the summary above was corrected in place (R63-R64); it said LIVE is never normalised, without exception. D-233 normalised the tracked CRLF-only differences on 2026-10-17, and D-060 otherwise stands.
 
 ## Parts
 
@@ -85,6 +87,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 - Record, not ratify (brain D-051): the reconcile commits record live content; each commit message says "records the live state, does not ratify". R1/R2/R3 stay Paul's.
 - Line-wise patch contract (brain D-060): majority terminator, ONE shared helper `fec/tools/live_patch.py`, no `.gitattributes`, files never normalised; census extended to untracked files; brain drafts applied. Paul answered "Reconcile those loose ends and apply" (2026-09-19) - read as a go-ahead for the leaned recommendation on each ruling; it does not generalise to other lanes.
+  - Correction 2026-10-18 (evidence: ledger D-233, 2026-10-17; the Melange main reconcile topic): superseded in part. On 2026-10-17, with Paul's approval, LIVE moved onto `main` by a fast-forward after a snapshot ref and file backups, and D-233 normalised the 1,577 tracked files that differed from the committed bytes only by CRLF line endings (76 were skipped). D-060 stays in force for patches cut against live bytes; D-233 amends only its 'never normalise' clause, for those CRLF-only differences.
 - Reconcile direction decided by CONTENT, never by commit date vs mtime (DE-028); the mtime cluster is not lane evidence (DE-036).
 - "Do whatever is most optical, there should be no caps" (Paul 2026-09-19) authorised the reconcile plan; also answered R5: `DESK_MEDIA_CAP=0` means no cap ("default 50, 0=all") and live already had it. Does NOT generalise to other lanes.
 - Mirror policy: push after every merge gate; Paul ordered "push the mirror" then "Everything" (2026-08-18), "push the mirror" (2026-09-19), "refresh the mirror with all branches" (2026-10-03), "set up the brain mirror", "add the hook to melange too" (D-059).

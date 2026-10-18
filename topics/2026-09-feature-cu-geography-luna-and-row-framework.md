@@ -26,6 +26,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Context
 
 - Project: [[cu-geography]]. Luna root (also called ROOT): `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography`. It is NOT covered by the Melange brain (only dead end DE-047 lives there). The handoff `LUNA_HANDOFF.md` has a "Review findings and follow-up" section.
+  - Correction 2026-10-18 (checked on disk 2026-10-18): the Luna root moved on 2026-10-09 with the Terrier project and is now `C:\Users\pgoff\Documents\Terrier\outputs\cu-geography`. The old `Documents\Codex\2026-09-27\we-are-going-to-have-an` path is a directory junction to `Documents\Terrier`, so this path still resolves.
 - The app is ROOT itself: Django + React/MapLibre on port 8765, launched by `Start.ps1`. It does not read model exports, and its bundle validator rejects modelled fields.
 - Decision maker: Paul Goff approved each change explicitly in chat (an earlier executor dispatch was blocked by the auto-mode classifier until he did). The row-framework work was run through the [[quant-model-evaluation-skill]] (`/quant-model-evaluation`, 2026-09-30).
 - Heavy modelling rounds used the [[runpod-pod]] (RunPod H200 pod) under approved de-identified-data scope; the row-ranking lane then moved off it ("Move on out of the pod", 2026-09-30 evening) and works locally.
@@ -232,6 +233,7 @@ Paul's request (2026-09-30, verbatim in part, via `/quant-model-evaluation`): "d
 
 ### Facts and layout
 - ROOT = `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography`.
+  - Correction 2026-10-18 (checked on disk 2026-10-18): the Luna root moved on 2026-10-09 with the Terrier project and is now `C:\Users\pgoff\Documents\Terrier\outputs\cu-geography`. The old `Documents\Codex\2026-09-27\we-are-going-to-have-an` path is a directory junction to `Documents\Terrier`, so this path still resolves.
 - The app is ROOT itself (Django + React/MapLibre, port 8765, `Start.ps1`); it does not read model exports; its bundle validator rejects modelled fields.
 - Stage RF = `ROOT\.local\row-framework-20260930`:
   - de-identified `cache\inputs.parquet` (sha cece066c..., 802 columns);
