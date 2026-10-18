@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-15 15:58
-- Open questions in STATE: 38; active decisions: 227; dead ends: 70
+- Open questions in STATE: 38; active decisions: 228; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-241|D-241]] — Terrier is one app with no per-district access limits (Paul, 2026-10-18)
 - [[ledger/melange-systems-brain/D-240|D-240]] — App images on GHCR become public only after the no-data image check
 - [[ledger/melange-systems-brain/D-239|D-239]] — Admin console extends the native admin dashboard, with a desktop launcher
 - [[ledger/melange-systems-brain/D-238|D-238]] — Installer zips wrap the signed Electron installers; Docker kits come later
 - [[ledger/melange-systems-brain/D-237|D-237]] — Public GitHub Releases and a public repo for app updates (Paul, 2026-10-15)
-- [[ledger/melange-systems-brain/D-236|D-236]] — Public-repo history handling under D-167: decision recorded privately
 <!-- brainlink:state:end -->
