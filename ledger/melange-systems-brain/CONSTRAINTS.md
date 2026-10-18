@@ -7,13 +7,13 @@ title: "melange-systems-brain CONSTRAINTS"
 date: ""
 status: ""
 superseded_by: ""
-brain_commit: "768ae2579f50bbc5e466839c9e910d067942218b"
+brain_commit: "9ed2f30d3236ed95f3ed2312fd6e83d8ea7b5820"
 entry_sha256: "c303f1e9ce12f05a6760e0dd3ecebb6a06c0d862b9893aa265ed7dd3a1ed5f3f"
 generated: true
-generated_sha256: "1b3e7587e78a617d3dc6f0c4a89e6f3620600f8f7fcfa620e7bf563e52ff4b08"
+generated_sha256: "e0dd6cf23e76c5dc35a4321e4459cf85e28ca2005773eb4c136322b5439dbadf"
 aliases: ["melange-systems CONSTRAINTS"]
 ---
-> Generated from melange-systems-brain/CONSTRAINTS.md at 768ae25; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/CONSTRAINTS.md at 9ed2f30; do not edit — change the brain via brainctl.
 
 # CONSTRAINTS — Melange Systems
 
