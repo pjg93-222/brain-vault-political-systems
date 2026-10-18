@@ -67,7 +67,7 @@ Four global Claude Code hooks (`~/.claude/settings.json`) run `bun .bedrock/reca
 
 **`fleeting/` is the intake.** A memory file is in the vault when some note's `sources` lists its path with its current sha256. A new file becomes `fleeting/<project>--<file>.md` (`status: raw`). A changed one becomes, or updates, that note, with `updates:` linking the notes that hold the earlier version. The hook never writes curated notes. It updates a fleeting note in place only while it can prove the note is still exactly what it wrote; otherwise (edited, or not written by the hook) it writes a `-2` sibling. Deleting a fleeting note dismisses that version, which comes back only when its memory file changes. A file that matches a secret pattern is skipped, and every sync warns about it until it is fixed. To promote, fold the note into a permanent or bridge note with `/bedrock:preserve`, then set `status: promoted` and `promoted_to`. Hook output is committed with the normal git workflow.
 
-Fleeting notes are intake awaiting organization. The Phase 2 reorganisation leaves every one untouched (no edit, delete, move or staging); `check.ts` exempts them from the size, unresolved-link, one-way and no-incoming checks in every gate and lists them separately, a `sources` pair held only by fleeting notes is reported, not enforced, and an incoming link from a fleeting note never counts for a curated note. They are organized in a later, separate pass.
+Fleeting notes are intake awaiting organization. The Phase 2 reorganisation leaves every one untouched (no edit, delete, move or staging); `check.ts` exempts them from the size, unresolved-link, one-way and no-incoming checks in every gate and lists them separately, a `sources` pair held only by fleeting notes is reported, not enforced, and an incoming link from a fleeting note never counts for a curated note. They are organized in a later, separate pass. (Dated 2026-10-18: that pass ran on 2026-10-18; the 23 captures it found were already curated privately and were dismissed by deletion.)
 
 Manual commands, from the vault root:
 
@@ -84,7 +84,9 @@ bun .bedrock/graph/watch.ts                    # optional live graph watcher, st
 
 ## Reorganisation tooling
 
-Phase 2 ("organize the brain") runs in batches on the local branch `brain-reorg-2026-10-03`; the plan is `.bedrock/reorg/plan.md`. Every command runs from the vault root in Git Bash. `N` is the batch number, `BASE_N` the HEAD it started from, `REQ` its required checks, `SP` a scratch directory outside the vault.
+> **Historical (dated 2026-10-18).** Phase 2 is complete: its batches, fix rounds and STOP gate ran on `brain-reorg-2026-10-03` and were merged, and later work (for example `16dd15c` and the D-224 auto-captures) is committed normally on `main`. The branch test in G-pre, the G-split/G-post/G-commit gates, "commit only through `commit.ts`" and "never run `git push`, `git fetch` or `git pull`" applied to Phase 2 batches only; they bind a future reorganisation batch, not ordinary vault changes. The tools themselves stay in use as general gates: `check.ts --strict`, `conserve.ts` and `healthcheck.ts --strict`. The fleeting pass that Phase 2 deferred was done on 2026-10-18.
+
+Phase 2 ("organize the brain") ran in batches on the local branch `brain-reorg-2026-10-03`; the plan is `.bedrock/reorg/plan.md`. Every command runs from the vault root in Git Bash. `N` is the batch number, `BASE_N` the HEAD it started from, `REQ` its required checks, `SP` a scratch directory outside the vault.
 
 | Tool | What it does |
 |---|---|
@@ -159,7 +161,7 @@ BRAIN_VAULT="$X" bun .bedrock/recall/selftest.ts
 
 **Healthcheck "clean"** means: setup OK, and 0 orphans and 0 dangling notes among curated notes. graphify-out is not used (this vault's graph is `.bedrock/graph` + `brain-graph.html`), so its MISSING status is not a finding; old content is reported only; fleeting notes are reported separately and never fail.
 
-**Stale statements.** Statements that predate Phase 2 and fall outside the split work are not edited; the final batch lists them in `.bedrock/reorg/stale-statements.md` for a later pass.
+**Stale statements.** Statements that predate Phase 2 and fall outside the split work are not edited; the final batch lists them in `.bedrock/reorg/stale-statements.md` for a later pass. (Dated 2026-10-18: after Phase 2, a stale statement keeps its wording and gets a dated correction; the 2026-10-18 prune applied that to the 2026-10-11 clear-out rulings.)
 
 **Commits.** Commit through `bun .bedrock/reorg/commit.ts` only: explicit paths from the batch manifest, a throwaway index, never a fleeting path, never hook output (it builds the committed `log.md` and `index.md` itself). Commits stay local: never run `git push`, `git fetch` or `git pull` during the reorganisation, whatever `.bedrock/config.json` says; the orchestrator pushes the branch and opens the PR after STOP.
 
