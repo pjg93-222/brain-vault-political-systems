@@ -7,13 +7,13 @@ title: "melange-systems-brain CONSTRAINTS"
 date: ""
 status: ""
 superseded_by: ""
-brain_commit: "768ae2579f50bbc5e466839c9e910d067942218b"
+brain_commit: "9ed2f30d3236ed95f3ed2312fd6e83d8ea7b5820"
 entry_sha256: "c303f1e9ce12f05a6760e0dd3ecebb6a06c0d862b9893aa265ed7dd3a1ed5f3f"
 generated: true
-generated_sha256: "1b3e7587e78a617d3dc6f0c4a89e6f3620600f8f7fcfa620e7bf563e52ff4b08"
+generated_sha256: "e0dd6cf23e76c5dc35a4321e4459cf85e28ca2005773eb4c136322b5439dbadf"
 aliases: ["melange-systems CONSTRAINTS"]
 ---
-> Generated from melange-systems-brain/CONSTRAINTS.md at 768ae25; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/CONSTRAINTS.md at 9ed2f30; do not edit — change the brain via brainctl.
 
 # CONSTRAINTS — Melange Systems
 
@@ -45,11 +45,7 @@ Group them so a cold reader can scan fast:
   the longer-duration capture — value-blind). Raw layer outputs/wj_features_20260825/wj_features.jsonl;
   deduped habits input wj_features_dedup.jsonl. (source: 751/751 manifest-vs-turns.csv offset equality;
   60 matched v1/v2 clip pairs cross-correlate at median lag 20.00s, corr~1.000; observed 2026-08-25)
-- OpenSecrets' terms (last modified 2025-11-07) prohibit automated access without written permission
-  and use of site materials for machine learning or automated decision-making without prior written
-  permission; site content is licensed CC BY-NC-SA. Paul states he holds explicit permission
-  (2026-09-30). (source: opensecrets.org terms fetched 2026-09-30, lines 284, 288, 370; saved in the
-  forecast lane scratchpad feeds_spec\recon\terms.txt)
+- [private — see knowledge vault]
 - Mentat's receipt system does not capture industry PACs' own giving to candidates; the FEC pas2
   files under mentat\.cache\repair-20260908-inputs\fec_beneficiary hold it (2022 and 2026 editions
   2026-09-06, 2024 edition 2026-03-08). (source: forecast Phase 2 addendum section F, 2026-09-30)
