@@ -7,7 +7,7 @@ status: "in-progress"
 people:
   - "paul-goff"
 actors: []
-objective: "Add Oregon OR-05 (Bynum) and Connecticut CT-01 (Bronin) to the Colorado CD-05 Terrier app as a config-first multi-district system, with Colorado outputs unchanged by default"
+objective: "Add Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier app as a config-first multi-district system, with Colorado outputs unchanged by default"
 created_at: 2026-10-06
 sources:
   - {url: "file:///C:/Users/pgoff/Documents/Terrier/outputs/cu-geography-v3/TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", type: "markdown", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\Documents\\Terrier\\outputs\\cu-geography-v3\\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md", sha256: "c76fe5e7a9d5d4c1e89696daf9f5905b809f6fbce9bed4a09b7d0c3eed94d48f"}
@@ -98,8 +98,8 @@ All paths are on Paul's workstation. `<outputs>` is `C:\Users\pgoff\Documents\Te
 
 - **Blueprint:** `<outputs>\cu-geography-v3\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md`.
 - **Handoff files** (Terrier root `<outputs>\cu-geography-v3\`): `WALK_LIST_HANDOFF_2026-10-02.md`, `TERRIER_HANDOFF_2026-10-01.md`, `ACTUAL_DATA_HANDOFF_2026-10-01.md`, `DATA_AUDIT_2026-10-01.md`. Paul's request log with every definition: `<outputs>\cu-geography\CONVERSATION_REQUESTS.md`.
-- **Source files as supplied:** Colorado `C:\Users\pgoff\Downloads\statara_co_cd005_20260904.csv` (491,308 rows); Oregon `C:\Users\pgoff\Downloads\Janelle Bynum (OR-05).zip`; Connecticut `C:\Users\pgoff\Downloads\Luke Bronin (CT-01).zip`.
-- **Extracted source files:** `C:\Users\pgoff\Documents\Terrier\sources\statara_or_cd005_20260904.csv` (562,563 rows, 1,074,173,461 bytes) and `C:\Users\pgoff\Documents\Terrier\sources\statara_ct_cd001_20260904.csv` (458,372 rows, 831,664,503 bytes). Same 622-column schema as Colorado.
+- **Source files as supplied:** Colorado `C:\Users\pgoff\Downloads\<CO-05 vendor file>.csv` (491,308 rows); Oregon `C:\Users\pgoff\Downloads\<OR-05 source zip>.zip`; Connecticut `C:\Users\pgoff\Downloads\<CT-01 source zip>.zip`.
+- **Extracted source files:** `C:\Users\pgoff\Documents\Terrier\sources\<OR-05 vendor file>.csv` (562,563 rows, 1,074,173,461 bytes) and `C:\Users\pgoff\Documents\Terrier\sources\<CT-01 vendor file>.csv` (458,372 rows, 831,664,503 bytes). Same 622-column schema as Colorado.
 - **Census manifest:** `C:\Users\pgoff\Documents\Terrier\work\geography\DOWNLOADS_2026-10-07.json` (20 entries: file, source URL, size in bytes, download time; the first 14 are the block, boundary and road files, the last 6 the state legislative and ZIP-code area files). The downloaded files are under `work\geography\or-05\` and `work\geography\ct-01\` (`blocks.zip`, `districts.zip`, `roads\`).
 
 ## People Involved

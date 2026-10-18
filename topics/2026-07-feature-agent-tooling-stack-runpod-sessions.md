@@ -26,14 +26,14 @@ Source description: "RunPod sessions: historical first-pod setup and current mat
 ### Superseding math-lane checkpoint, 2026-09-30
 
 - Paul subsequently ordered every process to the newly supplied pod and explicitly allowed the entire data plane, including donor records. The code-only restriction and old address/layout below describe the first pod and must not govern this authorized math run.
-- Current SSH: user root, host 81.27.69.177, port 36669; tree `/dev/shm/melange`; Python `/workspace/melange-venv/bin/python`.
+- Current SSH: user root; host and port are in the private notes; tree `/dev/shm/melange`; Python `/workspace/melange-venv/bin/python`.
 - The coordinator owns transfer completeness, production execution and output reconciliation; none is certified by this memory note.
 - F5 criterion-only refresh completed at `/workspace/f5-check`, with all 468 frozen bills and independent source replay.
 - Preserve other lanes, do not stop the pod, and do not restart Mentat 8806. Secret handling is not blanket-authorized by the full-data ruling.
 
 ### Historical first pod (Paul's, set up 2026-09-30)
 
-- SSH: user root, host 103.196.86.181, port 57215, key `~/.ssh/id_ed25519` (`ssh -p 57215 -i ~/.ssh/id_ed25519` to root at that host; direct TCP; supports scp). Ubuntu 24.04, 192 CPU, 2 TB RAM, H200, 30 GB container disk (wiped on restart), `/workspace` network volume (persists; REFUSES chmod/chown/utime). Shared with the forecasting lane (`/workspace/forecast`). Paul attaches with `ssh -t ... "tmux attach -t claude"`.
+- SSH: user root; host, port and key are in the private notes (direct TCP; supports scp). Ubuntu 24.04, 192 CPU, 2 TB RAM, H200, 30 GB container disk (wiped on restart), `/workspace` network volume (persists; REFUSES chmod/chown/utime). Shared with the forecasting lane (`/workspace/forecast`). Paul attaches with `ssh -t ... "tmux attach -t claude"`.
 - **Paul's rulings:** "Claude sessions there"; keep the H200 ($3.59-4.59/hr). NEVER stop the pod, and don't nag about stopping it: Paul answered "Does not matter" to the stop reminder on 09-30. See `pod-for-memory-heavy-tasks-2026-09-30`. The pod's `CLAUDE.local.md` line "stop it in the RunPod console" is stale; fix it at the next pod visit. CODE ONLY, no Melange data (donor PII) synced (first pod only; superseded above); no secrets copied (default: none, per-secret OK required).
 
 ### Layout / how to apply

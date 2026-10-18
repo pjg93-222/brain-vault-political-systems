@@ -161,8 +161,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ### Round 3 on the pod (2026-09-30)
 - Setup:
   - The runpod@runpod plugin is installed, but its MCP still needs Paul's OAuth sign-in (needs_auth).
-  - An SSH key was generated at `C:\Users\pgoff\.ssh\id_ed25519` (fingerprint SHA256:2SYMVs..., no passphrase).
-  - Pod: H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume. Direct SSH: `root@103.196.86.181 -p 57215`; the ssh.runpod.io proxy is interactive only.
+  - An SSH key was generated on the workstation (path and fingerprint in the private notes).
+  - Pod: H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume. Direct SSH: `root@<first-pod-host> -p <port>`; the ssh.runpod.io proxy is interactive only.
 - Paul said "Yes" to a DE-IDENTIFIED upload (model inputs, labels, splits, household features; no names, emails, addresses or IDs) and "All of it, get it done" to the round. The raw source CSV stays local. Never stop or terminate the pod without Paul.
 - Round 3 (full training pool, RF 500 trees, GPU XGBoost; stage `.local\gpu-round-20260930`, remote `/workspace/luna-round3`) was dispatched to a Sonnet executor.
   - Design: selection on A1/A2 with a lock; the holdout's SECOND use is disclosed; same deploy gate as before.
@@ -306,7 +306,7 @@ Paul's request (2026-09-30, verbatim in part, via `/quant-model-evaluation`): "d
 
 ### Pod, row-framework lane
 - Paul said "Move on out of the pod" and "Bring everything out with it". Codex was already running the full recovery to `C:\Users\pgoff\Melange-Pod-Recovery\20260930` (32 parts, 38.7 GB raw, with disk guards; C: had ~33 GB free). This lane stood its duplicate copy down. That recovery belongs to the other lane.
-- Pod at that time: `root@81.27.69.177 -p 36669`; shared with another session (`/workspace/forecast`); container capped at ~48 CPUs, ~468 GiB RAM and 30 GB disk. Nothing from the row-ranking lane was uploaded to it. Ask Paul before using any pod again.
+- Pod at that time: `root@<math-pod-host> -p <port>`; shared with another session (`/workspace/forecast`); container capped at ~48 CPUs, ~468 GiB RAM and 30 GB disk. Nothing from the row-ranking lane was uploaded to it. Ask Paul before using any pod again.
 
 ### Why and how to apply (row framework)
 - **Why:** Paul set the gates himself. `ask-before-substantive-changes` applies to P1 and to the wiring.

@@ -3,7 +3,7 @@ type: actor
 name: "RunPod math pod"
 aliases: ["Runpod pod"]
 category: "infra"
-description: "RunPod H200 pod (first pod 192 CPU / ~2 TB RAM; current math pod root@81.27.69.177:36669) used for memory/RAM-heavy tasks and Claude sessions; current math pod has full-data authorization; never stop the pod; ask Paul before using any pod for the CU-geography lane."
+description: "RunPod H200 pod (first pod 192 CPU / ~2 TB RAM; current math pod endpoint in the private notes) used for memory/RAM-heavy tasks and Claude sessions; current math pod has full-data authorization; never stop the pod; ask Paul before using any pod for the CU-geography lane."
 repository: ""
 stack: "RunPod pod (Ubuntu 24.04, H200 141 GB, 192 CPU, ~2 TB RAM), /workspace network volume, tmux, git archive snapshot, Python venv, SSH"
 status: "active"
@@ -46,7 +46,7 @@ tags: ["type/actor", "status/active", "domain/infra"]
 ## Dependencies
 
 - Used by (vault): [[2026-09-feature-cu-geography-luna-and-row-framework]] / [[cu-geography]] (Luna round 3 ran here with a de-identified upload), Forecast audit, giving-view redesign and PAC accuracy / [[forecast-redesign]] (forecasting model audit lane at `/workspace/forecast`), [[mentat]] (do not restart Mentat 8806), Agent orchestration and model tiering rules (the pod rules), Agent tooling stack (the runpod plugin and pod sessions).
-- Depends on: RunPod platform (billing hourly), SSH key `C:\Users\pgoff\.ssh\id_ed25519` (path only), the RunPod MCP plugin (`plugin:runpod`, needs Paul's OAuth sign-in), Claude Code credentials persisted in `/workspace/claude-home`.
+- Depends on: RunPod platform (billing hourly), an SSH key on the workstation (path and fingerprint in the private notes), the RunPod MCP plugin (`plugin:runpod`, needs Paul's OAuth sign-in), Claude Code credentials persisted in `/workspace/claude-home`.
 - Other lanes sharing the pod: "LUNA geography project review" and "Forecasting model audit and integration" (`/workspace/forecast`). Paul confirmed on 2026-09-30 "Those sessions are good": their outputs are not this lane's concern, so do not pull or clean them.
 - Related memory notes: `pod-for-memory-heavy-tasks-2026-09-30`, `runpod-claude-sessions-2026-09-30`, `luna-stratified-scaling-review-2026-09-29`, `codex-overnight-poll-loop-burn-2026-09-13`, `quant-model-evaluation-skill-lane-2026-09-30`, `ask-before-substantive-changes`, `live-tree-branch-state-2026-07-14`.
 
@@ -63,11 +63,11 @@ tags: ["type/actor", "status/active", "domain/infra"]
 
 ```bash
 # first pod (direct TCP; supports scp); the ssh.runpod.io proxy is interactive only
-ssh root@103.196.86.181 -p 57215 -i ~/.ssh/id_ed25519
-ssh -t root@103.196.86.181 -p 57215 -i ~/.ssh/id_ed25519 "tmux attach -t claude"
+ssh root@<first-pod-host> -p <port>
+ssh -t root@<first-pod-host> -p <port> "tmux attach -t claude"
 
 # current math pod (Paul's 2026-09-30 ruling); tree /dev/shm/melange
-ssh root@81.27.69.177 -p 36669
+ssh root@<math-pod-host> -p <port>
 # Python on the math pod: /workspace/melange-venv/bin/python
 
 # login tunnel (from Windows): port is the localhost-callback port Claude prints
@@ -107,14 +107,14 @@ git ... --separate-git-dir=/root/melange.git
 ## Pod inventory
 
 ### Current math pod (superseding checkpoint 2026-09-30)
-- SSH: `root@81.27.69.177` port 36669; tree `/dev/shm/melange`; Python `/workspace/melange-venv/bin/python`.
+- SSH: `root@<math-pod-host>` (host and port in the private notes); tree `/dev/shm/melange`; Python `/workspace/melange-venv/bin/python`.
 - Shared with another session (`/workspace/forecast`); container capped at ~48 CPUs, ~468 GiB RAM and 30 GB disk (as of the 2026-09-30 evening note).
 - F5 criterion-only refresh completed at `/workspace/f5-check`, with all 468 frozen bills and independent source replay.
 
 ### Historical first pod (Paul's, set up 2026-09-30)
-- `ssh root@103.196.86.181 -p 57215 -i ~/.ssh/id_ed25519` (direct TCP; supports scp). Ubuntu 24.04, 192 CPU, 2 TB RAM, H200 (141 GB), 30 GB container disk (wiped on restart), `/workspace` network volume (persists; REFUSES chmod/chown/utime). Shared with the forecasting lane (`/workspace/forecast`).
+- `ssh root@<first-pod-host> -p <port>` (direct TCP; supports scp). Ubuntu 24.04, 192 CPU, 2 TB RAM, H200 (141 GB), 30 GB container disk (wiped on restart), `/workspace` network volume (persists; REFUSES chmod/chown/utime). Shared with the forecasting lane (`/workspace/forecast`).
 - Then-current restriction: CODE ONLY, no Melange data (donor PII) synced; no secrets copied (default none, per-secret OK required). (Superseded for the math run by the full-data authorization above.)
-- SSH key generated at `C:\Users\pgoff\.ssh\id_ed25519` (fingerprint SHA256:2SYMVs..., no passphrase); the ssh.runpod.io proxy is interactive only.
+- SSH key generated on the workstation (path and fingerprint in the private notes); the ssh.runpod.io proxy is interactive only.
 
 ### Layout (first pod)
 - `/workspace/melange` = `git archive` of 61e16e28b minus 88 files >20 MB (audits/legfix5 packets etc.), 43,268 files; `.snapshot_base` holds the base sha. `CLAUDE.local.md` there points brain boot at `/workspace/brain` and forbids running the chain on Linux (340/1,396 fec files Windows-coupled).
@@ -125,7 +125,7 @@ git ... --separate-git-dir=/root/melange.git
 ## Decisions
 
 - Pod rule, newest: "Move on out of the pod" (Paul, 2026-09-30 evening); for CU-geography row ranking work locally and ask before using any pod. "Never stop the pod" still stands.
-- ~~"For tasks pertaining to Memory and RAM, shift over to the Pod, and go hard on it, meaning memory and Ram on there are not a constraint"~~ (Paul, 2026-09-30, verbatim) - superseded for the CU-geography row-ranking lane the same evening by "Move on out of the pod"; kept because it explains the earlier pod usage (Luna round 3, F5 refresh). The earlier rule: the pod (H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume; SSH `root@103.196.86.181 -p 57215 -i ~/.ssh/id_ed25519`) runs any job limited by RAM or memory: model training, grids, large in-memory joins, bootstrap batteries; don't downsample or cap memory there; parallelise across fields and cores and keep data in RAM.
+- ~~"For tasks pertaining to Memory and RAM, shift over to the Pod, and go hard on it, meaning memory and Ram on there are not a constraint"~~ (Paul, 2026-09-30, verbatim) - superseded for the CU-geography row-ranking lane the same evening by "Move on out of the pod"; kept because it explains the earlier pod usage (Luna round 3, F5 refresh). The earlier rule: the pod (H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume; SSH `root@<first-pod-host> -p <port>`) runs any job limited by RAM or memory: model training, grids, large in-memory joins, bootstrap batteries; don't downsample or cap memory there; parallelise across fields and cores and keep data in RAM.
   - **Why:** the local laptop (8 cores, 31.5 GB) was the bottleneck for the Luna modelling rounds, and Paul would rather pay for pod hours than wait.
   - **How to apply:** only Paul-approved data (on 2026-09-30: DE-IDENTIFIED Luna model inputs); raw source CSV and full completed export stay local; launch detached and wait on one background notification; never stop/terminate the pod without Paul; the pod bills hourly, so don't leave it running idle work.
 - ~~Pod is code only; no Melange data (donor PII) synced; no secrets copied~~ (first pod, 2026-09-30) - superseded 2026-09-30 for the math run by Paul's full-data authorization on the new pod (including donor records); secrets still need per-secret OK.
@@ -137,13 +137,13 @@ git ... --separate-git-dir=/root/melange.git
 
 | Date | Event |
 |---|---|
-| 2026-09-30 | First pod set up (Paul's): H200, `root@103.196.86.181 -p 57215`; runpod@runpod plugin installed but MCP needs OAuth; SSH key generated |
+| 2026-09-30 | First pod set up (Paul's): H200, `root@<first-pod-host> -p <port>`; runpod@runpod plugin installed but MCP needs OAuth; SSH key generated |
 | 2026-09-30 | Luna round 3 run on the pod with a 69 MB de-identified upload (Paul: "Yes" to de-identified upload; "All of it, get it done") |
 | 2026-09-30 | Paul: "For tasks pertaining to Memory and RAM, shift over to the Pod, and go hard on it" (23:31Z note); later superseded for CU row ranking |
 | 2026-09-30 | Paul: "Claude sessions there"; keep the H200; NEVER stop the pod; "Does not matter" to the stop reminder |
 | 2026-09-30 | Paul: "drop the pod" (Luna lane); pod unreachable by SSH (timeout) |
 | 2026-09-30 ~20:00 | SSH timed out (pod stopped or restarted); `/workspace` persists; run bootstrap.sh after restart |
-| 2026-09-30 | Newly supplied math pod `root@81.27.69.177 -p 36669`: Paul ordered every process there and allowed the whole data plane; F5 refresh at `/workspace/f5-check` (468 frozen bills) |
+| 2026-09-30 | Newly supplied math pod `root@<math-pod-host> -p <port>`: Paul ordered every process there and allowed the whole data plane; F5 refresh at `/workspace/f5-check` (468 frozen bills) |
 | 2026-09-30 evening | Paul: "Move on out of the pod" and "Bring everything out with it"; Codex ran full recovery to `C:\Users\pgoff\Melange-Pod-Recovery\20260930` |
 | 2026-09-30 | Paul confirmed "Those sessions are good" about the other lanes' sessions on the pod |
 

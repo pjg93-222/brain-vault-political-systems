@@ -23,7 +23,7 @@ part_of: "[[2026-07-feature-data-collection-lanes]]"
 
 ### FIVE-LANE PASS (2026-08-05, merged @2857c99)
 
-- REFRESH EMAIL: `weekly_refresh` atexit-emails [personal email omitted] on TOTAL completion (success/abort/crash) via `fec/refresh_email.py`; ACTIVATION BLOCKED on Paul creating `fec/icloud_smtp.txt` (3 lines: apple-id, app-specific password, from) - gitignored; loud skip line until then. Never handle the password.
+- REFRESH EMAIL: `weekly_refresh` atexit-emails [personal email omitted] on TOTAL completion (success/abort/crash) via `fec/refresh_email.py`; ACTIVATION BLOCKED on Paul creating the local SMTP credential file (format in the private notes) - gitignored; loud skip line until then. Never handle the password.
 - TENURE-AWARE POSTURES: pre-service years are NOT zero-attention; freshmen get `new_member` state (Cultivating if active), deltas cap at >+-999%; `first_service_year` = earliest Voteview congress via `historical_member_names`. Nunn-class +2000% eliminated.
 - SECTOR ROSTER 298 to 372: crypto 76 to 113, fintech 42 to 79; CU verified COMPLETE (orgs lobby via ACU/leagues/DCUC). NINE AMBIGUOUS HELD FOR PAUL: AmEx, Discover (needs Capital One entity event), Synchrony (bank-sector miss), The Clearing House, Kalshi, Polymarket, DRW, Figure, Alchemy Analytics. Known cosmetic false positives left: H&R Block via BLOCK INC, ItsEasy via VISA, CHIME college.
 - BILL REPOSITORY <-> LOBBYING: `bill_lobbying_sidecar.py` (chain, before desk) writes `data/lobbying/bill_lobbying_sidecar.json` (2,595 bills; orgs top-8 with sector, lobbyists top-5 with top interaction and dominant industry, members top-12); the desk repository renders all three blocks. `financial_other` is a VALID index sector (wider than the roster's four).

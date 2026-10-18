@@ -14,7 +14,7 @@ known_issues:
   - "Weekly refresh has NOT completed since 2026-07-19 06:53 (6 COMPLETE lines in weekly_refresh.log; 30 HARD FAILURE lines, 16 timeouts in 42 parsed runs)"
   - "All-or-nothing: 28 of 49 steps fatal, worst-path budget 275,100 s = 76.4 h, no resume (tick runner built on claude/refresh-tick-20260919, not landed)"
   - "Lease collision with the daily job: exit 75 in 2 s, no retry (weekly_refresh.py:69-74)"
-  - "Blind failures: exit-75 paths run before Glass Box/status/atexit; weekly email never sent (fec/icloud_smtp.txt absent)"
+  - "Blind failures: exit-75 paths run before Glass Box/status/atexit; weekly email never sent (the local SMTP credential file absent)"
   - "audit_full fails 7 checks, 6 not on the ratified list; publish_dashboard.py needs unset DASHBOARD_PASSWORD_FILE"
   - "Daily chain blocked at step 3 by 4 interview duplicates (N12 v2 truncation); admissions deadline 2026-09-21T03:41:10Z"
   - "Machine crashes about once per 2 days (23 Kernel-Power 41 events 2026-07-28..2026-09-15)"
@@ -96,7 +96,7 @@ Get-ScheduledTaskInfo -TaskName MoneyballWeeklyRefresh
 python -c "import sys; sys.path[:0]=['fec','fec/legislation']; import official_membership_movements as OM; OM.load('.')"
 # repair: copy bill_repository_live.json and data/engine/congress_bill_refresh_receipt.json back from <run_dir>/before/
 
-# Email post-fill test (after Paul creates fec\icloud_smtp.txt)
+# Email post-fill test (after Paul creates the local SMTP credential file)
 python -c "import refresh_email; ..."   # then send_report (module is import-safe, stdlib-only)
 
 # Merge/deploy of the crash-visibility fix (done 2026-08-09)
@@ -122,7 +122,7 @@ Option notes: `--smoke` skips discovery, runs admissions `--limit 1 --no-llm --n
 10. Smaller: outer chain bound 7200 s (`:464`) < inner 10800 s per-step; chain inside the weekly never exceeded 2,076 s (the 261.6 min figure came from FAILED manual runs); timeout and failure both write `HARD_FAILURE`; `save_workbook_atomic` (`moneyball_core.py:232`) lacks PermissionError retry; daily run dirs grew 733 MB in 2 days, no pruning; tasks need an interactive logon.
 11. Daily chain: full PASS blocked at step 3 by 4 exact duplicate interview-turn groups (rowids 193060/193063, 190575/190576, 189055/189056, 103937/103939) from the N12 v2 truncation (brain DE-045, `e783813`); wrapper defects W1 (no rollback of fetched repository), W2 (no per-day attempt cap), W3 (`open_congress_pipeline_monitor.ps1` unquoted `Start-Process` paths) await Paul.
 12. AI independence: reference layer step spawns `claude.exe` up to 128x/run via `fec/classifier_runtime.py` (`subprocess.run(capture_output, timeout=180)`), any model error exits 1 = hard abort; `refresh_sentinel_admissions.py:288-290` calls `api.anthropic.com` with `fec/anthropic_key.txt`; policy `data/engine/sentinel_admission_policy.json` transport `claude-cli`/sonnet (24 `claude.exe` calls per admissions pass). The chain itself is AI-free. Paul's call; a peer session owns the degrade.
-13. Email never sent: `fec/icloud_smtp.txt` (3 lines: apple-id / app-specific password / from-address, utf-8, no blank 4th line) missing; `.gitignore:21` `*.txt` ignores it. Recipient `[personal email omitted]`. Key store `Desktop\API Keys\keys.json` has only `lda`, `data_gov`, `anthropic` blocks.
+13. Email never sent: the local SMTP credential file (location and format in the private notes) is missing. Recipient `[personal email omitted]`. Key store `Desktop\API Keys\keys.json` has only `lda`, `data_gov`, `anthropic` blocks.
 
 ## Architecture and standing facts
 

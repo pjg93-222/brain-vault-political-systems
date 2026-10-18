@@ -105,7 +105,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 - Never run or import `fec/weekly_refresh.py` to test it: it executes the whole refresh at module level; test `step()` by lifting its source with `ast` into a sandbox.
 - Never supervise long jobs from an AI turn: launch detached, then ONE background `until` loop or one Monitor on the status file (Codex burn lesson).
 - Do not create Codex heartbeat automations as a scheduler; flag, do not flip, paused ones.
-- Email credentials: creating `fec\icloud_smtp.txt` is PAUL'S action (password entry). TABLED 2026-08-09: do not nag or re-raise unprompted.
+- Email credentials: creating the local SMTP credential file is PAUL'S action (password entry). TABLED 2026-08-09: do not nag or re-raise unprompted.
 
 ## Next Steps
 
@@ -113,7 +113,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 - [ ] Paul: decide FAIL-CLOSED vs LABEL-CLOSED publication (council disagreement, in [[2026-08-incident-refresh-automation-reliability-weekly-refresh-and-tick-runner]]).
 - [ ] Paul: teach/accept status for the supervisor: `collector_supervisor.py:472-486` must learn `refresh_tick_status.json` before `MoneyballCollectorSupervisor` is re-enabled (GATE-2 is Paul-gated; never fake its inputs).
 - [ ] Paul: run `wevtutil sl Microsoft-Windows-TaskScheduler/Operational /e:true` (elevated) to enable the TaskScheduler Operational log (system setting).
-- [ ] Paul: provide a mail credential if email is wanted (key store has none): create `fec\icloud_smtp.txt` (3 lines).
+- [ ] Paul: provide a mail credential if email is wanted (key store has none): create the local SMTP credential file.
 - [ ] Owner-only: switch task principal to "run whether logged on or not" + start-on-boot trigger (prove first with a logged-out smoke task); flip `MoneyballWeeklyRefresh` to launch `fec\refresh_tick.py` when Paul decides.
 - [ ] Ratify or fix the six un-ratified audit reds (publication blocked until then).
 - [ ] Design the Excel dependency (pillar snapshot vintage); not started as of 2026-09-19.

@@ -175,9 +175,9 @@ Version history (newest governs). The memory was modified again on 2026-10-09; t
 ### RAM/memory-heavy work goes to the pod (`pod-for-memory-heavy-tasks-2026-09-30`, Paul 2026-09-30; the RunPod math pod actor)
 
 - Paul, 2026-09-30, verbatim: "For tasks pertaining to Memory and RAM, shift over to the Pod, and go hard on it, meaning memory and Ram on there are not a constraint".
-- The pod then in use: H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume; SSH `root@103.196.86.181 -p 57215 -i ~/.ssh/id_ed25519` (key location only). It runs any job limited by RAM or memory: model training, grids, large in-memory joins, bootstrap batteries. Do not downsample or cap memory there. Parallelise across fields and cores, and keep data in RAM.
+- The pod then in use: H200 141 GB, 192 cores, ~2 TB RAM, `/workspace` volume; SSH `root@<first-pod-host> -p <port>` (host, port and key in the private notes). It runs any job limited by RAM or memory: model training, grids, large in-memory joins, bootstrap batteries. Do not downsample or cap memory there. Parallelise across fields and cores, and keep data in RAM.
 - **SUPERSEDED for the CU-geography row-ranking lane, 2026-09-30 evening.** Paul said, verbatim: "Move on out of the pod". The ranking framework is built and tested locally.
-  - The pod at that time was `root@81.27.69.177 -p 36669`. It was shared with another session (`/workspace/forecast`), and its container was capped at ~48 CPUs, ~468 GiB RAM and 30 GB disk.
+  - The pod at that time was `root@<math-pod-host> -p <port>`. It was shared with another session (`/workspace/forecast`), and its container was capped at ~48 CPUs, ~468 GiB RAM and 30 GB disk.
   - Nothing from that lane was uploaded to it.
   - Ask Paul before using any pod again. (Current rule: the CU-geography lane works locally and asks before using the pod; the "never stop the pod" rule below still stands.)
 - **Why:** the local laptop (8 cores, 31.5 GB) was the bottleneck for the Luna modelling rounds, and Paul would rather pay for pod hours than wait.
