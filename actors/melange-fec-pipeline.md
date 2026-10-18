@@ -169,6 +169,7 @@ git status --porcelain=v1 -- <paths...>
 - Hubs (`paths`, `moneyball_core`, 9 hubs) stay at the fec root (a `core/` dir = ~500 rewrites for zero gain) - 2026-08-05.
 - `ranks_python.json` is the rank authority; workbook is a view; NO COM anywhere (Paul's sign-off, 2026-07-02).
 - Line-wise patch contract with ONE shared helper; files never normalised; no `.gitattributes` (D-060, 2026-09-19); majority terminator.
+  - Correction 2026-10-18 (evidence: ledger D-233, 2026-10-17; the Melange main reconcile topic): superseded in part. On 2026-10-17, with Paul's approval, LIVE moved onto `main` by a fast-forward after a snapshot ref and file backups, and D-233 normalised the 1,577 tracked files that differed from the committed bytes only by CRLF line endings (76 were skipped). D-060 stays in force for patches cut against live bytes; D-233 amends only its 'never normalise' clause, for those CRLF-only differences.
 - Reconcile commits "record the live state, do not ratify" (D-051): R1/R2/R3 stay Paul's.
 - Timeouts are constants, no env dial; sized from Glass Box `pipeline.step` history.
 - ~~Excel COM writes / RECALC step~~ (until 2026-07-02) - superseded 2026-07-02 by "NO COM anywhere"; kept because older commits and artifacts reference it.
@@ -211,6 +212,6 @@ git status --porcelain=v1 -- <paths...>
 ## Related Concepts
 
 - [[zero-rank-delta-verification]] - Behavior-preserving changes must leave ranks_python.json byte-identical: kernel tests, full chain, rank delta ZERO, audit clean
-- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
+- [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by D-233, which normalised CRLF-only differences); applying needs Paul's go.
 - [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
 - [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, previous, and current: Paul's 2026-09-03 directive per D-141), only Paul ratifies one, and the live set is read where it is kept.

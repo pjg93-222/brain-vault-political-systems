@@ -8,7 +8,7 @@ deadline: ""
 progress: "Pipeline shipped (7 industries ready; workbooks built and rebuilt); console, Chart Studio and PAC-evidence lanes ongoing; live tree pushed to GitHub branch claude/mentat-migration-onto-main (tip 28c27a47) on 2026-10-02/03, then opened as Melange PR #2 and merged 2026-10-03 at Paul's request (merge commit 54433266); v5 corrected Fintech workbook awaits Paul's deploy call."
 blockers:
   - "Resolved 2026-10-03 (was: PR to main unopened; gh is NOT installed and Claude in Chrome was not connected, so Paul must open it or connect Chrome; Paul deferred: 'we can do it later'): Paul signed in to GitHub in the built-in browser, the PR was opened there as Melange PR #2 and merged at his request."
-  - "Full local history is unpublishable as-is: origin main shares NO history with the local repo and the local history has 28 blobs over 100 MB under audits/legfix5; publishing needs filter-repo or LFS, and a history rewrite is Paul's decision."
+  - "Full local history is unpublishable as-is: origin main shares NO history with the local repo and the local history has 28 blobs over 100 MB under audits/legfix5; publishing needs filter-repo or LFS, and a history rewrite is Paul's decision. Correction 2026-10-18 (ledger D-167, 2026-10-11): closed; local history is never pushed and source reaches GitHub only as history-free exports."
   - "Telecom workbook blocked by a V8 string cap (payload 591,338,574 bytes vs max string 536,870,888) until the export is made cycle-aware (as of 2026-07-27)."
   - "Roster-identity and alias calls (acronym-variant collisions, FCU-variant expansion, 63 proposed aliases) need Paul's yes under his strict-names rule."
 action_items:
@@ -20,8 +20,8 @@ action_items:
     status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
-  - description: "Decide whether to publish the full local history (needs filter-repo or LFS for 28 blobs over 100 MB under audits/legfix5; history rewrite is Paul's call)"
-    status: "todo"
+  - description: "Decide whether to publish the full local history (needs filter-repo or LFS for 28 blobs over 100 MB under audits/legfix5; history rewrite is Paul's call); closed 2026-10-11 by D-167, which keeps local history unpublished"
+    status: "done"
     deadline: ""
     owner: "[[paul-goff]]"
   - description: "Deploy call on v5 corrected Fintech workbook in mentat/.cache/bench-20260723-output (data, not git)"
@@ -90,10 +90,12 @@ Dated correction (2026-10-04, fleeting pass; source `mentat-github-migration-202
 |---|---|---|---|
 | Offer to open the PR (base claude/melange-math-eval-skill-18e907) for claude/mentat-migration-onto-main (done 2026-10-03: PR #2 opened and merged) | done | | [[paul-goff]] |
 | Delete or keep partial ref claude/mentat-github-migration-b06195 on origin (done 2026-10-03: deleted on origin; kept locally and on mirror) | done | | [[paul-goff]] |
-| Decide on publishing full local history (filter-repo or LFS) | todo | | [[paul-goff]] |
+| Decide on publishing full local history (filter-repo or LFS) | done (2026-10-11, D-167) | | [[paul-goff]] |
 | Deploy call on v5 corrected Fintech workbook (.cache/bench-20260723-output) | todo | | [[paul-goff]] |
 | Yes/no on FCU-variant expansion and 63 proposed aliases | todo | | [[paul-goff]] |
 | Policy call on pagination-shortfall guard | todo | | [[paul-goff]] |
+
+Correction 2026-10-18 (evidence: ledger D-167, 2026-10-11): closed. D-167 rules that source reaches GitHub only as history-free, source-only exports and that local history is never pushed, so the full local history is not published and no filter-repo or LFS rewrite is needed for it.
 
 > Action items are defined in the frontmatter (`action_items` field) to enable Dataview queries. The table above is a visualization for readability.
 
@@ -116,6 +118,7 @@ SORT item.deadline ASC
 
 - ~~PR to main unopened (Paul deferred); `gh` is NOT installed and Claude in Chrome was not connected (2026-10-02/03).~~ Resolved 2026-10-03: Paul signed in to GitHub in the built-in browser, the PR was opened there (Melange PR #2) and merged at his request (merge commit `54433266`); `gh` is still not installed.
 - Full local history unpublishable as-is (28 blobs over 100 MB under `audits/legfix5`; origin main shares no history with local); a history rewrite is Paul's decision.
+  - Correction 2026-10-18 (evidence: ledger D-167, 2026-10-11): closed. D-167 rules that source reaches GitHub only as history-free, source-only exports and that local history is never pushed, so the full local history is not published and no filter-repo or LFS rewrite is needed for it.
 - Telecom workbook: V8 512 MB string cap (as of 2026-07-27; no later source assigned here records it as resolved).
 - Roster-identity calls awaiting Paul (alias collisions, FCU variants).
 

@@ -19,6 +19,8 @@ part_of: "[[single-look-holdout-discipline]]"
 
 Luna CU-geography RF/KNN lane (Codex outputs dir; only DE-047 is in the Melange brain). CLOSED 2026-09-30: current export = section 30 GPU model; every export note is current or marked historical (independently verified). Open = Paul's Runpod pod/volume cleanup; optional `credit_card_user` ruling. Luna root: `C:\Users\pgoff\Documents\Codex\2026-09-27\we-are-going-to-have-an\outputs\cu-geography`. Not covered by the Melange brain. The handoff `LUNA_HANDOFF.md` has a "Review findings and follow-up" section. Git Bash runs need `PYTHONPATH` = `<ROOT>\.local\model-study\.venv\Lib\site-packages;<ROOT-parent>\work\.venv\Lib\site-packages` for sklearn 1.9.1 with the codex runtime `python.exe`. PowerShell runs worked without it.
 
+Correction 2026-10-18 (checked on disk 2026-10-18): the Luna root moved on 2026-10-09 with the Terrier project and is now `C:\Users\pgoff\Documents\Terrier\outputs\cu-geography`. The old `Documents\Codex\2026-09-27\we-are-going-to-have-an` path is a directory junction to `Documents\Terrier`, so this path still resolves.
+
 ### Holdout-use ledger (the part that matters for this concept)
 
 - **The holdout has been used twice and no untouched labelled data remains**, so a further model change cannot be validated honestly without new labels.

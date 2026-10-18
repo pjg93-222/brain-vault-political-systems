@@ -150,6 +150,7 @@ git ... --separate-git-dir=/root/melange.git
 ## Next Steps / open
 
 - Paul to confirm pod terminated and delete the `/workspace` volume (his action; the agent never stops the pod).
+  - Correction 2026-10-18 (evidence: ledger D-148 OP-1, 2026-10-11): the deletion of the old RunPod network volume was ruled on 2026-10-11 (terminate stopped pods, delete the volume). Carrying it out is Paul's action and still open; the status stays todo.
 - Fix the stale `CLAUDE.local.md` line ("stop it in the RunPod console") at the next pod visit.
 - Authorize the RunPod MCP plugin (needs Paul's OAuth) if pod state checks are wanted.
 

@@ -2,7 +2,7 @@
 type: concept
 name: "Live-tree patch discipline"
 aliases: ["live_patch.py patch rule"]
-description: "Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go."
+description: "Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by D-233, which normalised CRLF-only differences); applying needs Paul's go."
 related_to: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
@@ -13,7 +13,9 @@ tags: ["type/concept", "domain/platform"]
 
 # Live-tree patch discipline
 
-> Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with `fec/tools/live_patch.py`, applied with `core.autocrlf=false`, never normalising LIVE: no merge or checkout (D-060); applying needs Paul's go.
+> Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with `fec/tools/live_patch.py`, applied with `core.autocrlf=false`, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by D-233, which normalised CRLF-only differences); applying needs Paul's go.
+
+Correction 2026-10-18 (evidence: ledger D-233, 2026-10-17): the summary above was corrected in place (R63-R64); it said LIVE is never normalised, without exception. D-233 normalised the tracked CRLF-only differences on 2026-10-17, and D-060 otherwise stands.
 
 ## Description
 
@@ -25,7 +27,9 @@ Applying the patch, and restarting a live service such as the 8841 sidecar after
 
 - One patch per lane, cut against LIVE bytes with `fec/tools/live_patch.py` from anchor-matched edits, never a whole-file copy over LIVE's drifted files. Precedent (2026-10-03/04, source `people-network-route-latency-lane-2026-10-02`): in the route-latency lane, on Paul's rulings for each landing, several patches were landed in turn, each applied only after an independent Opus check passed; the lane landed four (`landing_v2`, then `landing_v3_ids` cut against the `landing_v2` post-images, `landing_v4` and `landing_v4_1`).
 - Never merge or check out a branch into LIVE, because a checkout rewrites line endings (D-060, as restated in the route-latency lane's commit ruling of 2026-10-03; source `people-network-route-latency-lane-2026-10-02`). In the route-latency lane, on Paul's commit ruling of 2026-10-03, the lane committed its own files on LIVE main with `git add` on their exact paths and left other lanes' uncommitted LIVE changes alone. This replaces the earlier advice to check, before a merge into LIVE, that no path the merge touches is dirty.
+  - Correction 2026-10-18 (evidence: ledger D-233, 2026-10-17; the Melange main reconcile topic): superseded in part. On 2026-10-17, with Paul's approval, LIVE moved onto `main` by a fast-forward after a snapshot ref and file backups, and D-233 normalised the 1,577 tracked files that differed from the committed bytes only by CRLF line endings (76 were skipped). D-060 stays in force for patches cut against live bytes; D-233 amends only its 'never normalise' clause, for those CRLF-only differences.
 - Apply with `core.autocrlf=false` (the system default is `autocrlf=true`); never normalise LIVE's line endings.
+  - Correction 2026-10-18 (evidence: ledger D-233, 2026-10-17; the Melange main reconcile topic): superseded in part. On 2026-10-17, with Paul's approval, LIVE moved onto `main` by a fast-forward after a snapshot ref and file backups, and D-233 normalised the 1,577 tracked files that differed from the committed bytes only by CRLF line endings (76 were skipped). D-060 stays in force for patches cut against live bytes; D-233 amends only its 'never normalise' clause, for those CRLF-only differences.
 - The cutter's exit code separates identical bytes, line-ending-only drift and content drift.
 - APPLY and any restart need Paul's explicit go; the agent cuts and verifies the patch. Paul may give that go in advance for a landing, conditional on an independent check passing (route-latency lane, 2026-10-03/04).
 - Cut patches as bytes: a cutter that goes through a text console mangles non-ASCII bytes.
