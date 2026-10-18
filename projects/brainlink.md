@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-18 08:12
-- Open questions in STATE: 38; active decisions: 232; dead ends: 70
+- Open questions in STATE: 38; active decisions: 235; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-248|D-248]] — Live Melange main may fast-forward to claude/docker-coverage after the weekly re
+- [[ledger/melange-systems-brain/D-247|D-247]] — Terrier OR-05 and CT-01 store-build parity: single Windows run plus a volatile-f
+- [[ledger/melange-systems-brain/D-246|D-246]] — Mentat refit-parity: environment differences accepted as explained, 15 PPM packa
 - [[ledger/melange-systems-brain/D-245|D-245]] — Mentat parity streak: commit freeze, and three repeat runs count for the pinned-
 - [[ledger/melange-systems-brain/D-244|D-244]] — Collector containers get the FEC key from a launcher-side wrapper that writes it
-- [[ledger/melange-systems-brain/D-243|D-243]] — Task Scheduler authority for the Docker-gap work, each change once its gate pass
-- [[ledger/melange-systems-brain/D-242|D-242]] — Parity proof standard: one Windows run is both A1 and A2 (Paul, 2026-10-18)
-- [[ledger/melange-systems-brain/D-241|D-241]] — Terrier is one app with no per-district access limits (Paul, 2026-10-18)
 <!-- brainlink:state:end -->
