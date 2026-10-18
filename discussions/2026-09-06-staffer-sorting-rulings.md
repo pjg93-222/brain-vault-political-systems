@@ -49,7 +49,7 @@ Memory `staffer-sorting-lane-2026-09-06` (type project, session `25322ef7-844b-4
 
 | Person | Role |
 |---|---|
-| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner; sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Related Projects
 

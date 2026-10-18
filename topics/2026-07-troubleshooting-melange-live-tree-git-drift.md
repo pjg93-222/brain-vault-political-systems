@@ -43,7 +43,7 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 | Person | Role |
 |---|---|
-| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner; sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Actors Involved
 

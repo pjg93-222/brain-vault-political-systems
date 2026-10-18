@@ -293,7 +293,7 @@ SORT item.deadline ASC
 
 | Person | Role |
 |---|---|
-| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); owner and sole decision-maker for Terrier; defines the scoring groups and industries. |
+| Paul Goff | Vault owner; owner and sole decision-maker for Terrier; defines the scoring groups and industries. |
 
 ## Map
 

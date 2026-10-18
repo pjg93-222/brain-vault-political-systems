@@ -48,7 +48,7 @@ Rulings given by Paul on 2026-07-27 (evening; source memory last modified 2026-0
 
 | Person | Role |
 |---|---|
-| Paul Goff | Vault owner (336621699+pjg93-222@users.noreply.github.com); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner; sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Related Projects
 
