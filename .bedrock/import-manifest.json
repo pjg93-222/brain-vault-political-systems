@@ -5723,7 +5723,7 @@
           "sha256": "4b3db963331292e353d1e0be4ac6e238a7f81e451bc60a806719c97d3963316f"
         }
       ],
-      "summary": "Vault owner (goff0070@umn.edu). Owner and sole decision-maker for Melange Systems, Mentat, the forecast redesign and CU-geography: sets every threshold, weight and methodology ruling and holds the APPLY gate. Works in R/RStudio (R 4.6.0 at C:\\Program Files\\R\\R-4.6.0, chromote/rvest scrapers) and Python on Windows 11. Repo git config once said 'Patrick Goff' (corrected); never infer his identity from machine metadata. Keeps a general API-key repository (Desktop\\API Keys\\keys.json) distinct from Mentat's DPAPI key store.",
+      "summary": "Vault owner. Owner and sole decision-maker for Melange Systems, Mentat, the forecast redesign and CU-geography: sets every threshold, weight and methodology ruling and holds the APPLY gate. Works in R/RStudio (R 4.6.0 at C:\\Program Files\\R\\R-4.6.0, chromote/rvest scrapers) and Python on Windows 11. Repo git config once said 'Patrick Goff' (corrected); never infer his identity from machine metadata. Keeps a general API-key repository (Desktop\\API Keys\\keys.json) distinct from Mentat's DPAPI key store.",
       "vault_path": "people/paul-goff.md"
     },
     {

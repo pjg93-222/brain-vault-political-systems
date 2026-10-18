@@ -10,7 +10,7 @@ focal_points:
   - "[[mentat-fec-pipeline]]"
   - "[[brain-vault-political-systems]]"
   - "[[brain-graph]]"
-email: "goff0070@umn.edu"
+email: "336621699+pjg93-222@users.noreply.github.com"
 github: ""
 slack: ""
 jira: ""
@@ -26,11 +26,11 @@ tags: ["type/person", "domain/agent-ops"]
 
 # Paul Goff
 
-> Owner of this vault and the sole decision-maker for the Melange Systems, Mentat, forecast-redesign and CU-geography work. Developer in R/RStudio and Python on Windows 11 (email goff0070@umn.edu).
+> Owner of this vault and the sole decision-maker for the Melange Systems, Mentat, forecast-redesign and CU-geography work. Developer in R/RStudio and Python on Windows 11 (email 336621699+pjg93-222@users.noreply.github.com).
 
 ## Identity
 
-- Name: **Paul Goff**, email goff0070@umn.edu (the only email recorded for him in this vault).
+- Name: **Paul Goff**, email 336621699+pjg93-222@users.noreply.github.com (the only email recorded for him in this vault).
 - Source memory note `user-name-paul` (user memory, 2026-07-04) description: "The user's name is PAUL Goff — the repo's git config said "Patrick Goff" (now corrected); never infer his name from config fields".
 - **Git-config correction (2026-07-04):** an agent addressed him as "Patrick" because the repo's `git config user.name` was set to "Patrick Goff". He corrected it ("he corrected me, and the config is now fixed to" "Paul Goff"). Past commit history still shows Patrick; it was left unrewritten.
 - Verbatim source sentence: On 2026-07-04 I called him "Patrick" because the repo's `git config user.name` was set to "Patrick Goff" — he corrected me, and the config is now fixed to "Paul Goff" (past commit history still shows Patrick; left unrewritten).

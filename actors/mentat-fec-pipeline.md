@@ -192,4 +192,4 @@ Practical: Write/Edit refuse `C:\Users\pgoff\Mentat` from a Melange worktree ses
 
 ## Related People
 
-- [[paul-goff]] - Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11.
+- [[paul-goff]] - Vault owner; sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11.

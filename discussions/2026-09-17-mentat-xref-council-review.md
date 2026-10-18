@@ -52,7 +52,7 @@ Paul (2026-09-17, `/ecc:council` then `/ecc:python-patterns`): "review the cross
 
 | Person | Role |
 |---|---|
-| Paul Goff | Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
+| Paul Goff | Vault owner; sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11. |
 
 ## Discussed Actors
 

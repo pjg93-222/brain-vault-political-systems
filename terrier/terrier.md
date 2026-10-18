@@ -293,7 +293,7 @@ SORT item.deadline ASC
 
 | Person | Role |
 |---|---|
-| Paul Goff | Vault owner (goff0070@umn.edu); owner and sole decision-maker for Terrier; defines the scoring groups and industries. |
+| Paul Goff | Vault owner; owner and sole decision-maker for Terrier; defines the scoring groups and industries. |
 
 ## Map
 

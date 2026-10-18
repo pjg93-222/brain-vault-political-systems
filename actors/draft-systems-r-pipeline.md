@@ -200,4 +200,4 @@ Superseded items kept for context: ~~year filter + decay removed (2026-06-20 "we
 
 ## Related People
 
-- [[paul-goff]] - Vault owner (goff0070@umn.edu); sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11.
+- [[paul-goff]] - Vault owner; sole decision-maker for Melange, Mentat, forecast redesign, CU-geography; R/Python on Windows 11.
