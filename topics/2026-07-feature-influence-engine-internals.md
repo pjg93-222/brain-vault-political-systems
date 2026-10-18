@@ -102,6 +102,7 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 - **Behavioral basis for susceptibility since 2026-07-04**: susc = .40 x coop + .30 x N - .20 x dil - .10 x dom; seed = coop/breadth/visibility; `RECEPT_TRAITS=lexical` reverts; N stays text. ~~susc_z = .40A + .30N - .20C - .10E from lexical Big5~~ (2026-07-02) - superseded 2026-07-04 (lexical Big5 indicted); kept because earlier commits use it.
 - **N STAYS LEXICAL, unchanged; engine contribution UNVERIFIED; do NOT drop it** (2026-07-08): theory-grounded Byrne channel; a noisy criterion cannot carry a drop verdict. N-swap affirmatively unsupported.
 - **Pillar weights**: see the Weights ledger below (three sets, last ratified = 30/25/40/5 on 2026-07-07; the live set 45/10/40/5 since 2026-09-03 is UNRATIFIED pending code-review S-5).
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 - **Interview-C one look is TAKEN** (2026-07-07): never re-run `c_prereg_test` as a "look"; re-testing after data changes is a NEW test needing a NEW prereg. C aggregates INTERVIEW chunks at 2x (`C_INT_W=2.0`).
 - **Improvement round 1 and round 2 (blue) ALL MISS, one look each TAKEN**: the shipped config (pink equal weights + blue v2) survives; do not attempt round 3 without a fundamentally different feature basis.
 - **Say-do gate landed @18ce3b3** (user + boss ratified) and generalized 2026-07-08 to 3 costly-signal paths (A/V/J); `MC.GATEKEEP_JURIS` user-ratified. Correction (2026-10-04, document import): Path J left the code with the 2026-07-15 snapshot `e3d2923d0`; the gate has had paths A and V only since then (dated history in Say-do gate).
@@ -118,7 +119,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 ## Next Steps
 
 - [ ] Paul's APPLY/landing decision for the coalition-builder surface; resolve ownership/landing order against the foreign legislative-workbench/culling lane on the live tree (43 uncommitted tracked modifications); then deploy checklist: merge session to cfpb from live tree, kernel tests, chain, zero-rank-delta (engine outputs move by design; RANKS must not), audit tail, outcome_snapshot freeze decision.
-- [ ] Rule on code-review S-5: the live-but-unratified pillar weights 45/10/40/5.
+- [x] Rule on code-review S-5: the live-but-unratified pillar weights 45/10/40/5.
+  - Closed 2026-10-11 by D-141 (Paul's 2026-09-03 directive; carried into the vault 2026-10-18).
 - [ ] Queue (2026-07-31/08-01): cxD template v2 (one-adjacency rule + expected-value ranking + chips; 12-step plan approved), T5 doting test + language backup, T6 watcher, T7 CFPB fill-rate count, witness retry pass (sweep about 78%+ at 100% alignment) then final artifact regen, LQ regen (CBP cache re-download is Paul's gate), A-extension prereg (draft, adversarial review, LOCK) only when the eligible pool justifies a round.
 - [ ] Round-4 N: data-gate OPEN (reactivity_z 270 >= 250) but the criterion is E-contaminated; successor needs a redesigned criterion.
 - [ ] Ratification of any nonzero `SEED_UPTAKE_W` (default 0; probe 0.10) is Paul's.
@@ -133,6 +135,8 @@ tags: ["type/topic", "status/in-progress", "domain/data", "category/feature"]
 | 2026-06-29 | `.40/.30/.20/.10` | HISTORICAL (pillar order not stated in this topic's sources) |
 | 2026-07-07 | `30/25/40/5` = leg .30 / press .25 / inf .40 / demo .05 (workbook AB2-5 typed cells; backup PRE-WEIGHTS-20260707; 493/533 ranks shifted mildly; top-3 Crapo/Scott/Hill held) | **LAST RATIFIED** (ratified 2026-07-07) |
 | live in `ranks_python.json` since 2026-09-03 | `45/10/40/5` | **LIVE BUT UNRATIFIED**; code-review S-5 awaits Paul's ruling |
+
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 
 The newest set must never be read as ratified. (June sets: see the June build topic's weights ledger.)
 

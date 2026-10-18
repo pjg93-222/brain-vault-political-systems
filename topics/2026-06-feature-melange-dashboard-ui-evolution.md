@@ -44,6 +44,7 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 - Tier boards that the desk and industry pages render: Primacy and industry tier boards (the industry-tab round of 2026-08-03 feeds that topic too).
 - Later redesign (09-22 onward, overlay-first v2 on 8841) is covered in the actor [[melange-dashboard]].
 - Pillar weights (resolution 3) as they appear in this history: `.40/.30/.20/.10` (2026-06-29, HISTORICAL; Committee/Influence .40, Legislative .30, Press .20, Demo .10); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED; the Members Section source calls it "a stale doc/comment", the brain record and constitution text still say it); `45/10/40/5` (live in `ranks_python.json` `ab_weights`, `pillar_policy.py:11-16`, since 2026-09-03: LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). The 45/10/40/5 set moved 520/533 ranks vs the 08-26 baseline (max 192, mean 15.75).
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
 
 ## People Involved
 
@@ -107,7 +108,8 @@ tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"
 
 ## Next Steps
 
-- [ ] Paul's decision on S-5 (live weights 45/10/40/5 vs last ratified 30/25/40/5).
+- [x] Paul's decision on S-5 (live weights 45/10/40/5 vs last ratified 30/25/40/5).
+  - Closed 2026-10-11 by D-141 (Paul's 2026-09-03 directive; carried into the vault 2026-10-18).
 - [ ] Provide the dashboard password-file path so `publish_dashboard.py` can run (back up `deploy/index.html` first; no chain running); set `DASHBOARD_PASSWORD_FILE` before the Sunday 06:00 `MoneyballWeeklyRefresh`.
 - [ ] Decide on the still-CONSULT Members Section items: Q5 weights/k/press floor, Q6 committee tiers resolved 09-18 (see [[2026-06-feature-melange-dashboard-ui-evolution-members-section-lane]]), LEADERSHIP_KINDS bound, press as a recognition kind (immutable press-evidence artifact), CodeScene token (CS_ACCESS_TOKEN).
 - [ ] Adjudicate kernel `test_primacy_tier` 2 failures (Cortez Masto, Huizenga, Young Kim tier pins) - tier membership is Paul's domain.

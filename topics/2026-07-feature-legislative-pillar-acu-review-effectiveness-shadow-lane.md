@@ -52,6 +52,7 @@ Findings Paul had to rule on before trusting the new Tier 1s:
 - additive blends need w>=0.9 on purity to seat even 9 champions;
 - the multiplicative floor sweep P*(f+(1-f)*L) keeps 7/13 at f=0.5, 9/13 at 0.7, 10/13 at 0.8, 13/13 at 1.0 and enforces a purity bar (min Tier-1 P 0.556 at 0.8) that keeps mid-purity high-volume members out.
 - Paul ruled f=0.80 and Leg% = L (**D-028, supersedes D-026; D-027 stays**). Contract v2 = packet `ACTIVATION_CONTRACT_2026-09-12_v2.md` (board mode `purity_delivery_v1`, `LEG_MODE=delivery_blend_v1`).
+  - Correction 2026-10-18 (evidence: ledger D-156, 2026-10-11; Melange audits/decisions_20261011/E_legislative_pillar.md): superseded. D-032 superseded D-028, and D-156 records that D-028's clause 'Leg% becomes L' lapsed with it: Leg% stays the legacy within-roster percentile, and L (LEG_MODE=delivery_blend_v1) was never built. The activation contract was never dispatched. Whether the shadow lane itself is retired has not been ruled; that stays Paul's call.
 - Lesson: out-of-sample "activity" correlations are the WRONG yardstick for the champions board; never recommend a board on Spearman with next-term volume.
 - Cortez Masto at f=0.8: P 0.551, L 0.674, rank 18 (Tier 2); needs P=0.604 given her L, delivery cannot seat her (L would need 1.12) - the factor-side dilution question (four off-axis acts) is the only lever.
 
