@@ -77,7 +77,7 @@ Paul 2026-09-24 sent 5 screenshots: "UI quirks ... mainly just pertaining to how
 
 Brain drafts for Paul: scratchpad `BRAIN_DRAFTS.md` (D-064 framing, D-065 pie/palette, DE-047 transparent select list, DE-048 Mentat CSP style attribute).
 
-Correction 2026-10-18 (evidence: ledger titles read 2026-10-18): these draft IDs collided with other entries. In the Project Brain, D-064 is 'The Giving Forecast applies to Mentat's own data; OpenSecrets only estimates the relationships', D-065 'Forecast rules are chosen by out-of-sample accuracy, not by p-values', DE-047 'Restoring an omitted rare class's probability from a class_w' and DE-048 'Blaming a forecast calculator's loss to naive on its regression'. D-064 may be the 'framing' draft, since it governs how the Giving Forecast is shown; no ledger entry holds the pie/palette, select-list or CSP-style drafts, so those look unapplied. The item stays open for Paul.
+Correction 2026-10-18 (evidence: ledger titles read 2026-10-18): these draft IDs collided with other entries. In the Project Brain, D-064 is 'The Giving Forecast applies to Mentat's own data; OpenSecrets only estimates the relationships', D-065 'Forecast rules are chosen by out-of-sample accuracy, not by p-values', DE-047 'Restoring an omitted rare class's probability from a class_w' and DE-048 'Blaming a forecast calculator's loss to naive on its regression'. D-064 may be the 'framing' draft, since it governs how the Giving Forecast is shown; no ledger entry holds the pie/palette, select-list or CSP-style drafts, so those look unapplied. The item stays open; Paul rules on it.
 
 ## Related Topics
 

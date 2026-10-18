@@ -114,7 +114,7 @@ tags: ["type/topic", "status/in-progress", "domain/research", "category/feature"
 - **Tier weights 80/20 -> 84/16 (@0efaa06, Paul: "0.84/0.16 works, do it")**, all pins retired (zero pins repo-wide).
 - **Five-class bill-position label ships on the page** (Paul 2026-08-03: "the 5 class matters and is more useful"); follow In Song Kim's inferential format (Paul: "You should be following the same format as In Song Kim when classifying, remember you were far too conservative whereas he was inferential").
 - **Pillar weights context** (resolution 3): the media/press pillar sits inside a score whose pillar weights changed three times; the sets are recorded with dates and status in `2026-07-rfc-melange-architecture-system-of-record` (`.40/.30/.20/.10` 2026-06-29 historical; `30/25/40/5` ratified 2026-07-07 LAST RATIFIED; `45/10/40/5` live since 2026-09-03 UNRATIFIED, code-review S-5 awaits Paul's ruling). The tier-weights 80/20 and 84/16 above are a DIFFERENT dial (Leg+Press Tier-1 crown weights).
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 
 ## Next Steps
 

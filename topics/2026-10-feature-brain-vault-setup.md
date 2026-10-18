@@ -68,7 +68,7 @@ Results from the setup session, with the ones that could be re-run while recordi
 - 520 directed links (260 note pairs): 0 asymmetric, 0 orphans (re-checked: directed pairs are exactly twice the link pairs, with 0 unresolved wikilinks and 0 graph warnings).
 - All 53 coverage-scanner misses were confirmed present as artifacts.
 - Pillar weights 45/10/40/5 were never presented as ratified (re-checked: the melange-systems project note labels them LIVE BUT UNRATIFIED and keeps 30/25/40/5 as the last ratified set).
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 - 2 leftover build markers were removed.
 - Templates are byte-identical to the Bedrock 1.2.0 templates (re-checked for all eight folders).
 - Hash safety: all 210 source hashes were re-verified before the import and none had changed.
@@ -100,7 +100,7 @@ Verdict: SAFE WITH CAVEATS.
   1. Draft Systems is folded into melange-systems.
   2. Keep 4 projects.
   3. Record all three pillar-weight sets: `.40/.30/.20/.10` historical (2026-06-29), 30/25/40/5 last ratified (2026-07-07), and 45/10/40/5 live but unratified.
-     - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+     - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
   4. Keep both model-tiering rules with their scopes.
   5. Superseded rules: newest wins, older kept as dated strike-through.
   6. Non-repo tools become actors.
