@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-581 notes.
+558 notes.
 
 ## Actors (49)
 
@@ -265,32 +265,6 @@
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 - [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
-
-## Fleeting (23)
-
-- [[melange-systems--brains-on-every-session-2026-10-13]] — STANDING: at the start of EVERY session, boot the project brain (brainctl boot per CLAUDE.md) and confirm the Obsidian vault (C:\Users\pgoff\Documents\brain) recall and brainlink are live - before any work
-- [[melange-systems--canterra-attrition-deck-2026-10-12]] — NOT Melange - Paul's MBA Team Project 3 (Canterra employee attrition) 8-min Zoom deck; delivered Downloads\Canterra_Attrition_Presentation.pptx; report errors + Q4 ruling recorded
-- [[melange-systems--code-review-five-lanes-2026-09-13]] — Five-lane code review 2026-09-13 (behavioral, long-form audio, webscraping, demographics, staff list) - packet at audits/code_review_20260913 in worktree melange-systems-code-review-859518; 141 finding rows, 112 confirmed, NOTHING...
-- [[melange-systems--deployment-lane-2026-10-11]] — Deployment + containerization lane for Melange/Mentat/Terrier - plan path, Paul's 10 rulings, worktrees, what stays Paul's
-- [[melange-systems--disk-cleanup-lane-2026-09-16]] — Disk clearances 2026-09-16 and 2026-09-18 (third one 10.2 -> 185.9 GB free, ~212 GB cleared, brain be33c78 D-047/DE-030: per-worktree sparse-checkout of audits/legfix5 is the first lever, 14 deleted scratchpads regenerated from...
-- [[melange-systems--fast-startup-restart-check-2026-10-12]] — PAULCOMPUTER has Fast Startup on, so 'Shut down' is a hibernate, not a restart; verify any claimed restart via Kernel-Boot event 27 plus install artifacts before acting
-- [[melange-systems--fec-folder-debug-sweep-2026-10-13]] — Line-by-line debug sweep of every fec/ subfolder via claude/workflows/folder-debug.js; Paul's scope/landing rulings and collect pass-2 rulings
-- [[melange-systems--fec-gpu-acceleration-directive-2026-10-15]] — Paul 10-15 - use GPU acceleration for large-scale FEC data processing, as a permanent architecture element (with honest scope)
-- [[melange-systems--fec-no-internal-request-limit-2026-10-15]] — Paul 2026-10-15 - FEC collection runs at the full ceiling (21 keys x 1,000/hr) every time; no self-imposed cap; NEVER email FEC
-- [[melange-systems--forecast-lit-and-lobby-yearly-lane-2026-10-13]] — Lit research + lobbying forecast lane 2026-10-12/13; PAUSED by Paul, resume Thu 2026-10-15 with the firm-level build (stopped right after hash check, no partial work); all work in Mentat Complete Files\RESEARCH_FORECAST_LIT_2026-10-12
-- [[melange-systems--land-means-in-the-app-2026-10-15]] — Paul 2026-10-15 - "committed" means in the containerized app he runs, never just the source repo or a browser tab; source repo must feed the app so updates reach all clients
-- [[melange-systems--literal-graphs-only-in-decks-2026-10-12]] — Paul 2026-10-12: decks built from his analysis use ONLY the code's own graph outputs, pasted unchanged - never redraw, restyle, frame, label or overlay them
-- [[melange-systems--mentat-downstream-architecture-first-2026-10-15]] — Paul 10-15 - Mentat downstream spending lane: finish architecture + correctness first; data collection runs later, on his call
-- [[melange-systems--mentat-lda-deadline-rule-2026-10-09]] — Mentat LDA anchors count a quarter only after its LD-2 deadline by Melange's sweep date (brain D-130); commit cb0d4fb48, on origin; anchors rebuilt 2026-10-09T18:10Z under the rule (LDA blocks unchanged)
-- [[melange-systems--mentat-sankey-zoom-lane-2026-10-15]] — Mentat flow sankey focus zoom / unfold / pin + bug fixes LANDED on codex/mentat-crypto (abdbd5524, 6dc3dac91); not pushed; 8806 restart is Paul's
-- [[melange-systems--moneyball-2026-07-07-gate2-round1]] — GATE-2 complete + C retest PASSED (consequence wired) + improvement round 1 ALL MISS (one looks TAKEN - never re-run) + say-do gate landed (Hill→Ally) + pillar weights 30/25/40/5 (superseded 2026-09-03 by 45/10/40/5; S-5 closed...
-- [[melange-systems--press-backlog-media-status-are-bugs-2026-10-15]] — Paul ruled 2026-10-15 - press backlog never draining and daily media top-level PASS despite partial press are BUGS, not design
-- [[melange-systems--public-github-releases-ruling-2026-10-15]] — Paul 2026-10-15 chose public GitHub Releases + making the repo public for Mentat app updates; supersedes private-repo stance of D-139/D-148 for that purpose
-- [[melange-systems--queue-clearout-delegated-rulings-2026-10-11]] — 2026-10-11 Paul delegated ALL open rulings to Claude for the queue clear-out; decide from brain/vault/research, record in audits/decisions_20261011/
-- [[melange-systems--queue-clearout-results-2026-10-12]] — 10-10..10-12 queue clear-out CLOSED - records in audits/decisions_20261011 (DECISIONS.md + FINAL_REPORT.md); tail jobs still running; Paul-only list
-- [[melange-systems--simplify-means-translate-not-delete-2026-10-12]] — Paul 2026-10-12: 'no jargon' / 'simplify' = roughly a 30% cut that TRANSLATES technical terms (plain label + real term + precise number), never a 70% cut that deletes the analysis
-- [[melange-systems--storage-sense-wipes-temp-2026-10-14]] — Windows Storage Sense deletes %TEMP% (incl.
-- [[melange-systems--vault-integration-lane-2026-10-15]] — 2026-10-15 vault integration (D-223/D-224) + skill line-ref pass (D-225..D-227): brain PR #27 merged, research vault on GitHub, vaultlink bridge builder; open items
 
 ## Ledger (generated from the Project Brain) (314)
 
