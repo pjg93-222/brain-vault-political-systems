@@ -46,7 +46,7 @@ Score = weighted blend of 4 pillar PERCENTILES (`AB2:AB5` weights). Pillars: **P
 | `30/25/40/5` | ratified 2026-07-07 | LAST RATIFIED | Constitution text and brain record still say this |
 | `45/10/40/5` | live in `ranks_python.json` (`ab_weights`, `pillar_policy.py:11-16`) since 2026-09-03 | LIVE BUT UNRATIFIED | Code-review S-5 awaits Paul's ruling; moved 520/533 ranks vs the 08-26 baseline |
 
-Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 
 Order of the 4 numbers in the two newer sets follows `AB2:AB5` (Legislative, Press, Committee/Influence, Demo): 45/10/40/5 = Leg 45, Press 10, Committee 40, Demo 5 (45/10 is about 81.8/18.2 of the leg+press share). Details of the later weight history are in Influence engine internals and Melange audits and code reviews.
 

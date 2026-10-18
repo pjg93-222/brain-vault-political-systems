@@ -84,7 +84,7 @@ diff --strip-trailing-cr <live fec/> <main fec/>              # Codex flipped li
 - Sunday caveat: non-gated audit failures make `weekly_refresh` HARD_ABORT before `publish_dashboard.py` (after the 2026-09-05 gate ratification Sunday should publish; the runner's 800-char audit tail truncates long failure lists and the gate then fails closed by design).
 - The 8 `A2b … sentinels unchanged` failures return on every chain run; `audit_full` writes its own pinned sentinels (unruled risk).
 - Pillar weights (flag): `.40/.30/.20/.10` (2026-06-29, historical); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED); `45/10/40/5` (live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). The ingestion lane treated 45/10/40/5 as ratified on 2026-09-05 pending reversal; Paul has not ratified it in the vault record.
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 
 ## Press/hearing repair lane (2026-09-01 / 2026-09-02)
 

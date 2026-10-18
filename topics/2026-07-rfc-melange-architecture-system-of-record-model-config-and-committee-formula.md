@@ -35,7 +35,7 @@ Score weights live in the Blended Model (labels col AA / values col AB; the "Inf
 | `30/25/40/5` | ratified 2026-07-07 | LAST RATIFIED. Matches the live reading in this source (2026-06-30 eve): Press 0.30 / Committee-Influence 0.40 / Legislative 0.25 / Demo 0.05 (sum 1). |
 | `45/10/40/5` | live in `ranks_python.json` config since 2026-09-03 | LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling. Never read this newest set as ratified. |
 
-Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 
 (The mapping of the brief's compact notation to pillar order is taken from the 06-30 source reading: Press / Legislative / Influence / Demo for `30/25/40/5`; verify against the live config before quoting.)
 

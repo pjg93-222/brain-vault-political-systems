@@ -22,14 +22,14 @@ The CU-influence rank of the 533 members combines four pillars: committee/influe
 
 This is a pointer concept: it states the method and the rules, not the weights. Resolution 3 records three weight sets, each with its status (historical, last ratified, live but unratified), and the newest must never read as ratified. The weights are read live where they are kept (`ranks_python.json` and the workbook), never from a document; the "Pillar weights and score formula" section of the workbook note records every set with its status. Choosing or ratifying a set is Paul's domain; a set is never relabelled as wrong.
 
-Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 
 ## Key Characteristics
 
 - Four pillar scores across the 533 members (percentile ranks as delivered on 2026-06-25; influence and press moved to raw/max on 2026-06-30 and 2026-07-01); the score is their weighted sum.
 - Weights live in the workbook (labels in column AA, values in column AB) and in `ranks_python.json` (`ab_weights`); read them live, never from a document.
 - Resolution 3 records three sets with dates and status; only Paul ratifies a set, and the live set may be unratified.
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 - The four-pillar rank is not every board: Paul reads the overall primacy board for primacy questions, so ask which surface before decomposing a rank.
 - The rank measures influence; per-category stance measures alignment, on a separate axis.
 
@@ -57,5 +57,5 @@ Other notes that record the blend or its weight sets, by title (plain text, so t
 - Legislative pillar and ACU review: its Tier-1 legislative/press blend weights are kept apart from the pillar weights.
 - Live tree, git drift and line endings: the live-only pillar policy file that encodes the live set.
 - Brain vault setup and Claude memory import: the import kept the live set labelled unratified.
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 - Codex executor lane, Meta LOOP orchestration and Agent tooling stack: the retired `apply_weights.py` one-shot overwrites ratified pillar weights.

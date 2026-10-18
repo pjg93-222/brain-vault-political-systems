@@ -62,7 +62,7 @@ Standing law across lanes (recorded in the source memories): Paul's ask-first di
 
 Pillar weights, recorded wherever they appear (all three sets, never let the newest read as ratified): `.40/.30/.20/.10` (2026-06-29, historical); `30/25/40/5` (ratified 2026-07-07, LAST RATIFIED); `45/10/40/5` (live in `ranks_python.json` since 2026-09-03, LIVE BUT UNRATIFIED; code-review S-5 awaits Paul's ruling). See the Sentinel workbook ingestion section in [[2026-07-feature-data-collection-lanes-sentinel-lanes]] for the 2026-09-04 out-of-lane flag and the 2026-09-05 lane-local treatment.
 
-Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 
 ## People Involved
 
@@ -124,7 +124,7 @@ Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2
 - Blind pipeline ("bullseye") ruling (Paul 2026-08-28): the inference pipeline runs blind to gold labels.
 - Git directive history: ~~"stop using git" (2026-09-01)~~ stands as the baseline; it beat "commit on a branch before merging" in the Sentinel ingestion lane; lifted ONCE on 2026-09-05 for "finish the remaining items and commit" (a one-time lift, not a revocation); later git ban lifted per lane 2026-09-06 (see working-agreement topics).
 - Pillar weights: see the Context section for all three sets with status labels. The 2026-09-05 lane-local statement "weights 45/10/40/5 treated as ratified (reversal: Paul says otherwise)" is recorded as a working assumption of that lane only; for the vault the live set is UNRATIFIED pending S-5.
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 - Sentinel: D3 = history stays append-only; withdrawals mark rows non-scoring when they exist; teardown crash after hash-verified export stays PASS (closed 2026-09-05).
 
 ## Next Steps

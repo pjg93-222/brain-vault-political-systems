@@ -156,7 +156,7 @@ SORT item.deadline ASC
 ## Blockers
 
 - Pillar weights 45/10/40/5 are LIVE in `ranks_python.json` since 2026-09-03 but UNRATIFIED; code-review S-5 awaits Paul's ruling. The last ratified set is 30/25/40/5 (2026-07-07). The historical set is `.40/.30/.20/.10` (2026-06-29).
-  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and nothing here awaits Paul.
+  - Correction 2026-10-18 (evidence: ledger D-141, 2026-10-11): superseded. In the 2026-10-11 queue clear-out Paul delegated his open rulings to Claude, and D-141 records 45/10/40/5 as Paul's own directive of 2026-09-03, effective that date, so code-review S-5 is closed. The set is not unratified, 30/25/40/5 is the previous set, and no ruling is outstanding here.
 - Workbook COM-write collisions with a parallel session (older rule; the newest rule is "NO COM anywhere").
 - Open model knobs listed in "Open items from audits" in the second half of this page.
 
