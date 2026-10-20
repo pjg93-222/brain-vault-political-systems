@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-releases-1-0-7-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-releases-1-0-7-2026-10-19.md", sha256: "f8ce4f444d738ead0af4340e159875a3f0564acbe7408554f295773269b27753"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-releases-1-0-7-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-releases-1-0-7-2026-10-19.md", sha256: "45d0dfccf9edaad8668b6df159f33f93ab6baa255b10cf4d15101842a59a6509"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -26,7 +26,7 @@ On 2026-10-19 all three Electron desktop apps were signed and published as `desk
 
 Client source: branch `desktop/one-click-trust-silent-update` (worktree .claude/worktrees/one-click-trust-silent-update), 1.0.7 = 76906c4d6 (+ c6182ef69 uninstall cleanup, not yet in a build). Source PRs: Melange #13, Mentat #2 (Paul merges).
 
-2026-10-20: 1.0.6–1.0.8 (b2ffbec90..672f9888b) cherry-picked onto local main (unrelated histories, never merge); main ff to 2756ade15. Run entry `MelangeDesktopPublisher` + task `MelangeDesktopTunnel` (bore.pub:38443 relay) now run from the MAIN checkout's ops\desktop\server, not the worktree; old worktree no longer load-bearing (delete = Paul's go). New desktop commits cut from 672f9888b must be ported onto main. Register `-Action Remove` must use the script copy that owns startup-registration.json; detached starts from a session need a one-shot scheduled task. Details: side-session-notes desktop-port-to-main.md.
+2026-10-20: 1.0.6–1.0.8 (b2ffbec90..672f9888b) cherry-picked onto local main (unrelated histories, never merge); main ff to 2756ade15. Run entry `MelangeDesktopPublisher` + task `MelangeDesktopTunnel` (bore.pub:38443 relay) now run from the MAIN checkout's ops\desktop\server, not the worktree; old worktree REMOVED 10-20 (branch kept). Updater fix 32ffbb441 + notifierPid status fix bd24a0740 also on main. notifier-status.json is written only by the retired Python path (renamed .stale-20261015); live notifier liveness = listener-status.json notifierPid. Public desktop-windows.yml retirement PRs: Melange #18, Mentat #3. New desktop commits cut from 672f9888b must be ported onto main. Register `-Action Remove` must use the script copy that owns startup-registration.json; detached starts from a session need a one-shot scheduled task. Details: side-session-notes desktop-port-to-main.md.
 
 **Why:** Paul wanted installers that update across other PCs with zero intervention; work PCs block self-signed apps, so an IT package (Desktop\For IT - Melange apps: installers, .cer, turn-on-updates.cmd, README) was made for IT to trust the cert.
 
