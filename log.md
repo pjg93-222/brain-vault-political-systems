@@ -335,3 +335,4 @@
 - 2026-10-20 00:30 -05:00 | brainlink-project | projected 1 ledger note(s) and 0 state block(s) from melange-systems-brain, folder-brain, pilot-brain; 331 unchanged | [[ledger/melange-systems-brain/STATE]]
 - 2026-10-20 00:38 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--wave1-refresh-resilience-2026-10-20]]
 - 2026-10-20 00:54 -05:00 | brainlink-project | projected 1 ledger note(s) and 3 state block(s) from melange-systems-brain, folder-brain, pilot-brain; 328 unchanged | [[ledger/melange-systems-brain/STATE]], [[projects/brainlink]], [[projects/forecast-redesign]], [[projects/research-vault]]
+- 2026-10-20 01:29 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]]
