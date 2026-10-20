@@ -342,3 +342,4 @@
 - 2026-10-20 10:12 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--desktop-releases-1-0-7-2026-10-19]]
 - 2026-10-20 10:12 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--desktop-invite-code-lane-2026-10-20]]
 - 2026-10-20 10:28 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--desktop-releases-1-0-7-2026-10-19]]
+- 2026-10-20 10:51 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--fec-folder-debug-sweep-2026-10-13]]
