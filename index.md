@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-577 notes.
+579 notes.
 
 ## Actors (49)
 
@@ -274,9 +274,9 @@
 - [[melange-systems--no-permission-prompts-pr-first-2026-10-19]] — Paul 2026-10-19: stop asking permission; execute.
 - [[melange-systems--user-name-paul]] — The user's name is PAUL Goff - the repo's git config said "Patrick Goff" (now corrected); never infer his name from config fields
 
-## Ledger (generated from the Project Brain) (328)
+## Ledger (generated from the Project Brain) (330)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 321 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 323 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS

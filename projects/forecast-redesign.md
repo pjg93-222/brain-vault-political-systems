@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-19 18:36
-- Open questions in STATE: 38; active decisions: 237; dead ends: 70
+- Open questions in STATE: 38; active decisions: 239; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-252|D-252]] — Pin Stage 5 weights folder debate_finetuned on device
+- [[ledger/melange-systems-brain/D-251|D-251]] — Sentinel admissions: classifier timeout defers, not FAIL (R1)
 - [[ledger/melange-systems-brain/D-250|D-250]] — Public Melange repo history: containment declined (reaffirms D-236); filtered-PR
 - [[ledger/melange-systems-brain/D-249|D-249]] — Refit-parity R version text in the receipt's G0 detail and review/gates.json als
 - [[ledger/melange-systems-brain/D-248|D-248]] — Live Melange main may fast-forward to claude/docker-coverage after the weekly re
-- [[ledger/melange-systems-brain/D-247|D-247]] — Terrier OR-05 and CT-01 store-build parity: single Windows run plus a volatile-f
-- [[ledger/melange-systems-brain/D-246|D-246]] — Mentat refit-parity: environment differences accepted as explained, 15 PPM packa
 <!-- brainlink:state:end -->
