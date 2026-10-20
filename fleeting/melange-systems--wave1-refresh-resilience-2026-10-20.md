@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/wave1-refresh-resilience-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\wave1-refresh-resilience-2026-10-20.md", sha256: "d344536b748af14cd8582bd38e93ba0e4eaf7058418370a3a4089ea90e24a742"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/wave1-refresh-resilience-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\wave1-refresh-resilience-2026-10-20.md", sha256: "f421f7081cbd9d284dfeed689e4577c4172f35a51580d77e8f9e5a04bfabf509"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -35,7 +35,7 @@ Follow-ups landed on live main 4f381c570:
 - `restore_failed` label
 - admissions mixed-outage guard; the threshold is Claude's implementation choice per D-251
 
-PR #16 merged on GitHub as c2786637d. Round 3 is PR #17 (head bdbe8fa3e, addendum 27/AF), with a clean CodeRabbit review.
+PR #16 merged on GitHub as c2786637d. Round 3 is PR #17 (head bdbe8fa3e, addendum 27/AF), with a clean CodeRabbit review. PR #17 merged as fc74822df. Public main now matches live main for this work. Lane CLOSED.
 
 **Why:** at the same time, a parallel session (pipeline-health, PR #15, D-251/D-252) fixed admissions, MS NOW, the rollback labels and the Stage5 pin. I dropped my duplicate branches (`claude/wave1-admissions-timeout`, `claude/wave1-msnow-incremental`). Lesson: before starting a fix lane, check `list_sessions` for running sessions on the same area.
 
