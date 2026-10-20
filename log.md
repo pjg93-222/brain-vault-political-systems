@@ -338,3 +338,4 @@
 - 2026-10-20 01:29 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]]
 - 2026-10-20 01:54 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--wave1-refresh-resilience-2026-10-20]]
 - 2026-10-20 01:54 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--wave1-refresh-resilience-2026-10-20]]
+- 2026-10-20 08:55 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--statara-provenance-lane-2026-10-20]]
