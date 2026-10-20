@@ -7,13 +7,13 @@ title: "melange-systems-brain STATE"
 date: "2026-10-20"
 status: ""
 superseded_by: ""
-brain_commit: "ef77bff3af8a61c53e4ab6efc495026dfa4961cf"
-entry_sha256: "5dd25acb3f62c3ec284de74fac1b2690a9a8d7113fa20bdcd9c022f510e76ca6"
+brain_commit: "6c5a6c5eb74a3b5832027b2f0c432528a5e853a0"
+entry_sha256: "57f709c3147507119d60840c5a09c746f0cc8bc050138d67419500bf1c930627"
 generated: true
-generated_sha256: "c7656aecd65f685be8cce8ffde58427e7e63a3512eb50892fdabcfe92f492299"
+generated_sha256: "90a4cf9d932b5e614f024d8322a86d10fbc721b9a01db4f6e734b5540a4fc1cf"
 aliases: ["melange-systems STATE"]
 ---
-> Generated from melange-systems-brain/STATE.md at ef77bff; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/STATE.md at 6c5a6c5; do not edit — change the brain via brainctl.
 
 # STATE — Melange Systems
 > Last verified: 2026-10-20 10:57
@@ -573,6 +573,11 @@ Opened 2026-10-12 by Claude on Paul's approval of the plan (2026-10-11). Verifie
   - OPEN for Paul: (1) hash-bound research challengers files edited by 066a12c20 (revert or accept); (2) 3 gate receipts pin old fec\audit_*.py paths (re-mint); (3) 3 audit files held uncommitted for hash pins; (4) Johnson/Scalise review provenance and the WJ shorter-capture rule; (5) paid-API items: f2, legacy classifiers, classify_bill_positions; (6) forecast_ledger L395 freeze write.
   - LOOSE ENDS: 2 uncommitted tests from another session in fec/tests/legislation/test_audit_legfix5_artifact_gaps.py; 18 speech tests need live data absent from the export; 2 speech tests import an unpublished audits/ package; run_chamber_degrees blocked by the sealed v6 run.
   - TOOL: .claude/workflows/folder-debug.js is the reusable pipeline; hold list now covers files bound to sealed manifests; land step commits matching test updates.
+  2026-10-20 (Claude, E2E lane started; source: the orchestrator's brief for this brain update and Paul's 2026-10-20 chat instruction; NOT re-observed by the lane that wrote this block, and the Last verified stamp is deliberately not advanced for it):
+  - E2E LANE STARTED 2026-10-20 (Claude session local_6ad43510-da3d-4de6-80f2-7220aae7d617; branch fix/e2e-20261020; decisions [[ledger/melange-systems-brain/D-253|D-253]] to [[ledger/melange-systems-brain/D-266|D-266]] record the lane's implementation choices, decided by Claude under delegated authority, not Paul rulings). Goal per Paul: resolve every open item and run an end-to-end test with the rank delta observed.
+  - [[ledger/melange-systems-brain/D-211|D-211]] supersedes this file's older N19 'paid admissions not authorized' note: paid admissions are authorized within the [[ledger/melange-systems-brain/D-211|D-211]] budget (48 paid calls per day).
+  - [[ledger/melange-systems-brain/D-122|D-122]]'s reversal condition is met: admissions PASSed at 2026-10-20T00:42Z (from the brief). Lane F reverts sentinel_admissions.py max_age_days from 10 to 8; not yet done at the time of this note.
+
 ## Open questions
 - The ENTIRE glassbox runtime is UNTRACKED. common.ps1, metaloop.ps1, flow.ps1, launch.ps1, health.ps1,
   mirror.ps1, console.ps1, dashboard.ps1, fanout.ps1 and agentwatch.ps1 exist only at
