@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/wave1-refresh-resilience-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\wave1-refresh-resilience-2026-10-20.md", sha256: "b352636f16bb875bac2a3f2a1234a4b8ae11375e4feaa95cd56aadebd1d496ee"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/wave1-refresh-resilience-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\wave1-refresh-resilience-2026-10-20.md", sha256: "d344536b748af14cd8582bd38e93ba0e4eaf7058418370a3a4089ea90e24a742"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -29,6 +29,13 @@ Landed on live Melange main as a fast-forward to a4a484595, and published as PR 
 - **Fix B:** the weekly takes a before-image and calls rollback from `_hard_abort`.
 - **Per-step logs:** `run_bounded(log_path)` writes per-step weekly logs.
 - **Watcher:** shows INTERRUPTED when the owner process is dead.
+
+Follow-ups landed on live main 4f381c570:
+- writer-lease guard on the weekly rollback (a CodeRabbit finding)
+- `restore_failed` label
+- admissions mixed-outage guard; the threshold is Claude's implementation choice per D-251
+
+PR #16 merged on GitHub as c2786637d. Round 3 is PR #17 (head bdbe8fa3e, addendum 27/AF), with a clean CodeRabbit review.
 
 **Why:** at the same time, a parallel session (pipeline-health, PR #15, D-251/D-252) fixed admissions, MS NOW, the rollback labels and the Stage5 pin. I dropped my duplicate branches (`claude/wave1-admissions-timeout`, `claude/wave1-msnow-incremental`). Lesson: before starting a fix lane, check `list_sessions` for running sessions on the same area.
 
