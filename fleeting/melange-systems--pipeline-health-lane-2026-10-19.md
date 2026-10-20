@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pipeline-health-lane-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-19", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pipeline-health-lane-2026-10-19.md", sha256: "9ecfbb7ae6be0f54cc74900bad7c0f842efb9619f8e6f02dbc42f7218781395b"}
-updated_at: 2026-10-19
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pipeline-health-lane-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pipeline-health-lane-2026-10-19.md", sha256: "493f770cd4bcf9fae836cec000c66a717eaedf050641e974bc165148ad5ee8f8"}
+updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -33,6 +33,15 @@ Findings: no congress pipeline run had fully passed since 10-12, and the weekly 
 6. Collector sentinels and lock files are now gitignored, and the sentinels untracked.
 
 Status: Melange branch fix/pipeline-health-20261019 (worktree C:\Users\pgoff\Melange-wt\pipeline-health-20261019), 8 commits on main 11db3ad91. PR pjg93-222/Melange#15 is open via the ReleasePublish filtered export (head 94de8609a); every CodeRabbit thread was replied to and resolved. Brain: D-251, D-252 and a STATE block (5b7fd86).
+
+**UPDATE 2026-10-20: landed.**
+- Live main was fast-forwarded to a787d3cc0: 16 commits, including the follow-up sessions' work, rebased onto 57165fc85.
+- PR #15's publish head is 115870056. All CodeRabbit threads are resolved.
+- A machine crash at 22:32 on 10-19 killed the daily run during media.
+- The membership sidecar was healed by running roster-verify only, and it now binds 08870bad64f5.
+- The kernel suite aborts at flip_model because the competitiveness artifact is stale: cook_pvi was rewritten on 10-17, after the 10-13 build. The next chain step build_competitiveness (run_pipeline.py:88) fixes it.
+- Disk is at 85.5 GB free, after a legfix5 sparse-exclude on 4 idle trees.
+- The wave-1 session is stacking a PR on #15.
 
 **Why:** the next weekly (2026-10-25) and daily runs are the real proof.
 
@@ -56,4 +65,4 @@ Related: `melange-public-repo-unfiltered-branches-2026-10-18`, `fec-folder-debug
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-19 from the Claude Code memory file `pipeline-health-lane-2026-10-19.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-20 from the Claude Code memory file `pipeline-health-lane-2026-10-19.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
