@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-583 notes.
+584 notes.
 
 ## Actors (49)
 
@@ -266,9 +266,10 @@
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 - [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
 
-## Fleeting (9)
+## Fleeting (10)
 
 - [[melange-systems--always-read-coderabbit-2026-10-18]] — Paul 2026-10-18 - on every PR, always read CodeRabbit's review and act on valid findings
+- [[melange-systems--desktop-invite-code-lane-2026-10-20]] — Desktop access invite-code gate committed 7a7132608 on claude/desktop-invite-code-181993; unpushed; server must restart before clients ship
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
 - [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]] — REMINDER for Paul (2026-10-20) - add a Mentat gather mode keyed only by ZIP code, or by candidate, instead of only by company
