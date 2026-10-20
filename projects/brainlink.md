@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-20 10:57
-- Open questions in STATE: 38; active decisions: 239; dead ends: 70
+- Open questions in STATE: 38; active decisions: 249; dead ends: 70
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-252|D-252]] — Pin Stage 5 weights folder debate_finetuned on device
-- [[ledger/melange-systems-brain/D-251|D-251]] — Sentinel admissions: classifier timeout defers, not FAIL (R1)
-- [[ledger/melange-systems-brain/D-250|D-250]] — Public Melange repo history: containment declined (reaffirms D-236); filtered-PR
-- [[ledger/melange-systems-brain/D-249|D-249]] — Refit-parity R version text in the receipt's G0 detail and review/gates.json als
-- [[ledger/melange-systems-brain/D-248|D-248]] — Live Melange main may fast-forward to claude/docker-coverage after the weekly re
+- [[ledger/melange-systems-brain/D-262|D-262]] — Press: per-host fetch routes for 9 hosts (633 bodies)
+- [[ledger/melange-systems-brain/D-261|D-261]] — Throughput knob: MELANGE_SENTINEL_CALL_BUDGET env var
+- [[ledger/melange-systems-brain/D-260|D-260]] — Carry-forward cliff guard: drop expired carry, defer bill
+- [[ledger/melange-systems-brain/D-259|D-259]] — Statute-service outage: diagnose, fix client or GovInfo
+- [[ledger/melange-systems-brain/D-258|D-258]] — Open-items closeout: lock, supervisor, sidecar, brainlink
 <!-- brainlink:state:end -->
