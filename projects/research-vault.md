@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-20 10:57
-- Open questions in STATE: 38; active decisions: 249; dead ends: 70
+- Open questions in STATE: 38; active decisions: 253; dead ends: 70
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-266|D-266]] — Landing authority: fix/e2e-20261020 fast-forward only
+- [[ledger/melange-systems-brain/D-265|D-265]] — Scheduler: register MelangeRefreshTick after E2E passes
+- [[ledger/melange-systems-brain/D-264|D-264]] — Disk: safe levers only; non-regenerable deletes are Paul's
+- [[ledger/melange-systems-brain/D-263|D-263]] — Letters flood: automated collector, staged with provenance
 - [[ledger/melange-systems-brain/D-262|D-262]] — Press: per-host fetch routes for 9 hosts (633 bodies)
-- [[ledger/melange-systems-brain/D-261|D-261]] — Throughput knob: MELANGE_SENTINEL_CALL_BUDGET env var
-- [[ledger/melange-systems-brain/D-260|D-260]] — Carry-forward cliff guard: drop expired carry, defer bill
-- [[ledger/melange-systems-brain/D-259|D-259]] — Statute-service outage: diagnose, fix client or GovInfo
-- [[ledger/melange-systems-brain/D-258|D-258]] — Open-items closeout: lock, supervisor, sidecar, brainlink
 <!-- brainlink:state:end -->
