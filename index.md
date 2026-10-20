@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-600 notes.
+601 notes.
 
 ## Actors (49)
 
@@ -266,11 +266,12 @@
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 - [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
 
-## Fleeting (11)
+## Fleeting (12)
 
 - [[melange-systems--always-read-coderabbit-2026-10-18]] — Paul 2026-10-18 - on every PR, always read CodeRabbit's review and act on valid findings
 - [[melange-systems--desktop-invite-code-lane-2026-10-20]] — Desktop invite-code gate MERGED via Melange PR
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
+- [[melange-systems--desktop-supervisor-restart-procedure-2026-10-20]] — How to restart the desktop access login supervisor (Start-LanPublisherAtLogin.ps1) without a long outage; WMI and default-priority one-shot tasks fail
 - [[melange-systems--fec-folder-debug-sweep-2026-10-13]] — fec line-by-line debug sweep CLOSED 2026-10-20; all folders committed, public PR #14 merged 5f68fa2e5; research local-only; Paul decisions list open
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
 - [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]] — REMINDER for Paul (2026-10-20) - add a Mentat gather mode keyed only by ZIP code, or by candidate, instead of only by company
