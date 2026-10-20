@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-invite-code-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-invite-code-lane-2026-10-20.md", sha256: "1f1c287e3352d1f032f0ecf8903ca56cff5fae51cd8d4f42fef8655acac56b5a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-invite-code-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-invite-code-lane-2026-10-20.md", sha256: "13f23e3af970671b064a4ddf39eb6f047c3b79767cee95d93aad02299a3ecb9c"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -18,17 +18,29 @@ tags: ["type/fleeting", "status/raw"]
 
 # Desktop invite code lane (2026-10-20)
 
-> Desktop access invite-code gate committed 7a7132608 on claude/desktop-invite-code-181993; unpushed; server must restart before clients ship
+> Desktop invite-code gate MERGED via Melange PR
 
 ## Content
 
-Invite-code gate for desktop admin-access requests (follow-up to the CodeRabbit Major on Melange #13, access_store.py:301). Committed 7a7132608 on worktree branch claude/desktop-invite-code-181993 (base 672f9888b, desktop 1.0.8). Not pushed, no PR. Publishing needs the ReleasePublish filtered route and Paul's OK. See `desktop-releases-1-0-7-2026-10-19`, `melange-public-repo-unfiltered-branches-2026-10-18`.
+Invite-code gate for desktop admin-access requests. The original 7a7132608 / c1a11aef5 made inviteCode REQUIRED, which would have 403'd every released 1.0.9 client. It was re-ported with inviteCode OPTIONAL and merged 2026-10-20 through the ReleasePublish route: pjg93-222/Melange PR #21, merge commit b5680aa9c, publish branch publish/desktop-access-fixes-20261020, receipts AL/AM in ReleasePublish\PUBLISH_RECEIPT.md. The source is worktree branch claude/affectionate-babbage-19e2c4. See `desktop-releases-1-0-7-2026-10-19`, `melange-public-repo-unfiltered-branches-2026-10-18`.
 
-Design: 80-bit Crockford codes, sha256 stored, compare_digest across all usable rows. The check runs inside BEGIN IMMEDIATE, before caps, and the use is consumed in the same transaction. Errors return 403 invite_invalid. Codes are issued and revoked in the admin dashboard Invites view. The invites table is created via CREATE TABLE IF NOT EXISTS on connect.
+The same PR also added:
+- reminder balloons every 4 h for still-pending requests
+- the balloon click always runs access-dashboard
+- dashboard auto-refresh every 30 s
+- the client auto-polls once on startup when a stored pending request has no server reply
 
-**Why:** the relay makes every client 127.0.0.1, so per-source quotas are useless; anonymous callers could fill MAX_PENDING and the 100/hour cap.
+Design is unchanged: 80-bit Crockford codes, sha256 stored, compare_digest. The check runs inside BEGIN IMMEDIATE before the caps, and the use is consumed in the same transaction. Errors return 403 invite_invalid. A re-POST of an existing request skips the check.
 
-**How to apply:** rollout order matters. Restart the access server on the new code BEFORE releasing new clients. An old server refuses the unknown inviteCode field, and keeps admitting code-less requests until restarted. The shared 600/min relay rate-limit bucket is still a 429 DoS lever; this gate does not fix it.
+Enforcement comes from `serve --require-invite` or the User env var MELANGE_ACCESS_REQUIRE_INVITE. Accepted values are 1/true/yes/on and 0/false/no/off; junk makes serve refuse to start. The state shows as inviteRequired in listener-status.json.
+
+**Why:** the relay makes every client 127.0.0.1, so per-source quotas are useless.
+
+**How to apply:** rollout order.
+1. Paul restarts the server on the new code with enforcement off.
+2. Release clients with the optional invite field.
+3. After testers update, set the env var, restart the login startup task or supervisor (killing only python keeps the old environment), and confirm inviteRequired:true.
+A follow-up lane started 2026-10-20 removes the people caps (100 approved, per-source, peer table, lifetime rows) and queues excess connections instead of dropping them. It goes in a separate PR.
 
 ## Possible Connections
 

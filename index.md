@@ -269,7 +269,7 @@
 ## Fleeting (11)
 
 - [[melange-systems--always-read-coderabbit-2026-10-18]] — Paul 2026-10-18 - on every PR, always read CodeRabbit's review and act on valid findings
-- [[melange-systems--desktop-invite-code-lane-2026-10-20]] — Desktop access invite-code gate committed 7a7132608 on claude/desktop-invite-code-181993; unpushed; server must restart before clients ship
+- [[melange-systems--desktop-invite-code-lane-2026-10-20]] — Desktop invite-code gate MERGED via Melange PR
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--fec-folder-debug-sweep-2026-10-13]] — fec line-by-line debug sweep CLOSED 2026-10-20; all folders committed, public PR #14 merged 5f68fa2e5; research local-only; Paul decisions list open
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
