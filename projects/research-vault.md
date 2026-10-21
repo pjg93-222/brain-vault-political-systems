@@ -75,7 +75,7 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-20 19:54
-- Open questions in STATE: 38; active decisions: 261; dead ends: 72
+- Open questions in STATE: 39; active decisions: 261; dead ends: 72
 
 ### Recent decisions
 - [[ledger/melange-systems-brain/D-274|D-274]] — Owner password once per computer (Melange, Mentat); Terrier held at 1.0.9
