@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-invite-code-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-invite-code-lane-2026-10-20.md", sha256: "13f23e3af970671b064a4ddf39eb6f047c3b79767cee95d93aad02299a3ecb9c"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-invite-code-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-invite-code-lane-2026-10-20.md", sha256: "96f8f5a05c82c8ca5b94c95ac4b64629aa6448ba50a50d7374419864343ea249"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -40,7 +40,7 @@ Enforcement comes from `serve --require-invite` or the User env var MELANGE_ACCE
 1. Paul restarts the server on the new code with enforcement off.
 2. Release clients with the optional invite field.
 3. After testers update, set the env var, restart the login startup task or supervisor (killing only python keeps the old environment), and confirm inviteRequired:true.
-A follow-up lane started 2026-10-20 removes the people caps (100 approved, per-source, peer table, lifetime rows) and queues excess connections instead of dropping them. It goes in a separate PR.
+Follow-up lane (2026-10-20) is in PR #24, open, CodeRabbit green at head 396f2deb9, NOT merged; Paul has not said to merge it. It removes the people caps (approved testers unlimited, per-address limits gone, lifetime rows gone), keeps 100 new requests per hour, and queues excess connections. The relay now uses per-connection waiter threads. It adds a crash-dummy test. Expired requests are pruned after 30 days; denied rows are kept because the client re-submits unknown ids on launch. Activity is capped at 10,000 rows per device.
 
 ## Possible Connections
 
