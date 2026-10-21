@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-610 notes.
+611 notes.
 
 ## Actors (49)
 
@@ -266,11 +266,12 @@
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 - [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
 
-## Fleeting (14)
+## Fleeting (15)
 
 - [[melange-systems--always-read-coderabbit-2026-10-18]] — Paul 2026-10-18 - on every PR, always read CodeRabbit's review and act on valid findings
 - [[melange-systems--d157-residual-lane-2026-10-20]] — D-157 held items F-13/14/15/17/18/20/22 built on branch d157-residual-20261020, published as PR #25; local main ff + in-app landing pending
 - [[melange-systems--desktop-invite-code-lane-2026-10-20]] — Desktop invite-code gate MERGED via Melange PR
+- [[melange-systems--desktop-no-password-lane-2026-10-21]] — 10-21 Paul asked to drop the Terrier password and make Melange/Mentat a one-time verification; Melange PR #27 open, Terrier commit local-only (Geo repo is PUBLIC)
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--desktop-supervisor-restart-procedure-2026-10-20]] — How to restart the desktop access login supervisor (Start-LanPublisherAtLogin.ps1) without a long outage; WMI and default-priority one-shot tasks fail
 - [[melange-systems--e2e-proof-lane-2026-10-20]] — 2026-10-20 E2E proof lane: fixes on live main 77af80941 + PR #22; media blocked by 10-17 audio deletion; non-media attempt 3; press/letters branches unlanded
