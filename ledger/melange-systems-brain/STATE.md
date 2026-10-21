@@ -7,13 +7,13 @@ title: "melange-systems-brain STATE"
 date: "2026-10-20"
 status: ""
 superseded_by: ""
-brain_commit: "0f7b570e98dd2c53a453a778a0532e6fa8cf24a1"
-entry_sha256: "4249c8495e0be107457c46d64b2db132d63e1734bd38c750e82ae1a2e46b7691"
+brain_commit: "10ec0af01735aa0fa3814e0a4a465bc969f003e4"
+entry_sha256: "00996db711d3bd1dfba0311c333304fba3c5d3db3f116508bfd093648972693e"
 generated: true
-generated_sha256: "cd1ed2aa83eaf663975b6743f0505576c94d7ff7e357875a73a59a7bfdc8bf92"
+generated_sha256: "ed14ab875f628af35f053bd0f2172a64c5aae90f9a4a1cf4c3c1ca2a8e992193"
 aliases: ["melange-systems STATE"]
 ---
-> Generated from melange-systems-brain/STATE.md at 0f7b570; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/STATE.md at 10ec0af; do not edit — change the brain via brainctl.
 
 # STATE — Melange Systems
 > Last verified: 2026-10-20 19:54
@@ -588,6 +588,13 @@ Opened 2026-10-12 by Claude on Paul's approval of the plan (2026-10-11). Verifie
   - Implementation choices ([[ledger/melange-systems-brain/D-268|D-268]], not Paul rulings): industry_tiers' CU board tier and position now also come from the active generation (same values, single crown source); IV_NAME_MATCH=full means turns refused on fetched pages are recoverable only through the refusal ledger plus an iv_fetch_log reset.
   - WAITING FOR PAUL (Melange audits/d157_residual_20261020/PAUL_DECISIONS.md): landing the display items in the app plus the rank_delta and audit_full acceptance after that chain run; F-20's manual --from resume needs a fresh build_rank_honors --publish; F-22 re-adjudication of flagged existing rows; F-12, F-16, F-19 (model, data and live-audit runs); F-10 (the label-file conflict is Paul's); F-21 no change (known sensitivity); CodeRabbit's industry_tiers realized_results_v1 shadow-branch finding (a tier/board question); whether the F-14 dashboard note should also show on phones or per issue (display design).
 
+  E2E LANE STATUS 2026-10-20 23:00 (Claude, E2E lane, session local_6ad43510-da3d-4de6-80f2-7220aae7d617; source: the orchestrator's brief for this brain update; NOT re-observed by the lane that wrote this block, and the Last verified stamp is deliberately not advanced for it; decisions [[ledger/melange-systems-brain/D-269|D-269]] to [[ledger/melange-systems-brain/D-273|D-273]] and [[ledger/melange-systems-brain/DE-071|DE-071]], all decided by Claude under delegated authority, NOT Paul rulings):
+  - Fixes landed on live main: 8a641d9ab, then 77af80941. pjg93-222/Melange PR #22 merged (f39ca5a40).
+  - E2E attempt 1 (20261020T200207Z) FAILED at admissions on bill 119:hr:10082; fixed ([[ledger/melange-systems-brain/D-269|D-269]]).
+  - E2E attempt 2 (20261020T224638Z): admissions PASS (20 admitted, was 14; 61 memberships, was 45; GovInfo 377 sections; 12 source-switch reuses, [[ledger/melange-systems-brain/D-270|D-270]]); votes PASS; media: all 12 collectors PASS, press PARTIAL (non-fatal), all_intake FAIL on deleted audio ([[ledger/melange-systems-brain/D-273|D-273]], [[ledger/melange-systems-brain/DE-071|DE-071]]); rollback verified.
+  - The daily cap for 2026-10-20 is used.
+  - WAITING FOR PAUL: a non-media attempt 3, and the media blocker (restore phases P7 axe and P8 houselive in C:/melange-data/longform_restore_20261020/restore_audio.py).
+  - Press branch fix/e2e-press-20261020 @ 204e139fc and letters branch fix/e2e-letters-20261020 @ d9d094402 are ready, NOT landed ([[ledger/melange-systems-brain/D-271|D-271]], [[ledger/melange-systems-brain/D-272|D-272]]).
 ## Open questions
 - The ENTIRE glassbox runtime is UNTRACKED. common.ps1, metaloop.ps1, flow.ps1, launch.ps1, health.ps1,
   mirror.ps1, console.ps1, dashboard.ps1, fanout.ps1 and agentwatch.ps1 exist only at

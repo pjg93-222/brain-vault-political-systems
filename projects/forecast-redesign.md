@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-20 19:54
-- Open questions in STATE: 38; active decisions: 255; dead ends: 70
+- Open questions in STATE: 38; active decisions: 260; dead ends: 71
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-268|D-268]] — D-157 held items F-13/14/15/17/18/20/22 implemented (PR #25); F-3 census guard d
-- [[ledger/melange-systems-brain/D-267|D-267]] — brainlink hook stop: only a tool failure counts as a stage failure
-- [[ledger/melange-systems-brain/D-266|D-266]] — Landing authority: fix/e2e-20261020 fast-forward only
-- [[ledger/melange-systems-brain/D-265|D-265]] — Scheduler: register MelangeRefreshTick after E2E passes
-- [[ledger/melange-systems-brain/D-264|D-264]] — Disk: safe levers only; non-regenerable deletes are Paul's
+- [[ledger/melange-systems-brain/D-273|D-273]] — Media all_intake FAIL is correct, not PARTIAL
+- [[ledger/melange-systems-brain/D-272|D-272]] — Letters promotion gates E and C; every -1 held
+- [[ledger/melange-systems-brain/D-271|D-271]] — Press: algreen stubs not bodies; terminal URL rules live
+- [[ledger/melange-systems-brain/D-270|D-270]] — Admissions: statute-source-switch reuse, no billed call
+- [[ledger/melange-systems-brain/D-269|D-269]] — Admissions: invalid classifier category holds or carries
 <!-- brainlink:state:end -->
