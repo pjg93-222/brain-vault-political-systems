@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-no-password-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-no-password-lane-2026-10-21.md", sha256: "40003d05d31cc101f2a1b6197c6e9b695fba80e15bf3f1cb06d2329d7cbae576"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-no-password-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-no-password-lane-2026-10-21.md", sha256: "33c756fdcfb55cce3277f1cd87d962d6083b2c68a3f274bca25de543f9405f51"}
 updated_at: 2026-10-21
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -18,23 +18,19 @@ tags: ["type/fleeting", "status/raw"]
 
 # Desktop no password lane (2026-10-21)
 
-> 10-21 Paul asked to drop the Terrier password and make Melange/Mentat a one-time verification; Melange PR #27 open, Terrier commit local-only (Geo repo is PUBLIC)
+> 10-21 Paul asked to drop the Terrier password and make Melange/Mentat a one-time verification; Melange+Mentat shipped as desktop 1.0.10, Terrier HELD on a lineage split Paul must rule on
 
 ## Content
 
-Paul (2026-10-21): "get rid of the password option for terrier? And Mentat and Melange, just a one time verification?"
+Paul (2026-10-21): "get rid of the password option for terrier? And Mentat and Melange, just a one time verification?" then "Finish it up, Fable oversees."
 
-What was built:
-- Terrier repo (`Documents\Terrier\outputs\cu-geography-v3`), branch `desktop-no-password`, commit `8d448fd` on `a290240` (= `claude/walk-list`). `password_lock_disabled()` in `server/research/desktop_access.py` is now the default for the bound existing-owner; the `.desktop-password-lock-disabled` flag file and setting are removed. Invited recipient accounts still use their own passwords. Hosted CU_LOCAL_ADMIN refusal unchanged.
-- Melange: `ops/desktop/client` device-trust record (`access-device` credential scope), bound to grantId+deviceId. Asks once per computer; Lock workspace forgets it. Commits `a6213ee6d` + `ac0b7d18e` (F1 lock-race guard, F2 README) in worktree `agent-a088ae1dc78c6b259`. Published via ReleasePublish as PR #27 (`publish/desktop-no-password-20261021`, 704420ada).
-- Opus security review: safe to ship; F1/F2 fixed.
+**Shipped (Melange + Mentat):** desktop-v1.0.10, ledger seq 6, published 10-21 ~08:15Z. Device-trust record (`access-device` credential scope) bound to grantId+deviceId; password asked once per computer; "Lock workspace" forgets it. Melange PR #27 merged `9c1c94890` (CodeRabbit race fix `1eca83442`); client commit `59fc562cb`; runtime bootstrap helper `native_credentials.py` refreshed via a `REFRESH_BOOTSTRAP` step added to inject.cjs (inject-only would keep the prompt). Release folder `Documents\Desktop-Installers-2026-10-21`, `RUNBOOK-1.0.10.md`. 1.0.8 and 1.0.9 had already shipped 10-20 — the "Desktop 1.0.7" memory was stale. Paul lands it by open → close → reopen each app (updater), then one last password.
 
-Paul (10-21): "Finish it up, Fable oversees." Both halves MERGED:
-- Melange PR #27 merged `9c1c94890` on origin/main (CodeRabbit: one valid lock/epoch race fixed in `1eca83442`, thread resolved; docstring + "durable revoke on failed delete" declined — the latter is Paul's design call). Receipt AT in PUBLISH_RECEIPT.md.
-- Terrier: [private — see knowledge vault] is PUBLIC (10-08 note said private) but `claude/walk-list` was already public, so pushed code-only branch; PR Geo#2 merged `505c2d7a` into `claude/walk-list`, gitleaks clean, no CodeRabbit findings.
-- Release: 1.0.8 AND 1.0.9 already shipped 10-20 (ledger seq 5); next is **1.0.10 seq 6**. 1.0.9 client came from branch `desktop/one-click-trust-silent-update` (78c94a31b, `Melange-wt\one-click-trust-1.0.9`), NOT main. Release tooling in `Documents\Desktop-Installers-2026-10-19` has stale worktree paths. Release run delegated 10-21 (see session).
+**Terrier HELD at 1.0.9 — why:** my change merged into Geo `claude/walk-list` (PR Geo#2, `505c2d7a`), but the shipped Terrier runtime's server is Geo **main** lineage (`78c45b710` = desktop-preview-v1.0.7, tip `ff7dee3`), diverged from walk-list (merge-base `a290240`; main 35 ahead, walk-list 2 ahead; walk-list lacks `desktop_owner.py`). Main lineage uses the D2 owner-password-store design; its bootstrap `desktop_backend.py` comes from Melange branch `tooling/terrier-1.0.6` (blob cf75ec3e, not on main). `ops/release_config.json` says `terrier_ref: claude/walk-list`; releases record Geo main. Three source designators in use. Also: shipped Terrier 1.0.9 owner launch likely broken (`desktop_backend.py:392` refuses `--legacy-owner` w/o `--owner-root`; origin/main `runtime.cjs:53` passes only the former). Paul's local-main `cc5f286b9` (10-20 23:01) fixes it; a signed unpublished Terrier 1.0.10 from it sits in `Desktop-Installers-2026-10-20\dist-1.0.10\terrier` (latest.yml hash ≠ signed exe). `cc5f286b9` not on origin.
 
-**How to apply:** landing needs a full rebuild of all 3 apps with runtimes and a version bump (an inject.cjs repackage leaves Melange/Mentat prompting every launch). Ship the Terrier server change with or before the client. Related: `desktop-invite-code-lane-2026-10-20`, `melange-public-repo-unfiltered-branches-2026-10-18`, `always-read-coderabbit-2026-10-18`.
+**Why:** pushing more Terrier work on the wrong lineage wastes it; which lineage is canonical is Paul's ruling (voter PII app).
+
+**How to apply:** Terrier passwordless needs (1) Paul's lineage ruling, (2) re-apply `password_lock_disabled` default on that lineage (D2 design if main), (3) land `cc5f286b9` via ReleasePublish PR, (4) Terrier 1.0.10 seq 6 build with runtime server refresh. Open: CodeRabbit's "durably revoke device record on failed Lock delete" (Paul's call); PR for version bump `desktop/release-1.0.10`. Related: `desktop-releases-1-0-7-2026-10-19`, `desktop-invite-code-lane-2026-10-20`, `melange-public-repo-unfiltered-branches-2026-10-18`, `land-means-in-the-app-2026-10-15`.
 
 ## Possible Connections
 
