@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-20 19:54
-- Open questions in STATE: 38; active decisions: 260; dead ends: 71
+- Open questions in STATE: 38; active decisions: 261; dead ends: 72
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-274|D-274]] — Owner password once per computer (Melange, Mentat); Terrier held at 1.0.9
 - [[ledger/melange-systems-brain/D-273|D-273]] — Media all_intake FAIL is correct, not PARTIAL
 - [[ledger/melange-systems-brain/D-272|D-272]] — Letters promotion gates E and C; every -1 held
 - [[ledger/melange-systems-brain/D-271|D-271]] — Press: algreen stubs not bodies; terminal URL rules live
 - [[ledger/melange-systems-brain/D-270|D-270]] — Admissions: statute-source-switch reuse, no billed call
-- [[ledger/melange-systems-brain/D-269|D-269]] — Admissions: invalid classifier category holds or carries
 <!-- brainlink:state:end -->
