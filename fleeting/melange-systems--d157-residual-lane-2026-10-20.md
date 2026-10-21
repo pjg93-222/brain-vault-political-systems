@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/d157-residual-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\d157-residual-lane-2026-10-20.md", sha256: "2d30b5a5b6925e006b1048c3d34bf2adca20f3d2a877e81dd37ab76092841da7"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/d157-residual-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\d157-residual-lane-2026-10-20.md", sha256: "ad19939253d92a1f404254c82654ed59b726cbf01ef35d29f6c766f903dc2897"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -27,7 +27,7 @@ D-157 held items lane (2026-10-20): F-13, F-14, F-15, F-17, F-18, F-20 and F-22 
 **Why:** these were ratified on 10-11 but held as "one at a time" display and hygiene work. `queue-clearout-delegated-rulings-2026-10-11`
 
 **How to apply:**
-- Local main was NOT fast-forwarded: a live refresh_congress_pipeline (pid 57432) was running. Fast-forward only after it exits, and check that main is still an ancestor of the branch.
+- Local main was NOT fast-forwarded. The live refresh_congress_pipeline run (pid 57432) has now exited, but another session's UNCOMMITTED v3 meeting-brief edit in the live tree's `fec/surfaces/templates/make_member_desk_00.tpl` (written 19:44) overlaps this branch, so never clobber it. Once it is committed: `git merge --ff-only d157-residual-20261020` in the live tree, or a normal merge if main has moved.
 - Display items count as landed only after a chain run plus an app rebuild (`land-means-in-the-app-2026-10-15`). After that run, check rank_delta 0/533 and audit_full's "champions threat boards fresh vs live crown set".
 - F-20: champions_v2 and industry_tiers now fail closed without a fresh active rank_honors generation, so a `--from champions_v2.py` resume needs `build_rank_honors.py --publish` first.
 - F-22: IV_NAME_MATCH defaults to `full`. Turns refused on fetched pages are recoverable only through `data/members/interview_surname_refusals.ndjson` plus an iv_fetch_log reset.
