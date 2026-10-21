@@ -7,13 +7,13 @@ title: "melange-systems-brain STATE"
 date: "2026-10-20"
 status: ""
 superseded_by: ""
-brain_commit: "10ec0af01735aa0fa3814e0a4a465bc969f003e4"
-entry_sha256: "00996db711d3bd1dfba0311c333304fba3c5d3db3f116508bfd093648972693e"
+brain_commit: "07dcb9fa7bd6d2e4be41bf2efc885569faeced6a"
+entry_sha256: "7602b459404b837588c5665e06e83f0fd0f0e330046965c36cbadbd475e9ad9c"
 generated: true
-generated_sha256: "ed14ab875f628af35f053bd0f2172a64c5aae90f9a4a1cf4c3c1ca2a8e992193"
+generated_sha256: "a60d904027c1a29f2c3edfb34e1a1b4eb0d292a66d7b0709de778cd61a53367e"
 aliases: ["melange-systems STATE"]
 ---
-> Generated from melange-systems-brain/STATE.md at 10ec0af; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/STATE.md at 07dcb9f; do not edit — change the brain via brainctl.
 
 # STATE — Melange Systems
 > Last verified: 2026-10-20 19:54
@@ -595,7 +595,16 @@ Opened 2026-10-12 by Claude on Paul's approval of the plan (2026-10-11). Verifie
   - The daily cap for 2026-10-20 is used.
   - WAITING FOR PAUL: a non-media attempt 3, and the media blocker (restore phases P7 axe and P8 houselive in C:/melange-data/longform_restore_20261020/restore_audio.py).
   - Press branch fix/e2e-press-20261020 @ 204e139fc and letters branch fix/e2e-letters-20261020 @ d9d094402 are ready, NOT landed ([[ledger/melange-systems-brain/D-271|D-271]], [[ledger/melange-systems-brain/D-272|D-272]]).
+
+  DESKTOP PASSWORD-ONCE LANE 2026-10-21 (Claude, desktop release lane; source: the orchestrator's brief for this brain update, NOT re-observed by the lane that wrote this block, and the Last verified stamp is deliberately not advanced for it; [[ledger/melange-systems-brain/D-274|D-274]] and [[ledger/melange-systems-brain/DE-072|DE-072]], decided by Claude under Paul's request, NOT separate Paul rulings):
+  - Paul asked (2026-10-21) to remove the Terrier owner password and make Melange and Mentat a one-time verification per computer: "Finish it up, Fable oversees."
+  - Melange PR #27 merged into origin/main as 9c1c94890: a device-trust record (access-device credential scope) bound to grantId plus deviceId; the password is asked once per computer; Lock workspace forgets the computer. CodeRabbit's one valid finding (a revoked-approval race in lock) was fixed in 1eca83442. Independent security review: safe to ship; remote clients still need approval; server side unchanged.
+  - Desktop release 1.0.10 (ledger sequence 6) published 2026-10-21 for Melange (target 9c1c94890) and Mentat (target d3c058fca), client commit 59fc562cb; the runtime bootstrap helper native_credentials.py was refreshed; inject.cjs precedent; signed and verified. Release folder Documents\Desktop-Installers-2026-10-21, runbook RUNBOOK-1.0.10.md. Note: 1.0.8 and 1.0.9 had already shipped on 2026-10-20.
+  - TERRIER HELD at 1.0.9. Geo PR #2 (505c2d7a) merged the passwordless-owner change into claude/walk-list, but the shipped Terrier runtime's server code is the Geo main lineage (78c45b710 = desktop-preview-v1.0.7; main tip ff7dee3), which diverged from walk-list (merge-base a290240; main 35 ahead, walk-list 2 ahead). walk-list lacks desktop_owner.py; main's lineage uses the D2 owner-password-store design with bootstrap desktop_backend.py from Melange branch tooling/terrier-1.0.6 (blob cf75ec3e, not on main). ops/release_config.json says terrier_ref claude/walk-list while releases record Geo main: three Terrier source designators are in use ([[ledger/melange-systems-brain/DE-072|DE-072]]).
+  - Terrier 1.0.9 owner launch is likely broken: the shipped bootstrap desktop_backend.py:392-393 refuses --legacy-owner without --owner-root, and origin/main runtime.cjs:53 passes only --legacy-owner. Paul's local-main commit cc5f286b9 (2026-10-20 23:01) fixes it, and an unpublished signed Terrier 1.0.10 built from it sits in Documents\Desktop-Installers-2026-10-20\dist-1.0.10\terrier (its latest.yml hash does not match the signed exe). cc5f286b9 is not on origin.
+  - Not applied: CodeRabbit's design suggestion to durably revoke the device record when Lock's credential delete fails (declined for now; adopting it is Paul's call).
 ## Open questions
+- OPEN (Paul; added 2026-10-21, [[ledger/melange-systems-brain/D-274|D-274]], [[ledger/melange-systems-brain/DE-072|DE-072]]): which Terrier code lineage is canonical, Geo main (the D2 owner-password-store design the releases ship from) or claude/walk-list? The answer lets the passwordless-owner change be re-applied on the shipped lineage and Terrier 1.0.10 be built with cc5f286b9 (until then Terrier stays at 1.0.9, whose owner launch is likely broken).
 - The ENTIRE glassbox runtime is UNTRACKED. common.ps1, metaloop.ps1, flow.ps1, launch.ps1, health.ps1,
   mirror.ps1, console.ps1, dashboard.ps1, fanout.ps1 and agentwatch.ps1 exist only at
   C:\Users\pgoff\.claude\glassbox with no git history and no backup beyond *.bak-* files beside them.
