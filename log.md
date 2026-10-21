@@ -356,3 +356,4 @@
 - 2026-10-20 22:29 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--d157-residual-lane-2026-10-20]]
 - 2026-10-20 22:42 -05:00 | brainlink-project | projected 7 ledger note(s) and 3 state block(s) from melange-systems-brain, folder-brain, pilot-brain; 344 unchanged | [[ledger/melange-systems-brain/D-269]], [[ledger/melange-systems-brain/D-270]], [[ledger/melange-systems-brain/D-271]], [[ledger/melange-systems-brain/D-272]], [[ledger/melange-systems-brain/D-273]], +5 more
 - 2026-10-20 22:59 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[melange-systems--e2e-proof-lane-2026-10-20]]
+- 2026-10-20 23:22 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--desktop-invite-code-lane-2026-10-20]]
