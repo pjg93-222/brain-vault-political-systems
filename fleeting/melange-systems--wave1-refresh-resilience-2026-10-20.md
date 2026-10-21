@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/wave1-refresh-resilience-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\wave1-refresh-resilience-2026-10-20.md", sha256: "f421f7081cbd9d284dfeed689e4577c4172f35a51580d77e8f9e5a04bfabf509"}
-updated_at: 2026-10-20
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/wave1-refresh-resilience-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\wave1-refresh-resilience-2026-10-20.md", sha256: "af5da6c542437d4c520aa660c19de4a478d20667d6889d90ab4149012e121f92"}
+updated_at: 2026-10-21
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -46,10 +46,23 @@ PR #16 merged on GitHub as c2786637d. Round 3 is PR #17 (head bdbe8fa3e, addendu
 
 Related: `pipeline-health-lane-2026-10-19`, `melange-public-repo-unfiltered-branches-2026-10-18`, `no-permission-prompts-pr-first-2026-10-19`.
 
+#### Update 2026-10-21
+
+PR #25 is OPEN. Its branch `d157-residual-20261020` lives in worktree `.claude/worktrees/gallant-visvesvaraya-1c7276` and is not on local main. The PR #23 source commits (b552bc45f, 673ae62c7) are also not on local main. Local main and origin/main share no merge-base, so "fast-forward" does not apply.
+
+Five daily congress_pipeline runs since 2026-10-20 all FAILED:
+- admissions: envelope hr:8720.
+- media: PARTIAL cascade.
+- cook_house_csv: changed, with chain ROLLBACK_FAILED.
+- make_member_desk: roster missing=3 extras=1.
+- tier_util: no primacy factor for 'Aisha Wahab'.
+
+The weekly has not yet run on Wave 1 code.
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-20 from the Claude Code memory file `wave1-refresh-resilience-2026-10-20.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-21 from the Claude Code memory file `wave1-refresh-resilience-2026-10-20.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

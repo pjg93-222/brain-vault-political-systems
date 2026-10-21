@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fec-folder-debug-sweep-2026-10-13.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fec-folder-debug-sweep-2026-10-13.md", sha256: "c2f1a927711a4f27907f794e3df97c91ec04de468bfbdbab03ffcf27d34c0a8c"}
-updated_at: 2026-10-20
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fec-folder-debug-sweep-2026-10-13.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fec-folder-debug-sweep-2026-10-13.md", sha256: "fa90f480528a9e0d5b6c19fe0f92474263db311d3c8d53e992f51b054aaa0fb5"}
+updated_at: 2026-10-21
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -44,11 +44,18 @@ Open items, all Paul's calls:
 - A session restart kills running workflows. Resume them with resumeFromRunId.
 Related: `no-permission-prompts-pr-first-2026-10-19`, `melange-public-repo-unfiltered-branches-2026-10-18`, `always-read-coderabbit-2026-10-18`.
 
+#### Update 2026-10-21
+
+The surfaces folder was left half-swept: 11 files and about 21 findings are unfixed, and review groups g7 to g12 never ran. The args are in `audits/fec_sweep_20261013/remaining_args.json`.
+
+The forecast_ledger cosponsor item was fixed in 76e2a857b.
+
+`.claude/workflows/folder-debug.js` has uncommitted process edits: a TDD fixer, a silent-failure-hunter reviewer, and an adversarial Fable gate.
+
 ## Possible Connections
 
-- [[research-vault]] — keyword match from recall, unverified
-- [[mentat]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-20 from the Claude Code memory file `fec-folder-debug-sweep-2026-10-13.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-21 from the Claude Code memory file `fec-folder-debug-sweep-2026-10-13.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
