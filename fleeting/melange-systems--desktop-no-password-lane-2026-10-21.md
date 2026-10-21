@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-no-password-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-no-password-lane-2026-10-21.md", sha256: "20b0aa6c4295aa8bbd9512436b8cf924cda42e63f91d9678183252c5fcdb578d"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-no-password-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-no-password-lane-2026-10-21.md", sha256: "40003d05d31cc101f2a1b6197c6e9b695fba80e15bf3f1cb06d2329d7cbae576"}
 updated_at: 2026-10-21
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -29,15 +29,16 @@ What was built:
 - Melange: `ops/desktop/client` device-trust record (`access-device` credential scope), bound to grantId+deviceId. Asks once per computer; Lock workspace forgets it. Commits `a6213ee6d` + `ac0b7d18e` (F1 lock-race guard, F2 README) in worktree `agent-a088ae1dc78c6b259`. Published via ReleasePublish as PR #27 (`publish/desktop-no-password-20261021`, 704420ada).
 - Opus security review: safe to ship; F1/F2 fixed.
 
-**Why open:** pjg93-222/Geo (Terrier) is PUBLIC (the 10-08 note said private), so the Terrier commit was not pushed; Paul decides the route. CodeRabbit on #27 had not finished at hand-off. The PUBLISH_RECEIPT.md entry is still owed.
+Paul (10-21): "Finish it up, Fable oversees." Both halves MERGED:
+- Melange PR #27 merged `9c1c94890` on origin/main (CodeRabbit: one valid lock/epoch race fixed in `1eca83442`, thread resolved; docstring + "durable revoke on failed delete" declined — the latter is Paul's design call). Receipt AT in PUBLISH_RECEIPT.md.
+- Terrier: pjg93-222/Geo is PUBLIC (10-08 note said private) but `claude/walk-list` was already public, so pushed code-only branch; PR Geo#2 merged `505c2d7a` into `claude/walk-list`, gitleaks clean, no CodeRabbit findings.
+- Release: 1.0.8 AND 1.0.9 already shipped 10-20 (ledger seq 5); next is **1.0.10 seq 6**. 1.0.9 client came from branch `desktop/one-click-trust-silent-update` (78c94a31b, `Melange-wt\one-click-trust-1.0.9`), NOT main. Release tooling in `Documents\Desktop-Installers-2026-10-19` has stale worktree paths. Release run delegated 10-21 (see session).
 
 **How to apply:** landing needs a full rebuild of all 3 apps with runtimes and a version bump (an inject.cjs repackage leaves Melange/Mentat prompting every launch). Ship the Terrier server change with or before the client. Related: `desktop-invite-code-lane-2026-10-20`, `melange-public-repo-unfiltered-branches-2026-10-18`, `always-read-coderabbit-2026-10-18`.
 
 ## Possible Connections
 
-- [[2026-10-troubleshooting-melange-main-reconcile]] — keyword match from recall, unverified
-- [[2026-07-troubleshooting-melange-audits-and-reviews-security-baseline]] — keyword match from recall, unverified
-- [[2026-10-06-terrier-build-progress]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
