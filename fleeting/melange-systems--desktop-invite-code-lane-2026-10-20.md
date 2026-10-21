@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-invite-code-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-invite-code-lane-2026-10-20.md", sha256: "96f8f5a05c82c8ca5b94c95ac4b64629aa6448ba50a50d7374419864343ea249"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-invite-code-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-invite-code-lane-2026-10-20.md", sha256: "5c8631e313d002cfbb062e71ca29f02b253eed253f6b815fb23db9ed9052bac1"}
 updated_at: 2026-10-20
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -40,7 +40,8 @@ Enforcement comes from `serve --require-invite` or the User env var MELANGE_ACCE
 1. Paul restarts the server on the new code with enforcement off.
 2. Release clients with the optional invite field.
 3. After testers update, set the env var, restart the login startup task or supervisor (killing only python keeps the old environment), and confirm inviteRequired:true.
-Follow-up lane (2026-10-20) is in PR #24, open, CodeRabbit green at head 396f2deb9, NOT merged; Paul has not said to merge it. It removes the people caps (approved testers unlimited, per-address limits gone, lifetime rows gone), keeps 100 new requests per hour, and queues excess connections. The relay now uses per-connection waiter threads. It adds a crash-dummy test. Expired requests are pruned after 30 days; denied rows are kept because the client re-submits unknown ids on launch. Activity is capped at 10,000 rows per device.
+**Deploy BLOCKED 2026-10-20 ~23:20 (nothing restarted, env var NOT set):** services run from the main checkout (Run entry + MelangeDesktopTunnel task → MAIN\ops\desktop\server), which is local main 77af80941 — UNRELATED history to origin/main (no merge-base), so no ff exists. Local main's server dir = origin 8f3214ff2's + local-only bd24a0740 (notifierPid in status) + 2894aa69c (supervisor survives failed notifier launch); origin/main LACKS those two, so copying origin's files would regress them. Ready candidate: scratchpad merge3/tree2 of session cd9c18b9 = origin/main ops/desktop + 3-way merged Start-LanPublisherAtLogin.ps1 (union: notifierPid + inviteRequired) + test fixture loading Get-InviteRequired; server suite 224 pass/1 skip. Needs a local-main commit (Paul/orchestrator OK), then the restart procedure. Public repo also needs bd24a0740+2894aa69c published or the next sync regresses them again.
+Follow-up lane PR #24 MERGED 2026-10-20 22:59 (13ca95326). It removes the people caps (approved testers unlimited, per-address limits gone, lifetime rows gone), keeps 100 new requests per hour, and queues excess connections. The relay now uses per-connection waiter threads. It adds a crash-dummy test. Expired requests are pruned after 30 days; denied rows are kept because the client re-submits unknown ids on launch. Activity is capped at 10,000 rows per device.
 
 ## Possible Connections
 
