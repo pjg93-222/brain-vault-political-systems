@@ -391,3 +391,4 @@
 - 2026-10-22 11:50 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--melange-admin-launcher-applied-2026-10-22]]
 - 2026-10-22 14:30 -05:00 | delete | dismissed 2 fleeting captures (a private-subject memory, and one dismissed again after its memory file changed) and redacted private patterns in 6 fleeting notes; the capture hook now redacts at write time | fleeting/
 - 2026-10-22 15:24 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]]
+- 2026-10-22 15:44 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--agent-roster-2026-10-21]]
