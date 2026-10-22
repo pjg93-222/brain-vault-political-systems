@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "6f4163ab7d6ec9075e94ba4e3df3959a2846321715a64cd8da248712582338c7"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "d34419503e68744fb38949247770ebced30eadf1008cac00df6718181ed49fc1"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -28,6 +28,7 @@ tags: ["type/fleeting", "status/raw"]
 
 **How to apply:**
 - Only ever run Install-AdminLauncher.ps1 from the main checkout. Re-run it there whenever the shortcuts look stale (read their Arguments with WScript.Shell).
+- Since 2026-10-22 the installer itself throws when run from a `\.claude\worktrees\` path (`-Uninstall` is exempt). Local main f45c49c55, test `ops/desktop/server/test_install_admin_launcher.py`, public PR pjg93-222/Melange#45 (publish commit 07c1ab7ca, receipt AX). The PR was left unmerged, and CodeRabbit had no actionable comments.
 - The Apps page shows "Docker is not running" until the local stack is set up. That needs Docker Desktop and an `ops\.env`, which is missing and has no template.
 - The images for `ops\.env` can be the v2026.10.19.1 digests.json values. A KEY=value secret file is still needed for Terrier.
 - The data mounts are not ready:
@@ -39,9 +40,7 @@ Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-2
 
 ## Possible Connections
 
-- [[2026-07-bugfix-mentat-collection-and-attribution-system-debug-lane]] — keyword match from recall, unverified
-- [[mentat-console-chart-studio-and-system-debug]] — keyword match from recall, unverified
-- [[terrier]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
