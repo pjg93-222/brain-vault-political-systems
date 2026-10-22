@@ -7,16 +7,16 @@ title: "melange-systems-brain STATE"
 date: "2026-10-21"
 status: ""
 superseded_by: ""
-brain_commit: "853b4da110fae1eacd100a0069b5917900a451c0"
-entry_sha256: "ea13ed99bac11110a7eabb29a8198762b7b6972a96d46f4264f6d80fe3ea6ecb"
+brain_commit: "66da9c09e93d4ec68e6957fbf57133766756703e"
+entry_sha256: "bad8cc51419ea064812b20ea412ac37578f7677e701f33fa2b224cdbdaea7841"
 generated: true
-generated_sha256: "9364d95cc3f8ffbcb4673068957eb8d395925abf2258cb941a04949a8e44bd51"
+generated_sha256: "0309d53573a220f6945e360c2d82fc21f89462b720f685fdeb03536e1b37cfa2"
 aliases: ["melange-systems STATE"]
 ---
-> Generated from melange-systems-brain/STATE.md at 853b4da; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/STATE.md at 66da9c0; do not edit — change the brain via brainctl.
 
 # STATE — Melange Systems
-> Last verified: 2026-10-21 21:04
+> Last verified: 2026-10-21 21:07
 > Verified by: agent roster lane and E2E attempts 6-7 as reported by the chain session; everything else carried from the 2026-10-20 block
 > NOTE: keep the stamp above a bare date-time on its own line (flush writes it). The parser defect is FIXED in Project Brain d9100b8 + 026ca95 (2026-10-20):
 > brainctl and brainlink `parse_state` accept a leading `YYYY-MM-DD[ HH:MM[:SS]]` prefix with a trailing annotation, and boot/status name which case failed
@@ -431,7 +431,7 @@ belongs in git, not here. This is the single staleness authority.
   Runner-flake diagnosis FOLDED IN (their lane, report d104d3ade): retry-loop fix + RUNTESTS_DUMP_DIR
   arming remain Paul-gated -- not applied by this lane.
 ## Next action
-UPDATED 2026-10-22 01:50 CDT (record taken from the orchestrator brief relayed by the chain session; see the AGENT ROSTER LANE block in the Deployment lane section): (a) Paul rules on the PAUL_DECISION_PACKET themes (audits/agent_roster_20261021/) and the Terrier thresholds, tools/field_labels.py:105-107; (b) the E2E lane relaunches (attempt 8) after the classifier quota reset, after 2026-10-22 18:00 CDT, with Paul's chat OK for the exact shape; (c) the briefs-v3 lane lands 0bedf256c properly with a champions_v2-tolerant tier. This line supersedes the stale items below only where they conflict; the STALE FLAG still applies to the rest.
+UPDATED 2026-10-21 20:50 CDT (record taken from the orchestrator brief relayed by the chain session; see the AGENT ROSTER LANE block in the Deployment lane section): (a) Paul rules on the PAUL_DECISION_PACKET themes (audits/agent_roster_20261021/) and the Terrier thresholds, tools/field_labels.py:105-107; (b) the E2E lane relaunches (attempt 8) after the classifier quota reset, after 2026-10-22 18:00 CDT, with Paul's chat OK for the exact shape; (c) the briefs-v3 lane lands 0bedf256c properly with a champions_v2-tolerant tier. This line supersedes the stale items below only where they conflict; the STALE FLAG still applies to the rest.
 STALE FLAG 2026-10-20: this block is 2026-10-11 vintage and is not the current starting position. Newer lanes (2026-10-12 through 2026-10-20 blocks in the Deployment lane section) supersede much of it. Re-verify any item against those blocks before acting.
 REWRITTEN 2026-10-11 by the queue clear-out (decisions [[ledger/melange-systems-brain/D-148|D-148]]..[[ledger/melange-systems-brain/D-161|D-161]]; record audits/decisions_20261011/DECISIONS.md in Melange). Rule: every line names a date and an owner; anything older than 14 days without a date check is presumed stale and re-verified before acting. The previous block (2026-08-27..09-19 backlog, nearly all closed by [[ledger/melange-systems-brain/D-159|D-159]]) is archived verbatim at ARCHIVE/STATE_next-action_pre-2026-10-11.md.
 
@@ -625,7 +625,7 @@ Opened 2026-10-12 by Claude on Paul's approval of the plan (2026-10-11). Verifie
   - Terrier 1.0.9 owner launch is likely broken: the shipped bootstrap desktop_backend.py:392-393 refuses --legacy-owner without --owner-root, and origin/main runtime.cjs:53 passes only --legacy-owner. Paul's local-main commit cc5f286b9 (2026-10-20 23:01) fixes it, and an unpublished signed Terrier 1.0.10 built from it sits in Documents\Desktop-Installers-2026-10-20\dist-1.0.10\terrier (its latest.yml hash does not match the signed exe). cc5f286b9 is not on origin.
   - Not applied: CodeRabbit's design suggestion to durably revoke the device record when Lock's credential delete fails (declined for now; adopting it is Paul's call).
 
-  AGENT ROSTER LANE (Fable overseer / Opus manager / Sonnet coder) 2026-10-22 01:50 CDT (Claude, record taken from the orchestrator brief relayed by the chain session; the cited commits, paths and ids are as reported there and NOT re-observed by this record; where this block and the E2E LANE STATUS 2026-10-21 21:15 block above disagree, this block is newer):
+  AGENT ROSTER LANE (Fable overseer / Opus manager / Sonnet coder) 2026-10-21 20:50 CDT (Claude, record taken from the orchestrator brief relayed by the chain session; the cited commits, paths and ids are as reported there and NOT re-observed by this record; where this block and the E2E LANE STATUS 2026-10-21 21:15 block above disagree, this block is newer):
   - Roster commits 6390bc611 and 168c4fefa on local main, NOT pushed: audits/agent_roster_20261021/ (STATE_2026-10-21.md, REMAINING_ITEMS.md, AGENT_ROSTER.md, PAUL_DECISION_PACKET.md with 119 held sweep items in ten themes) and .claude/agents/{overseer,manager,coder}.md (force-added past the .claude/* ignore). Source: brief; commit ids.
   - Desktop HANDOFF.md and HANDOFF_wave1_refresh_resilience_2026-10-21.md are marked superseded. Corrections recorded there: the sweep closed 2026-10-20; the forecast_ledger cosponsor fix is 76e2a857b; the MS NOW cursor, the WJ retry and the admissions hold all landed; PR #25 is OPEN, not merged; PR #23 is not on local main; local main and origin/main share no merge-base. Source: brief.
   - Daily congress_pipeline: five FAILED runs on 2026-10-20 and 2026-10-21 were each diagnosed and fixed by the E2E lane (2ce09188d; 734cd7b24 + 24f947a7c; 256c60c21; e347e0bb6 + e47a232fe). Media is blocked by the all_intake FAIL per [[ledger/melange-systems-brain/D-273|D-273]] until the P7/P8 audio restore. Source: brief; commit ids.

@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/agent-roster-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\agent-roster-2026-10-21.md", sha256: "6f1e117521b6bdde0ed512e7c5c3133bd10e38ff347cecb8437c1c3f6163d4c2"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/agent-roster-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\agent-roster-2026-10-21.md", sha256: "96cfae460f159c987a4fa16a100068856cda794ebbe7474251781b4c4dda4881"}
 updated_at: 2026-10-21
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -37,9 +37,9 @@ Read these before opening a lane:
 
 Related: `fec-folder-debug-sweep-2026-10-13`, `wave1-refresh-resilience-2026-10-20`.
 
-#### Update 2026-10-22
+#### Update 2026-10-21 (evening CDT; run stamps are UTC)
 
-- Roster, ledger, state record and decision packet committed on local main as 6390bc611 (not pushed). Agent files force-added past the .claude/* ignore.
+- Roster, ledger, state record and decision packet committed on local main as 6390bc611, then 168c4fefa and 6795272aa (not pushed). Agent files force-added past the .claude/* ignore.
 - P0 owned by E2E lane; sixth cause unverified at first, then confirmed (P0-6: briefs-v3 make_member_desk.py copy writes tier=None; set aside by Paul's ruling 2026-10-21, HEAD copy restored). P0-1 to P0-5 fixed on main. P0-7 (hand-repaired workbook_publications.json) still has no brain record.
 - Terrier PR #13 (pjg93-222/Geo, feat/coalition-profile) open awaiting threshold ruling.
 - Lesson: before opening any lane, run list_sessions (linked and all) and read audits/ handoffs for an overlapping lane. The P0 incident lane duplicated the E2E chain session until redirected to verification. E2E lane holds fec/tier_util.py, efficiency_layers.py, apply_fec_money_refresh.py, legacy_workbook_audit.py and chain_transaction.py.
