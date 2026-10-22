@@ -393,3 +393,4 @@
 - 2026-10-22 15:24 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]]
 - 2026-10-22 15:44 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--agent-roster-2026-10-21]]
 - 2026-10-22 16:30 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[workspaces-scratch-2026-10-21-f6eb2f--installer-signing-rule]]
+- 2026-10-22 16:33 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[workspaces-scratch-2026-10-22-ddfeb0--always-sign-with-release-certificate]]
