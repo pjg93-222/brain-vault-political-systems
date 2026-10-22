@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-22 02:36
-- Open questions in STATE: 41; active decisions: 275; dead ends: 78
+- Open questions in STATE: 41; active decisions: 276; dead ends: 79
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-289|D-289]] — Disk clearing under Paul's 12:00 instruction (2026-10-22)
 - [[ledger/melange-systems-brain/D-288|D-288]] — Attempt 9 rank attribution verdict: 460 movers, UNEXPLAINED 0 after two adjudica
 - [[ledger/melange-systems-brain/D-287|D-287]] — E2E attempt 9: chain COMMITTED at 535, audit_full gated, LIVE kept on 535 pendin
 - [[ledger/melange-systems-brain/D-286|D-286]] — E2E attempt 8: reached CHAIN[77], rmtree fix 064190e9f
 - [[ledger/melange-systems-brain/D-285|D-285]] — Stub classifier shape for E2E attempt 8 (Paul, 2026-10-22 00:06)
-- [[ledger/melange-systems-brain/D-284|D-284]] — E2E attempt 7: classifier weekly quota stop at admissions; one-run 26 GB floor o
 <!-- brainlink:state:end -->
