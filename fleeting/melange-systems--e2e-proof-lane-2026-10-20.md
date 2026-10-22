@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "7872467648d96b5963d0d16263c0b661df347ab8edfac2e350d62bdf5eac7c95"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "2496bef1d3bd33c4709c7c8700b39c9d5d261c374aaf74eaf3dd03b1c471a9f0"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -113,6 +113,7 @@ Published as pjg93-222/Melange#22 (merge f39ca5a40). That merge made PR #20, fro
 - Kernel `fec/tests/run_tests.py`: 570 passed, 16 FAILED, 133 min wall, peak disk +18.4 GB. Classified: `test_descriptive_profiles` 4 expected at 535; `test_kernel_registration_census` 2 = this lane's new test files unregistered, fixed by `f9a3ec6da` (33 suites registered, passes alone); `test_audit_completion_20260716` 2 = the 535 board itself (passes on the 533 snapshot, fails identically with pre-F1 `tier_util`; pins Young Kim Tier 1 #11 and legxfactor slots; re-pin only with Paul's ratification, D-031); 535-vintage data 4 (`test_rank_honors_ladder_g`, `test_member_longform_acquisition_queue`, `test_member_longform_discovery`, `test_member_narratives_v2_repair`); pre-existing pins 4 (`test_staffer_name_standard`, `test_b5_onc_successor`, `test_b5_o_coverage_recovery`, `test_audit_legislation_decay_propagation`); runner-order flakes that pass alone (`test_press_backlog`, `test_press_official_dated_listings`, `test_press_request_deadlines`); undetermined `test_policy_repairs_20260718` and `test_refresh_tick` (still running, very slow).
 - Standalone `fec/audit/audit_full.py` after `14f26ce2f`: 547 passed, 31 FAILED. Six 535-roster checks now PASS with `!!` tolerance lines. 12 gated, 19 new (longform artifact 47 d, Big Five panel labels, audio layers 833 dropped, personal-texture precision, audio manifest hash, Young Kim seats, 6 A2b `repo.*` and 7 A2b `mdata.*` manifest changes, A2b `local.billstatus` gated).
 - Verdict: PROVEN is chain committed end to end, rank delta attributed with exact replay, desk serves 535. NOT PROVEN is a clean PASS receipt and kernel/audit green. Nothing else in the live tree changed; LIVE stays the committed 535 vintage; the 533 restore point stands.
+- Paul ruled 2026-10-22 (evening): keep LIVE on the committed 535 vintage (brain D-291); 533 before-image is a restore point only; rulings on handoff decisions 2-8 pending.
 
 Related: `pipeline-health-lane-2026-10-19`, `wave1-refresh-resilience-2026-10-20`.
 
