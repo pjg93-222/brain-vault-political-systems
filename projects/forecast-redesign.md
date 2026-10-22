@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-20 19:54
-- Open questions in STATE: 39; active decisions: 261; dead ends: 72
+- Open questions in STATE: 39; active decisions: 271; dead ends: 77
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-274|D-274]] — Owner password once per computer (Melange, Mentat); Terrier held at 1.0.9
-- [[ledger/melange-systems-brain/D-273|D-273]] — Media all_intake FAIL is correct, not PARTIAL
-- [[ledger/melange-systems-brain/D-272|D-272]] — Letters promotion gates E and C; every -1 held
-- [[ledger/melange-systems-brain/D-271|D-271]] — Press: algreen stubs not bodies; terminal URL rules live
-- [[ledger/melange-systems-brain/D-270|D-270]] — Admissions: statute-source-switch reuse, no billed call
+- [[ledger/melange-systems-brain/D-284|D-284]] — E2E attempt 7: classifier weekly quota stop at admissions; one-run 26 GB floor o
+- [[ledger/melange-systems-brain/D-283|D-283]] — E2E attempt 6: all congress steps PASS, chain refused on disk floor (head 14c082
+- [[ledger/melange-systems-brain/D-282|D-282]] — Set aside the uncommitted Codex make_member_desk.py for E2E attempts 6 and 7
+- [[ledger/melange-systems-brain/D-281|D-281]] — Legacy workbook audit E3 tolerates only the recorded roster drift
+- [[ledger/melange-systems-brain/D-280|D-280]] — Apply 2026-10-18 FEC money refresh at 535 with recorded roster drift (sweep bloc
 <!-- brainlink:state:end -->
