@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-618 notes.
+633 notes.
 
 ## Actors (49)
 
@@ -289,9 +289,9 @@
 - [[workspaces-scratch-2026-10-19-bad9b3--terrier-1-0-11-build-2026-10-21]] — How Terrier desktop 1.0.11 was built locally on 2026-10-21 (runtime bootstrap patched in place, not rebuilt), what is verified, and what still waits on Paul
 - [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]] — State of the Melange/Mentat/Terrier desktop rollout as of 2026-10-21 evening, where the artifacts live, and who owns what
 
-## Ledger (generated from the Project Brain) (354)
+## Ledger (generated from the Project Brain) (369)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 347 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 362 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
