@@ -41,7 +41,7 @@ Related: `fec-folder-debug-sweep-2026-10-13`, `wave1-refresh-resilience-2026-10-
 
 - Roster, ledger, state record and decision packet committed on local main as 6390bc611, then 168c4fefa and 6795272aa (not pushed). Agent files force-added past the .claude/* ignore.
 - P0 owned by E2E lane; sixth cause unverified at first, then confirmed (P0-6: briefs-v3 make_member_desk.py copy writes tier=None; set aside by Paul's ruling 2026-10-21, HEAD copy restored). P0-1 to P0-5 fixed on main. P0-7 (hand-repaired workbook_publications.json) still has no brain record.
-- Terrier PR #13 (pjg93-222/Geo, feat/coalition-profile) open awaiting threshold ruling.
+- Terrier PR #13 ([private — see knowledge vault], feat/coalition-profile) open awaiting threshold ruling.
 - Lesson: before opening any lane, run list_sessions (linked and all) and read audits/ handoffs for an overlapping lane. The P0 incident lane duplicated the E2E chain session until redirected to verification. E2E lane holds fec/tier_util.py, efficiency_layers.py, apply_fec_money_refresh.py, legacy_workbook_audit.py and chain_transaction.py.
 
 - 2026-10-22 00:5x CDT: public PR pjg93-222/Melange#42 MERGED by Paul instruction, merge commit 0f37ddece (ReleasePublish receipt AW; out-of-filter exception recorded, FILTER_REPORT Addendum 37).

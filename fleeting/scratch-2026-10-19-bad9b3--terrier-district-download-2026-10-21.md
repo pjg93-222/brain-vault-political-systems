@@ -26,7 +26,7 @@ As of 2026-10-21, Melange repo local `main` (C:\Users\pgoff\OneDrive\Desktop\Mel
 - `cc5f286b9` — Terrier owner-root startup fix, updates always on (no release-cert gate), no folder/district prompts. Terrier 1.0.10 built+installed on Paul's PC from it (installer in Documents\Desktop-Installers-2026-10-20\dist-1.0.10, not published).
 - `6f3defd8c` — private district download: signed per-district packs served from the access server (`/v1/data/*`, `pack-build`/`pack-publish`, packs in %LOCALAPPDATA%\MelangeDesktopAdmin\packs), client downloads/verifies/activates into %LOCALAPPDATA%\MelangeData\terrier, backend imports bundle on first start, revocation deletes data. E2E passed with real co-05/or-05/ct-01 packs (3.0 GB gz, 6.45 GB raw); test copies deleted.
 
-Access server: public mode, reachable via bore.pub:38443 (Tailscale Funnel was blocked: tailnet is lag164@georgetown.edu, Funnel not enabled). Trust descriptor url updated accordingly.
+Access server: public mode, reachable via <tunnel-host>:<port> (Tailscale Funnel was blocked: tailnet is <email omitted>, Funnel not enabled). Trust descriptor url updated accordingly.
 
 **Why:** Paul's requirements for testers: open straight into the app, all districts pre-loaded, no folder choice, automatic updates; voter PII must never ship in the public installer.
 

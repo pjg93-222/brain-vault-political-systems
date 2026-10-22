@@ -25,7 +25,7 @@ tags: ["type/fleeting", "status/raw"]
 Restarting the desktop access supervisor (Paul's call each time) works ONLY this way, proven 2026-10-20:
 1. `Stop-Process` the supervisor pwsh. Its job object (KILL_ON_JOB_CLOSE) takes the publisher, notifier and notifier children down within a second. Confirm 127.0.0.1:38443 has no listener.
 2. Register a one-shot scheduled task: the Run-entry command (HKCU Run `MelangeDesktopPublisher`, WindowsApps pwsh alias + same args), `-LogonType Interactive -RunLevel Limited`, `ExecutionTimeLimit 0`, **`-Priority 4`**, then `Start-ScheduledTask` and `Unregister-ScheduledTask` once it runs. The supervisor survives unregistering. It reaches `starting` in about 40 s and `running` about 30 s later.
-3. Verify `listener-status.json` (new supervisorPid, publisherPid and notifierPid), the listener on 127.0.0.1:38443, and HTTP 404 from `https://bore.pub:38443/`. Leave the tunnel task alone; it reconnects by itself.
+3. Verify `listener-status.json` (new supervisorPid, publisherPid and notifierPid), the listener on 127.0.0.1:38443, and HTTP 404 from `https://<tunnel-host>:<port>/`. Leave the tunnel task alone; it reconnects by itself.
 
 Failed paths:
 - A one-shot task at the default priority 7 hung at pwsh startup (0.16 s CPU after 2.5 minutes). The likely cause is very-low I/O priority on the busy OneDrive disk; this was not proven.

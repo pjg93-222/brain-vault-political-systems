@@ -53,7 +53,7 @@ import {
   str,
   writeAtomic,
 } from "./lib.ts";
-import { scanSecrets } from "./secrets.ts";
+import { compileRedactor, scanSecrets, type Redactor } from "./secrets.ts";
 import { firstSentence, rebuildIndex } from "./indexer.ts";
 import { loadIndex, rank } from "./recall.ts";
 
@@ -71,6 +71,17 @@ const GRAPH_RETRY_MS = 60_000;
 const GRAPH_FAIL_FILE = join(SYNC_DIR, "graph-fail.txt");
 /** Memory files are a few KB; anything this large is not a memory note and is reported instead of copied. */
 const MAX_MEMORY_BYTES = 1024 * 1024;
+/** Private values to redact at capture (git-ignored; see secrets.ts). Missing in the real vault: nothing is captured (a test vault gets no patterns). */
+const PRIVATE_FILE = join(VAULT, ".bedrock", "recall", "private-patterns.json");
+
+function loadRedactor(): Redactor {
+  try {
+    return compileRedactor(JSON.parse(readFileSync(PRIVATE_FILE, "utf8")));
+  } catch (e: any) {
+    if (e?.code === "ENOENT" && VAULT_IS_OVERRIDE) return compileRedactor({}); // a test vault has no private values
+    throw new Error(`cannot load .bedrock/recall/private-patterns.json (${oneLine(e?.message ?? e, 120)}); refusing to copy memory text into a public vault`);
+  }
+}
 
 export const LOG_HEADER = [
   "# Log",
@@ -683,6 +694,7 @@ export function sync(opts: { dryRun?: boolean } = {}): SyncReport {
 
     // 4. every memory file that is not in the vault at its current hash
     const idx = loadIndex();
+    let redactor: Redactor | undefined;
     const reserved = new Set<string>(); // names given out in this run (dry runs included)
     const writtenNow: string[] = [];
     for (const m of mems) {
@@ -702,6 +714,14 @@ export function sync(opts: { dryRun?: boolean } = {}): SyncReport {
         if (m.size > MAX_MEMORY_BYTES) throw new Error(`file too large to capture (${Math.round(m.size / 1024)} KB)`);
         m.text ??= readFileSync(m.path, "utf8");
         if (m.text.includes("\u0000")) throw new Error("binary or UTF-16 text (NUL bytes); save it as UTF-8 to capture it");
+        redactor ??= loadRedactor();
+        // a memory about a private subject (its file name or `name:` carries a private pattern) is dismissed, not captured
+        if (redactor.blocks(m.file) || redactor.blocks(memoryMeta(m.text).name ?? "")) {
+          state.dismissed[m.key] = m.sha;
+          report.dismissed++;
+          logLine("private", `${m.path}: not copied into the vault: its name matches a private pattern`);
+          continue;
+        }
         const hits = scanSecrets(m.text);
         if (hits.length) {
           const patterns = [...new Set(hits.map((x) => `${x.pattern} (line ${x.line})`))];
@@ -743,7 +763,7 @@ export function sync(opts: { dryRun?: boolean } = {}): SyncReport {
             .slice(0, 3)
             .map((n) => linkTarget(n.p.replace(/\.md$/i, "")));
         }
-        const text = composeNote({ m, kind, updates, suggestions, captured, isNote });
+        const text = composeNote({ m: { ...m, text: redactor.text(m.text) }, kind, updates, suggestions, captured, isNote });
         const planned: Planned = { rel: target, kind, source: m.path, updates, action };
         if (dryRun) {
           report.written.push(planned);
