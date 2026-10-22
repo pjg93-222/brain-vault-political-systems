@@ -275,7 +275,7 @@
 - [[melange-systems--desktop-no-password-lane-2026-10-21]] — 10-21 Paul asked to drop the Terrier password and make Melange/Mentat a one-time verification; Melange+Mentat shipped as desktop 1.0.10, Terrier HELD on a lineage split Paul must rule on
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--desktop-supervisor-restart-procedure-2026-10-20]] — How to restart the desktop access login supervisor (Start-LanPublisherAtLogin.ps1) without a long outage; WMI and default-priority one-shot tasks fail
-- [[melange-systems--e2e-proof-lane-2026-10-20]] — 2026-10-20 E2E proof lane: fixes on live main 77af80941 + PR #22; media blocked by 10-17 audio deletion; non-media attempt 3; press/letters branches unlanded
+- [[melange-systems--e2e-proof-lane-2026-10-20]] — E2E proof lane 2026-10-20/21: attempts 1-7, none proven; roster 535, F1/R1/R2 and launch preflight landed on live main (ad1b23621); attempt 7 stopped on the classifier weekly quota; relaunch after reset (inferred 10-22 18:00 CDT)...
 - [[melange-systems--fec-folder-debug-sweep-2026-10-13]] — fec line-by-line debug sweep CLOSED 2026-10-20; all folders committed, public PR #14 merged 5f68fa2e5; research local-only; Paul decisions list open
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
 - [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]] — REMINDER for Paul (2026-10-20) - add a Mentat gather mode keyed only by ZIP code, or by candidate, instead of only by company
@@ -287,7 +287,7 @@
 - [[melange-systems--wave1-refresh-resilience-2026-10-20]] — 2026-10-19/20 wave-1 lane - DE-043 media-before-repository, weekly repository rollback, per-step weekly logs; landed a4a484595, PR #16 stacked on #15; overlapped the pipeline-health lane
 - [[scratch-2026-10-19-bad9b3--terrier-district-download-2026-10-21]] — State of the Terrier desktop private district-download feature and the 1.0.10 startup fix as of 2026-10-21, plus what remains before release
 - [[workspaces-scratch-2026-10-19-bad9b3--terrier-1-0-11-build-2026-10-21]] — How Terrier desktop 1.0.11 was built locally on 2026-10-21 (runtime bootstrap patched in place, not rebuilt), what is verified, and what still waits on Paul
-- [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]] — State of the Melange/Mentat/Terrier desktop rollout as of 2026-10-21 evening, where the artifacts live, and who owns what
+- [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]] — State of the Melange/Mentat/Terrier desktop rollout after the 2026-10-21 overnight session; artifact paths, PR, data releases, who owns what
 
 ## Ledger (generated from the Project Brain) (369)
 
