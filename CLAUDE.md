@@ -4,6 +4,10 @@
 > Plugin-level instructions (entity types, writing rules, tags, git workflow) are loaded automatically.
 > This file describes what is specific to THIS vault.
 
+## Mandatory desktop release contract
+
+Before building, packaging, distributing or promoting a Melange, Mentat or Terrier Windows release, read and enforce [[mandatory-desktop-release-signing]] (`concepts/mandatory-desktop-release-signing.md`). This is the user's explicit standing instruction of 2026-10-22: complete final-payload signatures and approved publisher `0EBC9AD04E929CDD731EDB5D278A4143BC3D3D30` are blocking release gates. Preserve valid vendor signatures, retain SHA-256 evidence for the exact distributed bytes, and never infer recipient policy acceptance from a certificate match. No private signing material belongs in the vault.
+
 ## Purpose
 
 Personal engineering brain: consolidates Claude Code memory files from all projects (systems, projects, decisions, working preferences) into one linked knowledge base.

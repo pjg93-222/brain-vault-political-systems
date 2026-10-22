@@ -55,12 +55,15 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "1df4b9e5d59c94f40126fc2589fb000affbd73e13b77c8b8f30fef0398d56f78"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
-updated_at: 2026-10-04
+updated_at: 2026-10-22
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
 # Mentat (FEC contributions intelligence)
+
+> [!danger] Mandatory desktop release gate — 2026-10-22
+> Before any Windows release or update, apply [[mandatory-desktop-release-signing]]. Every application-owned native binary must use the approved publisher certificate; verify the complete final installer payload and distributed SHA-256. Missing, invalid or unexpected signatures block publication.
 
 > Paul's FEC contributions-intelligence project: an R+API collection pipeline for a Paul-defined company roster, workbook generation, and a local Python console (Chart Studio, Graph, Insights, PAC evidence panes, district map). Distinct from Moneyball/Melange. Money and receipt-counting code is frozen by Paul's ruling.
 
@@ -230,6 +233,7 @@ Every note of this project by type, one line each; parts follow their parent.
 
 ### Related Concepts
 
+- [[mandatory-desktop-release-signing]] — Required certificate, complete native signature census, preserved vendor signatures and verified final bytes before release.
 - [[settled-findings-stay-settled]] - A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with the settlement.
 - [[exclude-on-contradiction-not-ambiguity]] - Brain D-040: exclude a row only when its own evidence contradicts the attribution; missing or ambiguous info is flagged, not excluded.
 - [[mentat-fec-accounting-methodology]] - Mentat's accounting standard (version 5, 2026-09-12): six steps from Define to Verify and report; original employee and corporate giving counted once, PAC outgoing separate; four accuracy measures, never one percentage.
