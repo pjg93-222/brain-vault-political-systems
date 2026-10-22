@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/agent-roster-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\agent-roster-2026-10-21.md", sha256: "29ce703cffccdf5299235ba9519b76959edf2f4a0033164645cc501f12f70fc5"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/agent-roster-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\agent-roster-2026-10-21.md", sha256: "4db5c7d1cc8bb486aab4a61ad00f0daaf9082e1c1ff3555fe4edd36ac664a463"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -45,6 +45,7 @@ Related: `fec-folder-debug-sweep-2026-10-13`, `wave1-refresh-resilience-2026-10-
 - Lesson: before opening any lane, run list_sessions (linked and all) and read audits/ handoffs for an overlapping lane. The P0 incident lane duplicated the E2E chain session until redirected to verification. E2E lane holds fec/tier_util.py, efficiency_layers.py, apply_fec_money_refresh.py, legacy_workbook_audit.py and chain_transaction.py.
 
 - 2026-10-22 00:5x CDT: public PR pjg93-222/Melange#42 MERGED by Paul instruction, merge commit 0f37ddece (ReleasePublish receipt AW; out-of-filter exception recorded, FILTER_REPORT Addendum 37).
+- 2026-10-22 15:20 CDT: E2E attempt 9 COMMITTED the chain (moneyball-pipeline-20261022T182349, 1326 files); LIVE = 535 vintage; audit_full 38 FAILED (23 new) open as P0-8; ledger commit b37d0a4e9.
 
 ## Possible Connections
 
