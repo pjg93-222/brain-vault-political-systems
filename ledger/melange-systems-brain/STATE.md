@@ -7,16 +7,16 @@ title: "melange-systems-brain STATE"
 date: "2026-10-22"
 status: ""
 superseded_by: ""
-brain_commit: "d614444a2c0b540033a803de1dc00167c51638d2"
-entry_sha256: "d8e5b189755c6d5e88cc287ab9313fbffbc0c4d8085f84f587a758d6ebe819e5"
+brain_commit: "3d517a92262944da4efbcd7440be8743bcccff21"
+entry_sha256: "f57e23c0db0061ea98ee7461a8156cbfae2973fca13af188aeff98f973168aa2"
 generated: true
-generated_sha256: "9d325d10c88658a3d91c99409cf540de8a6cb17378dd143c96a9a4e76400885d"
+generated_sha256: "9f1c6d9df3b5fde89b11f7af25edef30a90bfbf327a3868dd40ebaf628f601ca"
 aliases: ["melange-systems STATE"]
 ---
-> Generated from melange-systems-brain/STATE.md at d614444; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/STATE.md at 3d517a9; do not edit — change the brain via brainctl.
 
 # STATE — Melange Systems
-> Last verified: 2026-10-22 18:07
+> Last verified: 2026-10-22 18:46
 > Verified by: E2E lane 18:15 block as reported by the orchestrator (not re-observed); Terrier voter profile record as reported by the orchestrator brief (2026-10-21), not re-observed; everything else carried from the 2026-10-20 block and the agent roster lane record
 > NOTE: keep the stamp above a bare date-time on its own line (flush writes it). The parser defect is FIXED in Project Brain d9100b8 + 026ca95 (2026-10-20):
 > brainctl and brainlink `parse_state` accept a leading `YYYY-MM-DD[ HH:MM[:SS]]` prefix with a trailing annotation, and boot/status name which case failed
