@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "3b14285373d9f386ff77e4b866b9603a31ad5bf5dbcac1d3cd141c3b7e951ece"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "7872467648d96b5963d0d16263c0b661df347ab8edfac2e350d62bdf5eac7c95"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -106,8 +106,13 @@ Published as pjg93-222/Melange#22 (merge f39ca5a40). That merge made PR #20, fro
 - Rank attribution (`audits\e2e_20261020\RANK_DELTA_REPORT.md`, D-288): replay EXACT 535/535; 460 movers = 349 inflow + 109 roster + 2 tool S1 rows (Bilirakis, Van Orden, H.R.4167 cosponsor joins 2026-10-13) that the overseer adjudicated as inflow, UNEXPLAINED 0 (Paul may overrule). Money and competitiveness attributed, zero movers. `attribute.py` `wb_extract` had hard-coded 533 rows (456 false S1 in the as-specified run, which is invalid); fixed, selftest T10 (DE-079). `audit_full.py` still has latent 533 pins (`:1454`).
 - Disk (D-289): Paul's 12:00 'Clear the space necessary'; this lane freed about 8.4 GB ([private — see knowledge vault] duplicate 2 GB, rolled-back chain_txn_archive 1.38 GB, 31 old Melange scratch folders under Temp\claude about 5 GB). `attrib +U` on audits/legfix5 freed nothing. This is the one exception to never deleting `%TEMP%\claude` scratchpads, and it covered only those folders.
 - Open for Paul (handoff, answer by number): 1 keep/restore 535; 2 Young Kim D-031 seat; 3 Openness promotion; 4 data-loss re-baseline; 5 classifier quota option a/b/c; 6 DE-078 approved/ in the transaction; 7 disk discipline; 8 longform re-bind; then the carried items. Attempt 10 only after rulings.
-- Kernel `run_tests.py` and standalone `audit_full.py` on the live vintage: results pending (append here).
+- Kernel `run_tests.py` and standalone `audit_full.py` on the live vintage: results in the 2026-10-22 evening section below.
 - Handoff and brain: `Melange-Handoff-2026-10-22.md` (Where things stand, Rank delta summary, Daily job); STATE.md 'E2E LANE STATUS 2026-10-22 18:15'; brain commit d614444.
+
+**2026-10-22 evening update (kernel and audit on the live 535 vintage; live main `f9a3ec6da`):**
+- Kernel `fec/tests/run_tests.py`: 570 passed, 16 FAILED, 133 min wall, peak disk +18.4 GB. Classified: `test_descriptive_profiles` 4 expected at 535; `test_kernel_registration_census` 2 = this lane's new test files unregistered, fixed by `f9a3ec6da` (33 suites registered, passes alone); `test_audit_completion_20260716` 2 = the 535 board itself (passes on the 533 snapshot, fails identically with pre-F1 `tier_util`; pins Young Kim Tier 1 #11 and legxfactor slots; re-pin only with Paul's ratification, D-031); 535-vintage data 4 (`test_rank_honors_ladder_g`, `test_member_longform_acquisition_queue`, `test_member_longform_discovery`, `test_member_narratives_v2_repair`); pre-existing pins 4 (`test_staffer_name_standard`, `test_b5_onc_successor`, `test_b5_o_coverage_recovery`, `test_audit_legislation_decay_propagation`); runner-order flakes that pass alone (`test_press_backlog`, `test_press_official_dated_listings`, `test_press_request_deadlines`); undetermined `test_policy_repairs_20260718` and `test_refresh_tick` (still running, very slow).
+- Standalone `fec/audit/audit_full.py` after `14f26ce2f`: 547 passed, 31 FAILED. Six 535-roster checks now PASS with `!!` tolerance lines. 12 gated, 19 new (longform artifact 47 d, Big Five panel labels, audio layers 833 dropped, personal-texture precision, audio manifest hash, Young Kim seats, 6 A2b `repo.*` and 7 A2b `mdata.*` manifest changes, A2b `local.billstatus` gated).
+- Verdict: PROVEN is chain committed end to end, rank delta attributed with exact replay, desk serves 535. NOT PROVEN is a clean PASS receipt and kernel/audit green. Nothing else in the live tree changed; LIVE stays the committed 535 vintage; the 533 restore point stands.
 
 Related: `pipeline-health-lane-2026-10-19`, `wave1-refresh-resilience-2026-10-20`.
 
