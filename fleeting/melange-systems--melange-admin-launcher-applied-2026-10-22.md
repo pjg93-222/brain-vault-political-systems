@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "d34419503e68744fb38949247770ebced30eadf1008cac00df6718181ed49fc1"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "bcff614975a0b4e1628a25e19f4c751218bc202a6b4d4066d8f478ffdf05c660"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -29,12 +29,17 @@ tags: ["type/fleeting", "status/raw"]
 **How to apply:**
 - Only ever run Install-AdminLauncher.ps1 from the main checkout. Re-run it there whenever the shortcuts look stale (read their Arguments with WScript.Shell).
 - Since 2026-10-22 the installer itself throws when run from a `\.claude\worktrees\` path (`-Uninstall` is exempt). Local main f45c49c55, test `ops/desktop/server/test_install_admin_launcher.py`, public PR pjg93-222/Melange#45 (publish commit 07c1ab7ca, receipt AX). The PR was left unmerged, and CodeRabbit had no actionable comments.
-- The Apps page shows "Docker is not running" until the local stack is set up. That needs Docker Desktop and an `ops\.env`, which is missing and has no template.
-- The images for `ops\.env` can be the v2026.10.19.1 digests.json values. A KEY=value secret file is still needed for Terrier.
-- The data mounts are not ready:
-  - The Melange desk needs an invited build at `outputs\invited_build`, which does not exist.
-  - Mentat needs a copy of its data (none exists; the live `C:\Users\pgoff\Mentat\mentat` could be mounted read-only instead).
-  - Terrier co-05 mounts the whole `.local` root, which exposes the or-05/ct-01 stores, `accounts.sqlite3` and `.secret` to the container (read-only). The mount choice is Paul's.
+- UPDATE 2026-10-22 ~03:10 CDT: the local stack is wired up.
+  - Docker Desktop is up. `ops\.env` exists (gitignored, no secret) with the v2026.10.19.1 digests, verified as the newest passing release.
+  - The Terrier key lives in `AppData\Local\MelangeLocal\secrets\terrier-local.env` (pgoff-only ACL).
+  - All three data dirs are EMPTY placeholders in `AppData\Local\MelangeLocal\placeholder\`. Six `melange-local` containers have been created.
+  - Desk is running and healthy (/healthz 200). Mentat crash-loops on empty data (missing `inputs/fec_receipt_rules.json`), so it was stopped. Terrier was never started.
+  - The Apps handler lists all three correctly.
+  - The real-data mounts are decisions D1-D4, waiting on Paul (side-session-notes `local-stack-env-2026-10-22.md`). The recommendations:
+    - an invited build into MelangeLocal\data;
+    - a Mentat snapshot-lite copy (inputs+forecast+app/data, about 0.47 GB; the live tree is 131.7 GB);
+    - Terrier stays off.
+  - Paul declined Edge screen access. The auto-mode classifier blocks scripted page actions that use a stub audit.
 
 Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-20`.
 
