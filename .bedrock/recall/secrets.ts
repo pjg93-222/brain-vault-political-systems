@@ -99,3 +99,22 @@ export function scanSecrets(text: string): SecretHit[] {
   }
   return hits;
 }
+
+// ----------------------------------------------------------------------------------------------- private patterns
+// Capture-time redaction. The vault is public; Paul's private items (university mail, tunnel and pod endpoints, a vendor
+// name, credential-file names, ...) must not be copied into fleeting/. The pattern list holds those private values, so it
+// lives in the git-ignored .bedrock/recall/private-patterns.json: {"literal": [[text, replacement]], "regex": [[pattern,
+// replacement]]}, applied case-insensitively, literals first, in file order (the same rules and order as the history
+// scrub's replacements.txt). The hook redacts memory text before writing a fleeting note and skips a memory whose file name
+// or `name:` matches a pattern (a note about a private subject); the memory file itself is never touched.
+export type Redactor = { text: (s: string) => string; blocks: (s: string) => boolean };
+
+export function compileRedactor(cfg: { literal?: [string, string][]; regex?: [string, string][] }): Redactor {
+  const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const rules: [RegExp, string][] = [
+    ...(cfg.literal ?? []).map(([o, n]) => [new RegExp(esc(o), "gi"), n] as [RegExp, string]),
+    ...(cfg.regex ?? []).map(([p, n]) => [new RegExp(p, "gi"), n] as [RegExp, string]),
+  ];
+  const text = (s: string) => rules.reduce((t, [re, n]) => t.replace(re, () => n), s);
+  return { text, blocks: (s) => text(s) !== s };
+}

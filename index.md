@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-637 notes.
+635 notes.
 
 ## Actors (49)
 
@@ -266,7 +266,7 @@
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 - [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
 
-## Fleeting (21)
+## Fleeting (19)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--always-read-coderabbit-2026-10-18]] — Paul 2026-10-18 - on every PR, always read CodeRabbit's review and act on valid findings
@@ -276,13 +276,11 @@
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--desktop-supervisor-restart-procedure-2026-10-20]] — How to restart the desktop access login supervisor (Start-LanPublisherAtLogin.ps1) without a long outage; WMI and default-priority one-shot tasks fail
 - [[melange-systems--e2e-proof-lane-2026-10-20]] — E2E proof lane 2026-10-20/22: attempts 1-8, none proven; attempt 8 (stub classifier) reached CHAIN[77] and died on a OneDrive read-only rmtree, fixed in 064190e9f; attempt 9 blocked until C: free >= 33 GB; press/letters unlanded
-- [[melange-systems--fec-folder-debug-sweep-2026-10-13]] — fec line-by-line debug sweep CLOSED 2026-10-20; all folders committed, public PR #14 merged 5f68fa2e5; research local-only; Paul decisions list open
 - [[melange-systems--melange-admin-launcher-applied-2026-10-22]] — Melange Admin shortcuts re-pointed to the main checkout 2026-10-22 (were on a dead worktree without the Apps section); local compose stack for the Apps page still NOT configured
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
 - [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]] — REMINDER for Paul (2026-10-20) - add a Mentat gather mode keyed only by ZIP code, or by candidate, instead of only by company
 - [[melange-systems--no-permission-prompts-pr-first-2026-10-19]] — Paul 2026-10-19: stop asking permission; execute.
 - [[melange-systems--pipeline-health-lane-2026-10-19]] — 2026-10-19 pipeline-health lane - 6 root-cause fixes on fix/pipeline-health-20261019, PR #15, D-251/D-252; landing on live main waits for the daily run to exit
-- [[melange-systems--[private — see knowledge vault]-provenance-lane-2026-10-20]] — [private — see knowledge vault] voter-file provenance research (OR-05/CO-05 exports) - report location, key findings, scratchpad PII copies kept by Paul
 - [[melange-systems--terrier-voter-profile-lane-2026-10-21]] — Terrier 'Supporters and persuadables' voter profile (inverse of 'Crank'): Geo PR #13 on feat/coalition-profile off main; thresholds pending Paul; client's Happy Valley streets are mostly OR-03
 - [[melange-systems--user-name-paul]] — The user's name is PAUL Goff - the repo's git config said "Patrick Goff" (now corrected); never infer his name from config fields
 - [[melange-systems--wave1-refresh-resilience-2026-10-20]] — 2026-10-19/20 wave-1 lane - DE-043 media-before-repository, weekly repository rollback, per-step weekly logs; landed a4a484595, PR #16 stacked on #15; overlapped the pipeline-health lane

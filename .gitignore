@@ -25,3 +25,5 @@ Thumbs.db
 # Obsidian blank stubs created by accidental "new canvas/base" clicks
 Untitled*.canvas
 Untitled*.base
+# Private capture patterns (private values: stay local, never committed; see secrets.ts redactor)
+.bedrock/recall/private-patterns.json
