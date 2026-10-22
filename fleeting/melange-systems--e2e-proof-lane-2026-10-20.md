@@ -10,15 +10,15 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "a22e5e070f815846e49f850f021666a4485f7d499ed4a984b7195581640127a0"}
-updated_at: 2026-10-21
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "62aab35610216e9d663574d86cfd03165cb5347ae866aad73e38e48e1eb638ae"}
+updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
 
 # E2e proof lane (2026-10-20)
 
-> E2E proof lane 2026-10-20/21: attempts 1-7, none proven; roster 535, F1/R1/R2 and launch preflight landed on live main (ad1b23621); attempt 7 stopped on the classifier weekly quota; relaunch after reset (inferred 10-22 18:00 CDT); press/letters unlanded
+> E2E proof lane 2026-10-20/22: attempts 1-8, none proven; attempt 8 (stub classifier) reached CHAIN[77] and died on a OneDrive read-only rmtree, fixed in 064190e9f; attempt 9 blocked until C: free >= 33 GB; press/letters unlanded
 
 ## Content
 
@@ -92,6 +92,14 @@ Published as pjg93-222/Melange#22 (merge f39ca5a40). That merge made PR #20, fro
   - tell the two holding sessions chain done;
   - register MelangeRefreshTick only after media passes too.
 
+**2026-10-22 update (attempt 8; times CDT):**
+- Paul wrote "Get it done" at 00:06 with the classifier CLI still at 429. His earlier explicit answer had been to relaunch after the reset; the lane then used the stub shape (`MELANGE_CLASSIFIER_COMMAND=<python.exe>`, `--admission-limit 1`) and read "Get it done" as covering it. Recorded as D-285 with reversal "quota restored; next run uses the real classifier".
+- Attempt 8: pid 88400, launched 00:12:30, head 881c642dd, one-run `MELANGE_CHAIN_TXN_MIN_FREE_GB=28`, run dir `audits\congress_pipeline\20261022T051230Z`. Congress steps PASS (25 include reused, 1 deferred `119:hr:8839`, 0 classifier calls). Chain ran 65 of 68 slice steps in 97 min (`compute_pillars` 535, `efficiency_layers` 532, so R1 worked). Failed at CHAIN[77] `sync_live_dashboard_alias.py` -> `build_clean_workspace.py:619` `people_days()` rmtree `PermissionError` on the OneDrive read-only `staffer_live\approved\data\people-days`. Chain transaction rolled back clean (restored 92, removed 13, 0 unrestorable); the three rank artifacts are still the 10-11 versions. D-286, DE-078.
+- Fix `064190e9f` on live main (local only): `remove_tree` chmod-and-retry in `fec/surfaces/build_clean_workspace.py`, test in `fec/tests/surfaces/test_clean_workspace_loading.py` (9 passed).
+- Leftover outside the transaction: `fec\surfaces\staffer_live\approved\` holds attempt 8's partial 535 build while `clean_workspace_current()` says current. Attempt 9's CHAIN[77] rewrites it. Not yet exercised after CHAIN[77]: `make_email_package.py`, `audit_source_to_dashboard.py` with `check_alias=True`, `audit_full.py`.
+- Disk block: C: 32.7 GB at launch, 15.7 GB at 02:32, falling about 0.18 GB/min, driven by `Documents\Codex\2026-10-21\hey-x20\work` (19.6 GB) and `~/.codex/thread_history_1.sqlite` (1.5 GB); about 10 GB unlocated. Nothing safely deletable found; the Codex lane is Paul's. Attempt 9 waits for free >= 33 GB (16 h waiter armed); launcher is `launch_attempt9.ps1` in e2e-prep; real classifier if the CLI answers, else the stub. Peer sessions were released and told.
+- New items for Paul's list: Codex hey-x20 disk use; `staffer_live\approved` outside the chain transaction; `make_member_desk.py:2627-2628` maps None invested to 0 for the 3 arrivals (display-only, possible no-neutral-default conflict). The handoff has the full list.
+
 Related: `pipeline-health-lane-2026-10-19`, `wave1-refresh-resilience-2026-10-20`.
 
 ## Possible Connections
@@ -100,4 +108,4 @@ Related: `pipeline-health-lane-2026-10-19`, `wave1-refresh-resilience-2026-10-20
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-21 from the Claude Code memory file `e2e-proof-lane-2026-10-20.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-22 from the Claude Code memory file `e2e-proof-lane-2026-10-20.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
