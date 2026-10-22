@@ -87,12 +87,15 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_member_desk_integration.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_member_desk_integration.md", sha256: "77b0312aa6bcd56f96361ddcdb9e881aafc90eae83297e75efeadeccfda060e2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
-updated_at: 2026-10-17
+updated_at: 2026-10-22
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
 # Melange Systems (Moneyball CU-influence model)
+
+> [!danger] Mandatory desktop release gate — 2026-10-22
+> Before any Windows release or update, apply [[mandatory-desktop-release-signing]]. Every application-owned native binary must use the approved publisher certificate; verify the complete final installer payload and distributed SHA-256. Missing, invalid or unexpected signatures block publication.
 
 > Moneyball (visible name Melange) is a credit-union legislative-influence model and dashboard over the 533 members of Congress: one deliverable, `Melange Systems/Moneyball.html`, generated from the Blended workbook by a Python pipeline. Alias "Draft Systems" (predecessor root): the project began in Draft Systems and its code root there is the actor [[draft-systems-r-pipeline]].
 
@@ -355,6 +358,7 @@ Every note of this project by type, one line each; parts follow their parent.
 
 ### Related Concepts
 
+- [[mandatory-desktop-release-signing]] — Required certificate, complete native signature census, preserved vendor signatures and verified final bytes before release.
 - [[influence-vs-alignment-axes]] - Modeling principle: rank = INFLUENCE, per-category stance = ALIGNMENT; two separate axes, underdogs surface in a separate efficiency view.
 - [[fail-closed-gates]] - When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
 - [[live-tree-patch-discipline]] - Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by D-233, which normalised CRLF-only differences); applying needs Paul's go.

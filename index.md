@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-637 notes.
+638 notes.
 
 ## Actors (49)
 
@@ -56,7 +56,7 @@
 - [[sentinel-collectors]] — Melange press/hearing collection and sentinel-to-workbook bill ingestion layer (Codex-built, Claude-finished) with system-manifest regeneration and self-falsifying audit sentinels; merged to main 313eaaad1 for the ingestion part, press...
 - [[staffer-live-sidecar]] — The live staffer-network graph surface: fec/surfaces/staffer_live (UI) plus staffer_live_server.py and sibling modules, a people-only staffer graph with automatic duplicate-person consolidation, current-coworker cost-1 routing and a...
 
-## Concepts (25)
+## Concepts (26)
 
 - [[behavior-qualified-recognition]] — Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
 - [[boot-protocol-evaluation-framework]] — The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
@@ -70,6 +70,7 @@
 - [[gold-set-validation]] — A measure earns trust by scoring against a fixed, independently labelled, owner-ruled gold set held out from the pipeline under test.
 - [[influence-vs-alignment-axes]] — Moneyball modeling principle (2026-06-29, cost many rounds): rank measures INFLUENCE while per-category stance measures ALIGNMENT; keep them as separate axes so active opponents can rank on influence while the stance layer and optimizer...
 - [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by...
+- [[mandatory-desktop-release-signing]] — Mandatory release gate for Melange, Mentat and Terrier: approved publisher signatures, complete native payload verification, preserved vendor signatures and exact distributed-byte evidence before publication.
 - [[mentat-fec-accounting-methodology]] — Mentat's accounting standard (version 5, 2026-09-12): six steps from Define to Verify and report; original employee and corporate giving counted once, PAC outgoing separate; four accuracy measures, never one percentage.
 - [[pac-cash-proportional-attribution]] — Mentat's rule for modeling company-funded PAC spending (2026-09-08): each payment takes the company's share of labeled cash just before it, transfers move balances instead of creating gifts, unverifiable inputs withhold it.
 - [[say-do-gate]] — A Champion or Defender cell in the category-stance matrix stands only if the stated stance is backed by a recorded action there: an authored or original-cosponsored bill (Path A) or a CU-aligned final-passage vote (Path V); otherwise Ally.

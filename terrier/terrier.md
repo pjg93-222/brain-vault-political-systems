@@ -108,12 +108,15 @@ sources:
   - {url: "file:///C:/Users/pgoff/Documents/Terrier/outputs/cu-geography-v3/ACTUAL_DATA_HANDOFF_2026-10-01.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Terrier\\outputs\\cu-geography-v3\\ACTUAL_DATA_HANDOFF_2026-10-01.md", sha256: "a7eb4f4c12755a767f1f7e5346f85cd585f81a6a550cc527acdf92c078099383"}
   - {url: "file:///C:/Users/pgoff/Documents/Terrier/outputs/cu-geography-v3/DATA_AUDIT_2026-10-01.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Terrier\\outputs\\cu-geography-v3\\DATA_AUDIT_2026-10-01.md", sha256: "277a8f024691122e8f52eafd4df7e7ac0ca8b3115ad748b13a7a8c75334d3872"}
   - {url: "file:///C:/Users/pgoff/Documents/Terrier/outputs/cu-geography/CONVERSATION_REQUESTS.md", type: "markdown", synced_at: "2026-10-06", path: "C:\\Users\\pgoff\\Documents\\Terrier\\outputs\\cu-geography\\CONVERSATION_REQUESTS.md", sha256: "e0ff37ee922a7456073e514bf21495b0fb9bf1b43b1c63e58b22d79bce1d4f4b"}
-updated_at: 2026-10-10
+updated_at: 2026-10-22
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
 
 # Terrier
+
+> [!danger] Mandatory desktop release gate — 2026-10-22
+> Enforce [[mandatory-desktop-release-signing]] before release. Missing, invalid or unexpected signatures anywhere in the final installer block publication.
 
 > Terrier is the renamed CU Geography voter-canvass and walk-list app: a map, people, contact, criteria, source and walk-list workspace over a vendor voter file scored under Paul's four groups. Live for Colorado CD-05; being extended to Oregon OR-05 and Connecticut CT-01 as a flexible, config-first system.
 
@@ -313,6 +316,10 @@ Every note of this project by type, one line each. All of them sit in the `terri
 | Discussion | Relation |
 |---|---|
 | [[2026-10-06-terrier-rulings]] | Paul's three rulings of 2026-10-06 (FLEXIBLE config-first, vault-only brain, per-district primary/general toggle), his O-1..O-13 answers, and his rulings of 2026-10-08/09 (nothing withheld, Needs a push, the Untapped map and one-click walk plan), then the lead's 2026-10-09 defaults, the two Untapped questions Paul answered yes to that afternoon, and how the chance of voting is calibrated. |
+
+### Related Concepts
+
+- [[mandatory-desktop-release-signing]] — Blocking signature and final-byte release checks.
 
 ### Related Projects
 
