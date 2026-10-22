@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "bcff614975a0b4e1628a25e19f4c751218bc202a6b4d4066d8f478ffdf05c660"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "89a6eb45e286166f38e3434627cfc127d0ef017ff06fc24a543c3a4326035728"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -40,6 +40,11 @@ tags: ["type/fleeting", "status/raw"]
     - a Mentat snapshot-lite copy (inputs+forecast+app/data, about 0.47 GB; the live tree is 131.7 GB);
     - Terrier stays off.
   - Paul declined Edge screen access. The auto-mode classifier blocks scripted page actions that use a stub audit.
+- APPLIED 2026-10-22 ~11:50: Paul ruled D1 invited desk, D2 option A, D3 Terrier off, D4 desk+Mentat running.
+  - Desk is mounted from `AppData\Local\MelangeLocal\data\melange-invited` (116 MB, governance pending).
+  - Mentat is mounted from `...\data\mentat-20261022` (inputs+forecast+app/data, 451 MB; state and .cache empty).
+  - Both are healthy, /healthz 200 on 18080/18802. Terrier remains created and stopped.
+  - C: free was only about 2.5 GB at 11:50, down from 19.5 GB at 08:00. The cause is not ours and was not investigated.
 
 Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-20`.
 
