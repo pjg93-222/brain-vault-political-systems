@@ -10,7 +10,7 @@ promoted_to: ""
 project: "workspaces-scratch-2026-10-22-ddfeb0"
 memory_type: "feedback"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-598863e3-c9bb-4c63-b007-0dd957c20364-bbac54bf-6633-4cf3-b205-e25dba48458c-scratch-2026-10-22-ddfeb0/memory/always-sign-with-release-certificate.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-598863e3-c9bb-4c63-b007-0dd957c20364-bbac54bf-6633-4cf3-b205-e25dba48458c-scratch-2026-10-22-ddfeb0\\memory\\always-sign-with-release-certificate.md", sha256: "26b4a27d427093618b6cebb887946ef4e41fa2d3af6817bee451f21a461da241"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-598863e3-c9bb-4c63-b007-0dd957c20364-bbac54bf-6633-4cf3-b205-e25dba48458c-scratch-2026-10-22-ddfeb0/memory/always-sign-with-release-certificate.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-598863e3-c9bb-4c63-b007-0dd957c20364-bbac54bf-6633-4cf3-b205-e25dba48458c-scratch-2026-10-22-ddfeb0\\memory\\always-sign-with-release-certificate.md", sha256: "dc777ac65fc5d3600eedb599bda56bcf94902e09175943a8834d377e895b0e13"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -26,7 +26,7 @@ User (2026-10-22, Terrier area-street work) said: "You need to add the signing c
 
 **Why:** the user treats this certificate as the one allowed signing identity; an SSH-key signature alone was not accepted.
 
-**How to apply:** sign every commit (and release artifact) with this certificate. Git needs an X.509 helper (smimesign) for it; as of 2026-10-22 none was installed and global git signed with SSH key id_ed25519 via ~/.ssh/allowed_signers as an interim. Check `git config --global gpg.format` before committing. GitHub will not show self-signed X.509 commits as Verified.
+**How to apply:** sign every commit (and release artifact) with this certificate. Set up 2026-10-22: global git `gpg.format=x509`, `user.signingkey=<thumbprint>`, `commit.gpgsign=true`, `gpg.x509.program=C:/Users/pgoff/tools/smimesign/smimesign-git` (sh wrapper calling smimesign.exe v0.2.0-rc1 with `--include-certs=-1`; without it the self-signed cert is omitted and verify fails "no certificate found"). Check `git log --format=%G?` shows G before reporting commits as signed. GitHub will not show self-signed X.509 commits as Verified.
 
 ## Possible Connections
 
