@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-voter-profile-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-voter-profile-lane-2026-10-21.md", sha256: "c65b84ebd3595855b667e269e7bff31b27ef19e9ce8492c7dd7576111da813f1"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/terrier-voter-profile-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\terrier-voter-profile-lane-2026-10-21.md", sha256: "180fbf8155094fa09bcc3bb99dc468a8016352cac05f1976b642a3ec688ffc65"}
 updated_at: 2026-10-21
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -28,7 +28,7 @@ Facts established: "Crank" is NOT a Terrier profile (zero hits in Geo repo, vaul
 
 Built: Geo PR #13 https://github.com/[private — see knowledge vault]/pull/13, branch feat/coalition-profile off main ea0c826 (shipped lineage per Paul's 10-21 ruling), worktree C:\Users\pgoff\Documents\Terrier\worktrees\coalition-profile, 8 commits 253a5d2..68a9299. `profile` query key (all | coalition) on list/plan/trim/save; rule in tools/profiles.py, constants tools/field_labels.py:105-107 (SUPPORT_MIN 2/3, PERSUADE_MIN 1/3, PERSUADE_MAX 2/3, placeholders). Frontend "Voter profile" select. Suite: same 40 pre-existing failures as main on a clean worktree (missing gitignored co-cd005 zip, pyarrow, desktop principal DB, golden digest red on main). Proof + per-group CSVs (PII, outside git): C:\Users\pgoff\Documents\Terrier\outputs\walk-lists-or05-happy-valley-20261021\.
 
-OPEN for Paul: thresholds; keep all U or only s>=1/3; OR-03 voter file purchase (only 4 of 59 names are in the OR-05 store; Census puts the rest in CD-3); CSV matcher ignores city (pre-existing). CodeRabbit threads on PR #13 must be read and resolved before "done". Live district servers 8767/8775/8777 had no listener during the 10-21 evening run (not touched).
+OPEN for Paul: thresholds; keep all U or only s>=1/3; OR-03 voter file purchase (only 4 of 59 names are in the OR-05 store; Census puts the rest in CD-3); CSV matcher ignores city (pre-existing). CodeRabbit: 1 thread fixed+resolved (fd23f87); CI green; mergeable; unmerged pending Paul. Live district servers 8767/8775/8777 had no listener during the 10-21 evening run (not touched).
 
 **Why:** the client's targeting ask is a universe filter, orthogonal to street ranking; coverage, not the profile, limits the Happy Valley result.
 **How to apply:** do not merge PR #13 until Paul rules thresholds; never source OR-03 data without his go; cite the proof folder for "it works". Related: `terrier-multidistrict-lane-2026-10-06`, `desktop-no-password-lane-2026-10-21`, `always-read-coderabbit-2026-10-18`.
