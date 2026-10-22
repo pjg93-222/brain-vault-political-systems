@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "62aab35610216e9d663574d86cfd03165cb5347ae866aad73e38e48e1eb638ae"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "3b14285373d9f386ff77e4b866b9603a31ad5bf5dbcac1d3cd141c3b7e951ece"}
 updated_at: 2026-10-22
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -18,7 +18,7 @@ tags: ["type/fleeting", "status/raw"]
 
 # E2e proof lane (2026-10-20)
 
-> E2E proof lane 2026-10-20/22: attempts 1-8, none proven; attempt 8 (stub classifier) reached CHAIN[77] and died on a OneDrive read-only rmtree, fixed in 064190e9f; attempt 9 blocked until C: free >= 33 GB; press/letters unlanded
+> E2E proof lane 2026-10-20/22: attempts 1-8 failed and rolled back; attempt 9 (10-22, stub classifier) COMMITTED the chain at 535 and the rank delta is attributed (460 movers, UNEXPLAINED 0), but audit_full failed 38 checks so no PASS receipt; LIVE kept on the 535 vintage pending Paul; press/letters
 
 ## Content
 
@@ -29,7 +29,7 @@ On 2026-10-20 Paul approved a plan with three goals:
 
 The plans are `C:\Users\pgoff\.claude\plans\go-into-melange-systems-staged-sutton.md`, `system-reminder-linked-sessions-now-sequential-unicorn.md` and `c-users-pgoff-onedrive-desktop-melange-stateful-wand.md` (attempt 6 onward). Brain records: D-253..D-266, D-269..D-273, DE-071, and the 2026-10-21 entries D-275..D-284 (roster 535, competitiveness, social corpus, F1, R1, R2, E3, set-aside, attempt 6, attempt 7) and DE-073..DE-077 (lost sessions, circular primacy factors, Codex desk copy, disk floors, classifier quota). Desktop handoff: `C:\Users\pgoff\OneDrive\Desktop\Melange-Handoff-2026-10-22.md`.
 
-**Status: NOT proven.** `ranks_python.json`, `dashboard_data.json` and `member_desk_bundle.json` are still the 2026-10-11 versions; every failed run rolled back.
+**Status as of 2026-10-20/21: NOT proven (superseded by the 2026-10-22 18:15 section at the end).** `ranks_python.json`, `dashboard_data.json` and `member_desk_bundle.json` are still the 2026-10-11 versions; every failed run rolled back.
 
 **Landed on live main by fast-forward** (8a641d9ab, then 77af80941):
 - GovInfo USCODE statute fallback. House has been down since about 10-04; in the canary, deferrals went from 88% to 0%.
@@ -99,6 +99,15 @@ Published as pjg93-222/Melange#22 (merge f39ca5a40). That merge made PR #20, fro
 - Leftover outside the transaction: `fec\surfaces\staffer_live\approved\` holds attempt 8's partial 535 build while `clean_workspace_current()` says current. Attempt 9's CHAIN[77] rewrites it. Not yet exercised after CHAIN[77]: `make_email_package.py`, `audit_source_to_dashboard.py` with `check_alias=True`, `audit_full.py`.
 - Disk block: C: 32.7 GB at launch, 15.7 GB at 02:32, falling about 0.18 GB/min, driven by `Documents\Codex\2026-10-21\hey-x20\work` (19.6 GB) and `~/.codex/thread_history_1.sqlite` (1.5 GB); about 10 GB unlocated. Nothing safely deletable found; the Codex lane is Paul's. Attempt 9 waits for free >= 33 GB (16 h waiter armed); launcher is `launch_attempt9.ps1` in e2e-prep; real classifier if the CLI answers, else the stub. Peer sessions were released and told.
 - New items for Paul's list: Codex hey-x20 disk use; `staffer_live\approved` outside the chain transaction; `make_member_desk.py:2627-2628` maps None invested to 0 for the 3 arrivals (display-only, possible no-neutral-default conflict). The handoff has the full list.
+
+**2026-10-22 18:15 update (attempt 9; times CDT):**
+- Attempt 9: pid 35200, launched 13:04:57, head f45c49c55, stub classifier + `--admission-limit 1`, one-run `MELANGE_CHAIN_TXN_MIN_FREE_GB=22`, run dir `audits\congress_pipeline\20261022T180457Z`. Congress steps PASS (admissions 25/140, 0 calls). The chain ran every step and the transaction COMMITTED (`moneyball-pipeline-20261022T182349`, 1326 files). Only the terminal `audit_full.py` failed: 540 passed, 38 FAILED (9 gated, 6 expected at 535, 23 new), so the receipt says FAILED, with no PASS receipt and no `rank_changes.json`. D-287.
+- LIVE is the 535 vintage (`ranks_python.json` sha d1717098..., `dashboard_data.json` 3c5561e5..., `member_desk_bundle.json` a56e3380...; `staffer_live\approved` consistent). Kept there pending Paul. 533 restore point: `C:\melange-data\chain_txn\20261022T182358771683Z-pipeline-20261022T182349`.
+- Rank attribution (`audits\e2e_20261020\RANK_DELTA_REPORT.md`, D-288): replay EXACT 535/535; 460 movers = 349 inflow + 109 roster + 2 tool S1 rows (Bilirakis, Van Orden, H.R.4167 cosponsor joins 2026-10-13) that the overseer adjudicated as inflow, UNEXPLAINED 0 (Paul may overrule). Money and competitiveness attributed, zero movers. `attribute.py` `wb_extract` had hard-coded 533 rows (456 false S1 in the as-specified run, which is invalid); fixed, selftest T10 (DE-079). `audit_full.py` still has latent 533 pins (`:1454`).
+- Disk (D-289): Paul's 12:00 'Clear the space necessary'; this lane freed about 8.4 GB ([private — see knowledge vault] duplicate 2 GB, rolled-back chain_txn_archive 1.38 GB, 31 old Melange scratch folders under Temp\claude about 5 GB). `attrib +U` on audits/legfix5 freed nothing. This is the one exception to never deleting `%TEMP%\claude` scratchpads, and it covered only those folders.
+- Open for Paul (handoff, answer by number): 1 keep/restore 535; 2 Young Kim D-031 seat; 3 Openness promotion; 4 data-loss re-baseline; 5 classifier quota option a/b/c; 6 DE-078 approved/ in the transaction; 7 disk discipline; 8 longform re-bind; then the carried items. Attempt 10 only after rulings.
+- Kernel `run_tests.py` and standalone `audit_full.py` on the live vintage: results pending (append here).
+- Handoff and brain: `Melange-Handoff-2026-10-22.md` (Where things stand, Rank delta summary, Daily job); STATE.md 'E2E LANE STATUS 2026-10-22 18:15'; brain commit d614444.
 
 Related: `pipeline-health-lane-2026-10-19`, `wave1-refresh-resilience-2026-10-20`.
 
