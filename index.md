@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-634 notes.
+637 notes.
 
 ## Actors (49)
 
@@ -275,7 +275,7 @@
 - [[melange-systems--desktop-no-password-lane-2026-10-21]] — 10-21 Paul asked to drop the Terrier password and make Melange/Mentat a one-time verification; Melange+Mentat shipped as desktop 1.0.10, Terrier HELD on a lineage split Paul must rule on
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--desktop-supervisor-restart-procedure-2026-10-20]] — How to restart the desktop access login supervisor (Start-LanPublisherAtLogin.ps1) without a long outage; WMI and default-priority one-shot tasks fail
-- [[melange-systems--e2e-proof-lane-2026-10-20]] — E2E proof lane 2026-10-20/21: attempts 1-7, none proven; roster 535, F1/R1/R2 and launch preflight landed on live main (ad1b23621); attempt 7 stopped on the classifier weekly quota; relaunch after reset (inferred 10-22 18:00 CDT)...
+- [[melange-systems--e2e-proof-lane-2026-10-20]] — E2E proof lane 2026-10-20/22: attempts 1-8, none proven; attempt 8 (stub classifier) reached CHAIN[77] and died on a OneDrive read-only rmtree, fixed in 064190e9f; attempt 9 blocked until C: free >= 33 GB; press/letters unlanded
 - [[melange-systems--fec-folder-debug-sweep-2026-10-13]] — fec line-by-line debug sweep CLOSED 2026-10-20; all folders committed, public PR #14 merged 5f68fa2e5; research local-only; Paul decisions list open
 - [[melange-systems--melange-admin-launcher-applied-2026-10-22]] — Melange Admin shortcuts re-pointed to the main checkout 2026-10-22 (were on a dead worktree without the Apps section); local compose stack for the Apps page still NOT configured
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
@@ -290,9 +290,9 @@
 - [[workspaces-scratch-2026-10-19-bad9b3--terrier-1-0-11-build-2026-10-21]] — How Terrier desktop 1.0.11 was built locally on 2026-10-21 (runtime bootstrap patched in place, not rebuilt), what is verified, and what still waits on Paul
 - [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]] — State of the Melange/Mentat/Terrier desktop rollout after the 2026-10-21 overnight session; artifact paths, PR, data releases, who owns what
 
-## Ledger (generated from the Project Brain) (369)
+## Ledger (generated from the Project Brain) (372)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 362 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 365 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
