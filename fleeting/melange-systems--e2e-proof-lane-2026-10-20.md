@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "2496bef1d3bd33c4709c7c8700b39c9d5d261c374aaf74eaf3dd03b1c471a9f0"}
-updated_at: 2026-10-22
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/e2e-proof-lane-2026-10-20.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\e2e-proof-lane-2026-10-20.md", sha256: "31183cba58ea245241e471f7680932f53ecf7bb1525447ebe2bd4581c1913576"}
+updated_at: 2026-10-24
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -117,10 +117,12 @@ Published as pjg93-222/Melange#22 (merge f39ca5a40). That merge made PR #20, fro
 
 Related: `pipeline-health-lane-2026-10-19`, `wave1-refresh-resilience-2026-10-20`.
 
+Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): attempts 1-7 not proven;roster 535+F1/R1/R2+preflight on main;attempt 7 stopped on classifier weekly quota;relaunch after reset;launches need Paul's chat OK
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-22 from the Claude Code memory file `e2e-proof-lane-2026-10-20.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `e2e-proof-lane-2026-10-20.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

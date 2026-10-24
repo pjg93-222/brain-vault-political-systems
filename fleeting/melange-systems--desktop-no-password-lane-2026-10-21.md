@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-no-password-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-no-password-lane-2026-10-21.md", sha256: "33c756fdcfb55cce3277f1cd87d962d6083b2c68a3f274bca25de543f9405f51"}
-updated_at: 2026-10-21
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-no-password-lane-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-no-password-lane-2026-10-21.md", sha256: "612e0ec1104eb323106852f5d8a510e2e7dd647569ea6f80d1f1af82ace7b0c1"}
+updated_at: 2026-10-24
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -32,10 +32,12 @@ Paul (2026-10-21): "get rid of the password option for terrier? And Mentat and M
 
 **How to apply:** Terrier passwordless needs (1) Paul's lineage ruling, (2) re-apply `password_lock_disabled` default on that lineage (D2 design if main), (3) land `cc5f286b9` via ReleasePublish PR, (4) Terrier 1.0.10 seq 6 build with runtime server refresh. Open: CodeRabbit's "durably revoke device record on failed Lock delete" (Paul's call); PR for version bump `desktop/release-1.0.10`. Related: `desktop-releases-1-0-7-2026-10-19`, `desktop-invite-code-lane-2026-10-20`, `melange-public-repo-unfiltered-branches-2026-10-18`, `land-means-in-the-app-2026-10-15`.
 
+Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): Melange+Mentat SHIPPED 1.0.10 seq 6 (verify once/computer);Terrier HELD: change on Geo walk-list but app ships Geo main lineage;lineage ruling=Paul;cc5f286b9 not on origin
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-21 from the Claude Code memory file `desktop-no-password-lane-2026-10-21.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `desktop-no-password-lane-2026-10-21.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
