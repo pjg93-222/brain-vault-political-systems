@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "feedback"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/no-permission-prompts-pr-first-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-19", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\no-permission-prompts-pr-first-2026-10-19.md", sha256: "cc75eb8d15137b813be0d9010bfb346c3aea9e5f15dd8a4ce0ffa7f0de95cec1"}
-updated_at: 2026-10-19
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/no-permission-prompts-pr-first-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\no-permission-prompts-pr-first-2026-10-19.md", sha256: "4d4adc25cd711cf2a21b5e9deb97ffaabdf5d5904e8e8c442c849297c3a9eb0b"}
+updated_at: 2026-10-24
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -34,10 +34,12 @@ Paul, 2026-10-19, after repeated plan-approval prompts during the fec debug swee
 - Read CodeRabbit on every PR (`always-read-coderabbit-2026-10-18`).
 - This supersedes the "present+WAIT" part of `ask-before-substantive-changes` for execution steps. Paul's domain rulings stay his.
 
+Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): execute,never ask;hard bars->decisions list;PR first via ReleasePublish filtered route;per-agent ECC-pattern workflows
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-19 from the Claude Code memory file `no-permission-prompts-pr-first-2026-10-19.md` of project `melange-systems` (memory type: feedback). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `no-permission-prompts-pr-first-2026-10-19.md` of project `melange-systems` (memory type: feedback). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

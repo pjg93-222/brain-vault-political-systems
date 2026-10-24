@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-main-sync-lane-2026-10-23.md", type: "claude-memory", synced_at: "2026-10-23", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-main-sync-lane-2026-10-23.md", sha256: "9813a8e58f5558f1be97e8ab1d554f7638c11319b8b1304a06e409c301dc4b1a"}
-updated_at: 2026-10-23
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-main-sync-lane-2026-10-23.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-main-sync-lane-2026-10-23.md", sha256: "47cecf338cc66352dd2a7cfbafd470ae889614b264d7e2c0e69de8da120f4dc8"}
+updated_at: 2026-10-24
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -35,10 +35,12 @@ Facts worth keeping:
 **Why:** Paul's rules: installers build only from main; PRs only via the filtered route; CodeRabbit read on every PR.
 **How to apply:** before a desktop rebuild, confirm PR #63 merged; run client tests with the Bypass env var; reuse the route steps above. Related: `reliability-2026-10-implementation-lane-2026-10-23`, `melange-public-repo-unfiltered-branches-2026-10-18`, `always-read-coderabbit-2026-10-18`.
 
+Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): PR #63 lands 19d1f68+3958bc6 lineage on PUBLIC main + MZ/PE-header census (skip NSIS Stubs);tests need PSExecutionPolicyPreference=Bypass;gitleaks -m on merge commits
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-23 from the Claude Code memory file `desktop-main-sync-lane-2026-10-23.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `desktop-main-sync-lane-2026-10-23.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/agent-roster-signing-proof-lane-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\agent-roster-signing-proof-lane-2026-10-22.md", sha256: "d84383ef9fae2402ee46f41ec0d883c50d40c4e74e2629038da279f2060b99bc"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/agent-roster-signing-proof-lane-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\agent-roster-signing-proof-lane-2026-10-22.md", sha256: "a93022c03ef3f1de642ec8e82874e451ff22ec287584ddcd86e77815a0957a2f"}
 updated_at: 2026-10-24
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -39,6 +39,8 @@ Closeout 2026-10-24 (commit af140502d, brain 4b9dd22): the shipped-code gap is o
 **How to apply:** spawn `scout`/`verifier` by subagent_type; a lane is not done while any receipt is missing. Follow-up: `.claude/workflows/folder-debug.js` should spawn by agentType (file was dirty from another lane). Doc contradiction to fix in Melange: `ops/desktop/GITHUB_RELEASES.md:32-59` vs `client/README.md:36` on certificate trust for updates.
 
 Related: `agent-roster-2026-10-21`, `installer-signing-rule`, `terrier-voter-profile-lane-2026-10-21`, `melange-public-repo-unfiltered-branches-2026-10-18`, `no-permission-prompts-pr-first-2026-10-19`.
+
+Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): published installers Valid 0EBC..3D30;owner installs NotSigned stale,upgrade cmds in receipt (Paul runs);agents got Skill/skills/scout/verifier/receipts d610c6c+36df741 unpushed;END_PROOF.md
 
 ## Possible Connections
 
