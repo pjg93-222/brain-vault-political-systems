@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-23 01:56
-- Open questions in STATE: 41; active decisions: 278; dead ends: 79
+- Open questions in STATE: 41; active decisions: 279; dead ends: 79
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-292|D-292]] — Terrier release gate scans shipped files only; TERRIER-001..003 (Paul 2026-10-24
 - [[ledger/melange-systems-brain/D-291|D-291]] — LIVE stays on the 535 vintage (Paul 2026-10-22)
 - [[ledger/melange-systems-brain/D-290|D-290]] — E2E verification verdict: chain proven, clean PASS and green suites not
 - [[ledger/melange-systems-brain/D-289|D-289]] — Disk clearing under Paul's 12:00 instruction (2026-10-22)
 - [[ledger/melange-systems-brain/D-288|D-288]] — Attempt 9 rank attribution verdict: 460 movers, UNEXPLAINED 0 after two adjudica
-- [[ledger/melange-systems-brain/D-287|D-287]] — E2E attempt 9: chain COMMITTED at 535, audit_full gated, LIVE kept on 535 pendin
 <!-- brainlink:state:end -->
