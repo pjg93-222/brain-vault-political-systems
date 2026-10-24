@@ -4,19 +4,19 @@ brain: "melange-systems-brain"
 id: "STATE"
 kind: "state"
 title: "melange-systems-brain STATE"
-date: "2026-10-23"
+date: "2026-10-24"
 status: ""
 superseded_by: ""
-brain_commit: "385d16528932503b95851ebd5ce5c6b3ef5aee25"
-entry_sha256: "fcc415c3430a8f9b55e8a67f88dc0731e054d1d1a758e4a077094deca769853b"
+brain_commit: "4b9dd225294f8ebd0061ece47a54592a0f1fdc5c"
+entry_sha256: "9dc710ba0427ed092082604a3c3ab2606e5552cbe701136616c29b7dc308cd76"
 generated: true
-generated_sha256: "6309a980c03b38f0fcd7d8b327da69d9817727d55f1c6346384ba59d307cd761"
+generated_sha256: "81c37c9575c0c301f47f57003c5ca38790c658fd02a8527d0ae4a8f7c5f2ec54"
 aliases: ["melange-systems STATE"]
 ---
-> Generated from melange-systems-brain/STATE.md at 385d165; do not edit — change the brain via brainctl.
+> Generated from melange-systems-brain/STATE.md at 4b9dd22; do not edit — change the brain via brainctl.
 
 # STATE — Melange Systems
-> Last verified: 2026-10-23 01:56
+> Last verified: 2026-10-24 03:12
 > Verified by: agent roster + signing proof lane (Claude); E2E and Terrier items carried, not re-observed; E2E lane 18:15 block as reported by the orchestrator (not re-observed); Terrier voter profile record as reported by the orchestrator brief (2026-10-21), not re-observed; everything else carried from the 2026-10-20 block and the agent roster lane record
 > NOTE: keep the stamp above a bare date-time on its own line (flush writes it). The parser defect is FIXED in Project Brain d9100b8 + 026ca95 (2026-10-20):
 > brainctl and brainlink `parse_state` accept a leading `YYYY-MM-DD[ HH:MM[:SS]]` prefix with a trailing annotation, and boot/status name which case failed
@@ -661,6 +661,8 @@ Opened 2026-10-12 by Claude on Paul's approval of the plan (2026-10-11). Verifie
   - AGENT ROSTER + SIGNING PROOF LANE 2026-10-22 (Claude, Fable session; recorded 2026-10-22 evening CDT). Request: every artifact signed, every agent with task and skills, end proof. Results: (1) Signature census: all published installers (Melange 1.0.16, Mentat 1.0.16, Terrier 1.0.15) and 19 local build/readback copies are Valid under thumbprint 0EBC9AD04E929CDD731EDB5D278A4143BC3D3D30 with GitHub digests matching; the owner-installed copies in Documents\MelangeApplications (Melange.exe 1.0.15, Mentat.exe 1.0.15, Terrier.exe 1.0.14) are NotSigned stale builds. Upgrade assessed: Melange and Mentat READY, Terrier HELD (running; own 1.0.15 update queued for close). Installer execution and the brain PR 33 merge were refused by the Claude Code classifier; both are Paul's. (2) Agent files: .claude/agents gained Skill tool + skills: frontmatter, scout.md (Haiku read-only) and verifier.md (Opus high, thumbprint rule), ECC pattern per agent, receipt contract (audits/<lane>/receipts/); commits d610c6ccd and 36df741f2 on local main, not pushed; live spawn of scout and verifier proven by receipts. (3) Ledger: audits/agent_roster_20261022/END_PROOF.md and TERRIER_WORK_ASSIGNMENT.md (every Terrier audit item mapped to agent, skills, proof, Paul-only decisions). Open for Paul: run the two upgrade commands in receipts/architect_owner_install_assessment_20261023T012215Z.md; merge brain PR 33; updater-policy ruling on verifyUpdateCodeSignature; Terrier thresholds/primary-mode/data-path/retention rulings. Follow-up: folder-debug.js should spawn by agentType (file dirty from another lane). Source: this session's receipts; not re-observed by Paul.
   2026-10-23 early (Claude, release gate matrix; appended by hand):
   - RELEASE GATE MATRIX 2026-10-23 (Claude). audits/agent_roster_20261022/RELEASE_GATE_MATRIX.md covers Melange 1.0.16 (58bc455d), Mentat 1.0.16 (0e7f0912), Terrier 1.0.15 (6a25b7c9). Signing: all gates PASS (1,195 payload PEs Valid and timestamped under 0EBC9AD0...3D30, vendor signatures intact, published hashes match). Owner PC: all three upgraded in place tonight (Melange and Mentat by Paul's manual silent install, Terrier by its own updater on close), installed exes byte-identical to payload, data preserved, apps running. NOT TESTED: fresh install, recipient approval-to-data path on the delivered build, ThreatLocker acceptance. NOT COMPLETE: data-melange-2026-10-21 and data-mentat-2026-10-21 still Draft. REGRESSION (P0 for the next desktop build): main does not contain shipped commits 3958bc60 (fix/melange-1.0.16-inner-signing) and 19d1f686 (fix/desktop-inner-signing-20261022); main lacks release-signing.cjs, sign-staged-binary.ps1 and ~5.4k lines of 1.0.16 module code; a build from main would ship unsigned inner binaries. Also: Mentat in-app update recorded phase failed at 03:33Z before the manual install; Terrier carries a stale verifyFailure for manifest c311715e. Release NOT marked ready. Tests: client suites green at HEAD 335/335, 3958bc6 616/616, 19d1f68 344/344; server 260 passed. Source: this session's receipts.
+  2026-10-24 (Claude, release gate closeout; appended by hand):
+  - RELEASE GATE CLOSEOUT 2026-10-24 (Claude). Correction to the 2026-10-23 entry: the shipped-code gap is on the PRIVATE local main only; releases build from PUBLIC origin/main, which already holds 3958bc60. PR pjg93-222/Melange#63 (publish/desktop-main-sync-20261023, head c164fb9b) adds the hardened inner-signing hook (PE-header census) superseding 19d1f686; CLEAN, CodeRabbit resolved, client 630/630 server 257; MERGE IS PAUL'S (classifier refuses agent merges), as is brain PR 33. Mentat 'failed' update record = APP_STARTUP_FAILED stamp (updater.cjs:306) after 'Protected access storage timed out' at first 1.0.16 launch; not an installer failure; follow-up: reconcile installed.version on manual install, retry protected storage. Owner PC: Melange 1.0.16, Mentat 1.0.16, Terrier 1.0.15 all Valid and running. Still NOT TESTED: fresh install, recipient approval-to-data, ThreatLocker. Data releases data-melange/data-mentat-2026-10-21 still Draft. Release NOT marked ready. Ledger: audits/agent_roster_20261022/RELEASE_GATE_MATRIX.md, END_PROOF.md section 7.
 
 ## Open questions
 - OPEN (Paul; added 2026-10-21, [[ledger/melange-systems-brain/D-284|D-284]], [[ledger/melange-systems-brain/DE-077|DE-077]]): the stub-classifier shape. The classifier weekly quota blocks admissions until about 2026-10-22 18:00 CDT. A zero-paid-call route exists (MELANGE_CLASSIFIER_COMMAND set to a program that exits non-zero without quota text, plus refresh_congress_pipeline.py --admission-limit 1, so the one new key defers as classifier unavailable) but it circumvents the [[ledger/melange-systems-brain/D-251|D-251]] quota-versus-unavailable distinction. Rule: wait for the reset, allow the stub for E2E only, or change how a quota stop is treated. Also needed: whether the one-run MELANGE_CHAIN_TXN_MIN_FREE_GB=26 override used for attempt 7 was acceptable, and confirmation of the attempt cap.
