@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-22", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "89a6eb45e286166f38e3434627cfc127d0ef017ff06fc24a543c3a4326035728"}
-updated_at: 2026-10-22
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "8d5b884edb07e7d597154d493fed7f6b5c855f124cac62077aaaef5d1bbbe60a"}
+updated_at: 2026-10-24
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -45,6 +45,20 @@ tags: ["type/fleeting", "status/raw"]
   - Mentat is mounted from `...\data\mentat-20261022` (inputs+forecast+app/data, 451 MB; state and .cache empty).
   - Both are healthy, /healthz 200 on 18080/18802. Terrier remains created and stopped.
   - C: free was only about 2.5 GB at 11:50, down from 19.5 GB at 08:00. The cause is not ours and was not investigated.
+- 2026-10-22/24: Apps Start fixed and landed, signed.
+  - What was broken: the dashboard died at 8 h while its Edge window lived on; a synchronous Docker pre-check timed out on the loaded laptop; the UI hid the server's messages.
+  - Added a Start Docker Desktop button and auto-retries.
+  - Main commits: 0eea16e30..d6cad7d0b, c7ce0485f, 049d6f01c, 2a257733e.
+  - PR pjg93-222/Melange#58: OPEN, 0 unresolved threads; merging is Paul's.
+- Latest Mentat in the stack (2026-10-24):
+  - mentat-console `sha256:3cff1245…`, from platform release v2026.10.22.3 (4ce907b31 = Melange 29f5b8b09 + Mentat b7b4022de, the public Mentat port).
+  - It renders `index.html.j2`; fixed 767e84655 via export `extra_paths`. Before that, the container served the golden fallback page.
+- Release-tool lessons:
+  - Mentat source for releases is local `codex/mentat-crypto`. Port public Mentat main into it first (D-230 import commit; ae4ce8b35).
+  - Global `tag.gpgsign` breaks the old lightweight Geo tag. Fixed in 29f5b8b09 (signed annotated tag via `terrier_tagger`; `remote_tag` peels).
+  - In the 19.6 GB checkout, commit with `merge-tree`/`commit-tree -S`, because a plain commit hangs on index refresh.
+  - CI rescans every compute image on every tag, so new advisories fail unrelated releases (.1 certifi/chromium, .3 brotli/pypdf); .4 fixes them.
+- Terrier was found running (restored by Docker), contrary to D3. Left as is.
 
 Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-20`.
 
@@ -54,4 +68,4 @@ Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-2
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-22 from the Claude Code memory file `melange-admin-launcher-applied-2026-10-22.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `melange-admin-launcher-applied-2026-10-22.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
