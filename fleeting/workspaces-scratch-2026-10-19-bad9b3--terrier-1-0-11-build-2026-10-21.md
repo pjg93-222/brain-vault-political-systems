@@ -10,8 +10,8 @@ promoted_to: ""
 project: "workspaces-scratch-2026-10-19-bad9b3"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-19-bad9b3/memory/terrier-1-0-11-build-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-21", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-19-bad9b3\\memory\\terrier-1-0-11-build-2026-10-21.md", sha256: "6739a831f5d04a97f9e6fc0af780a601a16250eb27128e92139e951ebdc5d6b6"}
-updated_at: 2026-10-21
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-19-bad9b3/memory/terrier-1-0-11-build-2026-10-21.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-19-bad9b3\\memory\\terrier-1-0-11-build-2026-10-21.md", sha256: "9126e5cfd044b65b473db2c2ee1fa1435b43ed5bf32d38ea052d79b45ac12682"}
+updated_at: 2026-10-25
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -33,12 +33,12 @@ Terrier desktop 1.0.11 was built, signed and installed locally on 2026-10-21; no
 
 **How to apply:** for the next Terrier desktop release, patch the runtime bootstrap from main and follow the recipe above; before any public step, check the checklist for Paul's recorded decisions. Related: `terrier-district-download-2026-10-21`.
 
+**2026-10-25 correction (Haiku, Wave 5 verification):** the go-live of Terrier desktop 1.0.11 is superseded. No desktop-v1.0.11 tag or release exists on the Geo repo (`gh api repos/[private — see knowledge vault]/releases/tags/desktop-v1.0.11` returned 404). The Geo release list shows 1.0.9, then 1.0.12 through 1.0.15, then 1.0.17. The current Terrier release is desktop-v1.0.17 (Latest, published 2026-10-25T17:50Z). Record closed.
+
 ## Possible Connections
 
-- [[2026-10-06-terrier-rulings]] — keyword match from recall, unverified
-- [[2026-10-06-terrier-build-progress]] — keyword match from recall, unverified
-- [[2026-10-06-terrier-blueprint]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-21 from the Claude Code memory file `terrier-1-0-11-build-2026-10-21.md` of project `workspaces-scratch-2026-10-19-bad9b3` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-25 from the Claude Code memory file `terrier-1-0-11-build-2026-10-21.md` of project `workspaces-scratch-2026-10-19-bad9b3` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
