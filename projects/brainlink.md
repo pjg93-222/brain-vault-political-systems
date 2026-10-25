@@ -176,7 +176,7 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 280; dead ends: 79
+- Open questions in STATE: 41; active decisions: 280; dead ends: 80
 
 ### Recent decisions
 - [[ledger/melange-systems-brain/D-293|D-293]] — Mentat release gate: MENTAT-001 allows template.csv extension only (Paul 2026-10
