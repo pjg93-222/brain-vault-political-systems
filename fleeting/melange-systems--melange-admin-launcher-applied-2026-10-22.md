@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "56ea3f89662fed575ba5e1c69a2910bb383fc75700a98dfa2c272aab23c961dd"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "cbbf1ac35d4fb3a2b46e206ee00520b61943fa235a50f11644191e7564b3fb71"}
 updated_at: 2026-10-25
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -66,6 +66,8 @@ tags: ["type/fleeting", "status/raw"]
   - Once Docker is up, all six melange-local containers return on their own (`restart: unless-stopped`).
 
 Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-20`.
+
+**2026-10-25 correction (Haiku, Wave 5 verification):** PR pjg93-222/Melange#58 is no longer open. It is MERGED (mergedAt 2026-10-25T00:52:07Z, merge commit 457ae1e2). Record closed.
 
 ## Possible Connections
 

@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-releases-1-0-7-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-releases-1-0-7-2026-10-19.md", sha256: "1bef80e89482353461fba03aebacab445f32b1306200a325fb32eb06b5f216a7"}
-updated_at: 2026-10-24
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-releases-1-0-7-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-releases-1-0-7-2026-10-19.md", sha256: "7b9d768b00ffa8b90491764b34beef4b6413a8019e5062490df53d1a611bfdd9"}
+updated_at: 2026-10-25
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -34,10 +34,12 @@ Client source: branch `desktop/one-click-trust-silent-update` (worktree .claude/
 
 Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): STALE: 1.0.8+1.0.9 shipped 10-20, 1.0.10 10-21;inject.cjs fast repackage;IT folder on Desktop
 
+**2026-10-25 correction (Haiku, Wave 5 verification):** "Source PRs: Melange #13, Mentat #2 (Paul merges)" is stale. Melange PR #13 is MERGED (2026-10-20T13:54:13Z, "Desktop 1.0.6"); Mentat PR #2 is MERGED (2026-10-20T13:54:16Z, "Desktop 1.0.6"); Mentat PR #1 is MERGED (2026-10-19T18:39:36Z). Current desktop releases: Melange desktop-v1.0.17 is a pre-release (2026-10-23); Mentat desktop-v1.0.17 and Terrier desktop-v1.0.17 are Latest (2026-10-25). Record closed.
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `desktop-releases-1-0-7-2026-10-19.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-25 from the Claude Code memory file `desktop-releases-1-0-7-2026-10-19.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

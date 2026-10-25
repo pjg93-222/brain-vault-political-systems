@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pipeline-health-lane-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-20", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pipeline-health-lane-2026-10-19.md", sha256: "493f770cd4bcf9fae836cec000c66a717eaedf050641e974bc165148ad5ee8f8"}
-updated_at: 2026-10-20
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pipeline-health-lane-2026-10-19.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pipeline-health-lane-2026-10-19.md", sha256: "7321f02fc2dbd75645cccb8f0acdfe89760ff50c6a9abbaa076f24f1be5a4ffa"}
+updated_at: 2026-10-25
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -59,10 +59,12 @@ Status: Melange branch fix/pipeline-health-20261019 (worktree C:\Users\pgoff\Mel
 
 Related: `melange-public-repo-unfiltered-branches-2026-10-18`, `fec-folder-debug-sweep-2026-10-13`, `land-means-in-the-app-2026-10-15`.
 
+**2026-10-25 correction (Haiku, Wave 5 verification):** PR pjg93-222/Melange#15 is MERGED (mergedAt 2026-10-20T06:00:10Z, merge commit 82bcc56c). The "PR #15 is open" status line above is stale; the 10-20 UPDATE is correct. Record closed.
+
 ## Possible Connections
 
 - none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-20 from the Claude Code memory file `pipeline-health-lane-2026-10-19.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-25 from the Claude Code memory file `pipeline-health-lane-2026-10-19.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.

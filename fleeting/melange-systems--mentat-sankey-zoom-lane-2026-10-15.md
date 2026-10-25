@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-sankey-zoom-lane-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-sankey-zoom-lane-2026-10-15.md", sha256: "af9590731edc0e7f7457f78c42d7dedd352f9ee61a162ccfc257bfe6975f55e0"}
-updated_at: 2026-10-24
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-sankey-zoom-lane-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-sankey-zoom-lane-2026-10-15.md", sha256: "1fd3945dd93b32edf6269e496ffe3939081e9870c313de2295bd7df23be45856"}
+updated_at: 2026-10-25
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -35,12 +35,12 @@ Known gaps: Banking "Other committees" / "Party committees" / "Other banking com
 
 Index hook moved here from MEMORY.md when the index was compacted (2026-10-24): LANDED abdbd5524+6dc3dac91,unpushed;pins stop at pools;Banking Other unfold gap
 
+**2026-10-25 correction (Haiku, Wave 5 verification):** "NOT pushed" is stale. In C:\Users\pgoff\Mentat, `git merge-base --is-ancestor` confirms abdbd5524 and 6dc3dac91 are ancestors of the origin tip ed68856457ba (`git ls-remote origin` on 2026-10-25 lists refs/heads/codex/mentat-crypto at that commit). The sankey commits are on origin.
+
 ## Possible Connections
 
-- [[mentat-console-pac-map-viz-lane]] — keyword match from recall, unverified
-- [[2026-09-feature-mentat-failings-pac-evidence-pac-map-viz-lane]] — keyword match from recall, unverified
-- [[2026-09-feature-mentat-console-ui-load-time-and-graph-quirks]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `mentat-sankey-zoom-lane-2026-10-15.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-25 from the Claude Code memory file `mentat-sankey-zoom-lane-2026-10-15.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
