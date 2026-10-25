@@ -10,8 +10,8 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-24", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "8d5b884edb07e7d597154d493fed7f6b5c855f124cac62077aaaef5d1bbbe60a"}
-updated_at: 2026-10-24
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-admin-launcher-applied-2026-10-22.md", type: "claude-memory", synced_at: "2026-10-25", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-admin-launcher-applied-2026-10-22.md", sha256: "56ea3f89662fed575ba5e1c69a2910bb383fc75700a98dfa2c272aab23c961dd"}
+updated_at: 2026-10-25
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
 ---
@@ -58,7 +58,12 @@ tags: ["type/fleeting", "status/raw"]
   - Global `tag.gpgsign` breaks the old lightweight Geo tag. Fixed in 29f5b8b09 (signed annotated tag via `terrier_tagger`; `remote_tag` peels).
   - In the 19.6 GB checkout, commit with `merge-tree`/`commit-tree -S`, because a plain commit hangs on index refresh.
   - CI rescans every compute image on every tag, so new advisories fail unrelated releases (.1 certifi/chromium, .3 brotli/pypdf); .4 fixes them.
-- Terrier was found running (restored by Docker), contrary to D3. Left as is.
+- Terrier was found running (restored by Docker), contrary to D3. Left as is. Updated 10-24 to the .4 image `71c9ba69…` on Paul's "finish it all up".
+- 2026-10-25, Paul approved: Docker Desktop starts at login.
+  - `settings-store.json` has AutoStart=true (backup `.bak-20261025`).
+  - The HKCU Run entry is quoted.
+  - StartupApproved is `02…`.
+  - Once Docker is up, all six melange-local containers return on their own (`restart: unless-stopped`).
 
 Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-20`.
 
@@ -68,4 +73,4 @@ Related: `land-means-in-the-app-2026-10-15`, `desktop-invite-code-lane-2026-10-2
 
 ## Capture Context
 
-Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-24 from the Claude Code memory file `melange-admin-launcher-applied-2026-10-22.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
+Captured by the brain capture hook (`.bedrock/recall/hook.ts sync`, run on Stop and SessionEnd) on 2026-10-25 from the Claude Code memory file `melange-admin-launcher-applied-2026-10-22.md` of project `melange-systems` (memory type: project). The text above is the memory file verbatim, except that headings are demoted two levels and memory-name references are written as code. To dismiss this capture, set `status: archived` or delete the note; a deleted note comes back only when the memory file changes. New source: no curated note holds this memory file yet. To promote, turn it into a permanent or bridge note with `/bedrock:preserve` (or merge it into an existing one), then set `status: promoted` and `promoted_to` here.
