@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 279; dead ends: 79
+- Open questions in STATE: 41; active decisions: 280; dead ends: 79
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-293|D-293]] — Mentat release gate: MENTAT-001 allows template.csv extension only (Paul 2026-10
 - [[ledger/melange-systems-brain/D-292|D-292]] — Terrier release gate scans shipped files only; TERRIER-001..003 (Paul 2026-10-24
 - [[ledger/melange-systems-brain/D-291|D-291]] — LIVE stays on the 535 vintage (Paul 2026-10-22)
 - [[ledger/melange-systems-brain/D-290|D-290]] — E2E verification verdict: chain proven, clean PASS and green suites not
 - [[ledger/melange-systems-brain/D-289|D-289]] — Disk clearing under Paul's 12:00 instruction (2026-10-22)
-- [[ledger/melange-systems-brain/D-288|D-288]] — Attempt 9 rank attribution verdict: 460 movers, UNEXPLAINED 0 after two adjudica
 <!-- brainlink:state:end -->
