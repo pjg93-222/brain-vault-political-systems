@@ -78,9 +78,9 @@ Terrier ([[terrier]]):
 - Open questions in STATE: 41; active decisions: 284; dead ends: 80
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-298|D-298]] — CR rebuild method: variant B + R-faithful network
 - [[ledger/melange-systems-brain/D-297|D-297]] — CR rebuild rulings (cosponsor network + bill archive)
 - [[ledger/melange-systems-brain/D-296|D-296]] — M14: refresh tasks use interactive logon for headed Chrome
 - [[ledger/melange-systems-brain/D-295|D-295]] — Congress.gov discovery runs headed
 - [[ledger/melange-systems-brain/D-294|D-294]] — Press: per-site failures are non-fatal, logged and routed to Claude
-- [[ledger/melange-systems-brain/D-293|D-293]] — Mentat release gate: MENTAT-001 allows template.csv extension only (Paul 2026-10
 <!-- brainlink:state:end -->
