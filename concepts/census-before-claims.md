@@ -5,7 +5,7 @@ aliases: ["verify, don't infer"]
 description: "Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it."
 related_to: []
 sources: []
-updated_at: 2026-10-04
+updated_at: 2026-10-26
 updated_by: "reorg@agent"
 tags: ["type/concept", "domain/agent-ops"]
 ---
@@ -34,6 +34,7 @@ An agent-practice rule built from Paul's feedback after agents were measured wro
 - [[glass-box]] — a Codex MCP idle timeout left edits partially landed: never infer the outcome, `git status` plus a byte-diff audit is the only truth
 - [[metaloop]] — the same idle-timeout lesson in the lane hierarchy: never infer the outcome
 - [[melange-fec-pipeline]] — run the batched drift census first; a behind-HEAD census before any whole-file commit from a shared dirty checkout
+- [[stale-vote-report-check-upstream-first]] — before debugging fetch code for a stale vote report, measure Voteview's upstream date and whether the chamber has voted since
 
 ## Evidence
 

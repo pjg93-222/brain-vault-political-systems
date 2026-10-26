@@ -30,7 +30,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-17
+updated_at: 2026-10-26
 updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/backend"]
 ---
@@ -215,3 +215,4 @@ git status --porcelain=v1 -- <paths...>
 - [[live-tree-patch-discipline]] — Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by D-233, which normalised CRLF-only differences); applying needs Paul's go.
 - [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
 - [[four-pillar-percentile-blend]] — The Moneyball rank is a weighted blend of four pillar scores (committee/influence, legislative, press, demographic), built as percentile ranks on 2026-06-25, with the committee/influence pillar moved to raw/max on 2026-06-30 and press to signed raw/max on 2026-07-01; resolution 3 records three weight sets (historical, previous, and current: Paul's 2026-09-03 directive per D-141), only Paul ratifies one, and the live set is read where it is kept.
+- [[stale-vote-report-check-upstream-first]] — A stale vote snapshot is checked against Voteview's publication date and whether the chamber is voting before any fetch code is debugged.

@@ -87,7 +87,7 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_member_desk_integration.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_member_desk_integration.md", sha256: "77b0312aa6bcd56f96361ddcdb9e881aafc90eae83297e75efeadeccfda060e2"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_moneyball_scenario_prep.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_moneyball_scenario_prep.md", sha256: "0807b23ec2688652c69dff061882d9c68fcb518a7c6c18682a8f910964d23a35"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
-updated_at: 2026-10-17
+updated_at: 2026-10-26
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
 ---
@@ -318,6 +318,8 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-06-feature-melange-model-facts]] | part: Melange model facts: the regeneration pipeline, the… |
 | [[2026-06-feature-melange-scenario-model-build]] | part: The Melange scenario model build of 2026-06-26: the source… |
 | [[2026-06-troubleshooting-melange-model-audits]] | part: The Melange model audits of 2026-06-26: the brutal… |
+| [[2026-10-troubleshooting-official-roll-call-endpoints]] | Oct 2026: the House clerk answers a missing roll with HTTP 200 and an error body; the Senate roll-call XML blocks scripts; Voteview stays the vote source (Paul's ruling). |
+| [[2026-10-troubleshooting-windows-revocation-offline-errors]] | Oct 2026: Windows curl revocation-offline errors came from an unreachable Let's Encrypt CRL host over IPv6, not from TLS inspection. |
 
 ### Related Actors
 
@@ -374,6 +376,7 @@ Every note of this project by type, one line each; parts follow their parent.
 - [[demographic-potential-method]] - The district and state market score behind the desk's Demographic Potential label: v2.1 growth room (2026-07-25 doc, eight judgmental weights), replaced as default on 2026-09-16 by v3.0 credit-union footprint.
 - [[behavior-qualified-recognition]] - Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
 - [[boot-protocol-evaluation-framework]] - The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
+- [[stale-vote-report-check-upstream-first]] - A stale vote snapshot is checked against upstream publication dates and chamber activity before any fetch code is debugged (Oct 2026: it was recess, not a block).
 
 ### Discussions
 
