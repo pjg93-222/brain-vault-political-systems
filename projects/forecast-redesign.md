@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 282; dead ends: 80
+- Open questions in STATE: 41; active decisions: 283; dead ends: 80
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-296|D-296]] — M14: refresh tasks use interactive logon for headed Chrome
 - [[ledger/melange-systems-brain/D-295|D-295]] — Congress.gov discovery runs headed
 - [[ledger/melange-systems-brain/D-294|D-294]] — Press: per-site failures are non-fatal, logged and routed to Claude
 - [[ledger/melange-systems-brain/D-293|D-293]] — Mentat release gate: MENTAT-001 allows template.csv extension only (Paul 2026-10
 - [[ledger/melange-systems-brain/D-292|D-292]] — Terrier release gate scans shipped files only; TERRIER-001..003 (Paul 2026-10-24
-- [[ledger/melange-systems-brain/D-291|D-291]] — LIVE stays on the 535 vintage (Paul 2026-10-22)
 <!-- brainlink:state:end -->
