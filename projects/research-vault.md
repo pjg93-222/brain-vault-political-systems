@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 290; dead ends: 80
+- Open questions in STATE: 41; active decisions: 291; dead ends: 80
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-305|D-305]] — T1 primary/general race-mode spec deferred
 - [[ledger/melange-systems-brain/D-304|D-304]] — T4 Party W lean / O-5 closed
 - [[ledger/melange-systems-brain/D-303|D-303]] — Downloads build proceeds ahead of IT answers
 - [[ledger/melange-systems-brain/D-302|D-302]] — Full-text pipeline pacing + bi-weekly schedule
 - [[ledger/melange-systems-brain/D-301|D-301]] — Press skipped sites: backlog retry
-- [[ledger/melange-systems-brain/D-300|D-300]] — Desktop apps under Downloads (D-1..D-7 defaults)
 <!-- brainlink:state:end -->
