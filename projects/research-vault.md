@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 298; dead ends: 80
+- Open questions in STATE: 41; active decisions: 304; dead ends: 80
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-312|D-312]] — N14/N15 downstream collector order recorded
-- [[ledger/melange-systems-brain/D-311|D-311]] — T3 imputed uncertainty ranges default off
-- [[ledger/melange-systems-brain/D-310|D-310]] — N19 forecast UI F2 deferred
-- [[ledger/melange-systems-brain/D-309|D-309]] — N18 forecast lit/lobby deferred
-- [[ledger/melange-systems-brain/D-308|D-308]] — N17 Sankey Other/Party committees deferred
+- [[ledger/melange-systems-brain/D-322|D-322]] — T21 Terrier container stays running (D3 superseded)
+- [[ledger/melange-systems-brain/D-321|D-321]] — T19 audit retention cycle + 90 days
+- [[ledger/melange-systems-brain/D-320|D-320]] — T5 coalition thresholds ratified as v1
+- [[ledger/melange-systems-brain/D-319|D-319]] — T18 publisher thumbprint pinned at update
+- [[ledger/melange-systems-brain/D-318|D-318]] — T6 do not buy OR-03 data
 <!-- brainlink:state:end -->
