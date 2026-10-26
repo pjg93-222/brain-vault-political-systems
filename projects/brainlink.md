@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 291; dead ends: 80
+- Open questions in STATE: 41; active decisions: 298; dead ends: 80
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-305|D-305]] — T1 primary/general race-mode spec deferred
-- [[ledger/melange-systems-brain/D-304|D-304]] — T4 Party W lean / O-5 closed
-- [[ledger/melange-systems-brain/D-303|D-303]] — Downloads build proceeds ahead of IT answers
-- [[ledger/melange-systems-brain/D-302|D-302]] — Full-text pipeline pacing + bi-weekly schedule
-- [[ledger/melange-systems-brain/D-301|D-301]] — Press skipped sites: backlog retry
+- [[ledger/melange-systems-brain/D-312|D-312]] — N14/N15 downstream collector order recorded
+- [[ledger/melange-systems-brain/D-311|D-311]] — T3 imputed uncertainty ranges default off
+- [[ledger/melange-systems-brain/D-310|D-310]] — N19 forecast UI F2 deferred
+- [[ledger/melange-systems-brain/D-309|D-309]] — N18 forecast lit/lobby deferred
+- [[ledger/melange-systems-brain/D-308|D-308]] — N17 Sankey Other/Party committees deferred
 <!-- brainlink:state:end -->
