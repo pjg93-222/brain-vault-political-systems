@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 288; dead ends: 80
+- Open questions in STATE: 41; active decisions: 289; dead ends: 80
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-303|D-303]] — Downloads build proceeds ahead of IT answers
 - [[ledger/melange-systems-brain/D-302|D-302]] — Full-text pipeline pacing + bi-weekly schedule
 - [[ledger/melange-systems-brain/D-301|D-301]] — Press skipped sites: backlog retry
 - [[ledger/melange-systems-brain/D-300|D-300]] — Desktop apps under Downloads (D-1..D-7 defaults)
 - [[ledger/melange-systems-brain/D-299|D-299]] — Vote freshness gate: archive-data floor, per chamber
-- [[ledger/melange-systems-brain/D-298|D-298]] — CR rebuild method: variant B + R-faithful network
 <!-- brainlink:state:end -->
