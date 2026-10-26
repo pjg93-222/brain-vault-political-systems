@@ -298,7 +298,7 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 316; dead ends: 80
+- Open questions in STATE: 41; active decisions: 313; dead ends: 80
 
 ### Recent decisions
 - [[ledger/melange-systems-brain/D-334|D-334]] — N23 v5 Fintech deploy, 63 aliases, pagination
