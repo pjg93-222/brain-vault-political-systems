@@ -82,6 +82,10 @@ Dated correction (2026-10-04, fleeting pass; source `mentat-github-migration-202
 | Deadline | none recorded |
 | Progress | Pipeline shipped and repeatedly rebuilt; console and PAC-evidence lanes ongoing; GitHub push of the live tree done 2026-10-02/03; PR to main opened and merged 2026-10-03 (Melange PR #2). |
 
+**Current state.** As of 2026-10-25, Mentat desktop 1.0.17 is the Latest desktop release (published 2026-10-25, sequence 11), built from the Mentat source main. Mentat 1.0.16 and 1.0.14 (both 2026-10-22) preceded it. Source publication: the first Mentat repository publish PR (merged 2026-10-19) and the 1.0.6 desktop PR (merged 2026-10-20) are merged; the open Mentat PRs are the desktop workflow retirement and the invite-code access change. The sankey focus-zoom, unfold and pin commits are on the origin codex/mentat-crypto branch (confirmed as ancestors of the origin tip on 2026-10-25). The collector batch03 has been suspended since the 2026-10-15 ruling; no record of resumption was found, and the live process was not checked. The downstream collector release commits are in history, but the restart-order ruling is still open.
+
+**Keep distinct.** The 2026-10-03 "PR #2 merged" entries in this note refer to the Melange repository's migration PR, not to the Mentat repository's PR #2 (which is the 1.0.6 desktop PR, merged 2026-10-20). Do not merge the two.
+
 > **Convention:** The project status reflects a management decision. The action items below help infer the actual state, but do not derive the status automatically. Examples: if all items are `done`, the project is likely `completed`; if any item is `blocked`, consider updating the project status to `blocked`.
 
 ## Action Items
