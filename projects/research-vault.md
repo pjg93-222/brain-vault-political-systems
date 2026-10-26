@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 285; dead ends: 80
+- Open questions in STATE: 41; active decisions: 286; dead ends: 80
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-300|D-300]] — Desktop apps under Downloads (D-1..D-7 defaults)
 - [[ledger/melange-systems-brain/D-299|D-299]] — Vote freshness gate: archive-data floor, per chamber
 - [[ledger/melange-systems-brain/D-298|D-298]] — CR rebuild method: variant B + R-faithful network
 - [[ledger/melange-systems-brain/D-297|D-297]] — CR rebuild rulings (cosponsor network + bill archive)
 - [[ledger/melange-systems-brain/D-296|D-296]] — M14: refresh tasks use interactive logon for headed Chrome
-- [[ledger/melange-systems-brain/D-295|D-295]] — Congress.gov discovery runs headed
 <!-- brainlink:state:end -->
