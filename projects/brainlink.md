@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-24 03:12
-- Open questions in STATE: 41; active decisions: 304; dead ends: 80
+- Open questions in STATE: 41; active decisions: 316; dead ends: 80
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-322|D-322]] — T21 Terrier container stays running (D3 superseded)
-- [[ledger/melange-systems-brain/D-321|D-321]] — T19 audit retention cycle + 90 days
-- [[ledger/melange-systems-brain/D-320|D-320]] — T5 coalition thresholds ratified as v1
-- [[ledger/melange-systems-brain/D-319|D-319]] — T18 publisher thumbprint pinned at update
-- [[ledger/melange-systems-brain/D-318|D-318]] — T6 do not buy OR-03 data
+- [[ledger/melange-systems-brain/D-334|D-334]] — N23 v5 Fintech deploy, 63 aliases, pagination
+- [[ledger/melange-systems-brain/D-333|D-333]] — N20 desktop data route: data in packaged runtime
+- [[ledger/melange-systems-brain/D-332|D-332]] — M29 governance rows at Rec; VPS deferred
+- [[ledger/melange-systems-brain/D-331|D-331]] — M13 OPEN_WORK defaults adopted; money residuals unchanged
+- [[ledger/melange-systems-brain/D-330|D-330]] — M7 E2E rulings 2-8 and audit_full residuals
 <!-- brainlink:state:end -->
