@@ -170,6 +170,8 @@ From `CONVERSATION_REQUESTS.md` R006-R019 and later rulings (full scoring and gr
 
 The dated build-progress sections (2026-10-07 through the late evening of 2026-10-09, newest last) are on [[2026-10-06-terrier-build-progress]]; the project-level facts, definitions, districts, action items and timeline stay on this note.
 
+**Current state.** As of 2026-10-25, Terrier desktop 1.0.17 is the Latest signed desktop release (published 2026-10-25, built from the Terrier source main). Earlier desktop releases: 1.0.8 and 1.0.9 (2026-10-20), 1.0.12 and 1.0.13 (2026-10-21), 1.0.14 (2026-10-22) and 1.0.15 (2026-10-22, signing-only). No 1.0.10 or 1.0.11 release was published; the 1.0.11 build of 2026-10-21 stayed local and the 1.0.16 number has no release. The voter-profile feature (supporters and persuadables, a selectable profile on walk lists) was merged to the source main on 2026-10-22 and is included in the 1.0.17 build; its thresholds are placeholders awaiting the owner's decision. The 1.0.14 release notes state that the approved owner opens the app without a password prompt. Full recipient acceptance on the signed 1.0.17 build has not been run yet.
+
 ### Blueprint review 2026-10-06 (aggregates only)
 
 The build blueprint (`cu-geography-v3\TERRIER_MULTIDISTRICT_BLUEPRINT_2026-10-06.md`) was checked against the Terrier code (HEAD `8c7a817`), the Luna stages and the two source files before construction. No code was edited and nothing was run.
