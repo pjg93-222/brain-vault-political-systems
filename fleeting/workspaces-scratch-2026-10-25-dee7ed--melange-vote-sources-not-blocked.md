@@ -10,7 +10,7 @@ promoted_to: ""
 project: "workspaces-scratch-2026-10-25-dee7ed"
 memory_type: "project"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-25-dee7ed/memory/melange-vote-sources-not-blocked.md", type: "claude-memory", synced_at: "2026-10-26", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-25-dee7ed\\memory\\melange-vote-sources-not-blocked.md", sha256: "cefa6f3f3d9465af124c29c89731fae05ef92fb2bf988f6d905fc990411b276a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-25-dee7ed/memory/melange-vote-sources-not-blocked.md", type: "claude-memory", synced_at: "2026-10-26", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-25-dee7ed\\memory\\melange-vote-sources-not-blocked.md", sha256: "23c3a3eaff480c9db5ae4c4bda5cf3a632628fc9c6e9c73e9e09f030b2d48c0c"}
 updated_at: 2026-10-26
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -24,7 +24,7 @@ tags: ["type/fleeting", "status/raw"]
 
 Diagnosed 2026-10-26. The Melange vote snapshot feed is Voteview via `fec/legislation/refresh_vote_sources.py` (urllib); it never regressed and PASSed 2026-10-25. Snapshot end (House roll 314 on 2026-09-16, Senate vote 256 on 2026-09-30) matches upstream: Voteview files Last-Modified 2026-10-01, and clerk confirms no House roll 315 (pre-election recess, pro forma sessions only).
 
-- senate.gov LIS XML: Akamai 403 to python, curl, PowerShell, IPv4 and IPv6 from Paul's machine. Not a code change; do not evade. Browser test decides IP block vs scripted-client block.
+- senate.gov LIS XML: Akamai 403 to python, curl, PowerShell, IPv4 and IPv6 from Paul's machine. Not a code change; do not evade. 2026-10-26: Paul's browser loads it, but a fresh browser gets an Akamai bot-challenge page, so it is bot management against scripts, not an IP block. Public trackers and Congress.gov agree: no Senate roll call after vote 256 (9/30), so the snapshot was complete.
 - clerk.house.gov evs: missing roll = HTTP 200 + 65-byte "Error sanitizing file" body.
 - Schannel "revocation offline" = flaky IPv6 to Let's Encrypt CRL host; Python unaffected. IT cert is Intune MDM, not TLS inspection.
 
