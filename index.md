@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-817 notes.
+818 notes.
 
 ## Actors (49)
 
@@ -280,7 +280,7 @@
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
 
-## Fleeting (59)
+## Fleeting (60)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--agent-roster-signing-proof-lane-2026-10-22]] — 2026-10-22 lane - signature census (published installers Valid, owner installs NotSigned stale), agent files gained Skill/skills/scout/verifier/receipt contract, END_PROOF + Terrier assignment ledger; installs and brain PR 33 merge are...
@@ -312,6 +312,7 @@
 - [[melange-systems--mentat-ui-cleanup-lane-2026-09-17]] — UI clean-up lane (UI1) for the Mentat console Graph and Chart Studio - Graph B + Chart Studio A built, patch UI1_graph_studio_cleanup.patch awaits Paul's commit; Board deferred with its contract v2 drafted; the three-lane shared-file...
 - [[melange-systems--mentat-ui-polish-lane-2026-09-19]] — Mentat console polish lane (7 items + motion + PAC map layers + GeoPy/Jinja2): root causes found, Paul's four rulings, P1 dispatched uncommitted, what is still his to rule; delivery traps (he cannot see the Higgsfield gallery widget)
 - [[melange-systems--never-git-stash-anywhere-2026-10-27]] — Standing rule - no agent may run git stash in any Melange checkout, worktrees included; use a temp commit or a diff file
+- [[melange-systems--never-point-test-roots-at-main-data-2026-10-28]] — Never redirect test data paths (pytest plugin, monkeypatch, env root) at the main checkout's data/ - fixture-building tests write through it and clobber live files
 - [[melange-systems--no-permission-prompts-pr-first-2026-10-19]] — Paul 2026-10-19: stop asking permission; execute.
 - [[melange-systems--no-redesign-of-working-components-2026-10-27]] — Never change HOW a working collector or pipeline step operates without Paul's explicit OK; changes must prove parity against the last known-good real run
 - [[melange-systems--opan-exam-scope-pauls-domain]] — OPAN 6606 exam scope is Paul's domain - "not in the slide decks" is NOT evidence a topic is out of scope; Paul overruled all 9 such findings on 2026-08-21
