@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 365; dead ends: 82
+- Open questions in STATE: 41; active decisions: 370; dead ends: 82
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-389|D-389]] — Contact inference v1: G2 holdout is out-of-time validation (Paul ruling 2026-10-
-- [[ledger/melange-systems-brain/D-388|D-388]] — Contact inference v1: G1 rescoped (last attempt) (Paul ruling 2026-10-28)
-- [[ledger/melange-systems-brain/D-387|D-387]] — Three arrivals: re-score Big Five on the claude CLI with Haiku 5.5 (Paul ruling
-- [[ledger/melange-systems-brain/D-386|D-386]] — Long-form levels ratified as FINAL; 12 null-level members stay unbriefed (Paul r
-- [[ledger/melange-systems-brain/D-385|D-385]] — D-158 follow-ups closed: Menendez legislative-pillar census done; CU placeholder
+- [[ledger/melange-systems-brain/D-395|D-395]] — Briefs v3: Opus reviews lane code, merge into local main, item-3 rules as a sepa
+- [[ledger/melange-systems-brain/D-394|D-394]] — Briefs v3: three arrivals withheld now (option C), more text collected in parall
+- [[ledger/melange-systems-brain/D-393|D-393]] — Briefs v3: levels stamped FINAL with a labelled empty diagnostics file (option a
+- [[ledger/melange-systems-brain/D-392|D-392]] — Briefs v3: rule clarifications A-E (8.3 over 2.6, follow-up form exempt, Lucas t
+- [[ledger/melange-systems-brain/D-391|D-391]] — Briefs v3: review loop is one Sonnet reviewer per member, Do/Follow-up pre-check
 <!-- brainlink:state:end -->
