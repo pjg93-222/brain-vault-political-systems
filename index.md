@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-792 notes.
+794 notes.
 
 ## Actors (49)
 
@@ -342,9 +342,9 @@
 - [[workspaces-scratch-2026-10-25-dee7ed--melange-vote-sources-not-blocked]] — Melange vote snapshot staleness (Oct 2026) was upstream data, not a fetch block; senate.gov 403s all scripted clients; clerk returns 200 for missing rolls
 - [[workspaces-scratch-2026-10-28-0c1fea--paul-wants-execution-not-handoffs]] — Paul wants Claude to execute internal work end to end and only consult on decisions, not hand him command lists
 
-## Ledger (generated from the Project Brain) (475)
+## Ledger (generated from the Project Brain) (477)
 
 - [[ledger/QUESTIONS]] — Generated - do not write answers here; answer in chat or in ledger/ANSWERS.md (never written by brainlink)
 - [[ledger/folder-brain/STATE|folder-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
-- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 468 generated notes: decisions, dead ends, STATE, CONSTRAINTS
+- [[ledger/melange-systems-brain/STATE|melange-systems-brain ledger]] — 470 generated notes: decisions, dead ends, STATE, CONSTRAINTS
 - [[ledger/pilot-brain/STATE|pilot-brain ledger]] — 3 generated notes: decisions, dead ends, STATE, CONSTRAINTS
