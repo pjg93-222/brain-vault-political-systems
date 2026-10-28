@@ -22,27 +22,29 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-INSTALLER-COMPILED-SIGNED; INDEPENDENT-VERIFICATION-IN-PROGRESS; PRIVATE-DRAFT"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; THREE-NATIVE-1.0.22-PUBLIC-PRERELEASES; VERIFICATION-SKIPPED-FOR-THIS-DELIVERY; RECIPIENT-ACCEPTANCE-UNCONFIRMED"
 updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
 active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
-current_source_commit: "f78cf22ab916bbda22a17463c156d2875f7bfd2f"
+current_source_commit: "be8d1ad8f0ad032ffdec0dadd792c3c3f5941d0c"
 current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
-current_delivery_status: "Melange 1.0.21 installer compiled and signed; independent verification and private draft upload in progress; not public."
+current_delivery_status: "All three 1.0.22 installers published as manual-download prereleases; verification skipped; hosted readback not performed; work-PC acceptance unknown; stable feed unchanged."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
 desktop_reserve_minimum_gib: 16
 prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
-current_application_payload_source: "5f5451441265b0f6d0c83fcb706639241158fe94"
+current_application_payload_source: "Retained common client 5f5451441265b0f6d0c83fcb706639241158fe94; per-app backend sources and 1.0.22 overlay/builder provenance in publication records."
+current_compiler_source: "f76be3dddcf8e74889e441488f3f8dd5deb73b76"
+current_builder_source: "83cac457683f46a6c1378cf6a288aa79a1b8ec21"
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current packaging source: `f78cf22ab916bbda22a17463c156d2875f7bfd2f`; signed application/backend payload source: `5f5451441265b0f6d0c83fcb706639241158fe94`. The Melange 1.0.21 installer is compiled and signed; independent verification and private-draft staging are in progress. Public publication and work-PC acceptance remain unclaimed.
+> Current delivery: all three signed 1.0.22 installers are public manual-download prereleases under `desktop-v1.0.22-test`. Verification was explicitly skipped for this delivery; hosted readback was not performed, work-PC acceptance is unknown, and the stable update feed is unchanged. Exact identities and provenance appear in the dated publication update below.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -155,3 +157,43 @@ The native `desktop-v1.0.21` release is being staged as a **private draft**. Upl
 This updates the existing shared coordination record without sending another message to Claude or claiming acknowledgment, routing, integration or deployment. The source tip and CI result were checked directly; compilation, signing, unchanged-payload, smoke and in-progress verifier/draft status are reported by the active release task. The two newer privacy edits already present in the canonical topic are preserved in the review branch as well.
 
 Compilation-progress snapshot recorded at 2026-10-28T04:37:06.6435258Z.
+
+## Installer plug-in blocks and pending 1.0.22 delivery (2026-10-28)
+
+The latest user report names ThreatLocker denials for `StdUtils.dll`, `nsis7z.dll`, `System.dll` and `UAC.dll`. These are reported blocked installer plug-ins; the report does not establish that every application or bundled dependency is allowed. The corrected scope still retains the Windows installer and GitHub update receiver and removes the uninstaller. The directory ZIP approach remains superseded.
+
+The release task reports a built-in-only NSIS packager at `327dbfad747d378431319b017248118adfca4945`, followed by owned main-executable/ASAR version overlays, helper documentation and version 1.0.22 at `dcd7b0068c7881fffdd3f1105ad8c4e28d411c97`, pushed on `codex/installer-without-uninstaller` under Melange PR #99. Its intended installer path avoids the four named plug-ins. At this snapshot, Melange 1.0.22 is compiling from the retained signed 1.0.21 program plus two signed 1.0.22 overlays, as reported by the release owner. Final asset identity and publication are pending; no equivalent Mentat or Terrier 1.0.22 artifact is asserted.
+
+Removing installer plug-ins does not grant recipient application-control permission. IT coverage must include the actual installer, installed app executable, bundled runtime executables and native libraries, relevant vendor-signed dependencies, the Windows-login update receiver, and subsequent downloaded installers in their versioned update paths. Process, file, registry and network restrictions remain part of the actual policy. Keep approval scoped to the identified applications and dependencies; do not infer a blanket Downloads permit or endpoint acceptance from this packaging change. The private IT request is a draft, not a sent message or confirmation that policy reached the devices.
+
+The user explicitly requested skipping verification for this delivery. Record this as a dated, delivery-specific instruction: no new test, independent final-artifact verification, installation/update acceptance or work-PC ThreatLocker pass is claimed for 1.0.22. Prior 1.0.21 results and retained signing provenance do not become 1.0.22 verification results. This instruction is not a standing waiver for later releases and does not establish IT policy approval or permit changes to the approved publisher. Existing public certificate redactions remain intact.
+
+Provenance: the active release task supplied the user report, scoped skip instruction, implementation status and pending build status; the two source commit identities were resolved locally. This documentation task ran no release verification. Private component evidence separates retained original payload provenance from the new main-executable overlay; it is not represented as a fresh final-package census. Local knowledge coordination does not establish a Claude message, acknowledgment, integration or publication.
+
+Historical 1.0.21 summary retained verbatim:
+> Current packaging source: `f78cf22ab916bbda22a17463c156d2875f7bfd2f`; signed application/backend payload source: `5f5451441265b0f6d0c83fcb706639241158fe94`. The Melange 1.0.21 installer is compiled and signed; independent verification and private-draft staging are in progress. Public publication and work-PC acceptance remain unclaimed.
+
+Pending documentation snapshot recorded at 2026-10-28T08:14:24.8369951+00:00.
+
+## Published native 1.0.22 prereleases (2026-10-28)
+
+The release owner published the signed Melange, Mentat and Terrier 1.0.22 Windows installers as public manual-download prereleases under `desktop-v1.0.22-test`. The retained publication records report successful signing command completion (exit 0), final local file identities and GitHub release/asset identifiers. This supersedes the pending-compilation snapshot above. Melange 1.0.21 had already been published separately as `desktop-v1.0.21-test`, after which the user reported the four installer DLL blocks; the former private-draft description is historical.
+
+| Application | Published at (UTC, 2026-10-28) | Installer bytes | SHA-256 |
+|---|---|---:|---|
+| Melange 1.0.22 | 08:51:12 | 750,998,704 | `fd4612fb143d22e00f0d4e27a08178991931e0abf8a210ab77fa9fc79cfa480e` |
+| Mentat 1.0.22 | 08:50:35 | 483,696,120 | `fa9f61705d6ab593042245c0b990207d8a8539342cdd16a5dee068e28300798c` |
+| Terrier 1.0.22 | 08:45:01 | 305,728,456 | `325d693894c7378457554896141e504d2dfca131ec6892c70f6ac36fdd94edf2` |
+
+All three records name builder source `83cac457683f46a6c1378cf6a288aa79a1b8ec21` and retained common client source `5f5451441265b0f6d0c83fcb706639241158fe94`. Their backend sources are Melange `5f5451441265b0f6d0c83fcb706639241158fe94`, Mentat `2b623be182881039e974940b652fab7d39a87ce6`, and Terrier `d6cf452bf688086c37e796d350399bae47865d72`. The release task reports the built-in, per-file NSIS/zlib compiler follow-up at `f76be3dddcf8e74889e441488f3f8dd5deb73b76`; this is separate from retained application sources and subsequent documentation. The installer and GitHub update receiver remain; the uninstaller and four reported installer plug-ins are removed by the packaging implementation.
+
+**Verification was skipped at the user's explicit request for this delivery.** No new test, independent final-installer extraction/signature pass, hosted-download readback, installation/update acceptance or work-PC ThreatLocker pass is asserted. The records explicitly say hosted readback was not performed and work-PC acceptance was not demonstrated. Earlier test counts apply only to the older source commits named in their dated sections. Publication and a successful signing command are not substitutes for those missing checks. The stable automatic-update feed remains unchanged for all three applications; these prereleases provide immediate manual downloads. The skip instruction remains scoped to this delivery, not future releases.
+
+The generic public [ThreatLocker deployment guide](https://github.com/pjg93-222/Melange/blob/be8d1ad8f0ad032ffdec0dadd792c3c3f5941d0c/ops/desktop/client/THREATLOCKER-DEPLOYMENT.md) is committed and pushed under Melange PR #99 at `be8d1ad8f0ad032ffdec0dadd792c3c3f5941d0c`. It distinguishes removing the installer plug-ins from IT policy coverage for each application, runtime dependency and update stage. No IT message or actual recipient policy change is asserted. Existing certificate redactions are preserved.
+
+Provenance: the three existing private publication records supply the exact artifact identities above; the active release owner confirms public repository visibility and publication. This knowledge update reads those small records and does not independently verify packages or hosted bytes. Claude coordination remains local records only, without a sent message or acknowledgment. Repository publication, documentation publication, stable-feed activation and work-PC acceptance remain separate facts.
+
+Historical pending-delivery summary retained verbatim:
+> Current delivery preparation: Melange 1.0.22 at source `dcd7b0068c7881fffdd3f1105ad8c4e28d411c97`, using built-in NSIS operations to remove the reported installer plug-ins. Compilation/publication are pending; verification is skipped at the user's explicit request for this delivery. Work-PC acceptance is unconfirmed. See the dated 1.0.22 update below.
+
+Publication documentation recorded at 2026-10-28T08:56:11.7955069Z.
