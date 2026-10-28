@@ -22,26 +22,27 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-SOURCE-COMMITTED; FIRST-BUILD-IN-PROGRESS; UNPUBLISHED"
-updated_at: 2026-10-27
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-INSTALLER-COMPILED-SIGNED; INDEPENDENT-VERIFICATION-IN-PROGRESS; PRIVATE-DRAFT"
+updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
 active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
-current_source_commit: "5f5451441265b0f6d0c83fcb706639241158fe94"
+current_source_commit: "f78cf22ab916bbda22a17463c156d2875f7bfd2f"
 current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
-current_delivery_status: "First native Melange build running with selected 16 GiB reserve; no native packages published."
+current_delivery_status: "Melange 1.0.21 installer compiled and signed; independent verification and private draft upload in progress; not public."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
 desktop_reserve_minimum_gib: 16
 prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
+current_application_payload_source: "5f5451441265b0f6d0c83fcb706639241158fe94"
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current native source: `5f5451441265b0f6d0c83fcb706639241158fe94`, draft PR #99. The first native Melange build is running with a selected 16 GiB reserve. No native packages are published. The prior fixed-32-GiB blocker and 12 GiB cleanup request were withdrawn after correcting DE-076 scope.
+> Current packaging source: `f78cf22ab916bbda22a17463c156d2875f7bfd2f`; signed application/backend payload source: `5f5451441265b0f6d0c83fcb706639241158fe94`. The Melange 1.0.21 installer is compiled and signed; independent verification and private-draft staging are in progress. Public publication and work-PC acceptance remain unclaimed.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -129,6 +130,8 @@ Source-freeze status recorded at 2026-10-28T03:11:26.8802882Z.
 
 ## Reserve-rule scope correction and active native build (2026-10-27)
 
+> Current native source: `5f5451441265b0f6d0c83fcb706639241158fe94`, draft PR #99. The first native Melange build is running with a selected 16 GiB reserve. No native packages are published. The prior fixed-32-GiB blocker and 12 GiB cleanup request were withdrawn after correcting DE-076 scope.
+
 The previous disk-blocker account above applied a saved rule outside its original scope. **DE-076 concerns the Congress `chain_transaction` pipeline, not desktop releases.** Its 30 GB transaction floor and `-MinFreeGB 32` relaunch check addressed that Congress/data transaction. They do not establish a mandatory 32 GiB desktop release reserve. The task coordinator misapplied that ledger entry, corrected the mistake and withdrew the request for 12 GiB of cleanup or another drive. No data files were deleted to satisfy that withdrawn request. Saved rules retain their original system, operation, date and authority; check that scope before applying them to another workflow.
 
 Current native source is committed and pushed as `5f5451441265b0f6d0c83fcb706639241158fe94` on `codex/installer-without-uninstaller`, still under [draft Melange PR #99](https://github.com/pjg93-222/Melange/pull/99). Commit `06c7f3d972a29fcaa035da9906c0e146e3ab76f9` is the preceding source checkpoint. The [current desktop release guide](https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md) states the corrected contract: `--free-floor-gib` is selectable with a **16 GiB minimum** and an unchanged **32 GiB default**. The chosen reserve applies consistently to actual per-phase workspace projections and both final-artifact extraction verifiers. A selected 16 GiB reserve is supported desktop behavior; it is not an exception to a Congress transaction rule.
@@ -140,3 +143,15 @@ The **first native Melange build is now running** with a **16 GiB selected reser
 Provenance: DE-076 was read from the generated `ledger/melange-systems-brain/DE-076.md` projection of `melange-systems-brain/DEADENDS.md`, source brain commit `39c66f5f34d032700c9b528beb32fd662aae41f2`, entry SHA-256 `a63df716e03f1e21dafe42a1130506969a70ce9e64f03549511b4d3e888f7606`. Its source scope is explicit in that content; the generated ledger was not edited. The new PR head and committed release-guide changes were checked directly. Test/probe results, withdrawal and active build status are reported by the release task. This memory update sends no new Claude message and asserts no acknowledgment, integration or deployment.
 
 Reserve-scope correction recorded at 2026-10-28T03:28:01.2429120Z.
+
+## Native installer compilation and private verification (2026-10-28)
+
+The current implementation branch `codex/installer-without-uninstaller` is pushed at `f78cf22ab916bbda22a17463c156d2875f7bfd2f` under draft PR #99. This follow-up is a packaging-only correction: it removes the unused `handleUninstallResult` helper closure whose NSIS warning 6010 caused the original compile to fail with warnings treated as errors. The `-WX` compiler gate remains enforced. The already signed application/backend payload is preserved at source `5f5451441265b0f6d0c83fcb706639241158fe94`; implementation tip and payload source must be recorded separately.
+
+The release task reports **7/7 full `-WX` compiler checks** and the helper security check passing. GitHub's `focused-unit` check passed at `f78cf22ab916bbda22a17463c156d2875f7bfd2f` on 2026-10-28. The actual **Melange 1.0.21 outer installer EXE has now compiled and been signed**, the prior signed application payload remains unchanged, and the packaged backend smoke passed. Independent native/source verification is still running at this snapshot, so compilation, signing and the smoke are not represented as completion of all release gates.
+
+The native `desktop-v1.0.21` release is being staged as a **private draft**. Upload progress is not public publication, hosted-byte acceptance, feed activation or work-PC ThreatLocker acceptance. No native public release or work-PC acceptance is claimed in this progress record. Final publication facts remain pending a separate exact-artifact result. The preceding fixed-disk blocker and first-build-started descriptions are historical; the corrected DE-076 scope and selectable desktop reserve remain in force.
+
+This updates the existing shared coordination record without sending another message to Claude or claiming acknowledgment, routing, integration or deployment. The source tip and CI result were checked directly; compilation, signing, unchanged-payload, smoke and in-progress verifier/draft status are reported by the active release task. The two newer privacy edits already present in the canonical topic are preserved in the review branch as well.
+
+Compilation-progress snapshot recorded at 2026-10-28T04:37:06.6435258Z.

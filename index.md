@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-778 notes.
+781 notes.
 
 ## Actors (49)
 
@@ -272,7 +272,7 @@
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
 
-## Fleeting (66)
+## Fleeting (69)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--agent-roster-signing-proof-lane-2026-10-22]] — 2026-10-22 lane - signature census (published installers Valid, owner installs NotSigned stale), agent files gained Skill/skills/scout/verifier/receipt contract, END_PROOF + Terrier assignment ledger; installs and brain PR 33 merge are...
@@ -337,9 +337,12 @@
 - [[scratch-2026-10-19-bad9b3--terrier-district-download-2026-10-21]] — State of the Terrier desktop private district-download feature and the 1.0.10 startup fix as of 2026-10-21, plus what remains before release
 - [[workspaces-scratch-2026-10-19-bad9b3--terrier-1-0-11-build-2026-10-21]] — How Terrier desktop 1.0.11 was built locally on 2026-10-21 (runtime bootstrap patched in place, not rebuilt), what is verified, and what still waits on Paul
 - [[workspaces-scratch-2026-10-21-f6eb2f--desktop-readiness-2026-10-21]] — State of the Melange/Mentat/Terrier desktop rollout after the 2026-10-21 overnight session; artifact paths, PR, data releases, who owns what
-- [[workspaces-scratch-2026-10-21-f6eb2f--installer-signing-rule]] — Paul's rule that every Melange/Mentat/Terrier desktop installer handed out must be Authenticode-signed with thumbprint [private — see knowledge vault]; where signing happens, verified state on 2026-10-22, known gaps
-- [[workspaces-scratch-2026-10-22-ddfeb0--always-sign-with-release-certificate]] — User wants every commit signed with the Melange Systems Desktop Release certificate (thumbprint [private — see knowledge vault]), always
+- [[workspaces-scratch-2026-10-21-f6eb2f--installer-signing-rule-2]] — Paul's rule that every Melange/Mentat/Terrier desktop installer handed out must be Authenticode-signed with thumbprint [private - see knowledge vault]; where signing happens, verified state on 2026-10-22, known gaps
+- [[workspaces-scratch-2026-10-21-f6eb2f--installer-signing-rule]] — Paul's rule that every Melange/Mentat/Terrier desktop installer handed out must be Authenticode-signed with thumbprint [private - see knowledge vault]; where signing happens, verified state on 2026-10-22, known gaps
+- [[workspaces-scratch-2026-10-22-ddfeb0--always-sign-with-release-certificate-2]] — User wants every commit signed with the Melange Systems Desktop Release certificate (thumbprint [private - see knowledge vault]), always
+- [[workspaces-scratch-2026-10-22-ddfeb0--always-sign-with-release-certificate]] — User wants every commit signed with the Melange Systems Desktop Release certificate (thumbprint [private - see knowledge vault]), always
 - [[workspaces-scratch-2026-10-25-dee7ed--melange-vote-sources-not-blocked]] — Melange vote snapshot staleness (Oct 2026) was upstream data, not a fetch block; senate.gov 403s all scripted clients; clerk returns 200 for missing rolls
+- [[workspaces-scratch-2026-10-28-0c1fea--paul-wants-execution-not-handoffs]] — Paul wants Claude to execute internal work end to end and only consult on decisions, not hand him command lists
 
 ## Ledger (generated from the Project Brain) (462)
 
