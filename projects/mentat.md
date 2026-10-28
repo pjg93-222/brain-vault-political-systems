@@ -213,6 +213,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | UI redesign boards (Melange and Mentat) | Sept 2026 redesign: Higgsfield boards for Mentat and Melange, overlay-first builds, finalize/reconcile rounds, graph quirks. |
 | [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] | part: The Mentat console redesign boards of 2026-09-21/22: two… |
 | [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] | Mentat tree reconciled (273 dirty -> 36 commits), GitHub branch pushed (PR merged 2026-10-03), tidy Data workbook, console hang fix. |
+| [[2026-10-feature-installer-free-desktop-zip-migration]] | Shared signed ZIP client with separate Mentat backend/profile; one-time migration, exact candidate and remaining acceptance gates. |
 
 ### Related Actors
 

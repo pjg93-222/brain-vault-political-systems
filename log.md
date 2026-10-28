@@ -394,3 +394,7 @@
 - 2026-10-22 15:44 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 0, changed 1) | [[melange-systems--agent-roster-2026-10-21]]
 - 2026-10-22 16:30 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[workspaces-scratch-2026-10-21-f6eb2f--installer-signing-rule]]
 - 2026-10-22 16:33 -05:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[workspaces-scratch-2026-10-22-ddfeb0--always-sign-with-release-certificate]]
+- 2026-10-27 20:48 -04:00 | preserve | Created installer-free ZIP migration contract and exact candidate evidence | [[2026-10-feature-installer-free-desktop-zip-migration]]
+- 2026-10-27 20:48 -04:00 | preserve | Linked shared installer-free ZIP migration from project map | [[melange-systems]]
+- 2026-10-27 20:48 -04:00 | preserve | Linked shared installer-free ZIP migration from project map | [[mentat]]
+- 2026-10-27 20:48 -04:00 | preserve | Linked shared installer-free ZIP migration from project map | [[terrier]]
