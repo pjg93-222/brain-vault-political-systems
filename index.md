@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-781 notes.
+789 notes.
 
 ## Actors (49)
 
@@ -56,10 +56,11 @@
 - [[sentinel-collectors]] — Melange press/hearing collection and sentinel-to-workbook bill ingestion layer (Codex-built, Claude-finished) with system-manifest regeneration and self-falsifying audit sentinels; merged to main 313eaaad1 for the ingestion part, press...
 - [[staffer-live-sidecar]] — The live staffer-network graph surface: fec/surfaces/staffer_live (UI) plus staffer_live_server.py and sibling modules, a people-only staffer graph with automatic duplicate-person consolidation, current-coworker cost-1 routing and a...
 
-## Concepts (27)
+## Concepts (32)
 
 - [[behavior-qualified-recognition]] — Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
 - [[boot-protocol-evaluation-framework]] — The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
+- [[cdp-attached-headed-browser-clearance]] — Scraping pattern for challenge-protected public pages: attach over CDP to a real headed Chrome on a persistent profile, reuse the clearance cookie with the matching user agent, pace requests, and re-harvest on challenge. Headless Chrome...
 - [[census-before-claims]] — Measure first (a census, the live file, git status plus a byte diff) before stating a mechanism, a number or a completion; never infer it.
 - [[concurrent-service-overlap-edge-rule]] — OVERLAP is the only person-to-person edge rule of the staffer social network: no edge without actual temporal overlap in the same container; career sequence is trajectory; payroll-container co-tenure is a clique degree, not co-work.
 - [[contract-fixture-discipline]] — A shape crossing a lane or process boundary is fixed by one JSON example file every suite imports, asserted against every producer, with a negative control that must fail; prose is never a contract (brain DE-021).
@@ -73,8 +74,10 @@
 - [[mandatory-desktop-release-signing]] — Mandatory release gate for Melange, Mentat and Terrier: approved publisher signatures, complete native payload verification, preserved vendor signatures and exact distributed-byte evidence before publication.
 - [[mentat-fec-accounting-methodology]] — Mentat's accounting standard (version 5, 2026-09-12): six steps from Define to Verify and report; original employee and corporate giving counted once, PAC outgoing separate; four accuracy measures, never one percentage.
 - [[pac-cash-proportional-attribution]] — Mentat's rule for modeling company-funded PAC spending (2026-09-08): each payment takes the company's share of labeled cash just before it, transfers move balances instead of creating gifts, unverifiable inputs withhold it.
+- [[pinned-source-selection]] — Rule for choosing which input file a Melange reader loads: an explicit pin wins, then the timestamp in the filename, then the name. Newest-by-modification-time is not used, because base files written in the same second cannot be told...
 - [[say-do-gate]] — A Champion or Defender cell in the category-stance matrix stands only if the stated stance is backed by a recorded action there: an authored or original-cosponsored bill (Path A) or a CU-aligned final-passage vote (Path V); otherwise Ally.
 - [[settled-findings-stay-settled]] — A finding refuted by measurement or ruled intentional by Paul is recorded once, in a binding refuted list or a do-not-re-flag note, and is not re-litigated unless Paul reopens it or new evidence meets the reopen condition recorded with...
+- [[sha-pinned-reference-refresh]] — Refresh of external reference data (the Congress member roster) by commit SHA through the GitHub contents API, with a warning when the snapshot is older than 14 days. Used because Python TLS to the raw file hosts is reset on the Windows...
 - [[single-look-holdout-discipline-case-1-moneyball-gate2]] — Case 1 of the single-look discipline, the Moneyball session of 2026-07-07: the interview-C retest whose one look was taken, the improvement rounds that missed, the round-3 campaign and the audit and honesty pass, plus other outcomes.
 - [[single-look-holdout-discipline-cases-2-3-n-slot-and-gold-template]] — Cases 2 and 3 of the single-look discipline: the N-slot re-anchor of 2026-07-11, whose pre-registered gate passed 5/5, and the gold-template Senate panels of 2026-07-16, whose two one-look rounds both missed, with the audio two-check...
 - [[single-look-holdout-discipline-cases-4-5-luna-and-pac]] — Cases 4 and 5 of the single-look discipline: the Luna CU-geography holdout of 2026-09-30, used twice, leaving no untouched labelled data, and PAC accuracy attempt 2 of 2026-10-03, whose UT-X holdout was sealed, then opened for development.
@@ -84,6 +87,8 @@
 - [[stance-pipeline-integrity-contract]] — The 2026-07-15 production contract for Melange stance labels: one fixed ten-band scale for every domain, bounded exceptional rounding, General CU allocation, the A/V say-do rule, fail-closed identity joins and regeneration checks.
 - [[trend-over-significance]] — Report a result's sign, size and consistency across variants first, as real R summary(lm()) output, and put the p-value after; for exploratory work the trend, not p < 0.05, is the bar.
 - [[two-hop-stance-decomposition]] — Decomposition of CU-alignment scoring into a stance hop (member toward a target) and a valence hop (target good/bad for credit unions); the valence hop (0.689 vs stance 0.915) is the accuracy bottleneck and is fixed with a curated...
+- [[unmapped-labels-score-zero]] — Failure pattern: a scorer that maps raw labels to credit and gives unmapped labels zero credit under-credits silently. In the Melange bill archive, raw Congress.gov action text left 372 rows unmapped, so they received no passage credit.
+- [[vote-freshness-from-archive-cutoff]] — Vote freshness gate for Melange: a chamber's votes are stale only when the bill archive cites floor votes newer than the latest roll call on file for that chamber. The cutoff comes from archive data, never from file modification time.
 - [[zero-rank-delta-verification]] — Verification protocol for Melange refactors and reorgs: kernel tests -> full pipeline -> rank delta vs the last ranks file must be ZERO (unless the change is meant to move ranks) -> audit clean; proven by ranks staying byte-identical...
 
 ## Discussions (11)
@@ -114,7 +119,7 @@
 - [[research-vault]] — Separate Obsidian vault at C:/Users/pgoff/Documents/research (Bedrock name 'research') holding Paul's annotated bibliographies verbatim, his research notes and the academic literature on his computer, each paper related to the system...
 - [[terrier]] — Terrier: the renamed CU Geography voter-canvass and walk-list app (Codex project, not Melange; root Documents\Terrier\outputs\cu-geography-v3, Django/Waitress on 8767 plus React/MapLibre). Live for Colorado CD-05 (491,308 people...
 
-## Topics (155)
+## Topics (158)
 
 - [[2026-10-06-terrier-blueprint]] — The written plan for adding Oregon OR-05 and Connecticut CT-01 to the Colorado CD-05 Terrier app: its phases, what the 2026-10-06 review corrected, Paul's 2026-10-07 answers, how far the build has got and where every input lives.
 - [[2026-10-06-terrier-build-progress]] — The dated build record of the Terrier multi-district lane from 2026-10-07 to the evening of 2026-10-09: phases 0, 2 and 3, the nothing-withheld Colorado swap, the registration mix by party code, the Untapped map and one-click walk plan...
@@ -264,10 +269,13 @@
 - [[2026-09-feature-ui-redesign-boards-mentat-console-boards]] — The Mentat console redesign boards of 2026-09-21/22: two rounds of Higgsfield boards (14 on 09-21, 17 on 09-22), the decision that boards win over prompt numbers, and the build-01 shell.
 - [[2026-09-feature-ui-redesign-boards]] — September 2026 redesign of the mentat-console (part of Mentat (FEC contributions intelligence)) and the melange-dashboard (part of melange-systems): boards made with the higgsfield-connector, approved by Paul Goff, built as 8 Mentat...
 - [[2026-09-troubleshooting-mentat-repo-state-and-workbooks]] — Troubleshooting record for the mentat code tree (C:\Users\pgoff\Mentat, branch codex/mentat-crypto) and its workbooks: the reconcile of 273 dirty entries into 36 commits (HEAD had been broken in 12 places the working tree masked), the...
+- [[2026-10-feature-bill-archive-rebuild-variant-b]] — The live bill archive stored raw Congress.gov action text, so 372 rows got no passage credit.
 - [[2026-10-feature-brain-vault-setup]] — Consolidated all of Paul's Claude Code project memories into a private Obsidian + Bedrock brain vault with a GitHub backup and a graph page driven by a live watcher.
+- [[2026-10-feature-cosponsor-network-r-faithful-rebuild]] — The Python port reproduces the R network's 2,214 edges exactly.
 - [[2026-10-feature-forecast-giving-redesign-giving-by-cycle-live-model]] — Part of 2026-09-feature-forecast-giving-redesign (project forecast-redesign).
 - [[2026-10-feature-installer-free-desktop-zip-migration]] — Superseded - user scope correction, 2026-10-27 Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver.
 - [[2026-10-troubleshooting-app-control-blocks-installed-apps]] — The application-control rule allows the desktop apps only when they run from the user's Downloads folder.
+- [[2026-10-troubleshooting-congress-discovery-cloudflare]] — The weekly Congress.gov discovery run forced headless Chrome, which never clears the Cloudflare challenge.
 - [[2026-10-troubleshooting-melange-main-reconcile]] — On 2026-10-16/17 Paul had the Melange repository's three unrelated histories reconciled: the GitHub default branch went back to main, the roughly 49 commits made directly on the published lineage were ported onto local main as one...
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
