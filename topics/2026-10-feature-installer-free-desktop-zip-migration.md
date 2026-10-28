@@ -10,6 +10,9 @@ related_projects: ["[[melange-systems]]", "[[mentat]]", "[[terrier]]"]
 objective: "Preserve the signed directory ZIP migration contract and exact tested candidate boundaries across all three desktop apps."
 created_at: 2026-10-27
 sources:
+  - url: "https://github.com/pjg93-222/Melange/pull/102"
+    type: github-repo
+    synced_at: 2026-10-28
   - url: "https://github.com/pjg93-222/Melange/pull/96"
     type: github-repo
     synced_at: 2026-10-27
@@ -22,14 +25,14 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-22-RECOVERY-23-FEEDS-LIVE; SIX-NATIVE-GATES-PASSED; LAUNCH-USER-REPORTED; WORK-PC-UPDATE-UNTESTED"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-24-FEEDS-LIVE; LOCAL-ACCESS-AND-UPDATE-STATUS; NATIVE-AND-HOSTED-GATES-PASSED; WORK-PC-UPDATE-UNTESTED"
 updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
-active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
-current_source_commit: "22de8c248"
-current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
+active_scope: "Native installer without uninstaller; local sign-in; direct signed GitHub updates and visible launch status."
+current_source_commit: "9845710e8edbaa8348a47807bb8f9c4bcbd6107c"
+current_source_pr: "https://github.com/pjg93-222/Melange/pull/102"
 current_delivery_status: "All three stable 1.0.22 recovery and latest 1.0.23 feeds are published; actual shipped clients passed anonymous hosted feed checks; work-PC update/recovery acceptance remains open."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
@@ -224,3 +227,21 @@ The user reports that the app now launches under ThreatLocker, following the Mel
 The final two inspections used an explicitly accounted 4 GiB reserve for their bounded payloads; the production 32 GiB default/16 GiB minimum and all native/source checks are unchanged. Existing title, original ZIP history, certificate redactions and review gates are preserved. No Claude message or acknowledgment, PR merge, work-PC update installation or service-uptime guarantee is asserted by this knowledge update.
 
 Publication and hosted-receipt facts recorded at 2026-10-28T19:40:05.983054+00:00; source records remain private.
+
+## Local access and launch update status — 1.0.24
+
+All three 1.0.24 installers and complete stable signed feeds are published as sequence 15, superseding 1.0.23 as latest. The shared client/bootstrap is frozen at `9845710e8edbaa8348a47807bb8f9c4bcbd6107c`, on [PR102](https://github.com/pjg93-222/Melange/pull/102), stacked on PR99. App backends and vendor dependencies retain their exact verified 1.0.23 bytes and the source pins above. Test-only fixture repairs on the review branch do not change those packaged production bytes.
+
+- [Melange 1.0.24 installer](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.24/melange-1.0.24-win32-x64.exe)
+- [Mentat 1.0.24 installer](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.24/mentat-1.0.24-win32-x64.exe)
+- [Terrier 1.0.24 installer](https://github.com/pjg93-222/Geo/releases/download/desktop-v1.0.24/terrier-1.0.24-win32-x64.exe)
+
+All three actual packaged 1.0.24 clients passed anonymous discovery, signed manifest/trust, 1.0.23 recovery and hosted-installer size/hash checks. These metadata checks did not download or install the binaries again. The review PRs are not merged.
+
+New builds default to local sign-in without the remote administrator approval service. Melange/Mentat retain local password/device protection; Terrier retains real Django passwords and roles. Existing verified password records migrate separately from preserved managed records and user data. Corporate execution controls are unchanged, and no private-server grant or bearer permission is fabricated.
+
+Each application checks its own public GitHub Releases directly. Launch, sign-in and settings show the installed version and actual update state, with a persistent main-window title. Cached results, API delays and failed checks are distinguished from a fresh current-version result. Source commits become updates only after a release is published. Discovery starts independently of sign-in and initial dataset preparation; a not-yet-confirmed running version can discover a corrective release while keeping its previous confirmed recovery baseline. Already-stuck 1.0.23 installations may need one manual upgrade.
+
+Validation covers 252 distinct focused client cases, 10 real local Django/protected-storage cases, fresh export-security and production-dependency checks, and three complete native artifact inspections. Failed fixture runs remain in the private record; their specific repairs passed, and no production code or security exception changed to hide them. These checks do not establish installation or automatic-update acceptance on the recipient work PC.
+
+The existing Geo district-test release is public again after owner authorization, preserving its assets, signed catalogue and non-latest prerelease classification. Public data manifests for all three apps are available and signature-checked. First-time data downloads remain separate from binary updates and can be substantial. No private cache was published. Private receipts retain the exact source, build, publication and transport provenance.
