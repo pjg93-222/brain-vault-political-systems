@@ -1,9 +1,9 @@
 ---
 type: topic
 title: "Installer-free desktop ZIP migration (2026-10)"
-aliases: ["Signed directory ZIP updates", "Installer-free Melange Mentat Terrier"]
+aliases: ["Signed directory ZIP updates", "Installer-free Melange Mentat Terrier", "Native installer without uninstaller", "Keep installer and GitHub updates"]
 category: feature
-status: in-progress
+status: superseded
 people: []
 actors: []
 related_projects: ["[[melange-systems]]", "[[mentat]]", "[[terrier]]"]
@@ -16,13 +16,18 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/f49266bfbae19f4153dcb1559b7781b53ebee35e/ops/desktop/INSTALLER_FREE_HANDOFF.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "LOCAL-PACKAGE-VERIFIED; RECIPIENT-AND-UPDATE-ACCEPTANCE-PENDING"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; CORRECTED-NATIVE-SOURCE-IN-PROGRESS"
 updated_at: 2026-10-27
 updated_by: "preserve@agent"
-tags: [type/topic, status/in-progress, category/feature, domain/platform, domain/security]
+tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
+superseded_at: 2026-10-27
+active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
+
+> [!warning] Superseded — user scope correction, 2026-10-27
+> Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -69,3 +74,27 @@ The frozen client suite passed 803/803 tests. All three final candidates passed 
 - [ ] Confirm downstream coordination acknowledgment and integration. The coordination message was delivered but interrupted before acknowledgment/routing; unified integration is not claimed complete.
 
 Concurrent development does not alter these immutable candidates. New source changes require a new frozen build, fresh package-bound evidence and a distinct release; do not replace candidate bytes or reuse their receipts for another build.
+
+## Scope correction: retain installer, remove only uninstaller
+
+The user corrected the scope on 2026-10-27: retain the original Windows installer, remove only the uninstaller, and add or keep the GitHub update receiver for Melange, Mentat and Terrier. Pursuing an installer-free ZIP migration was a scope error. This correction supersedes the migration instructions, recovery-baseline publication plan and outstanding ZIP-channel checklist above; the old candidate hashes and receipts remain historical evidence.
+
+The existing native GitHub update receiver already provided the update path. The corrected work keeps that native installer/update channel. It does not require a one-time ZIP migration, publish a directory ZIP manifest, remove the installer, change application data or imply recipient application-control approval.
+
+### Implementation snapshot
+
+At the recorded coordination snapshot, the active branch is `codex/installer-without-uninstaller`, based on Melange commit `3f0c30c5817c65ad91a094f2c05bdf76c58946e7`. The 1.0.21 native changes are uncommitted and under test; the base commit alone does not contain them. Source inspection finds the following changes in progress:
+
+- The NSIS build uses pinned, reviewed template adaptations that skip the uninstaller generation/build pass, omit the installed uninstaller and do not invoke a previous uninstaller during an update.
+- Installation and updates select versioned application folders. After successful extraction and registration, the per-user `HKCU` Run entry points to the current version's update receiver. Previous program folders and application profiles/data are retained.
+- The native receiver remains in place. The publisher pin becomes enforced after the 1.0.19 warning release, and failed-startup update handling retains an authorized last-good recovery baseline while allowing a corrected release to be received.
+
+These are source-state observations, not final-package evidence. No new native installer has been built or published at this snapshot. Passing tests, a source commit, a signed package, hosted readback, real update/recovery acceptance and work-PC ThreatLocker acceptance must be reported separately. Existing mandatory final-payload signing, approved publisher, timestamp, source/inventory and exact-byte evidence requirements still apply to every executable that remains in the installer and runtime. Removing the uninstaller does not relax those gates or prove the original Windows access error is resolved.
+
+### Superseded artifacts and coordination
+
+[Melange PR #96](https://github.com/pjg93-222/Melange/pull/96) was closed as superseded at `2026-10-28T02:20:08Z`. Its historical ZIP branch remains pushed at `f7752d6060a5b8fc1393fbdf7af66e4d9e1284ff`. Private ZIP drafts remain retained, but no ZIP release or signed ZIP update feed was made public. Do not promote those prototypes as the corrected deliverable.
+
+The local coordination handoff is corrected to this native-installer scope. This memory update is not a new message to Claude and does not establish acknowledgment, routing, integration or deployment. The earlier interrupted ZIP coordination record remains historical; downstream work should use this scope correction and fresh package-bound evidence.
+
+Snapshot recorded at 2026-10-28T02:47:07.3744110Z. User scope and release/coordination status are recorded from the active task; implementation details were checked against the local uncommitted source, and the PR closure/tip were read from GitHub.
