@@ -22,29 +22,30 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; THREE-NATIVE-1.0.22-PUBLIC-PRERELEASES; VERIFICATION-SKIPPED-FOR-THIS-DELIVERY; RECIPIENT-ACCEPTANCE-UNCONFIRMED"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-22-RECOVERY-23-FEEDS-LIVE; SIX-NATIVE-GATES-PASSED; LAUNCH-USER-REPORTED; WORK-PC-UPDATE-UNTESTED"
 updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
 active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
-current_source_commit: "be8d1ad8f0ad032ffdec0dadd792c3c3f5941d0c"
+current_source_commit: "22de8c248"
 current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
-current_delivery_status: "All three 1.0.22 installers published as manual-download prereleases; verification skipped; hosted readback not performed; work-PC acceptance unknown; stable feed unchanged."
+current_delivery_status: "All three stable 1.0.22 recovery and latest 1.0.23 feeds are published; actual shipped clients passed anonymous hosted feed checks; work-PC update/recovery acceptance remains open."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
 desktop_reserve_minimum_gib: 16
+final_two_inspection_reserve: "Explicit one-run 4 GiB budget for Mentat/Terrier 1.0.23 only; production reserve defaults and all integrity checks unchanged."
 prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
-current_application_payload_source: "Retained common client 5f5451441265b0f6d0c83fcb706639241158fe94; per-app backend sources and 1.0.22 overlay/builder provenance in publication records."
-current_compiler_source: "f76be3dddcf8e74889e441488f3f8dd5deb73b76"
-current_builder_source: "83cac457683f46a6c1378cf6a288aa79a1b8ec21"
+current_application_payload_source: "Retained common client 5f5451441265b0f6d0c83fcb706639241158fe94; per-app backend commits and 1.0.23 overlays are recorded below."
+current_compiler_source: "8c0d350361a65027c43baf76b1895ef7f1d2a9cc"
+current_builder_source: "8c0d350361a65027c43baf76b1895ef7f1d2a9cc"
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current delivery: all three signed 1.0.22 installers are public manual-download prereleases under `desktop-v1.0.22-test`. Verification was explicitly skipped for this delivery; hosted readback was not performed, work-PC acceptance is unknown, and the stable update feed is unchanged. Exact identities and provenance appear in the dated publication update below.
+> Current delivery: all three stable 1.0.22 recovery feeds and latest 1.0.23 feeds are published. Six native inspections and actual shipped-client anonymous feed checks passed. The user reports successful app launch; work-PC automatic-update/recovery acceptance remains open. The final dated section below governs; earlier skip and unchanged-feed statements remain historical.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -197,3 +198,29 @@ Historical pending-delivery summary retained verbatim:
 > Current delivery preparation: Melange 1.0.22 at source `dcd7b0068c7881fffdd3f1105ad8c4e28d411c97`, using built-in NSIS operations to remove the reported installer plug-ins. Compilation/publication are pending; verification is skipped at the user's explicit request for this delivery. Work-PC acceptance is unconfirmed. See the dated 1.0.22 update below.
 
 Publication documentation recorded at 2026-10-28T08:56:11.7955069Z.
+
+## Final signed native feeds — 2026-10-28
+
+All three stable signed feeds are published. Stable `desktop-v1.0.22` (sequence 13, identical to the existing preview installer bytes) supplies recovery metadata for installed 1.0.22 clients; `desktop-v1.0.23` (sequence 14) is latest. The older `desktop-v1.0.22-test` links remain separate. Each app checks its signed GitHub release manifest at startup, every 15 minutes and after resume/unlock. Verified updates activate after a normal close or before the next launch; the login receiver and profiles remain. New source commits become updates only after a release is built and published.
+
+- [Melange 1.0.23](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.23/melange-1.0.23-win32-x64.exe)
+- [Mentat 1.0.23](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.23/mentat-1.0.23-win32-x64.exe)
+- [Terrier 1.0.23](https://github.com/pjg93-222/Geo/releases/download/desktop-v1.0.23/terrier-1.0.23-win32-x64.exe)
+
+| App | Installer bytes | SHA-256 |
+|---|---:|---|
+| Melange | 750,998,864 | `4ea779552a3cbcf901ee0cdf6581d57d7c1dfb7f401700c8b522f8f5700b8d78` |
+| Mentat | 483,696,272 | `924295fa2824f45e1214ccc29ece533a1a12ce73c53fa07426f97741dbf7a23d` |
+| Terrier | 305,728,600 | `2dc54ae07748c4bd1b7aecbac5a98fdc22be8b4ef33f992de0aca5352010a690` |
+
+The shipped 1.0.23 installers retain client/runtime source `5f5451441265b0f6d0c83fcb706639241158fe94`, Melange backend at that same commit, Mentat backend `2b623be182881039e974940b652fab7d39a87ce6`, and Terrier backend `d6cf452bf688086c37e796d350399bae47865d72`. Versioned main/ASAR overlays and installer build inputs use frozen basis `8c0d350361a65027c43baf76b1895ef7f1d2a9cc`. Later main and production-wrapper changes are not retroactively included in those runtime bytes.
+
+All six exact 1.0.22/1.0.23 native inspections passed complete payload/source, ASAR-integrity, native-signature and preserved-vendor-byte checks, with zero installer plug-ins or uninstallers. The actual shipped clients also passed anonymous GitHub manifest/trust, 1.0.22 recovery, 1.0.23 discovery/recovery and current-version checks. Signed local originals and GitHub asset SHA-256 digests match the fetched manifests; these hosted checks did not download the binaries again or execute installation. Focused Windows integration [CI passed](https://github.com/pjg93-222/Melange/actions/runs/40747217760) on merged implementation `22de8c248`; this refers to the review branch, not a merge of PR #99 into main.
+
+Normal Windows `npm run build -- --win --x64 --publish never` now uses the shared `build-native.cjs` directory/signing/built-in-installer pipeline. The installer shows concise extraction phases instead of listing every file; no install-speed benchmark is claimed. The existing private signing protections, user data and vendor signatures remain.
+
+The user reports that the app now launches under ThreatLocker, following the Melange 1.0.22 launch-block conversation. This is a user-reported result for the tested case, not all-three or all-device acceptance. The work-PC automatic-update/recovery cycle and full authenticated workflows remain untested. The release owner reports matching approval-service linkage and a healthy route at the time checked, with intermittent relay outages observed; the work-PC path remains unresolved. No private service addresses or recipient details are included here.
+
+The final two inspections used an explicitly accounted 4 GiB reserve for their bounded payloads; the production 32 GiB default/16 GiB minimum and all native/source checks are unchanged. Existing title, original ZIP history, certificate redactions and review gates are preserved. No Claude message or acknowledgment, PR merge, work-PC update installation or service-uptime guarantee is asserted by this knowledge update.
+
+Publication and hosted-receipt facts recorded at 2026-10-28T19:40:05.983054+00:00; source records remain private.
