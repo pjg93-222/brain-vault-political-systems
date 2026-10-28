@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 373; dead ends: 82
+- Open questions in STATE: 41; active decisions: 385; dead ends: 82
 
 ### Recent decisions
-- [[ledger/melange-systems-brain/D-398|D-398]] — Briefs v3: P-7 confirmed as Paul ruling (was marked relayed)
-- [[ledger/melange-systems-brain/D-397|D-397]] — Briefs v3: P-7 scope - CURRENT_ROLE_CONDITIONED evidence keeps full Do/Dont/arch
-- [[ledger/melange-systems-brain/D-396|D-396]] — Briefs v3: Tracey Mann gets a new animal (not Lynx); 10-21 assignment file untou
-- [[ledger/melange-systems-brain/D-395|D-395]] — Briefs v3: Opus reviews lane code, merge into local main, item-3 rules as a sepa
-- [[ledger/melange-systems-brain/D-394|D-394]] — Briefs v3: three arrivals withheld now (option C), more text collected in parall
+- [[ledger/melange-systems-brain/D-410|D-410]] — SNA health check runs as its own session with Paul's three steps
+- [[ledger/melange-systems-brain/D-409|D-409]] — Contact inference: top-lobbied-member precision folded into the existing v1 sess
+- [[ledger/melange-systems-brain/D-408|D-408]] — Overseer seat runs on Fable
+- [[ledger/melange-systems-brain/D-407|D-407]] — M7 attempt 10 authorized via 10b launcher after daytime headed Congress.gov walk
+- [[ledger/melange-systems-brain/D-406|D-406]] — N14: merge disk-floor lane onto mentat-crypto, update collector pin, run batches
 <!-- brainlink:state:end -->
