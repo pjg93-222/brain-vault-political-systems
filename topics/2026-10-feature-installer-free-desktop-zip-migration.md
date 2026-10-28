@@ -16,18 +16,25 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/f49266bfbae19f4153dcb1559b7781b53ebee35e/ops/desktop/INSTALLER_FREE_HANDOFF.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; CORRECTED-NATIVE-SOURCE-IN-PROGRESS"
+  - url: "https://github.com/pjg93-222/Melange/pull/99"
+    type: github-repo
+    synced_at: 2026-10-27
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-SOURCE-COMMITTED-REVIEW-ONLY; BUILD-BLOCKED"
 updated_at: 2026-10-27
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
 active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
+current_source_commit: "06c7f3d972a29fcaa035da9906c0e146e3ab76f9"
+current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
+current_delivery_status: "Native installers not built or published; disk reserve blocks packaging."
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
+> Current native source: `06c7f3d972a29fcaa035da9906c0e146e3ab76f9`, draft PR #99. Native installers remain unbuilt and unpublished; see the source-freeze update at the end of this note.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -98,3 +105,15 @@ These are source-state observations, not final-package evidence. No new native i
 The local coordination handoff is corrected to this native-installer scope. This memory update is not a new message to Claude and does not establish acknowledgment, routing, integration or deployment. The earlier interrupted ZIP coordination record remains historical; downstream work should use this scope correction and fresh package-bound evidence.
 
 Snapshot recorded at 2026-10-28T02:47:07.3744110Z. User scope and release/coordination status are recorded from the active task; implementation details were checked against the local uncommitted source, and the PR closure/tip were read from GitHub.
+
+## Native source freeze and build blocker (2026-10-27)
+
+This update supersedes the earlier uncommitted-source snapshot while preserving that snapshot as history. The corrected native 1.0.21 implementation is committed and pushed as `06c7f3d972a29fcaa035da9906c0e146e3ab76f9` on `codex/installer-without-uninstaller`, with [draft Melange PR #99](https://github.com/pjg93-222/Melange/pull/99), **Retain Windows installers while removing uninstallers**. The worktree is clean. The source retains the installer and GitHub update receiver while removing the uninstaller; the ZIP prototype remains superseded.
+
+Local validation reported by the release work for this source: changed-source security **PASS**; **742 distinct client tests passed** across the full run and targeted rerun after correcting obsolete assertions; **93 release-driver tests**, **3 smoke-helper tests**, and **31 verifier-contract tests** passed. These results describe source/test evidence, not newly built installer bytes or recipient acceptance.
+
+Native installers are **not built or published**. The reported C: free space is about **28.6 GiB**, below the **32 GiB reserve plus build space**. Automatic approval review rejected deletion-based cleanup. The user was asked to free **12 GiB** or connect another drive. Source review can proceed, but package signing/inventory, actual installation/update/recovery and work-PC ThreatLocker acceptance still require exact built artifacts and their own evidence.
+
+No new Claude message, acknowledgment, routing, integration or deployment is asserted by this memory update. GitHub PR/head and the clean local source worktree were checked directly; test counts, the security result and the build blocker are recorded from the active release task.
+
+Source-freeze status recorded at 2026-10-28T03:11:26.8802882Z.
