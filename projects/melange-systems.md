@@ -318,6 +318,7 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-06-feature-melange-model-facts]] | part: Melange model facts: the regeneration pipeline, the… |
 | [[2026-06-feature-melange-scenario-model-build]] | part: The Melange scenario model build of 2026-06-26: the source… |
 | [[2026-06-troubleshooting-melange-model-audits]] | part: The Melange model audits of 2026-06-26: the brutal… |
+| [[2026-10-feature-installer-free-desktop-zip-migration]] | Signed directory ZIP migration for all three apps: frozen 1.0.20 candidates, recovery baseline and remaining release/recipient gates. |
 
 ### Related Actors
 

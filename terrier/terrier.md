@@ -309,6 +309,7 @@ Every note of this project by type, one line each. All of them sit in the `terri
 |---|---|
 | [[2026-10-06-terrier-blueprint]] | The multi-district build blueprint: phases 0-6, the 2026-10-06 review's corrections, Paul's 2026-10-07 answers, the build status and the sources and inputs by path. |
 | [[2026-10-06-terrier-build-progress]] | part: The dated build record of the Terrier lane, 2026-10-07 to the evening of 2026-10-09: phases, swaps, Untapped, calibration, walk-list caps and folder move |
+| [[2026-10-feature-installer-free-desktop-zip-migration]] | Signed directory ZIP updates, distinct from legacy folder-portable Terrier; frozen candidate and remaining acceptance gates. |
 
 ### Discussions
 
