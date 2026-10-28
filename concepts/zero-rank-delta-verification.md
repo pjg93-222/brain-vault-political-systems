@@ -12,8 +12,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/reorg-phase0-tripwires-2026-08-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\reorg-phase0-tripwires-2026-08-04.md", sha256: "a554fe2a6df1883dad24aa1fb9b973f83ee9adf2a4418b32b516f46575fc430c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/sublayer-surgery-2026-07-17.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\sublayer-surgery-2026-07-17.md", sha256: "9f165d2f3d53c188074a75a1fa16f3b6eff9021fae80183fb72a1fb771998cf7"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-architecture.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-architecture.md", sha256: "bb9bffef2af3af7152fdcf5bf852e8bef18952f37abaf7f978ae0b596ed25ee5"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-26
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/backend"]
 ---
 
@@ -126,3 +126,4 @@ Kernel-runner facts: `run_tests.py` was pointed at 14 of 118 suites; its registr
 - The refactor and Phase 2 inversion: [[2026-07-rfc-melange-architecture-system-of-record]] (also holds the full REORG history).
 - Engine internals topic where the Sub Layer repair lives: Influence engine internals.
 - Workbook the ranks used to be computed from: [[moneyball-workbook]]; pipeline entrypoints: [[melange-fec-pipeline]] (`run_pipeline.py`, `weekly_refresh.py`).
+- A 2026-10 case where ranks SHOULD move: the rebuilt bill archive (variant B) moves 489 of 535 ranks, all through the legislative-pillar efficiency score; the cosponsor network has no rank effect. See [[2026-10-feature-bill-archive-rebuild-variant-b]].

@@ -29,8 +29,8 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Draft-Systems/memory/project_congress_scraper.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Draft-Systems\\memory\\project_congress_scraper.md", sha256: "cee61c688ca2e469d0d63a8331f106f4c24f41f05d2ca11236bdf8619b5289ae"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-26
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
 
@@ -177,6 +177,7 @@ Start-Process -WindowStyle Hidden run_push.cmd   # detached Windows process for 
 | 2026-06-23 | `MAX_CHALLENGED_BEFORE_ABORT=40`; Stage 3 SNA edges |
 | 2026-06-24 | 51/51 passes, 138-col single workbook, retry/backoff, stage decoupling + guardrails, `debate_finetuned` deployed to 3,701 releases |
 | 2026-06-30 | Template location recorded: `cu_stance_label_set.csv` in Draft Systems (552 rows) |
+| 2026-10-26 | Dated correction (the Known Issues wording above stands as written): the weekly congress.gov discovery forced headless Chrome and collected 0 queries in 30 straight runs since 2026-09-04. The restore reattaches over CDP to a headed Chrome; a supervised smoke test returned 16 records with no challenge. See [[2026-10-troubleshooting-congress-discovery-cloudflare]] and [[cdp-attached-headed-browser-clearance]]. |
 
 Superseded items kept for context: ~~year filter + decay removed (2026-06-20 "we are re-winding")~~ -> re-restored 2026-06-21; ~~`DECAY_PER_CONGRESS=0.5` all counts~~ -> 0.8 on 3 counts (2026-06-22); ~~roles as separate verbatim URL vectors~~ -> field-token swap; ~~caucus Chair 1.0/Co-Chair 0.75/Member 0.5~~ -> leadership-only; ~~`CU_TC_PROCS` 6~~ -> 8; ~~stdout-log stall guard~~ -> `.hb` sentinels + per-shard watchdog.
 
@@ -187,6 +188,7 @@ Superseded items kept for context: ~~year filter + decay removed (2026-06-20 "we
 
 ## Related Topics
 
+- [[2026-10-troubleshooting-congress-discovery-cloudflare]] - Oct 2026: weekly discovery zero-query outage under forced headless Chrome, and the CDP restore
 - [[2026-06-feature-congress-r-scrapers]] - June 2026 R scraper family in Draft Systems: congress.gov 17x3, CU press releases, Census CD, Ballotpedia, DEBATE stance
 - CU stance and sentiment scoring - Press/tweet stance + tone scoring for CU alignment: DEBATE, two-hop stacks, CFPB recorrection, gated channels
 - [[2026-06-feature-moneyball-excel-model-build]] - June 2026 build of the 533-member Moneyball workbook: four buckets, percentile-rank blend, calibration, scenario tooling

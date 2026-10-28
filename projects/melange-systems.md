@@ -94,6 +94,9 @@ tags: ["type/project", "status/active", "domain/data"]
 
 # Melange Systems (Moneyball CU-influence model)
 
+> [!danger] Mandatory desktop release gate — 2026-10-22
+> Before any Windows release or update, apply [[mandatory-desktop-release-signing]]. Every application-owned native binary must use the approved publisher certificate; verify the complete final installer payload and distributed SHA-256. Missing, invalid or unexpected signatures block publication.
+
 > Moneyball (visible name Melange) is a credit-union legislative-influence model and dashboard over the 533 members of Congress: one deliverable, `Melange Systems/Moneyball.html`, generated from the Blended workbook by a Python pipeline. Alias "Draft Systems" (predecessor root): the project began in Draft Systems and its code root there is the actor [[draft-systems-r-pipeline]].
 
 ## Parts
@@ -320,6 +323,11 @@ Every note of this project by type, one line each; parts follow their parent.
 | [[2026-06-troubleshooting-melange-model-audits]] | part: The Melange model audits of 2026-06-26: the brutal… |
 | [[2026-10-troubleshooting-official-roll-call-endpoints]] | Oct 2026: the House clerk answers a missing roll with HTTP 200 and an error body; the Senate roll-call XML blocks scripts; Voteview stays the vote source (Paul's ruling). |
 | [[2026-10-troubleshooting-windows-revocation-offline-errors]] | Oct 2026: Windows curl revocation-offline errors came from an unreachable Let's Encrypt CRL host over IPv6, not from TLS inspection. |
+| [[2026-10-troubleshooting-congress-discovery-cloudflare]] | Oct 2026: weekly congress.gov discovery at zero queries under forced headless Chrome; the CDP restore passed a supervised smoke test (16 records, no challenge). |
+| [[2026-10-feature-bill-archive-rebuild-variant-b]] | Oct 2026: rebuilt bill archive (variant B) credits 372 rows that had no passage credit; sandboxed rank delta moves 489 of 535 ranks through the legislative pillar. |
+| [[2026-10-feature-cosponsor-network-r-faithful-rebuild]] | Oct 2026: R-faithful cosponsor network of 2,271 edges, every difference from the 0625 network explained; no rank effect. |
+| [[2026-10-troubleshooting-app-control-blocks-installed-apps]] | Oct 2026: application control allows the desktop apps only from Downloads, so installed copies and updates elsewhere are blocked; install under Downloads in progress. |
+| [[2026-10-feature-installer-free-desktop-zip-migration]] | Signed directory ZIP migration for all three apps: frozen 1.0.20 candidates, recovery baseline and remaining release/recipient gates. |
 
 ### Related Actors
 
@@ -357,6 +365,7 @@ Every note of this project by type, one line each; parts follow their parent.
 
 ### Related Concepts
 
+- [[mandatory-desktop-release-signing]] — Required certificate, complete native signature census, preserved vendor signatures and verified final bytes before release.
 - [[influence-vs-alignment-axes]] - Modeling principle: rank = INFLUENCE, per-category stance = ALIGNMENT; two separate axes, underdogs surface in a separate efficiency view.
 - [[fail-closed-gates]] - When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call.
 - [[live-tree-patch-discipline]] - Changes to a drifted Melange live tree go in as one line-wise patch cut against LIVE bytes with fec/tools/live_patch.py, applied with core.autocrlf=false, never normalising LIVE: no merge or checkout (D-060; partly amended 2026-10-17 by D-233, which normalised CRLF-only differences); applying needs Paul's go.
@@ -377,6 +386,11 @@ Every note of this project by type, one line each; parts follow their parent.
 - [[behavior-qualified-recognition]] - Recognition labels: rule-G field honors from signed accepted actions (default since 2026-09-16) and a primacy-board standing whose top 13 with qualifying action hold the Champion crown; desk and dashboard show the analytic overall band.
 - [[boot-protocol-evaluation-framework]] - The governing (v2, 2026-08-11) framework for the Project Brain external-memory protocol: entry schemas, supersession, staleness and compaction rules, a per-session scorecard, four integrity audits and pre-committed kill criteria.
 - [[stale-vote-report-check-upstream-first]] - A stale vote snapshot is checked against upstream publication dates and chamber activity before any fetch code is debugged (Oct 2026: it was recess, not a block).
+- [[cdp-attached-headed-browser-clearance]] - Attach over CDP to a headed Chrome on a persistent profile and reuse the clearance cookie; headless Chrome does not clear the challenge.
+- [[pinned-source-selection]] - Melange readers pick a source by pin, then filename timestamp, then name; never by modification time.
+- [[vote-freshness-from-archive-cutoff]] - Votes are stale only when the archive cites floor votes newer than the latest roll call on file (D-299).
+- [[sha-pinned-reference-refresh]] - Roster refresh by commit SHA through the GitHub contents API, warning when the snapshot is older than 14 days.
+- [[unmapped-labels-score-zero]] - A scorer that gives unmapped labels zero credit fails silently; the 2026-10 bill archive case.
 
 ### Discussions
 

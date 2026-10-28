@@ -5,7 +5,7 @@ aliases: ["fail-closed rule"]
 description: "When a check cannot be satisfied, the system blocks or emits nothing rather than a guessed output; loosening a gate is Paul's call."
 related_to: []
 sources: []
-updated_at: 2026-10-05
+updated_at: 2026-10-26
 updated_by: "preserve@agent"
 tags: ["type/concept", "domain/platform"]
 ---
@@ -39,6 +39,7 @@ The rule is about missing or unverifiable evidence, not only wrong answers: a co
 - [[lobbyview-collector]] — fail-closed guards, all fixture-proven (exit 2, zero artifacts)
 - [[sentinel-collectors]] — the 2026-09-01 press and hearing repair made the hearing display fail-closed
 - [[melange-systems]] — the project whose pipeline, desk and refresh jobs carry these gates
+- [[unmapped-labels-score-zero]] — a label map that gives unmapped labels zero credit fails open without a report; the 2026-10 bill archive case
 
 ## Evidence
 
