@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 363; dead ends: 82
+- Open questions in STATE: 41; active decisions: 365; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-389|D-389]] — Contact inference v1: G2 holdout is out-of-time validation (Paul ruling 2026-10-
+- [[ledger/melange-systems-brain/D-388|D-388]] — Contact inference v1: G1 rescoped (last attempt) (Paul ruling 2026-10-28)
 - [[ledger/melange-systems-brain/D-387|D-387]] — Three arrivals: re-score Big Five on the claude CLI with Haiku 5.5 (Paul ruling
 - [[ledger/melange-systems-brain/D-386|D-386]] — Long-form levels ratified as FINAL; 12 null-level members stay unbriefed (Paul r
 - [[ledger/melange-systems-brain/D-385|D-385]] — D-158 follow-ups closed: Menendez legislative-pillar census done; CU placeholder
-- [[ledger/melange-systems-brain/D-384|D-384]] — P1/P2: draft-release voter data deleted by Paul; restricted LDA corpus moved to
-- [[ledger/melange-systems-brain/D-383|D-383]] — M15 small tooling: packet #1 fix defaults, including the 2027-01-20 recount task
 <!-- brainlink:state:end -->
