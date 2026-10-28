@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-802 notes.
+792 notes.
 
 ## Actors (49)
 
@@ -280,29 +280,23 @@
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
 
-## Fleeting (69)
+## Fleeting (59)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--agent-roster-signing-proof-lane-2026-10-22]] — 2026-10-22 lane - signature census (published installers Valid, owner installs NotSigned stale), agent files gained Skill/skills/scout/verifier/receipt contract, END_PROOF + Terrier assignment ledger; installs and brain PR 33 merge are...
 - [[melange-systems--always-read-coderabbit-2026-10-18]] — Paul 2026-10-18 - on every PR, always read CodeRabbit's review and act on valid findings
 - [[melange-systems--ask-before-substantive-changes]] — Paul's STANDING directive - ask FIRST before applying substantive changes/fixes/regenerations; present findings + proposed plan and wait for his go-ahead
 - [[melange-systems--brain-vault-sync-mechanism-2026-10-07]] — How the Obsidian/Bedrock brain vault actually syncs - nothing auto-commits; sessions commit + push via PR flow to private GitHub; not under OneDrive
-- [[melange-systems--canterra-attrition-deck-2026-10-12]] — NOT Melange - Paul's MBA Team Project 3 (Canterra employee attrition) 8-min Zoom deck; delivered Downloads\Canterra_Attrition_Presentation.pptx; report errors + Q4 ruling recorded
 - [[melange-systems--d157-residual-lane-2026-10-20]] — D-157 held items F-13/14/15/17/18/20/22 built on branch d157-residual-20261020, published as PR #25; local main ff + in-app landing pending
 - [[melange-systems--dashboard-fixes-verification-lane-2026-09-05]] — Dashboard-fixes lane 2026-09-05 - bills/press/profiles all verified PASS in the live tree; publish BLOCKED on a password file only Paul can create; five chain attempts failed (audio-manifest intake rejection); personal-texture audit...
-- [[melange-systems--deployment-lane-2026-10-11]] — Deployment + containerization lane for Melange/Mentat/Terrier - plan path, Paul's 10 rulings, worktrees, what stays Paul's
 - [[melange-systems--desk-plain-language-2026-08-31]] — Nine-surface plain-language pass (2026-08-31/09-01) - 4 commits on claude/moneyball-dashboard-simplify-2efa95, UNMERGED; press chain root-caused to a timezone suffix; four chain-critical modules are UNTRACKED
 - [[melange-systems--desktop-invite-code-lane-2026-10-20]] — Desktop invite-code gate MERGED via Melange PR
 - [[melange-systems--desktop-main-sync-lane-2026-10-23]] — 2026-10-23 lane landing the shipped inner-signing lineage on PUBLIC main via PR #63 plus a PE-header signing census; route facts and traps for future publishes
 - [[melange-systems--desktop-no-password-lane-2026-10-21]] — 10-21 Paul asked to drop the Terrier password and make Melange/Mentat a one-time verification; Melange+Mentat shipped as desktop 1.0.10, Terrier HELD on a lineage split Paul must rule on
 - [[melange-systems--desktop-releases-1-0-7-2026-10-19]] — Melange/Mentat/Terrier desktop apps signed + published as desktop-v1.0.7 on 2026-10-19; how to rebuild/sign/publish fast
 - [[melange-systems--desktop-supervisor-restart-procedure-2026-10-20]] — How to restart the desktop access login supervisor (Start-LanPublisherAtLogin.ps1) without a long outage; WMI and default-priority one-shot tasks fail
-- [[melange-systems--disk-cleanup-lane-2026-09-16]] — Disk clearances 2026-09-16 and 2026-09-18 (third one 10.2 -> 185.9 GB free, ~212 GB cleared, brain be33c78 D-047/DE-030: per-worktree sparse-checkout of audits/legfix5 is the first lever, 14 deleted scratchpads regenerated from...
 - [[melange-systems--e2e-proof-lane-2026-10-20]] — E2E proof lane 2026-10-20/22: attempts 1-8 failed and rolled back; attempt 9 (10-22, stub classifier) COMMITTED the chain at 535 and the rank delta is attributed (460 movers, UNEXPLAINED 0), but audit_full failed 38 checks so no PASS...
 - [[melange-systems--fable-paragraphs-only]] — HARD cost rule - Fable is ONLY for the 533 per-member narrative paragraphs; every other LLM step uses Haiku
-- [[melange-systems--fec-gpu-acceleration-directive-2026-10-15]] — Paul 10-15 - use GPU acceleration for large-scale FEC data processing, as a permanent architecture element (with honest scope)
-- [[melange-systems--fec-no-internal-request-limit-2026-10-15]] — Paul 2026-10-15 - FEC collection runs at the full ceiling (21 keys x 1,000/hr) every time; no self-imposed cap; NEVER email FEC
-- [[melange-systems--forecast-lit-and-lobby-yearly-lane-2026-10-13]] — Lit research + lobbying forecast lane 2026-10-12/13; PAUSED by Paul, resume Thu 2026-10-15 with the firm-level build (stopped right after hash check, no partial work); all work in Mentat Complete Files\RESEARCH_FORECAST_LIT_2026-10-12
 - [[melange-systems--glassbox-everything-rule-2026-07-27]] — Paul's standing rule 2026-07-27 - every process must emit to the shared GLASS BOX event stream; nothing runs invisibly
 - [[melange-systems--haiku-for-verify-land-bump-2026-10-23]] — Paul 2026-10-23: Haiku 5.5 may do verify, land (merge when green) and version-bump work; narrows the never-Haiku rule
 - [[melange-systems--lg-gram-npu-crash-2026-08-17]] — Paul's LG Gram 17Z90UB BSOD loop diagnosed 2026-08-17 - Intel NPU driver (npu_kmd.sys) hangs escalate to 0x10E video-memory bugchecks; fix = update/disable NPU driver, NOT the graphics driver
@@ -311,12 +305,9 @@
 - [[melange-systems--melange-vote-sources-not-blocked-2026-10-26]] — Melange vote snapshot staleness (Oct 2026) was upstream data, not a fetch block; senate.gov 403s all scripted clients; clerk returns 200 for missing rolls
 - [[melange-systems--memory-index-is-the-loading-contract-2026-09-18]] — MEMORY.md's filename IS the session-start loading contract - splitting it or moving lines to a second file silently deletes those entries from every future session's context
 - [[melange-systems--mentat-chart-studio-2026-09]] — Merged Mentat Chart Studio memories 2026-09-11/12: Tableau brief + mockups, review with 10 P1 fixes (UNCOMMITTED), fields lane B done 54/54 (UNCOMMITTED), Banking = Paul's go
-- [[melange-systems--mentat-downstream-architecture-first-2026-10-15]] — Paul 10-15 - Mentat downstream spending lane: finish architecture + correctness first; data collection runs later, on his call
 - [[melange-systems--mentat-edit-from-worktree-session-2026-10-08]] — A session tied to a Melange claude\worktrees\ checkout cannot Edit Mentat (harness worktree guard); Paul approves a git-apply route per change
 - [[melange-systems--mentat-gather-by-zip-or-candidate-reminder-2026-10-20]] — REMINDER for Paul (2026-10-20) - add a Mentat gather mode keyed only by ZIP code, or by candidate, instead of only by company
 - [[melange-systems--mentat-github-migration-2026-10-02]] — Mentat tree pushed to GitHub branch claude/mentat-migration-onto-main; PR to main still unopened (Paul deferred); full local history unpublishable as-is
-- [[melange-systems--mentat-lda-deadline-rule-2026-10-09]] — Mentat LDA anchors count a quarter only after its LD-2 deadline by Melange's sweep date (brain D-130); commit cb0d4fb48, on origin; anchors rebuilt 2026-10-09T18:10Z under the rule (LDA blocks unchanged)
-- [[melange-systems--mentat-sankey-zoom-lane-2026-10-15]] — Mentat flow sankey focus zoom / unfold / pin + bug fixes LANDED on codex/mentat-crypto (abdbd5524, 6dc3dac91); not pushed; 8806 restart is Paul's
 - [[melange-systems--mentat-studio-members-and-figure-strip-2026-10-08]] — Mentat 2026-10-08: Chart Studio members() 500-cap removed (fd6c2d520, left bundled per Paul) + figure export button strip (38fca2b65, 60e1f8a5b, pushed); verified live 8806 on every host
 - [[melange-systems--mentat-ui-cleanup-lane-2026-09-17]] — UI clean-up lane (UI1) for the Mentat console Graph and Chart Studio - Graph B + Chart Studio A built, patch UI1_graph_studio_cleanup.patch awaits Paul's commit; Board deferred with its contract v2 drafted; the three-lane shared-file...
 - [[melange-systems--mentat-ui-polish-lane-2026-09-19]] — Mentat console polish lane (7 items + motion + PAC map layers + GeoPy/Jinja2): root causes found, Paul's four rulings, P1 dispatched uncommitted, what is still his to rule; delivery traps (he cannot see the Higgsfield gallery widget)
@@ -327,7 +318,6 @@
 - [[melange-systems--people-network-route-latency-lane-2026-10-02]] — People-network (staffer sidecar 8841) latency lane 2026-10-02: default office route = one-directional work_time Dijkstra to a sink (no heuristic anywhere); Paul ruled full scope (bidirectional core + cancel/progressive + typeahead)...
 - [[melange-systems--pipeline-health-lane-2026-10-19]] — 2026-10-19 pipeline-health lane - 6 root-cause fixes on fix/pipeline-health-20261019, PR #15, D-251/D-252; landing on live main waits for the daily run to exit
 - [[melange-systems--poppler-pdf-rendering-2026-08-14]] — poppler 25.07.0 (pdftoppm) installed per-user via winget 2026-08-14 - Claude Read renders PDF pages ONLY in sessions started after the install; revert = winget uninstall oschwartz10612.Poppler
-- [[melange-systems--press-backlog-media-status-are-bugs-2026-10-15]] — Paul ruled 2026-10-15 - press backlog never draining and daily media top-level PASS despite partial press are BUGS, not design
 - [[melange-systems--primacy-board-factor-only-2026-07-29]] — Primacy tier board scores on the beneficiary factor ALONE (2026-07-29, @89b6219); purity-over-volume is Paul's INTENT, never re-flag it as a defect
 - [[melange-systems--python312-wmi-crash-0xc000070a-2026-10-07]] — Python 3.12 processes importing pandas or scipy crash with 0xC000070A (exit 3221227274) under heavy load - platform/_wmi timeout + stray handle; not claude-obsidian
 - [[melange-systems--reliability-2026-10-implementation-lane-2026-10-23]] — Melange reliability prompt v2 executed 2026-10-23 - Tasks 0-5,7,8 on branches; 1.0.17 built+signed locally, NOT published; verdict NOT READY; two unrelated git lineages
