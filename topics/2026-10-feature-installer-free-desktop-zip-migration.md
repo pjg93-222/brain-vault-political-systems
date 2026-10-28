@@ -19,22 +19,29 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/pull/99"
     type: github-repo
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-SOURCE-COMMITTED-REVIEW-ONLY; BUILD-BLOCKED"
+  - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
+    type: markdown
+    synced_at: 2026-10-27
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-SOURCE-COMMITTED; FIRST-BUILD-IN-PROGRESS; UNPUBLISHED"
 updated_at: 2026-10-27
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
 active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
-current_source_commit: "06c7f3d972a29fcaa035da9906c0e146e3ab76f9"
+current_source_commit: "5f5451441265b0f6d0c83fcb706639241158fe94"
 current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
-current_delivery_status: "Native installers not built or published; disk reserve blocks packaging."
+current_delivery_status: "First native Melange build running with selected 16 GiB reserve; no native packages published."
+selected_desktop_reserve_gib: 16
+desktop_reserve_default_gib: 32
+desktop_reserve_minimum_gib: 16
+prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current native source: `06c7f3d972a29fcaa035da9906c0e146e3ab76f9`, draft PR #99. Native installers remain unbuilt and unpublished; see the source-freeze update at the end of this note.
+> Current native source: `5f5451441265b0f6d0c83fcb706639241158fe94`, draft PR #99. The first native Melange build is running with a selected 16 GiB reserve. No native packages are published. The prior fixed-32-GiB blocker and 12 GiB cleanup request were withdrawn after correcting DE-076 scope.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -108,6 +115,8 @@ Snapshot recorded at 2026-10-28T02:47:07.3744110Z. User scope and release/coordi
 
 ## Native source freeze and build blocker (2026-10-27)
 
+> Current native source: `06c7f3d972a29fcaa035da9906c0e146e3ab76f9`, draft PR #99. Native installers remain unbuilt and unpublished; see the source-freeze update at the end of this note.
+
 This update supersedes the earlier uncommitted-source snapshot while preserving that snapshot as history. The corrected native 1.0.21 implementation is committed and pushed as `06c7f3d972a29fcaa035da9906c0e146e3ab76f9` on `codex/installer-without-uninstaller`, with [draft Melange PR #99](https://github.com/pjg93-222/Melange/pull/99), **Retain Windows installers while removing uninstallers**. The worktree is clean. The source retains the installer and GitHub update receiver while removing the uninstaller; the ZIP prototype remains superseded.
 
 Local validation reported by the release work for this source: changed-source security **PASS**; **742 distinct client tests passed** across the full run and targeted rerun after correcting obsolete assertions; **93 release-driver tests**, **3 smoke-helper tests**, and **31 verifier-contract tests** passed. These results describe source/test evidence, not newly built installer bytes or recipient acceptance.
@@ -117,3 +126,17 @@ Native installers are **not built or published**. The reported C: free space is 
 No new Claude message, acknowledgment, routing, integration or deployment is asserted by this memory update. GitHub PR/head and the clean local source worktree were checked directly; test counts, the security result and the build blocker are recorded from the active release task.
 
 Source-freeze status recorded at 2026-10-28T03:11:26.8802882Z.
+
+## Reserve-rule scope correction and active native build (2026-10-27)
+
+The previous disk-blocker account above applied a saved rule outside its original scope. **DE-076 concerns the Congress `chain_transaction` pipeline, not desktop releases.** Its 30 GB transaction floor and `-MinFreeGB 32` relaunch check addressed that Congress/data transaction. They do not establish a mandatory 32 GiB desktop release reserve. The task coordinator misapplied that ledger entry, corrected the mistake and withdrew the request for 12 GiB of cleanup or another drive. No data files were deleted to satisfy that withdrawn request. Saved rules retain their original system, operation, date and authority; check that scope before applying them to another workflow.
+
+Current native source is committed and pushed as `5f5451441265b0f6d0c83fcb706639241158fe94` on `codex/installer-without-uninstaller`, still under [draft Melange PR #99](https://github.com/pjg93-222/Melange/pull/99). Commit `06c7f3d972a29fcaa035da9906c0e146e3ab76f9` is the preceding source checkpoint. The [current desktop release guide](https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md) states the corrected contract: `--free-floor-gib` is selectable with a **16 GiB minimum** and an unchanged **32 GiB default**. The chosen reserve applies consistently to actual per-phase workspace projections and both final-artifact extraction verifiers. A selected 16 GiB reserve is supported desktop behavior; it is not an exception to a Congress transaction rule.
+
+The stale PowerShell preflight assumption was corrected to match the existing signing-hook behavior. The release task reports an actual read-only signature probe returning **Valid** under **Restricted**, with the host/user execution policy unchanged. This does not waive signing, recipient application control, or other release gates. The follow-up passed **9 focused release-driver tests** and **32 verifier tests**; these are the reported follow-up results, separate from the earlier checkpoint's tests.
+
+The **first native Melange build is now running** with a **16 GiB selected reserve** and exact shared source `5f5451441265b0f6d0c83fcb706639241158fe94`. Backend references are Mentat `2b623be182881039e974940b652fab7d39a87ce6` and Terrier `d6cf452bf688086c37e796d350399bae47865d72`. No native packages are published. Build completion, exact final-byte signing/inventory evidence, hosted readback, actual update/recovery and work-PC acceptance remain unclaimed until verified; the earlier fixed-32-GiB blocker and cleanup request are superseded.
+
+Provenance: DE-076 was read from the generated `ledger/melange-systems-brain/DE-076.md` projection of `melange-systems-brain/DEADENDS.md`, source brain commit `39c66f5f34d032700c9b528beb32fd662aae41f2`, entry SHA-256 `a63df716e03f1e21dafe42a1130506969a70ce9e64f03549511b4d3e888f7606`. Its source scope is explicit in that content; the generated ledger was not edited. The new PR head and committed release-guide changes were checked directly. Test/probe results, withdrawal and active build status are reported by the release task. This memory update sends no new Claude message and asserts no acknowledgment, integration or deployment.
+
+Reserve-scope correction recorded at 2026-10-28T03:28:01.2429120Z.
