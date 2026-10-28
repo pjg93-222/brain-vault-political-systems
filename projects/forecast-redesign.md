@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 360; dead ends: 82
+- Open questions in STATE: 41; active decisions: 361; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-385|D-385]] — D-158 follow-ups closed: Menendez legislative-pillar census done; CU placeholder
 - [[ledger/melange-systems-brain/D-384|D-384]] — P1/P2: draft-release voter data deleted by Paul; restricted LDA corpus moved to
 - [[ledger/melange-systems-brain/D-383|D-383]] — M15 small tooling: packet #1 fix defaults, including the 2027-01-20 recount task
 - [[ledger/melange-systems-brain/D-382|D-382]] — N20: public installer ships the no-data dashboard shell only; D-333 narrowed by
 - [[ledger/melange-systems-brain/D-381|D-381]] — N16 deferred, N18 paused, N19 archived (Paul ruling 2026-10-28, packet #2)
-- [[ledger/melange-systems-brain/D-380|D-380]] — N14 collector order: batches 10-12 in D-312 order after A0 compression and the f
 <!-- brainlink:state:end -->
