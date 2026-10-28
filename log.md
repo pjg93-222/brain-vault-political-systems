@@ -404,3 +404,6 @@
 - 2026-10-28 00:37 -04:00 | preserve | Recorded compiled/signed native Melange 1.0.21 and packaging tip f78cf22; verification/private draft in progress, publication and work-PC acceptance pending; preserved canonical privacy edits | [[2026-10-feature-installer-free-desktop-zip-migration]]
 - 2026-10-28 | preserve | Prepared pending native 1.0.22 plug-in removal, IT component-policy boundary and user-scoped verification skip; no final asset, publication, recipient acceptance or Claude acknowledgment claimed | [[2026-10-feature-installer-free-desktop-zip-migration]]
 - 2026-10-28 04:56 -04:00 | preserve | Recorded three native 1.0.22 public prereleases and exact identities; user-scoped verification skip, no hosted readback or work-PC acceptance, stable feed unchanged, local-only Claude coordination | [[2026-10-feature-installer-free-desktop-zip-migration]]
+- 2026-10-28 18:10 -04:00 | preserve | Record existing Windows sign-in steering and frozen 1.0.25 source gates; keep 1.0.24 published and 1.0.25 pending | [[2026-10-feature-installer-free-desktop-zip-migration]]
+
+- 2026-10-28: Recorded published 1.0.25 Windows-session sign-in and complete sequence 16 feeds (24 recovery 15), 398 focused passes and all-three native/hosted checks in the installer-free topic; recipient/physical-lock acceptance and existing review gates remain open.

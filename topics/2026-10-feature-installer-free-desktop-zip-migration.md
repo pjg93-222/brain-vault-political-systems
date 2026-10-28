@@ -25,30 +25,30 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-24-FEEDS-LIVE; LOCAL-ACCESS-AND-UPDATE-STATUS; NATIVE-AND-HOSTED-GATES-PASSED; WORK-PC-UPDATE-UNTESTED"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-25-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 398-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; WORK-PC-UPDATE-UNTESTED"
 updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
-active_scope: "Native installer without uninstaller; local sign-in; direct signed GitHub updates and visible launch status."
-current_source_commit: "9845710e8edbaa8348a47807bb8f9c4bcbd6107c"
+active_scope: "Native installer without uninstaller; existing Windows sign-in without an extra app password; direct signed GitHub updates and visible launch status."
+current_source_commit: "3e25fc7185464492abe74122359fca4c11bbac4f"
 current_source_pr: "https://github.com/pjg93-222/Melange/pull/102"
-current_delivery_status: "All three stable 1.0.22 recovery and latest 1.0.23 feeds are published; actual shipped clients passed anonymous hosted feed checks; work-PC update/recovery acceptance remains open."
+current_delivery_status: "Stable 1.0.25 installers and complete signed feeds are published at sequence 16, retaining 1.0.24 recovery sequence 15. Work-PC installation, physical Windows lock/unlock and automatic-update acceptance remain open."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
 desktop_reserve_minimum_gib: 16
 final_two_inspection_reserve: "Explicit one-run 4 GiB budget for Mentat/Terrier 1.0.23 only; production reserve defaults and all integrity checks unchanged."
 prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
-current_application_payload_source: "Retained common client 5f5451441265b0f6d0c83fcb706639241158fe94; per-app backend commits and 1.0.23 overlays are recorded below."
-current_compiler_source: "8c0d350361a65027c43baf76b1895ef7f1d2a9cc"
-current_builder_source: "8c0d350361a65027c43baf76b1895ef7f1d2a9cc"
+current_application_payload_source: "Published 1.0.25 client/bootstrap: 3e25fc7185464492abe74122359fca4c11bbac4f. App backends/vendor files retain prior verified source pins. Later README-only commit 407cbf292 does not change shipped source."
+current_compiler_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_builder_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current delivery: all three stable 1.0.22 recovery feeds and latest 1.0.23 feeds are published. Six native inspections and actual shipped-client anonymous feed checks passed. The user reports successful app launch; work-PC automatic-update/recovery acceptance remains open. The final dated section below governs; earlier skip and unchanged-feed statements remain historical.
+> Current delivery: all three stable 1.0.25 installers and signed update feeds are published. These builds use existing Windows sign-in with no extra app password or remote approval requirement. The source gates, all three native packages and actual packaged-client public-feed metadata checks passed. Recipient work-PC installation/update and physical lock/unlock acceptance remain open.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -245,3 +245,39 @@ Each application checks its own public GitHub Releases directly. Launch, sign-in
 Validation covers 252 distinct focused client cases, 10 real local Django/protected-storage cases, fresh export-security and production-dependency checks, and three complete native artifact inspections. Failed fixture runs remain in the private record; their specific repairs passed, and no production code or security exception changed to hide them. These checks do not establish installation or automatic-update acceptance on the recipient work PC.
 
 The existing Geo district-test release is public again after owner authorization, preserving its assets, signed catalogue and non-latest prerelease classification. Public data manifests for all three apps are available and signature-checked. First-time data downloads remain separate from binary updates and can be substantial. No private cache was published. Private receipts retain the exact source, build, publication and transport provenance.
+
+## Windows sign-in request and pending 1.0.25 — 2026-10-28
+
+The user explicitly clarified that all three apps should open through the existing Windows sign-in, with no separate app password or remote administrator approval. This supersedes the extra local password prompt introduced in 1.0.24. It changes application sign-in, not corporate execution controls or private-server authorization. The signed GitHub update path remains independent of local sign-in and continues to require a built, published release.
+
+The new shared client/bootstrap is frozen at `3e25fc7185464492abe74122359fca4c11bbac4f`, pushed on [PR102](https://github.com/pjg93-222/Melange/pull/102), still stacked on unmerged PR99. The frozen archive SHA-256 is `800e92fb928c38785bd773b462a47fb7a74f0efef58f3c6ccf368922960640cc`. At this snapshot the 1.0.25 installers are building; **1.0.24 remains the published stable release and is unchanged**. Source completion is not publication or recipient acceptance.
+
+Windows identity is obtained from the native process access token rather than environment usernames or renderer claims. A protected binding connects the current Windows SID to the existing local app profile; lock/resume handling requires a fresh native session check. No additional application password is required in this explicit Windows mode. Existing local password, managed-account and user-data records are preserved for rollback; no managed grant or remote permission is manufactured.
+
+Terrier uses a dedicated real local Django account for the verified Windows identity. It does not impersonate an old account or change existing account roles/passwords. Existing local saved views are copied into that account once while their original rows and owners remain intact. A protected pending record and transactional recovery marker prevent duplicate users/views after interruption. No private-server role or data permission is created by this mapping.
+
+Frozen-source evidence passed **366 client tests and 32 Python tests, with zero failures or skips**. Python coverage includes actual Windows-token/DPAPI checks, modeled lock/disconnection denial, real Django auto-authentication and view-copy recovery, legacy password behavior, and inventory/CLI boundaries. Checked source inputs remained unchanged and matched the frozen archive. Export-security and production-dependency checks passed without new security exceptions. These are source gates, not a physical screen-lock exercise, installed-artifact acceptance, hosted publication, or a work-PC upgrade result. Final package and publication receipts are still pending.
+
+The earlier current-delivery callout is preserved as history:
+
+> Current delivery: all three stable 1.0.22 recovery feeds and latest 1.0.23 feeds are published. Six native inspections and actual shipped-client anonymous feed checks passed. The user reports successful app launch; work-PC automatic-update/recovery acceptance remains open. The final dated section below governs; earlier skip and unchanged-feed statements remain historical.
+
+This update preserves the original ZIP history, approved-publisher and review gates, and prior user-reported ThreatLocker result. It sends no message to Claude, claims no acknowledgment or PR merge, and asserts no private Git synchronization.
+
+## Windows sign-in delivered — 1.0.25
+
+All three signed native installers and complete stable update feeds are public as sequence 16, superseding 1.0.24 as latest while retaining its sequence 15 recovery metadata. Actual packaged 1.0.25 clients passed anonymous GitHub trust/discovery, signed manifest validation, 1.0.24 and fresh 1.0.25 recovery metadata, hosted installer size/SHA-256 checks, and a current-version check. The final hosted checks completed at 2026-10-28T22:30:32Z.
+
+- [Melange 1.0.25 installer](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.25/melange-1.0.25-win32-x64.exe)
+- [Mentat 1.0.25 installer](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.25/mentat-1.0.25-win32-x64.exe)
+- [Terrier 1.0.25 installer](https://github.com/pjg93-222/Geo/releases/download/desktop-v1.0.25/terrier-1.0.25-win32-x64.exe)
+
+Each build uses the existing Windows session, with no separate application password or remote administrator approval. The native identity/profile binding, fresh lock/resume check and real Terrier account/view preservation described above are in the shipped client/bootstrap frozen at `3e25fc7185464492abe74122359fca4c11bbac4f`. Backend/vendor bytes retain the verified source baselines. The subsequent README-only commit `407cbf292` documents delivery without changing these packaged bytes. [PR102](https://github.com/pjg93-222/Melange/pull/102) remains the source review, stacked on PR99; publication does not imply either is merged.
+
+The retained evidence totals 366 client plus 32 Python cases (**398 passes**, zero skips) and successful native signature/payload/source inspections for all three exact installers. Hosted checks fetched public metadata; they did not download the binaries again or execute installation. Work-PC launch/update/recovery and a physical Windows lock/unlock cycle remain untested. Existing corporate execution policies, private-server permissions, old account passwords/roles and original saved-view rows remain unchanged. The direct signed GitHub update path remains integrated and independent of the old approval service.
+
+The earlier pending current-delivery snapshot is preserved as history; the published result above supersedes it:
+
+> Current delivery: stable 1.0.24 installers and signed feeds remain published. Version 1.0.25 is being built from frozen Windows-session sign-in source; it is not published at this snapshot. The latest dated section governs current scope. Work-PC installation and automatic-update acceptance remain open.
+
+Shared knowledge now records the explicit Windows sign-in request and the published result. This records no Claude acknowledgment, PR merge or private Git synchronization.
