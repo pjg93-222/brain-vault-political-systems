@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 370; dead ends: 82
+- Open questions in STATE: 41; active decisions: 373; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-398|D-398]] — Briefs v3: P-7 confirmed as Paul ruling (was marked relayed)
+- [[ledger/melange-systems-brain/D-397|D-397]] — Briefs v3: P-7 scope - CURRENT_ROLE_CONDITIONED evidence keeps full Do/Dont/arch
+- [[ledger/melange-systems-brain/D-396|D-396]] — Briefs v3: Tracey Mann gets a new animal (not Lynx); 10-21 assignment file untou
 - [[ledger/melange-systems-brain/D-395|D-395]] — Briefs v3: Opus reviews lane code, merge into local main, item-3 rules as a sepa
 - [[ledger/melange-systems-brain/D-394|D-394]] — Briefs v3: three arrivals withheld now (option C), more text collected in parall
-- [[ledger/melange-systems-brain/D-393|D-393]] — Briefs v3: levels stamped FINAL with a labelled empty diagnostics file (option a
-- [[ledger/melange-systems-brain/D-392|D-392]] — Briefs v3: rule clarifications A-E (8.3 over 2.6, follow-up form exempt, Lucas t
-- [[ledger/melange-systems-brain/D-391|D-391]] — Briefs v3: review loop is one Sonnet reviewer per member, Do/Follow-up pre-check
 <!-- brainlink:state:end -->
