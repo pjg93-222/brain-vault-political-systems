@@ -10,7 +10,7 @@ superseded_by: ""
 brain_commit: "c1383df5d77a17971367c54f044ec2a87f122631"
 entry_sha256: "34a2ee35e84c28f5722761010a344e9a8c23b876d736a40fed9f3dfd736813c6"
 generated: true
-generated_sha256: "4dbab33d9252a909af7f5387f23595621a93642c36c1729cfe3a7baeef2a770b"
+generated_sha256: "d8718b750f4c5df898b1c406cd2d32b38807813ff1fc7d12d986e8e7b6783d0f"
 aliases: ["melange-systems STATE"]
 ---
 > Generated from melange-systems-brain/STATE.md at c1383df; do not edit — change the brain via brainctl.
