@@ -398,3 +398,4 @@
 - 2026-10-27 20:48 -04:00 | preserve | Linked shared installer-free ZIP migration from project map | [[melange-systems]]
 - 2026-10-27 20:48 -04:00 | preserve | Linked shared installer-free ZIP migration from project map | [[mentat]]
 - 2026-10-27 20:48 -04:00 | preserve | Linked shared installer-free ZIP migration from project map | [[terrier]]
+- 2026-10-27 22:47 -04:00 | preserve | Superseded ZIP migration; recorded corrected scope retaining native installer, removing only uninstaller, and retaining GitHub updates; no native release or Claude acknowledgment claimed | [[2026-10-feature-installer-free-desktop-zip-migration]]
