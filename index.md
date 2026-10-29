@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-828 notes.
+829 notes.
 
 ## Actors (49)
 
@@ -280,7 +280,7 @@
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
 
-## Fleeting (62)
+## Fleeting (63)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--agent-roster-signing-proof-lane-2026-10-22]] — 2026-10-22 lane - signature census (published installers Valid, owner installs NotSigned stale), agent files gained Skill/skills/scout/verifier/receipt contract, END_PROOF + Terrier assignment ledger; installs and brain PR 33 merge are...
@@ -301,6 +301,7 @@
 - [[melange-systems--haiku-for-verify-land-bump-2026-10-23]] — Paul 2026-10-23: Haiku 5.5 may do verify, land (merge when green) and version-bump work; narrows the never-Haiku rule
 - [[melange-systems--lg-gram-npu-crash-2026-08-17]] — Paul's LG Gram 17Z90UB BSOD loop diagnosed 2026-08-17 - Intel NPU driver (npu_kmd.sys) hangs escalate to 0x10E video-memory bugchecks; fix = update/disable NPU driver, NOT the graphics driver
 - [[melange-systems--melange-admin-launcher-applied-2026-10-22]] — Melange Admin shortcuts re-pointed to the main checkout 2026-10-22 (were on a dead worktree without the Apps section); local compose stack for the Apps page still NOT configured
+- [[melange-systems--melange-origin-is-filtered-export-2026-10-29]] — NEVER push any local Melange branch raw to origin - origin/main is a filtered export with no shared history; publication goes through ops/release_lib/export.py and a PR, even when Paul says "push"
 - [[melange-systems--melange-public-repo-unfiltered-branches-2026-10-18]] — NEVER git push any local branch to origin (pjg93-222/Melange, PUBLIC): six branches there already expose unfiltered data; only the ReleasePublish filtered route publishes
 - [[melange-systems--melange-vote-sources-not-blocked-2026-10-26]] — Melange vote snapshot staleness (Oct 2026) was upstream data, not a fetch block; senate.gov 403s all scripted clients; clerk returns 200 for missing rolls
 - [[melange-systems--memory-index-is-the-loading-contract-2026-09-18]] — MEMORY.md's filename IS the session-start loading contract - splitting it or moving lines to a second file silently deletes those entries from every future session's context
