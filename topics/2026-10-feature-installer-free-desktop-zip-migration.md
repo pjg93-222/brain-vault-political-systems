@@ -25,30 +25,30 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-25-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 398-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; WORK-PC-UPDATE-UNTESTED"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-26-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 684-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; TERRIER-NATIVE-STARTUP-PASSED; WORK-PC-UPDATE-UNTESTED"
 updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
 active_scope: "Native installer without uninstaller; existing Windows sign-in without an extra app password; direct signed GitHub updates and visible launch status."
-current_source_commit: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_source_commit: "fefc786a495be893f31415bde8860a1e36169ffd"
 current_source_pr: "https://github.com/pjg93-222/Melange/pull/102"
-current_delivery_status: "Stable 1.0.25 installers and complete signed feeds are published at sequence 16, retaining 1.0.24 recovery sequence 15. Work-PC installation, physical Windows lock/unlock and automatic-update acceptance remain open."
+current_delivery_status: "Stable 1.0.26 installers and complete signed feeds are published at sequence 17, retaining 1.0.25 recovery sequence 16. Packaged Terrier native startup passed twice; work-PC update/recovery and physical lock/unlock acceptance remain open."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
 desktop_reserve_minimum_gib: 16
 final_two_inspection_reserve: "Explicit one-run 4 GiB budget for Mentat/Terrier 1.0.23 only; production reserve defaults and all integrity checks unchanged."
 prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
-current_application_payload_source: "Published 1.0.25 client/bootstrap: 3e25fc7185464492abe74122359fca4c11bbac4f. App backends/vendor files retain prior verified source pins. Later README-only commit 407cbf292 does not change shipped source."
-current_compiler_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
-current_builder_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_application_payload_source: "Published 1.0.26 client/bootstrap: fefc786a495be893f31415bde8860a1e36169ffd. App backends/vendor files retain prior verified source pins. Subsequent documentation changes do not change shipped source."
+current_compiler_source: "fefc786a495be893f31415bde8860a1e36169ffd"
+current_builder_source: "fefc786a495be893f31415bde8860a1e36169ffd"
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current delivery: all three stable 1.0.25 installers and signed update feeds are published. These builds use existing Windows sign-in with no extra app password or remote approval requirement. The source gates, all three native packages and actual packaged-client public-feed metadata checks passed. Recipient work-PC installation/update and physical lock/unlock acceptance remain open.
+> Current delivery: all three stable 1.0.26 installers and complete signed feeds are published with existing Windows sign-in. Source/native checks, actual packaged-client public-feed checks and two real Terrier backend starts passed. The documented staged-catalogue repeat-download limitation remains unfixed; recipient work-PC update/recovery and physical lock/unlock acceptance remain open.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -281,3 +281,41 @@ The earlier pending current-delivery snapshot is preserved as history; the publi
 > Current delivery: stable 1.0.24 installers and signed feeds remain published. Version 1.0.25 is being built from frozen Windows-session sign-in source; it is not published at this snapshot. The latest dated section governs current scope. Work-PC installation and automatic-update acceptance remain open.
 
 Shared knowledge now records the explicit Windows sign-in request and the published result. This records no Claude acknowledgment, PR merge or private Git synchronization.
+
+
+## Public district data and signed update delivered - 1.0.26
+
+All three stable 1.0.26 native installers and complete signed update feeds are published at sequence 17, retaining 1.0.25 recovery sequence 16. The shared desktop client/bootstrap is frozen at `fefc786a495be893f31415bde8860a1e36169ffd` on [PR102](https://github.com/pjg93-222/Melange/pull/102), stacked on unmerged PR99. Existing Windows sign-in, visible GitHub status, accounts and saved views remain. Backend/vendor payloads retain their earlier verified source pins; later main-branch backend changes are not claimed.
+
+- [Melange 1.0.26 installer](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.26/melange-1.0.26-win32-x64.exe)
+- [Mentat 1.0.26 installer](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.26/mentat-1.0.26-win32-x64.exe)
+- [Terrier 1.0.26 installer](https://github.com/pjg93-222/Geo/releases/download/desktop-v1.0.26/terrier-1.0.26-win32-x64.exe)
+
+Terrier now loads the signed public snapshot members required by its real row-framework summary, validates the selected district and score-store area-table hash and activates a real backend record. Successful startup/switch cleanup stops inactive backends before retiring verified inactive public caches, preserves unknown/changed files and private state, and defers updates when shutdown is not confirmed.
+
+Bounded 4 MiB reads reduce local public-data and package verification overhead while preserving signatures, hashes, size limits and cancellation. A local 303 MB Mentat cache check measured 4.9 seconds versus earlier 26-52 second observations without OS-cache flushing; this is not a controlled end-to-end install benchmark or work-PC guarantee. Binary updates still download complete installers. Mentat's public feed supplies official FEC tables; industry reports and forecasts require their separate local inputs.
+
+The frozen-source gates passed 611 Node and 73 Python cases (684 total), with zero failures or skips; source export-security, inventory and production-dependency checks passed without new exceptions. All three exact installers passed native signature, payload, source and preserved-vendor checks. The freshly extracted Terrier backend started twice with actual Windows sign-in and signed public data: session and metadata endpoints returned HTTP 200, the store reported ok and the expected snapshot was active. The repeat start was idempotent; public and execution inputs were unchanged. Electron UI, physical Windows lock/unlock and recipient work-PC installation/update/recovery were not acceptance-tested.
+
+Actual packaged 1.0.26 clients passed anonymous GitHub trust/discovery, signed 1.0.25 recovery (sequence 16), update/fresh-1.0.26 recovery (sequence 17), current-version checks and hosted installer size/SHA-256 comparison. These checks fetched metadata, not another full binary download, and did not execute installation.
+
+Known follow-up, still unfixed in 1.0.26: reopening an already-running older workspace can retire a staged newer public catalogue, causing one repeat download on the next fresh start. A focused reproduction used the actual frozen provider and startup function with signed test fixtures, without app/backend launch or network access. Unchanged current sequence 1 data cannot trigger this condition.
+
+To test the actual 25-to-26 update, keep 25 installed and wait for its displayed next-discovery deadline, then choose Check for updates. Its six-hour cache plus up to 30 minutes of jitter also applies to manual checks. Wait for the verified update, save and close, then open the refreshed Desktop or Start Menu shortcut. An old version-specific taskbar pin can reopen 25 and incorrectly report a failed installation. No protected state should be cleared and no manual 26 installation should be substituted for this test.
+
+Existing Opus/Paul review and recipient acceptance gates remain open. This records no PR merge, Claude acknowledgment or private Git synchronization.
+
+Packaging lesson: Python probes using `-E` or `-I` need explicit `-B`, because those modes ignore `PYTHONDONTWRITEBYTECODE`. Compare the entire retained vendor inventory before compilation, not just added files or signed executables. The unpublished Mentat candidate was rebuilt after restoring probe-modified bytecode; all 13,025 vendor files in the replacement exactly match the verified 1.0.23 baseline. Frozen client/bootstrap source and its 684 source checks remain unchanged; the earlier candidate and failure evidence are retained.
+
+Previous current-delivery metadata and callout, retained as historical context:
+
+```yaml
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-25-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 398-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; WORK-PC-UPDATE-UNTESTED"
+current_source_commit: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_delivery_status: "Stable 1.0.25 installers and complete signed feeds are published at sequence 16, retaining 1.0.24 recovery sequence 15. Work-PC installation, physical Windows lock/unlock and automatic-update acceptance remain open."
+current_application_payload_source: "Published 1.0.25 client/bootstrap: 3e25fc7185464492abe74122359fca4c11bbac4f. App backends/vendor files retain prior verified source pins. Later README-only commit 407cbf292 does not change shipped source."
+current_compiler_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_builder_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
+```
+
+> Current delivery: all three stable 1.0.25 installers and signed update feeds are published. These builds use existing Windows sign-in with no extra app password or remote approval requirement. The source gates, all three native packages and actual packaged-client public-feed metadata checks passed. Recipient work-PC installation/update and physical lock/unlock acceptance remain open.

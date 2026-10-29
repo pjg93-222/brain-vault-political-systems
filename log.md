@@ -407,3 +407,5 @@
 - 2026-10-28 18:10 -04:00 | preserve | Record existing Windows sign-in steering and frozen 1.0.25 source gates; keep 1.0.24 published and 1.0.25 pending | [[2026-10-feature-installer-free-desktop-zip-migration]]
 
 - 2026-10-28: Recorded published 1.0.25 Windows-session sign-in and complete sequence 16 feeds (24 recovery 15), 398 focused passes and all-three native/hosted checks in the installer-free topic; recipient/physical-lock acceptance and existing review gates remain open.
+
+- 2026-10-28: Recorded published 1.0.26 sequence 17 feeds (25 recovery 16), exact fefc786a source, 684 source passes, three native/hosted checks and two real Terrier backend starts; retained staged-cache/old-pin limits, work-PC acceptance and existing review gates. | [[2026-10-feature-installer-free-desktop-zip-migration]]
