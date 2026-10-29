@@ -298,12 +298,12 @@ Every note of this project by type, one line each; parts follow their parent.
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 389; dead ends: 82
+- Open questions in STATE: 41; active decisions: 390; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-415|D-415]] — Briefs v3: check 9.6 reworded (exemplar reuse), Paul ruling 2026-10-29
 - [[ledger/melange-systems-brain/D-414|D-414]] — Contact inference v2: add the 116th Congress (amendment A1, Paul ruling 2026-10-
 - [[ledger/melange-systems-brain/D-413|D-413]] — Contact inference v2: build with member-level salience, fresh gold, new prereg (
 - [[ledger/melange-systems-brain/D-412|D-412]] — Contact inference v1: stopped, rescoped G1 failed (2026-10-28)
 - [[ledger/melange-systems-brain/D-411|D-411]] — T18 publisher pin stays fail-closed; warn-only stage dropped (Paul 2026-10-28)
-- [[ledger/melange-systems-brain/D-410|D-410]] — SNA health check runs as its own session with Paul's three steps
 <!-- brainlink:state:end -->
