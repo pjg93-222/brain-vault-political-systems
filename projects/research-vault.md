@@ -75,12 +75,12 @@ Terrier ([[terrier]]):
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 386; dead ends: 82
+- Open questions in STATE: 41; active decisions: 387; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-412|D-412]] — Contact inference v1: stopped, rescoped G1 failed (2026-10-28)
 - [[ledger/melange-systems-brain/D-411|D-411]] — T18 publisher pin stays fail-closed; warn-only stage dropped (Paul 2026-10-28)
 - [[ledger/melange-systems-brain/D-410|D-410]] — SNA health check runs as its own session with Paul's three steps
 - [[ledger/melange-systems-brain/D-409|D-409]] — Contact inference: top-lobbied-member precision folded into the existing v1 sess
 - [[ledger/melange-systems-brain/D-408|D-408]] — Overseer seat runs on Fable
-- [[ledger/melange-systems-brain/D-407|D-407]] — M7 attempt 10 authorized via 10b launcher after daytime headed Congress.gov walk
 <!-- brainlink:state:end -->
