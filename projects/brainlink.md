@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 390; dead ends: 82
+- Open questions in STATE: 41; active decisions: 392; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-417|D-417]] — Member briefs carry no expiration date (Paul 2026-10-29)
+- [[ledger/melange-systems-brain/D-416|D-416]] — Briefs v3: cohesion standard, flexible Do/Dont counts, rewrite failing briefs, H
 - [[ledger/melange-systems-brain/D-415|D-415]] — Briefs v3: check 9.6 reworded (exemplar reuse), Paul ruling 2026-10-29
 - [[ledger/melange-systems-brain/D-414|D-414]] — Contact inference v2: add the 116th Congress (amendment A1, Paul ruling 2026-10-
 - [[ledger/melange-systems-brain/D-413|D-413]] — Contact inference v2: build with member-level salience, fresh gold, new prereg (
-- [[ledger/melange-systems-brain/D-412|D-412]] — Contact inference v1: stopped, rescoped G1 failed (2026-10-28)
-- [[ledger/melange-systems-brain/D-411|D-411]] — T18 publisher pin stays fail-closed; warn-only stage dropped (Paul 2026-10-28)
 <!-- brainlink:state:end -->
