@@ -10,7 +10,7 @@ promoted_to: ""
 project: "melange-systems"
 memory_type: "feedback"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-origin-is-filtered-export-2026-10-29.md", type: "claude-memory", synced_at: "2026-10-29", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-origin-is-filtered-export-2026-10-29.md", sha256: "9fcec57e18b3f15570655205748cd44303ac6f41b7f7ba7d17afc713b6b61678"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-origin-is-filtered-export-2026-10-29.md", type: "claude-memory", synced_at: "2026-10-29", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-origin-is-filtered-export-2026-10-29.md", sha256: "b5e90fcf0e1b808f409cd472ae3d9e5bef111ac7515018837843d85ade1ff63b"}
 updated_at: 2026-10-29
 updated_by: "brain-sync@hook"
 tags: ["type/fleeting", "status/raw"]
@@ -27,11 +27,13 @@ Origin for the Melange Systems repo is a filtered PUBLIC export built by `ops/re
 On 2026-10-28 the auto-mode classifier denied my push of lane/sna-health as publication; that denial was correct. On 2026-10-29 Paul ruled "push", the overseer stopped it with the two facts above, and `git ls-remote origin refs/heads/lane/sna-health*` confirmed nothing had reached origin. The SNA lane's work was already public via the export route as PR #105 (merged 0018eaae2, local main 38d0900e4).
 
 **Why:** a "push" ruling from Paul assumes a normal remote; here the remote is a filtered mirror and the standing public-repo rule wins.
-**How to apply:** land lane work on local main after Opus review and tell the overseer; the overseer publishes through the export. If a push ruling arrives, restate these two facts instead of pushing. See `melange-public-repo-unfiltered-branches-2026-10-18` `sna-health-lane-2026-10-28`.
+Later on 2026-10-29 Paul reaffirmed verbatim "Push it. The SNA I told to push, push it." after hearing both facts; the overseer session then did the push itself, by an Opus agent, after a full-history secret/PII scan.
+
+**How to apply:** never push from a lane session; land on local main after Opus review and tell the overseer. If Paul rules a raw push, restate the two facts once, then the overseer session pushes after a history scan (one writer per ref). See `melange-public-repo-unfiltered-branches-2026-10-18` `sna-health-lane-2026-10-28`.
 
 ## Possible Connections
 
-- [[2026-10-troubleshooting-melange-main-reconcile]] — keyword match from recall, unverified
+- none found yet
 
 ## Capture Context
 
