@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 395; dead ends: 82
+- Open questions in STATE: 41; active decisions: 396; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-421|D-421]] — Briefs v3 review bar: block only unsupported claims and contradictions; keep it
 - [[ledger/melange-systems-brain/D-420|D-420]] — Contact inference v2: amendment A3, extractor list/title fix plus stacked ensemb
 - [[ledger/melange-systems-brain/D-419|D-419]] — Contact inference v2: amendment A2, tranche A pools in the 116th (proceed-on-def
 - [[ledger/melange-systems-brain/D-418|D-418]] — SNA health follow-ups: Paul's 11 rulings of 2026-10-29
 - [[ledger/melange-systems-brain/D-417|D-417]] — Member briefs carry no expiration date (Paul 2026-10-29)
-- [[ledger/melange-systems-brain/D-416|D-416]] — Briefs v3: cohesion standard, flexible Do/Dont counts, rewrite failing briefs, H
 <!-- brainlink:state:end -->
