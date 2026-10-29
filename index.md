@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-818 notes.
+819 notes.
 
 ## Actors (49)
 
@@ -280,7 +280,7 @@
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
 
-## Fleeting (60)
+## Fleeting (61)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--agent-roster-signing-proof-lane-2026-10-22]] — 2026-10-22 lane - signature census (published installers Valid, owner installs NotSigned stale), agent files gained Skill/skills/scout/verifier/receipt contract, END_PROOF + Terrier assignment ledger; installs and brain PR 33 merge are...
@@ -327,6 +327,7 @@
 - [[melange-systems--runpod-claude-sessions-2026-09-30]] — RunPod sessions: historical first-pod setup and current math-pod full-data authorization; keep pod running
 - [[melange-systems--scout-census-traps-2026-09-13]] — Lessons from the 2026-09-13 review fan-out - Haiku scouts fabricate repo maps; a scout parsed the LIVE tree's file instead of the worktree's; per-file git censuses over OneDrive stall for 30+ min and scouts end turns with "standing by"...
 - [[melange-systems--sendmessage-workflow-agent-duplicates-2026-09-24]] — SendMessage to a running Workflow subagent does NOT reach it; it resumes a DUPLICATE copy from the transcript that runs concurrently and writes the same files
+- [[melange-systems--sna-health-lane-2026-10-28]] — SNA health check (D-410) landed 2026-10-28 - live_sync audit block, edge-file re-hash, chain-tail guard; what stayed open and what the premise got wrong
 - [[melange-systems--staffer-social-network-overlap-rule-2026-09-03]] — OVERLAP is the edge rule for the staffer social network - no person-person edge without actual concurrent service; sequence is trajectory, not friendship
 - [[melange-systems--terrier-voter-profile-lane-2026-10-21]] — Terrier 'Supporters and persuadables' voter profile (inverse of 'Crank'): Geo PR #13 on feat/coalition-profile off main; thresholds pending Paul; client's Happy Valley streets are mostly OR-03
 - [[melange-systems--ui-review-reconcile-2026-09-25]] — 09-25 reconcile of three UI sessions (redesign, graph-quirks, peer load-times): peer STALLED on weekly limit mid batch 2; 12 review fixes applied UNCOMMITTED; 8812 restarted; 8806 still needs Paul's restart
