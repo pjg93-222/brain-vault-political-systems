@@ -176,12 +176,12 @@ Correction 2026-10-18 (`gh pr view 10`, 2026-10-18): vault PR #10 was closed wit
 
 - Brain: [[ledger/melange-systems-brain/STATE|melange-systems-brain STATE]]
 - STATE last verified: 2026-10-27 21:55
-- Open questions in STATE: 41; active decisions: 397; dead ends: 82
+- Open questions in STATE: 41; active decisions: 398; dead ends: 82
 
 ### Recent decisions
+- [[ledger/melange-systems-brain/D-423|D-423]] — Contact inference v2: stopped at G1-top, line closed (2026-10-30)
 - [[ledger/melange-systems-brain/D-422|D-422]] — Contact inference v2: amendment A4, waive A2 recall gate for G1 (Paul ruling 202
 - [[ledger/melange-systems-brain/D-421|D-421]] — Briefs v3 review bar: block only unsupported claims and contradictions; keep it
 - [[ledger/melange-systems-brain/D-420|D-420]] — Contact inference v2: amendment A3, extractor list/title fix plus stacked ensemb
 - [[ledger/melange-systems-brain/D-419|D-419]] — Contact inference v2: amendment A2, tranche A pools in the 116th (proceed-on-def
-- [[ledger/melange-systems-brain/D-418|D-418]] — SNA health follow-ups: Paul's 11 rulings of 2026-10-29
 <!-- brainlink:state:end -->
