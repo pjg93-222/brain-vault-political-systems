@@ -55,6 +55,7 @@ related_teams: []
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-github-migration-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-github-migration-2026-10-02.md", sha256: "17257cc0da77ca1ef08b574851ed88d92f6435ea7c07e452d2235ba48b3e66cc"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pipeline-2026-07-18.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pipeline-2026-07-18.md", sha256: "f07cac2aa2afe08f016bfa228378c23eecb8737ad19d2d8c0e5ce82e22e7290a"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-downstream-architecture-first-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-downstream-architecture-first-2026-10-15.md", sha256: "6764cb8e21a36899a2bd6884e4c29c1b3bd921efea86940e85ada11ff5eb69cd"}
 updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/data"]
@@ -258,3 +259,5 @@ Every note of this project by type, one line each; parts follow their parent.
 ## Research evidence
 
 The literature behind this system lives in the research vault: [[research-vault]]. Evidence hubs: [mentat-fec-attribution](obsidian://open?vault=research&file=systems%2Fmentat-fec-attribution) · [mentat-giving-forecast](obsidian://open?vault=research&file=systems%2Fmentat-giving-forecast) · [mentat-sector-growth-study](obsidian://open?vault=research&file=systems%2Fmentat-sector-growth-study).
+
+Update 2026-10-30: On 2026-10-15 Paul put Mentat downstream spending collection on hold in favour of finishing the architecture: no new live batches until he says, and one integrated, reviewed collector release (origin-storage growth fix, then concurrency and crash recovery, then totals and candidate-to-committee mapping) applied to production by Paul himself.

@@ -25,6 +25,7 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/public-github-releases-ruling-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\public-github-releases-ruling-2026-10-15.md", sha256: "29f777102c3a67d5a0ecb08cb87b9d3638977cf2b431a60e08f8bccf911bab56"}
 evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-26-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 684-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; TERRIER-NATIVE-STARTUP-PASSED; WORK-PC-UPDATE-UNTESTED"
 updated_at: 2026-10-30
 updated_by: "preserve@agent"
@@ -332,3 +333,5 @@ Source: [Melange PR #102](https://github.com/pjg93-222/Melange/pull/102), draft 
 - **Not established.** Full real Melange activation, the work-PC update and recovery cycle, and physical Windows lock/unlock acceptance have not been shown. An older-workspace case can retire a staged newer public catalogue, which causes one repeat data download. This is the limitation recorded in the 1.0.26 section above. No new cache-performance or install-time improvement is claimed.
 - **Versions 1.0.27 to 1.0.29.** The PR body does not document these individually beyond the 1.0.28 recovery baseline at sequence 19 and the 28 and 29 receivers.
 - **Gate.** The Opus and Paul review gate remains open. Publishing the PR is not a merge.
+
+Update 2026-10-30: On 2026-10-15 Paul chose public GitHub Releases, with the app-update repository made public, as the desktop update channel so that one update reaches every client; this supersedes the earlier private-repository rulings for that repository, and a full-history secret scan runs before the visibility flip, with its findings reported so keys can be rotated (Paul's standing yes the same day means the scan does not block the flip).

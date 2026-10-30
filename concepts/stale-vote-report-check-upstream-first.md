@@ -4,8 +4,10 @@ name: "Stale vote reports: check upstream first"
 aliases: ["vote staleness is upstream", "check Voteview dates before fetch code"]
 description: "When Melange's vote snapshot looks stale, compare the upstream publication date and whether the chamber is voting before debugging any fetch code."
 related_to: ["[[melange-systems]]", "[[melange-fec-pipeline]]", "[[census-before-claims]]", "[[2026-10-troubleshooting-official-roll-call-endpoints]]"]
-sources: []
-updated_at: 2026-10-26
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-25-dee7ed/memory/melange-vote-sources-not-blocked.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-006ff0a7-6dcc-4dda-b723-6b48b4193c76-c655b422-2b14-405c-8ced-bbf2cd9c6822-scratch-2026-10-25-dee7ed\\memory\\melange-vote-sources-not-blocked.md", sha256: "23c3a3eaff480c9db5ae4c4bda5cf3a632628fc9c6e9c73e9e09f030b2d48c0c"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-vote-sources-not-blocked-2026-10-26.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-vote-sources-not-blocked-2026-10-26.md", sha256: "23c3a3eaff480c9db5ae4c4bda5cf3a632628fc9c6e9c73e9e09f030b2d48c0c"}
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/concept", "domain/data"]
 ---

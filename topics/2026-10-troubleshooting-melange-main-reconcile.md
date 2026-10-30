@@ -11,8 +11,12 @@ actors:
   - "[[melange-fec-pipeline]]"
 objective: "Bring local main, the published origin/main lineage and the work done directly on the published lineage into one coherent state without losing any of it, move the live tree onto the result with a proven rollback, and record the process lessons."
 created_at: 2026-10-17
-sources: []
-updated_at: 2026-10-17
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-598863e3-c9bb-4c63-b007-0dd957c20364-bbac54bf-6633-4cf3-b205-e25dba48458c-scratch-2026-10-28-0c1fea/memory/melange-origin-is-filtered-export.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-AppData-Local-Claude-Data-claude-pzs8sxrjxfjjc-scratch-workspaces-598863e3-c9bb-4c63-b007-0dd957c20364-bbac54bf-6633-4cf3-b205-e25dba48458c-scratch-2026-10-28-0c1fea\\memory\\melange-origin-is-filtered-export.md", sha256: "b23de206fa38a229fb05f4412623da800c330a7672ddb99fe9dba28a48df4af2"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-origin-is-filtered-export-2026-10-29.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-origin-is-filtered-export-2026-10-29.md", sha256: "b5e90fcf0e1b808f409cd472ae3d9e5bef111ac7515018837843d85ade1ff63b"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-public-repo-unfiltered-branches-2026-10-18.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-public-repo-unfiltered-branches-2026-10-18.md", sha256: "639024f95ea2e4b7926a3c8176e2c8a383518d865f463fcd9ed6484490ff3a6c"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/desktop-main-sync-lane-2026-10-23.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\desktop-main-sync-lane-2026-10-23.md", sha256: "47cecf338cc66352dd2a7cfbafd470ae889614b264d7e2c0e69de8da120f4dc8"}
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubleshooting"]
 ---
@@ -72,3 +76,5 @@ tags: ["type/topic", "status/in-progress", "domain/platform", "category/troubles
 
 - `origin/main` already contains some source-history commits (for example `8f44cb6a2`) that go against `DEVELOPMENT.md`'s linear-publication rule. Handle them at the next republish.
 - Whether any of this belongs in the decision ledger has not been checked. The ledger mirror under `ledger/melange-systems-brain/` is generated; its source is the `melange-systems-brain` brain at `C:\Users\pgoff\OneDrive\Desktop\Project Brain\brains\melange-systems-brain\` (`DECISIONS.md`), edited through `brainctl`.
+
+Update 2026-10-30: The published origin is a filtered public export with no shared history with local main, so no lane session pushes a local branch raw to origin (an agent was stopped before doing so on 2026-10-28 and again on 2026-10-29 with nothing reaching origin; when Paul reaffirmed that push later on 2026-10-29, the overseer session made it itself after a full-history secret and PII scan); work is otherwise published only through the ReleasePublish filtered route as a new branch plus a pull request into main. On 2026-10-23 a desktop main-sync lane sent the shipped inner-signing lineage to public main that way (Melange PR #63; confirm it merged before a desktop rebuild) and changed the release-signing census to detect signable binaries by their DOS MZ/PE header instead of file extension, skipping the NSIS Stubs templates because signing them makes makensis emit an installer that signtool refuses.

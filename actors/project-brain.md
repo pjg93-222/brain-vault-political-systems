@@ -19,6 +19,7 @@ known_issues:
   - "Carbonite coverage of the four new mirror folders unconfirmed (Paul to check green badge)"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/project-brain-toolkit-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\project-brain-toolkit-2026-08-11.md", sha256: "426022161f53e4a6aecc7d7472449fde76a6aad9c364e0bff2ad7449ba129f02"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/brains-on-every-session-2026-10-13.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\brains-on-every-session-2026-10-13.md", sha256: "4252b6a61408f01bb1fd15e9a57853bfdf9fc29bbda6bd7502a674422b40f8db"}
 doc_sources:
   - path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brains\\melange-systems-brain\\DECISIONS.md"
     sha256: "03465b2f4d8dcc939859ac25f58b0ffbc1e3fb0ef0d98bf4beb85988ac1a92ec"
@@ -34,7 +35,7 @@ doc_sources:
     as_of: "2026-08-11"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-05
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
@@ -141,3 +142,5 @@ Dated correction (2026-10-05): the notes cited "D-079" and "D-088 or later" for 
 
 - [[melange-systems]] - Moneyball/Melange: CU legislative-influence model and dashboard for 533 members of Congress; absorbs Draft Systems; index note.
 - [[brainlink]] - the project that links this brain (the ledger) with the vault (the map) and Claude memory; generated `ledger/melange-systems-brain/` notes mirror its entries one way.
+
+Update 2026-10-30: On 2026-10-13 Paul made booting the project brain the first action of every session (brainctl boot, then confirming the Obsidian vault is live and its SessionStart brainlink line does not say FAILED), with any boot failure reported in the first reply instead of being skipped.

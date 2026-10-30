@@ -11,10 +11,11 @@ team: ""
 criticality: ""
 pci: false
 known_issues: []
-sources: []
+sources:
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/fec-no-internal-request-limit-2026-10-15.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\fec-no-internal-request-limit-2026-10-15.md", sha256: "74d318fbad2e5d6db6f881f8a0e2eebc162c74e2cdefcab78cad1d09b0d4c462"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
+updated_at: 2026-10-30
 updated_by: "reorg@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 part_of: "[[mentat-fec-pipeline]]"
@@ -91,3 +92,5 @@ Both branches landed via ONE merge: `codex/mentat-perf-round2` @86c878d is an an
 ## Related Topics
 
 - [[2026-07-bugfix-mentat-collection-and-attribution-july-build-and-ship]] — How the Mentat FEC pipeline was defined, built, reviewed and shipped from 2026-07-18 to 2026-07-24, from Paul's founding decisions to the 07-21 fleet halt and the pagination-shortfall policy call.
+
+Update 2026-10-30: Paul ruled on 2026-10-15 that FEC API work has no self-imposed request limit and runs at the full ceiling continuously (all 21 keys in parallel at 1,000 requests per hour per key, about 21,000 per hour), backing off only on a 429 or X-RateLimit-Remaining of 0 and only on that key, and that nobody asks FEC for a higher limit.
