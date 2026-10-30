@@ -36,9 +36,10 @@ related_actors:
   - "[[project-brain]]"
 related_teams: []
 sources:
-  - {url: "file:///C:/Users/pgoff/AppData/Roaming/Claude/scratch-workspaces/006ff0a7-6dcc-4dda-b723-6b48b4193c76/c655b422-2b14-405c-8ced-bbf2cd9c6822/scratch-2026-10-05-6c2408/brainlink-design.md", type: "markdown", synced_at: "2026-10-05", path: "C:\\Users\\pgoff\\AppData\\Roaming\\Claude\\scratch-workspaces\\006ff0a7-6dcc-4dda-b723-6b48b4193c76\\c655b422-2b14-405c-8ced-bbf2cd9c6822\\scratch-2026-10-05-6c2408\\brainlink-design.md", sha256: "93bba5ce0d7e38c449d8aa31bc9ac0278c4629eba45900fc0d34839babfc96da"}
+  - {url: "file:///C:/Users/pgoff/OneDrive/Desktop/Project Brain/brainlink/README.md", type: "markdown", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\OneDrive\\Desktop\\Project Brain\\brainlink\\README.md", sha256: "5042e7fdbe88166714f82123e677fd2e1c529ca42157bd6f426ff4f72c178a15"}
+  - {url: "file:///C:/Users/pgoff/AppData/Roaming/Claude/scratch-workspaces/006ff0a7-6dcc-4dda-b723-6b48b4193c76/c655b422-2b14-405c-8ced-bbf2cd9c6822/scratch-2026-10-05-6c2408/brainlink-design.md", type: "manual", synced_at: "2026-10-05", path: "C:\\Users\\pgoff\\AppData\\Roaming\\Claude\\scratch-workspaces\\006ff0a7-6dcc-4dda-b723-6b48b4193c76\\c655b422-2b14-405c-8ced-bbf2cd9c6822\\scratch-2026-10-05-6c2408\\brainlink-design.md", sha256: "93bba5ce0d7e38c449d8aa31bc9ac0278c4629eba45900fc0d34839babfc96da"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/brainlink-knowledge-system-2026-10-05.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\brainlink-knowledge-system-2026-10-05.md", sha256: "ef4790fc0f31cacb17c13e4d01161adf8537dc3c4b9fceaffdc24b6869eef957"}
-updated_at: 2026-10-10
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/project", "status/active", "domain/platform"]
 ---
@@ -53,6 +54,8 @@ tags: ["type/project", "status/active", "domain/platform"]
 - **Design:** `brainlink-design.md` (design A, "the brain is the ledger, the vault is the map, memory holds pointers"; alternatives B and C were weighed and not chosen). Recorded in the Project Brain as [[ledger/melange-systems-brain/D-094|D-094]].
 - **Where it lives:** the Project Brain toolkit repo `C:\Users\pgoff\OneDrive\Desktop\Project Brain`, folder `brainlink\` (toolkit master merge `0bf2271`; later merges `fdaf012`, `80a7638` and `08a2f55`, master tip `08a2f55`); machine-local settings in the git-ignored `brainlink\config.local.json`; the run log and latest findings in `brainlink\var\` (log_path `brainlink\var\brainlink.log`). `brainctl.py`, the brain entry schema and boot are unchanged.
 - **Commands:** `brainlink.py project` writes the generated `ledger/<brain>/` notes and the project "Brain state" blocks; `check` is the read-only drift detector; `questions` writes `ledger/QUESTIONS.md`; `status` and `hook` serve the Claude Code hooks.
+
+The original A/B/C design doc (brainlink-design.md) is lost; the README and brainlink.py are the current reference.
 
 ## Who owns what
 

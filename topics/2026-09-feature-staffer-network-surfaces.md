@@ -12,11 +12,11 @@ actors:
 objective: "Ship and keep usable the staffer-network surfaces of the Melange dashboard: the live people-only sidecar on 127.0.0.1:8841, the staffer network as the fourth surface of Moneyball.html (#app-staffer) built through make_combined.py, the 2026-09-05 page redesign (variants A/B/C, producer top_shared_pairs), and the 2026-10-02/03 people-network route-latency lane (one-directional work_time Dijkstra; full-scope fix ruled)."
 created_at: 2026-09-04
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "99922dedbe7aeb3b6468f2b075fc99f2b1b26ad7fd4b5a495118ede957f8295f"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-live-sidecar-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-live-sidecar-2026-09-04.md", sha256: "9ebbe9baa896071b4b81a5d1fb0bbf36a3aadc3caeb4df9de7097d1e8128a0bb"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-dashboard-section-lane-2026-09-04.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-dashboard-section-lane-2026-09-04.md", sha256: "3c79e032d7d0a1c1a893ac4ef6b3d25e2220aebe4ad69f537d4eb07160fe1c4c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/staffer-network-redesign-2026-09-05.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\staffer-network-redesign-2026-09-05.md", sha256: "7761fc40db8d6180eb138a80e1ffad67c27227a93aefab397b5fe4893cd6aa44"}
-updated_at: 2026-10-04
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 ---

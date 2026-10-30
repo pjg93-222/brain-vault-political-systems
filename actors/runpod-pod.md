@@ -20,11 +20,11 @@ known_issues:
   - "Pod copy is NEVER authoritative; secret handling is not blanket-authorized by the full-data ruling"
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pod-for-memory-heavy-tasks-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pod-for-memory-heavy-tasks-2026-09-30.md", sha256: "6576d3b038381faafae20d7fd2fa7a0d9c8fcd6684fda4ce768fc0f22bbe9388"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/runpod-claude-sessions-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\runpod-claude-sessions-2026-09-30.md", sha256: "6a09c28c943b3f3c6207c49a2e825ec5adf4d752204a958334f2aeaac16b9260"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/runpod-claude-sessions-2026-09-30.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\runpod-claude-sessions-2026-09-30.md", sha256: "dfebefb0143dd7b81b170f032f153a9a409b0fde6ab6bae5c44254494340e282"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-30
+updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/infra"]
 ---
 

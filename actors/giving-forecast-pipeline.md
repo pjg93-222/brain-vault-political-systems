@@ -16,7 +16,7 @@ known_issues:
   - "Local console restart and Windows scheduled-task registration stay dormant under the owner's pod-only instruction (as of 2026-09-30)"
   - "Dated addition 2026-10-08: the cycle-aware bundle published 2026-10-07 carries five owner waivers (the auto PAC cell, \"1. Yes\", and control_Senate in banks, credit unions, P&C and auto, \"2. Keep senate in\"; the Senate presidential term worsens the Senate backtest error by 1.32-1.76x) and a G9 warning that the House and Senate party-mix models lose to a naive forecast in the chronological backtest"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-lda-deadline-rule-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-lda-deadline-rule-2026-10-09.md", sha256: "4864a24765314d5cbcc93bf30d11ccee3c3cf9e6df134e270d347cdb29dd1cd8"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-lda-deadline-rule-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-lda-deadline-rule-2026-10-09.md", sha256: "e9dfca4678411a3fc4ba930340470ab9aec25dca95bf15c555b3ee2864dd6f55"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/data-presentation-fixes-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\data-presentation-fixes-2026-10-09.md", sha256: "7eead6e6d9bb735454e3f7e594d690ff3205a807b8938cf9be2c08fd7520733d"}
 doc_sources:
   - path: "C:\\Users\\pgoff\\Mentat\\mentat\\forecast\\contracts\\README.md"
@@ -30,7 +30,7 @@ doc_sources:
     as_of: "2026-10-05"
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-10
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/data"]
 ---
@@ -82,7 +82,7 @@ Rscript tests/testthat.R                   # parity suite
 - G9 warns that the log-lobbying refit does not beat naive (MAE 4.050 against 3.936); G4 warns that auto lobbying is withheld.
 - Dated correction (2026-10-05, records lane; sources: the Project Brain's DECISIONS.md and the Mentat git log): the frontmatter known issue "stay dormant under the owner's pod-only instruction (as of 2026-09-30)" is superseded. Paul lifted the pod-only rule for this lane on 2026-09-30 late, and brain D-089 records that the Giving Forecast lane works locally and the pod is retired for it. The 2026-10-01 fixes (non-giving exclusion, conditioned remainder, two-design G9, waiver display, G8 on Windows, no summed reference) and the Giving by cycle view are committed in Mentat `f340dc84e` (2026-10-01 13:18 -0400, `codex/mentat-crypto`). The brain holds them as D-090 (non-giving receipts excluded) and D-091 (integrity-ledger fixes), with D-092 (every projected quantity except lobbying accounts for cycle phase, trajectory and inflation) and D-099 (the current-cycle roster PAC projection is a BLEND of the model and this cycle's pace). ~~State as of 2026-10-05 per D-099: no BLEND is published, the live pointer is still `refit-20260930-377f7324-c3f221343515`, and the 2026-10-01 rebuild is scratch only.~~ — superseded 2026-10-08: the cycle-aware rebuild was published 2026-10-07T17:38:26Z (pointer to bundle `d516dba6...`, `refit-20261007-d861bf29-79211caa154e`, brain D-113); the published bundle names BLEND for company PACs, and the console overrides it with the panel nowcast R8 (D-116; D-099 partially amended). This note's description of what the calculator applies is the published v2 bundle's. Whether the console was restarted or the scheduled tasks registered is not recorded here.
 - Parallel runs are bit-identical to serial runs on one platform; across platforms results agree to about 1e-13, so bundles are compared with tolerances, never byte equality.
-- Nothing schedules anchor builds (memory `mentat-lda-deadline-rule-2026-10-09`, checked 2026-10-09): no task or endpoint was found, although the contracts README claims they run "nightly". See the LDA deadline rule section below.
+- Nothing schedules anchor builds (memory `mentat-lda-deadline-rule-2026-10-09`, checked 2026-10-09): no task or endpoint was found, although the contracts README claims they run "nightly". See the LDA deadline rule section below. Update 2026-10-30 (source: the same memory, sha256 `e9dfca46…`, which records the supersession of 2026-10-11): this sentence is superseded. Windows tasks were registered on 2026-10-11 (FC-1, queue clear-out). `MentatNightlyAnchors` runs `build_giving_anchors.py` daily at 03:30 with a 45-minute cap, and `MentatRefitWatcher` runs `run_refit.R --mode detect` daily at 04:00 with a 20-minute cap. Both run as the logged-on user through a logging wrapper. Whether each run completed is not recorded here.
 
 ## LDA deadline rule in the anchor snapshot (2026-10-09; memory `mentat-lda-deadline-rule-2026-10-09`; added 2026-10-10)
 

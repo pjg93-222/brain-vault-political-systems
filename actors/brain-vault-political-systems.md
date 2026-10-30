@@ -15,16 +15,16 @@ known_issues:
   - "Obsidian creates new notes at the vault root by default; the graph includes them, and setting Obsidian's default new-note folder to fleeting/ is optional"
   - "/bedrock:teach runs graphify sub-agents that have Write and Bash over fetched content, so only teach from trusted sources"
   - "New and changed memory files are captured only into fleeting/ (by the sync hook); folding them into curated notes is still done by hand with /bedrock:preserve"
-  - "No automatic sync (verified 2026-10-07): the Stop/SessionEnd hook never commits or pushes; after any vault write, commit by explicit path and push through the PR flow in the same session"
+  - "No automatic sync (verified 2026-10-07): the Stop/SessionEnd hook never commits or pushes; after any vault write, commit by explicit path and push through the PR flow in the same session. Update 2026-10-30: superseded in part for generated and captured files (D-224, 2026-10-15); see Sync and push."
   - "A missing Brain recall block does not mean nothing matched: the recall hook was killed by timeouts (10 s limit since 2026-10-07) and long harness wrappers diluted coverage (stripped since 358bd1d)"
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/brain-vault-sync-mechanism-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\brain-vault-sync-mechanism-2026-10-07.md", sha256: "b889cd055f9b0f9cc13c696a7336cda729ef9bbb4afe1ffd336199df9ea72f72"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/brain-vault-sync-mechanism-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\brain-vault-sync-mechanism-2026-10-07.md", sha256: "f6cb0f88660946963911aed1ba4464f34e48add7bfdfaf12f15ff5960e381159"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/bedrock-recall-silent-failures-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\bedrock-recall-silent-failures-2026-10-07.md", sha256: "53df00e49920c8c8c2693e617aaabf7a25882ff4585ef45371ddb5185241ae49"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/claude-obsidian-readonly-install-2026-10-06.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\claude-obsidian-readonly-install-2026-10-06.md", sha256: "415891f358d424e34bc5866bc4d9fbd96ea5cd884f80cb394917e74f30225055"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/claude-obsidian-plugin-2026-10-07.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\claude-obsidian-plugin-2026-10-07.md", sha256: "f7562a98042dab8126fded15fb6c0b7cc0c2b78d898821dab76e23d2355c4bec"}
 last_synced_at: ""
 last_synced_sha: ""
-updated_at: 2026-10-10
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/actor", "status/active", "domain/platform"]
 ---
@@ -95,6 +95,8 @@ tags: ["type/actor", "status/active", "domain/platform"]
 - Dated note 2026-10-10 (memory `brain-vault-sync-mechanism-2026-10-07`): the graph page is no longer rebuilt inline by the sync hook; since `8e1e5df` a detached `hook.ts graph` worker rebuilds it (see Sync and push below).
 
 ## Sync and push (verified 2026-10-07; memory `brain-vault-sync-mechanism-2026-10-07`)
+
+Update 2026-10-30 (source: memory `brain-vault-sync-mechanism-2026-10-07`, sha256 `f6cb0f88…`, which records D-224 of 2026-10-15): the statement "NO automatic sync" below is superseded in part. Generated and captured brain-vault files now auto-commit and push to main after a fail-closed secret scan. Hand edits still go through the PR flow. The bullets below describe the state on 2026-10-07.
 
 The brain vault (`C:\Users\pgoff\Documents\brain`) has NO automatic sync:
 - The Stop/SessionEnd hook (`hook.ts sync`) only captures memory files into `fleeting/`; it "never commits or pushes" (`.bedrock/recall/sync.ts:18`, vault CLAUDE.md:66). No git hooks, no scheduled task.

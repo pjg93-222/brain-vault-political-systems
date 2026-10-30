@@ -9,9 +9,9 @@ actors: []
 objective: ""
 created_at: 2026-07-01
 sources:
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "a8b23c592aa5a712c63c4cb8c3f20e85fd6a62f588f7459770fb0a71f1056656"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/people-network-route-latency-lane-2026-10-02.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\people-network-route-latency-lane-2026-10-02.md", sha256: "99922dedbe7aeb3b6468f2b075fc99f2b1b26ad7fd4b5a495118ede957f8295f"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/bug-report-regressions-six-fixed-2026-10-09.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\bug-report-regressions-six-fixed-2026-10-09.md", sha256: "5340f4c291157dcbdc6733c12d9e2963b935ee0534a98156795d2ff85b93064d"}
-updated_at: 2026-10-10
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/data", "category/troubleshooting"]
 part_of: "[[2026-07-troubleshooting-melange-audits-and-reviews]]"

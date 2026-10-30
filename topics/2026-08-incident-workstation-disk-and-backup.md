@@ -13,10 +13,10 @@ objective: "Keep the LG Gram's single C: drive from filling (every new session w
 created_at: 2026-08-11
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/repo-mirror-2026-08-11.md", type: "claude-memory", synced_at: "2026-10-04", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\repo-mirror-2026-08-11.md", sha256: "7cfbd6eb35a782151a209c74bb3499efeeb44b9462dfcc4606da4eff5dd9ad09"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-cleanup-lane-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-cleanup-lane-2026-09-16.md", sha256: "8a4846eaf6cbb47d9096e3340c8987a7d3b07d75edd9c6bc5f8b8c919d54b1cc"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-cleanup-lane-2026-09-16.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-cleanup-lane-2026-09-16.md", sha256: "cbfd57ed528c0cbc5e4066ec2218e79092d47c6e99f7b63f842a008eb4344e38"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/disk-census-2026-09-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\disk-census-2026-09-11.md", sha256: "a60c04e092cb6a9de1332fc0c52b98fac2d1c0b481506063cdccd3dd5ef4687f"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/backup-coverage-gap-2026-09-07.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\backup-coverage-gap-2026-09-07.md", sha256: "7338b06f727216529838a57ea43fa60ca3e94f42420f8346d5014aad1a5db1d0"}
-updated_at: 2026-10-04
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 ---
@@ -27,6 +27,7 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 
 > [!warning] Free-space figures: newest wins
 > The census figures from 2026-09-11 (949.8 GB used / 2.7 GB free) are point-in-time and are SUPERSEDED by the cleanup lane: the latest measured state is **185.9 GB free on 2026-09-18 evening** (after about 212 GB cleared; two new session worktrees took 36 GB back while the lane ran). The census figures are kept below and in [[2026-08-incident-workstation-disk-and-backup-backup-gap-and-census]] as dated bullets. Re-run the census before quoting any number.
+> Update 2026-10-30 (memory `disk-cleanup-lane-2026-09-16`, sha256 cbfd57ed528c0cbc5e4066ec2218e79092d47c6e99f7b63f842a008eb4344e38): the memory records clearances after 09-18. On 2026-10-12, C: went from 8.3 GB to 69.0 GB free (fourth clearance), then from 68 GB to 165.1 GB free (fifth). On 2026-10-13 it went from 2.9 GB to 115.9 GB free (sixth). The memory's 10-13 entry says the legfix5 sparse-checkout lever is exhausted: all but one of the 74 registered worktrees are slimmed or lack legfix5, and the one left was not touched. The next clearance needs a different lever. The latest figure in the memory is 115.9 GB on 2026-10-13, so the 185.9 GB figure above is no longer the latest recorded state, and neither figure is current.
 
 ## Parts
 
@@ -85,12 +86,15 @@ tags: ["type/topic", "status/in-progress", "domain/infra", "category/incident"]
 | 2026-09-18 15:30 | Read-only census: C: at 3.00 GB free of 952.70 GB (105 GB consumed since the morning clearance). |
 | 2026-09-18 evening | "Third clearance" (session clear-storage-space-d8b0a5): 10.2 -> 119.8 GB free with nothing unique deleted, -> 178.6 GB after Paul approved three groups of program-irrelevant files, -> 185.9 GB after the clean-house pass (about 212 GB cleared; two new session worktrees took 36 GB back during the lane). Brain applied as commit `be33c78`. **Latest measured free space: 185.9 GB.** |
 | 2026-09-19 | Mirror brought current and hook auto-push installed ([[melange-repo-mirror]]). |
+| 2026-10-12 | Fourth and fifth clearances (memory `disk-cleanup-lane-2026-09-16`): C: 8.3 -> 69.0 GB free, then 68 -> 165.1 GB free, after sparse-slimming idle trees, removing dead leftovers and removing FEC input copies that the console re-copies on launch. Recorded 2026-10-30. |
+| 2026-10-13 | Sixth clearance (same memory): C: 2.9 -> 115.9 GB free after sparse-slimming five more idle trees; the memory reports the legfix5 lever exhausted. Recorded 2026-10-30. |
 
 ## Decisions
 
 Newest first within each topic; superseded rulings are struck through and kept because they explain earlier artifacts.
 
 - **Per-worktree sparse-checkout of `audits/legfix5` is the first lever** (brain D-047, 2026-09-18; "sparse-checkout-before-removal and relevance-from-the-running-program"). Why: frees 17.5 GB in 16-19 s without removing any worktree, branch, session cwd or uncommitted file, leaves `git status` identical outside legfix5, is reversible (`sparse-checkout disable`, needs 17.5 GB free). Right tool for TABLED lanes ("saved", literally) and idle Mentat-lane session trees.
+- Update 2026-10-30: per the memory `disk-cleanup-lane-2026-09-16` (sha256 cbfd57ed528c0cbc5e4066ec2218e79092d47c6e99f7b63f842a008eb4344e38), this lever was reported exhausted on 2026-10-13. See the callout at the top of this note.
 - **Relevance is read from the running program's code**, not from size or age (Paul's redirect 2026-09-18: "Did you clear irrelevant trees? Look at the main state of the program, and then compare irrelevant files for both mentat and melange other than what I have specified as off limits"); brain DE-030 "code-grep-as-relevance-test" records that a grep over code is NOT a relevance test on its own (see Near miss in [[2026-08-incident-workstation-disk-and-backup-clearances-and-retirements]]).
 - **Never delete a scratchpad on size or on the orphan test alone.** A scratchpad stays untouched even when it is a byte-duplicate; D-038 makes naming one Paul's. A broad phrase ("clean house") does not reopen a declined item.
 - **Do NOT slim a Melange-lane tree without asking:** 123 files under `fec/` reference `audits/legfix5` (403 occurrences: legislation producers and audits), so a Melange-lane session's pipeline or audit run needs those files. Classify a tree's lane from its transcript's first prompt (`Repo: C:\Users\pgoff\Mentat` = Mentat lane), never from its name or from what its scratchpad holds.

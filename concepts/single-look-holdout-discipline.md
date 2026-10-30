@@ -17,10 +17,10 @@ sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/luna-stratified-scaling-review-2026-09-29.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\luna-stratified-scaling-review-2026-09-29.md", sha256: "fa047e83455b71681045d3bcee783f50bb00e230f3fc0b1e0ebc5d5b44dc0d7d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/gold-template-audio-2026-07-16.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\gold-template-audio-2026-07-16.md", sha256: "d1dce0771c2a722f3bf397dc4e0956a6dc3f887d659e421baad558bae2787948"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/n-slot-reanchor-2026-07-11.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\n-slot-reanchor-2026-07-11.md", sha256: "e45c60d71c2689672cec1494ff32a691eac421ffc384113239cd1dc6a2b6b0e4"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "5505349793ed2924201a64f3f157b8d0ae2083d385b3f90f76f378d6c5acb456"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/moneyball-2026-07-07-gate2-round1.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\moneyball-2026-07-07-gate2-round1.md", sha256: "620e375015bda9de9b470e08aaa01403aa0401385c4b12978c1a487f0338aac6"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/pac-accuracy-six-year-lookback-directive-2026-10-03.md", type: "claude-memory", synced_at: "2026-10-07", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\pac-accuracy-six-year-lookback-directive-2026-10-03.md", sha256: "df58a8d72c36127f4bfe1b204c69a5d1c67bc64fa8a4b935439291ceec49ce9b"}
-updated_at: 2026-10-07
-updated_by: "reorg@agent"
+updated_at: 2026-10-30
+updated_by: "preserve@agent"
 tags: ["type/concept", "domain/research"]
 ---
 
@@ -56,6 +56,7 @@ tags: ["type/concept", "domain/research"]
 - Statistical sanity of "one more look": a joint-null false-pass simulation (pass-both-panels about 1.5-2%, plus dual dominance under 1%) showed exactly ONE more look per trait is defensible; more = basis-shopping (2026-07-16).
 - A holdout used twice leaves no untouched labelled data; a further model change cannot then be validated honestly without new labels (Luna, 2026-09-30).
 - Sealing is a ruling: opening a sealed holdout needs a new owner ruling (PAC attempt 2, C1).
+- Update 2026-10-30: the 2026-07-07 memory `moneyball-2026-07-07-gate2-round1` (sha256 620e375015bda9de9b470e08aaa01403aa0401385c4b12978c1a487f0338aac6) records looks beyond the round-1 cases above. Round 2, a residualized A/C/O fit with v2-E kept (pre-registered at commit 54d0f7c), missed, and its look was taken. The psychology round-3 campaign, closed the same day, ran 11 pre-registered designs with one look each. One of them, P6 gated shrinkage, passed its bar and was promoted, but the memory records that the pass came from a split-half artifact (double-shrink inflation, finding H-1) and that the claim was retracted, with the change kept on external-criterion grounds. The rule above, that more than one further look per trait is basis-shopping, was written on 2026-07-16. The memory does not reconcile the campaign with that rule. Read the memory for the full look ledger.
 
 ## Where it Applies
 

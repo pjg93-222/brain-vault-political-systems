@@ -10,8 +10,8 @@ objective: ""
 created_at: 2026-10-10
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-pdf-export-and-worksheet-cache-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-pdf-export-and-worksheet-cache-2026-10-08.md", sha256: "e15296e09b9f319075ca6816fca7c3371c39f8af6a748e71e923b6e3148aafa7"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-studio-members-and-figure-strip-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-10", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-studio-members-and-figure-strip-2026-10-08.md", sha256: "e9b8bbe651456e15b71ef4439315da6cf8ab376797f6b7e0e656ea5e9987ce0f"}
-updated_at: 2026-10-10
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-studio-members-and-figure-strip-2026-10-08.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-studio-members-and-figure-strip-2026-10-08.md", sha256: "e77e79c1b2dd9426d7f26d746598f323a8dec0e8af9e03e76684e6c2bacd286c"}
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 part_of: "[[2026-09-feature-mentat-console-ui]]"

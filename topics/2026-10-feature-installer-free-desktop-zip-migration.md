@@ -12,7 +12,7 @@ created_at: 2026-10-27
 sources:
   - url: "https://github.com/pjg93-222/Melange/pull/102"
     type: github-repo
-    synced_at: 2026-10-28
+    synced_at: 2026-10-30
   - url: "https://github.com/pjg93-222/Melange/pull/96"
     type: github-repo
     synced_at: 2026-10-27
@@ -26,7 +26,7 @@ sources:
     type: markdown
     synced_at: 2026-10-27
 evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-26-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 684-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; TERRIER-NATIVE-STARTUP-PASSED; WORK-PC-UPDATE-UNTESTED"
-updated_at: 2026-10-28
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
@@ -319,3 +319,16 @@ current_builder_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
 ```
 
 > Current delivery: all three stable 1.0.25 installers and signed update feeds are published. These builds use existing Windows sign-in with no extra app password or remote approval requirement. The source gates, all three native packages and actual packaged-client public-feed metadata checks passed. Recipient work-PC installation/update and physical lock/unlock acceptance remain open.
+
+## Signed 1.0.30 feeds and update-attempt correlation - 1.0.30 (synced 2026-10-30)
+
+Source: [Melange PR #102](https://github.com/pjg93-222/Melange/pull/102), draft and open, stacked on unmerged [PR #99](https://github.com/pjg93-222/Melange/pull/99). Head `2122c40544a575fa70c5d69c09150d1062bfbccf`, last updated 2026-10-30T16:02Z, titled "Use Windows sign-in, repair data loading, and refresh desktop updates". The facts below come from the PR body as read by the coordinating agent on 2026-10-30. The writer did not re-verify the PR.
+
+- **Update attempts.** 1.0.30 ties each activation to its exact installer attempt and to that attempt's completion progress. It reports the installing and awaiting-relaunch states truthfully. An update is still confirmed only after signed package verification and a healthy startup of the target version. The PR says this protects updates that 1.0.30 itself initiates. It cannot retrofit an already-running 1.0.28 or 1.0.29 receiver.
+- **Update checks.** "Check for updates" requests fresh metadata, and successful requests made within 60 seconds of each other are coalesced. Automatic discovery keeps its 14-minute cache and its 15-minute timer. A failed refresh cannot be reported as a fresh "no newer release".
+- **Feeds.** All three stable 1.0.30 feeds are published at sequence 21. Signed 1.0.28 recovery stays at sequence 19. The frozen shared client is `0d0132663e30cb8d92d911680b08943e13ea7d73`.
+- **Validation.** The frozen-source checks passed 658 Node and 77 Python cases, 735 in total. Export-security, inventory and dependency checks also passed.
+- **Real runs.** A real local Mentat update from 28 to 30 durably confirmed that 30 was installed, with no pending transaction. A real Terrier run reopened 29 before the 30 installer finished. That left a legacy failed 30 transaction, and local reconciliation is in progress.
+- **Not established.** Full real Melange activation, the work-PC update and recovery cycle, and physical Windows lock/unlock acceptance have not been shown. An older-workspace case can retire a staged newer public catalogue, which causes one repeat data download. This is the limitation recorded in the 1.0.26 section above. No new cache-performance or install-time improvement is claimed.
+- **Versions 1.0.27 to 1.0.29.** The PR body does not document these individually beyond the 1.0.28 recovery baseline at sequence 19 and the 28 and 29 receivers.
+- **Gate.** The Opus and Paul review gate remains open. Publishing the PR is not a merge.

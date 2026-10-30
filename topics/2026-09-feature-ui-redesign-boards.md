@@ -14,13 +14,13 @@ objective: "Redesign the Mentat console and the Melange (Moneyball) UI for ease 
 created_at: 2026-09-21
 sources:
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/graph-ui-quirks-lane-2026-09-24.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\graph-ui-quirks-lane-2026-09-24.md", sha256: "b37f138482cd3ce3a0909c249ee5de382110bce9a2184c307b46b8f703fe6542"}
-  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/ui-review-reconcile-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\ui-review-reconcile-2026-09-25.md", sha256: "79d6e29f4eb1d55a2375ba06a4e368b74336c33c4a51387b2b4f5bc0614f8202"}
+  - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/ui-review-reconcile-2026-09-25.md", type: "claude-memory", synced_at: "2026-10-30", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\ui-review-reconcile-2026-09-25.md", sha256: "b5d194c1c50657abacee5f38e0c3dbf966fc935b3d3500150ee8f9110e66a881"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/ui-finalize-after-reboot-2026-09-23.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\ui-finalize-after-reboot-2026-09-23.md", sha256: "9b82f28b366674e4c281288c4578f8c93670e37908c58e721f38cf7e8391a24c"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-redesign-build-lane-2026-09-22.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-redesign-build-lane-2026-09-22.md", sha256: "7347ffc019dfb06d6bf41991d1c9c1bd4d6fc6804c3d287ee94da4fe507d45c5"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/melange-redesign-boards-2026-09-22.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\melange-redesign-boards-2026-09-22.md", sha256: "2b7d9f761beeed02ad734103878f763aac50962402282e1ba159ffc20ae75c3d"}
   - {url: "file:///C:/Users/pgoff/.claude/projects/C--Users-pgoff-OneDrive-Desktop-Melange-Systems/memory/mentat-redesign-boards-2026-09-21.md", type: "claude-memory", synced_at: "2026-10-03", path: "C:\\Users\\pgoff\\.claude\\projects\\C--Users-pgoff-OneDrive-Desktop-Melange-Systems\\memory\\mentat-redesign-boards-2026-09-21.md", sha256: "f6f7dec8e219f8c549b279aa4e9cc6f8fadc533ea1187ac22edfa4c9e9a36459"}
-updated_at: 2026-10-04
-updated_by: "reorg@agent"
+updated_at: 2026-10-30
+updated_by: "preserve@agent"
 tags: ["type/topic", "status/in-progress", "domain/frontend", "category/feature"]
 ---
 

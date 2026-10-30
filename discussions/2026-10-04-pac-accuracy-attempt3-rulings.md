@@ -10,7 +10,7 @@ conclusions:
   - "E4 (2026-10-04): P&C/UT-X 'Open for development' (supersedes attempt-2 ruling C1; the holdout is spent and never certifies)."
   - "E6/E9/E7 (2026-10-04): the banking number builds on the 10-01 blend method, scored with A, time-valid; 'We are improving the blended' (the blend is improved, not retired)."
   - "E8/E10 (2026-10-04): scored elections 2018-2024 (n = 4, two per phase), 2016 an ungated extra cell labelled post hoc."
-  - "E11, E12, E15, E16 (2026-10-04): F1 fix folded into the new freeze before 2027-01-31; downloads = D8 + pas226 for the March 2027 job; crypto, fintech and community banks UNSCORABLE now and in the 2028 track; same report link, Project Brain via brainctl, Obsidian as a local commit only."
+  - "E11, E12, E15, E16 (2026-10-04): F1 fix folded into the new freeze well before 2027-01-31; downloads = D8 + pas226 for the March 2027 job (nothing else); crypto, fintech and community banks UNSCORABLE now and in the 2028 track; same report link, Project Brain via brainctl, Obsidian as a local commit only."
   - "E19-E23 (2026-10-04 and 2026-10-05): v6 approved (D-065 only between versions on clean 2028+ cells); summary-file ORIGIN arm authorised (report only); late-issued 2026 lines in the March 2027 job; 2028 track for all sectors plus L."
   - "E24 (2026-10-05): the seven one-time 2028 scheduled jobs are created."
 action_items:
@@ -28,9 +28,9 @@ related_projects:
 related_teams: []
 source: "session"
 sources:
-  - {url: "file:///C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004/receipts/RULINGS_2026-10-04.md", type: "markdown", synced_at: "2026-10-05", path: "C:\\melange-data\\forecast-redesign-20261001-review\\accuracy-refinement20261002\\attempt3-allsector-20261004\\receipts\\RULINGS_2026-10-04.md", sha256: "fa3dd3d5d0d32378a4404160547a5f202f224890c6874e277a688367e027811f"}
-  - {url: "file:///C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004/receipts/RULINGS_ADDENDUM_2026-10-05.md", type: "markdown", synced_at: "2026-10-05", path: "C:\\melange-data\\forecast-redesign-20261001-review\\accuracy-refinement20261002\\attempt3-allsector-20261004\\receipts\\RULINGS_ADDENDUM_2026-10-05.md", sha256: "13b0ea513f13d5506229eb47fa458891fb308803f56b431f26939de536753a93"}
-updated_at: 2026-10-05
+  - {url: "file:///C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004/receipts/RULINGS_2026-10-04.md", type: "markdown", synced_at: "2026-10-30", path: "C:\\melange-data\\forecast-redesign-20261001-review\\accuracy-refinement20261002\\attempt3-allsector-20261004\\receipts\\RULINGS_2026-10-04.md", sha256: "fa3dd3d5d0d32378a4404160547a5f202f224890c6874e277a688367e027811f"}
+  - {url: "file:///C:/melange-data/forecast-redesign-20261001-review/accuracy-refinement20261002/attempt3-allsector-20261004/receipts/RULINGS_ADDENDUM_2026-10-05.md", type: "markdown", synced_at: "2026-10-30", path: "C:\\melange-data\\forecast-redesign-20261001-review\\accuracy-refinement20261002\\attempt3-allsector-20261004\\receipts\\RULINGS_ADDENDUM_2026-10-05.md", sha256: "13b0ea513f13d5506229eb47fa458891fb308803f56b431f26939de536753a93"}
+updated_at: 2026-10-30
 updated_by: "preserve@agent"
 tags: ["type/discussion", "domain/research"]
 ---
@@ -72,7 +72,7 @@ tags: ["type/discussion", "domain/research"]
 - **E9 The "95%".** Picked "Build on that method, score with A (Recommended)": start from the 10-01 blend approach (pace blended with a model), improve it, score with the brief's A, time-valid, rolling three-cycle lookback; the model inside the blend must be time-valid (the rebuilt model, not the look-ahead one).
 - **E10 Elections.** Picked "2018-2024 (Recommended)": four elections, two presidential (2020, 2024) and two midterm (2018, 2022), which meets n >= 4 with two per phase; 2016 is reported as an ungated extra cell; labelled a post-hoc choice for already-inspected cycles.
 - **E11 The F1 fix.** Picked "Fold into new freeze (Recommended)": fix F1 inside the new method's build and freeze, well before 2027-01-31; the v5 2028 plan stays frozen as is.
-- **E12 Downloads.** Picked "D8 + pas226 for March 2027 (Recommended)": the March 2027 scoring job may also download the FEC pas226 bulk file it needs (the same files cover every sector); nothing else.
+- **E12 Downloads.** Picked "D8 + pas226 for March 2027 (Recommended)": the March 2027 scoring job may also download the FEC pas226 bulk file it needs (the same files cover every sector). Nothing else.
 
 ### Round 4
 
@@ -83,7 +83,7 @@ tags: ["type/discussion", "domain/research"]
 
 ### Round 5 (after the false-positive check, 28 IDs, no name collisions)
 
-- **E17 List approval.** Picked "Approve as listed (Recommended)": freeze all 28 IDs as Mentat produces them, including GEICO (for Berkshire) and Toyota NA (for Toyota Credit); Chubb = C00348938 (the legacy Chubb Corp PAC C00229203, giving 2012-2016 only, stays out).
+- **E17 List approval.** Picked "Approve as listed (Recommended)": freeze all 28 IDs as Mentat produces them, including GEICO [editorial gloss: for Berkshire] and Toyota NA [editorial gloss: for Toyota Credit]; Chubb = C00348938 (the legacy Chubb Corp PAC C00229203, giving 2012-2016 only, stays out).
 - **E18 Missing PACs.** Picked "No, Mentat governs (Recommended)": use Mentat's list only; report the missing PACs as a known coverage gap and flag it for a later Mentat-side fix (money-collection code stays frozen now). Gap list: Charter C00426775, Altice C00197863, Ford C00046474, CNH C00303883, Zurich C00235036, Kraken/Payward C00845651, Binance.US C00828954, Merchants Bank of Indiana C00933002, First Hawaiian C00451781, OceanFirst C00304410.
 
 ### Round 6 (on the all-sector strategy)
@@ -92,6 +92,8 @@ tags: ["type/discussion", "domain/research"]
 - **E20 ORIGIN data.** Picked "Yes, add a summary-file arm": authorises downloading the FEC committee summary files (webk, PAC summary) for 2012-2026 and adding one predeclared ORIGIN arm using receipts and cash on hand; adds build time and contamination risk.
 - **E21 2026 lines.** Picked "Yes (Recommended)": every sector gets one live 2026 outcome (n = 1, LIVE_OBSERVED), scored once in March 2027 beside v3, v4 and v5.
 - **E22 The 2028 track.** Picked "All sectors, add L + download (Recommended)": ORIGIN (freeze by 2027-02-14) and nowcasts m12/15/18/L/21 for every sector; truth from the first pas228 dated on or after 2029-03-01; authorises the L-freeze pas228 download.
+
+Dating note (added 2026-10-30): the source file `receipts/RULINGS_2026-10-04.md` (sha256 `fa3dd3d5d0d32378a4404160547a5f202f224890c6874e277a688367e027811f`) dates only Round 7, which says "answered 2026-10-05". Its Round 6 header carries no date. The date of the Round 6 answers (E19-E22) is therefore not stated in the source, and the "2026-10-04 and 2026-10-05" range given in the conclusions for E19-E23 is not confirmed for E19-E22.
 
 ### Round 7 (on the summary-file amendment; answered 2026-10-05)
 
