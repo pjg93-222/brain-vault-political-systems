@@ -10,6 +10,9 @@ related_projects: ["[[melange-systems]]", "[[mentat]]", "[[terrier]]"]
 objective: "Preserve the signed directory ZIP migration contract and exact tested candidate boundaries across all three desktop apps."
 created_at: 2026-10-27
 sources:
+  - url: "https://github.com/pjg93-222/Melange/pull/102"
+    type: github-repo
+    synced_at: 2026-10-28
   - url: "https://github.com/pjg93-222/Melange/pull/96"
     type: github-repo
     synced_at: 2026-10-27
@@ -22,27 +25,30 @@ sources:
   - url: "https://github.com/pjg93-222/Melange/blob/5f5451441265b0f6d0c83fcb706639241158fe94/ops/desktop/GITHUB_RELEASES.md"
     type: markdown
     synced_at: 2026-10-27
-evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-INSTALLER-COMPILED-SIGNED; INDEPENDENT-VERIFICATION-IN-PROGRESS; PRIVATE-DRAFT"
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-26-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 684-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; TERRIER-NATIVE-STARTUP-PASSED; WORK-PC-UPDATE-UNTESTED"
 updated_at: 2026-10-28
 updated_by: "preserve@agent"
 tags: [type/topic, status/superseded, category/feature, domain/platform, domain/security]
 superseded_at: 2026-10-27
-active_scope: "Retain NSIS installer; remove only uninstaller; retain GitHub update receiver."
-current_source_commit: "f78cf22ab916bbda22a17463c156d2875f7bfd2f"
-current_source_pr: "https://github.com/pjg93-222/Melange/pull/99"
-current_delivery_status: "Melange 1.0.21 installer compiled and signed; independent verification and private draft upload in progress; not public."
+active_scope: "Native installer without uninstaller; existing Windows sign-in without an extra app password; direct signed GitHub updates and visible launch status."
+current_source_commit: "fefc786a495be893f31415bde8860a1e36169ffd"
+current_source_pr: "https://github.com/pjg93-222/Melange/pull/102"
+current_delivery_status: "Stable 1.0.26 installers and complete signed feeds are published at sequence 17, retaining 1.0.25 recovery sequence 16. Packaged Terrier native startup passed twice; work-PC update/recovery and physical lock/unlock acceptance remain open."
 selected_desktop_reserve_gib: 16
 desktop_reserve_default_gib: 32
 desktop_reserve_minimum_gib: 16
+final_two_inspection_reserve: "Explicit one-run 4 GiB budget for Mentat/Terrier 1.0.23 only; production reserve defaults and all integrity checks unchanged."
 prior_cleanup_request: "Withdrawn; DE-076 Congress transaction rule was misapplied."
-current_application_payload_source: "5f5451441265b0f6d0c83fcb706639241158fe94"
+current_application_payload_source: "Published 1.0.26 client/bootstrap: fefc786a495be893f31415bde8860a1e36169ffd. App backends/vendor files retain prior verified source pins. Subsequent documentation changes do not change shipped source."
+current_compiler_source: "fefc786a495be893f31415bde8860a1e36169ffd"
+current_builder_source: "fefc786a495be893f31415bde8860a1e36169ffd"
 ---
 
 # Installer-free desktop ZIP migration (2026-10)
 
 > [!warning] Superseded — user scope correction, 2026-10-27
 > Keep the original NSIS installer, remove only the application uninstaller, and retain the GitHub update receiver. The directory ZIP migration and 1.0.20 migration instructions below are historical evidence, not the active release plan. The dated scope correction at the end of this note governs subsequent work; it does not claim a native release or recipient approval has completed.
-> Current packaging source: `f78cf22ab916bbda22a17463c156d2875f7bfd2f`; signed application/backend payload source: `5f5451441265b0f6d0c83fcb706639241158fe94`. The Melange 1.0.21 installer is compiled and signed; independent verification and private-draft staging are in progress. Public publication and work-PC acceptance remain unclaimed.
+> Current delivery: all three stable 1.0.26 installers and complete signed feeds are published with existing Windows sign-in. Source/native checks, actual packaged-client public-feed checks and two real Terrier backend starts passed. The documented staged-catalogue repeat-download limitation remains unfixed; recipient work-PC update/recovery and physical lock/unlock acceptance remain open.
 
 > The three 1.0.20 directory ZIP candidates passed local package verification and isolated startup tests. Source review, owner testing, public release, signed-feed activation and recipient policy approval remain separate stages.
 
@@ -155,3 +161,161 @@ The native `desktop-v1.0.21` release is being staged as a **private draft**. Upl
 This updates the existing shared coordination record without sending another message to Claude or claiming acknowledgment, routing, integration or deployment. The source tip and CI result were checked directly; compilation, signing, unchanged-payload, smoke and in-progress verifier/draft status are reported by the active release task. The two newer privacy edits already present in the canonical topic are preserved in the review branch as well.
 
 Compilation-progress snapshot recorded at 2026-10-28T04:37:06.6435258Z.
+
+## Installer plug-in blocks and pending 1.0.22 delivery (2026-10-28)
+
+The latest user report names ThreatLocker denials for `StdUtils.dll`, `nsis7z.dll`, `System.dll` and `UAC.dll`. These are reported blocked installer plug-ins; the report does not establish that every application or bundled dependency is allowed. The corrected scope still retains the Windows installer and GitHub update receiver and removes the uninstaller. The directory ZIP approach remains superseded.
+
+The release task reports a built-in-only NSIS packager at `327dbfad747d378431319b017248118adfca4945`, followed by owned main-executable/ASAR version overlays, helper documentation and version 1.0.22 at `dcd7b0068c7881fffdd3f1105ad8c4e28d411c97`, pushed on `codex/installer-without-uninstaller` under Melange PR #99. Its intended installer path avoids the four named plug-ins. At this snapshot, Melange 1.0.22 is compiling from the retained signed 1.0.21 program plus two signed 1.0.22 overlays, as reported by the release owner. Final asset identity and publication are pending; no equivalent Mentat or Terrier 1.0.22 artifact is asserted.
+
+Removing installer plug-ins does not grant recipient application-control permission. IT coverage must include the actual installer, installed app executable, bundled runtime executables and native libraries, relevant vendor-signed dependencies, the Windows-login update receiver, and subsequent downloaded installers in their versioned update paths. Process, file, registry and network restrictions remain part of the actual policy. Keep approval scoped to the identified applications and dependencies; do not infer a blanket Downloads permit or endpoint acceptance from this packaging change. The private IT request is a draft, not a sent message or confirmation that policy reached the devices.
+
+The user explicitly requested skipping verification for this delivery. Record this as a dated, delivery-specific instruction: no new test, independent final-artifact verification, installation/update acceptance or work-PC ThreatLocker pass is claimed for 1.0.22. Prior 1.0.21 results and retained signing provenance do not become 1.0.22 verification results. This instruction is not a standing waiver for later releases and does not establish IT policy approval or permit changes to the approved publisher. Existing public certificate redactions remain intact.
+
+Provenance: the active release task supplied the user report, scoped skip instruction, implementation status and pending build status; the two source commit identities were resolved locally. This documentation task ran no release verification. Private component evidence separates retained original payload provenance from the new main-executable overlay; it is not represented as a fresh final-package census. Local knowledge coordination does not establish a Claude message, acknowledgment, integration or publication.
+
+Historical 1.0.21 summary retained verbatim:
+> Current packaging source: `f78cf22ab916bbda22a17463c156d2875f7bfd2f`; signed application/backend payload source: `5f5451441265b0f6d0c83fcb706639241158fe94`. The Melange 1.0.21 installer is compiled and signed; independent verification and private-draft staging are in progress. Public publication and work-PC acceptance remain unclaimed.
+
+Pending documentation snapshot recorded at 2026-10-28T08:14:24.8369951+00:00.
+
+## Published native 1.0.22 prereleases (2026-10-28)
+
+The release owner published the signed Melange, Mentat and Terrier 1.0.22 Windows installers as public manual-download prereleases under `desktop-v1.0.22-test`. The retained publication records report successful signing command completion (exit 0), final local file identities and GitHub release/asset identifiers. This supersedes the pending-compilation snapshot above. Melange 1.0.21 had already been published separately as `desktop-v1.0.21-test`, after which the user reported the four installer DLL blocks; the former private-draft description is historical.
+
+| Application | Published at (UTC, 2026-10-28) | Installer bytes | SHA-256 |
+|---|---|---:|---|
+| Melange 1.0.22 | 08:51:12 | 750,998,704 | `fd4612fb143d22e00f0d4e27a08178991931e0abf8a210ab77fa9fc79cfa480e` |
+| Mentat 1.0.22 | 08:50:35 | 483,696,120 | `fa9f61705d6ab593042245c0b990207d8a8539342cdd16a5dee068e28300798c` |
+| Terrier 1.0.22 | 08:45:01 | 305,728,456 | `325d693894c7378457554896141e504d2dfca131ec6892c70f6ac36fdd94edf2` |
+
+All three records name builder source `83cac457683f46a6c1378cf6a288aa79a1b8ec21` and retained common client source `5f5451441265b0f6d0c83fcb706639241158fe94`. Their backend sources are Melange `5f5451441265b0f6d0c83fcb706639241158fe94`, Mentat `2b623be182881039e974940b652fab7d39a87ce6`, and Terrier `d6cf452bf688086c37e796d350399bae47865d72`. The release task reports the built-in, per-file NSIS/zlib compiler follow-up at `f76be3dddcf8e74889e441488f3f8dd5deb73b76`; this is separate from retained application sources and subsequent documentation. The installer and GitHub update receiver remain; the uninstaller and four reported installer plug-ins are removed by the packaging implementation.
+
+**Verification was skipped at the user's explicit request for this delivery.** No new test, independent final-installer extraction/signature pass, hosted-download readback, installation/update acceptance or work-PC ThreatLocker pass is asserted. The records explicitly say hosted readback was not performed and work-PC acceptance was not demonstrated. Earlier test counts apply only to the older source commits named in their dated sections. Publication and a successful signing command are not substitutes for those missing checks. The stable automatic-update feed remains unchanged for all three applications; these prereleases provide immediate manual downloads. The skip instruction remains scoped to this delivery, not future releases.
+
+The generic public [ThreatLocker deployment guide](https://github.com/pjg93-222/Melange/blob/be8d1ad8f0ad032ffdec0dadd792c3c3f5941d0c/ops/desktop/client/THREATLOCKER-DEPLOYMENT.md) is committed and pushed under Melange PR #99 at `be8d1ad8f0ad032ffdec0dadd792c3c3f5941d0c`. It distinguishes removing the installer plug-ins from IT policy coverage for each application, runtime dependency and update stage. No IT message or actual recipient policy change is asserted. Existing certificate redactions are preserved.
+
+Provenance: the three existing private publication records supply the exact artifact identities above; the active release owner confirms public repository visibility and publication. This knowledge update reads those small records and does not independently verify packages or hosted bytes. Claude coordination remains local records only, without a sent message or acknowledgment. Repository publication, documentation publication, stable-feed activation and work-PC acceptance remain separate facts.
+
+Historical pending-delivery summary retained verbatim:
+> Current delivery preparation: Melange 1.0.22 at source `dcd7b0068c7881fffdd3f1105ad8c4e28d411c97`, using built-in NSIS operations to remove the reported installer plug-ins. Compilation/publication are pending; verification is skipped at the user's explicit request for this delivery. Work-PC acceptance is unconfirmed. See the dated 1.0.22 update below.
+
+Publication documentation recorded at 2026-10-28T08:56:11.7955069Z.
+
+## Final signed native feeds — 2026-10-28
+
+All three stable signed feeds are published. Stable `desktop-v1.0.22` (sequence 13, identical to the existing preview installer bytes) supplies recovery metadata for installed 1.0.22 clients; `desktop-v1.0.23` (sequence 14) is latest. The older `desktop-v1.0.22-test` links remain separate. Each app checks its signed GitHub release manifest at startup, every 15 minutes and after resume/unlock. Verified updates activate after a normal close or before the next launch; the login receiver and profiles remain. New source commits become updates only after a release is built and published.
+
+- [Melange 1.0.23](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.23/melange-1.0.23-win32-x64.exe)
+- [Mentat 1.0.23](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.23/mentat-1.0.23-win32-x64.exe)
+- Terrier 1.0.23 installer (Terrier repository release; link omitted)
+
+| App | Installer bytes | SHA-256 |
+|---|---:|---|
+| Melange | 750,998,864 | `4ea779552a3cbcf901ee0cdf6581d57d7c1dfb7f401700c8b522f8f5700b8d78` |
+| Mentat | 483,696,272 | `924295fa2824f45e1214ccc29ece533a1a12ce73c53fa07426f97741dbf7a23d` |
+| Terrier | 305,728,600 | `2dc54ae07748c4bd1b7aecbac5a98fdc22be8b4ef33f992de0aca5352010a690` |
+
+The shipped 1.0.23 installers retain client/runtime source `5f5451441265b0f6d0c83fcb706639241158fe94`, Melange backend at that same commit, Mentat backend `2b623be182881039e974940b652fab7d39a87ce6`, and Terrier backend `d6cf452bf688086c37e796d350399bae47865d72`. Versioned main/ASAR overlays and installer build inputs use frozen basis `8c0d350361a65027c43baf76b1895ef7f1d2a9cc`. Later main and production-wrapper changes are not retroactively included in those runtime bytes.
+
+All six exact 1.0.22/1.0.23 native inspections passed complete payload/source, ASAR-integrity, native-signature and preserved-vendor-byte checks, with zero installer plug-ins or uninstallers. The actual shipped clients also passed anonymous GitHub manifest/trust, 1.0.22 recovery, 1.0.23 discovery/recovery and current-version checks. Signed local originals and GitHub asset SHA-256 digests match the fetched manifests; these hosted checks did not download the binaries again or execute installation. Focused Windows integration [CI passed](https://github.com/pjg93-222/Melange/actions/runs/40747217760) on merged implementation `22de8c248`; this refers to the review branch, not a merge of PR #99 into main.
+
+Normal Windows `npm run build -- --win --x64 --publish never` now uses the shared `build-native.cjs` directory/signing/built-in-installer pipeline. The installer shows concise extraction phases instead of listing every file; no install-speed benchmark is claimed. The existing private signing protections, user data and vendor signatures remain.
+
+The user reports that the app now launches under ThreatLocker, following the Melange 1.0.22 launch-block conversation. This is a user-reported result for the tested case, not all-three or all-device acceptance. The work-PC automatic-update/recovery cycle and full authenticated workflows remain untested. The release owner reports matching approval-service linkage and a healthy route at the time checked, with intermittent relay outages observed; the work-PC path remains unresolved. No private service addresses or recipient details are included here.
+
+The final two inspections used an explicitly accounted 4 GiB reserve for their bounded payloads; the production 32 GiB default/16 GiB minimum and all native/source checks are unchanged. Existing title, original ZIP history, certificate redactions and review gates are preserved. No Claude message or acknowledgment, PR merge, work-PC update installation or service-uptime guarantee is asserted by this knowledge update.
+
+Publication and hosted-receipt facts recorded at 2026-10-28T19:40:05.983054+00:00; source records remain private.
+
+## Local access and launch update status — 1.0.24
+
+All three 1.0.24 installers and complete stable signed feeds are published as sequence 15, superseding 1.0.23 as latest. The shared client/bootstrap is frozen at `9845710e8edbaa8348a47807bb8f9c4bcbd6107c`, on [PR102](https://github.com/pjg93-222/Melange/pull/102), stacked on PR99. App backends and vendor dependencies retain their exact verified 1.0.23 bytes and the source pins above. Test-only fixture repairs on the review branch do not change those packaged production bytes.
+
+- [Melange 1.0.24 installer](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.24/melange-1.0.24-win32-x64.exe)
+- [Mentat 1.0.24 installer](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.24/mentat-1.0.24-win32-x64.exe)
+- Terrier 1.0.24 installer (Terrier repository release; link omitted)
+
+All three actual packaged 1.0.24 clients passed anonymous discovery, signed manifest/trust, 1.0.23 recovery and hosted-installer size/hash checks. These metadata checks did not download or install the binaries again. The review PRs are not merged.
+
+New builds default to local sign-in without the remote administrator approval service. Melange/Mentat retain local password/device protection; Terrier retains real Django passwords and roles. Existing verified password records migrate separately from preserved managed records and user data. Corporate execution controls are unchanged, and no private-server grant or bearer permission is fabricated.
+
+Each application checks its own public GitHub Releases directly. Launch, sign-in and settings show the installed version and actual update state, with a persistent main-window title. Cached results, API delays and failed checks are distinguished from a fresh current-version result. Source commits become updates only after a release is published. Discovery starts independently of sign-in and initial dataset preparation; a not-yet-confirmed running version can discover a corrective release while keeping its previous confirmed recovery baseline. Already-stuck 1.0.23 installations may need one manual upgrade.
+
+Validation covers 252 distinct focused client cases, 10 real local Django/protected-storage cases, fresh export-security and production-dependency checks, and three complete native artifact inspections. Failed fixture runs remain in the private record; their specific repairs passed, and no production code or security exception changed to hide them. These checks do not establish installation or automatic-update acceptance on the recipient work PC.
+
+The existing Terrier district-test release is public again after owner authorization, preserving its assets, signed catalogue and non-latest prerelease classification. Public data manifests for all three apps are available and signature-checked. First-time data downloads remain separate from binary updates and can be substantial. No private cache was published. Private receipts retain the exact source, build, publication and transport provenance.
+
+## Windows sign-in request and pending 1.0.25 — 2026-10-28
+
+The user explicitly clarified that all three apps should open through the existing Windows sign-in, with no separate app password or remote administrator approval. This supersedes the extra local password prompt introduced in 1.0.24. It changes application sign-in, not corporate execution controls or private-server authorization. The signed GitHub update path remains independent of local sign-in and continues to require a built, published release.
+
+The new shared client/bootstrap is frozen at `3e25fc7185464492abe74122359fca4c11bbac4f`, pushed on [PR102](https://github.com/pjg93-222/Melange/pull/102), still stacked on unmerged PR99. The frozen archive SHA-256 is `800e92fb928c38785bd773b462a47fb7a74f0efef58f3c6ccf368922960640cc`. At this snapshot the 1.0.25 installers are building; **1.0.24 remains the published stable release and is unchanged**. Source completion is not publication or recipient acceptance.
+
+Windows identity is obtained from the native process access token rather than environment usernames or renderer claims. A protected binding connects the current Windows SID to the existing local app profile; lock/resume handling requires a fresh native session check. No additional application password is required in this explicit Windows mode. Existing local password, managed-account and user-data records are preserved for rollback; no managed grant or remote permission is manufactured.
+
+Terrier uses a dedicated real local Django account for the verified Windows identity. It does not impersonate an old account or change existing account roles/passwords. Existing local saved views are copied into that account once while their original rows and owners remain intact. A protected pending record and transactional recovery marker prevent duplicate users/views after interruption. No private-server role or data permission is created by this mapping.
+
+Frozen-source evidence passed **366 client tests and 32 Python tests, with zero failures or skips**. Python coverage includes actual Windows-token/DPAPI checks, modeled lock/disconnection denial, real Django auto-authentication and view-copy recovery, legacy password behavior, and inventory/CLI boundaries. Checked source inputs remained unchanged and matched the frozen archive. Export-security and production-dependency checks passed without new security exceptions. These are source gates, not a physical screen-lock exercise, installed-artifact acceptance, hosted publication, or a work-PC upgrade result. Final package and publication receipts are still pending.
+
+The earlier current-delivery callout is preserved as history:
+
+> Current delivery: all three stable 1.0.22 recovery feeds and latest 1.0.23 feeds are published. Six native inspections and actual shipped-client anonymous feed checks passed. The user reports successful app launch; work-PC automatic-update/recovery acceptance remains open. The final dated section below governs; earlier skip and unchanged-feed statements remain historical.
+
+This update preserves the original ZIP history, approved-publisher and review gates, and prior user-reported ThreatLocker result. It sends no message to Claude, claims no acknowledgment or PR merge, and asserts no private Git synchronization.
+
+## Windows sign-in delivered — 1.0.25
+
+All three signed native installers and complete stable update feeds are public as sequence 16, superseding 1.0.24 as latest while retaining its sequence 15 recovery metadata. Actual packaged 1.0.25 clients passed anonymous GitHub trust/discovery, signed manifest validation, 1.0.24 and fresh 1.0.25 recovery metadata, hosted installer size/SHA-256 checks, and a current-version check. The final hosted checks completed at 2026-10-28T22:30:32Z.
+
+- [Melange 1.0.25 installer](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.25/melange-1.0.25-win32-x64.exe)
+- [Mentat 1.0.25 installer](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.25/mentat-1.0.25-win32-x64.exe)
+- Terrier 1.0.25 installer (Terrier repository release; link omitted)
+
+Each build uses the existing Windows session, with no separate application password or remote administrator approval. The native identity/profile binding, fresh lock/resume check and real Terrier account/view preservation described above are in the shipped client/bootstrap frozen at `3e25fc7185464492abe74122359fca4c11bbac4f`. Backend/vendor bytes retain the verified source baselines. The subsequent README-only commit `407cbf292` documents delivery without changing these packaged bytes. [PR102](https://github.com/pjg93-222/Melange/pull/102) remains the source review, stacked on PR99; publication does not imply either is merged.
+
+The retained evidence totals 366 client plus 32 Python cases (**398 passes**, zero skips) and successful native signature/payload/source inspections for all three exact installers. Hosted checks fetched public metadata; they did not download the binaries again or execute installation. Work-PC launch/update/recovery and a physical Windows lock/unlock cycle remain untested. Existing corporate execution policies, private-server permissions, old account passwords/roles and original saved-view rows remain unchanged. The direct signed GitHub update path remains integrated and independent of the old approval service.
+
+The earlier pending current-delivery snapshot is preserved as history; the published result above supersedes it:
+
+> Current delivery: stable 1.0.24 installers and signed feeds remain published. Version 1.0.25 is being built from frozen Windows-session sign-in source; it is not published at this snapshot. The latest dated section governs current scope. Work-PC installation and automatic-update acceptance remain open.
+
+Shared knowledge now records the explicit Windows sign-in request and the published result. This records no Claude acknowledgment, PR merge or private Git synchronization.
+
+
+## Public district data and signed update delivered - 1.0.26
+
+All three stable 1.0.26 native installers and complete signed update feeds are published at sequence 17, retaining 1.0.25 recovery sequence 16. The shared desktop client/bootstrap is frozen at `fefc786a495be893f31415bde8860a1e36169ffd` on [PR102](https://github.com/pjg93-222/Melange/pull/102), stacked on unmerged PR99. Existing Windows sign-in, visible GitHub status, accounts and saved views remain. Backend/vendor payloads retain their earlier verified source pins; later main-branch backend changes are not claimed.
+
+- [Melange 1.0.26 installer](https://github.com/pjg93-222/Melange/releases/download/desktop-v1.0.26/melange-1.0.26-win32-x64.exe)
+- [Mentat 1.0.26 installer](https://github.com/pjg93-222/Mentat/releases/download/desktop-v1.0.26/mentat-1.0.26-win32-x64.exe)
+- Terrier 1.0.26 installer (Terrier repository release; link omitted)
+
+Terrier now loads the signed public snapshot members required by its real row-framework summary, validates the selected district and score-store area-table hash and activates a real backend record. Successful startup/switch cleanup stops inactive backends before retiring verified inactive public caches, preserves unknown/changed files and private state, and defers updates when shutdown is not confirmed.
+
+Bounded 4 MiB reads reduce local public-data and package verification overhead while preserving signatures, hashes, size limits and cancellation. A local 303 MB Mentat cache check measured 4.9 seconds versus earlier 26-52 second observations without OS-cache flushing; this is not a controlled end-to-end install benchmark or work-PC guarantee. Binary updates still download complete installers. Mentat's public feed supplies official FEC tables; industry reports and forecasts require their separate local inputs.
+
+The frozen-source gates passed 611 Node and 73 Python cases (684 total), with zero failures or skips; source export-security, inventory and production-dependency checks passed without new exceptions. All three exact installers passed native signature, payload, source and preserved-vendor checks. The freshly extracted Terrier backend started twice with actual Windows sign-in and signed public data: session and metadata endpoints returned HTTP 200, the store reported ok and the expected snapshot was active. The repeat start was idempotent; public and execution inputs were unchanged. Electron UI, physical Windows lock/unlock and recipient work-PC installation/update/recovery were not acceptance-tested.
+
+Actual packaged 1.0.26 clients passed anonymous GitHub trust/discovery, signed 1.0.25 recovery (sequence 16), update/fresh-1.0.26 recovery (sequence 17), current-version checks and hosted installer size/SHA-256 comparison. These checks fetched metadata, not another full binary download, and did not execute installation.
+
+Known follow-up, still unfixed in 1.0.26: reopening an already-running older workspace can retire a staged newer public catalogue, causing one repeat download on the next fresh start. A focused reproduction used the actual frozen provider and startup function with signed test fixtures, without app/backend launch or network access. Unchanged current sequence 1 data cannot trigger this condition.
+
+To test the actual 25-to-26 update, keep 25 installed and wait for its displayed next-discovery deadline, then choose Check for updates. Its six-hour cache plus up to 30 minutes of jitter also applies to manual checks. Wait for the verified update, save and close, then open the refreshed Desktop or Start Menu shortcut. An old version-specific taskbar pin can reopen 25 and incorrectly report a failed installation. No protected state should be cleared and no manual 26 installation should be substituted for this test.
+
+Existing Opus/Paul review and recipient acceptance gates remain open. This records no PR merge, Claude acknowledgment or private Git synchronization.
+
+Packaging lesson: Python probes using `-E` or `-I` need explicit `-B`, because those modes ignore `PYTHONDONTWRITEBYTECODE`. Compare the entire retained vendor inventory before compilation, not just added files or signed executables. The unpublished Mentat candidate was rebuilt after restoring probe-modified bytecode; all 13,025 vendor files in the replacement exactly match the verified 1.0.23 baseline. Frozen client/bootstrap source and its 684 source checks remain unchanged; the earlier candidate and failure evidence are retained.
+
+Previous current-delivery metadata and callout, retained as historical context:
+
+```yaml
+evidence_status: "SUPERSEDED-ZIP-PROTOTYPE; NATIVE-25-FEEDS-LIVE; WINDOWS-SESSION-SIGN-IN; 398-SOURCE-CASES-THREE-NATIVE-CHECKS-PASSED; WORK-PC-UPDATE-UNTESTED"
+current_source_commit: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_delivery_status: "Stable 1.0.25 installers and complete signed feeds are published at sequence 16, retaining 1.0.24 recovery sequence 15. Work-PC installation, physical Windows lock/unlock and automatic-update acceptance remain open."
+current_application_payload_source: "Published 1.0.25 client/bootstrap: 3e25fc7185464492abe74122359fca4c11bbac4f. App backends/vendor files retain prior verified source pins. Later README-only commit 407cbf292 does not change shipped source."
+current_compiler_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
+current_builder_source: "3e25fc7185464492abe74122359fca4c11bbac4f"
+```
+
+> Current delivery: all three stable 1.0.25 installers and signed update feeds are published. These builds use existing Windows sign-in with no extra app password or remote approval requirement. The source gates, all three native packages and actual packaged-client public-feed metadata checks passed. Recipient work-PC installation/update and physical lock/unlock acceptance remain open.
