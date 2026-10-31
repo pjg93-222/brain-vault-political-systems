@@ -589,3 +589,4 @@
 - 2026-10-30 15:12 -04:00 | preserve | updated topic: Refresh automation reliability: 2 Claude memory source(s) bound (sha256 verified); one dated Update 2026-10-30 paragraph added; uncommitted, for review | [[2026-08-incident-refresh-automation-reliability]]
 - 2026-10-30 15:12 -04:00 | preserve | updated topic: Installer-free desktop ZIP migration (2026-10): 1 Claude memory source(s) bound (sha256 verified); one dated Update 2026-10-30 paragraph added; uncommitted, for review | [[2026-10-feature-installer-free-desktop-zip-migration]]
 - 2026-10-30 15:14 -04:00 | preserve | updated actor: Mentat FEC pipeline hub: source of its part history-build-and-ship also listed here (parent holds every part source); uncommitted, for review | [[mentat-fec-pipeline]]
+- 2026-10-30 20:57 -04:00 | sync | captured 1 memory file(s) into fleeting/ (new 1, changed 0) | [[workspaces-scratch-2026-10-30-19809a--sonnet-codes-opus-manages]]

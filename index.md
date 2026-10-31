@@ -2,7 +2,7 @@
 
 > Generated catalog of every note in this vault, grouped by entity type, one line per note: `[[note]] — summary`. Do not edit it by hand: `bun .bedrock/recall/hook.ts index` rewrites it whenever notes change (the capture hook and the graph watcher run it), so hand edits are lost. It is a system note: not a graph node, and not part of recall, orphan or incoming-link checks.
 
-834 notes.
+835 notes.
 
 ## Actors (49)
 
@@ -280,7 +280,7 @@
 - [[2026-10-troubleshooting-official-roll-call-endpoints]] — The House clerk's roll-call XML answers HTTP 200 with an error body for a roll that does not exist, and the Senate's roll-call XML sits behind bot management that blocks scripted clients.
 - [[2026-10-troubleshooting-windows-revocation-offline-errors]] — On Windows, curl (Schannel) "revocation offline" errors came from an intermittently unreachable Let's Encrypt CRL host over IPv6.
 
-## Fleeting (63)
+## Fleeting (64)
 
 - [[melange-systems--agent-roster-2026-10-21]] — Fable overseer / Opus manager / Sonnet coder roster and lane shapes for Melange debug work, 2026-10-21
 - [[melange-systems--agent-roster-signing-proof-lane-2026-10-22]] — 2026-10-22 lane - signature census (published installers Valid, owner installs NotSigned stale), agent files gained Skill/skills/scout/verifier/receipt contract, END_PROOF + Terrier assignment ledger; installs and brain PR 33 merge are...
@@ -345,6 +345,7 @@
 - [[workspaces-scratch-2026-10-25-dee7ed--melange-vote-sources-not-blocked]] — Melange vote snapshot staleness (Oct 2026) was upstream data, not a fetch block; senate.gov 403s all scripted clients; clerk returns 200 for missing rolls
 - [[workspaces-scratch-2026-10-28-0c1fea--melange-origin-is-filtered-export]] — Melange origin (public GitHub) is a filtered export with no shared history with the local repo; never push local branches, publish only via ops/release_lib/export.py publish/* branches
 - [[workspaces-scratch-2026-10-28-0c1fea--paul-wants-execution-not-handoffs]] — Paul wants Claude to execute internal work end to end and only consult on decisions, not hand him command lists
+- [[workspaces-scratch-2026-10-30-19809a--sonnet-codes-opus-manages]] — Paul wants Sonnet (executor) doing coding/builds/fixes; Opus manages and reviews, Haiku scouts
 
 ## Ledger (generated from the Project Brain) (513)
 
